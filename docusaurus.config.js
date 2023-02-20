@@ -26,10 +26,10 @@ const config = {
 
   // Even if you don't use internalization, you can use this field to set useful
   // metadata like html lang. For example, if your site is Chinese, you may want
-  // to replace "en" with "zh-tw".
+  // to replace "en" with "zh-Hant".
   i18n: {
-    defaultLocale: "zh-tw",
-    locales: ["zh-tw"],
+    defaultLocale: "zh-Hant",
+    locales: ["zh-Hant"],
   },
 
   themes: ["@docusaurus/theme-live-codeblock", "@docusaurus/theme-mermaid"],
@@ -120,11 +120,11 @@ const config = {
             items: [
               {
                 label: "Docs",
-                to: "/docs/intro",
+                to: "/docs",
               },
               {
-                label: "Blog",
-                to: "/blog",
+                label: "Projects",
+                to: "/projects",
               },
             ],
           },
