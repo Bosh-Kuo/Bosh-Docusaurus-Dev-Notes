@@ -2,7 +2,7 @@
 sidebar_position: 1
 description: Docusaurus 專案 - 創建獨立頁面(Pages)
 last_update:
-  date: 2023-02-19
+  date: 2023-02-22
 keywords:
   - Docusaurus
   - React
@@ -12,7 +12,7 @@ tags:
 ---
 
 # Pages
-`@docusaurus/plugin-content-pages` 這個套件讓使用者可以建立獨立頁面，參考官方創建的Docusaurus 專案便會預設安裝 `@docusaurus/preset-classic` 套件，就不需要額外安裝這個套件，若沒有的話可以以下列指令安裝:
+使用 `@docusaurus/plugin-content-pages` 套件可以輕鬆建立獨立頁面。對於依照官方教學以 `classic` 模式創建的 Docusaurus 專案，已預設安裝 `@docusaurus/preset-classic` 套件，因此不需要額外安裝 `@docusaurus/plugin-content-pages`。但如果專案尚未安裝上述任一套件該套件，可使用以下指令進行安裝：
 ```bash
 # npm
 npm install --save @docusaurus/plugin-content-pages
