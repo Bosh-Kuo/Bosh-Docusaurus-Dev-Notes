@@ -1,4 +1,6 @@
 ---
+title: Docs
+sidebar_label: Docs
 sidebar_position: 2
 description: Docusaurus 專案 - 文件(Docs)
 last_update:
@@ -11,7 +13,6 @@ tags:
   - Docusaurus
 ---
 
-# Docs
 與 Page 相似地， Docs 的功能主要由 `@docusaurus/plugin-content-docs` 套件提供，同樣若已安裝`@docusaurus/preset-classic` 套件，就不需要額外安裝這個套件，若沒有的話可以以下列指令安裝
 
 ```bash
@@ -22,7 +23,7 @@ npm install --save @docusaurus/plugin-content-docs
 yarn add @docusaurus/plugin-content-docs
 ```
 
-## 建立 Docs
+## **建立 Docs**
 
 作為組成 Dcoument 頁面的文件放置於 `docs`，以`資料夾`作為不同主題文章的分類。
 
@@ -30,7 +31,7 @@ yarn add @docusaurus/plugin-content-docs
 - 預設的文章目錄只會顯示 h2, h3 等級標題，可以透過修改 **front-matter** 來增加目錄顯示的標題等級。
 - 任何使用 `_` 為 prefix 命名的文建會被視為 "`partial`" pages，不會被渲然成獨立的頁面，通常作為重複內容被其他頁面引用，詳細可參考 [importing partial pages](https://docusaurus.io/docs/markdown-features/react#importing-markdown)。
 
-## Docs-only mode
+## **Docs-only mode**
 
 預設情況下所有 `docs` 資料夾下的文件都會掛在 routeBasePath/docs/ 這個 subroute 下，若網站只有 docs 需求，不需要其他單獨頁面或 blog，可以透過以下設置把  `docs` 資料夾下的文件掛在 root
 
@@ -50,7 +51,7 @@ module.exports = {
 };
 ```
 
-## 更改 intro.md 檔名與路由
+## **更改 intro.md 檔名與網址後綴**
 
 `doc` 資料夾中的 `intro.md` 文件預設為 Docs 頁面的路口，在本地開啟時的預設路由為 [http://localhost:3000/docs/intro](http://localhost:3000/docs/intro)，該檔案若改名為其他名稱會出現 `DocNavbarItem: couldn't find any doc with id "intro" in version current".` 這樣子的錯誤訊息，其原因是 `docusaurus.config.js` 設定檔中的下列這段設定認定 Doc 連結的入口文件其 id 為 “intro”，我們只需要注意此處設定的 **docId** 與 Docs 入口文件的 id 是相同的就不會報錯。
 
@@ -66,7 +67,8 @@ themeConfig:
 	    position: "left",
 	    label: "Docs",
 	  },
-...
+    ...
+  ]
 }
 ```
 
@@ -76,7 +78,7 @@ ex: **[http://localhost:3000/docs/intro](http://localhost:3000/docs/intro) →**
 如此更能在網址上區分入口文件與其他筆記文件的差別
 :::
 
-## Doc front matter
+## **Doc front matter**
 
 front matter 用於為您的文檔頁面提供額外的 meta data，以下列出一些比較常會使用到的項目，參考 [Example configuration](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#ex-config) 作相應的配置
 
@@ -94,7 +96,33 @@ front matter 用於為您的文檔頁面提供額外的 meta data，以下列出
 | last_update | FileChange | undefined | Allows overriding the last updated author and/or date. Date can be any parsable date string. |
 | hide_table_of_contents | boolean | false | Whether to hide the table of contents to the right. |
 
-## Sidebar
+這邊放上我的 front matter 模板:
+```yaml
+title: 文章標題
+sidebar_label: 文章於側邊目錄顯示的名稱
+sidebar_position: 文章於側邊目錄資料夾的順序
+description: 文章描述文字
+last_update:
+  date: yyyy-mm-dd
+keywords:
+  - keyword1
+  - keyword2
+tags:
+  - tag1
+  - tag2
+```
+
+:::tip
+- id: 預設為檔名，用於作為網址後綴，就不另外設定
+- title: 文章標題的預設順位為: `title` > `放至於最頂端的 head1` > `檔名`，若文章中的 head1 不是放在文章最頂端，head1 的大小會被縮小至與 head2 相同，這就顯得有點奇怪，因此還是另外設定 title 不要依賴 head1 作為文章標題比較保險。
+- sidebar_label: 側邊欄名稱的預設順位為: `sidebar_label` > `title` > `放至於最頂端的 head1` > `檔名`
+:::
+
+![head1放開頭](https://res.cloudinary.com/djtoo8orh/image/upload/v1677130583/Docusaurus%20Blog/Docusaurus/docs/head1%E6%94%BE%E9%96%8B%E9%A0%AD_tujot3.png)
+
+![head1沒放開頭](https://res.cloudinary.com/djtoo8orh/image/upload/v1677130583/Docusaurus%20Blog/Docusaurus/docs/head1%E6%B2%92%E6%94%BE%E9%96%8B%E9%A0%AD_volpgt.png)
+
+## **Sidebar**
 
 使用自動生成的側邊欄時，文件結構將決定側邊欄結構。個別文章主題的資料夾內可以透過 `_category_.json`  來客製化配置：
 
@@ -113,7 +141,7 @@ front matter 用於為您的文檔頁面提供額外的 meta data，以下列出
 }
 ```
 
-### Theme configuration
+### **Theme configuration**
 
 - `themeConfig.docs.sidebar.hideable`: 使整個側邊欄可隱藏
 - `themeConfig.docs.sidebar.autoCollapseCategories`: 擴展一個類別時會折疊所有同級類別。這樣可以避免讀者打開太多類別，並幫助他們專注於所選部分。
@@ -131,7 +159,7 @@ module.exports = {
 };
 ```
 
-## Reference
+## **Reference**
 - [Docs Introduction](https://docusaurus.io/docs/docs-introduction)
 - [📦 plugin-content-docs](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs)
 - [Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter)

@@ -1,4 +1,6 @@
 ---
+title: Getting Started
+sidebar_label: Getting Started
 sidebar_position: 0
 description: Docusaurus 本地安裝教學
 last_update:
@@ -10,9 +12,8 @@ tags:
   - Docusaurus
 ---
 
-# Getting Started
 
-## Introduction
+## **Introduction**
 
 Docusaurus 是一個由 Facebook 開發的`靜態網站生成器 (Static Site Generator, SSG)`，旨在為開發者和文檔編輯者提供一個簡單易用的框架，讓他們可以輕鬆地建立、維護和部署文檔網站，Docusaurus 的目錄結構非常清晰，易於理解和維護，且目錄可折疊，方便讀者閱讀文件的同時挖掘其他有興趣的內容。以下是 Docusaurus 的一些優點和特色：
 1. 易於使用：Docusaurus 具有簡單的目錄結構和易於使用的命令行工具，可以快速構建一個完整的文檔網站。
@@ -20,7 +21,7 @@ Docusaurus 是一個由 Facebook 開發的`靜態網站生成器 (Static Site Ge
 3. 可定制性：Docusaurus 允許使用者自定義主題，為文檔網站添加自己的樣式和功能，同時還可以自定義部分配置項目。
 4. 易於部署：Docusaurus 可以生成一個靜態網站，可以很方便地部署到各種平臺上，包括 GitHub Pages、Netlify、Vercel、AWS S3 等等。
 
-## Installation
+## **Installation**
 安裝當下 `Docusaurus` 最新版本為 `2.3.1`，`Node.js` 最低版本為 `16.14`。
 
 我習慣使用 `nvm` 來管理該專案的 Node 環境。
@@ -47,7 +48,7 @@ npx create-docusaurus@latest my-website classic
 
 
 
-## Reference
+## **Reference**
 - [Docusaurus](https://docusaurus.io/)  (官方文件)
 - [Tutorial Intro](https://tutorial.docusaurus.io/docs/intro)  (官方教學)
 - [nvm](https://github.com/nvm-sh/nvm)

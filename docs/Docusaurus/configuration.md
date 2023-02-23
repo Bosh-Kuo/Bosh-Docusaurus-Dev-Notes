@@ -1,4 +1,6 @@
 ---
+title: Configuration
+sidebar_label: Configuration
 sidebar_position: 4
 description: Docusaurus 專案 - Configuration 設定
 last_update:
@@ -10,8 +12,6 @@ tags:
   - Docusaurus
 ---
 
-# Configuration
-
 `docusaurus.config.js` 為網站的配置檔，可以根據網站的需求客製化。客製化配置主要可以分成下列幾點：
 
 - Site metadata
@@ -19,7 +19,7 @@ tags:
 - Theme, plugin, and preset configurations
 - Custom configurations
 
-## Site metadata
+## **Site metadata**
 
 - **title**: 網站標題
 - **url**: 它通常是您網站的域名或 IP 地址。當您在瀏覽器中打開網站時，它會用於構建絕對 URL
@@ -29,11 +29,11 @@ tags:
     - **navbar**: title, items
     - **footer:** style, links, copyright
 
-## Deployment configurations
+## **Deployment configurations**
 
 projectName、organizationName 和可選的 deploymentBranch，使用 github pages 來部署才需要設定。
 
-## Custom configurations
+## **Custom configurations**
 
 要添加自定義的 fields，必須在 `customFields` 中定義它們
 
@@ -48,7 +48,7 @@ config: {
 }
 ```
 
-## Accessing configuration from components
+## **Accessing configuration from components**
 
 ```jsx
 import React from 'react';
@@ -62,5 +62,5 @@ const Hello = () => {
 };
 ```
 
-## Reference
+## **Reference**
 - [Configuration](https://docusaurus.io/docs/configuration#theme-plugin-and-preset-configurations)

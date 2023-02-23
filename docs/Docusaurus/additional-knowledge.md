@@ -1,4 +1,6 @@
 ---
+title: Docusaurus 學習過程中的額外知識收集
+sidebar_label: 補充知識
 sidebar_position: 7
 description: Docusaurus 專案 - 補充知識
 last_update:
@@ -15,11 +17,10 @@ keywords:
   - GoDaddy
 tags:
   - Docusaurus
-sidebar_label: 補充知識
 ---
 
-# Docusaurus 學習過程中的額外知識收集
-## SPA
+
+## **SPA**
 <details>
   <summary>
     什麼是 Single-page application (SPA)?
@@ -68,7 +69,7 @@ sidebar_label: 補充知識
 </details>
 
 
-## nvm & npm & yarn
+## **nvm & npm & yarn**
 <details>
   <summary>
     nvm 是什麼？
@@ -144,7 +145,7 @@ npx <command>
 </details>
 
 
-## Others
+## **Others**
 <details>
   <summary>
     什麼是 Jamstack ?

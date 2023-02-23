@@ -1,4 +1,6 @@
 ---
+title: Pages
+sidebar_label: Pages
 sidebar_position: 1
 description: Docusaurus 專案 - 創建獨立頁面(Pages)
 last_update:
@@ -11,7 +13,7 @@ tags:
   - Docusaurus
 ---
 
-# Pages
+
 使用 `@docusaurus/plugin-content-pages` 套件可以輕鬆建立獨立頁面。對於依照官方教學以 `classic` 模式創建的 Docusaurus 專案，已預設安裝 `@docusaurus/preset-classic` 套件，因此不需要額外安裝 `@docusaurus/plugin-content-pages`。但如果專案尚未安裝上述任一套件該套件，可使用以下指令進行安裝：
 ```bash
 # npm
@@ -25,7 +27,7 @@ yarn add @docusaurus/plugin-content-pages
 💡 詳細設定可參考 [📦 plugin-content-pages](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages)
 :::
 
-## 建立 Page
+## **建立 Page**
 
 用來作為單獨頁面的文件放置於 `src/pages` ，單獨頁面文檔可以是 `.js`、`.mdx` 或 `.md` 檔。除了直接放置在該目錄下之外，也可以在該目錄下創建資料夾，並將頁面檔案放置在裡面，最終的頁面路徑會包含資料夾的名稱。
 
@@ -33,7 +35,7 @@ yarn add @docusaurus/plugin-content-pages
 - `src/pages/foo.md` → `localhost:3000/foo`
 - `src/pages/foo/bar.js` → `localhost:3000/foo/bar`
 
-## React page
+## **React page**
 
 使用 React 來編寫的頁面需要導出一個 React component，若沒有在最外層使用 `Layout` component ，那頁面將不會套上任何主題樣式（navbar, footer, css）
 
@@ -64,7 +66,7 @@ export default function Hello() {
 - `title`: 顯示於分頁的文字
 - `description`: 於 ```<head><meta></head>``` 中
 
-## Markdown page
+## **Markdown page**
 
 ```jsx
 ---
@@ -82,7 +84,7 @@ How are you?
 - `description`: 於 ```<head><meta></head>``` 中
 - `hide_table_of_contents`: 是否隱藏目錄
 
-## Routing
+## **Routing**
 
 在 /src/pages/ 目錄下創建的任何 JavaScript 文件都將按照 /src/pages/ 目錄層次結構自動轉換為網站頁面。
 
@@ -113,6 +115,6 @@ my-website
 src/pages/ 目錄中的所有 JavaScript/TypeScript 文件都會生成相應的網站路徑。如果要在該目錄中創建可重用組件，可以使用**排除選項**（默認情況下，**前綴為 _ 的文件、測試文件（.test.js）和 tests 目錄中的文件**不會轉換為頁面）。
 :::
 
-## Reference
+## **Reference**
 - [Creating Pages](https://docusaurus.io/docs/creating-pages)
 - [📦 plugin-content-pages](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages)
