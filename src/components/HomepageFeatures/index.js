@@ -5,34 +5,31 @@ import Link from "@docusaurus/Link";
 
 const FeatureList = [
   {
-    title: "Learning in a simple way",
-    Svg: require("@site/static/img/undraw_docusaurus_mountain.svg").default,
+    title: "用最簡單的方式理解複雜問題",
+    Svg: require("@site/static/img/undraw_learning.svg").default,
     description: (
       <>
-        This site record my learning journey. I try to simplifies the
-        complexities of technology and makes it easy to understand and enjoy.
+        這個網站記錄我的學習旅程，我會嘗試透過簡單易懂的言語，記錄並整理學習中遇到的複雜問題，享受學習的樂趣。
       </>
     ),
   },
   {
-    title: "Tech insights",
-    Svg: require("@site/static/img/undraw_docusaurus_tree.svg").default,
+    title: "隨時記錄，隨時學習",
+    Svg: require("@site/static/img/undraw_code_review_review.svg").default,
     description: (
       <>
-        <Link to="/projects">Docs</Link> is an one-stop-shop resource hub for
-        tech knowledge, offering a deep dive into some interesting topics such
-        as AI and web development.
+        <Link to="/projects">Docs</Link>{" "}
+        為一個一站式的技術筆記資源中心，裡面收錄了我在工作與學習時所記錄下的筆記。
       </>
     ),
   },
   {
-    title: "Projects",
-    Svg: require("@site/static/img/undraw_docusaurus_react.svg").default,
+    title: "近期專案",
+    Svg: require("@site/static/img/undraw_programming.svg").default,
     description: (
       <>
-        <Link to="/projects">Projects</Link> is where I showcase my recent
-        works. As a software engineer, my projects are born from my desire to
-        turn ideas into reality..
+        <Link to="/projects">Projects</Link> 收錄集結了我最近在 Github
+        上的專案，我的專案主要涉及 Web 開發和深度學習等相關領域。
       </>
     ),
   },

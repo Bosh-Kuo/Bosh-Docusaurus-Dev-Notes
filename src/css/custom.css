@@ -28,3 +28,9 @@
   --ifm-color-primary-lightest: #4fddbf;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
+
+div[class^="announcementBar_"] {
+  font-size: 1.2em;
+  font-weight: bold;
+  background: rgb(225, 225, 225);
+}

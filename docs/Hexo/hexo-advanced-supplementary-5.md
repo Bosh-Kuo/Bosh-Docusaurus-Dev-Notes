@@ -1,6 +1,6 @@
 ---
 title: "SEO： Google Search Console  設定"
-sidebar_label: "[Hexo 進階補充系列(4)] - SEO： Google Search Console  設定"
+sidebar_label: "[Hexo 進階補充系列(5)] - SEO： Google Search Console  設定"
 sidebar_position: 16
 description: 本文紀錄如何在 Google Search Console 中設定自己的 Hexo Blog 資訊，將部落格文章納入 Google 的搜尋索引。
 last_update:

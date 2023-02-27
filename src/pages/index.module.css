@@ -21,3 +21,17 @@
   align-items: center;
   justify-content: center;
 }
+
+.bkg {
+  width: auto;
+  height: 400px;
+  background: url('@site/static/img/background_light.svg') center left/100% 400px no-repeat;
+}
+
+html[data-theme='dark'] .bkg {
+  background-image: url('@site/static/img/background_dark.svg');
+}
+
+.right {
+  padding: 5rem 2.5rem;
+}

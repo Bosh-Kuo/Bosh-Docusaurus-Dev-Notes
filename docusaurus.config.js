@@ -45,17 +45,11 @@ const config = {
           showLastUpdateTime: true,
           remarkPlugins: [math],
           rehypePlugins: [katex],
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          // editUrl:
-          // "https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/",
         },
         blog: false,
-
         theme: {
           customCss: require.resolve("./src/css/custom.css"),
         },
-
         // Google Analytics
         gtag: {
           trackingID: "G-HF9KVZT5MF",
@@ -158,6 +152,25 @@ const config = {
               },
             ],
           },
+          {
+            title: "Acknowledgement",
+            items: [
+              {
+                html: `
+                <p>
+                illustrations by <a href="https://storyset.com/web">Storyset</a>                  
+                </p>
+                `,
+              },
+              {
+                html: `
+                <a href="https://vercel.com/?utm_source=vignette&utm_campaign=oss" target="_blank" rel="noreferrer noopener" aria-label="Powered by Vercel">
+                  <img src="https://images.ctfassets.net/e5382hct74si/78Olo8EZRdUlcDUFQvnzG7/fa4cdb6dc04c40fceac194134788a0e2/1618983297-powered-by-vercel.svg" alt="Powered by Vercel" />
+                </a>
+              `,
+              },
+            ],
+          },
         ],
         copyright: `Copyright © ${new Date().getFullYear()} Bosh Kuo. Built with Docusaurus.`,
       },
@@ -166,6 +179,13 @@ const config = {
           hideable: true,
           autoCollapseCategories: false,
         },
+      },
+      announcementBar: {
+        id: "announcement",
+        content:
+          '如果我的筆記對你有幫助，歡迎到我的 <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bosh-Kuo/docusaurus-dev-notes">Github</a> 給我一顆星星 ⭐️',
+        textColor: "#091E42",
+        isCloseable: true,
       },
       prism: {
         theme: lightCodeTheme,
