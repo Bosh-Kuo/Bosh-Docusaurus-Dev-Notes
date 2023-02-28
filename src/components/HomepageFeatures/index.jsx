@@ -18,7 +18,7 @@ const FeatureList = [
     Svg: require("@site/static/img/undraw_code_review_review.svg").default,
     description: (
       <>
-        <Link to="/projects">Docs</Link>{" "}
+        <Link to="/docs">Docs</Link>{" "}
         為一個一站式的技術筆記資源中心，裡面收錄了我在工作與學習時所記錄下的筆記。
       </>
     ),
@@ -29,7 +29,7 @@ const FeatureList = [
     description: (
       <>
         <Link to="/projects">Projects</Link> 收錄集結了我最近在 Github
-        上的專案，我的專案主要涉及 Web 開發和深度學習等相關領域。
+        上更新的專案，我的專案目前主要與 Web 開發和深度學習等相關領域有關。
       </>
     ),
   },
