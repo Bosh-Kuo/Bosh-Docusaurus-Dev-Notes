@@ -1,7 +1,7 @@
 ---
 title: Docusaurus 學習過程中的額外知識收集
 sidebar_label: 補充知識
-sidebar_position: 7
+sidebar_position: 8
 description: Docusaurus 專案 - 補充知識
 last_update:
   date: 2023-02-20
