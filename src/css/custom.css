@@ -34,3 +34,7 @@ div[class^="announcementBar_"] {
   font-weight: bold;
   background: rgb(225, 225, 225);
 }
+
+code {
+  color: #e63946;
+}
