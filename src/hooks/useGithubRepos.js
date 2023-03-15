@@ -14,7 +14,7 @@ const useGithubRepos = (user) => {
       const results = await octokit.request("GET /users/{username}/repos", {
         username: user,
         sort: "updated",
-        per_page: 12,
+        per_page: 15,
       });
 
       const ReposInfo = results.data.map((repo) => ({
