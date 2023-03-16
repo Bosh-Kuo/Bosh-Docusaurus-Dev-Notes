@@ -3,7 +3,7 @@ title: useEffect 常見的誤用
 sidebar_label: "[Hooks] useEffect 常見的誤用"
 description: 本篇文章記錄 useEffect 常見的誤用
 last_update:
-  date: 2023-03-12
+  date: 2023-03-16
 keywords:
   - React
   - Hooks
@@ -34,9 +34,9 @@ function CountInputChanges() {
 ```
 
 :::danger 無窮迴圈的原因
-當 Effect 進入無窮迴圈，必定源自於兩件事：
-1. 該 Effect 更新了某 state
-2. 該 state 導致 Effect 的依賴項發生變化從而引起 re-render
+當 Effect 進入無窮迴圈，必定源自於兩件事：  
+**1. 該 Effect 更新了某 state**  
+**2. 該 state 導致 Effect 的依賴項發生變化從而引起 re-render**
 :::
 
 
@@ -45,7 +45,7 @@ function CountInputChanges() {
 :::
 
 :::tip 2. 通過 dependencies 來解決
-- state: 新增其他 dependencies，只有 value 改變時才會觸發 setValue
+- state: 使用**其他 dependencies**來控制 Effect，只有 **value** 改變時才會觸發 setValue
 ```jsx
 import { useEffect, useState } from 'react';
 
@@ -68,7 +68,7 @@ function CountInputChanges() {
 :::
 
 :::tip 3. 使用 Ref
-可以使用 [useRef](https://beta.reactjs.org/reference/react/useRef) 建立 Ref，更新 Ref 不會觸發元件的重新渲染。
+可以使用 [useRef](https://beta.reactjs.org/reference/react/useRef) 建立 Ref，**更新 Ref 不會觸發元件的重新渲染**。
 ```jsx
 import { useEffect, useState, useRef } from "react";
 
@@ -249,7 +249,7 @@ function Form() {
 ```
 
 ### **Caching 高成本的計算結果**
-同前一個例子，如果只是要用從 props 取得的 `todos`, `filter` 來計算 `visibleTodos`，不需要另 `visibleTodos` 作為 state，直接做為普通變數及可。
+同前一個例子，如果只是要用從 props 取得的 **todos**, **filter** 來計算 **visibleTodos**，不需要另 **visibleTodos** 作為 state，直接做為普通變數及可。
 
 ```jsx
 function TodoList({ todos, filter }) {
@@ -278,7 +278,7 @@ function TodoList({ todos, filter }) {
 }
 ```
 
-但如果 `todos` 很大造成 `getFilteredTodos()` 的計算成本很高時，我們可以將 `visibleTodos` 包裝在 [useMemo](https://beta.reactjs.org/reference/react/useMemo) 中來緩存（或`記憶`）它。[useMemo](https://beta.reactjs.org/reference/react/useMemo)告訴 React ，除非 `todos` 或 `filter` 發生變化，否則不要重複執行 `getFilteredTodos()`。 React 將在初始渲染期間記住 `getFilteredTodos()` 的返回值。在下一次渲染期間，[useMemo](https://beta.reactjs.org/reference/react/useMemo) 將檢查 `todos` 與 `filter`  若沒有發生變化則返回它存儲的最後一個結果。
+但如果 **todos** 很大造成 **getFilteredTodos()** 的計算成本很高時，我們可以將 **visibleTodos** 包裝在 [useMemo](https://beta.reactjs.org/reference/react/useMemo) 中來**緩存**（或**記憶**）它。[useMemo](https://beta.reactjs.org/reference/react/useMemo)告訴 React ，除非 **todos** 或 **filter** 發生變化，否則不要重複執行 **getFilteredTodos()**。 React 將在初始渲染期間記住 **getFilteredTodos()** 的返回值。在下一次渲染期間，[useMemo](https://beta.reactjs.org/reference/react/useMemo) 將檢查 **todos** 與 **filter**  若沒有發生變化則返回它存儲的最後一個結果。
 
 ```jsx
 import { useMemo, useState } from 'react';
@@ -295,7 +295,7 @@ function TodoList({ todos, filter }) {
 
 
 ### **當 props 改變時重置所有 state**
-通常，當同一個 component 在同一個位置渲染時，React 會保留 state，若使用 `useEffect` 來重置 `comment` 狀態的話，當 component `重新渲染時，comment` 狀態會在第一次渲染時仍然是舊的值，然後又因為 `useEffect` 的執行而重新渲染一次，這樣會造成渲染的浪費和顯示的錯誤。同時，如果 comment UI 是被嵌套在子元件中的話，就需要在每個子元件中重置 comment 的狀態，這樣會增加代碼的複雜度和維護成本。
+通常，當同一個 component 在同一個位置渲染時，React 會保留 state，若使用 `useEffect` 來重置 **comment** 狀態的話，當 component **重新渲染時，comment** 狀態會在第一次渲染時仍然是舊的值，然後又因為 `useEffect` 的執行而重新渲染一次，這樣會造成渲染的浪費和顯示的錯誤。同時，如果 comment UI 是被嵌套在子元件中的話，就需要在每個子元件中重置 comment 的狀態，這樣會增加程式碼的複雜度和維護成本。
 
 ```jsx
 export default function ProfilePage({ userId }) {
@@ -311,7 +311,7 @@ export default function ProfilePage({ userId }) {
 }
 ```
 
-過將 `userId` 作為 `key` 傳遞給 `Profile` 組件，要求 React 將具有不同 userId 的兩個 `Profile` component 視為不應共享任何狀態的兩個不同組件。每當 `key`（已設置為 userId）更改時，React 將重新創建 DOM 並重置 `Profile` 組件及其所有子組件的狀態。因此，在配置文件之間導航時，評論字段將自動清除。
+我們可以通將將 **userId** 作為 `key` 傳遞給 `Profile` component，要求 React 將具有不同 userId 的兩個 `Profile` component 視為不應共享任何狀態的兩個不同組件。每當 `key`（已設置為 userId）更改時，React 將重新創建 DOM 並重置 `Profile` 組件及其所有子組件的狀態。因此，在配置文件之間導航時，評論字段將自動清除。
 ```jsx
 export default function ProfilePage({ userId }) {
   return (
@@ -384,7 +384,7 @@ function List({ items }) {
 
 
 ### **在 event handlers 間共享邏輯**
-應該要避將與特定事件相關的邏輯寫進 Effect。如下面這個例子，本來我們只希望按下 `Buy` or `Checkout` 按鈕才觸發 `showNotification()`，但假如我們將一個 `product` 加入購物車後再次 reload ，又會再呼叫一次 `showNotification()`，因為前面加入購物車的動作已經使 `product.isInCart` 為 true，每次 reload 都會重新執行 useEffect，而觸發 `showNotification()`。
+應該要避將與特定事件相關的邏輯寫進 Effect。如下面這個例子，本來我們只希望按下 **Buy** or **Checkout** 按鈕才觸發 `showNotification()`，但假如我們將一個 **product** 加入購物車後再次 reload ，又會再呼叫一次 `showNotification()`，因為前面加入購物車的動作已經使 **product.isInCart** 為 **true**，每次 reload 都會重新執行 useEffect，而觸發 `showNotification()`。
 ```jsx
 function ProductPage({ product, addToCart }) {
   // highlight-start
@@ -407,7 +407,7 @@ function ProductPage({ product, addToCart }) {
 }
 ```
 
-當用戶點擊一個按鈕時，通知應該顯示出來，但是這個操作不需要在每次組件渲染時都執行，因為用戶並不一定會點擊這個按鈕。如果將這個操作放在Effect中，那麼每次組件渲染時都會執行這個操作，這是不必要的開銷。相反，我們可以將這個操作放在事件處理函數中，在用戶點擊按鈕時執行。這樣就可以節省不必要的代碼運行。
+當用戶點擊一個按鈕時，通知應該顯示出來，但是這個操作不需要在每次組件渲染時都執行，因為用戶並不一定會點擊這個按鈕。如果將這個操作放在Effect中，那麼每次組件渲染時都會執行這個操作，這是不必要的開銷。相反，我們可以將這個操作放在事件處理函數中，在用戶點擊按鈕時執行。這樣就可以節省不必要的程式碼運行。
 ```jsx
 function ProductPage({ product, addToCart }) {
   // highlight-start
@@ -432,7 +432,7 @@ function ProductPage({ product, addToCart }) {
 
 
 ### **發送 Post request**
-同前例，應該要避將與特定事件相關的邏輯寫進 Effect。
+同前例，應該要避將與**特定事件**相關的邏輯寫進 Effect。
 ```jsx
 function Form() {
   const [firstName, setFirstName] = useState('');

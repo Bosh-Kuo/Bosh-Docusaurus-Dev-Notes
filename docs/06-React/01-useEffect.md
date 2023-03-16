@@ -3,7 +3,7 @@ title: 初探 useEffect
 sidebar_label: "[Hooks] 初探 useEffect"
 description: 本篇為閱讀 @React Docs Beta 文檔的 useEffect 學習筆記
 last_update:
-  date: 2023-03-12
+  date: 2023-03-16
 keywords:
   - React
   - Hooks
@@ -50,8 +50,8 @@ useEffect 接收一個函數和一個依賴陣列作為參數：
 - `dependencies`:它決定了 `useEffect` 要以 [Object.is](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is) 監聽哪些變數的變化以及何時重新執行，監聽的變數包括 props、state 以及直接在 component body 內宣告的所有變數和函數。
 
   - **`不傳入 dependencies`**：表示 `useEffect` 需要監聽所有變數的變化，**每次渲染後都會重新執行**。
-  - **`傳入 dependencies`**：表示 `useEffect` 不需要監聽任何變數，**只會在第一次渲染後執行一次，以及在和 unmount 時執行清理函數（如果有提供的話）**。
-  - **`傳入 dependencies`**：**只有在初始渲染或監聽變數發生改變時才會重新執行**。
+  - **`傳入空 dependencies: []`**：表示 `useEffect` 不需要監聽任何變數，**只會在第一次渲染後執行一次，以及在和 unmount 時執行清理函數（如果有提供的話）**。
+  - **`傳入 dependencies: [a, b, ...]`**：**只有在初始渲染或監聽變數發生改變時才會重新執行**。
   
   <br/>
 
@@ -105,10 +105,10 @@ useEffect 接收一個函數和一個依賴陣列作為參數：
 ### **透過 Effect 獲取資料**
 在 Effects 中寫 fetch call 是一種流行的獲取資料方式，尤其是在完全客戶端應用(client-side apps)。然而，這是一種非常手動的方法，這使得它有一些缺點：
 
-- `Effects 無法在伺服器上運行`：初始的伺服器端 HTML 只包含沒有資料的載入狀態。客戶端必須下載所有 JavaScript 並渲染應用程式，才能看到現在需要加載資料，這樣效率不高。
-- `直接在 Effects 中提取資料容易創建“network waterfalls”`：先渲染父組件，它提取一些資料，然後渲染子組件，然後子組件開始提取它們的資料。如果網路不是很快，這比並行提取所有資料慢得多。
-- `直接在 Effects 中提取資料通常意味著無法預加載或快取資料`：組件卸載然後再次掛載，它就需要再次 fetch。
-- `race conditions`: 當多個操作（例如程式碼執行緒或進程）同時操作共享資源時，由於彼此之間的順序未被正確管理或同步，導致最終結果依賴於操作的執行順序，而不是程式邏輯本身所產生的一種錯誤情況。在 React 中，當多個 Effect 同時更新同一個狀態時，就可能會發生`race conditions`。參考 [Fixing Race Conditions in React with useEffect](https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect)
+- **Effects 無法在伺服器上運行**：初始的伺服器端 HTML 只包含沒有資料的載入狀態。客戶端必須下載所有 JavaScript 並渲染應用程式，才能看到現在需要加載資料，這樣效率不高。
+- **直接在 Effects 中提取資料容易創建“network waterfalls”**：先渲染父組件，它提取一些資料，然後渲染子組件，然後子組件開始提取它們的資料。如果網路不是很快，這比並行提取所有資料慢得多。
+- **直接在 Effects 中提取資料通常意味著無法預加載或快取資料**：組件卸載然後再次掛載，它就需要再次 fetch。
+- **race conditions**: 當多個操作（例如程式碼執行緒或進程）同時操作共享資源時，由於彼此之間的順序未被正確管理或同步，導致最終結果依賴於操作的執行順序，而不是程式邏輯本身所產生的一種錯誤情況。在 React 中，當多個 Effect 同時更新同一個狀態時，就可能會發生 **race conditions**。參考 [Fixing Race Conditions in React with useEffect](https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect)
 
 上述缺點並不是 React 特有的。React 官方推薦可以用以下方法來避免上述缺點：
 - 如果使用框架，請使用其內建的數據獲取機制。現代 React 框架集成了高效的數據獲取機制，不會出現上述問題。
@@ -127,7 +127,7 @@ useEffect 接收一個函數和一個依賴陣列作為參數：
 - 如果的某些依賴項是在 component 內部定義的物件或函數，它們可能會導致 Effect 頻繁地進行非必要的重新運行。要解決此問題，可以刪除不必要的物件和函數依賴項。
 - 如果 Effect 不是由交互引起的（比如點擊），React 會讓瀏覽器在運行 Effect 之前先繪製更新後的屏幕。如果Effect 正在做一些可視化的事情（例如，定位工具提示），並且延遲很明顯（例如，閃爍），需要將 `useEffect` 替換為 `useLayoutEffect`。
 - 即使 Effect 是由交互（如點擊）引起的，瀏覽器也可能會在處理 Effect 內的狀態更新之前重新繪製屏幕。如果這會影響使用，必須阻止瀏覽器重新繪製屏幕，則需要將 `useEffect` 替換為 `useLayoutEffect`。
-- 我們無法`選擇` Effect 的依賴項。Effect 中使用的每個 `reactive value`(props 與直接在 component 內部宣告的所有變量和函數) 都必須宣告為依賴項。 
+- 我們無法**選擇** Effect 的依賴項。Effect 中使用的每個 **reactive value** (**props** 與直接在 **component 內部宣告的所有變量和函數**) 都必須宣告為依賴項。 
 :::
 
 <br/>
