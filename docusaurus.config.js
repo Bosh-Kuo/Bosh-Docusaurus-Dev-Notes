@@ -95,6 +95,11 @@ const config = {
             position: "left",
           },
           {
+            href: "https://boshkuo.com",
+            label: "Portfolio",
+            position: "right",
+          },
+          {
             href: "https://blog.boshkuo.com/",
             label: "Blog",
             position: "right",

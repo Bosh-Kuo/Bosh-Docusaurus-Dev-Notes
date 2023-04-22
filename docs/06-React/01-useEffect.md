@@ -1,7 +1,7 @@
 ---
 title: 初探 useEffect
 sidebar_label: "[Hooks] 初探 useEffect"
-description: 本篇為閱讀 @React Docs Beta 文檔的 useEffect 學習筆記
+description: 本篇為閱讀 React Docs Beta 官方文件中 useEffect 部分的學習筆記
 last_update:
   date: 2023-03-16
 keywords:
