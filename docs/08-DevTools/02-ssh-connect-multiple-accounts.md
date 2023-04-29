@@ -1,7 +1,7 @@
 ---
 title: 同一台電腦設定不同 SSH keys 連線多個 Github/GitLab 帳號
 sidebar_label: "[SSH] 以不同 SSH keys 連線多個 Github/GitLab 帳號"
-description: 本片文如何設置 SSH Key 已在同一台連線多個Github/GitLab 帳號
+description: 本篇文章紀錄在同一台電腦上如何設置 SSH Key 連線多個Github/GitLab 帳號
 last_update:
   date: 2023-04-23
 keywords:
@@ -149,7 +149,7 @@ ssh -T git@github.personal
 
 ```
 
-如果是第一次輸入得話可能會出現下列訊息，填寫 yes 就可以了
+如果是第一次輸入的話可能會出現下列訊息，填寫 yes 就可以了
 
 ```bash
 The authenticity of host 'github.com (IP ADDRESS)' can't be established.

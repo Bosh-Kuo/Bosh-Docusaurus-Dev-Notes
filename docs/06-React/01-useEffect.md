@@ -134,5 +134,6 @@ useEffect 接收一個函數和一個依賴陣列作為參數：
 
 
 ## **Reference**
-- [useEffect](https://beta.reactjs.org/reference/react/useEffect)  (@React Docs Beta)
-- [Fixing Race Conditions in React with useEffect](https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect)
+- **[@React Docs Beta](https://react.dev/)**
+  - **[useEffect](https://beta.reactjs.org/reference/react/useEffect)**
+- **[Fixing Race Conditions in React with useEffect](https://maxrozen.com/race-conditions-fetching-data-react-with-useeffect)**

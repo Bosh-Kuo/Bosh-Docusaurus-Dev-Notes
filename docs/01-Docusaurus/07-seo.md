@@ -47,8 +47,9 @@ Docusaurus 的 `@docusaurus/plugin-sitemap` 插件，它默認被包含在 `pres
 
 ## **Reference**
 
-- [Google Analytics](https://analytics.google.com/analytics/web/provision/#/provision)
-- [Google Search Console](https://search.google.com/search-console/about)
-- [📦 plugin-google-gtag](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-google-gtag)
-- [從零開始使用Hexo + Github Page搭建個人技術筆記網站(7) - 客製化 NexT 主題：Google Analytics 分析部落格文章流量](https://blog.boshkuo.com/hexo-from-scratch-7/)
-- [Hexo 進階補充系列(5) - SEO： Google Search Console 設定](https://blog.boshkuo.com/hexo-advanced-supplementary-5/)
+- **[@Google Analytics](https://analytics.google.com/analytics/web/provision/#/provision)**
+- **[@Google Search Console](https://search.google.com/search-console/about)**
+- **[@Docusaurus](https://docusaurus.io/)**
+  - **[📦 plugin-google-gtag](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-google-gtag)**
+- **[從零開始使用Hexo + Github Page搭建個人技術筆記網站(7) - 客製化 NexT 主題：Google Analytics 分析部落格文章流量](https://blog.boshkuo.com/hexo-from-scratch-7/)**
+- **[Hexo 進階補充系列(5) - SEO： Google Search Console 設定](https://blog.boshkuo.com/hexo-advanced-supplementary-5/)**

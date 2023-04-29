@@ -633,10 +633,11 @@ function Child({ data }) {
 
 
 ## **Reference**
-- [useEffect](https://beta.reactjs.org/reference/react/useEffect)  (@React Docs Beta)
-- [useMemo](https://beta.reactjs.org/reference/react/useMemo)  (@React Docs Beta)
-- [useRef](https://beta.reactjs.org/reference/react/useRef)  (@React Docs Beta)
-- [useCallback](https://beta.reactjs.org/reference/react/useCallback)  (@React Docs Beta)
-- [You Might Not Need an Effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)  (@React Docs Beta)
-- [如何解決 React.useEffect() 的無限迴圈](https://www.gushiciku.cn/dl/1px4o/zh-tw)
-- [How to use async functions in useEffect (with examples)](https://devtrium.com/posts/async-functions-useeffect#write-the-asynchronous-function-inside-the-useeffect)
+- **[@React Docs Beta](https://react.dev/)**
+  - **[useEffect](https://beta.reactjs.org/reference/react/useEffect)**
+  - **[useMemo](https://beta.reactjs.org/reference/react/useMemo)**
+  - **[useRef](https://beta.reactjs.org/reference/react/useRef)**
+  - **[useCallback](https://beta.reactjs.org/reference/react/useCallback)**
+  - **[You Might Not Need an Effect](https://beta.reactjs.org/learn/you-might-not-need-an-effect)**
+- **[如何解決 React.useEffect() 的無限迴圈](https://www.gushiciku.cn/dl/1px4o/zh-tw)**
+- **[How to use async functions in useEffect (with examples)](https://devtrium.com/posts/async-functions-useeffect#write-the-asynchronous-function-inside-the-useeffect)**

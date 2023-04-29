@@ -1,7 +1,7 @@
 ---
 title: iTerm2 技巧大公開：提高效率的快捷鍵
 sidebar_label: "[Terminal] iTerm2 常用快捷鍵大全"
-description: 本片文章介紹 iTerm2 中常用的快捷鍵，以及許多好用但一般人很少用的快捷鍵
+description: 本篇文章介紹 iTerm2 中常用的快捷鍵，以及許多好用但一般人很少用的快捷鍵
 last_update:
   date: 2023-04-22
 keywords:

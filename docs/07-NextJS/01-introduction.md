@@ -121,7 +121,7 @@ Pre-Rendering 可以提高頁面的載入速度和 SEO，因為網頁的內容�
 
 
 ## **Reference**
-- [@NEXT.js](https://nextjs.org/)
-  - [What is Next.js?](https://nextjs.org/learn/foundations/about-nextjs/what-is-nextjs) 
-  - [How Next.js Works](https://nextjs.org/learn/foundations/how-nextjs-works) 
+- **[@NEXT.js](https://nextjs.org/)**
+  - **[What is Next.js?](https://nextjs.org/learn/foundations/about-nextjs/what-is-nextjs) **
+  - **[How Next.js Works](https://nextjs.org/learn/foundations/how-nextjs-works) **
   

@@ -48,6 +48,6 @@ npx create-docusaurus@latest my-website classic
 
 
 ## **Reference**
-- [Docusaurus](https://docusaurus.io/)  (官方文件)
-- [Tutorial Intro](https://tutorial.docusaurus.io/docs/intro)  (官方教學)
-- [nvm](https://github.com/nvm-sh/nvm)
+- **[@Docusaurus](https://docusaurus.io/)**
+  - **[Tutorial Intro](https://tutorial.docusaurus.io/docs/intro)**
+- **[nvm](https://github.com/nvm-sh/nvm)**

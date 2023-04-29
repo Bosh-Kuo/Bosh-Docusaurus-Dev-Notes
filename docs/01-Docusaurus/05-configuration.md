@@ -62,4 +62,5 @@ const Hello = () => {
 ```
 
 ## **Reference**
-- [Configuration](https://docusaurus.io/docs/configuration#theme-plugin-and-preset-configurations)
+- **[@Docusaurus](https://docusaurus.io/)**
+  - **[Configuration](https://docusaurus.io/docs/configuration#theme-plugin-and-preset-configurations)**

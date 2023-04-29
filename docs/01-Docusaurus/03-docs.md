@@ -205,8 +205,9 @@ docs
 
 
 ## **Reference**
-- [Docs Introduction](https://docusaurus.io/docs/docs-introduction)
-- [📦 plugin-content-docs](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs)
-- [Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter)
+- **[@Docusaurus](https://docusaurus.io/)**
+   - **[Docs Introduction](https://docusaurus.io/docs/docs-introduction)**
+   - **[📦 plugin-content-docs](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs)**
+   - **[Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter)**
 
 

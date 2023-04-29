@@ -81,7 +81,7 @@ module.exports = {
 
 
 ## **Reference**
-
-- [Search](https://docusaurus.io/docs/search#using-algolia-docsearch)  (@Docusaurus)
-- [Who can apply?](https://docsearch.algolia.com/docs/who-can-apply/)  (@DocSearch)
-- [apply to the DocSearch program](https://docsearch.algolia.com/apply)  (@DocSearch)
+- **[@Docusaurus](https://docusaurus.io/)**
+  - **[Search](https://docusaurus.io/docs/search#using-algolia-docsearch)**
+  - **[Who can apply?](https://docsearch.algolia.com/docs/who-can-apply/)**
+  - **[apply to the DocSearch program](https://docsearch.algolia.com/apply)**

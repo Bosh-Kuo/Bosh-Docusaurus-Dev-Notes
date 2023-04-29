@@ -115,5 +115,6 @@ src/pages/ 目錄中的所有 JavaScript/TypeScript 文件都會生成相應的�
 :::
 
 ## **Reference**
-- [Creating Pages](https://docusaurus.io/docs/creating-pages)
-- [📦 plugin-content-pages](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages)
+- **[@Docusaurus](https://docusaurus.io/)**
+  - **[Creating Pages](https://docusaurus.io/docs/creating-pages)**
+  - **[📦 plugin-content-pages](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-pages)**
