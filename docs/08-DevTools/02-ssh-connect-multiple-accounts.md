@@ -187,7 +187,7 @@ git clone github.personal:<Github User name>/private-repo.git
 
 ### **修改已經 Clone 下來的 repo**
 
-如果再做以上設定前 repo 早已經 clone 下來的話，那麼我們需要修改這個 repo 的 `remote "origin”`，這邊提供兩種方法：
+如果在做以上設定前 repo 早已經 clone 下來的話，那麼我們需要修改這個 repo 的 `remote "origin”`，這邊提供兩種方法：
 
 - 打開專案資料夾內  `/.git/config`然後修改  `[remote "origin"]`  下方的 url 中 **git@** 的 **Host：**
 
