@@ -498,11 +498,11 @@ run().catch(error => console.error(error));
 
 ## **Reference**
 
-- [JavaScript Promise 全介紹](https://www.casper.tw/development/2020/02/16/all-new-promise/) (@卡斯伯的 Blog)
-- [JavaScript 中的 Promise 是什麼？以及為什麼你要懂 Promise](https://israynotarray.com/javascript/20211128/2950137358/#ES7-Async-x2F-Await) (@是 Ray 不是 Array)
-- [用淺顯方式說明 Javascript 的 Promise](https://ithelp.ithome.com.tw/articles/10230214)
-- [Promise 对象](https://es6.ruanyifeng.com/#docs/promise) (@ECMAScript 6 入门)
-- [The Async Await Episode I Promised](https://www.youtube.com/watch?v=vn3tm0quoqE&ab_channel=Fireship)
+- **[JavaScript Promise 全介紹](https://www.casper.tw/development/2020/02/16/all-new-promise/) (@卡斯伯的 Blog)**
+- **[JavaScript 中的 Promise 是什麼？以及為什麼你要懂 Promise](https://israynotarray.com/javascript/20211128/2950137358/#ES7-Async-x2F-Await) (@是 Ray 不是 Array)**
+- **[用淺顯方式說明 Javascript 的 Promise](https://ithelp.ithome.com.tw/articles/10230214)**
+- **[Promise 对象](https://es6.ruanyifeng.com/#docs/promise) (@ECMAScript 6 入门)**
+- **[The Async Await Episode I Promised](https://www.youtube.com/watch?v=vn3tm0quoqE&ab_channel=Fireship)**
 
 
 

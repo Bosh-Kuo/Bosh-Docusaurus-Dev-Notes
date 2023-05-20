@@ -42,6 +42,6 @@ tags:
 :::
 
 ## **Reference**
-- [ES6 入门教程](https://es6.ruanyifeng.com/)
-- [JavaScript ES6-重點紀錄 系列總集](https://ithelp.ithome.com.tw/articles/10197716)
+- **[ES6 入门教程](https://es6.ruanyifeng.com/)**
+- **[JavaScript ES6-重點紀錄 系列總集](https://ithelp.ithome.com.tw/articles/10197716)**
 

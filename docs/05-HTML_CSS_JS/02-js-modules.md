@@ -305,8 +305,8 @@ testFunction()
 
 ## **Reference**
 
-- [JavaScript Roadmap](https://roadmap.sh/javascript)  (@roadmap.sh)
-- [Modules in JavaScript – CommonJS and ESmodules Explained](https://www.freecodecamp.org/news/modules-in-javascript/#usingmodules)  (@freeCodeCamp)
-- [Modules, introduction](https://javascript.info/modules-intro)  (@JAVASCRIPT.INFO)
-- [Export and Import](https://javascript.info/import-export)  (@JAVASCRIPT.INFO)
+- **[JavaScript Roadmap](https://roadmap.sh/javascript)  (@roadmap.sh)**
+- **[Modules in JavaScript – CommonJS and ESmodules Explained](https://www.freecodecamp.org/news/modules-in-javascript/#usingmodules)  (@freeCodeCamp)**
+- **[Modules, introduction](https://javascript.info/modules-intro)  (@JAVASCRIPT.INFO)**
+- **[Export and Import](https://javascript.info/import-export)  (@JAVASCRIPT.INFO)**
 

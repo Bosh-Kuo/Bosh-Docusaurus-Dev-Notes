@@ -245,7 +245,7 @@ counter.reset(); // 0
 
 ## **Reference**
 
-- [閉包](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Closures) (@MDN)
-- [[JS] 深入淺出 JavaScript 閉包（closure）](https://pjchender.dev/javascript/js-closure/) (@PJCHENder)
-- [閉包，原來這就是閉包啊！](https://www.casper.tw/development/2020/09/26/js-closure/) (@卡斯伯的 Blog)
-- [Day 19 [其他03] 柯里化與反柯里化](https://ithelp.ithome.com.tw/articles/10248416)
+- **[閉包](https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Closures) (@MDN)**
+- **[[JS] 深入淺出 JavaScript 閉包（closure）](https://pjchender.dev/javascript/js-closure/) (@PJCHENder)**
+- **[閉包，原來這就是閉包啊！](https://www.casper.tw/development/2020/09/26/js-closure/) (@卡斯伯的 Blog)**
+- **[Day 19 [其他03] 柯里化與反柯里化](https://ithelp.ithome.com.tw/articles/10248416)**

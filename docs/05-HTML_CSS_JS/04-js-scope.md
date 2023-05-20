@@ -116,8 +116,8 @@ var a = 1;
 <br/>
 
 ## **Reference**
-- [JavaScript 進階 - 什麼是閉包？探討 Closure & Scope Chain](https://hackmd.io/@Heidi-Liu/note-js201-closure)
-- [你懂 JavaScript 嗎？#12 函式範疇與區塊範疇（Function vs Block Scope）](https://www.cythilya.tw/2018/10/19/function-vs-block-scope/)
+- **[JavaScript 進階 - 什麼是閉包？探討 Closure & Scope Chain](https://hackmd.io/@Heidi-Liu/note-js201-closure)**
+- **[你懂 JavaScript 嗎？#12 函式範疇與區塊範疇（Function vs Block Scope）](https://www.cythilya.tw/2018/10/19/function-vs-block-scope/)**
 
 
 

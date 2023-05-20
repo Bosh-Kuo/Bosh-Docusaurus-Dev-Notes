@@ -214,5 +214,5 @@ obj.m() // 21
 
 ## **Reference**
 
-- [箭头函数](https://es6.ruanyifeng.com/#docs/function#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0) (@[ECMAScript 6 入门](https://es6.ruanyifeng.com/))
-- [[JS] 箭頭函式（arrow function）和它對 this 的影響](https://pjchender.dev/javascript/js-arrow-function/) (@PJCHENder)
+- **[箭头函数](https://es6.ruanyifeng.com/#docs/function#%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0) (@[ECMAScript 6 入门](https://es6.ruanyifeng.com/))**
+- **[[JS] 箭頭函式（arrow function）和它對 this 的影響](https://pjchender.dev/javascript/js-arrow-function/) (@PJCHENder)**
