@@ -148,7 +148,15 @@ yarn add -dev eslint-config-prettier
 ### **Install**
 
 ```bash
-yarn add -dev prettier @trivago/prettier-plugin-sort-imports
+yarn add -D prettier @trivago/prettier-plugin-sort-imports
+```
+
+- 添加 .prettierignore
+- 於 package.json 的 scripts 中加入 format 指令:
+
+```jsx
+"format": "prettier --check \"./src/**/*.js\"",
+"format-write": "prettier --write --ignore-unknown \"./src/**/*.js\"",
 ```
 
 ### **.prettierrc 常用配置解釋**
@@ -174,13 +182,21 @@ yarn add -dev prettier @trivago/prettier-plugin-sort-imports
 
 ### **[prettier-plugin-sort-imports](https://github.com/trivago/prettier-plugin-sort-imports)**
 
-**`prettier-plugin-sort-imports`** 是一個 `Prettier` 插件，用於自動排序 import 語句。它可以根據特定的規則，例如按字母順序或按照 import 的類型進行排序，以使程式碼更易於閱讀和維護。
+**`prettier-plugin-sort-imports`** 是一個 `Prettier` 插件，用於指定 import 語句的排序順序。排序順序以 Regular Expression 表示，匹配的模塊將按照指定的順序進行排序。此 plugin 預設自動將第三方套件排序至最上層，若要調整第三方套件的排序順位可以使用 `<THIRD_PARTY_MODULES>` 來安排第三方套件的排序順位。
 
 ```jsx
-// .prettierrc
+// .prettierrc.js
+// react 套件 >> 第三方套件 >> @core 開頭路徑 >> @server 開頭路徑 >> ~ 開頭路徑 >> .或/開頭路徑
 {  
-	...
-	"importOrder": ["^@core/(.*)$", "^@server/(.*)$", "^@ui/(.*)$", "^[./]"],
+	"importOrder": [
+    '^(^react$|@react|react)',
+    "<THIRD_PARTY_MODULES>",
+    '^@core/(.*)$',
+    '^@server/(.*)$',
+    '^@ui/(.*)$',
+    "^~/(.*)$",
+    '^[./]',
+  ],
   "importOrderSeparation": true,
   "importOrderSortSpecifiers": true
 }

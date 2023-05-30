@@ -58,7 +58,7 @@ tags:
 | --- | --- |
 | `git commit -m "<message>"` | 將暫存區中的所有修改過的檔案和新增的檔案提交到 Git 儲存庫中，並加上提交訊息。例如：git commit -m "新增首頁"。 |
 | `git commit -a -m "<message>"` | 將所有修改過的檔案、新增的檔案和已經被刪除的檔案提交到 Git 儲存庫中，並加上提交訊息。例如：git commit -a -m "更新 README.md"。 |
-| `git commit --amend` | 將上一個提交的訊息修改為新的提交訊息。這個指令只能修改最後一次提交的訊息，並且必須在提交後立刻執行。例如：git commit --amend -m "修改提交訊息"。 |
+| `git commit --amend` | 將最後一個提交的訊息修改為新的提交訊息，並且將當前的暫存併入最後一次的 Commit。例如：git commit --amend -m "修改提交訊息"。 |
 | `git commit --allow-empty -m "<message>"` | 建立一個空的提交訊息，這個指令可以用於建立沒有任何檔案修改的提交，例如：git commit --allow-empty -m "初始化專案"。 |
 </details>
 

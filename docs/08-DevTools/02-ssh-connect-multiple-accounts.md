@@ -185,6 +185,19 @@ git clone git@github.personal:<Github User name>/private-repo.git
 git clone github.personal:<Github User name>/private-repo.git
 ```
 
+### **Add remote repository**
+
+如果要把一個新的專案推到公司的 gitlab，需要先在 gitlab 上建立一個新的 repository，接著在本地 repository 設定遠端 repository。同理，我們在使用 `git remote add` 指令時也要把原本的 domain 換成 `gitlab.company`，如下所示:
+
+```bash
+# 原提示指令
+# git remote add origin ssh://git@<公司主機ip>:<port>/xxx/ooo.git
+
+# 正確指令
+git remote add origin ssh://git@ gitlab.company/xxx/ooo.git
+```
+
+
 ### **修改已經 Clone 下來的 repo**
 
 如果在做以上設定前 repo 早已經 clone 下來的話，那麼我們需要修改這個 repo 的 `remote "origin”`，這邊提供兩種方法：
@@ -193,13 +206,13 @@ git clone github.personal:<Github User name>/private-repo.git
 
 ```bash
 [remote "origin"]
-	url = git@github-personal:<Github User name>/private-repo.git
+	url = git@github.personal:<Github User name>/private-repo.git
 ```
 
 - 或是用指令來設定：
 
 ```bash
-git remote set-url origin git@github-personal:<Github User name>/private-repo.git
+git remote set-url origin git@github.personal:<Github User name>/private-repo.git
 ```
 
 ### **修改 Git config**
