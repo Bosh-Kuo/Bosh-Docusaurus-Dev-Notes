@@ -1,7 +1,7 @@
 ---
 title: 2023 菜鳥軟體工程師的 Mac 開發工具配置
 sidebar_label: "[Other] 2023 菜鳥軟體工程師的 Mac 開發工具配置"
-description: 本篇文章記錄 Web 軟體工程師的新 mac 配置
+description: 本篇文章記錄 Web 軟體工程師的新 Macbook 配置。本篇文章包含了日常使用的軟體和一系列開發工具的介紹。其中包括開發者工具、Homebrew 套件管理器、iTerm2 終端機模擬器、Oh My Zsh 和 Powerlevel10k等等。此外，還推薦了一些適合安裝的 Visual Studio Code 套件，以提升開發效率。
 last_update:
   date: 2023-05-07
 keywords:
