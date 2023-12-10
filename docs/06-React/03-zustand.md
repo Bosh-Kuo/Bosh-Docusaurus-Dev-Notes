@@ -16,12 +16,12 @@ tags:
 ---
 
 >  **前情提要:**  
-目前公司前端的 code base 是採用 React，並用 **`Redux`** 來管理應用程式層級的全局狀態，而各個頁面的 component 則單純使用 props 來傳遞資料。最近公司要改寫產品的其中一個頁面，並且提供新的功能。由於我們的前端 code base 一直以來都缺乏維護，裡頭藏著一些不易閱讀又無法移除的歷史共業，這次剛好有機會可以局部打掉重來重新整頓一番。  
-由於我們的 component 之間一直以來都是用 props 來傳遞資料，有一些功能比較複雜的頁面可能會有十幾的大 component，因此 **props drilling** 的問題非常嚴重，不僅非常難以追蹤程式碼，也有嚴重的 **re-render** 問題。因此接到這個任務後我研究了一下我們目前的需求，以及 React 生態中的狀態管理工具，最後我選擇用 **`Zustand`** 來管理這個頁面的局部狀態。
+目前公司前端的 code base 使用 React，並採用 **`Redux`** 來管理應用程式層級的全局狀態，而各個頁面的 component 則單純使用 props 來傳遞資料。最近公司要改寫產品的其中一個頁面，並且提供新的功能。由於我們的前端 code base 一直以來都缺乏維護，其中包含一些難以閱讀且難以刪除的 legacy code，這次我們正好有機會局部重寫並重新規劃前端的資料傳遞邏輯架構。  
+一直以來我們的 component 都是用 props 來傳遞資料，有一些功能比較複雜的頁面元件，component tree 的深度可能達到十幾層，這使得這類型的複雜元件的 **props drilling** 問題非常嚴重，不僅非常難以追蹤程式碼，也有嚴重的 **re-render** 問題。因此，當我接到這個任務時，我研究了一下我們目前的需求以及 React 生態系中的狀態管理工具，最終我選擇使用 **`Zustand`** 來管理這個頁面的局部狀態。
 
 ## **為何選擇使用 Zustand ?**
 ### **需求： Component 層級的狀態管理**
-過去我習慣用 React 原生的 **`useContext hook`** 集中管理大component 的 state，來讓比較深層的 children components 直接 call hook 取得需要的 state。useContext 的好處就是非常簡單易學易用，同時又能解決 props drilling 的問題，但是 useContext 最令人可惜的點就在於，當任何一個 context 內的 state 被更新，所有使用到 useContext 的 components 都會被重新渲染，依然沒辦法有效避免 re-render 的問題。  
+過去我習慣用 React 原生的 **`useContext hook`** 集中管理大component 的 state，來讓比較深層的 children components 直接呼叫 hook 來取得需要的 state。useContext 的好處就是非常簡單易學易用，同時又能解決 props drilling 的問題，但是 useContext 最令人可惜的點就在於，當任何一個 context 內的 state 被更新，所有使用到 useContext 的 components 都會被重新渲染，依然沒辦法有效避免 re-render 的問題。  
 前面提到，目前我們使用 **`Redux`** 來管理全局狀態，我們主要拿 redux 來管理像是 User 資訊、各頁面資訊等應用程式層級的資訊。redux 隨然能夠解決上述的 **props drilling** 和 **re-render** 問題，但是把某一個頁面的某一個 component 的**"局部狀態"**放於**"全局"**來管理似乎不太合適，再加上公司的 redux 因為一些歷史因素，開發上不是很方便使用，因此我決定尋找 Redux 與 useContext 以外的解決方案。  
 剛好最近老闆在開會的時候不停的安利 **`Zustand`**，花了一些時間研究後，發現 Zustand 非常易學，且對開發者也十分友善，可以用更簡短易懂的寫法 cover 掉大部分 redux 能做到的事情，且官方文件恰好有針對我目前的需求提供一個很好的解決方案，因此在這個專案中我選擇使用這個我之前從未使用過的工具。
 
