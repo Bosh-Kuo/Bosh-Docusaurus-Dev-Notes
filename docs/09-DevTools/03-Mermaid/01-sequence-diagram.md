@@ -1,7 +1,7 @@
 ---
 title: Mermaid - 時序圖(Sequence Diagram)
-sidebar_label: "[Mermaid] Sequence Diagram"
-description: 這篇技術筆記將介紹如何使用 Mermaid 繪製時序圖 (Sequence Diagram)。本文章著重介紹 sequence diagram 個元件的語法，通過實際示例，逐步講解了如何定義 actors、messages、以及這些元素之間的交互。此外，文章還深入介紹了進階功能，比如條件分支、loop、parallel 等的表達方式。
+sidebar_label: "Sequence Diagram"
+description: 這篇技術筆記將介紹如何使用 Mermaid 繪製時序圖 (Sequence Diagram)。本文章著重介紹 sequence diagram 幾個元件的語法，通過實際示例，逐步講解了如何定義 actors、messages、以及這些元素之間的交互。此外，文章還深入介紹了進階功能，比如條件分支、loop、parallel 等的表達方式。
 last_update:
   date: 2024-04-11
 keywords:
