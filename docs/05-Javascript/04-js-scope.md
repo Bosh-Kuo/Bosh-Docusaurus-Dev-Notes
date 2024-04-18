@@ -1,6 +1,6 @@
 ---
 title: Javascript 的作用域(Scope)
-sidebar_label: "[JS] 作用域(Scope)"
+sidebar_label: "[Basic] 作用域(Scope)"
 description: 本篇為紀錄 JS 的 Scope 分級用法以及常見錯誤
 last_update:
   date: 2023-03-19

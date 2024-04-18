@@ -1,6 +1,6 @@
 ---
 title: "JavaScript Array 常用操作大補帖：你要的 Array methods 都在這了！"
-sidebar_label: "[JS] Array Methods"
+sidebar_label: "[Basic] Array Methods"
 description: 這是一個關於 JavaScript 陣列方法的技術筆記。從基礎操作到進階應用，本筆記提供了對 JavaScript 陣列方法的詳細解說和實用範例，包括排序、篩選、映射、迭代等常見操作。無論您是初學者還是有經驗的開發人員，這份筆記都能幫助您深入理解和運用 JavaScript 陣列方法，以提升開發效率並創建更強大的應用程式。
 last_update:
   date: 2023-05-21

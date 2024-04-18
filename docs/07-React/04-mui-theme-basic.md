@@ -149,13 +149,13 @@ function DeepChild() {
 
 MUI 的主題配置允許我們自定義各種變數以控制應用程式的風格，以下是一些常用的預設主題配置變數：
 
-- `[.palette](https://mui.com/material-ui/customization/palette/)`
-- `[.typography](https://mui.com/material-ui/customization/typography/)`
-- `[.spacing](https://mui.com/material-ui/customization/spacing/)`
-- `[.breakpoints](https://mui.com/material-ui/customization/breakpoints/)`
-- `[.zIndex](https://mui.com/material-ui/customization/z-index/)`
-- `[.transitions](https://mui.com/material-ui/customization/transitions/)`
-- `[.components](https://mui.com/material-ui/customization/theme-components/)`
+- [palette](https://mui.com/material-ui/customization/palette/)
+- [typography](https://mui.com/material-ui/customization/typography/)
+- [spacing](https://mui.com/material-ui/customization/spacing/)
+- [breakpoints](https://mui.com/material-ui/customization/breakpoints/)
+- [zIndex](https://mui.com/material-ui/customization/z-index/)
+- [transitions](https://mui.com/material-ui/customization/transitions/)
+- [components](https://mui.com/material-ui/customization/theme-components/)
 
 ### **客製化主題配置變數**
 

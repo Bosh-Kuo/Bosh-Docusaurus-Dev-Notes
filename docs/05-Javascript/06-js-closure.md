@@ -1,6 +1,6 @@
 ---
 title: 全面了解 Javascript 閉包(Closure)
-sidebar_label: "[JS] 閉包(Closure)"
+sidebar_label: "[Advanced] 閉包(Closure)"
 description: 本篇紀錄閉包的概念、優點、缺點、實現方式和使用技巧，同時也可以讓讀者了解閉包在實際開發中的應用場景和注意事項，以便更好地應用閉包來解決問題。
 last_update:
   date: 2023-03-19

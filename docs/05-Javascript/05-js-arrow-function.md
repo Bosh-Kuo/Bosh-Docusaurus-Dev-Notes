@@ -1,6 +1,6 @@
 ---
 title: 箭頭函數(Arrow Function)
-sidebar_label: "[JS] 箭頭函數(Arrow Function)"
+sidebar_label: "[Basic] 箭頭函數(Arrow Function)"
 description: 本篇紀錄 Arrow function 的用法與常見常見誤用
 last_update:
   date: 2023-03-19

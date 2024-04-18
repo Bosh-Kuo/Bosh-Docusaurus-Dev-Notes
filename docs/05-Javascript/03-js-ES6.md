@@ -1,6 +1,6 @@
 ---
 title: ES6
-sidebar_label: "[JS] ES6"
+sidebar_label: "[Basic] ES6"
 description: 本篇為紀錄 ES6 的工具書資源
 last_update:
   date: 2023-03-09
