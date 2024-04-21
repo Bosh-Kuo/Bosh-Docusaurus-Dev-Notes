@@ -11,8 +11,7 @@ const katex = require("rehype-katex");
 /** @type {import('@docusaurus/types').Config} */
 const config = {
   title: "Bosh's Tech Notes",
-  tagline:
-    "Sharing my learning journey as a software engineer, one note at a time.",
+  tagline: "Sharing my learning journey.",
   url: "https://notes.boshkuo.com",
   baseUrl: "/",
   onBrokenLinks: "throw",
