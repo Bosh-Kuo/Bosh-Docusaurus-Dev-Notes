@@ -18,7 +18,7 @@ tags:
   - STL
 ---
 
-**`queue`** 是 C++ 標準程式庫(STL) 中的一種容器適配器(Container Adaptor)，是一個先進先出(**FIFO**, First-In-First-Out)的資料結構，它只允許在`隊尾`添加元素和在`隊首`刪除元素。
+**`queue`** 是 C++ 標準模板庫（STL）中的一種容器適配器(Container Adaptor)，是一個先進先出(**FIFO**, First-In-First-Out)的資料結構，它只允許在`隊尾`添加元素和在`隊首`刪除元素。
 
 ## **操作**
 

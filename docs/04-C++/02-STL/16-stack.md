@@ -18,7 +18,7 @@ tags:
   - STL
 ---
 
-**`stack`** 是 C++ 標準程式庫(STL) 中的 一種容器適配器(Container Adaptor)，是一個後進先出（**LIFO**, Last-In-First-Out）的資料結構，它只允許在`頂部`添加元素和刪除元素。
+**`stack`** 是 C++ 標準模板庫（STL） 中的 一種容器適配器(Container Adaptor)，是一個後進先出（**LIFO**, Last-In-First-Out）的資料結構，它只允許在`頂部`添加元素和刪除元素。
 
 ## **操作**
 
