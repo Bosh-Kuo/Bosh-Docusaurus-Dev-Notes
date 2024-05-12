@@ -1,6 +1,6 @@
 ---
 title: Git Worktree：有效管理多個分支和工作目錄的秘訣
-sidebar_label: "[Git] Git Worktree：有效管理多個分支和工作目錄的秘訣"
+sidebar_label: "[Git] Git Worktree"
 description: 本篇文章紀錄如何使用 Git Worktree 來解決切換分支時常遇到問題
 last_update:
   date: 2023-11-08

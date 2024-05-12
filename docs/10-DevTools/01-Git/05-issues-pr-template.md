@@ -1,6 +1,6 @@
 ---
 title: 使用 Issues, PR 模板組織專案工作流
-sidebar_label: "[Github] 使用 Issues, PR 模板組織專案工作流"
+sidebar_label: "[Github] Issues, PR 模板"
 description: 在 Github 上，Issue 和 Pull Request 是兩個重要的功能，本文章將介紹如何使用 Issue 和 Pull Request Template 組織專案工作流。 文章將涵蓋以下內容：1. 如何創建和使用 Issue Template, 2. 如何創建和使用 Pull Request Template, 3. 如何使用 Issue 和 Pull Request Template 自動化工作流
 last_update:
   date: 2024-03-03

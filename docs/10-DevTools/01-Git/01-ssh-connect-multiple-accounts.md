@@ -1,6 +1,6 @@
 ---
 title: 同一台電腦設定不同 SSH keys 連線多個 Github/GitLab 帳號
-sidebar_label: "[Git] 以不同 SSH keys 連線多個 Github/GitLab 帳號"
+sidebar_label: "[Git] 以 SSH keys 管理 Github/GitLab 帳號"
 description: 本篇文章紀錄在同一台電腦上如何設置 SSH Key 連線多個Github/GitLab 帳號
 last_update:
   date: 2023-10-15
