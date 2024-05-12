@@ -3,7 +3,7 @@ title: "C++ priority_queue(STL) 用法與範例"
 sidebar_label: "[Adaptor] priority_queue"
 description: 這篇技術筆記將深入探討 std::priority_queue 的用法與原理，本文將說明如何使用 std::priority_queue 來建立和操作 priority_queue，包括宣告、初始化、插入元素、取出元素等常見操作。此外，本文也將介紹 std::priority_queue 的一些進階用法，例如自訂元素比較方式等。本文提供簡易的程式碼範例，協助讀者深入理解和熟練運用 priority_queue。
 last_update:
-  date: 2024-04-21
+  date: 2024-05-12
 keywords:
   - Programming Language
   - C++
@@ -49,19 +49,56 @@ priority_queue<int> maxHeap(nums.begin(), nums.end());
 
 ### **使用自定義比較器建立 max heap**
 
+**1. 使用 struct 建立 Comparator 的寫法：**
+當使用 struct 定義比較器時，需要創建一個含有 **operator()** 的結構，這個運算子需要接受兩個同類型的參數並返回一個 bool 值，用以表明第一個參數是否應該排在第二個參數之後。
 ```cpp
 #include <queue>
 using namespace std;
 
-// 定義一個比較結構，用於最大堆
+// 定義一個比較結構，用於 maxHeap
 struct MaxHeapComparator {
     bool operator()(int lhs, int rhs) {
-        return lhs < rhs; // 返回 true 如果左側元素應當排在右側元素之前
+        return lhs < rhs; // 較大的元素應排前面，所以當左元素小於右元素時返回 true
     }
 };
 
 priority_queue<int, vector<int>, MaxHeapComparator> maxHeap;
 ```
+
+**2. 使用 lambda 函數的寫法：**
+使用 **lambda 函數**進行比較是一種更靈活且簡潔的方法，特別是當比較邏輯較為簡單或僅在局部場景中使用時。
+```cpp
+#include <queue>
+#include <vector>
+using namespace std;
+
+// 定義一個比較結構，用於 maxHeap
+auto comparator = [](int lhs, int rhs) { return lhs < rhs; };  // 較大元素優先
+std::priority_queue<int, std::vector<int>, decltype(comparator)> maxHeap(comparator);
+```
+
+:::tip
+**decltype** 是一個關鍵字，用於查詢表達式的類型而不進行計算表達式的值，對於需要根據表達式的類型來聲明變數非常有用，尤其在模板和類型推導中非常常見。基本用法如下：
+
+```cpp
+int x = 5;
+decltype(x) y = 10; // y 的類型被推導為 int
+
+```
+:::
+
+:::tip
+**Lambda** 表達式是一種簡便的定義匿名（無名稱的）函數的方法，常用於需要臨時函數的場景，，如算法的自定義排序函數或執行小範圍內的操作。Lambda 表達式的基本語法如下：
+```cpp
+[捕獲列表](參數列表) -> 返回類型 {
+    函數體
+}
+```
+- 捕獲列表：定義哪些外部變數被這個 lambda 捕獲（使用），以及是通過值還是引用捕獲。
+- 參數列表：和普通函數的參數列表類似。
+- 返回類型：可以顯式指定，也可以讓編譯器自動推導。
+- 函數體：實際的執行的邏輯。
+:::
 
 ### **創建 min heap**
 
@@ -89,21 +126,32 @@ priority_queue<int, vector<int>, greater<int>> minHeap(nums.begin(), nums.end())
 ```
 
 ### **使用自定義比較器建立 min heap**
-
+**1. 使用 struct 建立 Comparator 的寫法：**
+由於回傳的 bool 值用以表明第一個參數是否應該排在第二個參數之後。對於 min heap 來說較小的值應排在前面，因此判斷邏輯與 max heap 相反
 ```cpp
 #include <queue>
 #include <vector>
 using namespace std;
 
-// 定義一個比較結構，用於最小堆
+// 定義一個比較結構，用於 minHeap
 struct MinHeapComparator {
     bool operator()(int lhs, int rhs) {
-        return lhs > rhs; // 返回 true 如果左側元素應當排在右側元素之後
+        return lhs > rhs; // 較小的元素應排前面，所以當左元素小於右元素時返回 true
     }
 };
 
 priority_queue<int, vector<int>, MinHeapComparator> minHeap;
+```
 
+**2. 使用 lambda 函數的寫法：**
+```cpp
+#include <queue>
+#include <vector>
+using namespace std;
+
+// 定義一個比較結構，用於 maxHeap
+auto comparator = [](int lhs, int rhs) { return lhs > rhs; };  // 較小元素優先
+std::priority_queue<int, std::vector<int>, decltype(comparator)> minHeap(comparator);
 ```
 
 
