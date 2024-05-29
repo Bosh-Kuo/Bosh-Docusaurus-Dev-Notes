@@ -20,9 +20,9 @@ tags:
 
 **模組系統**是 JavaScript 中一個相對複雜且容易混淆的概念，因此常成為初學者最容易碰壁的部分。在現代 JavaScript 開發中，模組系統允許開發者將程式碼分解成可重用的部分，並更輕鬆地管理依賴關係。目前最主要的模組系統有 `ECMAScript Modules(ESM)` 和 `CommonJS(CJS)`，它們在設計理念和實作方式上有所不同，因此經常造成互操作性的問題。特別是在需要將 **ESM** 模組轉換為 **CJS** 模組時，常常出現不相容的問題。
 
-### **簡單介紹 ESM 和 CJS 模塊系統**
+### **簡單介紹 ESM 和 CJS 模組系統**
 
-**`ECMAScript Modules（ESM`** 是 JavaScript 的標準模組系統，由 **ES6（ECMAScript 2015）**引入。**ESM** 使用 **import** 和 **export** 關鍵字來進行模組的匯入和匯出，並且支援靜態分析，使得工具能夠在編譯階段最佳化程式碼。以下是一個簡單的 **ESM** 模組範例：
+**`ECMAScript Modules（ESM)`** 是 JavaScript 的標準模組系統，由 **ES6（ECMAScript 2015）**引入。**ESM** 使用 **import** 和 **export** 關鍵字來進行模組的匯入和匯出，並且支援靜態分析，使得工具能夠在編譯階段最佳化程式碼。以下是一個簡單的 **ESM** 模組範例：
 
 ```jsx
 // foo.js
@@ -120,7 +120,7 @@ console.log(myModule.age);     // 輸出: 16
 
 ### **__esModule 屬性的作用**
 
-`__esModule` 屬性是一個用來標示模塊的屬性，表示該模塊是從 ESM 轉換而來的。當一個 **ESM** 模塊被轉換為 **CJS** 模塊時，添加 `__esModule` 屬性可以幫助在 **CJS** 環境中正確地處理默認導出（**export default**）。
+`__esModule` 屬性是一個用來標示模組的屬性，表示該模組是從 ESM 轉換而來的。當一個 **ESM** 模組被轉換為 **CJS** 模組時，添加 `__esModule` 屬性可以幫助在 **CJS** 環境中正確地處理默認導出（**export default**）。
 
 延續前面的例子，若我們在 **exports** 添加 **__esModule** 屬性如下：
 
@@ -163,7 +163,7 @@ console.log(age);             // 輸出: 16
 
 上面的例子我們示範了在 **ESM** 環境下， `__esModule` 如何輔助 **ESM 正確默認匯入沒有默認匯出的 CJS 模組**，接下來我們進一步來認識像 **Webpack** 這樣的打包工具，是如何將以 **ESM** 語法撰寫的程式碼轉換成 **CJS** 模組，且確保打包後的 **CJS** 程式碼能像上述例子一樣被其他 **ESM** 模組以默認匯入。
 
-當 Webpack 打包模塊時，會添加 **__webpack_require__.r** 和 **__webpack_require__.n** 函數來處理 `__esModule` 屬性：
+當 Webpack 打包模組時，會添加 **__webpack_require__.r** 和 **__webpack_require__.n** 函數來處理 `__esModule` 屬性：
 
 ```jsx
 // Webpack 轉譯後的程式碼片段
