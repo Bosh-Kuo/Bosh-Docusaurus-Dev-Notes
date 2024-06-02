@@ -4,14 +4,14 @@ import styles from "./styles.module.css";
 import RepoCard from "../../components/RepoCard";
 import useGithubRepos from "../../hooks/useGithubRepos";
 
-export default function Projects() {
+export default function Projects(): JSX.Element {
   const user = "Bosh-Kuo"; // 指定使用者名稱
-  const [repos, loadingRepoError] = useGithubRepos(user);
+  const { repos, hasError: loadingRepoError } = useGithubRepos(user);
 
   return (
     <Layout
-      title="My Projects"
-      description="My latest updated github repositories"
+      title='My Projects'
+      description='My latest updated github repositories'
     >
       {loadingRepoError ? (
         <div className={styles.projects_container}>

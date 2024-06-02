@@ -59,7 +59,7 @@ int main()
 ```
 
 
-- *preprocessor*: 開始於`#include`<標頭檔>（package)，在compiler編譯之前執行一些指令
+- *preprocessor*: 開始於`#include`\<標頭檔>（package)，在compiler編譯之前執行一些指令
 - *header file*: 標頭檔，記錄一些通用得變數與函數的定義
     - `<iostream>`: 為一標頭檔header file，此為C++標準libary，cout,cin皆為iostream定義的變數
     - `#include "路徑"`：引進自己寫的函式

@@ -4,8 +4,16 @@ import { useEffect, useState } from "react";
 /**
  * This is a hook for fetching the basic information from my GitHub repos
  */
-const useGithubRepos = (user) => {
-  const [repos, setRepos] = useState([]);
+interface Repo {
+  name: string;
+  forks: number;
+  language: string;
+  stargazers_count: number;
+  description: string;
+  html_url: string;
+}
+function useGithubRepos(user) {
+  const [repos, setRepos] = useState<Repo[]>([]);
   const [hasError, setHasError] = useState(false);
 
   async function getLatestReposInfo() {
@@ -35,7 +43,7 @@ const useGithubRepos = (user) => {
     getLatestReposInfo();
   }, []);
 
-  return [repos, hasError];
-};
+  return { repos, hasError };
+}
 
 export default useGithubRepos;

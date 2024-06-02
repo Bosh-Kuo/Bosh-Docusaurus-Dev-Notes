@@ -16,7 +16,7 @@ tags:
 
 ## **Git rebase 的用途**
 
-**`git rebase`** 是一個用於重新應用或整合 Git Commit 歷史的工具，許多人對 **git rebase** 的印象就是它可以用來將一個分支變基合併到另一個分支。但其實，**git rebase **除了用來合併分支，他還有一個很方便的功能叫做『**互動模式』，**它可用於調整 Commit 歷史，讓我們可以對每個 Commit 進行操作，包括：
+**`git rebase`** 是一個用於重新應用或整合 Git Commit 歷史的工具，許多人對 **git rebase** 的印象就是它可以用來將一個分支變基合併到另一個分支。但其實，**git rebase** 除了用來合併分支，他還有一個很方便的功能叫做『**互動模式**』，它可用於調整 Commit 歷史，讓我們可以對每個 Commit 進行操作，包括：
 
 1. 修改 Commit 訊息
 2. 合併 Commit
@@ -33,7 +33,7 @@ tags:
 git rebase -i <base commit>
 ```
 
-**<base commit\>** 用來告訴 git，我們要修改的範圍到是`從 <base commit> 到 HEAD，但不包括 <base commit>` 。
+**\<base commit>** 用來告訴 git，我們要修改的範圍到是`從 <base commit> 到 HEAD，但不包括 <base commit>` 。
 
 :::tip
 眼尖的你馬上就會發現，那專案中的第一個 git commit 紀錄不就永遠都修不到了嗎？

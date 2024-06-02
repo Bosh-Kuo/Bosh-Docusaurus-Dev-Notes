@@ -202,7 +202,7 @@ int main() // with overloading
 
 
 
-### **Overloading <**
+### **Overloading \<**
 
 ```cpp
 class MyVector 

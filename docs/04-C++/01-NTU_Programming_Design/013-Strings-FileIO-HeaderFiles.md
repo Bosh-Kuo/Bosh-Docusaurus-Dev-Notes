@@ -163,7 +163,7 @@ if(s.find("bcd") != string::npos)
 
 ### **string comparisons**
 
-We may use >, >=, <, <=, ==, != to compare two C++ strings. Just like `strcmp()`. String literals or C strings also work. As long as one side of the comparison is a C++ string, it is fine.
+We may use >, >=, \<, \<=, ==, != to compare two C++ strings. Just like `strcmp()`. String literals or C strings also work. As long as one side of the comparison is a C++ string, it is fine.
 
 
 

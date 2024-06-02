@@ -62,7 +62,7 @@ unordered_map<string, int> umap {
 
 - 插入一個新的 key value pair，如果 key 已存在則操作無效。
 - Time Complexity: 平均 O(1), 最壞 O(n)
-- 返回值：一個包含迭代器和布林值的 **pair<iteraotr, bool>**。如果插入成功，布林值為 true；否則為 false。
+- 返回值：一個包含迭代器和布林值的 **pair\<iteraotr, bool>**。如果插入成功，布林值為 true；否則為 false。
 
 ```cpp
 auto result = umap.insert(make_pair("cherry", 5));
@@ -137,7 +137,7 @@ cout << "All elements cleared." << endl;
 
 - 類似於 **`insert`**，但更高效，因為它直接在容器內構造元素，避免了額外的拷貝或移動操作。
 - Time Complexity: 平均 O(1), 最壞 O(n)
-- 返回值：與 **`insert()`** 相同，包含一個迭代器和一個表示是否插入的布林值的 **pair<iteraotr, bool>**。
+- 返回值：與 **`insert()`** 相同，包含一個迭代器和一個表示是否插入的布林值的 **pair\<iterator\, bool>**。
 
 ```cpp
 auto emplaceResult = umap.emplace("grape", 6);

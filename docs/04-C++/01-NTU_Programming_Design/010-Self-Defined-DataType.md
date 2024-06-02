@@ -105,7 +105,7 @@ You may return a struct variable from a function, too.
 ## **typedef**
 typedef is the abbreviation of “type definition”. It allows us to create a new data type from another data type. 
 
-> `typedef` <old type\> <new type\>;
+> `typedef` \<old type> \<new type>;
 
 So we do not really create any new type. (只是幫old type取一個別名)
 

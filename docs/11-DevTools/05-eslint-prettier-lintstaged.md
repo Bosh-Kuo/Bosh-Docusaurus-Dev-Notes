@@ -20,8 +20,9 @@ tags:
 
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*PdxQHwcQZDxJK4rWB743Sg.png)
 
-<p >圖片來源：
-    <a href="https://tech.groww.in/maintain-code-consistency-using-eslint-prettier-husky-and-lint-staged-a657083d461b">Maintain code consistency using ESLint, Prettier, husky and lint-staged</a>
+<p >
+圖片來源：
+<a href="https://tech.groww.in/maintain-code-consistency-using-eslint-prettier-husky-and-lint-staged-a657083d461b">Maintain code consistency using ESLint, Prettier, husky and lint-staged</a>
 </p>
 
 ## **前言**

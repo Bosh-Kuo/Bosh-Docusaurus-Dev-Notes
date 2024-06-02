@@ -187,8 +187,8 @@ sayHi('John');
 
 
 
-### **Import ***
-通常，我們在花括號 import {...} 中列出要導入的內容，但是如果要導入的內容很多，我們可以使用 `import * as <obj>` 將所有內容作為 object 導入，例如：
+### **Import**
+通常，我們在花括號 import \{...\} 中列出要導入的內容，但是如果要導入的內容很多，我們可以使用 `import * as <obj>` 將所有內容作為 object 導入，例如：
 ```js
 // 📁 main.js
 import * as say from './say.js';

@@ -30,9 +30,9 @@ tags:
 
 
 ## **屬性操作類型**
-### **Partial<T\>：將屬性設置為可選**
+### **Partial\<T>：將屬性設置為可選**
 
-**Partial<T\>** 允許我們將某個類型的所有屬性設定為可選。
+**Partial\<T>** 允許我們將某個類型的所有屬性設定為可選。
 
 ```tsx
 interface User {
@@ -54,9 +54,9 @@ const updateUser: PartialUser = {
 };
 ```
 
-### **Required<T\>：將屬性設置為必需**
+### **Required\<T>：將屬性設置為必需**
 
-**Required<T\>** 將某個類型的所有屬性設定為必需。
+**Required\<T>** 將某個類型的所有屬性設定為必需。
 
 ```tsx
 interface User {
@@ -80,9 +80,9 @@ const newUser: RequiredUser = {
 };
 ```
 
-### **Readonly<T\>：將屬性設置為唯讀**
+### **Readonly\<T>：將屬性設置為唯讀**
 
-**Readonly<T\>** 可以將某個類型的所有屬性設定為唯讀，防止這些屬性被修改。
+**Readonly\<T>** 可以將某個類型的所有屬性設定為唯讀，防止這些屬性被修改。
 
 ```tsx
 interface User {
@@ -108,9 +108,9 @@ const readonlyUser: ReadonlyUser = {
 // readonlyUser.id = 2; // Error: Cannot assign to 'id' because it is a read-only property.
 ```
 
-### **Record<K, T\>：構建一個物件類型，其屬性鍵是類型 K，屬性值是類型 T。**
+### **Record\<K\, T>：構建一個物件類型，其屬性鍵是類型 K，屬性值是類型 T。**
 
-**Record<K, T\>** 是用來建構一個物件類型，其屬性鍵是類型 **K**，屬性值是類型 **T**。
+**Record\<K\, T>** 是用來建構一個物件類型，其屬性鍵是類型 **K**，屬性值是類型 **T**。
 
 ```tsx
 type Page = 'home' | 'about' | 'contact';
@@ -140,9 +140,9 @@ const pages: Pages = {
 
 ## **提取與排除類型**
 
-### **Pick<T, K\>：從某個類型中挑選一組屬性來構建新類型**
+### **Pick\<T\, K>：從某個類型中挑選一組屬性來構建新類型**
 
-**Pick<T, K\>** 從某個類型中挑選一組屬性來建構新類型。
+**Pick\<T\, K>** 從某個類型中挑選一組屬性來建構新類型。
 
 ```tsx
 interface User {
@@ -165,9 +165,9 @@ const userPreview: UserPreview = {
 };
 ```
 
-### **Omit<T, K\>：從某個類型中排除一組屬性來構建新類型**
+### **Omit\<T\, K>：從某個類型中排除一組屬性來構建新類型**
 
-**Omit<T, K\>** 與 **Pick<T, K>** 相反，從某個類型中排除一組屬性來建構新類型。
+**Omit\<T\, K>** 與 **Pick\<T\, K>** 相反，從某個類型中排除一組屬性來建構新類型。
 
 ```tsx
 interface User {
@@ -192,9 +192,9 @@ const userWithoutEmail: UserWithoutEmail = {
 };
 ```
 
-### **Exclude<T, U\>：從某個類型中排除可以分配給另一個類型的所有屬性**
+### **Exclude\<T\, U>：從某個類型中排除可以分配給另一個類型的所有屬性**
 
-**Exclude<T, U\>** 從某個類型中排除可以分配給另一個類型的所有屬性。
+**Exclude\<T\, U>** 從某個類型中排除可以分配給另一個類型的所有屬性。
 
 ```tsx
 type T = 'a' | 'b' | 'c';
@@ -203,9 +203,9 @@ type U = 'a';
 type ExcludeTU = Exclude<T, U>; // 'b' | 'c'
 ```
 
-### **Extract<T, U\>：從某個類型中提取可以分配給另一個類型的所有屬性**
+### **Extract\<T\, U>：從某個類型中提取可以分配給另一個類型的所有屬性**
 
-**Extract<T, U\>** 則與 **Exclude** 相反，從某個類型中提取可以分配給另一個類型的所有屬性。
+**Extract\<T\, U>** 則與 **Exclude** 相反，從某個類型中提取可以分配給另一個類型的所有屬性。
 
 ```tsx
 type T = 'a' | 'b' | 'c';
@@ -214,9 +214,9 @@ type U = 'a' | 'c';
 type ExtractTU = Extract<T, U>; // 'a' | 'c'
 ```
 
-### **NonNullable<T\>：排除類型中的 null 和 undefined**
+### **NonNullable\<T>：排除類型中的 null 和 undefined**
 
-**NonNullable<T\>** 用來排除類型中的 **null** 和 **undefined**。
+**NonNullable\<T>** 用來排除類型中的 **null** 和 **undefined**。
 
 ```tsx
 type T = string | number | null | undefined;
@@ -229,9 +229,9 @@ type NonNullableT = NonNullable<T>; // string | number
 
 
 ## **函數與實例操作類型**
-### **Parameters<T\>：獲取函數類型的參數類型組成的元組**
+### **Parameters\<T>：獲取函數類型的參數類型組成的元組**
 
-**Parameters<T\>** 用來獲取**函數類型**的參數類型組成的元組。
+**Parameters\<T>** 用來獲取**函數類型**的參數類型組成的元組。
 
 ```tsx
 type FunctionType = (x: number, y: string) => void;
@@ -239,9 +239,9 @@ type FunctionType = (x: number, y: string) => void;
 type Params = Parameters<FunctionType>; // [number, string]
 ```
 
-### **ConstructorParameters<T\>：獲取構造函數類型的參數類型組成的元組**
+### **ConstructorParameters\<T>：獲取構造函數類型的參數類型組成的元組**
 
-**ConstructorParameters<T\>** 用來獲取**建構函式類型**的參數類型組成的元組。
+**ConstructorParameters\<T>** 用來獲取**建構函式類型**的參數類型組成的元組。
 
 ```tsx
 type ClassType = new (x: number, y: string) => void;
@@ -249,9 +249,9 @@ type ClassType = new (x: number, y: string) => void;
 type ConstructorParams = ConstructorParameters<ClassType>; // [number, string]
 ```
 
-### **ReturnType<T\>：獲取函數類型的返回值類型**
+### **ReturnType\<T>：獲取函數類型的返回值類型**
 
-**ReturnType<T\>** 用來獲取**函數類型**的返回值類型。
+**ReturnType\<T>** 用來獲取**函數類型**的返回值類型。
 
 ```tsx
 type FunctionType = () => string;
@@ -259,9 +259,9 @@ type FunctionType = () => string;
 type ReturnTypeOfFunction = ReturnType<FunctionType>; // string
 ```
 
-### **InstanceType<T\>：獲取構造函數類型的實例類型**
+### **InstanceType\<T>：獲取構造函數類型的實例類型**
 
-**InstanceType<T\>** 用來獲取**建構函式類型**的實例類型。
+**InstanceType\<T>** 用來獲取**建構函式類型**的實例類型。
 
 ```tsx
 class User {
@@ -271,9 +271,9 @@ class User {
 type UserInstance = InstanceType<typeof User>; // User
 ```
 
-### **ThisParameterType<T\>：獲取函數類型中的 this 參數類型**
+### **ThisParameterType\<T>：獲取函數類型中的 this 參數類型**
 
-**ThisParameterType<T\>** 用來獲取**函數類型**中的 **this** 參數類型。
+**ThisParameterType\<T>** 用來獲取**函數類型**中的 **this** 參數類型。
 
 ```tsx
 function myFunction(this: { name: string }) {
@@ -283,9 +283,9 @@ function myFunction(this: { name: string }) {
 type ThisType = ThisParameterType<typeof myFunction>; // { name: string }
 ```
 
-### **OmitThisParameter<T\>：移除函數類型中的 this 參數**
+### **OmitThisParameter\<T>：移除函數類型中的 this 參數**
 
-**OmitThisParameter<T\>** 用來移除函數類型中的 **this** 參數。
+**OmitThisParameter\<T>** 用來移除函數類型中的 **this** 參數。
 
 ```tsx
 function myFunction(this: { name: string }) {
@@ -295,9 +295,9 @@ function myFunction(this: { name: string }) {
 type NewFunctionType = OmitThisParameter<typeof myFunction>; // () => void
 ```
 
-### **Awaited<T\>：解析 Promise 類型，獲取其解析值的類型**
+### **Awaited\<T>：解析 Promise 類型，獲取其解析值的類型**
 
-**Awaited<T\>** 用來解析 Promise 類型，獲取其解析值的類型。
+**Awaited\<T>** 用來解析 Promise 類型，獲取其解析值的類型。
 
 ```tsx
 type ExampleType = Promise<string>;
@@ -311,9 +311,9 @@ type AwaitedType = Awaited<ExampleType>; // string
 
 ## **字串操作類型**
 
-### **Uppercase<S\>：將字符串類型轉換為大寫**
+### **Uppercase\<S>：將字符串類型轉換為大寫**
 
-**Uppercase<S\>** 將字串類型轉換為大寫。
+**Uppercase\<S>** 將字串類型轉換為大寫。
 
 ```tsx
 type Name = 'john';
@@ -321,9 +321,9 @@ type Name = 'john';
 type UppercaseName = Uppercase<Name>; // 'JOHN'
 ```
 
-### **Lowercase<S\>：將字符串類型轉換為小寫**
+### **Lowercase\<S>：將字符串類型轉換為小寫**
 
-**Lowercase<S\>** 將字串類型轉換為小寫。
+**Lowercase\<S>** 將字串類型轉換為小寫。
 
 ```tsx
 type Name = 'JOHN';
@@ -331,9 +331,9 @@ type Name = 'JOHN';
 type LowercaseName = Lowercase<Name>; // 'john'
 ```
 
-### **Capitalize<S\>：將字符串類型的首字母轉換為大寫**
+### **Capitalize\<S>：將字符串類型的首字母轉換為大寫**
 
-**Capitalize<S\>** 將字串類型的首字母轉換為大寫。
+**Capitalize\<S>** 將字串類型的首字母轉換為大寫。
 
 ```tsx
 type Name = 'john';
@@ -341,9 +341,9 @@ type Name = 'john';
 type CapitalizedName = Capitalize<Name>; // 'John'
 ```
 
-### **Uncapitalize<S\>：將字符串類型的首字母轉換為小寫**
+### **Uncapitalize\<S>：將字符串類型的首字母轉換為小寫**
 
-**Uncapitalize<S\>** 將字串類型的首字母轉換為小寫。
+**Uncapitalize\<S>** 將字串類型的首字母轉換為小寫。
 
 ```tsx
 type Name = 'John';
