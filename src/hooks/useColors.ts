@@ -19,7 +19,7 @@ const useColors = () => {
         setHasError(true);
       });
   }, [url]);
-  return [colors, hasError];
+  return { colors, hasError };
 };
 
 export default useColors;
