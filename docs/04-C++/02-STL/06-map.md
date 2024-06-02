@@ -53,7 +53,7 @@ map<string, int> omap {
 
 - 插入一個新的鍵值對，如果鍵已存在則操作無效。
 - 時間複雜度：O(log n)
-- 返回值：一個包含迭代器和布林值的 **pair<iterator, bool>**。如果插入成功，布林值為 true；否則為 false。
+- 返回值：一個包含迭代器和布林值的 **pair\<iterator, bool>**。如果插入成功，布林值為 true；否則為 false。
 
 ```cpp
 auto result = omap.insert(make_pair("cherry", 5));
@@ -122,7 +122,7 @@ cout << "All elements cleared." << endl;
 
 - 類似於 **`insert`**，但更高效，因為它直接在容器內構造元素，避免了額外的拷貝或移動操作。
 - 時間複雜度：O(log n)
-- 返回值：與 **`insert()`** 相同，包含一個迭代器和一個表示是否插入的布林值的 **pair<iterator, bool>**。
+- 返回值：與 **`insert()`** 相同，包含一個迭代器和一個表示是否插入的布林值的 **pair\<iterator, bool>**。
 
 ```cpp
 auto emplaceResult = omap.emplace("grape", 6);

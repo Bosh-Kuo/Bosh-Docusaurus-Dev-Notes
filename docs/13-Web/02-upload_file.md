@@ -297,10 +297,10 @@ app.listen(port, () => {
 
 ## **前端(React)上傳檔案機制**
 
-### **HTML 元素 <input type="file"\>**
+### **HTML 元素 \<input type="file">**
 在 Web 應用中，檔案上傳功能的實現通常依賴於 `<input type="file">` 這個 HTML 元素。當使用這種類型的輸入時，瀏覽器會提供一個按鈕，用戶點擊後會打開標準的系統文件選擇對話框，用戶可以從本地電腦中選擇一個或多個文件。
 
-> 參閱 [**@MDN-<input type="file"\>**](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#using_file_inputs)
+> 參閱 [**@MDN-\<input type="file">**](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/input/file#using_file_inputs)
 
 
 - **基本用法**
@@ -314,7 +314,7 @@ app.listen(port, () => {
 
 - **接受特定類型的文件**
 
-**<input\>** 標籤的 `accept` 屬性允許我們限制用戶可以選擇的文件類型。例如，如果只希望用戶上傳圖片，可以這樣設定：
+**\<input>** 標籤的 `accept` 屬性允許我們限制用戶可以選擇的文件類型。例如，如果只希望用戶上傳圖片，可以這樣設定：
 
 ```tsx
 <input type="file" id="imagefile" name="imagefile" accept="image/*">
@@ -331,7 +331,7 @@ app.listen(port, () => {
 
 ### **檔案資料類型：File, FileList**
 
-當用戶通過 **<input type="file"\>** 選擇了文件後，這些文件將會作為 DOM 元素的一部分存儲在其 `files` 屬性中。我們在前端可以寫一個事件處理函數綁定於當用戶選擇了新的檔案時觸發的 onChange 事件，這樣我們就可以從事件目標(**event.target**)中獲取檔案資料進行進一步的操作。
+當用戶通過 **\<input type="file">** 選擇了文件後，這些文件將會作為 DOM 元素的一部分存儲在其 `files` 屬性中。我們在前端可以寫一個事件處理函數綁定於當用戶選擇了新的檔案時觸發的 onChange 事件，這樣我們就可以從事件目標(**event.target**)中獲取檔案資料進行進一步的操作。
 
 - **FileList**
 
@@ -374,7 +374,7 @@ app.listen(port, () => {
     - **noDrag：**當設置為 **true** 時，禁用拖放功能。這意味著用戶不能將文件拖到指定區域來上傳，但仍可以通過點擊來觸發文件選擇。
 - **回傳**
     - **getRootProps()**：返回應用於拖放區域的 props，包括 onClick, onDrop 等事件處理器等
-    - **getInputProps()**：返回應用於 **<input type="file"\>** 的 props，如 `{accept: 'image/*', multiple: true, type: 'file', style: {display: 'none'}, onChange: ƒ, …}`。
+    - **getInputProps()**：返回應用於 **\<input type="file">** 的 props，如 `{accept: 'image/*', multiple: true, type: 'file', style: {display: 'none'}, onChange: ƒ, …}`。
     - **acceptedFiles**：一個包含所有被接受檔案的陣列。
     - **fileRejections**：一個包含所有被拒絕檔案的陣列，每個對象包含檔案和錯誤資訊。
     - **open()**：一個函數，可以用來打開檔案選擇器，通常用於自訂點選行為時。
@@ -382,7 +382,7 @@ app.listen(port, () => {
 
 ### **預覽圖片**
 
-當我們需要在畫面上顯示一張圖片時，會需要在前端程式碼中添加一個 **<img\>** 元素， 並指定元素 **src** 為圖片的來源 URL 。這個 URL 可以來自後端伺服器或公開的網路資源。
+當我們需要在畫面上顯示一張圖片時，會需要在前端程式碼中添加一個 **\<img>** 元素， 並指定元素 **src** 為圖片的來源 URL 。這個 URL 可以來自後端伺服器或公開的網路資源。
 
 > 然而，在前端在把照片檔案上傳至後端之前，這個 URL 由誰來提供呢？
 > 
@@ -481,7 +481,7 @@ app.listen(port, () => {
 
 前端要傳送 Content-Type 為 **multipart/form-data** 的 request 有兩種方法：
 
-1. **使用 <form\> 元素**
+1. **使用 \<form> 元素**
 
 ```jsx
 <form method="POST" action="/upload" method="POST">
@@ -491,7 +491,7 @@ app.listen(port, () => {
 </form>
 ```
 
-瀏覽器會將<form\> 元素內的 <input\> 元素序列化，並 以 POST 方法送出 `Content-Type: multipart/form-data` 的 HTTP 請求
+瀏覽器會將\<form> 元素內的 \<input> 元素序列化，並 以 POST 方法送出 `Content-Type: multipart/form-data` 的 HTTP 請求
 
 1. **使用 FormData 物件**
 

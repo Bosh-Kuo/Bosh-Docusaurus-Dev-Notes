@@ -96,7 +96,7 @@ console.log(fetchUserData());
   orders: [ { id: 1, product: 'Book' }, { id: 2, product: 'Pen' } ]
 }
 ```
-  但以上程式碼卻在執行當下就輸出 **{ user: undefined, orders: undefined }**，並在 4 秒後才結束。這是因為 **fetchUser** 與 **fetchUserOrders** 這兩個函式為非同步事件，簡單來說 JS 會優先處理完所有同步事件後才處理非同步事件。
+  但以上程式碼卻在執行當下就輸出 **\{ user: undefined, orders: undefined \}**，並在 4 秒後才結束。這是因為 **fetchUser** 與 **fetchUserOrders** 這兩個函式為非同步事件，簡單來說 JS 會優先處理完所有同步事件後才處理非同步事件。
 
   </TabItem>
   

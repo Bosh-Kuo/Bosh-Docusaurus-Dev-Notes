@@ -22,7 +22,7 @@ tags:
 
 ## **初始化**
 
-### **以 {value1, value2,…} 初始化**
+### **以 \{value1, value2,…} 初始化**
 
 - Time Complexity: O(n)
 

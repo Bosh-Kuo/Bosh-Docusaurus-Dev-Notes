@@ -19,8 +19,9 @@ Git 在現代的軟體開發工作中佔了舉足輕重的角色，它提供了�
 
 <img src= "https://res.cloudinary.com/djtoo8orh/image/upload/v1699373286/Docusaurus%20Blog/%E9%96%8B%E7%99%BC%E5%B7%A5%E5%85%B7/Git%20Worktree/Git-flow_nydjxg.png" width="500"/>
 
-<p >圖片來源：
-    <a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>
+<p >
+圖片來源：
+<a href="https://nvie.com/posts/a-successful-git-branching-model/">A successful Git branching model</a>
 </p>
 
 除了 **Git Flow** 外，與有許多優秀的 Work Flow ，像是：**Github Flow**, **GitLab Flow**。這些 Work Flow 的共通點就是以 branch 來區分不同階段的工作進程。無論我們使用哪種 Work Flow，在現代的團體開發過程中，我們經常需要在不同的分支之間切換，來處理不同的任務。

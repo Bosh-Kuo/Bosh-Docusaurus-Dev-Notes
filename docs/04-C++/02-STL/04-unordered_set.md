@@ -51,7 +51,7 @@ unordered_set<int> uset(vec.begin(), vec.end());  // {10, 20, 30}
 ### **插入元素：uset.insert()**
 
 - Time Complexity: 平均 O(1), 最壞 O(n)
-- 返回值：一個包含迭代器和布林值的 **pair<iterator, bool>**。如果插入成功，布林值為 true；否則為 false。
+- 返回值：一個包含迭代器和布林值的 **pair\<iterator, bool>**。如果插入成功，布林值為 true；否則為 false。
 
 ```cpp
 auto result = uset.insert(40);
@@ -112,7 +112,7 @@ cout << "Count for 60: " << uset.count(60) << endl;  // 輸出 0
 
 - 嘗試在 **unordered_set** 內直接構造元素，效率可能高於 **insert()**。
 - Time Complexity: 平均 O(1), 最壞 O(n)
-- 返回值：與 **insert()** 相同，包含一個迭代器和一個表示是否插入的布林值的 **pair<iterator, bool>**。
+- 返回值：與 **insert()** 相同，包含一個迭代器和一個表示是否插入的布林值的 **pair\<iterator\, bool>**。
 
 ```cpp
 auto emplaceResult = uset.emplace(50);
