@@ -21,7 +21,7 @@ tags:
 
 ## **STL 是什麼？**
 
-`STL(Standard Template Library)` 是 C++ 程式設計語言中一個非常重要和強大的函式庫，它提供了一系列資料結構，如向量(vector)、列表(list)和雜湊表(map)，以及搜尋、排序等演算法和通用函式，可用於大幅簡化 C++ 程式開發。 STL 遵循**泛型程式設計(Generic Programming)**的理念， 基於**模板(Template)**來實作各種資料結構與演算法，這使得 STL 可以處理任何符合特定需求的資料類型，而不局限於特定的類型。這種泛型性增加了 STL 的可重用性和靈活性。
+`STL(Standard Template Library)` 是 C++ 程式設計語言中一個非常重要和強大的函式庫，它提供了一系列資料結構，如向量(vector)、列表(list)和雜湊表(map)，以及搜尋、排序等演算法和通用函式，可用於大幅簡化 C++ 程式開發。 STL 遵循**泛型程式設計(Generic Programming)** 的理念， 基於**模板(Template)** 來實作各種資料結構與演算法，這使得 STL 可以處理任何符合特定需求的資料類型，而不局限於特定的類型。這種泛型性增加了 STL 的可重用性和靈活性。
 
 STL 的核心主要由以下幾大組建所組成：
 
@@ -322,7 +322,7 @@ STL 提供了豐富的演算法函數,能夠在各種容器上執行不同的操
 
 ## **仿函數 Functor**
 
-`仿函數(functor)`又稱之為函數物件(function object)，泛指任何可以使用函數調用運算子**`()`**的物件。簡單來說來說，就是重載(overload)運算子 `operator()` 的 struct 或類別的實例。仿函數可以被當作函數來使用，與一般函數不同的是，仿函數可以擁有內部狀態和其他成員函數，通常用於封裝與特定操作相關的狀態或行為。
+`仿函數(functor)`又稱之為函數物件(function object)，泛指任何可以使用函數調用運算子 **`()`** 的物件。簡單來說來說，就是重載(overload)運算子 `operator()` 的 struct 或類別的實例。仿函數可以被當作函數來使用，與一般函數不同的是，仿函數可以擁有內部狀態和其他成員函數，通常用於封裝與特定操作相關的狀態或行為。
 
 以下舉例一個簡單的仿函數:
 
@@ -396,7 +396,7 @@ struct Multiplier {
     
 
 2. **易於與STL算法結合**：
-   - STL算法，如**`sort`**、**`find_if`**等，通常接受函數或仿函數作為參數，這使得使用仿函數可以更自然地與STL集成。
+   - STL算法，如 **`sort`**,**`find_if`** 等，通常接受函數或仿函數作為參數，這使得使用仿函數可以更自然地與STL集成。
    - 範例：使用仿函數來自定義排序條件。
     
     ```cpp
@@ -417,7 +417,7 @@ struct Multiplier {
 在C++中，適配器主要有三種類型：
 
 1. **容器適配器**：
-    - 這些適配器將底層的容器類型轉換成提供特定接口的容器類型，例如 **[stack](https://cplusplus.com/reference/stack/stack/)**、**[queue](https://cplusplus.com/reference/queue/queue/)** 和** [priority_queue](https://cplusplus.com/reference/queue/priority_queue/)**。
+    - 這些適配器將底層的容器類型轉換成提供特定接口的容器類型，例如 [**stack**](https://cplusplus.com/reference/stack/stack/)、[**queue**](https://cplusplus.com/reference/queue/queue/) 和 [**priority_queue**](https://cplusplus.com/reference/queue/priority_queue/) 。
     - 例子：
         - `stack`適配器可以將`vector`、`deque`或`list`等類型作為其底層容器。
         - 使用`stack`適配器：

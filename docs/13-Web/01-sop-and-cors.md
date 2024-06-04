@@ -20,7 +20,7 @@ tags:
 
 ## **同源政策（Same-Origin Policy，SOP）**
 
-**`同源政策（Same-Origin Policy，SOP）`**是一種由**瀏覽器**實施的安全措施，在網頁瀏覽器中,同源政策會限制不同源網站之間的資源訪問。所謂`"同源"`是指網址的**通訊協定（http 或 https）**、**網域（domain）**和**通訊埠（port）**必須完全相同。只有同源的網頁才能互相訪問彼此的資源，如讀取JavaScript物件、操作DOM元素等。
+**`同源政策（Same-Origin Policy，SOP）`**是一種由**瀏覽器**實施的安全措施，在網頁瀏覽器中,同源政策會限制不同源網站之間的資源訪問。所謂`"同源"`是指網址的 **通訊協定（http 或 https）**、**網域（domain）** 和**通訊埠（port）** 必須完全相同。只有同源的網頁才能互相訪問彼此的資源，如讀取JavaScript物件、操作DOM元素等。
 
 以 `https://www.example.com` 這個網址為例，以下幾個例子說明哪些屬於同源或非同源：
 
@@ -135,7 +135,7 @@ sequenceDiagram
 
 - **攻擊情境：**
 
-假設一個用戶已登錄 `MyBank (https://mybank.com)` 的情況下，若該用戶同時訪問了惡意網站`EvilSite (https://evil-site.com)`，後者企圖透過圖片元素或者發起一個對`https://mybank.com/api/userinfo` 的 GET 請求，意圖竊取用戶的個人資訊。由於 GET 請求通常被視為**"簡單請求"**，因為它們不會改變伺服器上的資源狀態。
+假設一個用戶已登錄 `MyBank (https://mybank.com)` 的情況下，若該用戶同時訪問了惡意網站`EvilSite (https://evil-site.com)`，後者企圖透過圖片元素或者發起一個對`https://mybank.com/api/userinfo` 的 GET 請求，意圖竊取用戶的個人資訊。由於 GET 請求通常被視為 **"簡單請求"**，因為它們不會改變伺服器上的資源狀態。
 
 - **同源政策的保護：**
 
@@ -266,7 +266,7 @@ sequenceDiagram
 
 ### **簡單請求（Simple Request）與預檢請求（Preflight Request）**
 
-**`簡單請求（simple request）`**在CORS（跨來源資源共享）機制中指的是符合某些特定條件的HTTP請求，這些請求不會觸發CORS **`預檢（preflight）機制`**。
+**`簡單請求（simple request）`** 在CORS（跨來源資源共享）機制中指的是符合某些特定條件的HTTP請求，這些請求不會觸發CORS **`預檢（preflight）機制`**。
 
 > 雖然對於**簡單請求**，瀏覽器會直接發出跨源請求，但是同源政策的限制依然存在，瀏覽器會攔截跨源的請求回應，除非 Header 中正確設定了 CORS 相關的 **Access-Control-Allow-Origin** 等欄位。
 > 
@@ -282,7 +282,7 @@ sequenceDiagram
     - **Accept-Language**
     - **Content-Language**
     - **Content-Type（只限於三個值：text/plain、multipart/form-data、application/x-www-form-urlencoded）**
-3. **Content-Type**：如果請求使用**`POST`**方法，則其**`Content-Type`**頭部的值僅能是上述三種之一。
+3. **Content-Type**：如果請求使用 **`POST`** 方法，則其 **`Content-Type`** 頭部的值僅能是上述三種之一。
 
 ### **伺服器設置 HTTP Header**
 

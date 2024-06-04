@@ -18,7 +18,7 @@ tags:
   - STL
 ---
 
-**`priority_queue`** 是 C++ 標準模板庫（STL）中的一種容器適配器(Adaptor)，它提供了 **queue** 的部分功能，並自動依據元素的**優先權(priority)**排序。不同於普通隊列先進先出的規則，**priority_queue** 中的元素是自動按照某種排序準則(默認為由大到小)組織的。每次從 **priority_queue** 取出一個元素時，將取出目前最高優先權的元素。**priority_queue** 通常以 **`heap`** 的形式實作，這種資料結構可以高效地插入和刪除元素，時間複雜度為O(log n)。
+**`priority_queue`** 是 C++ 標準模板庫（STL）中的一種容器適配器(Adaptor)，它提供了 **queue** 的部分功能，並自動依據元素的**優先權(priority)** 排序。不同於普通隊列先進先出的規則，**priority_queue** 中的元素是自動按照某種排序準則(默認為由大到小)組織的。每次從 **priority_queue** 取出一個元素時，將取出目前最高優先權的元素。**priority_queue** 通常以 **`heap`** 的形式實作，這種資料結構可以高效地插入和刪除元素，時間複雜度為O(log n)。
 
 ## **初始化**
 

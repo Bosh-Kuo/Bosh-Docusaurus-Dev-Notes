@@ -22,7 +22,7 @@ tags:
 ## **為何選擇使用 Zustand ?**
 ### **需求： Component 層級的狀態管理**
 過去我習慣用 React 原生的 **`useContext hook`** 集中管理大component 的 state，來讓比較深層的 children components 直接呼叫 hook 來取得需要的 state。useContext 的好處就是非常簡單易學易用，同時又能解決 props drilling 的問題，但是 useContext 最令人可惜的點就在於，當任何一個 context 內的 state 被更新，所有使用到 useContext 的 components 都會被重新渲染，依然沒辦法有效避免 re-render 的問題。  
-前面提到，目前我們使用 **`Redux`** 來管理全局狀態，我們主要拿 redux 來管理像是 User 資訊、各頁面資訊等應用程式層級的資訊。redux 隨然能夠解決上述的 **props drilling** 和 **re-render** 問題，但是把某一個頁面的某一個 component 的**"局部狀態"**放於**"全局"**來管理似乎不太合適，再加上公司的 redux 因為一些歷史因素，開發上不是很方便使用，因此我決定尋找 Redux 與 useContext 以外的解決方案。  
+前面提到，目前我們使用 **`Redux`** 來管理全局狀態，我們主要拿 redux 來管理像是 User 資訊、各頁面資訊等應用程式層級的資訊。redux 隨然能夠解決上述的 **props drilling** 和 **re-render** 問題，但是把某一個頁面的某一個 component 的 **"局部狀態"** 放於 **"全局"** 來管理似乎不太合適，再加上公司的 redux 因為一些歷史因素，開發上不是很方便使用，因此我決定尋找 Redux 與 useContext 以外的解決方案。  
 剛好最近老闆在開會的時候不停的安利 **`Zustand`**，花了一些時間研究後，發現 Zustand 非常易學，且對開發者也十分友善，可以用更簡短易懂的寫法 cover 掉大部分 redux 能做到的事情，且官方文件恰好有針對我目前的需求提供一個很好的解決方案，因此在這個專案中我選擇使用這個我之前從未使用過的工具。
 
 ### **各 state management tools 概覽**
@@ -378,8 +378,8 @@ const useStore = create(
 
 Zustand 官方文件建議我們將所用來更新 state 的 function (`actions`) 集中寫在 store 裡，但 zustand 也允喜我們在外部定義 `actions`， 這麼做有幾個好處：
 
-1. **增加 action 的靈活性：**有些 actions 會隨著產品需求與一開始定義的不一樣，將 action 定義在直接使用到的 component 可以避免為了特定 component 改變 action 功能而影響到其他使用該 action 的 component
-2. **保持全局 store 易讀性：**某些 action 可能只在特定的 component 上作用，當這類型的 actions 很多的時候，若將全部 action 集中寫在 store hook 裡面，可能會讓 store hook 很龐大。假設 store 中存著一個複雜的 nested object，若要為每個屬性的更新動作都建立 actions function，將會令 create store hook 的程式碼十分冗長。
+1. **增加 action 的靈活性：** 有些 actions 會隨著產品需求與一開始定義的不一樣，將 action 定義在直接使用到的 component 可以避免為了特定 component 改變 action 功能而影響到其他使用該 action 的 component
+2. **保持全局 store 易讀性：** 某些 action 可能只在特定的 component 上作用，當這類型的 actions 很多的時候，若將全部 action 集中寫在 store hook 裡面，可能會讓 store hook 很龐大。假設 store 中存著一個複雜的 nested object，若要為每個屬性的更新動作都建立 actions function，將會令 create store hook 的程式碼十分冗長。
 
 ```jsx
 function Counter2() {

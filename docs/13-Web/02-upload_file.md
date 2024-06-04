@@ -361,7 +361,7 @@ app.listen(port, () => {
 > 詳細API 使用方法參閱 **[@react-dropzone](https://react-dropzone.js.org/#src)**
 > 
 
-以下簡單介紹 **`useDropzone`**的幾個常用的參數定義與回傳
+以下簡單介紹 **`useDropzone`** 的幾個常用的參數定義與回傳
 
 - 選項
     - **accept**：指定接受的檔案類型。
@@ -369,9 +369,9 @@ app.listen(port, () => {
     - **multiple**：是否允許選擇多個檔案。
     - **minSize、maxSize**：設定檔案的最小和最大大小。
     - **disabled**：停用拖放功能。
-    - **maxFiles：**限制用戶一次性能夠上傳的最大文件數量
-    - **noClick：**當設置為 **true** 時，拖放區域將不會響應點擊事件，這意味著用戶不能通過點擊來打開文件選擇對話框。
-    - **noDrag：**當設置為 **true** 時，禁用拖放功能。這意味著用戶不能將文件拖到指定區域來上傳，但仍可以通過點擊來觸發文件選擇。
+    - **maxFiles**：限制用戶一次性能夠上傳的最大文件數量
+    - **noClick**：當設置為 **true** 時，拖放區域將不會響應點擊事件，這意味著用戶不能通過點擊來打開文件選擇對話框。
+    - **noDrag**：當設置為 **true** 時，禁用拖放功能。這意味著用戶不能將文件拖到指定區域來上傳，但仍可以通過點擊來觸發文件選擇。
 - **回傳**
     - **getRootProps()**：返回應用於拖放區域的 props，包括 onClick, onDrop 等事件處理器等
     - **getInputProps()**：返回應用於 **\<input type="file">** 的 props，如 `{accept: 'image/*', multiple: true, type: 'file', style: {display: 'none'}, onChange: ƒ, …}`。
@@ -396,7 +396,7 @@ app.listen(port, () => {
     > 參閱 [**@MDN-FileReader**](https://developer.mozilla.org/en-US/docs/Web/API/FileReader)
     > 
     
-    **`FileReader`** 是 Web API 的一部分，它允許 Web 應用非同步讀取儲存在用戶系統上的文件（或原始數據）內容，無論是一般檔案(**`File`**物件)或是二進位資料(**`Blob`**物件)。
+    **`FileReader`** 是 Web API 的一部分，它允許 Web 應用非同步讀取儲存在用戶系統上的文件（或原始數據）內容，無論是一般檔案(**`File`** 物件)或是二進位資料(**`Blob`** 物件)。
     
     ```tsx
     import React, { useState } from 'react';
