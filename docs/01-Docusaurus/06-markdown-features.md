@@ -1,9 +1,9 @@
 ---
 title: Markdown Features
 sidebar_label: "[學習筆記] Markdown Features"
-description: Docusaurus 專案 - Markdown 編輯功能
+description: 在 Docusaurus 中，Markdown 是構建文檔和部落格文章的核心工具。這篇文章將記錄一些我平常在使用 Docusaurus 撰寫文章時，常用到的 Markdown 功能。
 last_update:
-  date: 2023-02-19
+  date: 2023-06-10
 keywords:
   - Docusaurus
   - Markdown
@@ -12,81 +12,316 @@ tags:
 ---
 
 
-Docusaurus 2 使用可以編寫交互式文檔，使用者可以在 markdown 中嵌入 React 組件，或構建互動式 codeblock，讓讀者可以在即時看到程式碼的渲染結果。以下功能可參閱官方文檔的範例圖示與使用說明。
+在 Docusaurus 中，Markdown 是構建文檔和部落格文章的核心工具。這篇文章將記錄一些我平常在使用 Docusaurus 撰寫文章時，常用到的 Markdown 功能。
 
-## **Standard Features**
 
-- [Front-matter](https://docusaurus.io/docs/markdown-features#front-matter): Markdown 文件的 metadata
-- [Quotes](https://docusaurus.io/docs/markdown-features#quotes): 引用框
-- [Details](https://docusaurus.io/docs/markdown-features#details): Toggle 展開
 
-## **MDX and React**
+## **內聯目錄 Inline table of contents**
 
-- [Exporting-components](https://docusaurus.io/docs/markdown-features/react#exporting-components): 導出元件
-- [Importing-components](https://docusaurus.io/docs/markdown-features/react#importing-components): 導入元件
-- [Mdx-component-scope](https://docusaurus.io/docs/markdown-features/react#mdx-component-scope): 將 component 註冊到全局範圍，這將使它在每個 MDX 文件中自動可用，而無需任何 import 語句。
-- [Markdown-and-jsx-interoperability](https://docusaurus.io/docs/markdown-features/react#markdown-and-jsx-interoperability): Markdown jsx 交互使用時常會遇到的問題
-- [Importing-code-snippets](https://docusaurus.io/docs/markdown-features/react#importing-code-snippets): 將任何程式碼文件作為原始文本導入
-- [Importing-markdown](https://docusaurus.io/docs/markdown-features/react#importing-markdown): 將名稱有 `_` 前綴的 markdown 文件作為 `partial` 引入，作為 component
-- [Available-exports](https://docusaurus.io/docs/markdown-features/react#available-exports): 全局變量
+```md
+import TOCInline from '@theme/TOCInline';
 
-## **Tabs**
+<TableOfContents toc={toc}/>
 
-- [Syncing-tab-choices](https://docusaurus.io/docs/markdown-features/tabs?current-os=ios#syncing-tab-choices): 同步相同類型的 Tabs
-- [Customizing-tabs](https://docusaurus.io/docs/markdown-features/tabs?current-os=ios#customizing-tabs): 自定義 Tabs 樣式
-- [Query-string](https://docusaurus.io/docs/markdown-features/tabs?current-os=ios#query-string): 將選定的 Tab 作為 search parameter 加入 url 中
+```
 
-## **Code blocks**
+import TOCInline from '@theme/TOCInline';
 
-- [Code-title](https://docusaurus.io/docs/markdown-features/code-blocks#code-title): 加入 `title=<codeblock 標題>`
-- [Syntax-highlighting](https://docusaurus.io/docs/markdown-features/code-blocks#syntax-highlighting): 設定 code blocks 主題與支持語言
-- [Line-highlighting](https://docusaurus.io/docs/markdown-features/code-blocks#line-highlighting): highlight 特定行數的程式碼
-- [Line-numbering](https://docusaurus.io/docs/markdown-features/code-blocks#line-numbering): 加入 `showLineNumbers` 以顯示行號
-- [Interactive-code-editor](https://docusaurus.io/docs/markdown-features/code-blocks#interactive-code-editor): 在 jsx code block 後加上 `live` 直接在頁面上渲染出 React component
-- [Using-jsx-markup](https://docusaurus.io/docs/markdown-features/code-blocks#using-jsx-markup): 嵌入 HTML markup
-- [Multi-language-support-code-blocks](https://docusaurus.io/docs/markdown-features/code-blocks#multi-language-support-code-blocks): 使用 Tabs 切換多種程式語言 code blocks
-- [Usage-in-jsx](https://docusaurus.io/docs/markdown-features/code-blocks#usage-in-jsx): 在 js 中使用 `<CodeBlock>`
+<TOCInline toc={toc} />
 
-## **Admonitions**
 
-- [Usage-with-prettier](https://docusaurus.io/docs/markdown-features/admonitions#usage-with-prettier): 避免 Prettier 錯誤修改 admonitions 語法
-- [Specifying-title](https://docusaurus.io/docs/markdown-features/admonitions#specifying-title): 在 admonition 加上標題
-- [Admonitions-with-mdx](https://docusaurus.io/docs/markdown-features/admonitions#admonitions-with-mdx): 在 MDX 中使用 admonition
-- [Usage-in-jsx](https://docusaurus.io/docs/markdown-features/admonitions#usage-in-jsx): 在 JSX 中使用 admonition
-- [Customizing-admonitions](https://docusaurus.io/docs/markdown-features/admonitions#customizing-admonitions): 客製化 admonitions 樣式
+<br/>
 
-## **Headings and Table of contents**
 
-- [Markdown-headings](https://docusaurus.io/docs/markdown-features/toc#markdown-headings)
-- [Table-of-contents-heading-level](https://docusaurus.io/docs/markdown-features/toc#table-of-contents-heading-level)
-- [Inline-table-of-contents](https://docusaurus.io/docs/markdown-features/toc#inline-table-of-contents): 直接在 Markdown 內顯示 TOC table
+## **添加空白行**
 
-## **Assets**
+```md
+<br/>
+```
 
-- [images](https://docusaurus.io/docs/markdown-features/assets#images)
-- [files](https://docusaurus.io/docs/markdown-features/assets#files): 在頁面中嵌入文件下載連結
-- [inline-svgs](https://docusaurus.io/docs/markdown-features/assets#inline-svgs)
-- [themed-images](https://docusaurus.io/docs/markdown-features/assets#themed-images)
-- [static-assets](https://docusaurus.io/docs/markdown-features/assets#static-assets)
 
-## **Math**
+<br/>
 
-- [Usage](https://docusaurus.io/docs/markdown-features/math-equations#usage)
-- [Configuration](https://docusaurus.io/docs/markdown-features/math-equations#configuration)
-- [Self-hosting-katex-assets](https://docusaurus.io/docs/markdown-features/math-equations#self-hosting-katex-assets)
-- [Upgrading-rehype-katex-beyond-recommended-version](https://docusaurus.io/docs/markdown-features/math-equations#upgrading-rehype-katex-beyond-recommended-version)
 
-## **Diagrams**
+## **Quotes 引用框**
 
-- [Installation](https://docusaurus.io/docs/markdown-features/diagrams#installation)
-- [Usage](https://docusaurus.io/docs/markdown-features/diagrams#usage)
-- [Theming](https://docusaurus.io/docs/markdown-features/diagrams#theming)
-- [Mermaid Config](https://docusaurus.io/docs/markdown-features/diagrams#configuration)
+```md
+> 這是一個引用框
+> - 在引用框內也可以疊加其他的 `Markdown` 功能
+```
 
-## **Head metadata**
+> 這是一個引用框
+> - 在引用框內也可以疊加其他的 `Markdown` 功能
 
-- [Customizing-head-metadata](https://docusaurus.io/docs/markdown-features/head-metadata#customizing-head-metadata)
-- [Markdown-page-description](https://docusaurus.io/docs/markdown-features/head-metadata#markdown-page-description)
+
+<br/>
+
+
+## **Toggle 展開元素**
+
+````md
+
+<details>
+  <summary>Toggle me!</summary>
+
+  This is the detailed content
+
+  ```js
+  console.log("Markdown features including the code block are available");
+  ```
+
+  You can use Markdown here including **bold** and _italic_ text, and [inline link](https://docusaurus.io)
+  <details>
+    <summary>Nested toggle! Some surprise inside...</summary>
+
+    😲😲😲😲😲
+  </details>
+</details>
+````
+
+<details>
+  <summary>Toggle me!</summary>
+
+  This is the detailed content
+
+  ```js
+  console.log("Markdown features including the code block are available");
+  ```
+
+  You can use Markdown here including **bold** and _italic_ text, and [inline link](https://docusaurus.io)
+  <details>
+    <summary>Nested toggle! Some surprise inside...</summary>
+
+    😲😲😲😲😲
+  </details>
+</details>
+
+
+<br/>
+
+
+## **Tabs 切換元素**
+
+```md
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="react"
+  values={[
+    {label: 'React', value: 'react'},
+    {label: 'Angular', value: 'angular'},
+    {label: 'Vue', value: 'vue'},
+  ]}>
+  <TabItem value="react">This is React content</TabItem>
+  <TabItem value="angular">This is Angular content</TabItem>
+  <TabItem value="vue">This is Vue content</TabItem>
+</Tabs>
+```
+import Tabs from '@theme/Tabs';
+import TabItem from '@theme/TabItem';
+
+<Tabs
+  defaultValue="react"
+  values={[
+    {label: 'React', value: 'react'},
+    {label: 'Angular', value: 'angular'},
+    {label: 'Vue', value: 'vue'},
+  ]}>
+  <TabItem value="react">This is React content</TabItem>
+  <TabItem value="angular">This is Angular content</TabItem>
+  <TabItem value="vue">This is Vue content</TabItem>
+</Tabs>
+
+
+<br/>
+
+
+## **Code blocks 程式碼區塊**
+
+- 加入標題
+- 顯示行號
+- highlight 特定行數的程式碼
+
+````md
+```js title="example.js" showLineNumbers={true} {2-3}
+console.log("title: example.js !");
+console.log("Hello, world!");
+console.log("This is a code block with line numbers and highlighted lines.");
+```
+````
+
+```js title="example.js" showLineNumbers={true} {2-3}
+console.log("title: example.js !");
+console.log("Hello, world!");
+console.log("This is a code block with line numbers and highlighted lines.");
+```
+
+
+- Interactive code editor
+````md
+```jsx live
+function HelloWorld() {
+  return <div>Hello, world!</div>;
+}
+```
+````
+
+```jsx live
+function HelloWorld() {
+  return <div>Hello, world!</div>;
+}
+```
+
+- 切換多種程式語言 code blocks
+````md
+<Tabs>
+<TabItem value="js" label="JavaScript">
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+def hello_world():
+  print("Hello, world!")
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+class HelloWorld {
+  public static void main(String args[]) {
+    System.out.println("Hello, World");
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+````
+
+
+<Tabs>
+<TabItem value="js" label="JavaScript">
+
+```js
+function helloWorld() {
+  console.log('Hello, world!');
+}
+```
+
+</TabItem>
+<TabItem value="py" label="Python">
+
+```py
+def hello_world():
+  print("Hello, world!")
+```
+
+</TabItem>
+<TabItem value="java" label="Java">
+
+```java
+class HelloWorld {
+  public static void main(String args[]) {
+    System.out.println("Hello, World");
+  }
+}
+```
+
+</TabItem>
+</Tabs>
+
+
+<br/>
+
+
+## **Admonitions 告示**
+
+```md
+:::note[備註標題]
+This is a note
+:::
+
+:::tip[提示標題]
+This is a tip
+:::
+
+:::info[信息標題]
+This is an info
+:::
+
+:::caution[警告標題]
+This is a caution
+:::
+
+:::danger[危險標題]
+This is a danger
+:::
+```
+
+:::note[備註標題]
+This is a note
+:::
+
+:::tip[提示標題]
+This is a tip
+:::
+
+:::info[信息標題]
+This is an info
+:::
+
+:::caution[警告標題]
+This is a caution
+:::
+
+:::danger[危險標題]
+This is a danger
+:::
+
+
+<br/>
+
+
+## **圖片 Images**
+
+```md
+![Docusaurus Logo](https://docusaurus.io/img/docusaurus.png)
+```
+
+![Docusaurus Logo](https://docusaurus.io/img/docusaurus.png)
+
+
+<br/>
+
+
+## **靜態資源 Static assets**
+靜態資源放在 **static** 資料夾中，引用時以 **static** 目錄為根目錄。
+
+```md
+![My logo](/img/logo.png)
+```
+
+![My logo](/img/logo.png)
+
+
+<br/>
+
+
+## **檔案下載連結 Files**
+[Download my logo](/img/logo.png)
+
+
+<br/>
+
 
 ## **Reference**
 - **[@Docusaurus](https://docusaurus.io/)**
