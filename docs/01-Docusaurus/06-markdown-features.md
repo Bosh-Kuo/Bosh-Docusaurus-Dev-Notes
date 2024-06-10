@@ -1,6 +1,6 @@
 ---
 title: Markdown Features
-sidebar_label: Markdown Features
+sidebar_label: "[學習筆記] Markdown Features"
 description: Docusaurus 專案 - Markdown 編輯功能
 last_update:
   date: 2023-02-19

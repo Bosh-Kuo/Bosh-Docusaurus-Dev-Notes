@@ -1,6 +1,6 @@
 ---
 title: Algolia DocSearch
-sidebar_label: Algolia DocSearch
+sidebar_label: "[實作紀錄] Algolia DocSearch"
 description: Docusaurus 專案 - Algolia DocSearch
 last_update:
   date: 2023-03-08
