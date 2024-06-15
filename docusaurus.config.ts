@@ -48,6 +48,12 @@ const config: Config = {
     ],
   ],
 
+  // * plugin configurations
+  plugins: [
+    "@docusaurus/plugin-ideal-image", // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-ideal-image
+    "docusaurus-plugin-image-zoom", // https://github.com/gabrielcsapo/docusaurus-plugin-image-zoom
+  ],
+
   // * theme configurations
   themeConfig: {
     // * Common
@@ -199,6 +205,18 @@ const config: Config = {
       // Optional: path for search page that enabled by default (`false` to disable it)
       searchPagePath: "search",
       //... other Algolia params
+    },
+    // * theme-live-codeblock
+    liveCodeBlock: {
+      playgroundPosition: "bottom", // "top" | "bottom"
+    },
+    // * docusaurus-plugin-image-zoom
+    zoom: {
+      selector: ".markdown :not(em) > img",
+      background: {
+        light: "rgb(255, 255, 255)",
+        dark: "rgb(50, 50, 50)",
+      },
     },
   } satisfies Preset.ThemeConfig,
   // Enabling mermaid
