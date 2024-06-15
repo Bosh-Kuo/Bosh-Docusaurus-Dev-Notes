@@ -17,7 +17,7 @@ tags:
 
 ### **定義與用法**
 
-**Union(聯合型別)**用於表示一個變量可以是幾種不同型別中的一種。在 TypeScript 中，使用 **`|`** 符號來表示。
+**Union(聯合型別)** 用於表示一個變量可以是幾種不同型別中的一種。在 TypeScript 中，使用 **`|`** 符號來表示。
 
 ```tsx
 let value: string | number;
@@ -63,7 +63,7 @@ value = true;    // 錯誤，型別不匹配
 
 ### **定義與用法**
 
-**Intersection(交叉型別)**用於表示一個變數必須同時滿足多個類型的條件。在 TypeScript 中，使用 **`&`** 符號來表示。
+**Intersection(交叉型別)** 用於表示一個變數必須同時滿足多個類型的條件。在 TypeScript 中，使用 **`&`** 符號來表示。
 
 ```tsx
 interface Person {
