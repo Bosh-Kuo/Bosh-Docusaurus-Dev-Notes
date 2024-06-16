@@ -10,21 +10,22 @@ type FeatureItem = {
 };
 const FeatureList: FeatureItem[] = [
   {
-    title: "用最簡單的方式理解複雜問題",
-    Svg: require("@site/static/img/undraw_learning.svg").default,
+    title: "技術雜談與實作紀錄",
+    Svg: require("@site/static/img/undraw_blogging.svg").default,
     description: (
       <>
-        這個網站記錄我的學習旅程，我會嘗試透過簡單易懂的言語，記錄並整理學習中遇到的複雜問題，享受學習的樂趣。
+        <Link to='/blog'>專題文章</Link>{" "}
+        匯集了各種非特定技術種類的專題文章，並記錄了我在開發過程中遇到的問題與解決方案。
       </>
     ),
   },
   {
-    title: "隨時記錄，隨時學習",
-    Svg: require("@site/static/img/undraw_code_review_review.svg").default,
+    title: "輸出式學習，以筆記內化知識",
+    Svg: require("@site/static/img/storyset_notes.svg").default,
     description: (
       <>
-        <Link to='/docs'>Docs</Link>{" "}
-        為一個一站式的技術筆記資源中心，裡面收錄了我在工作與學習時所記錄下的筆記。
+        <Link to='/docs'>筆記</Link>{" "}
+        為一個一站式的技術筆記資源中心，裡面收錄了我在學習各種技術時所記錄下的重要觀念與知識點。
       </>
     ),
   },
@@ -33,7 +34,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_programming.svg").default,
     description: (
       <>
-        <Link to='/projects'>Projects</Link> 收錄集結了我最近在 Github
+        <Link to='/projects'>近期專案</Link> 收錄了近期我在 Github
         上更新的專案，我的專案目前主要與 Web 開發和深度學習等相關領域有關。
       </>
     ),

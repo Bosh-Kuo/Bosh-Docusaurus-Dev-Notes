@@ -6,8 +6,9 @@ import rehypeKatex from "rehype-katex";
 
 const config: Config = {
   // * Site metadata
-  title: "Bosh's Tech Notes",
-  tagline: "Sharing my learning journey.",
+  title: "Bosh 的技術探索筆記",
+  tagline:
+    "這裡匯集了我在軟體技術領域中的各種學習記錄與實踐經歷，分享我的觀點與問題解決過程，希望這些內容對來到這裡的你有所幫助",
   favicon: "img/favicon.ico",
   url: "https://notes.boshkuo.com", // Set the production url of your site here
   baseUrl: "/", // The path after the host, ex: https://facebook.github.io/<baseURL>/.
@@ -38,7 +39,17 @@ const config: Config = {
           rehypePlugins: [rehypeKatex],
         },
         // * plugin-content-blog
-        blog: false,
+        blog: {
+          path: "blog",
+          routeBasePath: "blog",
+          blogSidebarCount: 10,
+          blogSidebarTitle: "最新文章",
+          blogDescription: "專題文章，分享我對各種技術議題的觀點與開發實作紀錄",
+          postsPerPage: 10,
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+          showLastUpdateTime: false,
+        },
         // * plugin-google-gtag
         gtag: {
           trackingID: "G-HF9KVZT5MF",
@@ -77,22 +88,17 @@ const config: Config = {
           type: "doc",
           docId: "index",
           position: "left",
-          label: "Docs",
+          label: "筆記",
         },
         {
-          to: "/projects",
-          label: "Projects",
+          to: "/blog",
+          label: "專題文章",
           position: "left",
         },
         {
-          href: "https://boshkuo.com",
-          label: "Portfolio",
-          position: "right",
-        },
-        {
-          href: "https://blog.boshkuo.com/",
-          label: "Blog",
-          position: "right",
+          to: "/projects",
+          label: "近期專案",
+          position: "left",
         },
         {
           href: "https://github.com/Bosh-Kuo",
@@ -111,14 +117,18 @@ const config: Config = {
       style: "dark",
       links: [
         {
-          title: "Dev notes",
+          title: "This Website",
           items: [
             {
-              label: "Docs",
+              label: "筆記",
               to: "/docs",
             },
             {
-              label: "Projects",
+              label: "專題文章",
+              to: "/blog",
+            },
+            {
+              label: "近期專案",
               to: "/projects",
             },
           ],
@@ -143,6 +153,10 @@ const config: Config = {
         {
           title: "More",
           items: [
+            {
+              label: "Portfolio",
+              href: "https://boshkuo.com/",
+            },
             {
               label: "Hexo Blog",
               href: "https://blog.boshkuo.com/",
