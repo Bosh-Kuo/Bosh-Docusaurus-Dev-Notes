@@ -19,13 +19,13 @@ function HomepageHeader(): JSX.Element {
           <div className='col col--6'>
             <div className={styles.right}>
               <h1 className='hero__title'>{siteConfig.title}</h1>
-              <p className='hero__subtitle'>{siteConfig.tagline}</p>
+              <p>{siteConfig.tagline}</p>
               <div className={styles.buttons}>
                 <Link
                   className={"button button--secondary button--lg"}
                   to='/docs'
                 >
-                  🗂 Go To Docs
+                  🗂 前往筆記
                 </Link>
               </div>
             </div>

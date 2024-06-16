@@ -1,20 +1,16 @@
 ---
-title: "ubuntu 20.04.3 系統更新導致的 nvidia-driver 異常問題"
-sidebar_label: "ubuntu 20.04.3 系統更新導致的 nvidia-driver 異常問題"
-description: 本文章紀錄排除 ubuntu 系統更新導致的 nvidia-driver 異常問題。
-last_update:
-  date: 2023-01-31
-keywords:
-  - Deep Learning
-  - Nvidia Driver
-  - Linux
-tags:
-  - Linux
-  - Ubuntu
+title: ubuntu 20.04.3 系統更新導致的 nvidia-driver 異常問題
+slug: nvidia-driver-problem
+authors: bosh
+keywords: [Linux, Ubuntu, Nvidia Driver, Deep Learning]
+tags: [Linux, Ubuntu, Nvidia Driver]
+date: 2023-01-31
 ---
 
-> 本篇為排除問題過程的紀錄，本身對 Linux 系統與 Nvidia 深度學習環境也不是很熟悉，若有描述不正確的地方歡迎更正～
-> 
+> 本篇為排除 nvidia-driver 異常問題的紀錄，本身對 Linux 系統與 Nvidia 深度學習環境也不是很熟悉，若有描述不正確的地方歡迎更正～
+
+<!-- truncate -->
+
 
 ## **設備與軟體版本**
 
@@ -25,6 +21,9 @@ tags:
 - 軟體版本：
     - nvidia-driver: 510.69.02
     - CUDA: 11.3
+
+
+
 
 ## **問題：重新開機後螢幕黑屏、畫面比例異常**
 
@@ -75,7 +74,7 @@ sudo ./驅動程式檔名.run
 
 因為我也沒有試過以圖型介面安裝，若失敗可以嘗試以 command mode 安裝。
 
-## **追溯問題：為什麼只有我的 Ubuntu 系統更新才會發生這種問題而其他人都不會？**
+## **追溯問題：為什麼我的 Ubuntu 系統更新才會發生這個問題？**
 
  一般情況下，系統進行更新後不會發生驅動程式與系統不相容的問題，是因為系統更新通常包括驅動程式更新，以確保驅動程式與系統相容。但是，在某些情況下，驅動程式更新不是通過系統更新進行的，而是需要手動下載並安裝，這時就有可能發生驅動程式與系統不相容的問題。而驅動程式更新不是通過系統更新進行的原因是因為驅動程式並不是由系統供應商提供的，而是由硬體製造商提供的。
 
