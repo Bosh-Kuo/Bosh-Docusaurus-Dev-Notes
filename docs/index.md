@@ -1,4 +1,5 @@
 ---
+title: "Bosh 的技術筆記"
 sidebar_position: 0
 sidebar_label: Intro
 hide_table_of_contents: true
@@ -6,7 +7,6 @@ last_update:
   date: 2023-02-19
 ---
 
-# Bosh's Technology Notes
 
 ## 本站緣起
 作為一個跨領域的**軟體工程師**，我從一開始接觸 Machine Learning & Deep Learning 到補 CS 基本知識以及學習 Web 開發的道路上，我最常使用的學習資源就是網路上的筆記與文章，很感謝自己生在這個資訊發達的年代，在網路上很容易就能搜尋到與相似的問題與學習資源。**開源**與**分享精神**一直是軟體生態圈最吸引我的地方，前人們的學習經驗與知識都成了後人的免費教材，人人都享有平等的學習資源。若沒有這些前人的經驗，不知道在學習路上要多花多少時間抑或是多踩多少坑。
