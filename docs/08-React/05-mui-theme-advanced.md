@@ -436,7 +436,7 @@ const StyledSlider = styled(Slider, {
 
 ### **全局主題 overrides**
 
-除此之外，我們也可以直接從 Component 的層級去定義某種 Component 的 style。由於我個人使用到這個功能的機會不高，因此就不記錄這部分的筆記，有興趣的話可以看 [****Themed components](https://mui.com/material-ui/customization/theme-components/)** 的說明。
+除此之外，我們也可以直接從 Component 的層級去定義某種 Component 的 style。由於我個人使用到這個功能的機會不高，因此就不記錄這部分的筆記，有興趣的話可以看 [**Themed components**](https://mui.com/material-ui/customization/theme-components/) 的說明。
 
 
 <br/>

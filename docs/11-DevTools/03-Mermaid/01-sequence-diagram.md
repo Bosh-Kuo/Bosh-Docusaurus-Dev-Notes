@@ -14,10 +14,10 @@ tags:
 ---
 
 
-> 本篇筆記的範例來自 **@[Memaid-Sequence diagrams](https://mermaid.js.org/syntax/sequenceDiagram.html#activations)**
+> 本篇筆記的範例來自 **[@Mermaid-Sequence diagrams](https://mermaid.js.org/syntax/sequenceDiagram.html#activations)**
 > 
 
-**時序圖(Sequence Diagram)**通常用於描述實體間的交互過程和消息傳遞順序。它適合用來描繪系統內部組件、物件或角色之間的溝通流程，特別是在設計軟體架構、分析業務流程或理解系統操作。當需要清晰展示系統各部分如何通過消息進行交互，或當需要理解或說明系統的行為邏輯時，繪製時序圖就非常有用。
+**時序圖(Sequence Diagram)** 通常用於描述實體間的交互過程和消息傳遞順序。它適合用來描繪系統內部組件、物件或角色之間的溝通流程，特別是在設計軟體架構、分析業務流程或理解系統操作。當需要清晰展示系統各部分如何通過消息進行交互，或當需要理解或說明系統的行為邏輯時，繪製時序圖就非常有用。
 
 ## **Syntax**
 

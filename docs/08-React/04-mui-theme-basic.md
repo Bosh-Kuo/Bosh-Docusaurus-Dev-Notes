@@ -96,7 +96,7 @@ const theme = createTheme(deepmerge(options1, options2));
 
 ### **[ThemeProvider](https://mui.com/material-ui/customization/theming/#themeprovider)**
 
-`ThemeProvider` ****的作用是用來包裹整個應用程式或是叫上層的 component ，讓 ThemeProvider 內的 component 可以使用我們定義的主題。
+`ThemeProvider` 的作用是用來包裹整個應用程式或是叫上層的 component ，讓 ThemeProvider 內的 component 可以使用我們定義的主題。
 
 ```jsx
 import React from 'react';
@@ -115,7 +115,7 @@ const Root = () => {
 export default Root;
 ```
 
-我們也可以嵌套多個 `ThemeProvider`，內層的 theme 會 override ****外層的 ****theme
+我們也可以嵌套多個 `ThemeProvider`，內層的 theme 會 override 外層的 theme
 
 ```jsx
 <ThemeProvider theme={outerTheme}>
