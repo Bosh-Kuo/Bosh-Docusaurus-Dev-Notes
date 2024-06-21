@@ -2,6 +2,7 @@
 title: 如何有效率地管理 React 局部狀態？ 這次我選擇了 Zustand!
 sidebar_label: "[Zustand] 如何有效率地管理 React 局部元件狀態？ 這次我選擇了 Zustand"
 description: 本篇文章淺談 Redux, useContext, Zustand 三種狀態管理的差異，以及作者為何在新的開發任務中選擇 Zustand 來管理部分元件的狀態。本篇文章提供了 zustand 的使用範例例，探討其優勢，還分享了使用一些高校使用 zustand 的技巧，如使用 useShallow 來優化性能，以及在 Store Hook 外部定義 action。無論是新手還是經驗豐富的開發人員，希望讀者閱讀完這篇文章都能瞭解為何"這次我選擇了 Zustand"。
+slug: "/React/zustand"
 last_update:
   date: 2023-12-09
 keywords:

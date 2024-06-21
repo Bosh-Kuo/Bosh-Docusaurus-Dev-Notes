@@ -2,6 +2,7 @@
 title: MUI v5 主題 (Theme)：基礎概念與使用方法
 sidebar_label: "[MUI] Theme: 基礎概念與使用方法"
 description: 本篇文章介紹了MUI v5（Material-UI版本5）主題（Theme）的基礎概念和使用方法。文章簡要引述MUI官網的說明並且介提供了一些示例以幫助讀者更好地理解主題的應用。內容包括了 MUI 主題的API，像是createTheme、ThemeProvider 和 useTheme
+slug: "/React/mui-theme-basic"
 last_update:
   date: 2023-05-30
 keywords:

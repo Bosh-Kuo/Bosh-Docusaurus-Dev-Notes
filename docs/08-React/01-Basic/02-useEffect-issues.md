@@ -2,6 +2,7 @@
 title: useEffect 常見的誤用
 sidebar_label: "[Hooks] useEffect 常見的誤用"
 description: 本篇文章記錄閱讀 React 官方文件後歸納出的常見的 useEffect 誤用
+slug: "/React/useEffect-issues"
 last_update:
   date: 2023-03-16
 keywords:

@@ -2,6 +2,7 @@
 title: MUI v5 主題 (Theme)：進階定制與自定義
 sidebar_label: "[MUI] Theme: 進階定制與自定義"
 description: "本篇文章介紹了 MUI v5 主題（Theme）的進階使用法，包含 Palette（調色板)、Dark Mode、Typography、Spacing、客製化Component"
+slug: "/React/mui-theme-advanced"
 last_update:
   date: 2023-05-30
 keywords:
