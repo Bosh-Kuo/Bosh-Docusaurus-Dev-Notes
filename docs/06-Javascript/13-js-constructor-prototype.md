@@ -379,7 +379,7 @@ console.log(alice instanceof Object); // true
 console.log(alice instanceof Array);  // false
 ```
 
-### **> 使用 F.prototype 模擬實現 instanceof**
+### ** 使用 F.prototype 模擬實現 instanceof**
 
 `instanceof` 知道原理之後，我們也可以來簡單模擬一下 instnaceof 在做的事，這樣可以讓我們更好地理解 `instanceof` 的內部工作原理：
 
