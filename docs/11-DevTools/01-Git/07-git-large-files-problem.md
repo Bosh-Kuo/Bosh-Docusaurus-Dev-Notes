@@ -3,7 +3,7 @@ title: 不小心 git commit 到太大的檔案，推不上遠端該怎麼辦？
 sidebar_label: "[Git] 不小心 git commit 到太大的檔案怎麼辦？"
 description: 在使用 Git 進行版本控制時，偶爾會不小心提交過大的文件，導致無法推送到遠端倉庫。這篇文章將詳細介紹如何處理這種情況，包括如何刪除歷史記錄中的大文件，以及如何重寫提交歷史以成功推送到遠端。
 last_update:
-  date: 2024-03-03
+  date: 2024-07-13
 keywords:
   - 開發工具
   - Git
