@@ -21,7 +21,7 @@ tags:
 ```md
 import TOCInline from '@theme/TOCInline';
 
-<TableOfContents toc={toc}/>
+<TOCInline toc={toc}/>
 
 ```
 
