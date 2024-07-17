@@ -1,7 +1,7 @@
 ---
-title: "JavaScript Array 常用操作大補帖：你要的 Array methods 都在這了！"
-sidebar_label: "[Basic] Array Methods"
-description: 這是一個關於 JavaScript 陣列方法的技術筆記。從基礎操作到進階應用，本筆記提供了對 JavaScript 陣列方法的詳細解說和實用範例，包括排序、篩選、映射、迭代等常見操作。無論您是初學者還是有經驗的開發人員，這份筆記都能幫助您深入理解和運用 JavaScript 陣列方法，以提升開發效率並創建更強大的應用程式。
+title: "JavaScript Array 常用操作大補帖"
+sidebar_label: "[Basic] 陣列(Array)"
+description: Array 是 JS 中最常用的資料結構之一，本筆記提供了對 JavaScript 陣列方法的詳細解說和實用範例，包括排序、篩選、映射、迭代等常見操作。無論你是初學者還是有經驗的開發人員，這份筆記都能幫助你深入理解和運用 JavaScript 陣列方法。
 last_update:
   date: 2023-05-21
 keywords:
@@ -11,40 +11,9 @@ tags:
   - Javascript
 ---
 
-Array 是一個最基本且實用的資料結構，不管使用什麼程式語言都一定會遇到需要使用 Array 來操作資料的時候。JavaScript 的 Array 在幾個方面與其他程式語言的陣列不同。首先，JavaScript 的 Array 是動態型別的，它們可以容納不同類型的元素，使得處理多樣化的資料更加彈性。比較嚴謹的程式語言通常要求陣列中的元素具有相同的類型。另一個不同之處是 JavaScript 陣列的大小不是固定的，可以根據需要動態調整。這種彈性使得開發者可以方便地新增、刪除或修改陣列中的元素，而不受限於固定大小的限制。在比較嚴格的程式語言中，陣列的大小通常需要在宣告時事先指定。
-
-JavaScript 這個語言本身這個語言本身就提供了許多內建的 Array methods，例如 **`filter()、map()、forEach()`** 等。這些方法提供了簡潔而強大的功能，讓開發者能夠輕鬆地操作和處理陣列，而不需要手動實現迴圈或其他邏輯。以從 Array 中**篩選特定元素**作為例子，在 JavaScript 中，我們可以透過 **`filter()`** 方法用一行程式碼輕鬆實現這個功能，而 C++ 則需要更多行。以下是 JavaScript 和 C++ 的程式碼對照範例：
-
-- **JavaScript:**
-
-```jsx
-const numbers = [1, 2, 3, 4, 5];
-const evenNumbers = numbers.filter(num => num % 2 === 0);
-```
-
-- **C++:**
-
-```jsx
-#include <iostream>
-#include <vector>
-
-int main() {
-    std::vector<int> numbers = {1, 2, 3, 4, 5};
-    std::vector<int> evenNumbers;
-
-    for (int num : numbers) {
-        if (num % 2 == 0) {
-            evenNumbers.push_back(num);
-        }
-    }
-    return 0;
-}
-```
-
-正因為 JavaScript 提供了許多內建的 Array methods，所以有時候我需要實現特定操作時，我甚至都不知道原來 JavaScript 已經有內建方法可以滿足我的需求。因此，我決定依據使用情境一次記錄下所有我在工作中常用的陣列方法，以便日後在操作陣列時能夠快速查詢。
-
-
-<br/>
+:::note
+Array 是 JS 中最常用的資料結構之一。本篇文章整理 JS 中常見的 Array methods，以便忘記語法時快速查詢。
+:::
 
 
 ## **新增與移除方法**
