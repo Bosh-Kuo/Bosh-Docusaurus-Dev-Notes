@@ -2,6 +2,7 @@
 title: React + TypeScript + Jest + React Testing Library + MSW 前端測試工具安裝與配置
 sidebar_label: "[實作紀錄] React+TS+Jest+RTL+MSW 前端測試工具安裝與配置"
 description: 這篇技術筆記文章將詳細介紹如何在現代前端開發環境中整合 React、TypeScript、Jest、React Testing Library 及 MSW（Mock Service Worker）。文章將指導讀者從零開始安裝和組態這些工具，展示它們如何配合使用來建構一個健壯的測試環境。
+slug: "/React/TS-Jest-RTL-MSW-Setup"
 last_update:
   date: 2024-05-19
 keywords:
@@ -615,7 +616,7 @@ module.exports = {
 
 然而，以上測試所帶來的好處的前提是建立在同事A有乖乖地在 commit 程式碼前先跑一次專案的測試，若同事A忘記執行專案測試，有問題的程式碼還是會被推送到雲端。此外，每次 commit 都執行所有的測試檔案顯然不是個有效率的工作流程。
 
-**`Husky + lint-staged`** 這兩個工具可以幫助我們建立 **Git pre-commit hooks** ，針對與提交的程式碼相關的所有測試檔案進行自動化測試，這將能大大地改善開發過程中**改A錯B**的情況，且能節省執行不必要的測試的時間。關於 **Husky** 與 **lint-staged** 的安裝與更詳細的介紹，在我之前寫的 [整合 ESLint, Prettier, Husky, lint-staged 維護團隊開發品質](../11-DevTools/05-eslint-prettier-lintstaged.md) 這篇文章中有比較詳細的介紹，歡迎對如何配置專案統一程式碼風格與規範有興趣的讀者閱讀這篇文章。
+**`Husky + lint-staged`** 這兩個工具可以幫助我們建立 **Git pre-commit hooks** ，針對與提交的程式碼相關的所有測試檔案進行自動化測試，這將能大大地改善開發過程中**改A錯B**的情況，且能節省執行不必要的測試的時間。關於 **Husky** 與 **lint-staged** 的安裝與更詳細的介紹，在我之前寫的 [整合 ESLint, Prettier, Husky, lint-staged 維護團隊開發品質](../../11-DevTools/05-eslint-prettier-lintstaged.md) 這篇文章中有比較詳細的介紹，歡迎對如何配置專案統一程式碼風格與規範有興趣的讀者閱讀這篇文章。
 
 
 **設置 `.lintstagedrc`**:

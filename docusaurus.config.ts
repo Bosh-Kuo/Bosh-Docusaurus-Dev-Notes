@@ -3,6 +3,7 @@ import type { Config } from "@docusaurus/types";
 import type * as Preset from "@docusaurus/preset-classic";
 import remarkMath from "remark-math";
 import rehypeKatex from "rehype-katex";
+import redirects from "./config/redirects";
 
 const config: Config = {
   // * Site metadata
@@ -63,6 +64,12 @@ const config: Config = {
   plugins: [
     "@docusaurus/plugin-ideal-image", // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-ideal-image
     "docusaurus-plugin-image-zoom", // https://github.com/gabrielcsapo/docusaurus-plugin-image-zoom
+    [
+      "@docusaurus/plugin-client-redirects", // https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-client-redirects
+      {
+        redirects: redirects,
+      },
+    ],
   ],
 
   // * theme configurations
