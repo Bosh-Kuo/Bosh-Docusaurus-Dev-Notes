@@ -37,9 +37,9 @@ tags:
 2. 供使用端下載的打包檔案沒有錨定於套件版號。
 3. 發布流程（打包、更新版號、撰寫 CHANGELOG）全手動，不易維護且容易產生疏漏，比如更新版號時忘記打包最新版本的程式碼
 
-> 上述問題中，我認為需要優先改善的地方為：供使用端下載的打包文件應該與原始碼分開託管。
+> 總結上述問題中，我認為核心癥結在於：供使用端下載的打包文件應該與原始碼分開託管。
 
-一般來說，我們使用 npm install 指令下載的套件都是託管在公開的 npm registry 中。然而，免費方案下的 npm registry 只能託管開源的套件，這樣的公開託管方案對於公司內部的私人 npm 套件來說並不適用。
+一般來說，我們使用 npm install 指令下載的套件都是託管在公開的 npm registry 中。然而，免費方案下的 npm registry 只能託管開源的套件，這樣的公開託管方案無法滿足公司想要的私人 npm 需求。
 
 經過一番搜尋，我發現 Gitlab 提供了一個非常方便的解決方案——`Gitlab Package Registry`，它可以像 npm registry 一樣運作，但同時保留了私人託管的特性。經過嘗試，我發現這個工具非常強大且易於使用。本篇文章將記錄如何將私人用的 npm library 發布到 Gitlab，以及如何從 Gitlab 下載 npm library。
 
@@ -50,25 +50,26 @@ tags:
 
 首先，我們來談談 **package registry** 到底是什麼。簡單來說，package registry 是一個可以儲存和管理軟體套件的地方。我們可以把它想像成一個專門放軟體套件的倉庫，讓開發者們可以方便地分享和重複使用這些程式碼與模組。
 
-Gitlab 的 Package Registry 是 Gitlab 提供的一個功能，讓我們可以在 Gitlab 的平台上管理自己的 npm packages。如此不僅可以把程式碼放在 Gitlab 上，還可以把 npm 套件一同託管於 Gitlab，這對於在使用 Gitlab 的公司或私人開發團隊來說非常方便。
+Gitlab Package Registry 是 Gitlab 提供的一個功能，讓我們可以在 Gitlab 的平台上管理自己的 npm packages。如此不僅可以把程式碼放在 Gitlab 上，還可以把 npm 套件一同託管於 Gitlab，這對於在使用 Gitlab 的公司或私人開發團隊來說非常方便。
 
 ### **Gitlab 如何作為 npm package 的容器？**
 
 在介紹如何發布 library 到 Gitlab 之前，讓我們來看看 Gitlab 如何作為 npm package 的容器。
 
-首先，每個 Gitlab 專案（project）都有自己的 Package Registry，也就是說，每個 Gitlab 專案都擁有自己獨立的 npm packages 存儲空間用來存儲和管理多個 npm packages。而每個專案的 Package Registry 都有一個類似地址的唯一 URL，這個 URL 通常是以專案 ID 為基礎構建的。比如說，我們的專案 ID 是 123，那麼 Package Registry URL 可能看起來像這樣：
+首先，每個 Gitlab 專案（project）都有自己的 Package Registry，也就是說，每個 Gitlab 專案都擁有自己獨立的 npm packages 存儲空間用來存儲和管理多個 npm packages。而每個專案的 Package Registry 都有一個類似地址的唯一 URL，這個 URL 通常是以專案 ID 為基礎構建的。比如說，我在範例中建立的專案 ID 是 123，那麼 Package Registry URL 可能看起來像這樣：
 
 ```json
-https://gitlab.com/api/v4/projects/123/packages/npm/
+https://<your_domain_name>/api/v4/projects/123/packages/npm/
 ```
 
 這個 URL 主要是用來告訴 npm 客戶端從哪裡下載或上傳套件。
 
-接著，我們來談談 npm 如何知道哪些套件要從上述的 URL 上下載下來。
+### **Scope 與 Gitlab 的套件命名規則**
 
-在 npm 中，Scope（命名空間）是用來組織套件的一種方式，它允許開發者將套件歸類到特定的組織或團隊之下，從而避免命名衝突。例如，`@my-org/my-package` 表示這個套件屬於 `@my-org` 組織。
+接著，我們來談談 npm 如何知道哪些套件要從上述的 URL 上下載下來。  
+在 npm 中，**Scope（命名空間）** 是用來組織套件的一種方式，它允許開發者將套件歸類到特定的組織或團隊之下，從而避免命名衝突。例如，`@my-org/my-package` 表示這個套件屬於 `@my-org` 組織。
 
-若我們將 GitLab 作為託管 npm 套件的 package registry，package.json 中，套件的名稱需要遵循 Gitlab 的命名規則來命名：
+若我們將 GitLab 作為託管 npm 套件的 package registry，套件的名稱（in package.json）需要遵循 Gitlab 的命名規則來命名：
 
 ```json
 "name": "@scope/package-name"
@@ -97,7 +98,7 @@ https://gitlab.com/api/v4/projects/123/packages/npm/
 @<scope>:registry <your domain name>/api/v4/projects/<project id>/packages/npm/
 ```
 
-npm 在下載名稱以 `@<scrop>` 開頭的套件時，就會前往後面的 URL 下載
+npm 在下載名稱以 `@<scrop>` 開頭的套件時，就會知道要去指定的 registry URL 下載
 
 ### **Npm registry 身份驗證**
 
@@ -111,7 +112,7 @@ npm 在下載名稱以 `@<scrop>` 開頭的套件時，就會前往後面的 URL
 - [Job token](https://docs.gitlab.com/ee/ci/jobs/ci_job_token.html):  適用於在 CI/CD pipeline 中發佈 package，如果要通過 CI/CD pipelines 發佈 npm 套件，這是唯一可以使用的選擇。
 
 :::danger
-如果在專案設置中關閉了 “Package registry” 功能，會收到 403 Forbidden
+如果在專案設置中關閉了 “Package registry” 功能，無論使用哪種厭整方式都會收到 403 Forbidden
 :::
 
 ### **Gitlab package registry 權限**
@@ -131,7 +132,7 @@ npm 在下載名稱以 `@<scrop>` 開頭的套件時，就會前往後面的 URL
 |                    | 拉取 package          | Reporter     |
 
 :::info
-Gitlab 也允許設定不論 **Project visibility** 與**最低角色要求**使所有人都具有 pull package 的權限：
+Gitlab 也允許設定不論 **Project visibility** 與**最低角色要求**，使所有人都具有 pull package 的權限：
 1. **Settings > General**.
 2. \> **Visibility, project features, permissions**.
 3. → **Allow anyone to pull from Package Registry**
@@ -178,10 +179,10 @@ module.exports = sum;
 
 ### **準備 .npmrc**
 
-.npmrc 在發布套件時的作用有兩個：
+`.npmrc` 在發布套件時的作用有兩個：
 
 1. 指定以 **@\<scope>** 為套件命名開頭的套件要發布到的 package registry 位置
-2. 發布套件到指定 package registry url 時，提供 authToken 進行身份驗證
+2. 發布套件到指定 package registry url 時，提供 **authToken** 進行身份驗證
 
 在套件專案底下新增一個 . npmrc 檔，並加入以下內容：
 
