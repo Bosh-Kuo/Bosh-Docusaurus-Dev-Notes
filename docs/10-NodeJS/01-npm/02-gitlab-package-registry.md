@@ -3,7 +3,7 @@ title: 使用 Gitlab package registry 發布與下載私人 npm 套件全記錄
 sidebar_label: "[實作紀錄]使用 Gitlab package registry 發布與下載私人 npm 套件"
 description: 這篇技術筆記詳細介紹了如何使用 Gitlab Package Registry 來發布和下載私人 npm 套件。文章涵蓋了 Gitlab Package Registry 的基本概念、如何進行身份驗證、權限管理以及 package.json 的設定。
 last_update:
-  date: 2023-07-22
+  date: 2024-07-22
 keywords:
   - GitLab
   - GitLab package registry

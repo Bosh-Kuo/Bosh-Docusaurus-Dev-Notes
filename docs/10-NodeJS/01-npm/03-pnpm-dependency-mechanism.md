@@ -3,7 +3,7 @@ title: 解析 pnpm 的依賴管理機制
 sidebar_label: "[pnpm] 解析 pnpm 的依賴管理機制"
 description: 本文深入探討 pnpm 的獨特依賴管理機制，詳細解析其三層尋址策略如何通過軟連結（symlink）、硬連結（hard link）和全域存儲（global store）機制等，有效解決 Phantom Dependency 問題，節省磁碟空間，並提高依賴管理的效率。
 last_update:
-  date: 2023-07-29
+  date: 2024-07-29
 keywords:
   - pnpm
   - npm
