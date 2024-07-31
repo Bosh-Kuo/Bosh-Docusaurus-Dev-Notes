@@ -39,9 +39,9 @@ tags:
 
 > 總結上述問題中，我認為核心癥結在於：供使用端下載的打包文件應該與原始碼分開託管。
 
-一般來說，我們使用 npm install 指令下載的套件都是託管在公開的 npm registry 中。然而，免費方案下的 npm registry 只能託管開源的套件，這樣的公開託管方案無法滿足公司想要的私人 npm 需求。
+一般來說，我們使用 npm install 指令下載的套件都是託管在公開的 npm registry 中。然而，免費方案下的 npm registry 只能託管開源的套件，這無法滿足公司想要的私人 npm 需求。
 
-經過一番搜尋，我發現 Gitlab 提供了一個非常方便的解決方案——`Gitlab Package Registry`，它可以像 npm registry 一樣運作，但同時保留了私人託管的特性。經過嘗試，我發現這個工具非常強大且易於使用。本篇文章將記錄如何將私人用的 npm library 發布到 Gitlab，以及如何從 Gitlab 下載 npm library。
+經過一番搜尋後，我發現 Gitlab 提供了一個非常方便的解決方案: `Gitlab Package Registry`，它可以像 npm registry 一樣運作，但同時保留了私人託管的特性。經過嘗試，我發現這個工具非常強大且易於使用。本篇文章將記錄如何將私人用的 npm library 發布到 Gitlab，以及如何從 Gitlab 下載 npm library。
 
 
 ## **Gitlab package registry 簡介**
@@ -50,7 +50,7 @@ tags:
 
 首先，我們來談談 **package registry** 到底是什麼。簡單來說，package registry 是一個可以儲存和管理軟體套件的地方。我們可以把它想像成一個專門放軟體套件的倉庫，讓開發者們可以方便地分享和重複使用這些程式碼與模組。
 
-Gitlab Package Registry 是 Gitlab 提供的一個功能，讓我們可以在 Gitlab 的平台上管理自己的 npm packages。如此不僅可以把程式碼放在 Gitlab 上，還可以把 npm 套件一同託管於 Gitlab，這對於在使用 Gitlab 的公司或私人開發團隊來說非常方便。
+`Gitlab Package Registry` 是 Gitlab 提供的一個功能，讓我們可以在 Gitlab 的平台上管理自己的 npm packages。如此不僅可以把程式碼放在 Gitlab 上，還可以把 npm 套件一同託管於 Gitlab，這對於在使用 Gitlab 的公司或私人開發團隊來說非常方便。
 
 ### **Gitlab 如何作為 npm package 的容器？**
 
@@ -62,14 +62,14 @@ Gitlab Package Registry 是 Gitlab 提供的一個功能，讓我們可以在 Gi
 https://<your_domain_name>/api/v4/projects/123/packages/npm/
 ```
 
-這個 URL 主要是用來告訴 npm 客戶端從哪裡下載或上傳套件。
+這個 URL 主要是用來告訴 npm 使用者從哪裡下載或上傳套件。
 
 ### **Scope 與 Gitlab 的套件命名規則**
 
 接著，我們來談談 npm 如何知道哪些套件要從上述的 URL 上下載下來。  
 在 npm 中，**Scope（命名空間）** 是用來組織套件的一種方式，它允許開發者將套件歸類到特定的組織或團隊之下，從而避免命名衝突。例如，`@my-org/my-package` 表示這個套件屬於 `@my-org` 組織。
 
-若我們將 GitLab 作為託管 npm 套件的 package registry，套件的名稱（in package.json）需要遵循 Gitlab 的命名規則來命名：
+若我們將 GitLab 作為託管 npm 套件的 package registry，package.json 的套件名稱就需要遵循 Gitlab 的命名規則來命名：
 
 ```json
 "name": "@scope/package-name"
@@ -92,13 +92,13 @@ https://<your_domain_name>/api/v4/projects/123/packages/npm/
 
 當使用端在專案底下新增新增一個 `.npmrc` 檔案，並加入以下內容後：
 
-```bash
+```bash {3}
 # Set URL for your scoped packages.
 # For example package with name `@foo/bar` will use this URL for download
 @<scope>:registry <your domain name>/api/v4/projects/<project id>/packages/npm/
 ```
 
-npm 在下載名稱以 `@<scrop>` 開頭的套件時，就會知道要去指定的 registry URL 下載
+當我們下載名稱以 `@<scrop>` 開頭的套件時，npm 就會知道要去指定的 registry URL 下載
 
 ### **Npm registry 身份驗證**
 
@@ -189,7 +189,7 @@ module.exports = sum;
 
 在套件專案底下新增一個 . npmrc 檔，並加入以下內容：
 
-```bash
+```bash {3,7}
 # Set URL for your scoped packages.
 # For example package with name `@foo/bar` will use this URL for download
 @<scope>:registry <your domain name>/api/v4/projects/<project id>/packages/npm/
@@ -199,7 +199,7 @@ module.exports = sum;
 //<your domain name>/api/v4/projects/<project id>/packages/npm/:_authToken=<your token>
 ```
 
-- **@\<scope>**: 由於這個 Gitlab 專案建立於我的個人目錄專案底下，因此在此處為我的 gitlab user-name： @bosh-kuo
+- **@\<scope>**: 由於這個 Gitlab 專案建立於我的個人目錄專案底下，因此在此處為我的 gitlab user-name： @bosh.kuo
 - **\<your domain name>**: 為公司的 gitlab domain
 - **\<project id>**: 691
 - **\<your token>**: 即剛剛創建的 project deploy token
@@ -249,7 +249,7 @@ yarn publish
 
 ![](https://res.cloudinary.com/djtoo8orh/image/upload/v1721665263/Docusaurus%20Blog/Node.js/Gitlab%20package%20registry%20%E7%99%BC%E5%B8%83%E8%88%87%E4%B8%8B%E8%BC%89%E7%A7%81%E4%BA%BA%20npm/npm_package_eypqeo.png)
 
-> 圖上顯示 @bosh-kuo/published-package1 與 @bosh-kuo/published-package2 為後來嘗試用 monorepo 管理多個 npm library 時發布的，並非本篇文章範例中發布的套件，僅用於示例。
+> 圖上顯示 @bosh.kuo/published-package1 與 @bosh.kuo/published-package2 為後來嘗試用 monorepo 管理多個 npm library 時發布的，並非本篇文章範例中發布的套件，僅用於示例。
 
 
 <br/>
@@ -269,7 +269,7 @@ yarn publish
     
 2. Npm registry 身份驗證
     
-    ```bash
+    ```bash {3,7}
     # Set URL for your scoped packages.
     # For example package with name `@foo/bar` will use this URL for download
     @<scope>:registry <your domain name>/api/v4/projects/<project id>/packages/npm/
