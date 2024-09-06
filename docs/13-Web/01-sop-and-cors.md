@@ -31,7 +31,7 @@ tags:
 // 非同源
 1. http://www.example.com   // 協議不同（一個是https，另一個是http)
 2. https://sub.example.com  // 的域名不同（一個是www.example.com，另一個是sub.example.com）
-3. https://www.example.com:443 // 的端口號不同（一個是www.example.com，另一個是sub.example.com）
+3. https://www.example.com:443 // 的端口號不同
 ```
 
 ### **為什麼要有同源政策？它保護了什麼？**
@@ -76,7 +76,7 @@ sequenceDiagram
 > 
 - **攻擊情境：**
 
-舉例來說，攻擊者創建了一個惡意網站 `EvilSite (https://evil-site.com)`，這個網站包含一個自動提交到 `Transfer API (https://mybank.com/transfer)` 的表單。這個表單會在訪問者不知情的情況下，嘗試從其銀行帳戶中轉賬到攻擊者指定的帳戶。用戶訪問 `EvilSite` 時，如果用戶之前沒有從銀行網站登出，表單就會嘗試使用用戶的登入態進行轉賬。
+舉例來說，攻擊者創建了一個惡意網站 `EvilSite (https://evil-site.com)`，這個網站包含一個自動提交到 `Transfer API (https://mybank.com/transfer)` 的表單。這個表單會在訪問者不知情的情況下，嘗試從其銀行帳戶中轉賬到攻擊者指定的帳戶。用戶訪問 `EvilSite` 時，如果用戶之前沒有從銀行網站登出，表單就會嘗試使用用戶的登入狀態進行轉賬。
 
 - **同源政策的保護：**
 
@@ -93,7 +93,7 @@ sequenceDiagram
     Note over EvilSite,User: 表單嘗試轉賬到攻擊者帳戶
 
     User->>MyBank: 自動提交表單至轉賬API
-    Note over User,MyBank: 嘗試使用用戶登入態進行轉賬
+    Note over User,MyBank: 嘗試使用用戶登入狀態進行轉賬
 
     MyBank-->>User: 檢查請求來源
     Note over MyBank,User: 檢查Referer Header識別跨站請求
@@ -135,7 +135,7 @@ sequenceDiagram
 
 - **攻擊情境：**
 
-假設一個用戶已登錄 `MyBank (https://mybank.com)` 的情況下，若該用戶同時訪問了惡意網站`EvilSite (https://evil-site.com)`，後者企圖透過圖片元素或者發起一個對`https://mybank.com/api/userinfo` 的 GET 請求，意圖竊取用戶的個人資訊。由於 GET 請求通常被視為 **"簡單請求"**，因為它們不會改變伺服器上的資源狀態。
+假設一個用戶已登錄 `MyBank (https://mybank.com)` 的情況下，若該用戶同時訪問了惡意網站`EvilSite (https://evil-site.com)`，後者企圖對`https://mybank.com/api/userinfo` 發起一個 GET 請求，意圖竊取用戶的個人資訊。由於 GET 請求通常被視為 **"簡單請求"** (不會改變伺服器上的資源)，伺服器端不會檢查該請求。
 
 - **同源政策的保護：**
 
