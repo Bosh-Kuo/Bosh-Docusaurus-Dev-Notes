@@ -5,11 +5,11 @@
 #   Each directory and file within the range will have its number increased by 1.
 #   The names should follow the pattern NN-xxx, where NN is a two-digit number.
 # Usage: 
-#   ./rename_folders.sh <directory> <start_number> <end_number>
+#   ./reindex_files_dirs.sh <directory> <start_number> <end_number>
 # ex: 
-#   ./rename_folders.sh ../docs 01 05
+#   ./reindex_files_dirs.sh ../docs 01 05
 #   This command will rename directories in the docs folder from 01-xxx to 02-xxx, 02-xxx to 03-xxx, and so on up to 05-xxx to 06-xxx.
-#   ./rename_items.sh ../docs/01-Docusaurus 01 05
+#   ./reindex_files_dirs.sh ../docs/01-Docusaurus 01 05
 #   This command will rename files in the ../docs/01-Docusaurus folder such as 01-xxx.md to 02-xxx.md, 02-xxx.md to 03-xxx.md, and so on up to 05-xxx.md to 06-xxx.md.
 
 # 檢查是否提供了正確的參數
