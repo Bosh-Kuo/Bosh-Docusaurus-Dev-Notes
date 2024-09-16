@@ -19,6 +19,11 @@ ex:
 - [Bugfix/#1] Solve Docusaurus render problem
 - [Feature/#2] Add xxx feature
 
+### Github flow
+
+- **main**: 主分支。文章、小功能、小 bug 等類型的修改都可以直接推。涉及多個套件版本更新、樣式調整等的修則需要發 PR
+- **preview**: 大型改動 merge 進 main branch 之前先進 preview，預覽後確認沒有問題再發 PR ，將 preview merge 進 main branch
+- **other**: 小型功能、 bug 修改等 follow 上述 branch 命名方式開 branch
 
 
 
