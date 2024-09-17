@@ -11,7 +11,7 @@ const presets: PresetConfig[] = [
     {
       // * theme-classic
       theme: {
-        customCss: "./src/css/custom.css",
+        customCss: "./src/css/custom.scss",
       },
       // * plugin-content-docs
       docs: {

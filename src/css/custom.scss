@@ -5,14 +5,15 @@
  */
 
 /* You can override the default Infima variables here. */
+// * 主題配色(亮色模式)
 :root {
-  --ifm-color-primary: #30afad;
-  --ifm-color-primary-dark: #29784c;
-  --ifm-color-primary-darker: #277148;
-  --ifm-color-primary-darkest: #205d3b;
-  --ifm-color-primary-light: #33925d;
-  --ifm-color-primary-lighter: #359962;
-  --ifm-color-primary-lightest: #3cad6e;
+  --ifm-color-primary: #63B8C6;
+  --ifm-color-primary-dark: #4daebe;
+  --ifm-color-primary-darker: #44a8b9;
+  --ifm-color-primary-darkest: #388b98;
+  --ifm-color-primary-light: #79c2ce;
+  --ifm-color-primary-lighter: #84c7d2;
+  --ifm-color-primary-lightest: #a4d6de;
   --ifm-code-font-size: 95%;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
   --ifm-line-height-base: 1.8;
@@ -20,14 +21,15 @@
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
+// * 主題配色(暗色模式)
 [data-theme="dark"] {
-  --ifm-color-primary: #25bac2;
-  --ifm-color-primary-dark: #21af90;
-  --ifm-color-primary-darker: #1fa588;
-  --ifm-color-primary-darkest: #1a8870;
-  --ifm-color-primary-light: #29d5b0;
-  --ifm-color-primary-lighter: #32d8b4;
-  --ifm-color-primary-lightest: #4fddbf;
+  --ifm-color-primary: #04a3d3;
+  --ifm-color-primary-dark: #0493be;
+  --ifm-color-primary-darker: #038bb3;
+  --ifm-color-primary-darkest: #037294;
+  --ifm-color-primary-light: #04b3e8;
+  --ifm-color-primary-lighter: #05bbf3;
+  --ifm-color-primary-lightest: #1dc7fb;
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
@@ -35,10 +37,6 @@ div[class^="announcementBar_"] {
   font-size: 1.2em;
   font-weight: bold;
   background: rgb(225, 225, 225);
-}
-
-code {
-  color: #25bac2;
 }
 
 .markdown h1 {

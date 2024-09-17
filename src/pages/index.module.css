@@ -25,11 +25,12 @@
 .bkg {
   width: auto;
   height: 400px;
-  background: url('@site/static/img/background_light.svg') center left/100% 400px no-repeat;
+  background: url("@site/static/img/source-code-light.svg") center left/100%
+    400px no-repeat;
 }
 
-html[data-theme='dark'] .bkg {
-  background-image: url('@site/static/img/background_dark.svg');
+html[data-theme="dark"] .bkg {
+  background-image: url("@site/static/img/source-code-dark.svg");
 }
 
 .right {
