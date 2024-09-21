@@ -4,25 +4,56 @@
  * work well for content-centric websites.
  */
 
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap");
+
 /* You can override the default Infima variables here. */
-// * 主題配色(亮色模式)
+// * 全局變數
 :root {
-  --ifm-color-primary: #63B8C6;
-  --ifm-color-primary-dark: #4daebe;
-  --ifm-color-primary-darker: #44a8b9;
-  --ifm-color-primary-darkest: #388b98;
-  --ifm-color-primary-light: #79c2ce;
-  --ifm-color-primary-lighter: #84c7d2;
-  --ifm-color-primary-lightest: #a4d6de;
+  // 主題配色(亮色模式)
+  --content-background: #fefefe;
+  --ifm-color-primary: #3eb4c6;
+  --ifm-color-primary-dark: #35a4b5;
+  --ifm-color-primary-darker: #329bab;
+  --ifm-color-primary-darkest: #297f8d;
+  --ifm-color-primary-light: #52bccc;
+  --ifm-color-primary-lighter: #5cc0cf;
+  --ifm-color-primary-lightest: #7acbd8;
+
+  // font 全局基本設定
+  --ifm-font-family-base: MiSans, "Inter", ui-sans-serif, sans-serif, system-ui,
+    -apple-system;
+  --ifm-font-weight-bold: 520;
+  --ifm-line-height-base: 1.7;
+  // --ifm-font-size-base: 17px;
+
+  // hover 背景顏色
+  --ifm-hover-overlay: #abdcfc28;
+
+  // code
   --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
-  --ifm-line-height-base: 1.8;
-  --ifm-font-size-base: 17px;
+  --ifm-code-padding-horizontal: 0.2rem;
+  --ifm-code-padding-vertical: 0.2rem;
+  --ifm-code-background: #18d9f717;
+
+  // 程式碼區塊 height light 背景顏色
+  --docusaurus-highlighted-code-line-bg: #d1d5db;
+
+  // sidebar 字體顏色
+  --ifm-menu-color: #0d203a;
+
+  // navbar
+  --ifm-navbar-background-color: var(--content-background);
+  --ifm-navbar-shadow: 0 2px 14px rgb(0 0 0 / 10%);
+
+  // 文章區塊邊線
+  --ifm-toc-border-color: #f1f5f9;
 }
 
 /* For readability concerns, you should choose a lighter palette in dark mode. */
-// * 主題配色(暗色模式)
-[data-theme="dark"] {
+// * 全局變數(暗色模式)
+html[data-theme="dark"] {
+  // 主題配色(暗色模式)
+  --content-background: #18181b;
   --ifm-color-primary: #04a3d3;
   --ifm-color-primary-dark: #0493be;
   --ifm-color-primary-darker: #038bb3;
@@ -30,20 +61,153 @@
   --ifm-color-primary-light: #04b3e8;
   --ifm-color-primary-lighter: #05bbf3;
   --ifm-color-primary-lightest: #1dc7fb;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+
+  // hover 背景顏色
+  --ifm-hover-overlay: #d9ccff2a;
+
+  // code
+  --ifm-code-background: #1dc7fb36;
+
+  // 程式碼 height light 背景顏色
+  --docusaurus-highlighted-code-line-bg: #4b5563;
+
+  // menu
+  --ifm-menu-color: #eceef1;
 }
 
+// * Announcement Bar
 div[class^="announcementBar_"] {
   font-size: 1.2em;
   font-weight: bold;
   background: rgb(225, 225, 225);
 }
 
-.markdown h1 {
-  font-size: 2.25rem !important;
+// * Markdown
+.markdown {
+  h1:first-child {
+    font-size: 2.2rem;
+  }
+
+  > h2 {
+    font-size: 1.8em;
+    border-bottom: 1.25px solid var(--ifm-color-primary-light);
+    margin-top: 1rem;
+    padding: 5px 0 5px 0px;
+  }
+
+  > h3 {
+    font-size: 1.5rem;
+    border-left: 5px solid var(--ifm-color-primary-light);
+    padding: 5px 0 5px 10px;
+  }
+
+  code {
+    border: 0.1rem solid transparent;
+  }
+
+  a:not(.hash-link) {
+    text-decoration: none;
+    font-weight: inherit;
+    border-bottom: 1px solid rgba(125, 125, 125, 0.3);
+    transition: border 0.15s ease-in-out;
+  }
+
+  a:not(.hash-link):hover,
+  a:not(.hash-link):focus {
+    border-bottom: 1.5px solid var(--ifm-color-primary-light);
+  }
+
+  img {
+    border-radius: 10px;
+    display: flex;
+    margin: 0 auto;
+  }
 }
-.markdown h3 {
-  font-size: 1.5rem;
-  border-left: 5px solid var(--ifm-color-primary-light);
-  padding: 5px 0 5px 7px;
+
+:where(html[data-theme="dark"]) {
+  .markdown {
+    strong {
+      color: #fff;
+    }
+  }
+}
+
+// * Navbar
+.navbar {
+  .navbar__title {
+    margin-left: 12px;
+    font-weight: 520;
+  }
+}
+
+// * 粗體(標籤、日期)
+b {
+  font-weight: 520;
+}
+
+// * blog 標題
+.title_node_modules-\@docusaurus-theme-classic-lib-theme-BlogPostItem-Header-Title-styles-module {
+  font-size: 32px !important;
+}
+
+// * 側邊欄邊線
+.menu__list .menu__list {
+  border-bottom: 2px solid #ced9e3;
+  border-bottom-color: #ffffff00 !important;
+  border-left: 2px solid #ced9e3;
+  border-radius: 0 0 0 10px;
+  margin-left: 1rem;
+  padding-left: 0.3rem;
+}
+
+// * 上下頁 Buttons
+.pagination-nav {
+  .pagination-nav__link {
+    display: inline-flex;
+    justify-content: center;
+    padding: 10px 20px;
+    text-decoration: none;
+    color: #fff;
+    background-color: var(--ifm-color-primary-lighter);
+    opacity: 0.8;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+
+    .pagination-nav__sublabel {
+      display: none;
+    }
+
+    &:hover {
+      background-color: var(--ifm-color-primary-dark);
+      border: 2px solid var(--ifm-link-color);
+      transform: translateY(-3px); // 懸浮時有輕微位移效果
+    }
+
+    &:active {
+      background-color: var(--ifm-color-primary-darker);
+    }
+  }
+}
+
+// * TOC menu
+.table-of-contents__link--active {
+  filter: none !important;
+  color: var(--ifm-color-primary) !important;
+  background-color: var(--ifm-menu-color-background-active) !important;
+  transform: scale(1.02) !important;
+  transform-origin: left;
+}
+
+.table-of-contents__link {
+  padding: 0.3rem 0 0.3rem 0.5rem;
+  border-radius: 10px;
+  transition: filter 0.08s ease-in-out, background-color 0.08s ease-in-out;
+  margin-top: -0.5rem;
+  transition: 0.25s !important;
+}
+
+.table-of-contents__link:hover {
+  filter: none;
+  background-color: var(--ifm-menu-color-background-active) !important;
+  color: var(--ifm-color-primary-dark) !important;
 }
