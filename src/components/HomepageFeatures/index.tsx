@@ -14,7 +14,7 @@ const FeatureList: FeatureItem[] = [
     Svg: require("@site/static/img/undraw_blogging.svg").default,
     description: (
       <>
-        <Link to='/blog'>專題文章</Link>{" "}
+        <Link to='/blog'>部落格</Link>{" "}
         匯集了各種非特定技術類型的專題文章，並記錄了我在開發過程中遇到的問題與解決方案。
       </>
     ),

@@ -26,7 +26,7 @@ const presets: PresetConfig[] = [
         routeBasePath: "blog",
         blogSidebarCount: 10,
         blogSidebarTitle: "最新文章",
-        blogDescription: "專題文章，分享我對各種技術議題的觀點與開發實作紀錄",
+        blogDescription: "部落格，分享我對各種技術議題的觀點與開發實作紀錄",
         postsPerPage: 10,
         remarkPlugins: [remarkMath],
         rehypePlugins: [rehypeKatex],
