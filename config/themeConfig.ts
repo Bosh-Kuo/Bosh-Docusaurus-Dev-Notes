@@ -18,6 +18,7 @@ const themeConfig = {
       alt: "My Site Logo",
       src: "img/logo.png",
     },
+    // hideOnScroll: true,
     items: [
       {
         type: "doc",
@@ -27,7 +28,7 @@ const themeConfig = {
       },
       {
         to: "/blog",
-        label: "專題文章",
+        label: "部落格",
         position: "left",
       },
       {
@@ -59,7 +60,7 @@ const themeConfig = {
             to: "/docs",
           },
           {
-            label: "專題文章",
+            label: "部落格",
             to: "/blog",
           },
           {
@@ -128,7 +129,7 @@ const themeConfig = {
   docs: {
     sidebar: {
       hideable: true,
-      autoCollapseCategories: false,
+      autoCollapseCategories: true,
     },
   },
   // * Algolia DocSearch
