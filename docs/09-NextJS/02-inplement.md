@@ -397,10 +397,10 @@ Next.js 將前端和後端的功能都整合在了一起，讓前端工程師也
 
 
 ## **Reference**
-- **[@NEXT.js](https://nextjs.org/)**
-  - **[Create a Next.js App](https://nextjs.org/learn/basics/create-nextjs-app) **
-  - **[Navigate Between Pages](https://nextjs.org/learn/basics/navigate-between-pages) **
-  - **[Assets, Metadata, and CSS](https://nextjs.org/learn/basics/assets-metadata-css) **
+  - **[@NEXT.js](https://nextjs.org/)**
+  - **[Create a Next.js App](https://nextjs.org/learn/basics/create-nextjs-app)**
+  - **[Navigate Between Pages](https://nextjs.org/learn/basics/navigate-between-pages)**
+  - **[Assets, Metadata, and CSS](https://nextjs.org/learn/basics/assets-metadata-css)** 
   - **[Pre-rendering and Data Fetching](https://nextjs.org/learn/basics/data-fetching)**
   - **[Dynamic Routes](https://nextjs.org/learn/basics/dynamic-routes)**
   - **[API Routes](https://nextjs.org/learn/basics/api-routes)**

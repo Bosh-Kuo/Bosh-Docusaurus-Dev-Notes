@@ -79,7 +79,7 @@ const config: Config = {
 
 ## **主題、插件、預設配置(Theme, plugin, and preset configurations)**
 
-在介紹具體的配置之前，我們先來簡單了解一下 Docusaurus 中的 **主題 (Theme)**、**插件 (Plugin)** 和 **預設配置 (Preset)** 這三者。
+在介紹具體的配置之前，我們先來簡單了解一下 Docusaurus 中的 **主題 (Theme)**、**插件 (Plugin)** 和 **預設配置 (Preset)** 這三者之間的關係。
 
 - **插件（Plugins）**：類似於網站資料搜集者的角色，負責從不同的資料來源收集內容，並在打包時將這些內容轉換為 JSON 格式的資料
 - **主題（Themes）**：類似於網站的展示者的角色，負責定義網站的外觀和佈局。它會接收插件收集到的 JSON 資料，並以定義好的樣式與佈局將資料呈現在網頁上。
