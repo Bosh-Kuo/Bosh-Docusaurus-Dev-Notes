@@ -1,6 +1,6 @@
 ---
 title: 不可不知的網路基石： 同源政策（SOP）與跨來源資源共享（CORS）
-sidebar_label: "同源政策(SOP)與跨來源資源共享(CORS)"
+sidebar_label: "SOP & CORS"
 description: 瀏覽器的同源政策(Same-Origin Policy,SOP)是確保網路安全的基礎設防,它限制了不同源之間的資源訪問,防止敏感數據被竊取、跨站腳本攻擊等安全威脅。本文深入解析同源策略運作原理,剖析其如何遏制 CSRF、XSS等攻擊手段,並介紹 CORS(Cross-Origin Resource Sharing)機制,教你如何繞過同源限制實現安全可控的跨域資源訪問。掌握好這一網路基石知識,是構建安全可靠的現代Web應用的前提。
 last_update:
   date: 2024-03-10
@@ -13,14 +13,12 @@ keywords:
   - CSRF
   - Simple Request
   - Preflight Request
-tags:
-  - 同源政策(SOP)
-  - 跨來源資源共享(CORS)
+tags: [Web]
 ---
 
 ## **同源政策（Same-Origin Policy，SOP）**
 
-**`同源政策（Same-Origin Policy，SOP）`**是一種由**瀏覽器**實施的安全措施，在網頁瀏覽器中,同源政策會限制不同源網站之間的資源訪問。所謂`"同源"`是指網址的 **通訊協定（http 或 https）**、**網域（domain）** 和**通訊埠（port）** 必須完全相同。只有同源的網頁才能互相訪問彼此的資源，如讀取JavaScript物件、操作DOM元素等。
+**同源政策（Same-Origin Policy，SOP）** 是一種由**瀏覽器**實施的安全措施，在網頁瀏覽器中,同源政策會限制不同源網站之間的資源訪問。所謂`"同源"`是指網址的 **通訊協定（http 或 https）**、**網域（domain）** 和**通訊埠（port）** 必須完全相同。只有同源的網頁才能互相訪問彼此的資源，如讀取JavaScript物件、操作DOM元素等。
 
 以 `https://www.example.com` 這個網址為例，以下幾個例子說明哪些屬於同源或非同源：
 
