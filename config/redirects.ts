@@ -4,8 +4,8 @@ const redirects = [
     from: "/docs/Testing/TS-Jest-RTL-MSW-Setup",
   },
   {
-    to: "/docs/DevTools/Terminal/iterm-shortcut-keys",
-    from: "/docs/DevTools/iterm-shortcut-keys",
+    to: "/docs/DevTools/Terminal/iterm-shortcut-key",
+    from: "/docs/DevTools/iterm-shortcut-key",
   },
 ];
 
