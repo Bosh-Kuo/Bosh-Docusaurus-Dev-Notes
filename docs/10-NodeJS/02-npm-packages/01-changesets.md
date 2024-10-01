@@ -1,6 +1,6 @@
 ---
 title: Changesets - 為 monorepo 而生的版本管理工具
-sidebar_label: Changesets - 為 monorepo 而生的版本管理工具
+sidebar_label: Changesets
 description: 本文章涵蓋了 Changesets 的基本概念、常用指令、配置方法、與 Git 的互動，以及手動發佈流程。通過詳細的介紹和實際範例，幫助開發者了解如何在 monorepo 環境中高效地進行版本控制和發布，並提供了一些關鍵的使用建議和注意事項。
 last_update:
   date: 2024-07-29

@@ -1,6 +1,6 @@
 ---
 title: 專業協作開發：使用 Commitlint 規範你的提交訊息
-sidebar_label: "專業協作開發：使用 Commitlint 規範你的提交訊息"
+sidebar_label: Commitlint
 description: 這篇文章將帶你深入了解 commitlint 的作用、安裝與配置過程，以及如何在開發流程中應用它來提升專案的品質和協作效率。無論你是版本控制的新手還是有經驗的開發者，都能從中獲得實用的建議和技巧，確保你的提交訊息始終保持一致和可讀性。
 last_update:
   date: 2024-08-01
