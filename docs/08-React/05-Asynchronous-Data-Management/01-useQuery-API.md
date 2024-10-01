@@ -17,7 +17,7 @@ tags:
 ---
 
 >  **前情提要:**  
-`TanStack Query`(前身為 `React Query`) 是我過去一年內最喜歡的 React 生態系工具之一。其中 `useQuery` 則是我使用最多的 hooks。useQuery 最受我喜愛的地方，就是它幾乎集合了常見的異步請求工作流程中的所有功能。在大部分的應用場景中，我都可以只用一招 useQuery 就解決過去需要大量自己手動處理的異步邏輯。但功能與配置選項太多這件事同時也是最令我苦惱的一個點，我常常會忘記該怎麼正確使用 useQuery @@  
+[**TanStack Query**](https://tanstack.com/query/latest)(前身為 **React Query**) 是我過去一年內最喜歡的 React 生態系工具之一。其中 [**useQuery**](https://tanstack.com/query/latest/docs/framework/react/reference/useQuery) 則是我使用最多的 hooks。我最喜愛 useQuery 的地方在於它幾乎涵蓋了所有常見的異步請求工作流程。在大多數應用場景中，使用一個 useQuery 就可以解決過去需要大量手動處理的異步邏輯。然而，它的功能和配置選項繁多，這點也讓我有時感到困擾，總是容易忘記如何正確使用 useQuery @@  
 因此決定用這篇筆記一次摸熟 useQuery 所有配置選項、回傳值的定義與用法，希望可以減少日後閱讀文件時重新理解的時間。
 
 

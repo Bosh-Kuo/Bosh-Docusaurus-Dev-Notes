@@ -7,9 +7,9 @@ tags: [Linux, Ubuntu, Nvidia Driver]
 date: 2023-01-31
 ---
 
-> 本篇為排除 nvidia-driver 異常問題的紀錄，本身對 Linux 系統與 Nvidia 深度學習環境也不是很熟悉，若有描述不正確的地方歡迎更正～
-
 <!-- truncate -->
+
+> 本篇為排除 nvidia-driver 異常問題的紀錄，本身對 Linux 系統與 Nvidia 深度學習環境也不是很熟悉，若有描述不正確的地方歡迎更正～
 
 
 ## **設備與軟體版本**
