@@ -1,14 +1,10 @@
 ---
 title: 2023 菜鳥軟體工程師的 Mac 開發工具配置
-sidebar_label: "[Other] 2023 菜鳥軟體工程師的 Mac 開發工具配置"
-description: 本篇文章記錄 Web 軟體工程師的新 Macbook 配置。本篇文章包含了日常使用的軟體和一系列開發工具的介紹。其中包括開發者工具、Homebrew 套件管理器、iTerm2 終端機模擬器、Oh My Zsh 和 Powerlevel10k等等。此外，還推薦了一些適合安裝的 Visual Studio Code 套件，以提升開發效率。
-last_update:
-  date: 2023-05-07
-keywords:
-  - 開發工具
-  - setup
-tags:
-  - 開發工具
+slug: macbook-setup-2023
+authors: bosh
+keywords: [Mac, VSCode, Homebrew, git, iTerm2, Zsh, Oh My Zsh, Chrome extensions, Docker, Postman, miniConda]
+tags: [工作設備, 開發工具]
+date: 2023-05-07
 ---
 
 最近拿到了公司配的 macbook pro 13(2022) 工作機，趁這個機會整理一下我常使用的軟題和工具，順便記錄一下一台新 mac 安裝各種工具的過程中遇到的小問題以及我做了哪些配置。
@@ -71,7 +67,7 @@ brew install wget
 
 ### **iTerm2**
 [iTerm2](https://iterm2.com/) 是一款在 macOS 上常用的終端應用程式，相較於 macOS 內建的 Terminal，iTerm2 提供了更多的自訂選項和功能，使得使用者能夠更方便地進行終端操作。iTerm2 提供了更多的外觀自訂選項。使用者可以自由調整字體、背景圖片、文字顏色等等，讓終端機的外觀更加符合個人喜好。此外，iTerm2 還支援主題和佈局的儲存和分享，讓使用者可以方便地分享和使用自己喜歡的風格。  
-除了上面提的的功能外，iTerm2 還有一個吸引我的地方，就是他的分頁和視窗管理功能，iTerm2 可以實現 tmux 提供的分割視窗、同時開啟多個終端機等功能，可以參考我之前寫的 [iTerm2 技巧大公開：提高效率的快捷鍵](./04-Terminal/01-iterm-shortcut-key.md) 這篇文章。
+除了上面提的的功能外，iTerm2 還有一個吸引我的地方，就是他的分頁和視窗管理功能，iTerm2 可以實現 tmux 提供的分割視窗、同時開啟多個終端機等功能，可以參考我之前寫的 [iTerm2 技巧大公開：提高效率的快捷鍵](https://notes.boshkuo.com/docs/DevTools/Terminal/iterm-shortcut-key) 這篇文章。
 
 以下是我的 iTerm2 各個配置的參考資料：
 - **Status bar:**
