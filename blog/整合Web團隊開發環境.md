@@ -1,21 +1,12 @@
 ---
-title: 整合 ESLint, Prettier, Husky, lint-staged 維護團隊開發品質
-sidebar_label: "[Other] 整合 ESLint, Prettier, Husky, lint-staged 維護團隊開發品質"
+title: "整合 ESLint, Prettier, Husky, lint-staged 維護團隊開發品質"
+slug: eslint-prettier-lintstaged
+authors: bosh
 description: 本篇文如何在一個前後端專案中設置 ESLint, Prettier, Husky, lint-staged
-last_update:
-  date: 2023-04-24
-keywords:
-  - 開發工具
-  - ESLint
-  - Prettier
-  - Husky
-  - lint-staged
-tags:
-  - 開發工具
-  - ESLint
-  - Prettier
-  - Husky
-  - lint-staged
+keywords: [Web, ESLint, Prettier, Husky, lint-staged]
+tags: [Web, Code Quality Tools]
+date: 2023-04-24
+image: https://tech.groww.in/maintain-code-consistency-using-eslint-prettier-husky-and-lint-staged-a657083d461b
 ---
 
 ![](https://miro.medium.com/v2/resize:fit:720/format:webp/1*PdxQHwcQZDxJK4rWB743Sg.png)
@@ -25,11 +16,17 @@ tags:
 <a href="https://tech.groww.in/maintain-code-consistency-using-eslint-prettier-husky-and-lint-staged-a657083d461b">Maintain code consistency using ESLint, Prettier, husky and lint-staged</a>
 </p>
 
+
+<!-- truncate -->
+
+
 ## **前言**
 
 由於公司的專案缺乏統一的程式碼風格和格式規範，這對於團隊的協作和專案的維護都帶來了一些困擾。主要遇到的問題是每個開發人員都有自己的 coding style 和格式偏好，各自使用的編輯器的 formatter 也不盡相同，這導致大家的自動排版格式都不太一樣。同時，許多人使用 VSCode 編輯器的 formatOnSave 功能，這個功能雖然方便，但常常會把與修改內容無關的程式碼一起自動格式化並且 commit，這些跟真正修改內容無關的 code 會影響到 reviewer 檢查提交者的程式碼。
 
 為了改善這種情況，我決定幫公司導入 `ESLint`、`Prettier`、`Husky` 和 `lint-staged` 等工具來統一程式碼風格和格式規範，在編輯頁面就讓所有開發者使用相同的 coding style 與 format ，並且在提交程式碼之前進行檢查，強制 push 到 Github/GitLab 的 Code 都是採用相同的風格與規範，從而保證程式碼品質和提高團隊開發效率。我將導入的過程與查詢的資料記錄下來，方便未來創建新專案時可以 follow 相同的步驟導入這些工具。
+
+
 
 ### **工具介紹**
 
