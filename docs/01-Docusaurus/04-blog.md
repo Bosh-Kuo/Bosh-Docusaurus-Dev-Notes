@@ -1,6 +1,6 @@
 ---
 title: Blog
-sidebar_label: "[學習筆記] Blog"
+sidebar_label: "Blog"
 description: Docusaurus 專案 - 部落格(Blog)
 last_update:
   date: 2023-02-19

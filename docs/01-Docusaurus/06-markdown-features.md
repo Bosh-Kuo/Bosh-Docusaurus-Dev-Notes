@@ -1,6 +1,6 @@
 ---
-title: Markdown Features
-sidebar_label: "[學習筆記] Markdown Features"
+title: Docusaurus Markdown Features 備忘錄
+sidebar_label: "Markdown Features"
 description: 在 Docusaurus 中，Markdown 是構建文檔和部落格文章的核心工具。這篇文章將記錄一些我平常在使用 Docusaurus 撰寫文章時，常用到的 Markdown 功能。
 last_update:
   date: 2023-06-10

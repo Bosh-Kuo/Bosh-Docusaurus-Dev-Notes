@@ -1,6 +1,6 @@
 ---
 title: docusaurus.config.ts 配置解說
-sidebar_label: "[學習筆記] Configuration"
+sidebar_label: "Configuration"
 description: 本文將詳細介紹如何配置 docusaurus.config.js，包括網站基本資訊、部署配置、主題與插件設定，以及如何進行客製化配置，幫助開發者充分利用 Docusaurus 的強大功能，打造符合自己需求的文檔網站。
 last_update:
   date: 2024-09-24

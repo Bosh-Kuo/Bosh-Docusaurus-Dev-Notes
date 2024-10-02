@@ -1,6 +1,6 @@
 ---
 title: Pages
-sidebar_label: "[學習筆記] Pages"
+sidebar_label: "Pages"
 description: Docusaurus 專案 - 創建獨立頁面(Pages)
 last_update:
   date: 2023-02-22

@@ -1,6 +1,6 @@
 ---
 title: 認識 Docusaurus3
-sidebar_label: "[學習筆記] Docusaurus3 簡介"
+sidebar_label: "Docusaurus 簡介"
 description: 本文將詳細介紹 Docusaurus 的基本概念、功能特色，以及我從 Hexo 遷移至 Docusaurus 的過程，並提供完整的安裝步驟和專案結構導覽，幫助更多開發者輕鬆上手這個強大的工具。
 last_update:
   date: 2024-06-10

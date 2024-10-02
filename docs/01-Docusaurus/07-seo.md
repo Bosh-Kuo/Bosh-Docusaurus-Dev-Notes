@@ -1,6 +1,6 @@
 ---
 title: SEO
-sidebar_label: "[學習筆記] SEO"
+sidebar_label: "SEO"
 description: Docusaurus 專案 - SEO
 last_update:
   date: 2023-02-19
