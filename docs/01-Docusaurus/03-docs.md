@@ -1,9 +1,9 @@
 ---
-title: Docs
-sidebar_label: "[學習筆記] Docs"
-description: Docusaurus 專案 - 文件(Docs)
+title: Docusaurus Docs 簡易筆記：組織文件時你該注意的重要事項
+sidebar_label: "Docs"
+description: Docusaurus 的 Docs 提供了一個基於文件系統的分層結構來組織文檔的功能，讓側邊欄能清晰呈現文檔層次和結構，提升維護便利性與讀者的導航體驗。本篇文章將深入介紹 Docs 配置、文件路徑與 URL 路徑的影響，以及如何利用插件來管理目錄變動對 SEO 的影響。
 last_update:
-  date: 2023-03-12
+  date: 2024-10-02
 keywords:
   - Docusaurus
   - React
@@ -12,31 +12,17 @@ tags:
   - Docusaurus
 ---
 
-與 Page 相似地， Docs 的功能主要由 `@docusaurus/plugin-content-docs` 套件提供，同樣若已安裝`@docusaurus/preset-classic` 套件，就不需要額外安裝這個套件，若沒有的話可以以下列指令安裝
+Docusaurus 的 **Docs** 提供了一種以分層結構來組織 Markdown 文件的功能。在預設狀態下，Docusaurus 會自動將 `/docs` 目錄下的文章按照其文件夾結構，在網站的左側顯示為對應的側邊欄。這種側邊欄不僅呈現出清晰的文檔層次，還能讓讀者一目了然地掌握文檔的整體架構，這也是 Docusaurus 最吸引我的其中一個功能。
 
-```bash
-# npm
-npm install --save @docusaurus/plugin-content-docs
+對於網站管理者來說，這樣的分層結構使得文檔維護的工作變得更加簡單和直觀。而對於讀者而言，這樣的分層結構不僅提升了導航的便利性，還可以輕鬆地在側邊欄中看出文章之間的脈絡和層次關係。
 
-# yarn
-yarn add @docusaurus/plugin-content-docs
-```
 
-## **建立 Docs**
+## **Docs 功能配置**
 
-作為組成 Dcoument 頁面的文件放置於 `docs`，以`資料夾`作為不同主題文章的分類。
+Docs 的功能主要由 [**@docusaurus/plugin-content-docs**](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs) 這個 plugin 所提供，不過由於該 plugin 已包含在 [**@docusaurus/preset-classic**](https://docusaurus.io/docs/using-plugins#docusauruspreset-classic) 裡，因此，若要改變 Docs 的預設功能行為，則需要透過 `docusaurus.config.ts` 內的 `preset` 屬性來調整配置選項。
 
-- `intro.md` ->  `http://localhost:3000/docs/intro`: 預設的 Doc 首頁，若文章頂端未配置 `sidebar_label`， sidebar_label 則會根據第一個大標的名稱 `＃<大標名稱>` 來顯示文章名稱。
-- 預設的文章目錄只會顯示 h2, h3 等級標題，可以透過修改 **front-matter** 來增加目錄顯示的標題等級。
-- 任何使用 `_` 為 prefix 命名的文建會被視為 "`partial`" pages，不會被渲然成獨立的頁面，通常作為重複內容被其他頁面引用，詳細可參考 [importing partial pages](https://docusaurus.io/docs/markdown-features/react#importing-markdown)。
-
-## **Docs-only mode**
-
-預設情況下所有 `docs` 資料夾下的文件都會掛在 routeBasePath/docs/ 下，若網站只有 docs 需求，不需要其他單獨頁面或 blog，可以透過以下設置把  `docs` 資料夾下的文件掛在 root
-
-```jsx
-module.exports = {
-  // ...
+```tsx title='docusaurus.config.ts'
+module.exports = {  
   presets: [
     '@docusaurus/preset-classic',
     {
@@ -50,135 +36,154 @@ module.exports = {
 };
 ```
 
-## **更改 intro.md 檔名與網址後綴**
+Docs 的可配置功能項目可參考 [**@plugin-content-docs - Configuration**](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#configuration) 。基本上大部分設定使使用預設即可，以下列出幾個比較可能會用到的配置選項：
 
-`doc` 資料夾中的 `intro.md` 文件預設為 Docs 頁面的路口，在本地開啟時的預設路由為 [http://localhost:3000/docs/intro](http://localhost:3000/docs/intro)，該檔案若改名為其他名稱會出現 `DocNavbarItem: couldn't find any doc with id "intro" in version current".` 這樣子的錯誤訊息，其原因是 `docusaurus.config.js` 設定檔中的下列這段設定認定 Doc 連結的入口文件其 id 為 “intro”，我們只需要注意此處設定的 **docId** 與 Docs 入口文件的 id 是相同的就不會報錯。
+| **Name**             | **Type** | **Default** | **Description**                                                                                                                      |
+| -------------------- | -------- | ----------- | ------------------------------------------------------------------------------------------------------------------------------------ |
+| path                 | string   | 'docs'      | 設定文檔內容在本地文件系統中的相對路徑。如果你設置 `path: 'documents'`，Docusaurus 會從專案根目錄的 `documents` 目錄中讀取文檔內容。 |
+| routeBasePath        | string   | 'docs'      | 設定文檔部分在網站上的 URL 路徑。如果你設置 `routeBasePath: 'guide'`，則文檔部分的路徑變為 `https://your-site.com/guide/`。          |
+| sidebarCollapsible   | boolean  | true        | 側邊欄目錄是否可折疊（預設為可折疊）。                                                                                               |
+| sidebarCollapsed     | boolean  | true        | 側邊欄目錄是否預設為折疊狀態。                                                                                                       |
+| remarkPlugins        | any[]    | []          | 傳遞給 MDX 的 Remark 插件。                                                                                                          |
+| rehypePlugins        | any[]    | []          | 傳遞給 MDX 的 Rehype 插件。                                                                                                          |
+| showLastUpdateAuthor | boolean  | false       | 是否顯示最後更新此文檔的作者。                                                                                                       |
+| showLastUpdateTime   | boolean  | false       | 是否顯示文檔最後更新的日期。                                                                                                         |
+| breadcrumbs          | boolean  | true        | 是否啟用或禁用文檔頁面最上方的導航列                                                                                                 |
 
-```jsx
 
-themeConfig:
-{
-	...
-	items: [
-	  {
-	    type: "doc",
-	    docId: "intro",
-	    position: "left",
-	    label: "Docs",
-	  },
-    ...
-  ]
-}
-```
+<br/>
 
-:::tip
-若將文件名稱改為 `index.md` ，Docusaurus 就會自動將該文件設置為預設文件，並使用目錄名作為文件網址。
-ex: **[http://localhost:3000/docs/intro](http://localhost:3000/docs/intro) →** **[http://localhost:3000/docs/](http://localhost:3000/docs/intro)**
-如此更能在網址上區分入口文件與其他筆記文件的差別
-:::
 
-## **Doc front matter**
+## **Markdown front matter**
 
-front matter 用於為您的文檔頁面提供額外的 meta data，以下列出一些比較常會使用到的項目，參考 [Example configuration](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#ex-config) 作相應的配置
+**front matter** 是 Docusaurus 文檔中的一段 YAML 格式的配置，位於每個 Markdown 文件的頂部，用於定義文檔的各種屬性和行為。它類似於文件的 meta data，決定該文檔如何呈現、在側邊欄中的名稱、是否顯示更新信息等等。當你懷疑 Docs 頁面的某個元件樣式是否可以隱藏或客製化時，通常可以在 **front matter** 找到答案。
 
-| Name                   | Type       | Default                                              | Description                                                                                                                                                                                                                       |
-| ---------------------- | ---------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
-| id                     | string     | file path (including folders, without the extension) | A unique document ID.                                                                                                                                                                                                             |
-| title                  | string     | Markdown title or id                                 | The text title of your document. Used for the page metadata and as a fallback value in multiple places (sidebar, next/previous buttons...). Automatically added at the top of your doc if it does not contain any Markdown title. |
-| sidebar_label          | string     | title                                                | The text shown in the document sidebar for this document.                                                                                                                                                                         |
-| sidebar_position       | number     | Default ordering                                     | Controls the position of a doc inside the generated sidebar slice when using autogenerated sidebar items. See also Autogenerated sidebar metadata.                                                                                |
-| keywords               | string[]   | undefined                                            | Keywords meta tag for the document page, for search engines.                                                                                                                                                                      |
-| description            | string     | The first line of Markdown content                   | The description of your document, which will become the ```<meta name="description" content="..."/>``` and ```<meta property="og:description" content="..."/>``` in ```<head>```, used by search engines.                         |
-| slug                   | string     | File path                                            | Allows to customize the document URL (/```<routeBasePath>```/```<slug>```). Support multiple patterns: slug: my-doc, slug: /my/path/myDoc, slug: /.                                                                               |
-| tags                   | Tag[]      | undefined                                            | A list of strings or objects of two string fields label and permalink to tag to your docs.                                                                                                                                        |
-| draft                  | boolean    | false                                                | A boolean flag to indicate that a document is a work-in-progress. Draft documents will only be displayed during development.                                                                                                      |
-| last_update            | FileChange | undefined                                            | Allows overriding the last updated author and/or date. Date can be any parsable date string.                                                                                                                                      |
-| hide_table_of_contents | boolean    | false                                                | Whether to hide the table of contents to the right.                                                                                                                                                                               |
+以下列出一些常用配置選項的說明，詳細格式可以參考 [**@plugin-content-docs - Markdown**](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter) 
 
-這邊放上我的 front matter 模板:
+| **Name**                   | **Type**   | **Default**                                          | **Description**                                                                                                                                                                                                                   |
+| -------------------------- | ---------- | ---------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| **id**                     | string     | file path (including folders, without the extension) | A unique document ID.                                                                                                                                                                                                             |
+| **title**                  | string     | Markdown title or id                                 | The text title of your document. Used for the page metadata and as a fallback value in multiple places (sidebar, next/previous buttons...). Automatically added at the top of your doc if it does not contain any Markdown title. |
+| **sidebar_label**          | string     | title                                                | The text shown in the document sidebar for this document.                                                                                                                                                                         |
+| **sidebar_position**       | number     | Default ordering                                     | Controls the position of a doc inside the generated sidebar slice when using autogenerated sidebar items. See also Autogenerated sidebar metadata.                                                                                |
+| **hide_table_of_contents** | boolean    | false                                                | Whether to hide the table of contents to the right.                                                                                                                                                                               |
+| **keywords**               | string[]   | undefined                                            | Keywords meta tag for the document page, for search engines.                                                                                                                                                                      |
+| **description**            | string     | The first line of Markdown content                   | The description of your document, which will become the `<meta name="description" content="..."/>` and `<meta property="og:description" content="..."/>` in `<head>`, used by search engines.                                     |
+| **slug**                   | string     | File path                                            | Allows to customize the document URL (/`<routeBasePath>`/`<slug>`). Support multiple patterns: slug: my-doc, slug: /my/path/myDoc, slug: /.                                                                                       |
+| **tags**                   | Tag[]      | undefined                                            | A list of strings or objects of two string fields label and permalink to tag to your docs.                                                                                                                                        |
+| **draft**                  | boolean    | false                                                | A boolean flag to indicate that a document is a work-in-progress. Draft documents will only be displayed during development.                                                                                                      |
+| **unlisted**               | boolean    | false                                                | Unlisted documents will be available in both development and production. They will be "hidden" in production, not indexed, excluded from sitemaps, and can only be accessed by users having a direct link.                        |
+| **last_update**            | FileChange | undefined                                            | Allows overriding the last updated author and/or date. Date can be any parsable date string.                                                                                                                                      |
+
+以下是我常用的 front matter 模板：
+
 ```yaml
+---
 title: 文章標題
 sidebar_label: 文章於側邊目錄顯示的名稱
 description: 文章描述文字
 last_update:
   date: yyyy-mm-dd
-keywords:
-  - keyword1
-  - keyword2
-tags:
-  - tag1
-  - tag2
+keywords: [keyword1, keyword2, ...] 
+tags: [tag1, tag2, ...]
+# image: 
+# slug: 
+# draft: 
+# unlisted: 
+---
 ```
 
 :::tip
 - id: 預設為檔名，用於作為網址後綴，就不另外設定
-- title: 文章標題的預設順位為: `title` > `放至於最頂端的 head1` > `檔名`，若文章中的 head1 不是放在文章最頂端，head1 的大小會被縮小至與 head2 相同，這就顯得有點奇怪，因此還是另外設定 title 不要依賴 head1 作為文章標題比較保險。
-- sidebar_label: 側邊欄名稱的預設順位為: `sidebar_label` > `title` > `放至於最頂端的 head1` > `檔名`
+- title: 文章標題的預設順位為: `title` > `放至於最頂端的 head1` > `檔名`，若文章中的 head1 不是放在文章最頂端，head1 的大小會被縮小至與 head2 相同，這就顯得有點奇怪，因此還是另外設定 title 不要依賴 head1 作為文章標題比較保險。
+- sidebar_label: 側邊欄名稱的預設順位為: `sidebar_label` > `title` > `放至於最頂端的 head1` > `檔名`
 :::
 
-![head1放開頭](https://res.cloudinary.com/djtoo8orh/image/upload/v1677130583/Docusaurus%20Blog/Docusaurus/docs/head1%E6%94%BE%E9%96%8B%E9%A0%AD_tujot3.png)
 
-![head1沒放開頭](https://res.cloudinary.com/djtoo8orh/image/upload/v1677130583/Docusaurus%20Blog/Docusaurus/docs/head1%E6%B2%92%E6%94%BE%E9%96%8B%E9%A0%AD_volpgt.png)
+<br/>
+
+
+## **文件路徑與 URL 路徑**
+
+在 Docusaurus 中，URL 路徑是根據文件的文件系統結構生成的，例如，當你有多層次的目錄時，這些目錄結構會映射為對應的 nested router：
+
+```
+docs/
+├── getting-started/
+│   ├── basics/
+│   │   └── overview.md         # URL: /docs/getting-started/basics/overview
+│   └── advanced/
+│       └── setup.md            # URL: /docs/getting-started/advanced/setup
+└── guides/
+    └── troubleshooting.md      # URL: /docs/guides/troubleshooting
+```
+
+由於 URL 是根據文件的物理目錄結構生成的，更換文件的目錄位置，會直接改變 URL 路徑，導致原有的 URL 無法再被訪問。這樣的行為會嚴重影響 SEO，因為搜尋引擎已經為原有的 URL 索引並收錄了它們，當這些 URL 變成無效時，搜尋引擎會將這些連結視為壞鏈接（broken links），這對網站的排名和流量都有不良影響。
+
+但是隨著文件數量的增加和內容的變化，重新組織文件目錄結構在所難免，但這也會導致 URL 的改變。為了減少對 SEO 的影響，我建議使用 Docusaurus 提供的插件 [**📦 plugin-client-redirects**](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-client-redirects)。該插件可以幫助我們為改變的 URL 自動設置重定向，確保原有的 URL 依然能夠被訪問，並跳轉到新的 URL，避免用戶訪問到 404 頁面。這樣做有助於保持用戶的良好體驗，也能讓搜尋引擎繼續追蹤到這些重定向後的新頁面。
 
 
 <br/>
 
 
 ## **Sidebar**
-### **Theme configuration**
 
-- `themeConfig.docs.sidebar.hideable`: 使整個側邊欄可隱藏
-- `themeConfig.docs.sidebar.autoCollapseCategories`: 擴展一個類別時會折疊所有同級類別。這樣可以避免讀者打開太多類別，並幫助他們專注於所選部分。
+Docusaurus 支援使用者手動定義的 Sidebar ，也提供自動生成 Sidebar 的功能。手動定義的 Sidebar 允許開發者自行撰寫一個 JSON 檔案來指定各個文件的順序和層次結構，而自動生成的 Sidebar 則會根據檔案系統中的文件結構自動生成 Sidebar 中文件的層級。根據我的使用經驗，除非你的 Sidebar 需要高度的客製化，否則讓 Docusaurus 自動產生 Sidebar 會比自己手動定義還要好維護非常多。以下將以使用 Autogenerated Sidebar 為角度來進行介紹。
 
-```jsx
-module.exports = {
+### **Sidebar 相關的配置選項**
+
+在 `docusaurus.config.ts` 中與 sidebar 相關的配置項目不多， 可配置項目如下：
+
+```tsx title='docusaurus.config.ts'
+export default {
   themeConfig: {
     docs: {
       sidebar: {
-        hideable: true,
-		autoCollapseCategories: true,
+        hideable: true,  // 側邊欄是否可隱藏
+        autoCollapseCategories: true,  // 在展開一個類別時折疊所有同級類別
       },
     },
   },
+  presets: [
+    [
+      '@docusaurus/preset-classic',
+      {
+        docs: {
+          breadcrumbs: true,  // 是否將目前頁面的「側邊欄路徑」呈現在頂部。 
+        },
+      },
+    ],
+  ],
 };
 ```
 
-### **Autogenerated sidebar**
-預設的 sidebar 配置為:
-```js title=./sidebars.js
-const sidebars = {
-  ...
-  tutorialSidebar: [{type: 'autogenerated', dirName: '.'}],
-  ...
-}
-```
-Docusaurus 會自動生成側邊欄內容， `docs` 的資料夾結構將決定側邊欄結構。個別文章主題的資料夾內可以透過 `_category_.json`  來客製化配置：
+### **自定義折疊類別**
 
-- `label`: 側邊欄顯示的名稱
-- `position`: 側邊欄位置
-- `link`: 若有該項，文章主題資料夾將會作為一個獨立頁面
+在 Docusaurus 中，`_category_.json` 或 `_category_.yml` 讓我們可以自訂該文件夾作為一個類別在 sidebar 中的顯示方式，比如設定標籤（label）、順序（position）、是否可折疊（collapsible）等屬性。
 
-```json
+```json title='_category_.json'
 {
-  "label": "側邊欄顯示的名稱",
-  "position": 側邊欄位置 (0-indexed),
+  "position": 2.5, // 定義該類別在 sidebar 中的顯示順序，越小越靠前顯示
+  "label": "Tutorial", // 設置該類別在 sidebar 中的顯示名稱
+  "collapsible": true, // 指定該類別是否可以被折疊
+  "collapsed": false, // 指定類別是否在初始狀態下折疊，false 代表展開
+  "className": "red", // 為該類別設置自定義的 CSS 類名
   "link": {
-    "type": "generated-index",
-    "description": "文章種類描述"
+    "type": "generated-index", // 設置類別鏈接的類型為自動生成的索引頁面
+    "title": "Tutorial overview" // 設置鏈接頁面的標題
+  },
+  "customProps": {
+    "description": "This description can be used in the swizzled DocCard" // 自定義屬性，可以在自定義的 UI 中使用
   }
 }
-```
-:::info
-詳細可配置參數可參考 [Category item metadata](https://docusaurus.io/docs/sidebar/autogenerated#category-item-metadata) (@Docusaurus)
-:::
 
-在 `autogenerated` 模式下，若要手動調整文章在 sidebar 中的順序有兩中方式：
-1. 在文章的開頭 `front matter` 加入:
-```md 
-sidebar_position: 2
 ```
-2. 以`數字前綴`命名檔案 (`prefer`)
-```json
+
+### **數字前綴命名**
+
+Docusaurus 提供了一個極為方便簡單的方法來維護 Sidebar 項目的順序，我們可以透過在文件和資料夾前添加數字前綴，這樣文件系統中的顯示順序就會與 sidebar 一致。例如：
+
+```
 docs
 ├── 01-Intro.md
 ├── 02-Tutorial-Easy
@@ -192,22 +197,32 @@ docs
 │   └── 04-End.md
 └── 04-End.md
 ```
-:::tip
-若以數字作為前綴命名文章， Docusaurus 預設會把數字前綴去掉後的檔名作為 id，因此網址上不會出現數字前綴字樣，並且，在文章中要 refer to 其他文章時，即便該篇文章檔名前面有數字前綴，也不需要加數字前綴，ex:
-```shell
-# 網址： /docs/Tutorial-Hard/First-Part
-[Tutorial-Hard - First-part](./Tutorial-Hard/First-Part.md)
+
+Docusaurus 在生成文件時，會移除這些數字前綴，因此文檔的 ID、標題、標籤和 URL 路徑中不會包含數字部分。例如，`02-Tutorial-Easy/01-First-Part.md` 的 URL 路徑會是 `/docs/Tutorial-Easy/First-Part`。
+
+:::caution
+使用 Number prefixes 有個需要非常注意的點是，有時候我們會為了調整文章在 sidebar 上的順序而改動文檔的數字前綴，若剛好有其他篇文章有引用到這篇文章時，檔名路徑改變將會導致引用失效。
+
+例如，將 /docs/Tutorial/02-Blog.mdx 改成 /docs/Tutorial/03-Blog.mdx。
+
 ```
-即便 refer 的文章檔名的數字前綴改變了，link 也不會失效。
+- [Tutorial End](../02-Blog.mdx);
++ [Tutorial End](../03-Blog.mdx);
+```
+
+當我們修改了 `02-Blog.mdx` 的數字前綴為 `03-Blog.mdx`，則需要手動更新所有的引用。
 :::
+
+:::danger
+在預設情況下，Docusaurus 在 build 階段若檢查到專案內有引用到失效的連結，會直接終止 build 流程，因而導致網站更新失敗。因此，通常如果我有改動文檔的名稱的話，我都會在 push code 前先在本地 build 一次，確認在本地可以 build 成功才會 push code
+:::
+
 
 <br/>
 
 
 ## **Reference**
-- **[@Docusaurus](https://docusaurus.io/)**
-   - **[Docs Introduction](https://docusaurus.io/docs/docs-introduction)**
-   - **[📦 plugin-content-docs](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs)**
-   - **[Markdown front matter](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-content-docs#markdown-front-matter)**
 
-
+- [**@Docusaurus - Docs**](https://docusaurus.io/docs/create-doc)
+- [**@Docusaurus - Routing**](https://docusaurus.io/docs/advanced/routing#docs-routing)
+- [**@Docusaurus - Sidebar**](https://docusaurus.io/docs/sidebar)
