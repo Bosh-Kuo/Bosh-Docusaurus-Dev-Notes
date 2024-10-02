@@ -2,12 +2,15 @@
 title: 2023 菜鳥軟體工程師的 Mac 開發工具配置
 slug: macbook-setup-2023
 authors: bosh
+description: 本篇文章記錄了我於 2023 入職 Web 軟體工程師工作後，在 Macbook 工作機上的開發環境配置。本篇文章包含了日常使用的軟體和一系列開發工具的介紹。包括開發者工具、Homebrew 套件管理器、iTerm2 終端機模擬器、Oh My Zsh 和 Powerlevel10k等等。
 keywords: [Mac, VSCode, Homebrew, git, iTerm2, Zsh, Oh My Zsh, Chrome extensions, Docker, Postman, miniConda]
 tags: [工作設備, 開發工具]
 date: 2023-05-07
 ---
 
 最近拿到了公司配的 macbook pro 13(2022) 工作機，趁這個機會整理一下我常使用的軟題和工具，順便記錄一下一台新 mac 安裝各種工具的過程中遇到的小問題以及我做了哪些配置。
+
+<!-- truncate -->
 
 ## **日常軟體**
 

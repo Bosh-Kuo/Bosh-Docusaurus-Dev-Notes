@@ -2,7 +2,7 @@
 title: "整合 ESLint, Prettier, Husky, lint-staged 維護團隊開發品質"
 slug: eslint-prettier-lintstaged
 authors: bosh
-description: 本篇文如何在一個前後端專案中設置 ESLint, Prettier, Husky, lint-staged
+description: 本篇文紀錄如何在一個前後端專案中設置 ESLint, Prettier, Husky, lint-staged
 keywords: [Web, ESLint, Prettier, Husky, lint-staged]
 tags: [Web, Code Quality Tools]
 date: 2023-04-24

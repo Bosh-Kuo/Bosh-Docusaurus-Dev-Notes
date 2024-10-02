@@ -2,6 +2,7 @@
 title: ubuntu 20.04.3 系統更新導致的 nvidia-driver 異常問題
 slug: nvidia-driver-problem
 authors: bosh
+description: 這篇文章記錄了我在處理 Ubuntu 系統中 NVIDIA 驅動異常問題的整個排除過程，包括問題的原因分析和各種解決方法的實施。
 keywords: [Linux, Ubuntu, Nvidia Driver, Deep Learning]
 tags: [Linux, Ubuntu, Nvidia Driver]
 date: 2023-01-31
