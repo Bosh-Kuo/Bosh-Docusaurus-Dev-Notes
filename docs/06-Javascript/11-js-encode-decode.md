@@ -161,7 +161,6 @@ https://example.com/submit?text=%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C
     **範例**：
     
     ```jsx
-    javascriptCopy code
     const queryParam = "name=小明&age=20";
     const encodedQueryParam = encodeURIComponent(queryParam);
     console.log(encodedQueryParam);

@@ -566,7 +566,6 @@ Webpack 提供了多種程式碼拆分技術，包括入口點、SplitChunks 外
     **動態匯入**：動態匯入支援按需載入程式碼，並允許使用 Webpack 的魔法註釋來設定塊名、懶載入（lazy-load）和設定載入優先順序。
     
     ```jsx
-    javascriptCopy code
     const { default: _ } = await import('lodash');
     import(
       /* webpackChunkName: "my-chunk-name" */

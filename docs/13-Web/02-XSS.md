@@ -296,9 +296,7 @@ CSP 是一套規則，用來告訴瀏覽器哪些來源的內容是安全的，�
     **程式碼範例**：
     假設我們使用 Express.js 來實現簡單的 CSRF 防護：
     
-    ```jsx
-    javascript
-    Copy code
+    ```js
     const express = require('express');
     const csrf = require('csurf');
     const cookieParser = require('cookie-parser');
@@ -335,9 +333,7 @@ CSP 是一套規則，用來告訴瀏覽器哪些來源的內容是安全的，�
     **程式碼範例**：
     如果必須存儲某些資料，可以考慮將其存儲在受保護的 HttpOnly Cookie 中，以防止 JavaScript 在客戶端端讀取這些資訊。
     
-    ```jsx
-    javascript
-    Copy code
+    ```js
     const express = require('express');
     const cookieParser = require('cookie-parser');
     

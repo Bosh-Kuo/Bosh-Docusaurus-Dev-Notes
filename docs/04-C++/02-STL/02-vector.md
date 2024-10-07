@@ -359,7 +359,6 @@ for (auto it = v.begin(); it != v.end(); ++it) {
 - `rend()` 返回指向 vector 第一個元素之前的位置的反向迭代器
 
 ```cpp
-cppCopy code
 vector<int> v = {1, 2, 3};
 for (auto rit = v.rbegin(); rit != v.rend(); ++rit) {
     cout << *rit << " "; // 輸出 3 2 1
@@ -371,7 +370,6 @@ for (auto rit = v.rbegin(); rit != v.rend(); ++rit) {
 - 迭代器不僅可以訪問元素，也可以修改它們
 
 ```cpp
-cppCopy code
 vector<int> v = {1, 2, 3};
 auto it = v.begin();
 *it = 4; // 將第一個元素修改為 4
