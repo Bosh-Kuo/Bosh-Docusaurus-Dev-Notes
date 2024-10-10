@@ -1,30 +1,26 @@
 ---
-title: 使用 Gitlab package registry 發布與下載私人 npm 套件全記錄
-sidebar_label: "[實作紀錄]使用 Gitlab package registry 發布與下載私人 npm 套件"
+title: "使用 Gitlab package registry 發布與下載私人 npm 套件全記錄"
+slug: gitlab-package-registry
+authors: bosh
 description: 這篇技術筆記詳細介紹了如何使用 Gitlab Package Registry 來發布和下載私人 npm 套件。文章涵蓋了 Gitlab Package Registry 的基本概念、如何進行身份驗證、權限管理以及 package.json 的設定。
-last_update:
-  date: 2024-07-22
-keywords:
-  - GitLab
-  - GitLab package registry
-  - npm
-  - yarn
-  - npm package
-tags:
-  - GitLab
-  - npm
-  - yarn
+keywords: [GitLab,  GitLab package registry, npm, yarn, npm package]
+tags: [GitLab, npm, yarn]
+date: 2024-07-22
+image: https://res.cloudinary.com/djtoo8orh/image/upload/v1728568594/Docusaurus%20Blog/Blog/Gitlab%20Package%20Registrty/gitlab_package_registry_zkdf9c.png
 ---
 
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1728568594/Docusaurus%20Blog/Blog/Gitlab%20Package%20Registrty/gitlab_package_registry_zkdf9c.png)
 
 > **前情提要：**  
-> 近期，主管想要要寫一個公司內部用的 npm library，請我幫忙研究一下，由於我之前從來沒有開發過 npm library，借此機會研究了一下一般公開的 npm library 如何開發、打包、發布、維護等，以及是否有發布私人 npm library 的解決方案？以及要如何維護、管理與發布等議題。  
+> 近期在幫公司開發一個提供內部前端成員使用的 npm package。在開發的過程中有一個比較麻煩的點是，我過去從來沒有開發過 npm package 的經驗，對於如何設置開發環境、打包、發布、維護可說是完全從零開始研究。再加上公司不希望這個 package 開源給外部使用，也沒有計劃要付費使用 npm Orgs 的私人 npm 功能。因此，除了研究如何開發 npm package 之外，同時還得研究是否有免費且適合我們公司的私人 npm library 的解決方案。  
+
+<!-- truncate -->
 
 ## **問題**
 我研究了公司至今為止發布 npm library 的作法，發現公司至今為止所有共用函式庫的開發與發布流程大致如下：
 - 開發端：
 ```
-修改原始碼 → 打包 → 將原始碼與打包後的檔案一併推到 gitlab 上 → 根據改動程度決定是否需要上 tag。
+修改原始碼 → 在本機打包 → 將原始碼與打包後的檔案一併推到 gitlab 上 → 根據改動程度決定是否需要上 tag。
 ```
 
 - 用戶端：

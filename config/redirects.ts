@@ -15,6 +15,10 @@ const redirects = [
     to: "/blog/macbook-setup-2023",
     from: "/docs/DevTools/macbook-setup-2023",
   },
+  {
+    to: "/blog/gitlab-package-registry",
+    from: "/docs/NodeJS/npm/gitlab-package-registry",
+  },
 ];
 
 export default redirects;
