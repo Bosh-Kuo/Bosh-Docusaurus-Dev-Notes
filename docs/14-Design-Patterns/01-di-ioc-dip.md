@@ -88,12 +88,12 @@ class CoffeeShop {
 ```mermaid
 classDiagram
     class CoffeeMachine {
-      +makeCoffee(): string
+      +makeCoffee() string
     }
     
     class CoffeeShop {
       -coffeeMachine: CoffeeMachine
-      +serveCustomer(): void
+      +serveCustomer() void
     }
 
     CoffeeShop --> CoffeeMachine : depends on
@@ -107,12 +107,9 @@ classDiagram
 
 當系統的耦合度過高時，系統變得難以維護，因為一個小小的變動可能會對多個部分造成連鎖反應。而 DIP 的主要概念就是盡量降低模組間的耦合度，讓程式更具可擴展性。
 
-<aside>
-💡
-
+:::tip
 **耦合和依賴的關係**可以這樣理解：依賴描述了物件之間的需求，耦合描述了這種需求的強弱。高耦合往往表示依賴關係比較強，而低耦合則意味著依賴關係比較鬆散。
-
-</aside>
+:::
 
 ### **高階模組與低階模組**
 
@@ -267,8 +264,8 @@ class OrderService {
   private paymentProcessor: PaymentProcessor;
 
   constructor() {
-	  // 現在可以在這裡更換支付方式
-	  // const paypalProcessor = new PayPalPaymentProcessor();
+    // 現在可以在這裡更換支付方式
+    // const paypalProcessor = new PayPalPaymentProcessor();
     this.paymentProcessor = new CreditCardPaymentProcessor();
   }
 
