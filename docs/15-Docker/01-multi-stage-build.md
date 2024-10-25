@@ -1,5 +1,5 @@
 ---
-title: 使用 Multi-stage Build 高效 建構輕量化 Docker 映像
+title: 使用 Multi-stage Build 高效建構輕量化 Docker 映像
 sidebar_label: "Multi-stage Build"
 description: Docker Multi-stage Build 是一種有效減少映像大小、提升構建效率的技術。本篇文章將帶你深入了解 Multi-stage Build 的原理、基本語法，並通過實際範例展示如何優化你的映像，讓應用程式更輕量、更高效地運行，解決傳統 Dockerfile 造成的映像肥大問題。
 last_update:
