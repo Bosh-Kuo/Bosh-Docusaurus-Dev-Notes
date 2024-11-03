@@ -9,11 +9,11 @@ date: 2024-10-02
 image: https://res.cloudinary.com/djtoo8orh/image/upload/v1727802838/Docusaurus%20Blog/Blog/react-i18next/react-i18next_a2co8x.png
 ---
 
-> 前言：  
-最近我在更新公司內部的前端 Codebase，其中一項任務是為應用加入多國語系（i18n）的支持。雖然在舊專案上一直有在使用 i18n 的功能，但這是我第一次接觸 i18n 的配置，正好藉此機會把學習過程和實作細節記錄下來。
-
-
 ![](https://res.cloudinary.com/djtoo8orh/image/upload/v1727802838/Docusaurus%20Blog/Blog/react-i18next/react-i18next_a2co8x.png)
+
+> **前言：**   
+> 最近我在更新公司內部的前端 Codebase，其中一項任務是為應用加入多國語系（i18n）的支持。雖然在舊專案上一直有在使用 i18n 的功能，但這是我第一次接觸 i18n 的配置，正好藉此機會把學習過程和實作細節記錄下來。
+
 
 <!-- truncate -->
 
