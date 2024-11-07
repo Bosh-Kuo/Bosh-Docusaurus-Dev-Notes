@@ -113,13 +113,16 @@ http://example.com:8080/path/to/resource?query=value#fragment
 - ?query=value：**查詢參數（query string）**
 - #fragment：**片段識別符（fragment）**
 
-URI 中的某些字符具有特殊的意義，它們用來區分 URI 的各部分。如果這些字符被編碼，會讓瀏覽器或伺服器無法正確解析和理解 URL 的結構。
+在 URI 中某些字符具有特殊意義，用來區分 URI 的不同部分，以確保 URL 的結構被正確解析。如果這些字符被錯誤地編碼，可能會讓瀏覽器或伺服器無法正常解析 URI 的各個部分。
 
-例如：
-- **/** : 用於分隔資源路徑中的層級（如 /path/to/resource）。
-- **?** : 用於引入查詢參數。
-- **=** : 和 與號 &：用於表示查詢參數的鍵和值以及多個參數的分隔。
-- **#** : 用於指定 URI 中的片段（fragment）。
+以下是一些常見的 URI 特殊字符及其用途：
+
+**/**：用於分隔路徑中的層級。例如，在 /path/to/resource 中，每個 / 表示不同層級的資源。  
+**?**：引入查詢參數，標示查詢字串的開始，例如 ?name=小明。  
+**=**：用於連接查詢參數的鍵和值。例如 name=小明 中的 = 連接 name 與 小明。  
+**&**：分隔多個查詢參數。例如 name=小明&age=20 中的 & 將 name 和 age 兩個參數分開。  
+**#**：標示 URI 中的片段（fragment），通常用於指定頁面中的某個位置，例如 #section1。  
+
 
 這些字符不應被編碼，因為它們負責組織 URI 的結構。一旦編碼，瀏覽器或伺服器就無法理解這些字符的特殊用途，從而「破壞」了 URI 的結構。
 
@@ -156,27 +159,32 @@ https://example.com/submit?text=%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C
 
 ### **encodeURIComponent 與 decodeURIComponent**
 
-- `encodeURIComponent` 用於編碼 URI 的某一部分（例如查詢字串的參數）。它會對所有非標準字符進行編碼，甚至包括那些在 URI 中具有特殊意義的字符，如 `&` 和 `=`，以確保這些字符不會破壞 URI 的結構。
+- `encodeURIComponent` 用於編碼 URI 中的特定部分（例如查詢參數的值），尤其當這部分包含具有特殊意義的字符（如 `&` 和 `=`）時。它會將這些字符轉換為安全的編碼格式，以確保這些字符不會被誤解為 URI 的結構分隔符。
     
-    **範例**：
-    
-    ```jsx
-    const queryParam = "name=小明&age=20";
-    const encodedQueryParam = encodeURIComponent(queryParam);
-    console.log(encodedQueryParam);
-    // 輸出: "name%3D%E5%B0%8F%E6%98%8E%26age%3D20"
+    **範例：正常的查詢參數結構**
+
     ```
-    
-    這樣的結果會讓瀏覽器誤以為 `&` 是查詢參數的分隔符，而不是數據的一部分，導致 **query=name=小明** 和 **age=20** 被當成兩個不同的參數，破壞了原本應有的查詢結構。
-    
-    為了避免破壞 URI 結構，我們應使用 encodeURIComponent 來編碼查詢參數：
-    
-    ```tsx
-    const encodedQueryParam = encodeURIComponent(queryParam);
-    const url = baseURL + "?query=" + encodedQueryParam;
+    http://example.com/users?name=小明&min_age=20
+    ```
+
+    在這個 URL 中，`name=小明` 和 `min_age=20` 是兩個獨立的查詢參數。這裡的 `&` 和 `=` 是查詢參數的分隔符，這是我們預期的結構，不需要特別處理。
+
+    **範例：當值本身包含 `&` 或 `=` 時**
+
+    假設我們有以下情境：要將「`name=小明&age=20`」當作**一個值**來傳遞，而不是兩個獨立的查詢參數。在這種情況下，我們需要對整個值進行編碼，否則 URL 結構會被誤解。
+
+    ```jsx
+    // 將整個值作為一個查詢參數的值
+    const queryValue = "name=小明&age=20";
+    const encodedQueryValue = encodeURIComponent(queryValue);
+
+    // 生成 URL
+    const url = `http://example.com/search?query=${encodedQueryValue}`;
     console.log(url);
     // 輸出: "http://example.com/search?query=name%3D%E5%B0%8F%E6%98%8E%26age%3D20"
     ```
+
+    在這裡，`encodeURIComponent` 會將 `&` 編碼成 `%26`，將 `=` 編碼成 `%3D`，因此這些字符不會被瀏覽器誤認為查詢參數的分隔符。
     
 - `decodeURIComponent` 用來解碼 `encodeURIComponent` 編碼的部分，還原被編碼的字符，包括所有特殊字符。
     
@@ -193,11 +201,11 @@ https://example.com/submit?text=%E4%BD%A0%E5%A5%BD%E4%B8%96%E7%95%8C
 
 ### **何時使用 encodeURI 與 encodeURIComponent**
 
-- **使用 `encodeURI`**：當需要編碼**整個 URI**時使用，它會編碼 URI 中無法直接使用的字符（如空格和非 ASCII 字符），但保留 URI 的結構字符（如 `:`, `/`, `?`, `&`, `=` 等）。適合用於完整的 URL 編碼。
-- **使用 `encodeURIComponent`**：當只需要編碼 URI 的**某個部分**（如查詢參數或片段）時使用，它會編碼所有非字母數字的字符，包括 URI 結構字符（如 `&`, `=` 等）。適合用於編碼查詢字符串或參數的值，防止這些字符破壞 URI 的結構。
+- **使用 `encodeURI`**：當需要編碼**整個 URI**時使用。它只會編碼一些無法直接使用的字符（如空格和非 ASCII 字符），但會保留 URI 結構中的符號（如 `:`, `/`, `?`, `&`, `=` 等）。適合用於整體 URL 編碼。
+- **使用 `encodeURIComponent`**：當只需編碼 URI 的**某部分**（如查詢參數的值）時使用。它會編碼所有非字母數字的字符，包括 URI 結構符號（如 `&`, `=` 等），防止這些字符影響 URI 的結構。
 
 > **共通點：**
-它們都會將**非 ASCII** 字元，以及某些 **ASCII** 字元（如空格）編碼為 **UTF-8**，然後以 URL 編碼的形式（即%加上兩個十六進制數字）輸出。
+這兩者都會將非 ASCII 字符及某些 ASCII 字符（如空格）編碼為 UTF-8，並輸出為 URL 安全格式（以 % 加上兩位十六進制數字表示）。
 >
 
 
