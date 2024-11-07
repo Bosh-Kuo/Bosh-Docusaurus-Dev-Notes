@@ -17,7 +17,7 @@ const redirects = [
   },
   {
     to: "/blog/gitlab-package-registry",
-    from: "/docs/NodeJS/npm/gitlab-package-registry",
+    from: "/docs/DevTools/npm/gitlab-package-registry",
   },
 ];
 
