@@ -210,7 +210,7 @@ docker run --mount type=bind,source=~/mycode,target=/app rw my-image
     
     ```bash
     mkdir ~/myapp
-    echo "Hello, Docker" > ./myapp/index.html
+    echo "Hello, Docker" > ~/myapp/index.html
     ```
     
     此時 `~/myapp` 資料夾裡會有一個名為 `index.html` 的文件，裡面的內容是 `"Hello, Docker"`。
@@ -218,12 +218,12 @@ docker run --mount type=bind,source=~/mycode,target=/app rw my-image
 
 1. **使用 CLI 指令掛載資料夾到容器**
     
-    現在，我們來啟動一個 Nginx 容器，並將本地的 `./myapp` 資料夾掛載到容器的 `/usr/share/nginx/html` 路徑。這樣一來，Nginx 服務就可以直接從我們的本地資料夾中讀取文件。
+    現在，我們來啟動一個 Nginx 容器，並將本地的 `~/myapp` 資料夾掛載到容器的 `/usr/share/nginx/html` 路徑。這樣一來，Nginx 服務就可以直接從我們的本地資料夾中讀取文件。
     
     執行以下指令：
     
     ```
-    docker run -d --name my-nginx -p 8080:80 -v ./myapp:/usr/share/nginx/html:ro nginx
+    docker run -d --name my-nginx -p 8080:80 -v ~/myapp:/usr/share/nginx/html:ro nginx
     ```
     
     在這個指令中，我們使用了以下參數：
@@ -231,7 +231,7 @@ docker run --mount type=bind,source=~/mycode,target=/app rw my-image
     - `-d`：讓容器在後台運行。
     - `--name my-nginx`：將容器命名為 `my-nginx`。
     - `-p 8080:80`：將本地的 8080 端口映射到容器的 80 端口，讓我們可以通過 `localhost:8080` 訪問 Nginx。
-    - `-v ~/myapp:/usr/share/nginx/html:ro`：將本地的 `./myapp` 資料夾掛載到容器內的 `/usr/share/nginx/html`，並設為只讀模式。
+    - `-v ~/myapp:/usr/share/nginx/html:ro`：將本地的 `~/myapp` 資料夾掛載到容器內的 `/usr/share/nginx/html`，並設為只讀模式。
 
 1. **測試掛載效果**
     
@@ -240,7 +240,7 @@ docker run --mount type=bind,source=~/mycode,target=/app rw my-image
 
 1. **修改本地檔案並同步**
     
-    為了確認容器內部內容會即時反映本地變更，我們可以編輯 `./myapp/index.html`，修改內容為「Hello, Docker! Welcome to Bind Mount」。之後，刷新瀏覽器頁面，應該會看到新內容自動更新。
+    為了確認容器內部內容會即時反映本地變更，我們可以編輯 `~/myapp/index.html`，修改內容為「Hello, Docker! Welcome to Bind Mount」。之後，刷新瀏覽器頁面，應該會看到新內容自動更新。
     
 
 ### **使用 Docker Compose 挂載本地檔案**
@@ -260,14 +260,14 @@ docker run --mount type=bind,source=~/mycode,target=/app rw my-image
         ports:
           - "8080:80"
         volumes:
-          - ./myapp:/usr/share/nginx/html:ro
+          - ~/myapp:/usr/share/nginx/html:ro
     ```
     
     這個 Compose 檔案定義了以下幾個配置：
     
     - `services.web.image: nginx`：我們使用 Nginx 作為服務容器的基礎映像。
     - `services.web.ports: "8080:80"`：將本地的 8080 連接埠對應到容器的 80 連接埠。
-    - `services.web.volumes: ./myapp:/usr/share/nginx/html:ro`：將當前目錄中的 `myapp` 資料夾掛載到容器的 `/usr/share/nginx/html` 路徑，並設為唯讀。
+    - `services.web.volumes: ~/myapp:/usr/share/nginx/html:ro`：將當前目錄中的 `myapp` 資料夾掛載到容器的 `/usr/share/nginx/html` 路徑，並設為唯讀。
 3. **啟動 Docker Compose**
     
     在終端中執行以下指令來啟動服務：
@@ -284,7 +284,7 @@ docker run --mount type=bind,source=~/mycode,target=/app rw my-image
     
 5. **修改本地檔案並檢查同步效果**
     
-    再次打開 `./myapp/index.html`，修改內容，然後刷新瀏覽器頁面。你應該會看到容器內部的內容也隨之更新。這證明 Docker Compose 的 Bind Mount 也實現了檔案的即時同步。
+    再次打開 `~/myapp/index.html`，修改內容，然後刷新瀏覽器頁面。你應該會看到容器內部的內容也隨之更新。這證明 Docker Compose 的 Bind Mount 也實現了檔案的即時同步。
     
 6. **停止並清理 Docker Compose**
     
