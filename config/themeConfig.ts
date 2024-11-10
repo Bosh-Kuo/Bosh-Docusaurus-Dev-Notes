@@ -38,7 +38,9 @@ const themeConfig = {
       },
       {
         href: "https://github.com/Bosh-Kuo",
-        label: "GitHub",
+        title: "GitHub",
+        className: "header-github-link",
+        "aria-label": "GitHub repository",
         position: "right",
       },
     ],
