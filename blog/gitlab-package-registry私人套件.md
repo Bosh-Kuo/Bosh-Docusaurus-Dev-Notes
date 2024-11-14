@@ -111,7 +111,7 @@ Gitlab 提供了以下幾種驗證方法：
 - [Job token](https://docs.gitlab.com/ee/ci/jobs/ci_job_token.html):  適用於在 CI/CD pipeline 中發佈 package，如果要通過 CI/CD pipelines 發佈 npm 套件，這是唯一可以使用的選擇。
 
 :::danger
-如果在專案設置中關閉了 “Package registry” 功能，無論使用哪種厭整方式都會收到 403 Forbidden
+如果在專案設置中關閉了 “Package registry” 功能，無論使用哪種驗證方式都會收到 403 Forbidden
 :::
 
 ### **Gitlab package registry 權限**
@@ -219,7 +219,7 @@ module.exports = sum;
   "name": "@bosh.kuo/published-package",
   "version": "0.0.0",
   "publishConfig": {
-    "registry": "https://gitlab.dimension8ai.com/api/v4/projects/691/packages/npm/"
+    "registry": "https://gitlab.xxx.com/api/v4/projects/691/packages/npm/"
   },
   "main": "index.js",
   "files": [
