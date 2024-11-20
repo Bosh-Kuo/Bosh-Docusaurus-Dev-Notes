@@ -101,6 +101,10 @@ React 中的事件命名問題，其實圍繞兩個核心：
 
 雖然命名方式並沒有唯一的答案，但統一命名原則能有效提升程式碼的可讀性和可維護性。
 
+
+<br/>
+
+
 ## **React 中的事件命名慣例：`onXXX` 與 `handleXXX` 的區別**
 
 在 React 中，`onXXX` 和 `handleXXX` 是最常見的事件處理命名方式。雖然這兩者都與事件處理有關，但它們的語意和使用情境明顯不同。
@@ -178,6 +182,10 @@ function Counter() {
 - **描述行為邏輯**：`handleXXX` 表達的是「執行什麼行為」。
 - **與元件內部責任一致**：該函數只處理元件內的邏輯，與父元件無直接關係。
 
+
+<br/>
+
+
 ## **主流的事件處理命名慣例**
 
 為了避免命名不一致帶來的混淆，可以參考以下原則來統一專案中的命名方式：
@@ -202,6 +210,10 @@ function Counter() {
 3. **遵循語意**
     - 如果是描述觸發條件（事件的入口），使用 `onXXX`。
     - 如果是描述處理邏輯（事件的行為），使用 `handleXXX`。
+
+
+<br/>
+
 
 ## **命名誤區與反例**
 
@@ -237,7 +249,11 @@ function Counter() {
 }\
 ```
 
-## Reference
+
+<br/>
+
+
+## **Reference**
 
 - [**@stack overflow - What is the right name of event handler? onClick or handleClick? [closed]**](https://stackoverflow.com/questions/60048249/what-is-the-right-name-of-event-handler-onclick-or-handleclick)
 - [**How to Handle Events in React – Explained with Code Examples**](https://www.freecodecamp.org/news/how-to-handle-events-in-react-19/)
