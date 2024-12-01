@@ -1,15 +1,15 @@
 ---
-title: "Gitmoji x Conventional Commit 工作流 - 使用 Commitizen 互動式產生 Conventional Commit (一)"
+title: "Gitmoji x Conventional Commit 工作流 (一) - 使用 Commitizen 互動式產生 Conventional Commit"
 slug: gitmoji-x-conventional-commit-workflow-commitizen
 authors: bosh
 description: 在這篇文章中，我分享了如何利用 Commitizen 和 Gitmoji 打造一套規範化的提交訊息工作流，幫助開發者更高效地管理專案歷史紀錄。我們將深入探討 Conventional Commits 的重要性，並比較不同的適配器（如 cz-conventional-changelog、@commitlint/cz-commitlint 和 cz-customizable）的特點與應用場景。
 keywords: [Conventional Commits, Gitmoji, Commitizen, cz-conventional-changelog, cz-customizable, "@commitlint/cz-commitlint"]
 tags: [實作紀錄]
 date: 2024-11-30
-image: https://res.cloudinary.com/djtoo8orh/image/upload/v1732957536/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-1_l8krir.png
+image: https://res.cloudinary.com/djtoo8orh/image/upload/v1733057459/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-1_uintvr.png
 ---
 
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1732957536/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-1_l8krir.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1733057459/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-1_uintvr.png)
 
 ## **前言**
 
