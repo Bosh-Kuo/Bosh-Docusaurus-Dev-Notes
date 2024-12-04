@@ -1,6 +1,6 @@
 ---
 title: 一次搞懂如何使用 Promise 實現非同步操作
-sidebar_label: "[Advanced] Promise"
+sidebar_label: "Promise"
 description: 本篇介紹 Promise 的歷史、基本用法，接著介紹 Promise 的進階應用以及與其他技術結合的情境，最後收錄Promise 的最佳實踐與常見錯誤
 last_update:
   date: 2023-03-19

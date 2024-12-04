@@ -1,6 +1,6 @@
 ---
 title: "JS 日期與時間重點整理"
-sidebar_label: "[Basic] 日期與時間"
+sidebar_label: "日期與時間(Date)"
 description: "本篇文章深入探討了 JavaScript 中日期與時間的處理，包括介紹ISO 8601, RFC2822 等標準時間格式，與建立 Date 物件的四種方法，以及如何使用 Date 物件進行格式轉換，並提供了具體的實務案例來幫助開發者應對常見的時間處理"
 last_update:
   date: 2024-09-08

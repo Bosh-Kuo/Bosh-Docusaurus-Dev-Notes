@@ -1,6 +1,6 @@
 ---
 title: "淺談 __esModule 屬性在 JavaScript 模組系統中的作用"
-sidebar_label: "[Advanced] __esModule"
+sidebar_label: "__esModule"
 description: 探討 JavaScript 模組系統中 ESM 和 CJS 的差異，並深入解析 __esModule 屬性在模組轉換及相容性處理中的關鍵作用。本文將介紹 __esModule 屬性的工作原理，並分析 Webpack 和 TypeScript 如何利用該屬性實現不同模組系統引入導出的兼容性處理。
 last_update:
   date: 2024-05-25

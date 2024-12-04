@@ -1,6 +1,6 @@
 ---
 title: "JS 中常用的編碼(Encode)與解碼(Decode)"
-sidebar_label: "[Advanced] 編碼與解碼"
+sidebar_label: "編碼與解碼(Encode & Decode)"
 description: 本篇技術筆記將詳細介紹 JavaScript 中常用的編碼與解碼方法，包括 ASCII、Unicode、UTF-8 以及 Base64 等格式。文章中不僅解釋了每種編碼的特點與適用場景，還通過 atob 和 btoa 函數來展示如何在 JavaScript 中進行 Base64 的編碼與解碼操作。此外，文章提供了一系列簡單的範例，幫助讀者理解如何在實際開發中應用這些編碼技術。無論您是前端開發新手還是希望深化對編碼知識的理解，這篇筆記都能為您提供寶貴的資訊和實用的技巧。
 last_update:
   date: 2024-09-08

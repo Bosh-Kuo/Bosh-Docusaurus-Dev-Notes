@@ -1,6 +1,6 @@
 ---
-title: "只看一次絕對學不會的 JavaScript 原型指南：初探原型、原型繼承與原型鏈"
-sidebar_label: "[Advanced] 原型、原型繼承、原型鏈"
+title: "只看一次絕對學不會的 JavaScript 原型指南(一)：初探原型、原型繼承與原型鏈"
+sidebar_label: "原型、原型繼承、原型鏈"
 description: 這篇文章深入解析了 JavaScript 原型、原型繼承和原型鏈的基本概念與運作原理。通過詳細的範例和清晰的解說，即使你是第一次接觸這些內容，也能逐步建立對原型機制的理解。
 last_update:
   date: 2024-06-19

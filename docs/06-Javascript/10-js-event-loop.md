@@ -1,6 +1,6 @@
 ---
 title: "理解 JavaScript 的 Event Loop 機制: 並行處理(Concurrency)的秘密"
-sidebar_label: "[Advanced] Event Loop"
+sidebar_label: "Event Loop"
 description: 本篇介紹 JS 的 Event Loop 機制，解釋單線程的 JS 語言如何並行處理
 last_update:
   date: 2023-03-23

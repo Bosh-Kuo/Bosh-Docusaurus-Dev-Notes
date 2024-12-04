@@ -1,6 +1,6 @@
 ---
-title: "只看一次絕對學不會的 JavaScript 原型指南：建構函式與 prototype 屬性"
-sidebar_label: "[Advanced] 建構函式與 prototype 屬性"
+title: "只看一次絕對學不會的 JavaScript 原型指南(二)：建構函式與 prototype 屬性"
+sidebar_label: "建構函式與 prototype 屬性"
 description: "
 這篇筆記詳細介紹了 JS 中建構函式與 prototype 的概念及其運作機制，涵蓋了建構函式的定義、原型屬性的預設值和修改方法，以及 instanceof 運算符的應用。通過具體範例和圖示，幫助讀者理解建構函式、物件實例與原型之間的關係，並模擬 new 運算子的內部工作原理，深入解析了 JavaScript 原型鏈的運作模式。"
 last_update:

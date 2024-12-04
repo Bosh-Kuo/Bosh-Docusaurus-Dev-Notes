@@ -1,6 +1,6 @@
 ---
 title: "瀏覽器中的 JavaScript： BOM vs. DOM"
-sidebar_label: "[Advanced] BOM & DOM"
+sidebar_label: "BOM & DOM"
 description: 本篇文章探討 JavaScript 在瀏覽器中的兩個核心組件：瀏覽器物件模型（BOM）與文件物件模型（DOM）。本文章將解釋 BOM 和 DOM 的基本概念，以及它們在瀏覽器中如何被應用來與使用者界面互動。本文章旨在幫助 JS 初學者釐清，在不同執行環境下 JavaScript 的操作細節，特別是在瀏覽器環境中可使用的語法與操作。
 last_update:
   date: 2024-05-04

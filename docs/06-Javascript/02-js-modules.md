@@ -1,6 +1,6 @@
 ---
 title: Modules - ECMAScript(import, export) & CommonJS(require, module.exports)
-sidebar_label: "[Basic] 模組(Modules)"
+sidebar_label: "模組(Modules)"
 description: 本篇為介紹 import, export, require 等常見的 Modules 語法
 last_update:
   date: 2023-03-09

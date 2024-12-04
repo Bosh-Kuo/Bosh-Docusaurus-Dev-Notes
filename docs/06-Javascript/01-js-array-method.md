@@ -1,6 +1,6 @@
 ---
 title: "JavaScript Array 常用操作大補帖"
-sidebar_label: "[Basic] 陣列(Array)"
+sidebar_label: "陣列(Array)"
 description: Array 是 JS 中最常用的資料結構之一，本筆記提供了對 JavaScript 陣列方法的詳細解說和實用範例，包括排序、篩選、映射、迭代等常見操作。無論你是初學者還是有經驗的開發人員，這份筆記都能幫助你深入理解和運用 JavaScript 陣列方法。
 last_update:
   date: 2023-05-21
