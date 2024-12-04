@@ -261,7 +261,7 @@ npm install --save-dev commitlint-config-cz
 <br/>
 
 
-## 整合 Husky：實現 Git Hooks 自動化執行 Commitlint
+## **整合 Husky：實現 Git Hooks 自動化執行 Commitlint**
 
 在前面章節中，我們介紹了如何透過 Commitlint 校驗提交訊息，但僅靠手動執行 `npx commitlint` 並不足以確保每次提交都符合規範。因此，這個章節將帶你實作 **Husky**，利用 Git Hooks 在提交時自動執行 Commitlint。
 
