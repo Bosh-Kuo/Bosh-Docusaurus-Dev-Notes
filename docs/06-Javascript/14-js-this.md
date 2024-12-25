@@ -4,7 +4,7 @@ sidebar_label: this
 description: "JavaScript 的 this 總是讓人又愛又恨，為什麼它的值總是變來變去？在這篇文章中，我們將以簡單實用的方式拆解 this 的運作邏輯，從物件方法到箭頭函式、從靜態作用域到動態上下文，幫助你輕鬆掌握 90% 的常見情境。"
 last_update:
   date: 2024-12-19
-keywords: [JavaScript, this]
+keywords: [JavaScript, this, bind, call, apply]
 tags: [Javascript]
 ---
 
@@ -12,14 +12,12 @@ tags: [Javascript]
 
 在 JavaScript 的世界裡，有一個讓新手困惑、讓老手心生畏懼的主題：**`this` 到底是什麼？**
 
-如果你曾在開發中遇到這樣的問題：
-
 > **「為什麼這個函式裡的 `this` 是 `undefined`？」
 「物件的方法好好的，為什麼 `this` 突然變成了 `window`？」
 「箭頭函式的 `this` 跟普通函式不一樣？到底要怎麼判斷？」**
 > 
 
-我想對你說，你並不孤單😿
+如果你曾在開發中遇到這樣的問題，我想對你說：你並不孤單😿
 
 雖然網路上已經有很多介紹 `this` 的文章，我可能也不會寫得比其他文章還深入，但我還是想要以我目前對 `this` 的理解程度，站在我的視角，來分享我是如何理解 `this` 的。當然，這篇文章不會「完全」解釋所有 `this` 的邏輯，畢竟要徹底理解它，你還得翻開 ECMAScript 規範才行。但我保證，這篇文章能夠幫助你在大多數情況下快速判斷 `this`，甚至對 this 有更深一層的認識。
 
@@ -57,7 +55,7 @@ JavaScript 的 `this` 最大的特點在於：
 
 ## **`this` 的本質：物件導向的延伸**
 
-在大多數物件導向語言中，`this` 從來都不是什麼難懂的概念。它的存在非常單純：**它代表當前實例（instance）本身**，方便在類別內存取物件的屬性或方法。
+在大多數物件導向語言中，`this` 從來都不是什麼難懂的概念。它的存在非常單純：**它代表當前實例（instance）本身**，方便在類別內存取物件的屬性或方法。但在 JavaScript 裡面，好像並沒有這麼單純。
 
 ### **物件導向語言裡的 `this`**
 
@@ -435,7 +433,7 @@ boundGreet('!'); // Hey, Alice!
 
 ### **怎麼轉成 `call`？**
 
-這個方法的規則很簡單，就是你在呼叫 function 以前是什麼東西，你就把它作為 call 的第一個參數。
+這個方法的規則很簡單：*把你在呼叫 function 以前那一串東西直接作為 call 的第一個參數。*
 
 我們以下面這個例子來說明：
 
@@ -472,7 +470,7 @@ const obj = {
 const obj2 = obj.inner;
 const hello = obj.inner.hello;
 
-obj.inner.hello(); // 2, 等價於 obj.hello.call(obj.inner)
+obj.inner.hello(); // 2, 等價於 obj.inner.hello.call(obj.inner)
 obj2.hello();      // 2, 等價於 obj2.hello().call(obj2)
 hello();           // undefined, 等價於 hello.call(undefined)（非嚴格模式下指向 window）
 ```
