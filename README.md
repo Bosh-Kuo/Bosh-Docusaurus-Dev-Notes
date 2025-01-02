@@ -1,5 +1,5 @@
 <div align="center">
-    <img src="./static/img/logo.png" width="150">
+    <img src="./static/img/logo.png" width="100">
     <h2 align="center">Bosh 的技術探索筆記</h2>
     <strong>這是一個使用 Docusaurus 建立的一站式筆記中心。紀錄我在軟體開發路上的技術足跡與學習旅程</strong>
 </div>
@@ -80,6 +80,7 @@ yarn build
 ├── package.json                  
 ├── sidebars.ts                   # 側邊欄設定
 ├── tsconfig.json                 
+├── LICENSE                       # MIT LICENSE
 └── README.md                     # 專案說明文件
 ```
 

@@ -668,7 +668,7 @@ Node.js 提供了多種方法來創建 `Buffer`，具體方法的選擇取決於
 - **寫入 Buffer**
     
     ```jsx
-    	const buf = Buffer.alloc(10);
+    const buf = Buffer.alloc(10);
     buf.write("Hello", "utf-8");
     console.log(buf); // <Buffer 48 65 6c 6c 6f 00 00 00 00 00>
     ```

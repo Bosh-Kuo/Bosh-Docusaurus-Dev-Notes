@@ -13,15 +13,15 @@ image: https://res.cloudinary.com/djtoo8orh/image/upload/v1733057459/Docusaurus%
 
 ## **前言**
 
-前陣子在研究一些關於 Git 專案的專業開發流程，比如如何遵循 **Conventional Commits** 規範撰寫 commit message，還有依照 **Semantic Versioning** 原則來管理版本號等等。這段時間我看了滿多 Github 上知名度高的開源專案，從它們的 commit 歷史、PR 紀錄 、Change log、Release notes 中學習如何建立一套高效且規範化的開發工作流程。
+最近我在研究 Git 專案的專業開發流程，比如怎麼按照 Conventional Commits 規範撰寫提交訊息，還有如何根據 Semantic Versioning 原則管理版本號等等。研究過程中，我花了不少時間瀏覽 Github 上一些知名的開源專案，透過它們的提交紀錄、PR 歷史、Change log 和 Release notes，一步步學習怎麼建立一套高效又規範化的工作流程。
 
-在這個過程中，我逐漸歸納出一些具體的適合用於未來新專案的工作流程，比如：
+經過一段時間的摸索，我慢慢整理出一些具體的流程，未來可以應用在新專案上，比如：
 
-1. 使用交互式問答界面工具，輔助撰寫規範化的 commit messages
-2. 結合 Git Hook ，在提交時自動檢查 commit messages 是否符合提交規範
+1. 使用互動式問答工具，輔助撰寫符合規範的提交訊息。
+2. 配合 Git Hook，自動檢查提交訊息是否遵循規範。
 3. 利用規範化的提交紀錄自動生成 Changelog
 
-為了在專案中實踐這些流程，我研究了許多相關工具。在研究的過程中，我偶然發現不少開源專案的提交訊息中都搭配了 Emoji，看起來滿直觀有趣的，於是稍微查了一下，才知道這東西叫做 **Gitmoji** 。於是，便一併研究如何將 Gitmoji 整合到上述工作流程中。
+在實踐這些流程的過程中，我研究了不少相關工具。有趣的是，我發現許多開源專案的提交訊息裡經常出現 Emoji，看起來不僅直觀，還挺有趣的。稍微查了一下後，我才知道這其實是一套叫 **Gitmoji** 的規範。於是，我決定順便研究一下怎麼把 Gitmoji 整合到剛剛提到的流程中。
 
 由於內容較多，我將以上三個工作階段分成三篇文章來介紹，並在每篇文章中詳細講解有使用 Gitmoji 和未使用 Gitmoji 的情況下，該如何安裝、配置所需工具，以及實際使用的效果。
 
@@ -31,12 +31,15 @@ image: https://res.cloudinary.com/djtoo8orh/image/upload/v1733057459/Docusaurus%
 
 ### **為什麼需要規範提交訊息？**
 
-你有沒有遇過這樣的情況：打開 Git 提交記錄，看到的都是「Fix bug」「Update」「Change」這類模糊不清的訊息？完全無法理解這些提交到底改了什麼，或者影響了哪些地方。我認為，對於一個優秀的多人協作專案來說，提交訊息不只是用來記錄改動的工具，還是團隊協作和專案管理的重要一環。如果提交訊息清晰規範，大家都能快速看懂改了什麼，為什麼改，甚至能用它來自動生成變更日誌，節省不少手動整理的麻煩。
+你是否曾經遇過這種情況：打開 Git 的提交記錄，看到滿屏的「Fix bug」「Update」「Change」這些模糊又單調的訊息，完全搞不清楚這些提交究竟改了什麼內容？甚至連哪裡可能受影響都無從得知。
 
-這就是為什麼會有 [**Conventional Commits**](https://www.conventionalcommits.org/en/v1.0.0/) 規範的原因。它提供了一套簡單又實用的規範，比如用固定格式的「標籤」來描述提交的類型（像 `feat` 表示新增功能，`fix` 表示修復問題），這樣不但讓提交訊息更容易看得懂，還能搭配工具實現一些方便的自動化功能，比如自動生成變更日誌或自動升級版本號，讓專案管理更高效輕鬆。
+對我來說，一個好的提交訊息不僅是記錄改動的工具，更是團隊協作和專案管理的關鍵之一。清晰又規範的提交訊息不僅能幫助團隊快速了解改動內容，甚至能透過規範的格式直接結合工具實現自動化生成變更日誌或升級版本號。
 
-> 如果對 **Conventional Commits** 有興趣想要進一步深入了解，歡迎參閱我之前寫的這篇文章：[**Conventional Commits 的實踐指南：寫出乾淨的提交訊息**](https://notes.boshkuo.com/docs/DevTools/Git/conventional-commits)
-> 
+
+這就是為什麼會有 [**Conventional Commits**](https://www.conventionalcommits.org/en/v1.0.0/) 規範的原因。它為提交訊息提供了一套簡單實用的格式規範，比如用固定的「標籤」來描述提交類型（像 `feat` 表示新增功能，`fix` 表示修復問題）。
+
+> 如果你對 **Conventional Commits** 規範有興趣，建議可以看看我之前寫的這篇文章：[**Conventional Commits 的實踐指南：寫出乾淨的提交訊息**](https://notes.boshkuo.com/docs/DevTools/Git/conventional-commits)
+>
 
 ### **Commitizen：規範化提交的好幫手**
 
@@ -205,7 +208,7 @@ Commitizen 本身只是一個框架，想讓它運作起來，需要安裝一個
         ![](https://res.cloudinary.com/djtoo8orh/image/upload/v1732979825/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/commitlint_config-conventional-2_hw2xdf.png)
 
 
-### 使用 Gitmoji: **搭配** cz-customizable
+### **使用 Gitmoji: 搭配 cz-customizable**
 
 1. **安裝依賴**：
     
