@@ -78,9 +78,9 @@ console.log(c.next()); // { value: 2, done: false }
 function createIterator(array) {
   let index = 0;
   return {
-	  [Symbol.iterator]() {
-	    return this;
-	  },
+    [Symbol.iterator]() {
+      return this;
+    },
     next() {
       if (index < array.length) {
         return { value: array[index++], done: false };

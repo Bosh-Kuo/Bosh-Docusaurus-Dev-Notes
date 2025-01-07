@@ -5,15 +5,8 @@ description: 本篇文章淺談 Redux, useContext, Zustand 三種狀態管理的
 slug: "/React/zustand"
 last_update:
   date: 2023-12-09
-keywords:
-  - React
-  - Hooks
-  - State Management
-  - Redux
-  - useContext
-  - Zustand
-tags:
-  - React
+keywords: [React, Hooks, State Management, Redux, useContext, Zustand]
+tags: [React]
 ---
 
 >  **前情提要:**  
@@ -200,16 +193,16 @@ function Controls() {
       )
     
       return (
-    		<>
-    	    <div className="counter">
-    	      <span>{state2}</span>
-    	      <button onClick={setState2}>one up</button>      
-    	    </div>
-    			<div className="counter">
-    				<span>{state3.key3.key3_1}</span>
-    	      <button onClick={setState3}>nested object++</button>
-    			</div>
-    		</>
+        <>
+          <div className="counter">
+            <span>{state2}</span>
+            <button onClick={setState2}>one up</button>      
+          </div>
+          <div className="counter">
+            <span>{state3.key3.key3_1}</span>
+            <button onClick={setState3}>nested object++</button>
+          </div>
+        </>
       )
     }
     
@@ -341,12 +334,12 @@ const useStore = create((set) => ({
   nested: { key1: 0, key2: 0 },
   nestedKey1Add: () =>
     set((state) => {
-				nest: {...nested, key1: state.nested.key1 + 1}
-		}),
-	newNestedKey1Value: (newKey1Value) =>
-		set({ 
-			nest: {...nested, key1: newKey1Value}
-		})
+        nest: {...nested, key1: state.nested.key1 + 1}
+    }),
+  newNestedKey1Value: (newKey1Value) =>
+    set({ 
+      nest: {...nested, key1: newKey1Value}
+    })
 }))
 ```
 
@@ -394,6 +387,7 @@ function Counter2() {
       state.state3.key3.key3_1 += 1
     })
   }
+}
 ```
 
 

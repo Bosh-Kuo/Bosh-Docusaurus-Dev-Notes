@@ -296,7 +296,7 @@ npx husky init
 為了在每次提交訊息時執行 Commitlint 校驗，我們需要新增 `commit-msg` 鉤子：
 
 ```bash
-npx husky add .husky/commit-msg "npx --no-install commitlint --edit $1"
+echo "npx --no-install commitlint --edit $1" > .husky/commit-msg
 ```
 
 執行後，`.husky/` 資料夾內將新增一個 `commit-msg` 腳本，其內容如下：
@@ -374,7 +374,7 @@ husky - commit-msg script failed (code 1)
 總結在這篇文章中我們所引入的工具：
 
 1. **Commitlint**：確保提交訊息的結構化與一致性，避免因提交格式問題影響團隊協作。
-2. **Husky：**將規範執行嵌入 Git Hooks，使校驗流程無縫融入日常開發，實現提交訊息規範的自動化。
+2. **Husky**：將規範執行嵌入 Git Hooks，使校驗流程無縫融入日常開發，實現提交訊息規範的自動化。
 
 再加上本系列的前一篇文章，我們逐步構建了一個規範化且高效的提交工作流。下一步，我將在下一篇文章中介紹，基於這套規範化的提交工作流，如何自動生成變更日誌並實現語義化版本管理，進一步提升版本控制與專案管理的效率。
 
