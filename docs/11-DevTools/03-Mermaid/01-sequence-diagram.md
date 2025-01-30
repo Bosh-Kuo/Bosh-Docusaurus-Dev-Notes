@@ -4,13 +4,8 @@ sidebar_label: "Sequence Diagram"
 description: 這篇技術筆記將介紹如何使用 Mermaid 繪製時序圖 (Sequence Diagram)。本文章著重介紹 sequence diagram 幾個元件的語法，通過實際示例，逐步講解了如何定義 actors、messages、以及這些元素之間的交互。此外，文章還深入介紹了進階功能，比如條件分支、loop、parallel 等的表達方式。
 last_update:
   date: 2024-04-11
-keywords:
-  - 開發工具
-  - Mermaid
-  - Sequence Diagram
-tags:
-  - 開發工具
-  - Mermaid
+keywords: [開發工具, Mermaid, Sequence Diagram]
+tags: [開發工具, Mermaid]
 ---
 
 
@@ -19,12 +14,12 @@ tags:
 
 **時序圖(Sequence Diagram)** 通常用於描述實體間的交互過程和消息傳遞順序。它適合用來描繪系統內部組件、物件或角色之間的溝通流程，特別是在設計軟體架構、分析業務流程或理解系統操作。當需要清晰展示系統各部分如何通過消息進行交互，或當需要理解或說明系統的行為邏輯時，繪製時序圖就非常有用。
 
-## **Syntax**
+## **語法 (Syntax)**
 
-- **Participants:**  在時序圖中交互的實體，在圖上顯示為方形文字框
-- **Actors:** 系統外部的實體，與系統進行交互的用戶或其他系統，在圖上顯示為一個小人
-- **Aliases: participants** 或 actors 的替代名稱，用於簡化和參照。
-- **Grouping / Box:** 用於將 participants 或 actors 分群的垂直方框
+- **參與者 (Participants)：** 在時序圖中交互的實體，在圖上顯示為方形文字框。
+- **角色 (Actors)：** 系統外部的實體，與系統進行交互的用戶或其他系統，在圖上顯示為一個小人。
+- **別名 (Aliases)：** `participants` 或 `actors` 的替代名稱，用於簡化和參照。
+- **群組 (Grouping / Box)：** 用於將 `participants` 或 `actors` 分群的垂直方框。
 
 ```
 sequenceDiagram
@@ -48,7 +43,7 @@ sequenceDiagram
     J->>A: Great!
 ```
 
-## **Message**
+## **消息類型 (Message Types)**
 
 | Type | Description                |
 | ---- | -------------------------- |
@@ -61,12 +56,12 @@ sequenceDiagram
 | -)   | 實線末端有開放式箭頭(異步) |
 | --)  | 虛線末端有開放式箭頭(異步) |
 
-## **Activations**
+## **啟用與停用 (Activations)**
 
-**syntax**
+**語法：**
 
-- activate/deactivate
-- 在 message arrow 後加上 `+`/`-`
+- `activate` / `deactivate`
+- 在消息箭頭後加上 `+` 或 `-`
 
 ```
 sequenceDiagram
@@ -80,9 +75,9 @@ sequenceDiagram
     John-->>-Alice: Great!
 ```
 
-## **Notes**
+## **備註 (Notes)**
 
-**syntax**
+**語法：**
 
 - `Note` [ right of | left of | over ] [Actor]: 文字
 
@@ -98,11 +93,11 @@ sequenceDiagram
     Note over Alice,John: A typical interaction
 ```
 
-## **Loops**
+## **迴圈 (Loops)**
 
-- 用來表示迴圈
+- 用來表示重複發生的動作，例如定時任務或持續輪詢。
 
-**syntax**
+**語法：**
 
 ```
 sequenceDiagram
@@ -120,11 +115,11 @@ sequenceDiagram
     end
 ```
 
-## **Alt**
+## **條件判斷 (Alt - If-Else)**
 
 - 用來表示條件流程或決策點，相當於程式設計中的 "if-else" 結構。
 
-**syntax**
+**語法：**
 
 ```
 alt Describing text
@@ -161,11 +156,12 @@ sequenceDiagram
     end
 ```
 
-## **Parallel**
+## **並行 (Parallel - 並行處理)**
 
-- 用來表示並行發生的動作
+- 表示多個動作同時發生，例如並行處理請求或多執行緒操作。
 
-**syntax**
+
+**語法：**
 
 ```
 par [Action 1]
@@ -199,7 +195,7 @@ sequenceDiagram
     John-->>Alice: Hi Alice!
 ```
 
-## **Critical Region**
+## **關鍵區塊 (Critical Region)**
 
 - 通常用於表示需要特別注意的操作，如同步控制、事務處理或任何重要的業務邏輯區塊。
 
@@ -237,11 +233,11 @@ sequenceDiagram
     end
 ```
 
-## **Break**
+## **中斷流程 (Break - 終止流程)**
 
 - 用於表示流程種終止
 
-**syntax**
+**語法：**
 
 ```
 break [something happened]
@@ -269,11 +265,11 @@ sequenceDiagram
     API-->BillingService: Start billing process
 ```
 
-## **Background Highlighting[](https://mermaid.js.org/syntax/sequenceDiagram.html#background-highlighting)**
+## **背景高亮 (Background Highlighting)**
 
 - Sequence Diagram 可讓使用者添加帶顏色的背景方框
 
-**syntax**
+**語法：**
 
 ```
 rect rgb(0, 255, 0)
