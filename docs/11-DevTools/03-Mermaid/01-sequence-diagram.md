@@ -45,16 +45,18 @@ sequenceDiagram
 
 ## **消息類型 (Message Types)**
 
-| Type | Description                |
-| ---- | -------------------------- |
-| ->   | 無箭頭實線                 |
-| -->  | 無箭頭虛線                 |
-| ->>  | 有箭頭實線                 |
-| -->> | 有箭頭虛線                 |
-| -x   | 實線末端有 x               |
-| --x  | 虛線末端有 x               |
-| -)   | 實線末端有開放式箭頭(異步) |
-| --)  | 虛線末端有開放式箭頭(異步) |
+| **類型** | **描述**                   | **適用場景**                        |
+| -------- | -------------------------- | ----------------------------------- |
+| `->`     | **實線**，無箭頭           | 單純的流程或數據傳遞                |
+| `-->`    | **虛線**，無箭頭           | 類似 `->`，但可能是次要的訊息       |
+| `->>`    | **實線**，有箭頭           | **同步請求**，發送方需要等待回應    |
+| `-->>`   | **虛線**，有箭頭           | **異步請求**，發送方不需要等待回應  |
+| `<<->>`  | **實線**，雙向箭頭         | 雙向通信，例如 WebSocket 或雙向 API |
+| `<<-->>` | **虛線**，雙向箭頭         | 雙向異步通訊，例如同步狀態機制      |
+| `-x`     | **實線**，末端有 `x`       | 表示請求或連線終止                  |
+| `--x`    | **虛線**，末端有 `x`       | 表示異步請求終止                    |
+| `-)`     | **實線**，開放箭頭 (async) | **異步回應**，但不會影響發送者      |
+| `--)`    | **虛線**，開放箭頭 (async) | **異步回應**，次要的異步事件        |
 
 ## **啟用與停用 (Activations)**
 
@@ -74,6 +76,38 @@ sequenceDiagram
     Alice->>+John: Hello John, how are you?
     John-->>-Alice: Great!
 ```
+
+## **刪除參與者的生命週期 (Destroy Participant)**
+
+當某個參與者 (participant) 在流程中被移除，例如 API 終止或物件被銷毀，可以使用 `destroy` 來標示其結束狀態。
+```
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you ?
+    Bob->>Alice: Fine, thank you. And you?
+    create participant Carl
+    Alice->>Carl: Hi Carl!
+    create actor D as Donald
+    Carl->>D: Hi!
+    destroy Carl
+    Alice-xCarl: We are too many
+    destroy Bob
+    Bob->>Alice: I agree
+```
+
+```mermaid
+sequenceDiagram
+    Alice->>Bob: Hello Bob, how are you ?
+    Bob->>Alice: Fine, thank you. And you?
+    create participant Carl
+    Alice->>Carl: Hi Carl!
+    create actor D as Donald
+    Carl->>D: Hi!
+    destroy Carl
+    Alice-xCarl: We are too many
+    destroy Bob
+    Bob->>Alice: I agree
+```
+
 
 ## **備註 (Notes)**
 
