@@ -46,7 +46,6 @@ classDiagram
         +deposit(amount)
         +withdrawal(amount)
     }
-
 ```
 
 
@@ -314,7 +313,7 @@ UML 定義了八種目前支援的類別關係類型：
         Vehicle <|-- Car
     ```
 
-### **組合 Composition（ contains-a 關係 ）**
+### **組合 Composition**
 
 - **符號**：`A *-- B`
 - **箭頭方向**：**實心菱形** 在 **整體（Whole）** 一側，指向 **部分（Part）**。
@@ -335,7 +334,7 @@ UML 定義了八種目前支援的類別關係類型：
         Car *-- Engine
     ```
 
-### **聚合 Aggregation（ has-a 關係 ）:**
+### **聚合 Aggregation**
 
 - **符號**：`A o-- B`
 - **箭頭方向**：**空心菱形** 在 **整體（Whole）** 一側，指向 **部分（Part）**。
@@ -719,7 +718,6 @@ Shape : draw()
     }
     Student "1" --o "1" IdCard : carries
     Student "1" --o "1" Bike : rides
-    
     ```
 
 
