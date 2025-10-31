@@ -406,3 +406,11 @@ learning-projects (main)
 - **隱藏雜亂的開發歷史**：使用  `--squash`  壓縮 commit 歷史，可以將隨意的 commit 訊息轉換為簡潔專業的更新記錄
 - **簡化同步流程**：只需一行  `git subtree pull`  指令即可將更新同步到展示 repo
 - **分離關注點**：私有 repo 作為「工作草稿區」可以亂七八糟，公開 repo 作為「精選作品集」保持整潔
+
+<br/>
+
+## **Reference**
+
+- [**Git Subtrees: Simplify Project Dependencies for Beginners 🚀**](https://www.youtube.com/watch?v=xPPwSOaVUM8)
+- [**git subtree tutorial 📝**](https://github.com/twtrubiks/Git-Tutorials/blob/master/git_subtree_turorial.md)
+- [**Git subtree: the alternative to Git submodule**](https://www.atlassian.com/git/tutorials/git-subtree)
