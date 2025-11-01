@@ -8,19 +8,20 @@ keywords: [開發工具, Git, Git Subtree]
 tags: [開發工具, Git]
 ---
 
-## **什麼是 Git Subtree？**
+## **Git Subtree 介紹**
 
-`git subtree`  是 Git 內建的專案管理工具，它解決了一個常見的開發需求：
+### **什麼是 Git Subtree？**
 
-> **如何在一個專案中使用另一個專案的程式碼，同時保持兩者的獨立性？**
+`git subtree` 是 Git 內建的專案管理工具，它解決了一個常見的開發需求：
 
-Git Subtree 可以很好地解決這個問題。它可以將一個 Git repository 的內容**完整嵌入**到另一個 repository 的子目錄中。這些內容會真正成為主專案的一部分，而不只是一個連結或參照。也就是說：
+> **如何在專案 A 中整合專案 B 的程式碼，同時保持專案 B 的獨立性與可更新性？**
 
-- 當別人 clone 你的專案時，會直接取得所有內容，不需要額外的步驟 (git submodule 則需要)
-- 你可以在主專案中直接修改這些內容
-- 可以雙向同步：從外部專案拉取更新，或將你的修改推送回去
+假設你正在開發一個主專案，需要使用另一個獨立維護的函式庫。如果只是把那個函式庫 clone 下來後複製到主專案中，雖然可以使用，但會遇到幾個問題：無法追蹤程式碼來源、難以同步原始專案的更新、無法將改進推送回原始專案。類似的情境還包括：
 
-使用 Git Subtree 後，你的專案結構可能如下：
+- 如何將主專案中某個模組拆分成獨立的 repository 供其他專案使用？
+- 如何將多個獨立的小專案整合到一個統一的大 repository 中？
+
+Git Subtree 提供的功能可以很好地解決這些問題。它可以將一個外部 Git repository 的內容**完整嵌入**到你的專案的子目錄中。這些內容會真正成為你的專案的一部分（不是連結或參照），同時保留與原始專案的關聯。使用 Git Subtree 後，你的專案結構可能如下：
 
 ```
 main-project/
@@ -34,7 +35,25 @@ main-project/
 └── README.md
 ```
 
-在這個例子中，`lib/shared-library/`  目錄的內容來自另一個獨立的 Git repository，但它已經完全整合到  `main-project`  中。
+在這個例子中，`lib/shared-library/` 目錄的內容來自另一個獨立的 Git repository（例如 `https://github.com/user/shared-library.git`），但它已經完全整合到 `main-project` 中。
+
+Git Subtree 有以下幾個主要的功能特點：
+
+- **完整整合**：當其他開發者 clone 主專案時，會直接取得 `lib/shared-library/` 的所有檔案和內容，不需要執行任何額外的初始化指令。這與 Git Submodule 不同，後者 clone 後只會得到一個空目錄的參照，需要額外執行 `git submodule init` 和 `git submodule update` 才能取得實際內容。
+- **可直接修改**：`lib/shared-library/` 是真實存在於主專案中的目錄和檔案，不是符號連結或參照。你可以直接在主專案中編輯這些檔案，所有修改都會被 Git 正常追蹤。這與 Git Submodule 不同，後者的子目錄實際上是一個獨立的 Git repository，修改時需要進入該目錄並在其 Git 環境中操作。
+- **雙向同步**：可以從原始專案拉取更新（使用 `git subtree pull` 將原始 `shared-library` repository 的新版本同步到主專案），也可以將主專案中的修改推送回原始專案（使用 `git subtree push` 將你在主專案中對 `lib/shared-library/` 的改進推送回原始的 `shared-library` repository）。
+
+### **Git Subtree vs Git Submodule**
+
+| 特性           | Git Subtree                       | Git Submodule                            |
+| -------------- | --------------------------------- | ---------------------------------------- |
+| **內容儲存**   | 完整複製到主 repo                 | 僅儲存 commit 參照                       |
+| **Clone 行為** | 一次 `git clone` 即可取得所有內容 | 需要額外執行 `git submodule init/update` |
+| **學習曲線**   | 較簡單，使用標準 Git 指令         | 較複雜，需要理解 submodule 概念          |
+| **歷史記錄**   | 子專案歷史可選擇性保留或壓縮      | 子專案歷史獨立於主專案                   |
+| **檔案大小**   | 主 repo 較大（包含所有內容）      | 主 repo 較小（僅參照）                   |
+| **適用情境**   | 需要完整整合、簡化協作流程        | 需要明確版本控制、多專案共用             |
+| **修改子專案** | 可直接在主 repo 中修改並推回      | 需要進入 submodule 目錄操作              |
 
 <br/>
 
@@ -51,20 +70,6 @@ main-project/
 **使用情境**：將主專案中開發某個模組拆分成獨立的 repository，方便其他專案使用。
 
 ![git-subtree-split-push.svg](https://res.cloudinary.com/djtoo8orh/image/upload/v1761895997/Docusaurus%20Blog/%E9%96%8B%E7%99%BC%E5%B7%A5%E5%85%B7/Git%20Subtree/git-subtree-split-push_wtlhrt.svg)
-
-<br/>
-
-## **Git Subtree vs Git Submodule**
-
-| 特性           | Git Subtree                         | Git Submodule                             |
-| -------------- | ----------------------------------- | ----------------------------------------- |
-| **內容儲存**   | 完整複製到主 repo                   | 僅儲存 commit 參照                        |
-| **Clone 行為** | 一次  `git clone`  即可取得所有內容 | 需要額外執行  `git submodule init/update` |
-| **學習曲線**   | 較簡單，使用標準 Git 指令           | 較複雜，需要理解 submodule 概念           |
-| **歷史記錄**   | 子專案歷史可選擇性保留或壓縮        | 子專案歷史獨立於主專案                    |
-| **檔案大小**   | 主 repo 較大（包含所有內容）        | 主 repo 較小（僅參照）                    |
-| **適用情境**   | 需要完整整合、簡化協作流程          | 需要明確版本控制、多專案共用              |
-| **修改子專案** | 可直接在主 repo 中修改並推回        | 需要進入 submodule 目錄操作               |
 
 <br/>
 
