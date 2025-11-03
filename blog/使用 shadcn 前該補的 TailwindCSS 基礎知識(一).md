@@ -25,11 +25,11 @@ image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762100576/Docusaurus%
 
 這是一個完整的 TailwindCSS 與 shadcn/ui 學習系列，總共分為五篇文章：
 
-1. **從 MUI 到 TailwindCSS：一場設計哲學的轉變**（本篇）
-2. TailwindCSS 的運作原理：從安裝到編譯
+1. **從 MUI 到 TailwindCSS 設計哲學的轉變**（本篇）
+2. 理解 TailwindCSS 的運作原理
 3. TailwindCSS v4 基礎語法速查
 4. 深入 TailwindCSS v4 的進階配置
-5. Shadcn/ui 生態系工具鏈
+5. shadcn/ui 生態系工具鏈
 
 在這幾篇文章記錄了我在學習過程中遇到了許多困惑，像是：
 
@@ -70,12 +70,9 @@ function MyComponent() {
 
 有各種「工具類別」（utility classes）可以選擇：`bg-blue-500`（背景色）、`text-white`（文字顏色）、`px-4`（水平內距）、`py-2`（垂直內距）、`rounded`（圓角）。我們可以自由組合這些工具，打造出想要的樣式。
 
-<aside>
-💡
-
+:::tip
 Utility-First 不代表「沒有元件」，而是「先用工具類別組合出樣式，再視需要封裝成元件」。這個順序的差異，決定了你的開發流程。
-
-</aside>
+:::
 
 ## **TailwindCSS 的崛起與 Shadcn/ui 的爆紅現象**
 
