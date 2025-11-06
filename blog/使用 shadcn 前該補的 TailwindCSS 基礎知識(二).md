@@ -18,7 +18,7 @@ image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762265528/Docusaurus%
 > **系列文章：**
 >
 > 1. [從 MUI 到 TailwindCSS 設計哲學的轉變](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-1)
-> 2. **理解 TailwindCSS 的運作原理**（本篇）
+> 2. **理解 TailwindCSS 的運作原理（本篇）**
 > 3. TailwindCSS v4 基礎語法速查
 > 4. 深入 TailwindCSS v4 的進階配置
 > 5. shadcn/ui 生態系工具鏈
@@ -81,7 +81,7 @@ PostCSS 是什麼？簡單來說，它是「CSS 的 Babel」。
 > **Babel** 的角色：將現代 JavaScript 轉換成瀏覽器能理解的 JavaScript
 > **PostCSS** 的角色：將現代 CSS（或特殊語法）轉換成瀏覽器能理解的 CSS
 
-TailwindCSS 本質上是一個 PostCSS 插件。讓我們看看處理流程：
+而 TailwindCSS 其實本質上就是一個 PostCSS 插件。讓我們看看處理流程：
 
 ```mermaid
 graph LR
