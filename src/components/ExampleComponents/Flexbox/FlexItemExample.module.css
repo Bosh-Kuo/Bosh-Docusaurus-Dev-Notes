@@ -1,0 +1,126 @@
+.container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.25rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+}
+
+.itemControls {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem;
+  background-color: var(--ifm-background-color);
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.itemControls h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.controlGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.controlGroup input {
+  padding: 0.4rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+}
+
+.controlGroup input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.flexContainer {
+  display: flex;
+  gap: 0;
+  min-height: 200px;
+  padding: 0;
+  background-color: var(--ifm-color-emphasis-100);
+  border: 2px dashed var(--ifm-color-primary);
+  border-radius: 6px;
+}
+
+.flexItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem;
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  color: white;
+  border: 2px solid white;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+.itemLabel {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.itemCode {
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0.9;
+}
+
+.itemCode code {
+  white-space: pre;
+  line-height: 1.4;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .container {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .flexContainer {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme='dark'] .itemControls {
+  background-color: var(--ifm-background-surface-color);
+}

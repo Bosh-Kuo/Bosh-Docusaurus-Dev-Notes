@@ -1,0 +1,142 @@
+.container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.25rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+}
+
+.itemControls {
+  flex: 1;
+  min-width: 180px;
+  padding: 1rem;
+  background-color: var(--ifm-background-color);
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.itemControls h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  font-size: 1rem;
+  color: var(--ifm-color-primary);
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.controlGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.controlGroup select {
+  padding: 0.4rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+}
+
+.controlGroup select:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.codeBlock {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--ifm-code-background);
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.codeBlock code {
+  display: block;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-900);
+  white-space: pre;
+  line-height: 1.6;
+}
+
+.flexContainer {
+  display: flex;
+  align-items: stretch;
+  gap: 10px;
+  min-height: 300px;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border: 2px dashed var(--ifm-color-primary);
+  border-radius: 6px;
+}
+
+.flexItem {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
+  padding: 1rem;
+  background: linear-gradient(135deg, var(--ifm-color-primary), var(--ifm-color-primary-dark));
+  color: white;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.itemLabel {
+  font-weight: bold;
+  font-size: 1.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.itemCode {
+  font-size: 0.75rem;
+  text-align: center;
+  opacity: 0.9;
+}
+
+/* Dark mode adjustments */
+[data-theme='dark'] .container {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme='dark'] .codeBlock {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme='dark'] .flexContainer {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme='dark'] .itemControls {
+  background-color: var(--ifm-background-surface-color);
+}
