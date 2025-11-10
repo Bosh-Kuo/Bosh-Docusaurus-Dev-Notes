@@ -1,0 +1,172 @@
+.container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.25rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+}
+
+.controls {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.controlGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.controlGroup textarea {
+  padding: 0.75rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  line-height: 1.6;
+  resize: vertical;
+}
+
+.controlGroup textarea:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.templates {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 1.5rem;
+}
+
+.templates button {
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--ifm-color-primary);
+  border-radius: 4px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-color-primary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.templates button:hover {
+  background-color: var(--ifm-color-primary);
+  color: white;
+}
+
+.codeBlock {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--ifm-code-background);
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.codeBlock code {
+  display: block;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-900);
+  white-space: pre;
+  line-height: 1.6;
+}
+
+.gridContainer {
+  display: grid;
+  gap: 10px;
+  min-height: 400px;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-50);
+  border: 2px dashed var(--ifm-color-primary);
+  border-radius: 6px;
+}
+
+.gridItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.gridItem:hover {
+  transform: scale(1.02);
+}
+
+/* 不同區域的顏色 */
+.header {
+  background: linear-gradient(135deg, #667eea, #764ba2);
+}
+
+.sidebar {
+  background: linear-gradient(135deg, #f093fb, #f5576c);
+}
+
+.main {
+  background: linear-gradient(135deg, #4facfe, #00f2fe);
+}
+
+.aside {
+  background: linear-gradient(135deg, #43e97b, #38f9d7);
+}
+
+.footer {
+  background: linear-gradient(135deg, #fa709a, #fee140);
+}
+
+.nav {
+  background: linear-gradient(135deg, #30cfd0, #330867);
+}
+
+.content {
+  background: linear-gradient(135deg, #a8edea, #fed6e3);
+  color: #333;
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .container {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .codeBlock {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme="dark"] .gridContainer {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme="dark"] .content {
+  color: white;
+}

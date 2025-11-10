@@ -1,0 +1,177 @@
+.container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.25rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 150px;
+}
+
+.controlGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.controlGroup select,
+.controlGroup input[type="text"],
+.controlGroup input[type="number"] {
+  padding: 0.4rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+}
+
+.controlGroup select:focus,
+.controlGroup input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.gapControl {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.gapControl input {
+  flex: 1;
+  min-width: 60px;
+  max-width: 100px;
+}
+
+.gapControl select {
+  width: 70px;
+  flex-shrink: 0;
+}
+
+.itemCountControl {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.itemCountControl button {
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.itemCountControl button:hover:not(:disabled) {
+  background-color: var(--ifm-color-primary);
+  color: white;
+  border-color: var(--ifm-color-primary);
+}
+
+.itemCountControl button:disabled {
+  opacity: 0.4;
+  cursor: not-allowed;
+}
+
+.itemCountControl span {
+  min-width: 30px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 1rem;
+}
+
+.codeBlock {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--ifm-code-background);
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.codeBlock code {
+  display: block;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-900);
+  white-space: pre;
+  line-height: 1.6;
+}
+
+.gridContainer {
+  display: grid;
+  min-height: 400px;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-50);
+  border: 2px dashed var(--ifm-color-primary);
+  border-radius: 6px;
+}
+
+.gridItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 60px;
+  min-height: 60px;
+  padding: 1rem;
+  background: linear-gradient(
+    135deg,
+    var(--ifm-color-primary),
+    var(--ifm-color-primary-dark)
+  );
+  color: white;
+  font-weight: bold;
+  font-size: 1.2rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.gridItem:hover {
+  transform: scale(1.05);
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .container {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .codeBlock {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme="dark"] .gridContainer {
+  background-color: var(--ifm-background-surface-color);
+}

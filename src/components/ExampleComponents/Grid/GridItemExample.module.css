@@ -1,0 +1,165 @@
+.container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 8px;
+  background-color: var(--ifm-background-surface-color);
+}
+
+.title {
+  margin-top: 0;
+  margin-bottom: 1rem;
+  color: var(--ifm-color-primary);
+  font-size: 1.25rem;
+}
+
+.description {
+  margin-bottom: 1rem;
+  color: var(--ifm-color-emphasis-700);
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  margin-bottom: 1.5rem;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-100);
+  border-radius: 6px;
+}
+
+.itemControls {
+  flex: 1;
+  min-width: 200px;
+  padding: 1rem;
+  background-color: var(--ifm-background-color);
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-200);
+}
+
+.itemControls h4 {
+  margin-top: 0;
+  margin-bottom: 0.75rem;
+  color: var(--ifm-color-primary);
+  font-size: 1rem;
+}
+
+.controlGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  margin-bottom: 0.75rem;
+}
+
+.controlGroup:last-child {
+  margin-bottom: 0;
+}
+
+.controlGroup label {
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.controlGroup select,
+.controlGroup input {
+  padding: 0.4rem;
+  border: 1px solid var(--ifm-color-emphasis-300);
+  border-radius: 4px;
+  background-color: var(--ifm-background-color);
+  color: var(--ifm-font-color-base);
+  font-size: 0.9rem;
+}
+
+.controlGroup select:focus,
+.controlGroup input:focus {
+  outline: none;
+  border-color: var(--ifm-color-primary);
+}
+
+.codeBlock {
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background-color: var(--ifm-code-background);
+  border-radius: 6px;
+  border: 1px solid var(--ifm-color-emphasis-300);
+}
+
+.codeBlock code {
+  display: block;
+  font-family: var(--ifm-font-family-monospace);
+  font-size: 0.9rem;
+  color: var(--ifm-color-emphasis-900);
+  white-space: pre;
+  line-height: 1.6;
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(2, 150px);
+  gap: 10px;
+  padding: 1rem;
+  background-color: var(--ifm-color-emphasis-50);
+  border: 2px dashed var(--ifm-color-primary);
+  border-radius: 6px;
+}
+
+.gridItem {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  color: white;
+  font-weight: bold;
+  font-size: 1.5rem;
+  border-radius: 6px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.2s;
+}
+
+.gridItem:hover {
+  transform: scale(1.05);
+}
+
+.item1 {
+  background: linear-gradient(
+    135deg,
+    #667eea,
+    #764ba2
+  );
+}
+
+.item2 {
+  background: linear-gradient(
+    135deg,
+    #f093fb,
+    #f5576c
+  );
+}
+
+.item3 {
+  background: linear-gradient(
+    135deg,
+    #4facfe,
+    #00f2fe
+  );
+}
+
+/* Dark mode adjustments */
+[data-theme="dark"] .container {
+  border-color: var(--ifm-color-emphasis-300);
+}
+
+[data-theme="dark"] .codeBlock {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme="dark"] .gridContainer {
+  background-color: var(--ifm-background-surface-color);
+}
+
+[data-theme="dark"] .itemControls {
+  background-color: var(--ifm-background-surface-color);
+}
