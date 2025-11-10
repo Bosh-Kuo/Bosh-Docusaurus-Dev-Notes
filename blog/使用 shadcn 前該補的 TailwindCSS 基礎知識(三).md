@@ -13,14 +13,14 @@ image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762431815/Docusaurus%
 
 <!-- truncate -->
 
-> 本文是「使用 shadcn/ui 前該補的 TailwindCSS 基礎知識」系列文章的第二篇
+> 本文是「使用 shadcn/ui 前該補的 TailwindCSS 基礎知識」系列文章的第三篇
 >
 > **系列文章：**
 >
 > 1. [從 MUI 到 TailwindCSS 設計哲學的轉變](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-1)
 > 2. [理解 TailwindCSS 的運作原理](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-2)
 > 3. **TailwindCSS v4 基礎語法速查（本篇）**
-> 4. 深入 TailwindCSS v4 的進階配置
+> 4. [深入 TailwindCSS v4 的進階配置](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-4)
 > 5. shadcn/ui 生態系工具鏈
 
 ## **顏色系統**
