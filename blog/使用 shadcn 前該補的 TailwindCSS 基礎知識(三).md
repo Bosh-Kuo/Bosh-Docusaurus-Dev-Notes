@@ -509,29 +509,27 @@ TailwindCSS 的間距系統是最重要的概念之一。預設的間距單位�
 
 **語意化圓角的使用規則：**
 
-和顏色不同，圓角的語意化命名會**完整保留**在 utility class 中：
+圓角的轉換規則與顏色類似，都會移除類型前綴：
 
-- **CSS 變數格式：** `--radius-{大小}`
-- **生成的 utility：** `rounded-{完整的變數名稱，不含 --}`
+- **CSS 變數格式：** `--radius-{大小}`
+- **生成的 utility：** `rounded-{大小}`（移除 `radius-` 前綴）
 
 範例對應：
+- `--radius-sm` → `rounded-sm`
+- `--radius-md` → `rounded-md`
+- `--radius-lg` → `rounded-lg`
+- `--radius-xl` → `rounded-xl`
 
-- `--radius-sm` → `rounded-radius-sm`
-- `--radius-md` → `rounded-radius-md`
-- `--radius-lg` → `rounded-radius-lg`
-- `--radius-xl` → `rounded-radius-xl`
-
-```tsx
+```typescript
 // 使用語意化圓角
-<div className="rounded-radius-sm">較小圓角</div>
-<div className="rounded-radius-lg">標準圓角</div>
-<div className="rounded-radius-xl">較大圓角</div>
+<div className="rounded-sm">較小圓角</div>
+<div className="rounded-lg">標準圓角</div>
+<div className="rounded-xl">較大圓角</div>
 ```
 
-> 對比說明：
->
-> - 顏色：`--color-primary` → `bg-primary`（會移除  `color-`  前綴）
-> - 圓角：`--radius-lg` → `rounded-radius-lg`（保留完整名稱）
+> **對比說明：**
+> - 顏色：`--color-primary` → `bg-primary`（移除 `color-` 前綴）
+> - 圓角：`--radius-lg` → `rounded-lg`（移除 `radius-` 前綴）
 
 <br/>
 
