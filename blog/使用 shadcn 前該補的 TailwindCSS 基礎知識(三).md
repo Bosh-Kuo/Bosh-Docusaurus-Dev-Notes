@@ -21,7 +21,7 @@ image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762431815/Docusaurus%
 > 2. [理解 TailwindCSS 的運作原理](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-2)
 > 3. **TailwindCSS v4 基礎語法速查（本篇）**
 > 4. [深入 TailwindCSS v4 的進階配置](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-4)
-> 5. shadcn/ui 生態系工具鏈
+> 5. [shadcn/ui 生態系工具鏈](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-5)
 
 ## **顏色系統**
 
@@ -515,6 +515,7 @@ TailwindCSS 的間距系統是最重要的概念之一。預設的間距單位�
 - **生成的 utility：** `rounded-{大小}`（移除 `radius-` 前綴）
 
 範例對應：
+
 - `--radius-sm` → `rounded-sm`
 - `--radius-md` → `rounded-md`
 - `--radius-lg` → `rounded-lg`
@@ -528,6 +529,7 @@ TailwindCSS 的間距系統是最重要的概念之一。預設的間距單位�
 ```
 
 > **對比說明：**
+>
 > - 顏色：`--color-primary` → `bg-primary`（移除 `color-` 前綴）
 > - 圓角：`--radius-lg` → `rounded-lg`（移除 `radius-` 前綴）
 

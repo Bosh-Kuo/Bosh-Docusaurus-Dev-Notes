@@ -29,7 +29,7 @@ image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762100576/Docusaurus%
 2. [理解 TailwindCSS 的運作原理](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-2)
 3. [TailwindCSS v4 基礎語法速查](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-3)
 4. [深入 TailwindCSS v4 的進階配置](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-4)
-5. shadcn/ui 生態系工具鏈
+5. [shadcn/ui 生態系工具鏈](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-5)
 
 在這幾篇文章記錄了我在學習過程中遇到了許多困惑，像是：
 
