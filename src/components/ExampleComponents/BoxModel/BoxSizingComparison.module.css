@@ -1,0 +1,157 @@
+.container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.title {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+}
+
+.description {
+  margin: 0 0 1.5rem 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.controlGroup label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.controlGroup input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.comparison {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+.boxWrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.boxTitle {
+  margin: 0;
+  padding: 0.75rem 1rem;
+  background: white;
+  border-radius: 6px;
+  border: 2px solid #e5e7eb;
+  font-size: 1rem;
+  color: #1f2937;
+  text-align: center;
+}
+
+.codeBlock {
+  padding: 1rem;
+  background: #1f2937;
+  border-radius: 6px;
+  font-family: "Courier New", monospace;
+  font-size: 0.85rem;
+}
+
+.codeBlock code {
+  color: #e5e7eb;
+  line-height: 1.6;
+}
+
+.boxContainer {
+  display: flex;
+  justify-content: center;
+  padding: 2rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+  overflow-x: auto;
+}
+
+.contentBox,
+.borderBox {
+  background: #eff6ff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100px;
+}
+
+.contentBox {
+  border-color: #3b82f6 !important;
+}
+
+.borderBox {
+  border-color: #10b981 !important;
+}
+
+.boxContent {
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: #1f2937;
+  text-align: center;
+  padding: 0.5rem;
+}
+
+.info {
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.infoItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.infoItem:last-of-type {
+  border-bottom: none;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: #6b7280;
+  font-weight: 500;
+}
+
+.value {
+  font-size: 0.95rem;
+  color: #1f2937;
+  font-weight: 600;
+}
+
+.calculation {
+  margin-top: 0.75rem;
+  padding: 0.75rem;
+  background: #f9fafb;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #4b5563;
+  text-align: center;
+  font-family: "Courier New", monospace;
+}

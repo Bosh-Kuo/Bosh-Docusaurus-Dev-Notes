@@ -1,0 +1,158 @@
+.container {
+  margin: 2rem 0;
+  padding: 1.5rem;
+  background: #f9fafb;
+  border-radius: 8px;
+}
+
+.title {
+  margin: 0 0 0.5rem 0;
+  color: #1f2937;
+  font-size: 1.25rem;
+}
+
+.description {
+  margin: 0 0 1.5rem 0;
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+.controls {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  padding: 1rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.controlGroup label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+}
+
+.controlGroup input[type="range"] {
+  width: 100%;
+  cursor: pointer;
+}
+
+.toggleGroup {
+  display: flex;
+  gap: 1.5rem;
+  padding-top: 0.5rem;
+  border-top: 1px solid #e5e7eb;
+}
+
+.toggleGroup label {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #374151;
+  cursor: pointer;
+}
+
+.toggleGroup input[type="checkbox"] {
+  cursor: pointer;
+  width: 16px;
+  height: 16px;
+}
+
+.demoSection {
+  margin-bottom: 1.5rem;
+}
+
+.sectionTitle {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.demoContainer {
+  padding: 2rem;
+  background: white;
+  border-radius: 6px;
+  border: 2px dashed #d1d5db;
+  min-height: 300px;
+}
+
+.box {
+  padding: 1.5rem;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 6px;
+  color: white;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.boxLabel {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+
+.boxInfo {
+  font-size: 0.85rem;
+  opacity: 0.9;
+  font-family: "Courier New", monospace;
+}
+
+.explanation {
+  margin-bottom: 1.5rem;
+  padding: 1.5rem;
+  background: white;
+  border-radius: 6px;
+  border: 1px solid #e5e7eb;
+}
+
+.explanation h4 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1rem;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.resultLabel {
+  padding: 0.5rem 1rem;
+  background: #eff6ff;
+  border-left: 3px solid #3b82f6;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #1e40af;
+  font-size: 0.95rem;
+}
+
+.resultValue {
+  padding: 1rem;
+  background: #f0fdf4;
+  border-radius: 6px;
+  font-size: 1rem;
+  color: #166534;
+  text-align: center;
+}
+
+.resultValue strong {
+  font-size: 1.25rem;
+  color: #15803d;
+}
+
+.resultNote {
+  padding: 0.75rem;
+  background: #fef3c7;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #92400e;
+  text-align: center;
+}

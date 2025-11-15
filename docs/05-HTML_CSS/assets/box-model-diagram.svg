@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500" width="800" height="500">
+  <!-- Background -->
+  <rect width="800" height="500" fill="#f9fafb"/>
+  
+  <!-- Margin (outermost) -->
+  <rect x="50" y="50" width="500" height="400" fill="#fef3c7" stroke="#f59e0b" stroke-width="3" stroke-dasharray="8,4"/>
+  <text x="60" y="75" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">Margin</text>
+  
+  <!-- Border -->
+  <rect x="100" y="100" width="400" height="300" fill="#fed7aa" stroke="#f59e0b" stroke-width="8"/>
+  <text x="110" y="125" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#92400e">Border</text>
+  
+  <!-- Padding -->
+  <rect x="150" y="150" width="300" height="200" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="160" y="175" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1e40af">Padding</text>
+  
+  <!-- Content -->
+  <rect x="200" y="200" width="200" height="100" fill="#bfdbfe" stroke="#3b82f6" stroke-width="3"/>
+  <text x="250" y="255" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1e40af" text-anchor="middle">Content</text>
+  
+  <!-- Dimension arrows and labels -->
+  <defs>
+    <marker id="arrowheadRight" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#374151"/>
+    </marker>
+    <marker id="arrowheadLeft" markerWidth="10" markerHeight="10" refX="1" refY="3" orient="auto">
+      <polygon points="10 0, 0 3, 10 6" fill="#374151"/>
+    </marker>
+  </defs>
+  
+  <!-- Content width -->
+  <line x1="200" y1="320" x2="400" y2="320" stroke="#374151" stroke-width="2" marker-end="url(#arrowheadRight)" marker-start="url(#arrowheadLeft)"/>
+  <text x="300" y="340" font-family="Arial, sans-serif" font-size="14" fill="#374151" text-anchor="middle">Content Width</text>
+  
+  <!-- Total width -->
+  <line x1="50" y1="470" x2="550" y2="470" stroke="#374151" stroke-width="2" marker-end="url(#arrowheadRight)" marker-start="url(#arrowheadLeft)"/>
+  <text x="300" y="490" font-family="Arial, sans-serif" font-size="14" fill="#374151" text-anchor="middle">Total Width (包含 margin)</text>
+  
+  <!-- Side labels -->
+  <text x="600" y="200" font-family="Arial, sans-serif" font-size="14" fill="#6b7280">
+    <tspan x="600" dy="0" font-weight="bold">從內到外:</tspan>
+    <tspan x="600" dy="25">1. Content (內容)</tspan>
+    <tspan x="600" dy="25">2. Padding (內距)</tspan>
+    <tspan x="600" dy="25">3. Border (邊框)</tspan>
+    <tspan x="600" dy="25">4. Margin (外距)</tspan>
+  </text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 480" width="800" height="480">
+  <!-- Background -->
+  <rect width="800" height="480" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937" text-anchor="middle">box-sizing 屬性比較</text>
+  
+  <!-- Left side: content-box -->
+  <g>
+    <text x="200" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">content-box (預設)</text>
+    
+    <!-- Box representation -->
+    <rect x="50" y="90" width="300" height="250" fill="none" stroke="#d1d5db" stroke-width="2" stroke-dasharray="4,2"/>
+    
+    <!-- Border -->
+    <rect x="70" y="110" width="260" height="210" fill="#dbeafe" stroke="#3b82f6" stroke-width="10"/>
+    
+    <!-- Padding -->
+    <rect x="100" y="140" width="200" height="150" fill="#bfdbfe" stroke="none"/>
+    
+    <!-- Content -->
+    <rect x="120" y="160" width="160" height="110" fill="#93c5fd" stroke="#3b82f6" stroke-width="2"/>
+    <text x="200" y="220" font-family="Arial, sans-serif" font-size="14" fill="#1e40af" text-anchor="middle">width: 200px</text>
+    
+    <!-- Labels -->
+    <text x="200" y="375" font-family="Arial, sans-serif" font-size="12" fill="#374151" text-anchor="middle">
+      <tspan x="200" dy="0">實際總寬度 = 200 + 40 + 20</tspan>
+      <tspan x="200" dy="16">= 260px</tspan>
+    </text>
+    
+    <!-- Code -->
+    <text x="50" y="100" font-family="Courier New, monospace" font-size="11" fill="#6b7280">
+      <tspan x="55" dy="305">width: 200px;</tspan>
+      <tspan x="55" dy="16">padding: 20px;</tspan>
+      <tspan x="55" dy="16">border: 10px;</tspan>
+    </text>
+  </g>
+  
+  <!-- Right side: border-box -->
+  <g>
+    <text x="600" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">border-box</text>
+    
+    <!-- Box representation -->
+    <rect x="470" y="110" width="260" height="210" fill="#d1fae5" stroke="#10b981" stroke-width="10"/>
+    
+    <!-- Padding -->
+    <rect x="500" y="140" width="200" height="150" fill="#a7f3d0" stroke="none"/>
+    
+    <!-- Content -->
+    <rect x="520" y="160" width="160" height="110" fill="#6ee7b7" stroke="#10b981" stroke-width="2"/>
+    <text x="600" y="210" font-family="Arial, sans-serif" font-size="14" fill="#065f46" text-anchor="middle">width: 260px</text>
+    <text x="600" y="230" font-family="Arial, sans-serif" font-size="12" fill="#065f46" text-anchor="middle">(content: 200px)</text>
+    
+    <!-- Total width indicator -->
+    <line x1="470" y1="90" x2="730" y2="90" stroke="#10b981" stroke-width="2"/>
+    <text x="600" y="85" font-family="Arial, sans-serif" font-size="12" fill="#10b981" text-anchor="middle">260px</text>
+    
+    <!-- Labels -->
+    <text x="600" y="375" font-family="Arial, sans-serif" font-size="12" fill="#374151" text-anchor="middle">
+      <tspan x="600" dy="0">實際總寬度 = 260px</tspan>
+      <tspan x="600" dy="16">(固定不變)</tspan>
+    </text>
+    
+    <!-- Code -->
+    <text x="450" y="100" font-family="Courier New, monospace" font-size="11" fill="#6b7280">
+      <tspan x="475" dy="305">width: 260px;</tspan>
+      <tspan x="475" dy="16">padding: 20px;</tspan>
+      <tspan x="475" dy="16">border: 10px;</tspan>
+      <tspan x="475" dy="16">box-sizing: border-box;</tspan>
+    </text>
+  </g>
+  
+  <!-- Separator -->
+  <line x1="400" y1="60" x2="400" y2="360" stroke="#d1d5db" stroke-width="2"/>
+</svg>

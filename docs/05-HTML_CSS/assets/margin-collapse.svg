@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 500" width="750" height="500">
+  <!-- Background -->
+  <rect width="750" height="500" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="350" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1f2937" text-anchor="middle">Margin Collapse 示意圖</text>
+  
+  <!-- Left side: Without collapse (expected) -->
+  <g>
+    <text x="175" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">預期 (不折疊)</text>
+    
+    <!-- First box -->
+    <rect x="75" y="100" width="200" height="80" fill="#a78bfa" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <text x="175" y="145" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">元素 A</text>
+    
+    <!-- Margin bottom indicator -->
+    <rect x="75" y="180" width="200" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2" rx="2"/>
+    <text x="175" y="205" font-family="Arial, sans-serif" font-size="12" fill="#92400e" text-anchor="middle">margin-bottom: 40px</text>
+    
+    <!-- Margin top indicator -->
+    <rect x="75" y="220" width="200" height="30" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2" rx="2"/>
+    <text x="175" y="240" font-family="Arial, sans-serif" font-size="12" fill="#92400e" text-anchor="middle">margin-top: 30px</text>
+    
+    <!-- Second box -->
+    <rect x="75" y="250" width="200" height="80" fill="#a78bfa" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <text x="175" y="295" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">元素 B</text>
+    
+    <!-- Total spacing -->
+    <line x1="50" y1="180" x2="50" y2="250" stroke="#ef4444" stroke-width="3"/>
+    <text x="35" y="220" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#ef4444" text-anchor="end">70px</text>
+    
+    <text x="175" y="370" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      <tspan x="175" dy="0">間距 = 40px + 30px</tspan>
+      <tspan x="175" dy="16">= 70px</tspan>
+    </text>
+  </g>
+  
+  <!-- Right side: With collapse (actual) -->
+  <g>
+    <text x="525" y="70" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1f2937" text-anchor="middle">實際 (發生折疊)</text>
+    
+    <!-- First box -->
+    <rect x="425" y="100" width="200" height="80" fill="#a78bfa" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <text x="525" y="145" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">元素 A</text>
+    
+    <!-- Collapsed margin -->
+    <rect x="425" y="180" width="200" height="40" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" stroke-dasharray="4,2" rx="2"/>
+    <text x="525" y="198" font-family="Arial, sans-serif" font-size="11" fill="#92400e" text-anchor="middle">margin-bottom: 40px</text>
+    <text x="525" y="212" font-family="Arial, sans-serif" font-size="11" fill="#92400e" text-anchor="middle">margin-top: 30px</text>
+    
+    <!-- Collapse indicator -->
+    <path d="M 425 195 L 415 200 L 425 205" stroke="#ef4444" stroke-width="2" fill="none"/>
+    <path d="M 625 195 L 635 200 L 625 205" stroke="#ef4444" stroke-width="2" fill="none"/>
+    <text x="525" y="235" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ef4444" text-anchor="middle">折疊為 max(40, 30)</text>
+    
+    <!-- Second box -->
+    <rect x="425" y="220" width="200" height="80" fill="#a78bfa" stroke="#7c3aed" stroke-width="2" rx="4"/>
+    <text x="525" y="265" font-family="Arial, sans-serif" font-size="14" fill="white" text-anchor="middle">元素 B</text>
+    
+    <!-- Total spacing -->
+    <line x1="400" y1="180" x2="400" y2="220" stroke="#10b981" stroke-width="3"/>
+    <text x="385" y="205" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#10b981" text-anchor="end">40px</text>
+    
+    <text x="525" y="340" font-family="Arial, sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">
+      <tspan x="525" dy="0">間距 = max(40px, 30px)</tspan>
+      <tspan x="525" dy="16">= 40px</tspan>
+      <tspan x="525" dy="20" font-weight="bold" fill="#10b981">✓ 節省了 30px 空間</tspan>
+    </text>
+  </g>
+  
+  <!-- Separator -->
+  <line x1="350" y1="60" x2="350" y2="400" stroke="#d1d5db" stroke-width="2"/>
+  
+  <!-- Bottom note -->
+  <text x="350" y="450" font-family="Arial, sans-serif" font-size="14" fill="#6b7280" text-anchor="middle">
+    <tspan x="350" dy="0">💡 Margin Collapse 只發生在垂直方向的相鄰區塊級元素之間</tspan>
+  </text>
+</svg>
