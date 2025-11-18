@@ -1,0 +1,247 @@
+:root {
+  --boundary-border: rgba(15, 23, 42, 0.12);
+}
+
+.wrapper {
+  border: 1px solid var(--boundary-border);
+  border-radius: 1.25rem;
+  padding: 1.75rem;
+  background: linear-gradient(180deg, #ffffff 0%, #f8fafc 100%);
+  box-shadow: 0 20px 60px -40px rgba(15, 23, 42, 0.8);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.titleHeading {
+  margin-bottom: 0.25rem;
+}
+
+.scenarioToggle {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 0.75rem;
+}
+
+.scenarioToggle button {
+  border-radius: 1rem;
+  border: 1px solid var(--boundary-border);
+  background: rgba(15, 23, 42, 0.02);
+  padding: 0.75rem 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+  text-align: left;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background 0.2s ease, box-shadow 0.2s ease;
+}
+
+.scenarioToggle button strong {
+  font-size: 0.95rem;
+}
+
+.scenarioToggle button span {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-700);
+}
+
+.activeToggle {
+  border-color: rgba(79, 70, 229, 0.4);
+  background: rgba(79, 70, 229, 0.1);
+  box-shadow: 0 0 0 1.5px rgba(79, 70, 229, 0.2);
+}
+
+.playground {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(0, 0.8fr);
+  gap: 1.5rem;
+  align-items: flex-start;
+}
+
+.previewArea {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.measureBox {
+  border-radius: 1.25rem;
+  border: 2px dashed rgba(79, 70, 229, 0.25);
+  padding: 0;
+  min-height: 260px;
+  max-height: 360px;
+  overflow: auto;
+  background: #fff;
+  position: relative;
+  scroll-behavior: smooth;
+}
+
+.scenarioBalanced {
+  border-color: rgba(59, 130, 246, 0.35);
+  overflow: hidden;
+}
+
+.scenarioBalanced .contentLayer {
+  min-height: 200px;
+}
+
+.scenarioOverflow {
+  border-color: rgba(248, 113, 113, 0.4);
+  max-height: 260px;
+}
+
+.scenarioNested {
+  border-color: rgba(16, 185, 129, 0.4);
+  box-shadow: inset 0 0 0 2px rgba(16, 185, 129, 0.3);
+  border-width: 4px;
+  padding: 1rem 1.5rem;
+}
+
+.borderLayer {
+  border: 6px solid rgba(15, 23, 42, 0.4);
+  border-radius: 1rem;
+  margin: 1rem;
+}
+
+.paddingLayer {
+  border-radius: 0.75rem;
+  background: rgba(59, 130, 246, 0.08);
+  padding: 1.1rem;
+}
+
+.contentLayer {
+  border-radius: 0.75rem;
+  background: #fff;
+  padding: 1.25rem;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.05);
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.scenarioOverflow .contentLayer {
+  min-height: 440px;
+  background: linear-gradient(180deg, #fff 0%, #fde68a 100%);
+}
+
+.scenarioNested .borderLayer {
+  border-width: 12px;
+  border-color: rgba(16, 185, 129, 0.35);
+}
+
+.kicker {
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  color: rgba(15, 23, 42, 0.5);
+  margin: 0;
+}
+
+.contentLayer h4 {
+  margin: 0;
+}
+
+.bodyText {
+  margin: 0;
+  color: var(--ifm-color-emphasis-800);
+  font-weight: 500;
+}
+
+.tagCloud {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.tagCloud span {
+  font-size: 0.75rem;
+  font-weight: 600;
+  border-radius: 999px;
+  padding: 0.2rem 0.9rem;
+  background: rgba(15, 23, 42, 0.08);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+.metricTokens {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 0.5rem;
+}
+
+.metricTokens div {
+  border-radius: 0.65rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  padding: 0.6rem 0.75rem;
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.metricTokens span {
+  display: block;
+  font-size: 0.7rem;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.metricTokens strong {
+  font-size: 0.95rem;
+  color: var(--ifm-color-emphasis-800);
+}
+
+.scrollHint {
+  position: sticky;
+  bottom: 0;
+  background: rgba(15, 23, 42, 0.85);
+  color: #fff;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.8rem;
+  display: inline-flex;
+  border-radius: 0.6rem;
+  margin: 0.5rem;
+}
+
+.metricPanel {
+  border-radius: 1rem;
+  border: 1px solid var(--boundary-border);
+  background: #fff;
+  padding: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.metricPanel > div {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  padding-bottom: 1rem;
+}
+
+.metricPanel > div:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.metricLabel {
+  margin: 0;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  font-size: 0.75rem;
+  color: rgba(15, 23, 42, 0.6);
+}
+
+.metricValue {
+  margin: 0.25rem 0 0.35rem;
+  font-size: 1.25rem;
+  font-weight: 600;
+}
+
+.metricPanel span {
+  font-size: 0.85rem;
+  color: var(--ifm-color-emphasis-600);
+}
+
+@media (max-width: 960px) {
+  .playground {
+    grid-template-columns: 1fr;
+  }
+}
