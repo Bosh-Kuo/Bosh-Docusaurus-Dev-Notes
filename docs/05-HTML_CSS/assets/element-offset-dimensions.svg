@@ -1,0 +1,39 @@
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Border box -->
+  <rect x="60" y="60" width="480" height="180" fill="none" stroke="#f59e0b" stroke-width="10" />
+  
+  <!-- Padding area - directly inside border -->
+  <rect x="70" y="70" width="440" height="160" fill="#dbeafe" stroke="none" />
+  
+  <!-- Content area -->
+  <rect x="100" y="100" width="380" height="100" fill="#bfdbfe" stroke="none" />
+  
+  <!-- Scrollbar representation -->
+  <rect x="510" y="70" width="20" height="160" fill="#94a3b8" stroke="#64748b" stroke-width="1" />
+  <rect x="512" y="90" width="16" height="40" fill="#475569" rx="2" />
+  
+  <!-- Labels -->
+  <text x="290" y="155" text-anchor="middle" font-size="16" fill="#1e40af" font-weight="bold">Content</text>
+  
+  <!-- Border label -->
+  <text x="65" y="45" font-size="12" fill="#f59e0b" font-weight="bold">Border (計入 offsetWidth)</text>
+  
+  <!-- Padding label -->
+  <text x="75" y="90" font-size="12" fill="#1e40af">Padding</text>
+  
+  <!-- Scrollbar label -->
+  <text x="515" y="60" font-size="11" fill="#475569" font-weight="bold">Scrollbar</text>
+  
+  <!-- offsetWidth arrow - bidirectional -->
+  <defs>
+    <marker id="arrowGreenLeft" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M9,0 L9,6 L0,3 z" fill="#10b981" />
+    </marker>
+    <marker id="arrowGreenRight" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+    </marker>
+  </defs>
+  
+  <line x1="60" y1="260" x2="540" y2="260" stroke="#10b981" stroke-width="2" marker-start="url(#arrowGreenLeft)" marker-end="url(#arrowGreenRight)" />
+  <text x="300" y="285" text-anchor="middle" font-size="14" fill="#10b981" font-weight="bold">offsetWidth = content + padding + border + scrollbar</text>
+</svg>

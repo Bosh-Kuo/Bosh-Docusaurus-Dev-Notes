@@ -1,0 +1,42 @@
+<svg width="750" height="500" viewBox="0 0 760 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Viewport/Root container -->
+  <rect x="50" y="50" width="700" height="200" fill="#f1f5f9" stroke="#3b82f6" stroke-width="3" />
+  <text x="350" y="35" text-anchor="middle" font-size="14" fill="#3b82f6" font-weight="bold">Viewport / Root (觀測視窗)</text>
+  
+  <!-- Scenario 1: threshold 0 (just entering) -->
+  <g>
+    <text x="70" y="80" font-size="13" fill="#1e293b" font-weight="bold">threshold: 0 (剛進入即觸發)</text>
+    <rect x="70" y="90" width="150" height="100" fill="#fecaca" stroke="#ef4444" stroke-width="2" />
+    <rect x="70" y="170" width="150" height="20" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2" stroke-dasharray="3,3" />
+    <text x="145" y="140" text-anchor="middle" font-size="12" fill="#7f1d1d">Target Element</text>
+    <text x="145" y="185" text-anchor="middle" font-size="11" fill="#1e40af">進入視窗</text>
+    <path d="M 200 100 L 230 100 L 225 95 M 230 100 L 225 105" stroke="#10b981" stroke-width="2" fill="none" />
+    <text x="240" y="105" font-size="11" fill="#10b981" font-weight="bold">✓ 觸發</text>
+  </g>
+  
+  <!-- Scenario 2: threshold 0.5 (50% visible) -->
+  <g>
+    <text x="280" y="80" font-size="13" fill="#1e293b" font-weight="bold">threshold: 0.5 (50% 可見時觸發)</text>
+    <rect x="280" y="90" width="150" height="50" fill="#fecaca" stroke="#ef4444" stroke-width="2" stroke-dasharray="3,3" />
+    <rect x="280" y="140" width="150" height="50" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2" />
+    <text x="355" y="120" text-anchor="middle" font-size="11" fill="#7f1d1d">50% 在外</text>
+    <text x="355" y="170" text-anchor="middle" font-size="11" fill="#1e40af">50% 在內</text>
+    <line x1="280" y1="140" x2="430" y2="140" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5" />
+    <text x="435" y="145" font-size="10" fill="#f59e0b" font-weight="bold">50% 線</text>
+    <path d="M 410 165 L 440 165 L 435 160 M 440 165 L 435 170" stroke="#10b981" stroke-width="2" fill="none" />
+    <text x="450" y="170" font-size="11" fill="#10b981" font-weight="bold">✓ 觸發</text>
+  </g>
+  
+  <!-- Scenario 3: threshold 0.6 (60% visible) -->
+  <g>
+    <text x="490" y="80" font-size="13" fill="#1e293b" font-weight="bold">threshold: 0.6 (60% 可見時觸發)</text>
+    <rect x="490" y="90" width="150" height="40" fill="#fecaca" stroke="#ef4444" stroke-width="2" stroke-dasharray="3,3" />
+    <rect x="490" y="130" width="150" height="60" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2" />
+    <text x="565" y="115" text-anchor="middle" font-size="11" fill="#7f1d1d">40% 在外</text>
+    <text x="565" y="165" text-anchor="middle" font-size="11" fill="#1e40af">60% 在內</text>
+    <line x1="490" y1="130" x2="640" y2="130" stroke="#f59e0b" stroke-width="2" stroke-dasharray="5,5" />
+    <text x="645" y="135" font-size="10" fill="#f59e0b" font-weight="bold">60% 線</text>
+    <path d="M 620 160 L 650 160 L 645 155 M 650 160 L 645 165" stroke="#10b981" stroke-width="2" fill="none" />
+    <text x="655" y="165" font-size="11" fill="#10b981" font-weight="bold">✓ 觸發</text>
+  </g>
+</svg>

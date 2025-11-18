@@ -1,0 +1,46 @@
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Element box -->
+  <rect x="100" y="50" width="400" height="200" fill="none" stroke="#94a3b8" stroke-width="2" />
+  
+  <!-- Border (left and top) -->
+  <rect x="100" y="50" width="20" height="200" fill="#fef3c7" stroke="none" />
+  <rect x="100" y="50" width="400" height="20" fill="#fef3c7" stroke="none" />
+  
+  <!-- Content area -->
+  <rect x="120" y="70" width="380" height="180" fill="#dbeafe" stroke="none" />
+  
+  <!-- Small arrow markers -->
+  <defs>
+    <marker id="arrowUpSmall" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <!-- Point left so orient=auto keeps start arrow facing up -->
+      <path d="M6,0 L0,3 L6,6 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrowDownSmall" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrowLeftSmall" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M6,0 L6,6 L0,3 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrowRightSmall" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  
+  <!-- clientLeft line with small arrows -->
+  <line x1="100" y1="280" x2="120" y2="280" stroke="#3b82f6" stroke-width="1.5" marker-start="url(#arrowLeftSmall)" marker-end="url(#arrowRightSmall)" />
+  <text x="110" y="270" text-anchor="middle" font-size="11" fill="#3b82f6" font-weight="bold">clientLeft</text>
+  
+  <!-- clientTop line with small arrows, moved to avoid text overlap -->
+  <line x1="80" y1="50" x2="80" y2="70" stroke="#3b82f6" stroke-width="1.5" marker-start="url(#arrowUpSmall)" marker-end="url(#arrowDownSmall)" />
+  <text x="25" y="65" font-size="11" fill="#3b82f6" font-weight="bold">clientTop</text>
+  
+  <!-- Border labels -->
+  <text x="105" y="155" font-size="11" fill="#f59e0b" font-weight="bold" transform="rotate(-90 105 155)">Border Left</text>
+  <text x="300" y="62" text-anchor="middle" font-size="11" fill="#f59e0b" font-weight="bold">Border Top</text>
+  
+  <!-- Content label -->
+  <text x="310" y="165" text-anchor="middle" font-size="14" fill="#1e40af" font-weight="bold">Content Area</text>
+  
+  <!-- Note -->
+  <text x="100" y="25" font-size="11" fill="#64748b" font-style="italic">clientLeft/Top = border 寬度 (+ scrollbar 寬度,如果在左/上側)</text>
+</svg>

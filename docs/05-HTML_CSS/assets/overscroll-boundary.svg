@@ -1,0 +1,38 @@
+<svg width="920" height="320" viewBox="0 0 920 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="920" height="320" rx="28" fill="#F8FAFC" />
+  <text x="60" y="50" fill="#0F172A" font-size="20" font-family="'Inter', 'Noto Sans TC', sans-serif">Scroll chaining vs overscroll-behavior: contain</text>
+
+  <g>
+    <rect x="60" y="70" width="360" height="220" rx="18" fill="#DCFCE7" stroke="#16A34A" stroke-width="2" />
+    <text x="80" y="100" fill="#166534" font-size="15" font-family="'Inter', 'Noto Sans TC', sans-serif">預設：scroll chaining</text>
+    <rect x="90" y="130" width="300" height="150" rx="14" fill="#FEFCE8" stroke="#FACC15" stroke-dasharray="6 6" />
+    <text x="110" y="160" fill="#713F12" font-size="13" font-family="'Inter', 'Noto Sans TC', sans-serif">內層滾動區</text>
+    <path d="M210 130 V110" stroke="#F97316" stroke-width="2" marker-end="url(#arrowOrange)" />
+    <path d="M210 280 V300" stroke="#F97316" stroke-width="2" marker-end="url(#arrowOrange)" />
+    <text x="220" y="118" fill="#F97316" font-size="12" font-family="'Inter', 'Noto Sans TC', sans-serif">動量往父層傳遞</text>
+    <text x="90" y="260" fill="#334155" font-size="12" font-family="'Inter', 'Noto Sans TC', sans-serif">觸底後繼續滑 → 父層開始捲動</text>
+  </g>
+
+  <g>
+    <rect x="500" y="70" width="360" height="220" rx="18" fill="#E0F2FE" stroke="#0284C7" stroke-width="2" />
+    <text x="520" y="100" fill="#0369A1" font-size="15" font-family="'Inter', 'Noto Sans TC', sans-serif">overscroll-behavior: contain</text>
+    <rect x="530" y="130" width="300" height="150" rx="14" fill="#EFF6FF" stroke="#38BDF8" stroke-dasharray="6 6" />
+    <text x="550" y="160" fill="#0F172A" font-size="13" font-family="'Inter', 'Noto Sans TC', sans-serif">內層滾動區</text>
+    <path d="M680 130 V110" stroke="#0EA5E9" stroke-width="2" marker-end="url(#arrowBlue)" />
+    <path d="M680 280 V305" stroke="#0EA5E9" stroke-width="2" marker-end="url(#arrowStop)" />
+    <text x="690" y="118" fill="#0EA5E9" font-size="12" font-family="'Inter', 'Noto Sans TC', sans-serif">動量保留</text>
+    <text x="600" y="260" fill="#0F172A" font-size="12" font-family="'Inter', 'Noto Sans TC', sans-serif">外層維持靜止，不再連鎖滾動</text>
+  </g>
+
+  <defs>
+    <marker id="arrowOrange" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L6 3L0 6Z" fill="#F97316" />
+    </marker>
+    <marker id="arrowBlue" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L6 3L0 6Z" fill="#0EA5E9" />
+    </marker>
+    <marker id="arrowStop" viewBox="0 0 6 6" refX="3" refY="3" markerWidth="6" markerHeight="6" orient="auto">
+      <path d="M0 0L6 3L0 6Z" fill="#0369A1" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,32 @@
+<svg width="600" height="300" viewBox="0 0 600 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- Border box -->
+  <rect x="60" y="60" width="480" height="180" fill="none" stroke="#f59e0b" stroke-width="10" />
+  
+  <!-- Padding + Content area (client area) - directly inside border -->
+  <rect x="70" y="70" width="460" height="160" fill="#dbeafe" stroke="none" />
+  
+  <!-- Content area -->
+  <rect x="100" y="100" width="400" height="100" fill="#bfdbfe" stroke="none" />
+  
+  <!-- Labels -->
+  <text x="300" y="155" text-anchor="middle" font-size="16" fill="#1e40af" font-weight="bold">Content</text>
+  
+  <!-- Border label -->
+  <text x="65" y="45" font-size="12" fill="#f59e0b" font-weight="bold">Border (不計入 clientWidth)</text>
+  
+  <!-- Padding label -->
+  <text x="75" y="90" font-size="12" fill="#1e40af">Padding</text>
+  
+  <!-- clientWidth arrow - bidirectional -->
+  <defs>
+    <marker id="arrowLeft" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M9,0 L9,6 L0,3 z" fill="#3b82f6" />
+    </marker>
+    <marker id="arrowRight" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#3b82f6" />
+    </marker>
+  </defs>
+  
+  <line x1="70" y1="250" x2="530" y2="250" stroke="#3b82f6" stroke-width="2" marker-start="url(#arrowLeft)" marker-end="url(#arrowRight)" />
+  <text x="300" y="275" text-anchor="middle" font-size="14" fill="#3b82f6" font-weight="bold">clientWidth = content + padding</text>
+</svg>

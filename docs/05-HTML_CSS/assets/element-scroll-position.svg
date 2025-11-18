@@ -1,0 +1,42 @@
+<svg width="600" height="350" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- Scrollable container -->
+  <rect x="50" y="50" width="400" height="200" fill="#f1f5f9" stroke="#64748b" stroke-width="2" />
+  
+  <!-- Visible viewport -->
+  <rect x="50" y="130" width="400" height="120" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" />
+  <text x="250" y="195" text-anchor="middle" font-size="14" fill="#1e40af" font-weight="bold">可視區域</text>
+  
+  <!-- Hidden top content -->
+  <rect x="50" y="50" width="400" height="80" fill="#fecaca" stroke="none" opacity="0.5" />
+  <text x="250" y="95" text-anchor="middle" font-size="12" fill="#dc2626">已滾動到上方的內容</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowPurpleUp" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M10,0 L0,5 L10,10 z" fill="#8b5cf6" />
+    </marker>
+    <marker id="arrowPurpleDown" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#8b5cf6" />
+    </marker>
+  </defs>
+  
+  <!-- scrollTop arrow -->
+  <line x1="470" y1="50" x2="470" y2="130" stroke="#8b5cf6" stroke-width="2" marker-start="url(#arrowPurpleUp)" marker-end="url(#arrowPurpleDown)" />
+  <text x="490" y="95" font-size="13" fill="#8b5cf6" font-weight="bold">scrollTop</text>
+  
+  <!-- Scrollbar -->
+  <rect x="460" y="130" width="20" height="120" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1" />
+  <rect x="462" y="160" width="16" height="40" fill="#64748b" rx="2" />
+  
+  <!-- Zero point indicator -->
+  <circle cx="50" cy="50" r="4" fill="#ef4444" />
+  <text x="60" y="45" font-size="11" fill="#ef4444" font-weight="bold">scrollTop = 0 (起點)</text>
+  
+  <!-- Current scroll position -->
+  <line x1="40" y1="130" x2="50" y2="130" stroke="#3b82f6" stroke-width="2" />
+  <text x="25" y="135" font-size="11" fill="#3b82f6" font-weight="bold">當前位置</text>
+  
+  <!-- Notes -->
+  <text x="50" y="280" font-size="11" fill="#64748b" font-style="italic">scrollTop = 已滾動的距離 (0 ~ scrollHeight - clientHeight)</text>
+  <text x="50" y="300" font-size="11" fill="#64748b" font-style="italic">可透過 element.scrollTop = value 來控制滾動位置</text>
+</svg>

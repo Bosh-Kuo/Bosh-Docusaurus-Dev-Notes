@@ -1,0 +1,121 @@
+<svg width="1100" height="850" viewBox="0 0 1100 850" xmlns="http://www.w3.org/2000/svg">
+  <!-- Outer container (scrollWidth/scrollHeight) -->
+  <rect x="50" y="50" width="900" height="750" fill="none" stroke="#64748b" stroke-width="3" />
+  
+  <!-- Border area (beige/tan) -->
+  <rect x="230" y="250" width="690" height="460" fill="#d4a574" stroke="none" />
+  
+  <!-- Padding + Content area (clientWidth/clientHeight) -->
+  <rect x="250" y="270" width="650" height="420" fill="#e8c9a0" stroke="none" />
+  
+  <!-- Content area with text -->
+  <rect x="280" y="300" width="590" height="360" fill="#ffffff" stroke="none" />
+  
+  <!-- Sample text content -->
+  <text x="300" y="330" font-size="14" fill="#1e293b" font-family="Arial, sans-serif">
+    <tspan x="300" dy="0">Introduction</tspan>
+    <tspan x="300" dy="25">This Ecma Standard is based on several</tspan>
+    <tspan x="300" dy="20">originating technologies, the most well</tspan>
+    <tspan x="300" dy="20">known being JavaScript (Netscape) and</tspan>
+    <tspan x="300" dy="20">JScript (Microsoft). The language was</tspan>
+    <tspan x="300" dy="20">invented by Brendan Eich at Netscape and</tspan>
+    <tspan x="300" dy="20">first appeared in that company's Navigator</tspan>
+    <tspan x="300" dy="20">2.0 browser. It has appeared in all</tspan>
+    <tspan x="300" dy="20">subsequent browsers from Netscape and</tspan>
+    <tspan x="300" dy="20">in all browsers from Microsoft starting with</tspan>
+    <tspan x="300" dy="20">Internet Explorer 3.0.</tspan>
+  </text>
+  
+  <!-- Scrollbar -->
+  <rect x="900" y="270" width="20" height="420" fill="#cbd5e1" stroke="#94a3b8" stroke-width="1" />
+  <rect x="902" y="300" width="16" height="100" fill="#64748b" rx="2" />
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowUp" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <!-- Point left so start arrow renders upward after rotation -->
+      <path d="M10,0 L0,5 L10,10 z" fill="#f59e0b" />
+    </marker>
+    <marker id="arrowDown" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#f59e0b" />
+    </marker>
+    <marker id="arrowLeft" markerWidth="10" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M10,0 L10,10 L0,5 z" fill="#f59e0b" />
+    </marker>
+    <marker id="arrowRight" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L10,5 z" fill="#f59e0b" />
+    </marker>
+    <marker id="arrowUpRed" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M10,0 L0,5 L10,10 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrowDownRed" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrowLeftRed" markerWidth="10" markerHeight="10" refX="0" refY="5" orient="auto">
+      <path d="M10,0 L10,10 L0,5 z" fill="#dc2626" />
+    </marker>
+    <marker id="arrowRightRed" markerWidth="10" markerHeight="10" refX="10" refY="5" orient="auto">
+      <path d="M0,0 L0,10 L10,5 z" fill="#dc2626" />
+    </marker>
+  </defs>
+  
+  <!-- offsetTop -->
+  <line x1="200" y1="50" x2="200" y2="250" stroke="#f59e0b" stroke-width="2" marker-start="url(#arrowUp)" marker-end="url(#arrowDown)" />
+  <text x="140" y="200" font-size="14" fill="#f59e0b" font-weight="bold" transform="rotate(-90 150 160)">offsetTop</text>
+  
+  <!-- offsetLeft -->
+  <line x1="50" y1="80" x2="230" y2="80" stroke="#f59e0b" stroke-width="2" marker-start="url(#arrowLeft)" marker-end="url(#arrowRight)" />
+  <text x="100" y="70" font-size="14" fill="#f59e0b" font-weight="bold">offsetLeft</text>
+  
+  <!-- scrollTop -->
+  <line x1="960" y1="50" x2="960" y2="250" stroke="#dc2626" stroke-width="2" marker-start="url(#arrowUpRed)" marker-end="url(#arrowDownRed)" stroke-dasharray="5,5" />
+  <text x="970" y="160" font-size="14" fill="#dc2626" font-weight="bold">scrollTop</text>
+  
+  <!-- Small arrows for clientTop/Left -->
+  <defs>
+    <marker id="arrowUpSmall" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M6,0 L0,3 L6,6 z" fill="#8b5cf6" />
+    </marker>
+    <marker id="arrowDownSmall" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6 z" fill="#8b5cf6" />
+    </marker>
+    <marker id="arrowLeftSmall" markerWidth="6" markerHeight="6" refX="0" refY="3" orient="auto">
+      <path d="M6,0 L6,6 L0,3 z" fill="#8b5cf6" />
+    </marker>
+    <marker id="arrowRightSmall" markerWidth="6" markerHeight="6" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L6,3 z" fill="#8b5cf6" />
+    </marker>
+  </defs>
+  
+  <!-- clientTop -->
+  <line x1="210" y1="250" x2="210" y2="270" stroke="#8b5cf6" stroke-width="1.5" marker-start="url(#arrowUpSmall)" marker-end="url(#arrowDownSmall)" />
+  <text x="150" y="263" font-size="11" fill="#8b5cf6" font-weight="bold">clientTop</text>
+  
+  <!-- clientLeft -->
+  <line x1="230" y1="230" x2="250" y2="230" stroke="#8b5cf6" stroke-width="1.5" marker-start="url(#arrowLeftSmall)" marker-end="url(#arrowRightSmall)" />
+  <text x="240" y="220" font-size="11" fill="#8b5cf6" font-weight="bold">clientLeft</text>
+  
+  <!-- clientHeight -->
+  <line x1="870" y1="270" x2="870" y2="690" stroke="#dc2626" stroke-width="2" marker-start="url(#arrowUpRed)" marker-end="url(#arrowDownRed)" />
+  <text x="810" y="540" font-size="14" fill="#dc2626" font-weight="bold" transform="rotate(-90 810 490)">clientHeight</text>
+  
+  <!-- offsetHeight -->
+  <line x1="940" y1="250" x2="940" y2="710" stroke="#f59e0b" stroke-width="2" marker-start="url(#arrowUp)" marker-end="url(#arrowDown)" stroke-dasharray="5,5" />
+  <text x="880" y="540" font-size="14" fill="#f59e0b" font-weight="bold" transform="rotate(-90 880 490)">offsetHeight</text>
+  
+  <!-- scrollHeight -->
+  <line x1="1000" y1="250" x2="1000" y2="740" stroke="#dc2626" stroke-width="2" marker-start="url(#arrowUpRed)" marker-end="url(#arrowDownRed)" stroke-dasharray="5,5" />
+  <text x="960" y="540" font-size="14" fill="#dc2626" font-weight="bold" transform="rotate(-90 960 510)">scrollHeight</text>
+  
+  <!-- clientWidth -->
+  <line x1="250" y1="720" x2="900" y2="720" stroke="#dc2626" stroke-width="2" marker-start="url(#arrowLeftRed)" marker-end="url(#arrowRightRed)" />
+  <text x="550" y="740" font-size="14" fill="#dc2626" font-weight="bold">clientWidth</text>
+  
+  <!-- offsetWidth -->
+  <line x1="230" y1="760" x2="920" y2="760" stroke="#f59e0b" stroke-width="2" marker-start="url(#arrowLeft)" marker-end="url(#arrowRight)" />
+  <text x="550" y="780" font-size="14" fill="#f59e0b" font-weight="bold">offsetWidth</text>
+  
+  <!-- scrollWidth (extends beyond visible area) -->
+  <line x1="250" y1="800" x2="900" y2="800" stroke="#dc2626" stroke-width="2" marker-start="url(#arrowLeftRed)" marker-end="url(#arrowRightRed)" stroke-dasharray="5,5" />
+  <text x="550" y="820" font-size="14" fill="#dc2626" font-weight="bold">scrollWidth</text>
+</svg>

@@ -1,0 +1,40 @@
+<svg width="600" height="350" viewBox="0 0 600 350" xmlns="http://www.w3.org/2000/svg">
+  <!-- offsetParent (positioned ancestor) -->
+  <rect x="50" y="30" width="500" height="280" fill="#f1f5f9" stroke="#64748b" stroke-width="2" stroke-dasharray="5,5" />
+  <text x="60" y="50" font-size="13" fill="#64748b" font-weight="bold">offsetParent (position: relative)</text>
+  
+  <!-- Child element -->
+  <rect x="200" y="120" width="250" height="150" fill="#dbeafe" stroke="#3b82f6" stroke-width="3" />
+  <text x="325" y="200" text-anchor="middle" font-size="14" fill="#1e40af" font-weight="bold">Element</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowGreenLeft" markerWidth="10" markerHeight="10" refX="0" refY="3" orient="auto">
+      <path d="M9,0 L9,6 L0,3 z" fill="#10b981" />
+    </marker>
+    <marker id="arrowGreenRight" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+    </marker>
+    <marker id="arrowGreenUp" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M10,0 L0,5 L10,10 z" fill="#10b981" />
+    </marker>
+    <marker id="arrowGreenDown" markerWidth="10" markerHeight="10" refX="5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#10b981" />
+    </marker>
+  </defs>
+  
+  <!-- offsetLeft arrow -->
+  <line x1="50" y1="290" x2="200" y2="290" stroke="#10b981" stroke-width="2" marker-start="url(#arrowGreenLeft)" marker-end="url(#arrowGreenRight)" />
+  <text x="125" y="310" text-anchor="middle" font-size="13" fill="#10b981" font-weight="bold">offsetLeft</text>
+  
+  <!-- offsetTop arrow -->
+  <line x1="30" y1="30" x2="30" y2="120" stroke="#10b981" stroke-width="2" marker-start="url(#arrowGreenUp)" marker-end="url(#arrowGreenDown)" />
+  <text x="15" y="80" font-size="13" fill="#10b981" font-weight="bold" transform="rotate(-90 15 80)">offsetTop</text>
+  
+  <!-- Reference point -->
+  <circle cx="50" cy="30" r="4" fill="#ef4444" />
+  <text x="60" y="25" font-size="11" fill="#ef4444" font-weight="bold">參考點 (0, 0)</text>
+  
+  <!-- Note -->
+  <text x="50" y="335" font-size="11" fill="#64748b" font-style="italic">offsetLeft/Top 相對於最近的定位父元素 (offsetParent)</text>
+</svg>
