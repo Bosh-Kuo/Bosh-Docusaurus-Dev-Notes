@@ -218,7 +218,7 @@ Commitizen 本身只是一個框架，想讓它運作起來，需要安裝一個
     
 2. **根目錄創建配置文件**：
 <details>
-    <summary> 中文版 cz-config.js </summary>
+    <summary> 中文版 .cz-config.js </summary>
         ```jsx
         module.exports = {
             types: [
@@ -274,7 +274,7 @@ Commitizen 本身只是一個框架，想讓它運作起來，需要安裝一個
 </details>
                             
 <details>
-    <summary> 英文版 cz-config.js </summary>                      
+    <summary> 英文版 .cz-config.js </summary>                      
     ```jsx
     module.exports = {
         types: [
