@@ -1,6 +1,6 @@
 ---
 title: "TypeScript 編譯配置 tsconfig.json compilerOptions 全解析"
-sidebar_label: "compilerOptions"
+sidebar_label: "編譯配置 compilerOptions"
 description: 這篇筆記文章詳細解析了 tsconfig.json 中的 compilerOptions 設定，涵蓋了每個選項的作用及其簡短解釋，方便讀者快速了解編譯配置選項
 last_update:
   date: 2024-07-18
@@ -12,17 +12,13 @@ tags:
   - TypeScript
 ---
 
-
-
 :::note
 由於 tsconfig.json 中的 compilerOptions 可配置選項實在是太多了，常常會忘記一些選項的用途，但 TypeScript 的官方文件有些選項要不是寫得太冗長就是太簡短。因此決定一次將所有 compilerOptions 透過 chatgpt 整理成一個大抄，方便我日後快速查詢。
 :::
 
-
 import TOCInline from '@theme/TOCInline';
 
 <TOCInline toc={toc}/>
-
 
 ## **Type Checking**
 
@@ -46,8 +42,8 @@ function example1() {
 **說明範例：**
 
 ```tsx
-unusedLabel: // 如果 allowUnusedLabels 為 true，則不會報錯
-for (let i = 0; i < 10; i++) {
+// 如果 allowUnusedLabels 為 true，則不會報錯
+unusedLabel: for (let i = 0; i < 10; i++) {
   if (i === 5) {
     break;
   }
@@ -95,7 +91,7 @@ function example3(x: number) {
   switch (x) {
     case 1:
       console.log("1");
-      // 沒有 break 語句會導致穿透，若 noFallthroughCasesInSwitch 為 true，則這將報錯
+    // 沒有 break 語句會導致穿透，若 noFallthroughCasesInSwitch 為 true，則這將報錯
     case 2:
       console.log("2");
       break;
@@ -132,7 +128,8 @@ class Base {
 }
 
 class Derived extends Base {
-  override greet() { // 如果 noImplicitOverride 為 true，這裡必須加上 override，否則報錯
+  override greet() {
+    // 如果 noImplicitOverride 為 true，這裡必須加上 override，否則報錯
     console.log("Hello from Derived");
   }
 }
@@ -194,7 +191,7 @@ interface GameSettings {
 const settings: GameSettings = {
   speed: "fast",
   quality: "high",
-  username: "player1"
+  username: "player1",
 };
 
 console.log(settings.speed); // 正常訪問
@@ -220,7 +217,7 @@ interface MyObject {
 }
 
 const obj: MyObject = {
-  knownProperty: "value"
+  knownProperty: "value",
 };
 
 const value = obj["unknownProperty"]; // 如果 noUncheckedIndexedAccess 為 true，value 的類型將是 string | undefined
@@ -364,9 +361,7 @@ try {
 }
 ```
 
-
 <br/>
-
 
 ## **Modules**
 
@@ -437,23 +432,23 @@ console.log(foo());
 ```jsx
 // utils.js (UMD 模塊)
 (function (root, factory) {
-  if (typeof define === 'function' && define.amd) {
+  if (typeof define === "function" && define.amd) {
     // AMD
     define([], factory);
-  } else if (typeof module === 'object' && module.exports) {
+  } else if (typeof module === "object" && module.exports) {
     // Node
     module.exports = factory();
   } else {
     // 全局變量
     root.myLibrary = factory();
   }
-}(typeof self !== 'undefined' ? self : this, function () {
+})(typeof self !== "undefined" ? self : this, function () {
   return {
     foo: function () {
       return "Hello, World!";
-    }
+    },
   };
-}));
+});
 ```
 
 在 TypeScript 文件中，你可以直接使用這個全局變量：
@@ -561,123 +556,112 @@ import myPackage from "my-package";
 `module` 設定 TypeScript 編譯後的 JavaScript 模組格式，適用於不同的運行環境和需求。以下是主要的幾個選項及其適用場景：
 
 1. **CommonJS**
-    - 適用於 Node.js 環境。
-    - 生成 CommonJS 模組格式。
-    - 範例：
-        
-        ```jsx
-        "use strict";
-        Object.defineProperty(exports, "__esModule", { value: true });
-        exports.twoPi = void 0;
-        const constants_1 = require("./constants");
-        exports.twoPi = constants_1.valueOfPi * 2;
-        ```
-        
+   - 適用於 Node.js 環境。
+   - 生成 CommonJS 模組格式。
+   - 範例：
+     ```jsx
+     "use strict";
+     Object.defineProperty(exports, "__esModule", { value: true });
+     exports.twoPi = void 0;
+     const constants_1 = require("./constants");
+     exports.twoPi = constants_1.valueOfPi * 2;
+     ```
 2. **UMD**
-    - 適用於能在多種環境（如 Node.js、AMD 模組系統、全域變數）中運行的程式碼。
-    - 範例：
-        
-        ```jsx
-        (function (factory) {
-            if (typeof module === "object" && typeof module.exports === "object") {
-                var v = factory(require, exports);
-                if (v !== undefined) module.exports = v;
-            } else if (typeof define === "function" && define.amd) {
-                define(["require", "exports", "./constants"], factory);
-            }
-        })(function (require, exports) {
-            "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
-            exports.twoPi = void 0;
-            const constants_1 = require("./constants");
-            exports.twoPi = constants_1.valueOfPi * 2;
-        });
-        ```
-        
+   - 適用於能在多種環境（如 Node.js、AMD 模組系統、全域變數）中運行的程式碼。
+   - 範例：
+     ```jsx
+     (function (factory) {
+       if (typeof module === "object" && typeof module.exports === "object") {
+         var v = factory(require, exports);
+         if (v !== undefined) module.exports = v;
+       } else if (typeof define === "function" && define.amd) {
+         define(["require", "exports", "./constants"], factory);
+       }
+     })(function (require, exports) {
+       "use strict";
+       Object.defineProperty(exports, "__esModule", { value: true });
+       exports.twoPi = void 0;
+       const constants_1 = require("./constants");
+       exports.twoPi = constants_1.valueOfPi * 2;
+     });
+     ```
 3. **AMD**
-    - 適用於瀏覽器環境中的非同步模組定義。
-    - 範例：
-        
-        ```jsx
-        define(["require", "exports", "./constants"], function (require, exports, constants_1) {
-            "use strict";
-            Object.defineProperty(exports, "__esModule", { value: true });
-            exports.twoPi = void 0;
-            exports.twoPi = constants_1.valueOfPi * 2;
-        });
-        
-        ```
-        
+   - 適用於瀏覽器環境中的非同步模組定義。
+   - 範例：
+     ```jsx
+     define(["require", "exports", "./constants"], function (
+       require,
+       exports,
+       constants_1
+     ) {
+       "use strict";
+       Object.defineProperty(exports, "__esModule", { value: true });
+       exports.twoPi = void 0;
+       exports.twoPi = constants_1.valueOfPi * 2;
+     });
+     ```
 4. **System**
-    - 使用 SystemJS 載入模組。
-    - 範例：
-        
-        ```jsx        
-        System.register(["./constants"], function (exports_1, context_1) {
-            "use strict";
-            var constants_1, twoPi;
-            var __moduleName = context_1 && context_1.id;
-            return {
-                setters: [
-                    function (constants_1_1) {
-                        constants_1 = constants_1_1;
-                    }
-                ],
-                execute: function () {
-                    exports_1("twoPi", twoPi = constants_1.valueOfPi * 2);
-                }
-            };
-        });
-        ```
-        
+   - 使用 SystemJS 載入模組。
+   - 範例：
+     ```jsx
+     System.register(["./constants"], function (exports_1, context_1) {
+       "use strict";
+       var constants_1, twoPi;
+       var __moduleName = context_1 && context_1.id;
+       return {
+         setters: [
+           function (constants_1_1) {
+             constants_1 = constants_1_1;
+           },
+         ],
+         execute: function () {
+           exports_1("twoPi", (twoPi = constants_1.valueOfPi * 2));
+         },
+       };
+     });
+     ```
 5. **ESNext、ES2022**
-    - 適用於現代 JavaScript 環境，生成 ES 模組格式。
-    - 支援最新的 JavaScript 特性，如動態匯入 (`import()`) 和頂層 await。
-    - 範例：
-        
-        ```jsx
-        import { valueOfPi } from "./constants";
-        export const twoPi = valueOfPi * 2;
-        ```
-        
+   - 適用於現代 JavaScript 環境，生成 ES 模組格式。
+   - 支援最新的 JavaScript 特性，如動態匯入 (`import()`) 和頂層 await。
+   - 範例：
+     ```jsx
+     import { valueOfPi } from "./constants";
+     export const twoPi = valueOfPi * 2;
+     ```
 6. **node16、nodenext**
-    - 從 TypeScript 4.7 開始支援，與 Node.js 的原生 ECMAScript 模塊支持集成，根據文件副檔名和最近的 `package.json` 中的 `type` 設定來選擇生成 CommonJS 或 ES2020 格式
-    - 範例：
-        
-        ```jsx
-        import { valueOfPi } from "./constants";
-        export const twoPi = valueOfPi * 2;
-        ```
-        
+   - 從 TypeScript 4.7 開始支援，與 Node.js 的原生 ECMAScript 模塊支持集成，根據文件副檔名和最近的 `package.json` 中的 `type` 設定來選擇生成 CommonJS 或 ES2020 格式
+   - 範例：
+     ```jsx
+     import { valueOfPi } from "./constants";
+     export const twoPi = valueOfPi * 2;
+     ```
 7. **preserve**
-    - 在 `--module preserve` 模式下，保留原始的 ECMAScript 匯入和匯出語句，混合使用 CommonJS 和 ECMAScript 模塊語句。
-    - 範例：
-        
-        ```tsx
-        import { valueOfPi } from "./constants";
-        const constants = require("./constants");
-        export const piSquared = valueOfPi * constants.valueOfPi;
-        ```
-        
+   - 在 `--module preserve` 模式下，保留原始的 ECMAScript 匯入和匯出語句，混合使用 CommonJS 和 ECMAScript 模塊語句。
+   - 範例：
+     ```tsx
+     import { valueOfPi } from "./constants";
+     const constants = require("./constants");
+     export const piSquared = valueOfPi * constants.valueOfPi;
+     ```
 
 ### **moduleResolution**
 
 `moduleResolution` 設定 TypeScript 在編譯過程中如何解析模組匯入路徑的策略。不同的策略適用於不同的運行環境和需求。以下是主要的幾個選項及其適用場景：
 
 1. **node16 或 nodenext**
-    - 適用於現代版本的 Node.js。
-    - Node.js 12 及更高版本同時支援 **ECMAScript imports** 和 **CommonJS require** 的不同解析演算法。
-    - 與相應的 `module` 值結合時，根據 Node.js 在輸出 JavaScript 程式碼中看到的匯入或 require，選擇正確的解析演算法。
+   - 適用於現代版本的 Node.js。
+   - Node.js 12 及更高版本同時支援 **ECMAScript imports** 和 **CommonJS require** 的不同解析演算法。
+   - 與相應的 `module` 值結合時，根據 Node.js 在輸出 JavaScript 程式碼中看到的匯入或 require，選擇正確的解析演算法。
 2. **node10**
-    - 適用於 Node.js 10 之前的版本，只支援 CommonJS require。
-    - 在現代程式碼中可能不需要使用 `node10`。
+   - 適用於 Node.js 10 之前的版本，只支援 CommonJS require。
+   - 在現代程式碼中可能不需要使用 `node10`。
 3. **bundler**
-    - 適用於打包工具。
-    - 像 `node16` 和 `nodenext` 一樣，此模式支援 `package.json` 中的 `imports` 和 `exports` 欄位。
-    - 與 Node.js 解析模式不同的是，打包工具在匯入的相對路徑上不需要文件擴展名。
+   - 適用於打包工具。
+   - 像 `node16` 和 `nodenext` 一樣，此模式支援 `package.json` 中的 `imports` 和 `exports` 欄位。
+   - 與 Node.js 解析模式不同的是，打包工具在匯入的相對路徑上不需要文件擴展名。
 4. **classic**
-    - TypeScript 1.6 發佈前使用的解析模式。
-    - 不推薦使用 `classic`。
+   - TypeScript 1.6 發佈前使用的解析模式。
+   - 不推薦使用 `classic`。
 
 ### **moduleSuffixes**
 
@@ -731,7 +715,8 @@ src/
 ```json
 {
   "compilerOptions": {
-    "noResolve": true}
+    "noResolve": true
+  }
 }
 ```
 
@@ -800,7 +785,8 @@ src/
 ```json
 {
   "compilerOptions": {
-    "resolveJsonModule": true}
+    "resolveJsonModule": true
+  }
 }
 ```
 
@@ -940,7 +926,6 @@ generated
     "rootDirs": ["src/views", "generated/templates/views"]
   }
 }
-
 ```
 
 這樣，TypeScript 會將 `src/views` 和 `generated/templates/views` 視為同一虛擬目錄結構的一部分，允許模塊在這兩個目錄之間相互導入。
@@ -1001,9 +986,7 @@ MyProj
 
 這樣，TypeScript 只會包含 `lodash` 的類型定義，而不會包含 `jquery` 或其他包的類型定義。
 
-
 <br/>
-
 
 ## **Emit**
 
@@ -1183,7 +1166,6 @@ var Derived = /** @class */ (function (_super) {
 // index.ts
 const message = "Hello, World!";
 console.log(message);
-
 ```
 
 如果 `inlineSourceMap` 設定為 `true`，編譯後的 `index.js` 文件將包含內聯的 Source Map：
@@ -1263,7 +1245,7 @@ dist/
 
 可選值：
 
-- `crlf`：Enter分行符號，適用於 Windows。
+- `crlf`：Enter 分行符號，適用於 Windows。
 - `lf`：分行符號，適用於 Unix/Linux 和 macOS。
 
 **說明範例：**
@@ -1313,48 +1295,147 @@ const getAPI = async (url: string) => {
 
 ```jsx
 "use strict";
-var __awaiter = (this && this.__awaiter) || function (thisArg, _arguments, P, generator) {
-    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
-    return new (P || (P = Promise))(function (resolve, reject) {
-        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
-        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
-        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
-        step((generator = generator.apply(thisArg, _arguments || [])).next());
-    });
-};
-var __generator = (this && this.__generator) || function (thisArg, body) {
-    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
-    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
-    function verb(n) { return function (v) { return step([n, v]); }; }
-    function step(op) {
-        if (f) throw new TypeError("Generator is already executing.");
-        while (g && (g = 0, op[0] && (_ = 0)), _) try {
-            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
-            if (y = 0, t) op = [op[0] & 2, t.value];
-            switch (op[0]) {
-                case 0: case 1: t = op; break;
-                case 4: _.label++; return { value: op[1], done: false };
-                case 5: _.label++; y = op[1]; op = [0]; continue;
-                case 7: op = _.ops.pop(); _.trys.pop(); continue;
-                default:
-                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
-                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
-                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
-                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
-                    if (t[2]) _.ops.pop();
-                    _.trys.pop(); continue;
-            }
-            op = body.call(thisArg, _);
-        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
-        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+var __awaiter =
+  (this && this.__awaiter) ||
+  function (thisArg, _arguments, P, generator) {
+    function adopt(value) {
+      return value instanceof P
+        ? value
+        : new P(function (resolve) {
+            resolve(value);
+          });
     }
-};
-var getAPI = function (url) { return __awaiter(void 0, void 0, void 0, function () {
-    return __generator(this, function (_a) {
-        // Get API
-        return [2 /*return*/, {}];
+    return new (P || (P = Promise))(function (resolve, reject) {
+      function fulfilled(value) {
+        try {
+          step(generator.next(value));
+        } catch (e) {
+          reject(e);
+        }
+      }
+      function rejected(value) {
+        try {
+          step(generator["throw"](value));
+        } catch (e) {
+          reject(e);
+        }
+      }
+      function step(result) {
+        result.done
+          ? resolve(result.value)
+          : adopt(result.value).then(fulfilled, rejected);
+      }
+      step((generator = generator.apply(thisArg, _arguments || [])).next());
     });
-}); };
+  };
+var __generator =
+  (this && this.__generator) ||
+  function (thisArg, body) {
+    var _ = {
+        label: 0,
+        sent: function () {
+          if (t[0] & 1) throw t[1];
+          return t[1];
+        },
+        trys: [],
+        ops: [],
+      },
+      f,
+      y,
+      t,
+      g;
+    return (
+      (g = { next: verb(0), throw: verb(1), return: verb(2) }),
+      typeof Symbol === "function" &&
+        (g[Symbol.iterator] = function () {
+          return this;
+        }),
+      g
+    );
+    function verb(n) {
+      return function (v) {
+        return step([n, v]);
+      };
+    }
+    function step(op) {
+      if (f) throw new TypeError("Generator is already executing.");
+      while ((g && ((g = 0), op[0] && (_ = 0)), _))
+        try {
+          if (
+            ((f = 1),
+            y &&
+              (t =
+                op[0] & 2
+                  ? y["return"]
+                  : op[0]
+                  ? y["throw"] || ((t = y["return"]) && t.call(y), 0)
+                  : y.next) &&
+              !(t = t.call(y, op[1])).done)
+          )
+            return t;
+          if (((y = 0), t)) op = [op[0] & 2, t.value];
+          switch (op[0]) {
+            case 0:
+            case 1:
+              t = op;
+              break;
+            case 4:
+              _.label++;
+              return { value: op[1], done: false };
+            case 5:
+              _.label++;
+              y = op[1];
+              op = [0];
+              continue;
+            case 7:
+              op = _.ops.pop();
+              _.trys.pop();
+              continue;
+            default:
+              if (
+                !((t = _.trys), (t = t.length > 0 && t[t.length - 1])) &&
+                (op[0] === 6 || op[0] === 2)
+              ) {
+                _ = 0;
+                continue;
+              }
+              if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) {
+                _.label = op[1];
+                break;
+              }
+              if (op[0] === 6 && _.label < t[1]) {
+                _.label = t[1];
+                t = op;
+                break;
+              }
+              if (t && _.label < t[2]) {
+                _.label = t[2];
+                _.ops.push(op);
+                break;
+              }
+              if (t[2]) _.ops.pop();
+              _.trys.pop();
+              continue;
+          }
+          op = body.call(thisArg, _);
+        } catch (e) {
+          op = [6, e];
+          y = 0;
+        } finally {
+          f = t = 0;
+        }
+      if (op[0] & 5) throw op[1];
+      return { value: op[0] ? op[1] : void 0, done: true };
+    }
+  };
+var getAPI = function (url) {
+  return __awaiter(void 0, void 0, void 0, function () {
+    return __generator(this, function (_a) {
+      // Get API
+      return [2 /*return*/, {}];
+    });
+  });
+};
 ```
 
 如果設定 `noEmitHelpers` 為 `true`，TypeScript 將不再內聯這些幫助函數，而是期望你在全域範圍內提供它們：
@@ -1362,11 +1443,11 @@ var getAPI = function (url) { return __awaiter(void 0, void 0, void 0, function 
 ```tsx
 // 在全域範圍內提供 __awaiter 和 __generator
 global.__awaiter = function (thisArg, _arguments, P, generator) {
-    // 幫助函數的實現...
+  // 幫助函數的實現...
 };
 
 global.__generator = function (thisArg, body) {
-    // 幫助函數的實現...
+  // 幫助函數的實現...
 };
 ```
 
@@ -1374,12 +1455,14 @@ global.__generator = function (thisArg, body) {
 
 ```jsx
 "use strict";
-var getAPI = function (url) { return __awaiter(void 0, void 0, void 0, function () {
+var getAPI = function (url) {
+  return __awaiter(void 0, void 0, void 0, function () {
     return __generator(this, function (_a) {
-        // Get API
-        return [2 /*return*/, {}];
+      // Get API
+      return [2 /*return*/, {}];
     });
-}); };
+  });
+};
 ```
 
 使用這個選項，你可以完全控制幫助函數的實現方式，並減少生成的 JavaScript 文件的大小。
@@ -1466,7 +1549,7 @@ src/
 export const enum Colors {
   Red,
   Green,
-  Blue
+  Blue,
 }
 
 // index.ts
@@ -1555,9 +1638,7 @@ export function publicFunction() {
 export declare function publicFunction(): void;
 ```
 
-
 <br/>
-
 
 ## **JavaScript Support**
 
@@ -1575,9 +1656,7 @@ export declare function publicFunction(): void;
 
 默認情況下，`maxNodeModuleJsDepth` 設置為 `0`，建議保持默認值，並使用 `.d.ts` 文件來明確定義模塊的形狀。
 
-
 <br/>
-
 
 ## **Editor Support**
 
@@ -1633,9 +1712,7 @@ console.log(largeArray);
 - `typescript-eslint-language-service`：在編譯器的輸出中提供 ESLint 錯誤消息和修正建議。
 - `ts-graphql-plugin`：為 GraphQL 查詢範本字串提供驗證和自動完成。
 
-
 <br/>
-
 
 ## **Interop Constraints**
 
@@ -1661,7 +1738,8 @@ module.exports = {
 ```json
 {
   "compilerOptions": {
-    "allowSyntheticDefaultImports": true}
+    "allowSyntheticDefaultImports": true
+  }
 }
 ```
 
@@ -1694,63 +1772,62 @@ console.log(count); // 也能正常工作，但語法較繁瑣
 在默認情況下（`esModuleInterop` 設定為 `false` 或未設定），TypeScript 會將 CommonJS/AMD/UMD 模組處理得類似於 ES6 模組，但這裡存在兩個主要問題：
 
 1. **命名空間匯入：** `import * as x from "x"`
-    
-    TypeScript 在默認情況下會將 `import * as x from "x"` 視為 `const x = require("x")`。這意味著 `x` 可以是任何類型，包括函數。然而，這違反了 ES6 模組的規範，因為 ES6 規範明確要求命名空間匯入應該僅能是一個物件（object），而不應該是一個可呼叫的函數。
-    
-    **問題示例**
-    
-    假設我們有一個 CommonJS 模組，它匯出了一個函數：
-    
-    ```jsx
-    // utilFunctions.js
-    module.exports = function() {
-      console.log("I am a function");
-    };
-    ```
-    
-    在 TypeScript 中，使用命名空間匯入：
-    
-    ```tsx
-    import * as utils from "./utilFunctions";
-    
-    utils(); // 這是可行的，但違反了 ES6 規範
-    ```
-    
-    根據 ES6 規範，`import * as utils` 應該只能是一個物件，不應該能夠作為函數呼叫。
-    
+
+   TypeScript 在默認情況下會將 `import * as x from "x"` 視為 `const x = require("x")`。這意味著 `x` 可以是任何類型，包括函數。然而，這違反了 ES6 模組的規範，因為 ES6 規範明確要求命名空間匯入應該僅能是一個物件（object），而不應該是一個可呼叫的函數。
+
+   **問題示例**
+
+   假設我們有一個 CommonJS 模組，它匯出了一個函數：
+
+   ```jsx
+   // utilFunctions.js
+   module.exports = function () {
+     console.log("I am a function");
+   };
+   ```
+
+   在 TypeScript 中，使用命名空間匯入：
+
+   ```tsx
+   import * as utils from "./utilFunctions";
+
+   utils(); // 這是可行的，但違反了 ES6 規範
+   ```
+
+   根據 ES6 規範，`import * as utils` 應該只能是一個物件，不應該能夠作為函數呼叫。
+
 2. **默認匯入：`import x from "x”`**
-    
-    在 ES6 模組中，默認匯入（`import x from "x"`）要求模組必須顯式匯出一個默認匯出（`export default`）。然而，大多數 CommonJS/AMD/UMD 模組並不遵守這一點。
-    
-    TypeScript 在默認情況下會將 `import x from "x"` 視為 `const x = require("x").default`。這在嚴格遵守 ES6 規範的模組中是正確的，但大多數使用 CommonJS/AMD/UMD 模組的庫並不遵守這一規範，這會導致執行時出錯。
-    
-    **問題示例**
-    
-    假設我們有一個 CommonJS 模組，它沒有默認匯出：
-    
-    ```jsx
-    // utilFunctions.js
-    module.exports = {
-      getStringLength: (str) => str.length,
-    };
-    ```
-    
-    在 TypeScript 中，使用默認匯入：
-    
-    ```tsx
-    import utils from "./utilFunctions";
-    
-    console.log(utils.getStringLength("Check JS")); // 這將在執行時出錯，因為在原始碼中沒有顯示地默認匯出
-    ```
-    
-    TypeScript 將這段程式碼視為：
-    
-    ```tsx
-    const utils = require("./utilFunctions").default;
-    ```
-    
-    但 `utilFunctions.js` 沒有 `.default` 屬性，這會導致執行時錯誤。
-    
+
+   在 ES6 模組中，默認匯入（`import x from "x"`）要求模組必須顯式匯出一個默認匯出（`export default`）。然而，大多數 CommonJS/AMD/UMD 模組並不遵守這一點。
+
+   TypeScript 在默認情況下會將 `import x from "x"` 視為 `const x = require("x").default`。這在嚴格遵守 ES6 規範的模組中是正確的，但大多數使用 CommonJS/AMD/UMD 模組的庫並不遵守這一規範，這會導致執行時出錯。
+
+   **問題示例**
+
+   假設我們有一個 CommonJS 模組，它沒有默認匯出：
+
+   ```jsx
+   // utilFunctions.js
+   module.exports = {
+     getStringLength: (str) => str.length,
+   };
+   ```
+
+   在 TypeScript 中，使用默認匯入：
+
+   ```tsx
+   import utils from "./utilFunctions";
+
+   console.log(utils.getStringLength("Check JS")); // 這將在執行時出錯，因為在原始碼中沒有顯示地默認匯出
+   ```
+
+   TypeScript 將這段程式碼視為：
+
+   ```tsx
+   const utils = require("./utilFunctions").default;
+   ```
+
+   但 `utilFunctions.js` 沒有 `.default` 屬性，這會導致執行時錯誤。
 
 **啟用 `esModuleInterop` 的效果**
 
@@ -1789,32 +1866,55 @@ lodash_1.default.chunk(["a", "b", "c", "d"], 2);
 
 ```jsx
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    var desc = Object.getOwnPropertyDescriptor(m, k);
-    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
-      desc = { enumerable: true, get: function() { return m[k]; } };
-    }
-    Object.defineProperty(o, k2, desc);
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
-    Object.defineProperty(o, "default", { enumerable: true, value: v });
-}) : function(o, v) {
-    o["default"] = v;
-});
-var __importStar = (this && this.__importStar) || function (mod) {
+var __createBinding =
+  (this && this.__createBinding) ||
+  (Object.create
+    ? function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        var desc = Object.getOwnPropertyDescriptor(m, k);
+        if (
+          !desc ||
+          ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)
+        ) {
+          desc = {
+            enumerable: true,
+            get: function () {
+              return m[k];
+            },
+          };
+        }
+        Object.defineProperty(o, k2, desc);
+      }
+    : function (o, m, k, k2) {
+        if (k2 === undefined) k2 = k;
+        o[k2] = m[k];
+      });
+var __setModuleDefault =
+  (this && this.__setModuleDefault) ||
+  (Object.create
+    ? function (o, v) {
+        Object.defineProperty(o, "default", { enumerable: true, value: v });
+      }
+    : function (o, v) {
+        o["default"] = v;
+      });
+var __importStar =
+  (this && this.__importStar) ||
+  function (mod) {
     if (mod && mod.__esModule) return mod;
     var result = {};
-    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    if (mod != null)
+      for (var k in mod)
+        if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k))
+          __createBinding(result, mod, k);
     __setModuleDefault(result, mod);
     return result;
-};
-var __importDefault = (this && this.__importDefault) || function (mod) {
-    return (mod && mod.__esModule) ? mod : { "default": mod };
-};
+  };
+var __importDefault =
+  (this && this.__importDefault) ||
+  function (mod) {
+    return mod && mod.__esModule ? mod : { default: mod };
+  };
 Object.defineProperty(exports, "__esModule", { value: true });
 const fs = __importStar(require("fs"));
 const lodash_1 = __importDefault(require("lodash"));
@@ -1959,7 +2059,8 @@ export function drive(car) {
 ```json
 {
   "compilerOptions": {
-    "verbatimModuleSyntax": true}
+    "verbatimModuleSyntax": true
+  }
 }
 ```
 
@@ -1974,9 +2075,7 @@ export function drive(car) {
 
 這使得你看到的 TypeScript 程式碼與最終生成的 JavaScript 程式碼保持一致，避免了由於匯入省略引起的各種問題。
 
-
 <br/>
-
 
 ## **Backwards Compatibility**
 
@@ -2030,9 +2129,7 @@ export function drive(car) {
 
 `suppressImplicitAnyIndexErrors` 選項停用對使用 `any` 類型作為索引簽名的錯誤檢查。這對於相容舊程式碼中特定索引使用方式特別有用。
 
-
 <br/>
-
 
 ## **Language and Environment**
 
@@ -2077,25 +2174,36 @@ const demo = new Demo();
 
 ```jsx
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+var __decorate =
+  (this && this.__decorate) ||
+  function (decorators, target, key, desc) {
+    var c = arguments.length,
+      r =
+        c < 3
+          ? target
+          : desc === null
+          ? (desc = Object.getOwnPropertyDescriptor(target, key))
+          : desc,
+      d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+      r = Reflect.decorate(decorators, target, key, desc);
+    else
+      for (var i = decorators.length - 1; i >= 0; i--)
+        if ((d = decorators[i]))
+          r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
+  };
 function LogMethod(target, propertyKey, descriptor) {
-    console.log(target);
-    console.log(propertyKey);
-    console.log(descriptor);
+  console.log(target);
+  console.log(propertyKey);
+  console.log(descriptor);
 }
 class Demo {
-    foo(bar) {
-        // do nothing
-    }
+  foo(bar) {
+    // do nothing
+  }
 }
-__decorate([
-    LogMethod
-], Demo.prototype, "foo", null);
+__decorate([LogMethod], Demo.prototype, "foo", null);
 const demo = new Demo();
 ```
 
@@ -2105,31 +2213,52 @@ const demo = new Demo();
 
 ```jsx
 "use strict";
-var __decorate = (this && this.__decorate) || function (decorators, target, key, desc) {
-    var c = arguments.length, r = c < 3 ? target : desc === null ? desc = Object.getOwnPropertyDescriptor(target, key) : desc, d;
-    if (typeof Reflect === "object" && typeof Reflect.decorate === "function") r = Reflect.decorate(decorators, target, key, desc);
-    else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
+var __decorate =
+  (this && this.__decorate) ||
+  function (decorators, target, key, desc) {
+    var c = arguments.length,
+      r =
+        c < 3
+          ? target
+          : desc === null
+          ? (desc = Object.getOwnPropertyDescriptor(target, key))
+          : desc,
+      d;
+    if (typeof Reflect === "object" && typeof Reflect.decorate === "function")
+      r = Reflect.decorate(decorators, target, key, desc);
+    else
+      for (var i = decorators.length - 1; i >= 0; i--)
+        if ((d = decorators[i]))
+          r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
-};
-var __metadata = (this && this.__metadata) || function (k, v) {
-    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
-};
+  };
+var __metadata =
+  (this && this.__metadata) ||
+  function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function")
+      return Reflect.metadata(k, v);
+  };
 function LogMethod(target, propertyKey, descriptor) {
-    console.log(target);
-    console.log(propertyKey);
-    console.log(descriptor);
+  console.log(target);
+  console.log(propertyKey);
+  console.log(descriptor);
 }
 class Demo {
-    foo(bar) {
-        // do nothing
-    }
+  foo(bar) {
+    // do nothing
+  }
 }
-__decorate([
+__decorate(
+  [
     LogMethod,
     __metadata("design:type", Function),
     __metadata("design:paramtypes", [Number]),
-    __metadata("design:returntype", void 0)
-], Demo.prototype, "foo", null);
+    __metadata("design:returntype", void 0),
+  ],
+  Demo.prototype,
+  "foo",
+  null
+);
 const demo = new Demo();
 ```
 
@@ -2154,24 +2283,26 @@ const demo = new Demo();
 **選項詳解**
 
 1. **preserve**
-    - **作用**：保留 JSX 語法，不將其轉換為其他形式。
-    - **用途**：通常用於需要進一步處理的情況，例如使用 Babel 進行轉譯。
-    - **編譯結果**：生成的文件仍然包含 JSX 語法。
-    
-    ```jsx
-    export const HelloWorld = () => <h1>Hello world</h1>;
-    ```
-    
+
+   - **作用**：保留 JSX 語法，不將其轉換為其他形式。
+   - **用途**：通常用於需要進一步處理的情況，例如使用 Babel 進行轉譯。
+   - **編譯結果**：生成的文件仍然包含 JSX 語法。
+
+   ```jsx
+   export const HelloWorld = () => <h1>Hello world</h1>;
+   ```
+
 2. **react**
-    - **作用**：將 JSX 語法轉換為 `React.createElement` 呼叫。
-    - **用途**：傳統 React 項目，使用經典的 JSX 轉換方式。
-    - **編譬結果**：將 JSX 轉換為 `React.createElement` 呼叫。
-    
-    ```jsx
-    import React from 'react';
-    export const HelloWorld = () => React.createElement("h1", null, "Hello world");
-    ```
-    
+
+   - **作用**：將 JSX 語法轉換為 `React.createElement` 呼叫。
+   - **用途**：傳統 React 項目，使用經典的 JSX 轉換方式。
+   - **編譬結果**：將 JSX 轉換為 `React.createElement` 呼叫。
+
+   ```jsx
+   import React from "react";
+   export const HelloWorld = () =>
+     React.createElement("h1", null, "Hello world");
+   ```
 
 **3. react-jsx** 和 **react-jsxdev**
 
@@ -2185,16 +2316,15 @@ export const HelloWorld = () => _jsx("h1", { children: "Hello world" });
 ```
 
 - **react-jsxdev**：類似於 `react-jsx`，但包含開發時間的附加檢查和錯誤資訊。
+
 1. **react-native**
-    - **作用**：保留 JSX，並假設目標環境是 React Native。
-    - **用途**：React Native 項目。
-    - **編譯結果**：保留 JSX 語法，與 `preserve` 類似，但針對 React Native 進行最佳化。
-        
-        ```jsx
-        import React from 'react';
-        export const HelloWorld = () => <h1>Hello world</h1>;
-        ```
-        
+   - **作用**：保留 JSX，並假設目標環境是 React Native。
+   - **用途**：React Native 項目。
+   - **編譯結果**：保留 JSX 語法，與 `preserve` 類似，但針對 React Native 進行最佳化。
+     ```jsx
+     import React from "react";
+     export const HelloWorld = () => <h1>Hello world</h1>;
+     ```
 
 ### **jsxFactory**
 
@@ -2262,7 +2392,8 @@ const HelloWorld = () => (
 
 ```jsx
 const preact_1 = require("preact");
-const HelloWorld = () => preact_1.h(preact_1.Fragment, null, preact_1.h("div", null, "Hello"));
+const HelloWorld = () =>
+  preact_1.h(preact_1.Fragment, null, preact_1.h("div", null, "Hello"));
 ```
 
 你還可以在每個文件中使用指令來指定片段工廠函數：
@@ -2400,14 +2531,14 @@ class Person {
 
 ```jsx
 class Person {
-    constructor() {
-        Object.defineProperty(this, "name", {
-            enumerable: true,
-            configurable: true,
-            writable: true,
-            value: "Alice"
-        });
-    }
+  constructor() {
+    Object.defineProperty(this, "name", {
+      enumerable: true,
+      configurable: true,
+      writable: true,
+      value: "Alice",
+    });
+  }
 }
 ```
 
@@ -2415,15 +2546,13 @@ class Person {
 
 ```jsx
 class Person {
-    constructor() {
-        this.name = "Alice";
-    }
+  constructor() {
+    this.name = "Alice";
+  }
 }
 ```
 
-
 <br/>
-
 
 ## **Compiler Diagnostics**
 
@@ -2436,20 +2565,20 @@ class Person {
 啟用後，編譯器將輸出額外的診斷資訊，例如每個文件的編譯時間、記憶體使用情況等：
 
 ```yaml
-Files:           10
-Lines:        30000
-Nodes:       100000
-Identifiers:  50000
-Symbols:      20000
-Types:        10000
-Memory used:  200000K
-I/O read:     0.01s
-I/O write:    0.01s
-Parse time:   0.20s
-Bind time:    0.10s
-Check time:   0.30s
-Emit time:    0.20s
-Total time:   0.80s
+Files: 10
+Lines: 30000
+Nodes: 100000
+Identifiers: 50000
+Symbols: 20000
+Types: 10000
+Memory used: 200000K
+I/O read: 0.01s
+I/O write: 0.01s
+Parse time: 0.20s
+Bind time: 0.10s
+Check time: 0.30s
+Emit time: 0.20s
+Total time: 0.80s
 ```
 
 ### **explainFiles**
@@ -2509,9 +2638,7 @@ node_modules/some-package/index.d.ts: Matched by 'types' reference
 
 `traceResolution` 選項用於追蹤模組解析過程中的詳細資訊。當設定為 `true` 時，TypeScript 編譯器將輸出有關模組解析過程的詳細日誌，這對於偵錯模組解析問題非常有用。
 
-
 <br/>
-
 
 ## **Projects**
 
@@ -2527,10 +2654,7 @@ node_modules/some-package/index.d.ts: Matched by 'types' reference
 
 ```json
 {
-  "references": [
-    { "path": "../projectA" },
-    { "path": "../projectB" }
-  ]
+  "references": [{ "path": "../projectA" }, { "path": "../projectB" }]
 }
 ```
 
@@ -2556,9 +2680,7 @@ node_modules/some-package/index.d.ts: Matched by 'types' reference
 
 `tsBuildInfoFile` 選項用於指定增量編譯狀態文件的輸出位置。默認情況下，TypeScript 會在與 `outDir` 相同的目錄下生成 `.tsbuildinfo` 文件。如果你希望將這個文件儲存在特定位置，可以使用這個選項來指定文件路徑。
 
-
 <br/>
-
 
 ## **Output Formatting**
 
@@ -2574,9 +2696,7 @@ node_modules/some-package/index.d.ts: Matched by 'types' reference
 
 `pretty` 選項用於啟用彩色輸出，使得編譯過程中的錯誤和警告信息更具可讀性。這對於在終端中查看編譯輸出特別有用，因為彩色輸出可以幫助你更容易地區分和識別不同類型的消息。
 
-
 <br/>
-
 
 ## **Completeness**
 
@@ -2588,9 +2708,7 @@ node_modules/some-package/index.d.ts: Matched by 'types' reference
 
 `skipLibCheck` 選項用於跳過對所有聲明文件（`*.d.ts` 文件）的類型檢查。這對於減少編譯時間和避免第三方庫的類型問題影響項目編譯特別有用。
 
-
 <br/>
-
 
 ## **Watch Options**
 
@@ -2598,9 +2716,7 @@ node_modules/some-package/index.d.ts: Matched by 'types' reference
 
 `assumeChangesOnlyAffectDirectDependencies` 選項用於假設文件更改僅影響其直接依賴項，而不影響間接依賴項。這可以加快增量編譯的速度，特別是在大型項目中。
 
-
 <br/>
-
 
 ## **Reference**
 

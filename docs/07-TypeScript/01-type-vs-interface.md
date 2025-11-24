@@ -1,6 +1,6 @@
 ---
 title: type 和 interface 誰才是最佳選擇？
-sidebar_label: "Type & Interface"
+sidebar_label: "型別定義 Type & Interface"
 description: 這篇文章深入剖析兩者的 異同、優勢與適用情境，幫助你在開發時做出最佳選擇！我們將從 基礎概念、語法比較、最佳實踐 到 實務案例 全面解析，並提供清晰的選擇指南。
 last_update:
   date: 2025-03-07
@@ -13,13 +13,10 @@ tags: [TypeScript]
 在開始學習 TypeScript 時，我們很快就會接觸到 `type` 和 `interface` 這兩種型別定義方式。看起來它們都能描述物件，甚至在許多情境下可以互換使用。但讓很多初學者感到疑惑的是：
 
 > 「在這個情況下，我到底應該用 type 還是 interface？」
-> 
 
 我自己一直以來都沒有特別在意什麼時候該用 type，什麼時候該用 interface，直到最近在維護舊專案時，發現這樣隨意交錯使用 type 和 interface 讓我的程式碼的可讀性變得很差，因此決定稍微研究一下 type 和 interface 的差異，幫助我未來在決定使用任一者時，有個比較明確的準則。
 
-
 <br/>
-
 
 ## **`type` 與 `interface` 語法比較**
 
@@ -27,13 +24,13 @@ tags: [TypeScript]
 
 |                                             | `type`      | `interface` |
 | ------------------------------------------- | ----------- | ----------- |
-| **物件型別定義**                            | ✅           | ✅           |
+| **物件型別定義**                            | ✅          | ✅          |
 | **擴展（繼承）型別**                        | `&`（交集） | `extends`   |
-| **可定義聯合型別（Union）**                 | ✅           | ❌           |
-| **可定義基本型別（如 `string`、`number`）** | ✅           | ❌           |
-| **可定義元組（Tuple）**                     | ✅           | ❌           |
-| **可多次定義（會自動合併）**                | ❌           | ✅           |
-| **可用於 `class implements`**               | ⚠️           | ✅           |
+| **可定義聯合型別（Union）**                 | ✅          | ❌          |
+| **可定義基本型別（如 `string`、`number`）** | ✅          | ❌          |
+| **可定義元組（Tuple）**                     | ✅          | ❌          |
+| **可多次定義（會自動合併）**                | ❌          | ✅          |
+| **可用於 `class implements`**               | ⚠️          | ✅          |
 
 ### **1️⃣ 物件型別的基本定義**
 
@@ -56,7 +53,6 @@ interface User {
 ```
 
 無論 `type` 還是 `interface`，最基本的用途都是用來定義物件型別，這兩種方式在這種簡單的物件型別定義上**完全等價**，但當我們需要進一步擴展型別時，兩者就開始出現不同了。
-
 
 ### **2️⃣ 型別擴展（繼承）**
 
@@ -104,7 +100,6 @@ const admin: Admin = {
 
 雖然 `&` 和 `extends` 的結果在這裡看起來一樣，但 `&` **可以用來合併任何型別**，不只限於物件，這是 `type` 更靈活的地方。
 
-
 ### **3️⃣ `type` 可以定義聯合型別**
 
 這是 `type` 最大的優勢之一，它可以定義「多種可能性」的型別，而 `interface` 則不行。
@@ -118,13 +113,12 @@ let currentStatus: Status;
 
 currentStatus = "success"; // ✅ 合法
 currentStatus = "loading"; // ✅ 合法
-currentStatus = "failed";  // ❌ 錯誤，因為 "failed" 不是 Status 的成員
+currentStatus = "failed"; // ❌ 錯誤，因為 "failed" 不是 Status 的成員
 ```
 
 :::warning
 `interface` 只能描述物件，不能像 `type` 一樣定義基本型別或聯合型別。
 :::
-
 
 ### **4️⃣ `type` 可以定義基本型別**
 
@@ -138,8 +132,8 @@ type ID = string | number;
 let userId: ID;
 
 userId = "abc123"; // ✅ 合法
-userId = 123456;   // ✅ 合法
-userId = true;     // ❌ 錯誤，因為 `boolean` 不是 `ID` 的成員
+userId = 123456; // ✅ 合法
+userId = true; // ❌ 錯誤，因為 `boolean` 不是 `ID` 的成員
 ```
 
 **`interface` 無法這樣做**
@@ -164,7 +158,6 @@ const invalidPoint: Coordinate = [10, "20"]; // ❌ 錯誤，因為第二個值�
 :::warning
 **`interface` 無法直接定義元組**
 :::
-
 
 ### **6️⃣ `interface` 具備「宣告合併」特性**
 
@@ -243,9 +236,7 @@ class MyClass implements StringOrNumber {} // ❌ 錯誤：無法實作聯合類
 
 這會報錯，因為 `StringOrNumber` 不是一個明確的物件結構，`class` 無法對應這種類型。
 
-
 <br/>
-
 
 ## **`interface` 的優勢與適用情境**
 
@@ -299,7 +290,8 @@ class User implements Serializable {
 ```tsx
 type StringOrNumber = string | number;
 
-class Example implements StringOrNumber { // ❌ 錯誤：無法 `implements` 聯合型別
+class Example implements StringOrNumber {
+  // ❌ 錯誤：無法 `implements` 聯合型別
   value = "hello";
 }
 ```
@@ -318,9 +310,7 @@ declare module "express" {
 
 這樣一來，`Request` 物件就會額外擁有 `user` 屬性，而不會影響到原始的 `Request` 定義。
 
-
 <br/>
-
 
 ## **`type` 的優勢與適用情境**
 
@@ -390,7 +380,7 @@ const oi: RecordType = knownAttributes;
 錯誤的原因是 `interface` 可能會在未來被擴展，而 TypeScript 無法確保它不會新增與 `Record<string, number>` 不匹配的屬性。
 :::
 
-**✅ 解決方式1: 顯式為 `interface` 添加索引簽名**
+**✅ 解決方式 1: 顯式為 `interface` 添加索引簽名**
 
 我們可以透過在 `interface` 中明確聲明索引簽名來修正這個問題：
 
@@ -402,7 +392,7 @@ interface KnownAttributes {
 }
 ```
 
-**✅ 解決方式2: 直接使用 `type`**
+**✅ 解決方式 2: 直接使用 `type`**
 
 如果我們使用 `type`，則不需要額外的索引簽名，因為 `type` 本身允許隱式匹配：
 
@@ -424,16 +414,13 @@ const oi: RecordType = knownAttributes; // ✅ 這裡不會報錯
 
 這顯示了 **`type` 在某些情境下比 `interface` 具有更好的相容性**，因為它不會受到 `interface` 可能被擴展的影響。
 
-
 <br/>
-
 
 ## **結論：`type` vs `interface` 如何選擇？**
 
 早期 TypeScript 文件提到 `interface` 可能在 TypeScript 型別檢查 上有些微效能優勢，但 TypeScript 團隊後來澄清，這在現代 TypeScript 版本中已經不再是考量因素。兩者的效能基本上沒有顯著差異，所以不應該基於效能考量來選擇。經過 TypeScript 社群長時間的討論，`type` 和 `interface` 各有其優勢，最終的選擇不應該是「哪個更好」，而是「哪個在特定情境下更適合」。以下是簡要的結論：
 
 > **`interface` 適合 OOP 設計與擴展；`type` 更靈活，適合大多數情境**
-> 
 
 綜合我們上述整理的內容，我認為在一個 TS 專案中的最佳實踐如下：
 
@@ -441,9 +428,7 @@ const oi: RecordType = knownAttributes; // ✅ 這裡不會報錯
 - 當你需要 `extends`、`implements` 或擴展第三方函式庫時，選擇 `interface`。
 - 團隊內應該制定統一的 型別設計規範，確保一致性，減少混用帶來的維護困難。
 
-
 <br/>
-
 
 ## **Reference**
 

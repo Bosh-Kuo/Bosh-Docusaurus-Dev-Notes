@@ -1,6 +1,6 @@
 ---
 title: "掌握 TypeScript 實用型別工具 Utility Types"
-sidebar_label: "Utility Types"
+sidebar_label: "實用型別工具 Utility Types"
 description: TypeScript 內建了一套實用的型別工具可以幫助開發者更有效地操作和轉換現有的型別。這些實用型別(Utility Types)提供了許多方便的語法，可以簡化常見的型別操作，如物件合併、物件子集、交集型別、聯合型別，以及對陣列或函式型別進行轉換等。本文將探討這些實用型別的用法和應用場景，協助讀者更好地利用 TypeScript 的強大型別系統，提高程式碼的可維護性和可讀性。
 last_update:
   date: 2024-05-30
@@ -12,7 +12,7 @@ keywords:
   - Pick
   - Omit
   - Exclude
-  - Extract 
+  - Extract
 tags:
   - TypeScript
 ---
@@ -28,8 +28,8 @@ tags:
 
 這篇文章將介紹一些常見的 utility types，並展示它們的用法。
 
-
 ## **屬性操作類型**
+
 ### **Partial\<T>：將屬性設置為可選**
 
 **Partial\<T>** 允許我們將某個類型的所有屬性設定為可選。
@@ -50,7 +50,7 @@ type PartialUser = Partial<User>;
 //   age?: number;
 // }
 const updateUser: PartialUser = {
-  name: 'John'
+  name: "John",
 };
 ```
 
@@ -75,8 +75,8 @@ type RequiredUser = Required<User>;
 // }
 const newUser: RequiredUser = {
   id: 1,
-  name: 'Jane',
-  age: 30
+  name: "Jane",
+  age: 30,
 };
 ```
 
@@ -101,8 +101,8 @@ type ReadonlyUser = Readonly<User>;
 // }
 const readonlyUser: ReadonlyUser = {
   id: 1,
-  name: 'Jane',
-  age: 30
+  name: "Jane",
+  age: 30,
 };
 
 // readonlyUser.id = 2; // Error: Cannot assign to 'id' because it is a read-only property.
@@ -113,7 +113,7 @@ const readonlyUser: ReadonlyUser = {
 **Record\<K\, T>** 是用來建構一個物件類型，其屬性鍵是類型 **K**，屬性值是類型 **T**。
 
 ```tsx
-type Page = 'home' | 'about' | 'contact';
+type Page = "home" | "about" | "contact";
 
 interface PageInfo {
   title: string;
@@ -128,15 +128,13 @@ type Pages = Record<Page, PageInfo>;
 //   contact: PageInfo;
 // }
 const pages: Pages = {
-  home: { title: 'Home' },
-  about: { title: 'About Us' },
-  contact: { title: 'Contact' }
+  home: { title: "Home" },
+  about: { title: "About Us" },
+  contact: { title: "Contact" },
 };
 ```
 
-
 <br/>
-
 
 ## **提取與排除類型**
 
@@ -152,7 +150,7 @@ interface User {
   email: string;
 }
 
-type UserPreview = Pick<User, 'id' | 'name'>;
+type UserPreview = Pick<User, "id" | "name">;
 
 // Infer:
 // type UserPreview = {
@@ -161,7 +159,7 @@ type UserPreview = Pick<User, 'id' | 'name'>;
 // }
 const userPreview: UserPreview = {
   id: 1,
-  name: 'Jane'
+  name: "Jane",
 };
 ```
 
@@ -177,7 +175,7 @@ interface User {
   email: string;
 }
 
-type UserWithoutEmail = Omit<User, 'email'>;
+type UserWithoutEmail = Omit<User, "email">;
 
 // Infer:
 // type UserWithoutEmail = {
@@ -187,8 +185,8 @@ type UserWithoutEmail = Omit<User, 'email'>;
 // }
 const userWithoutEmail: UserWithoutEmail = {
   id: 1,
-  name: 'Jane',
-  age: 30
+  name: "Jane",
+  age: 30,
 };
 ```
 
@@ -197,8 +195,8 @@ const userWithoutEmail: UserWithoutEmail = {
 **Exclude\<T\, U>** 從某個類型中排除可以分配給另一個類型的所有屬性。
 
 ```tsx
-type T = 'a' | 'b' | 'c';
-type U = 'a';
+type T = "a" | "b" | "c";
+type U = "a";
 
 type ExcludeTU = Exclude<T, U>; // 'b' | 'c'
 ```
@@ -208,8 +206,8 @@ type ExcludeTU = Exclude<T, U>; // 'b' | 'c'
 **Extract\<T\, U>** 則與 **Exclude** 相反，從某個類型中提取可以分配給另一個類型的所有屬性。
 
 ```tsx
-type T = 'a' | 'b' | 'c';
-type U = 'a' | 'c';
+type T = "a" | "b" | "c";
+type U = "a" | "c";
 
 type ExtractTU = Extract<T, U>; // 'a' | 'c'
 ```
@@ -224,11 +222,10 @@ type T = string | number | null | undefined;
 type NonNullableT = NonNullable<T>; // string | number
 ```
 
-
 <br/>
 
-
 ## **函數與實例操作類型**
+
 ### **Parameters\<T>：獲取函數類型的參數類型組成的元組**
 
 **Parameters\<T>** 用來獲取**函數類型**的參數類型組成的元組。
@@ -305,9 +302,7 @@ type ExampleType = Promise<string>;
 type AwaitedType = Awaited<ExampleType>; // string
 ```
 
-
 <br/>
-
 
 ## **字串操作類型**
 
@@ -316,7 +311,7 @@ type AwaitedType = Awaited<ExampleType>; // string
 **Uppercase\<S>** 將字串類型轉換為大寫。
 
 ```tsx
-type Name = 'john';
+type Name = "john";
 
 type UppercaseName = Uppercase<Name>; // 'JOHN'
 ```
@@ -326,7 +321,7 @@ type UppercaseName = Uppercase<Name>; // 'JOHN'
 **Lowercase\<S>** 將字串類型轉換為小寫。
 
 ```tsx
-type Name = 'JOHN';
+type Name = "JOHN";
 
 type LowercaseName = Lowercase<Name>; // 'john'
 ```
@@ -336,7 +331,7 @@ type LowercaseName = Lowercase<Name>; // 'john'
 **Capitalize\<S>** 將字串類型的首字母轉換為大寫。
 
 ```tsx
-type Name = 'john';
+type Name = "john";
 
 type CapitalizedName = Capitalize<Name>; // 'John'
 ```
@@ -346,14 +341,12 @@ type CapitalizedName = Capitalize<Name>; // 'John'
 **Uncapitalize\<S>** 將字串類型的首字母轉換為小寫。
 
 ```tsx
-type Name = 'John';
+type Name = "John";
 
 type UncapitalizedName = Uncapitalize<Name>; // 'john'
 ```
 
-
 <br/>
-
 
 ## **Reference**
 

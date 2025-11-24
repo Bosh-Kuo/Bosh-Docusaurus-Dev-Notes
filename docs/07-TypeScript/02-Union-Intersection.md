@@ -1,17 +1,16 @@
 ---
 title: "Union(聯合型別) 與 Intersection(交叉型別)"
-sidebar_label: "Union & Intersection"
+sidebar_label: "聯合與交叉型別 Union & Intersection"
 description: 這篇文章將探討 TypeScript 中的 Union（聯合型別）與 Intersection（交叉型別）。這篇文章示範了具體的程式碼範例，深入理解這兩種型別的使用情境，幫助開發者更有效地利用 TypeScript 的型別系統來構建穩健的應用程式。
 last_update:
   date: 2024-05-28
 keywords:
   - TypeScript
   - Union
-  - Intersection  
+  - Intersection
 tags:
   - TypeScript
 ---
-
 
 ## **Union(聯合型別)： `｜`**
 
@@ -21,9 +20,9 @@ tags:
 
 ```tsx
 let value: string | number;
-value = 'Hello'; // 合法
-value = 42;      // 合法
-value = true;    // 錯誤，型別不匹配
+value = "Hello"; // 合法
+value = 42; // 合法
+value = true; // 錯誤，型別不匹配
 ```
 
 **Union** 的行為類似於布林邏輯中的 `OR` 操作，即變數可以是多種類型中的任意一種。
@@ -33,31 +32,29 @@ value = true;    // 錯誤，型別不匹配
 **Union** 常見的應用場景包括：
 
 1. 定義一個函數的參數可以接受多種不同型別，以處理不同 API 返回值的類型
-    
-    ```tsx
-    function formatValue(value: string | number): string {
-      if (typeof value === 'string') {
-        return value.toUpperCase();
-      }
-      return value.toFixed(2);
-    }
-    ```
-    
-2. 當配置物件可以接受多種不同類型的值時，可以使用 Union來描述這些配置選項
-    
-    ```tsx
-    type ConfigOption = 'auto' | 'manual' | 'none';
-    
-    interface Config {
-      mode: ConfigOption;
-    }
-    
-    const config: Config = {
-      mode: 'auto'
-    };
-    
-    ```
-    
+
+   ```tsx
+   function formatValue(value: string | number): string {
+     if (typeof value === "string") {
+       return value.toUpperCase();
+     }
+     return value.toFixed(2);
+   }
+   ```
+
+2. 當配置物件可以接受多種不同類型的值時，可以使用 Union 來描述這些配置選項
+
+   ```tsx
+   type ConfigOption = "auto" | "manual" | "none";
+
+   interface Config {
+     mode: ConfigOption;
+   }
+
+   const config: Config = {
+     mode: "auto",
+   };
+   ```
 
 ## **Intersection(交集型別)： `&`**
 
@@ -77,8 +74,8 @@ interface Employee {
 type EmployeePerson = Person & Employee;
 
 const john: EmployeePerson = {
-  name: 'John',
-  employeeId: 123
+  name: "John",
+  employeeId: 123,
 };
 ```
 
@@ -93,45 +90,44 @@ const john: EmployeePerson = {
 **Intersection** 常見的應用場景包括：
 
 1. 在函數中，當一個參數需要同時滿足多個條件時，可以使用 **Intersection** 來強制實現這一要求
-    
-    ```tsx
-    interface Serializable {
-      serialize(): string;
-    }
-    
-    interface Deserializable {
-      deserialize(input: string): void;
-    }
-    
-    type SerializableDeserializable = Serializable & Deserializable;
-    
-    function process(data: SerializableDeserializable) {
-      const serialized = data.serialize();
-      data.deserialize(serialized);
-    }
-    ```
-    
+
+   ```tsx
+   interface Serializable {
+     serialize(): string;
+   }
+
+   interface Deserializable {
+     deserialize(input: string): void;
+   }
+
+   type SerializableDeserializable = Serializable & Deserializable;
+
+   function process(data: SerializableDeserializable) {
+     const serialized = data.serialize();
+     data.deserialize(serialized);
+   }
+   ```
+
 2. 增強現有的類型，新增更多屬性或方法
-    
-    ```tsx
-    interface BasicUser {
-      name: string;
-    }
-    
-    interface PremiumFeatures {
-      premiumSupport: boolean;
-      accessToBeta: boolean;
-    }
-    
-    type PremiumUser = BasicUser & PremiumFeatures;
-    
-    const premiumUser: PremiumUser = {
-      name: 'Bob',
-      premiumSupport: true,
-      accessToBeta: true
-    };
-    ```
-    
+
+   ```tsx
+   interface BasicUser {
+     name: string;
+   }
+
+   interface PremiumFeatures {
+     premiumSupport: boolean;
+     accessToBeta: boolean;
+   }
+
+   type PremiumUser = BasicUser & PremiumFeatures;
+
+   const premiumUser: PremiumUser = {
+     name: "Bob",
+     premiumSupport: true,
+     accessToBeta: true,
+   };
+   ```
 
 ## **Reference**
 
