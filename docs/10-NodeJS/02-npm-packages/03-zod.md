@@ -1042,7 +1042,7 @@ jsonSchema.parse(invalid); // throws ZodError
 
 ---
 
-## **參考資源**
+## **Reference**
 
 - **[Zod 官方文件](https://zod.dev/)**
 - **[Zod GitHub](https://github.com/colinhacks/zod)**
