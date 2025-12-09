@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 200" width="800" height="200">
+  <!-- Background -->
+  <rect width="800" height="200" fill="#f9fafb"/>
+  
+  <!-- Arrow Marker -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+  
+  <!-- Step 1: Create Workbook -->
+  <rect x="20" y="60" width="120" height="80" fill="#217346" rx="8"/>
+  <text x="80" y="95" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">1. 建立</text>
+  <text x="80" y="115" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">Workbook</text>
+  <text x="80" y="155" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">new Workbook()</text>
+  
+  <!-- Arrow 1 -->
+  <line x1="140" y1="100" x2="170" y2="100" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Add Worksheet -->
+  <rect x="170" y="60" width="120" height="80" fill="#8b5cf6" rx="8"/>
+  <text x="230" y="95" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">2. 新增</text>
+  <text x="230" y="115" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">Worksheet</text>
+  <text x="230" y="155" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">addWorksheet()</text>
+  
+  <!-- Arrow 2 -->
+  <line x1="290" y1="100" x2="320" y2="100" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: Fill Data -->
+  <rect x="320" y="60" width="120" height="80" fill="#3b82f6" rx="8"/>
+  <text x="380" y="95" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">3. 填入資料</text>
+  <text x="380" y="115" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">Row / Cell</text>
+  <text x="380" y="155" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">addRow() / getCell()</text>
+  
+  <!-- Arrow 3 -->
+  <line x1="440" y1="100" x2="470" y2="100" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 4: Apply Styles -->
+  <rect x="470" y="60" width="120" height="80" fill="#f59e0b" rx="8"/>
+  <text x="530" y="95" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">4. 套用樣式</text>
+  <text x="530" y="115" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">(可選)</text>
+  <text x="530" y="155" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">font / fill / border</text>
+  
+  <!-- Arrow 4 -->
+  <line x1="590" y1="100" x2="620" y2="100" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 5: Output -->
+  <rect x="620" y="60" width="150" height="80" fill="#10b981" rx="8"/>
+  <text x="695" y="90" font-family="Arial, sans-serif" font-size="12" fill="#ffffff" text-anchor="middle" font-weight="bold">5. 輸出檔案</text>
+  <text x="695" y="110" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">writeFile() 或</text>
+  <text x="695" y="128" font-family="Arial, sans-serif" font-size="11" fill="#ffffff" text-anchor="middle">writeBuffer()</text>
+  <text x="695" y="155" font-family="Arial, sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">產生 .xlsx 或 Buffer</text>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="16" fill="#374151" text-anchor="middle" font-weight="bold">ExcelJS 操作流程</text>
+</svg>
