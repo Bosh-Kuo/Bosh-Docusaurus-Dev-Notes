@@ -1,6 +1,6 @@
 ---
 title: onClick 還是 handleClick？淺談 React 事件處理的命名慣例
-sidebar_label: "[Concept] Event Handler 的命名慣例"
+sidebar_label: "Event Handler 的命名慣例"
 description: 雖然命名上並沒有「正確答案」，但為了理清思緒並統一未來的實作方式，我整理了 React 社群中關於事件處理命名的常見慣例，也分享一些自己的理解，希望能幫助讓程式碼更具一致性與可讀性。
 slug: "/React/event-handler-naming-convention"
 last_update:

@@ -1,6 +1,6 @@
 ---
 title: React 事件處理與事件傳遞：一篇搞懂冒泡、捕獲與阻止事件！
-sidebar_label: "[Concept] 事件傳遞：冒泡與捕獲"
+sidebar_label: "事件傳遞：冒泡與捕獲"
 description: 這篇文章將帶你從 React 的事件基礎開始，逐步深入事件傳遞中的捕獲與冒泡，並通過實際案例解釋它們在日常開發中的應用場景。閱讀完這篇文章，你將學會：如何在 React 中處理事件、捕獲與冒泡階段的詳細解析，以及什麼時候需要阻止事件傳遞與預設行為？
 slug: "/React/event-propagation"
 last_update:

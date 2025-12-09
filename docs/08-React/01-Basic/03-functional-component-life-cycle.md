@@ -1,6 +1,6 @@
 ---
 title: 全面理解 React Functional Component 生命週期：從掛載到卸載的運作原理與內部機制
-sidebar_label: "[Theory] Functional Component 生命週期"
+sidebar_label: "Functional Component 生命週期"
 description: 本篇文章將透過 流程圖與深入解析，帶你掌握 Function Component 生命週期的完整運作方式，並剖析 React 如何透過 Virtual DOM、Reconciliation 與 Commit Phase 來高效管理 UI。
 slug: "/React/functional-component-life-cycle"
 last_update:
