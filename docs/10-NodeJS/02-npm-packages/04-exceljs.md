@@ -3,7 +3,7 @@ title: ExcelJS：Excel 檔案處理完整指南
 sidebar_label: ExcelJS
 description: ExcelJS 是一個功能強大的 Node.js 套件，用於讀取、操作和寫入 Excel 檔案（XLSX 格式）。本文涵蓋基本概念、Workbook 與 Worksheet 操作、儲存格樣式、合併儲存格、圖片插入、檔案讀寫等核心功能。
 last_update:
-  date: 2024-12-10
+  date: 2025-12-10
 keywords: [npm 套件, npm packages, exceljs, excel, xlsx, spreadsheet, workbook, worksheet]
 tags: [npm packages]
 ---

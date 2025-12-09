@@ -3,7 +3,7 @@ title: Zod v4 使用指南：資料驗證核心功能
 sidebar_label: Zod
 description: Zod v4 是一個 TypeScript-first 的 schema 驗證庫，提供靜態型別推導。本文涵蓋基本用法、原始型別、物件、陣列、聯合型別、型別轉換、錯誤處理等核心功能，並深入探討 Schema 設計模式與實務應用。
 last_update:
-  date: 2024-11-26
+  date: 2025-11-26
 keywords: [npm 套件, npm packages, zod, zod v4, schema validation, TypeScript, type inference]
 tags: [npm packages]
 ---
