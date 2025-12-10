@@ -1,7 +1,7 @@
 const redirects = [
   {
-    to: "/docs/React/TS-Jest-RTL-MSW-Setup",
-    from: "/docs/Testing/TS-Jest-RTL-MSW-Setup",
+    to: "/blog/react-ts-jest-rtl-msw-setup",
+    from: "/docs/React/TS-Jest-RTL-MSW-Setup",
   },
   {
     to: "/docs/DevTools/Terminal/iterm-shortcut-key",
