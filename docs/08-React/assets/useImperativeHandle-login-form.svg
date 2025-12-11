@@ -1,0 +1,32 @@
+<svg width="600" height="220" viewBox="0 0 600 220" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="600" height="220" fill="#1e1e2e"/>
+  
+  <!-- LoginForm -->
+  <rect x="180" y="20" width="240" height="65" rx="8" fill="#2d2d3d" stroke="#89b4fa" stroke-width="2"/>
+  <text x="300" y="45" text-anchor="middle" fill="#89b4fa" font-size="14" font-weight="bold" font-family="system-ui, sans-serif">LoginForm</text>
+  <text x="300" y="65" text-anchor="middle" fill="#a6adc8" font-size="11" font-family="monospace">emailRef, passwordRef</text>
+  
+  <!-- 箭頭 -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#89b4fa"/>
+    </marker>
+  </defs>
+  <path d="M 230 85 L 150 120" stroke="#89b4fa" stroke-width="2" marker-end="url(#arrow)"/>
+  <path d="M 370 85 L 450 120" stroke="#89b4fa" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- CustomInput 1 -->
+  <rect x="50" y="125" width="180" height="70" rx="8" fill="#2d2d3d" stroke="#f38ba8" stroke-width="2"/>
+  <text x="140" y="150" text-anchor="middle" fill="#f38ba8" font-size="13" font-weight="bold" font-family="system-ui, sans-serif">CustomInput</text>
+  <text x="140" y="170" text-anchor="middle" fill="#a6adc8" font-size="10" font-family="monospace">type="email"</text>
+  
+  <!-- CustomInput 2 -->
+  <rect x="370" y="125" width="180" height="70" rx="8" fill="#2d2d3d" stroke="#f38ba8" stroke-width="2"/>
+  <text x="460" y="150" text-anchor="middle" fill="#f38ba8" font-size="13" font-weight="bold" font-family="system-ui, sans-serif">CustomInput</text>
+  <text x="460" y="170" text-anchor="middle" fill="#a6adc8" font-size="10" font-family="monospace">type="password"</text>
+  
+  <!-- 暴露的方法 -->
+  <text x="140" y="210" text-anchor="middle" fill="#a6e3a1" font-size="10" font-family="monospace">focus(), blur(), scrollIntoView()</text>
+  <text x="460" y="210" text-anchor="middle" fill="#a6e3a1" font-size="10" font-family="monospace">focus(), blur(), scrollIntoView()</text>
+</svg>

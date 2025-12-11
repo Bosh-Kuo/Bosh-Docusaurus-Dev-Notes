@@ -1,0 +1,42 @@
+<svg width="650" height="300" viewBox="0 0 650 300" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="650" height="300" fill="#1e1e2e"/>
+  
+  <!-- SubtitlePlayer -->
+  <rect x="175" y="20" width="300" height="75" rx="8" fill="#2d2d3d" stroke="#89b4fa" stroke-width="2"/>
+  <text x="325" y="45" text-anchor="middle" fill="#89b4fa" font-size="14" font-weight="bold" font-family="system-ui, sans-serif">SubtitlePlayer (父元件)</text>
+  <text x="325" y="65" text-anchor="middle" fill="#a6adc8" font-size="11" font-family="monospace">videoRef = useRef()</text>
+  <text x="325" y="82" text-anchor="middle" fill="#a6e3a1" font-size="10" font-family="system-ui, sans-serif">需要根據字幕時間跳轉影片進度</text>
+  
+  <!-- 箭頭 -->
+  <defs>
+    <marker id="arrow2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#89b4fa"/>
+    </marker>
+  </defs>
+  <path d="M 325 95 L 325 135" stroke="#89b4fa" stroke-width="2" marker-end="url(#arrow2)"/>
+  <text x="340" y="120" fill="#89b4fa" font-size="10" font-family="monospace">ref={videoRef}</text>
+  
+  <!-- VideoPlayer -->
+  <rect x="100" y="145" width="450" height="130" rx="8" fill="#2d2d3d" stroke="#f38ba8" stroke-width="2"/>
+  <text x="325" y="170" text-anchor="middle" fill="#f38ba8" font-size="14" font-weight="bold" font-family="system-ui, sans-serif">VideoPlayer (子元件)</text>
+  
+  <!-- 內部 refs -->
+  <rect x="120" y="185" width="130" height="40" rx="6" fill="#313244"/>
+  <text x="185" y="205" text-anchor="middle" fill="#94e2d5" font-size="10" font-family="monospace">videoElementRef</text>
+  <text x="185" y="218" text-anchor="middle" fill="#a6adc8" font-size="9" font-family="system-ui, sans-serif">指向 &lt;video&gt;</text>
+  
+  <rect x="270" y="185" width="130" height="40" rx="6" fill="#313244"/>
+  <text x="335" y="205" text-anchor="middle" fill="#94e2d5" font-size="10" font-family="monospace">progressRef</text>
+  <text x="335" y="218" text-anchor="middle" fill="#a6adc8" font-size="9" font-family="system-ui, sans-serif">指向進度條</text>
+  
+  <!-- 暴露的方法 -->
+  <rect x="420" y="185" width="120" height="80" rx="6" fill="#313244"/>
+  <text x="480" y="203" text-anchor="middle" fill="#f9e2af" font-size="10" font-weight="bold" font-family="system-ui, sans-serif">暴露的方法</text>
+  <text x="480" y="220" text-anchor="middle" fill="#a6e3a1" font-size="9" font-family="monospace">play()</text>
+  <text x="480" y="235" text-anchor="middle" fill="#a6e3a1" font-size="9" font-family="monospace">pause()</text>
+  <text x="480" y="250" text-anchor="middle" fill="#a6e3a1" font-size="9" font-family="monospace">seek(time)</text>
+  
+  <!-- 底部說明 -->
+  <text x="325" y="290" text-anchor="middle" fill="#cdd6f4" font-size="11" font-family="system-ui, sans-serif">點擊字幕 → 呼叫 videoRef.current.seek(time) → 跳轉影片進度</text>
+</svg>

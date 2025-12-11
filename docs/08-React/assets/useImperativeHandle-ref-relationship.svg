@@ -1,0 +1,41 @@
+<svg width="800" height="420" viewBox="0 0 800 420" xmlns="http://www.w3.org/2000/svg">
+  <!-- 背景 -->
+  <rect width="800" height="420" fill="#1e1e2e"/>
+  
+  <!-- 父元件區塊 -->
+  <rect x="50" y="30" width="320" height="150" rx="8" fill="#2d2d3d" stroke="#89b4fa" stroke-width="2"/>
+  <text x="210" y="55" text-anchor="middle" fill="#89b4fa" font-size="15" font-weight="bold" font-family="system-ui, sans-serif">父元件 (Parent)</text>
+  
+  <!-- 父元件的 ref -->
+  <rect x="70" y="75" width="280" height="50" rx="6" fill="#313244"/>
+  <text x="85" y="98" fill="#f38ba8" font-family="monospace" font-size="12">const inputRef = useRef(null)</text>
+  <text x="85" y="115" fill="#a6adc8" font-size="10" font-family="system-ui, sans-serif">① 父元件建立的 ref，存放子元件暴露的方法</text>
+  
+  <!-- 傳遞 ref 的箭頭 -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#89b4fa"/>
+    </marker>
+  </defs>
+  <path d="M 210 180 L 210 220" stroke="#89b4fa" stroke-width="2" marker-end="url(#arrowhead)"/>
+  <text x="225" y="205" fill="#89b4fa" font-size="12" font-family="monospace">ref={inputRef}</text>
+  
+  <!-- 子元件區塊 -->
+  <rect x="50" y="230" width="700" height="160" rx="8" fill="#2d2d3d" stroke="#f38ba8" stroke-width="2"/>
+  <text x="400" y="255" text-anchor="middle" fill="#f38ba8" font-size="15" font-weight="bold" font-family="system-ui, sans-serif">子元件 (CustomInput)</text>
+  
+  <!-- 子元件內部的 ref -->
+  <rect x="70" y="275" width="280" height="50" rx="6" fill="#313244"/>
+  <text x="85" y="298" fill="#94e2d5" font-family="monospace" font-size="12">const localRef = useRef(null)</text>
+  <text x="85" y="315" fill="#a6adc8" font-size="10" font-family="system-ui, sans-serif">② 子元件內部的 ref，指向實際的 DOM 節點</text>
+  
+  <!-- useImperativeHandle -->
+  <rect x="380" y="275" width="350" height="100" rx="6" fill="#313244"/>
+  <text x="400" y="298" fill="#f9e2af" font-family="monospace" font-size="12">useImperativeHandle(ref, () => ({</text>
+  <text x="420" y="318" fill="#a6e3a1" font-family="monospace" font-size="12">focus: () => localRef.current.focus()</text>
+  <text x="400" y="338" fill="#f9e2af" font-family="monospace" font-size="12">}), [])</text>
+  <text x="400" y="365" fill="#a6adc8" font-size="10" font-family="system-ui, sans-serif">③ 連接兩個 ref：將 localRef 的操作暴露給父元件的 ref</text>
+  
+  <!-- 說明文字 -->
+  <text x="400" y="405" text-anchor="middle" fill="#cdd6f4" font-size="12" font-family="system-ui, sans-serif">父元件呼叫 inputRef.current.focus() → 實際執行 localRef.current.focus()</text>
+</svg>
