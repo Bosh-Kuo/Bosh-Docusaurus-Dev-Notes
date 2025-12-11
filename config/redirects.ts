@@ -1,5 +1,13 @@
 const redirects = [
   {
+    to: "/docs/React/mui-theme",
+    from: "/docs/React/mui-theme-basic",
+  },
+  {
+    to: "/docs/React/mui-theme",
+    from: "/docs/React/mui-theme-advanced",
+  },
+  {
     to: "/blog/react-ts-jest-rtl-msw-setup",
     from: "/docs/React/TS-Jest-RTL-MSW-Setup",
   },
