@@ -1,6 +1,6 @@
 ---
 title: TanStack Query V5 - useQuery API 解析
-sidebar_label: "[React Query] useQuery API"
+sidebar_label: "TanStack Query - useQuery API"
 description: 這篇筆記詳細說明 TanStack Query 中最常用的 useQuery 這個 hook 的 API 配置與回傳值，幫助開發者在實際專案中高效使用 useQuery。
 slug: "/React/useQuery-API"
 last_update:
