@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 450" width="600" height="450">
+  <!-- Background -->
+  <rect width="600" height="450" fill="#f9fafb"/>
+  
+  <!-- Title -->
+  <text x="300" y="35" font-family="Arial, sans-serif" font-size="22" font-weight="bold" fill="#1f2937" text-anchor="middle">Falsy vs Nullish</text>
+  
+  <!-- Falsy circle (outer) -->
+  <ellipse cx="280" cy="250" rx="230" ry="170" fill="#fef3c7" stroke="#f59e0b" stroke-width="3"/>
+  <text x="120" y="90" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#d97706">falsy</text>
+  
+  <!-- Nullish circle (inner) -->
+  <ellipse cx="380" cy="260" rx="100" ry="80" fill="#fee2e2" stroke="#dc2626" stroke-width="3" stroke-dasharray="8,4"/>
+  <text x="380" y="200" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#dc2626" text-anchor="middle">nullish</text>
+  
+  <!-- Nullish values -->
+  <text x="380" y="250" font-family="monospace" font-size="16" fill="#991b1b" text-anchor="middle">undefined</text>
+  <text x="380" y="280" font-family="monospace" font-size="16" fill="#991b1b" text-anchor="middle">null</text>
+  
+  <!-- Falsy-only values -->
+  <text x="140" y="180" font-family="monospace" font-size="16" fill="#92400e">0</text>
+  <text x="140" y="210" font-family="monospace" font-size="16" fill="#92400e">-0</text>
+  <text x="140" y="240" font-family="monospace" font-size="16" fill="#92400e">0n</text>
+  <text x="140" y="280" font-family="monospace" font-size="16" fill="#92400e">false</text>
+  <text x="140" y="320" font-family="monospace" font-size="16" fill="#92400e">NaN</text>
+  <text x="140" y="360" font-family="monospace" font-size="16" fill="#92400e">""</text>
+  
+</svg>
