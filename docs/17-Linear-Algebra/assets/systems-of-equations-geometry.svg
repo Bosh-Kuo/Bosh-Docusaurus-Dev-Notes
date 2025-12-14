@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 220">
+  <!-- Figure 1: Parallel lines, no intersection -->
+  <g transform="translate(0, 0)">
+    <text x="125" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">No Solution (Inconsistent)</text>
+    <!-- Axes -->
+    <line x1="30" y1="180" x2="220" y2="180" stroke="#666" stroke-width="1.5"/>
+    <line x1="30" y1="180" x2="30" y2="40" stroke="#666" stroke-width="1.5"/>
+    <polygon points="220,180 210,175 210,185" fill="#666"/>
+    <polygon points="30,40 25,50 35,50" fill="#666"/>
+    <text x="225" y="185" font-size="12" fill="#666" font-style="italic">x</text>
+    <text x="25" y="35" font-size="12" fill="#666" font-style="italic">y</text>
+    <!-- Two parallel lines -->
+    <line x1="50" y1="160" x2="200" y2="80" stroke="#2196F3" stroke-width="2.5"/>
+    <line x1="50" y1="130" x2="200" y2="50" stroke="#4CAF50" stroke-width="2.5"/>
+    <!-- Labels -->
+    <text x="205" y="75" font-size="13" fill="#2196F3" font-style="italic">ℒ₁</text>
+    <text x="205" y="45" font-size="13" fill="#4CAF50" font-style="italic">ℒ₂</text>
+    <text x="125" y="210" text-anchor="middle" font-size="12" fill="#666">Parallel lines</text>
+  </g>
+  
+  <!-- Figure 2: Intersecting lines -->
+  <g transform="translate(250, 0)">
+    <text x="125" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Unique Solution (Consistent)</text>
+    <!-- Axes -->
+    <line x1="30" y1="180" x2="220" y2="180" stroke="#666" stroke-width="1.5"/>
+    <line x1="30" y1="180" x2="30" y2="40" stroke="#666" stroke-width="1.5"/>
+    <polygon points="220,180 210,175 210,185" fill="#666"/>
+    <polygon points="30,40 25,50 35,50" fill="#666"/>
+    <text x="225" y="185" font-size="12" fill="#666" font-style="italic">x</text>
+    <text x="25" y="35" font-size="12" fill="#666" font-style="italic">y</text>
+    <!-- Two intersecting lines -->
+    <line x1="40" y1="150" x2="200" y2="70" stroke="#2196F3" stroke-width="2.5"/>
+    <line x1="40" y1="60" x2="200" y2="160" stroke="#4CAF50" stroke-width="2.5"/>
+    <!-- Intersection point -->
+    <circle cx="120" cy="110" r="5" fill="#F44336"/>
+    <!-- Labels -->
+    <text x="205" y="65" font-size="13" fill="#2196F3" font-style="italic">ℒ₁</text>
+    <text x="205" y="165" font-size="13" fill="#4CAF50" font-style="italic">ℒ₂</text>
+    <text x="125" y="210" text-anchor="middle" font-size="12" fill="#666">Intersect at one point</text>
+  </g>
+  
+  <!-- Figure 3: Coincident lines -->
+  <g transform="translate(500, 0)">
+    <text x="125" y="20" text-anchor="middle" font-size="14" font-weight="bold" fill="#333">Infinitely Many (Consistent)</text>
+    <!-- Axes -->
+    <line x1="30" y1="180" x2="220" y2="180" stroke="#666" stroke-width="1.5"/>
+    <line x1="30" y1="180" x2="30" y2="40" stroke="#666" stroke-width="1.5"/>
+    <polygon points="220,180 210,175 210,185" fill="#666"/>
+    <polygon points="30,40 25,50 35,50" fill="#666"/>
+    <text x="225" y="185" font-size="12" fill="#666" font-style="italic">x</text>
+    <text x="25" y="35" font-size="12" fill="#666" font-style="italic">y</text>
+    <!-- Coincident line -->
+    <line x1="50" y1="160" x2="200" y2="60" stroke="#9C27B0" stroke-width="3"/>
+    <!-- Labels -->
+    <text x="205" y="55" font-size="13" fill="#9C27B0" font-style="italic">ℒ₁ = ℒ₂</text>
+    <text x="125" y="210" text-anchor="middle" font-size="12" fill="#666">Coincident lines</text>
+  </g>
+</svg>
