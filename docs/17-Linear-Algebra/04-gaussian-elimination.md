@@ -15,7 +15,7 @@ keywords:
     "Consistency",
     "線性代數",
     "高斯消去法",
-    "秩",    ,
+    "秩",
   ]
 tags: [Linear Algebra]
 ---
