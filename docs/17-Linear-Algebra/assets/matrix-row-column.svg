@@ -1,0 +1,30 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220" width="400" height="220">
+  <!-- Matrix bracket left -->
+  <path d="M 50 30 L 40 30 L 40 190 L 50 190" stroke="#374151" stroke-width="3" fill="none"/>
+  <!-- Matrix bracket right -->
+  <path d="M 230 30 L 240 30 L 240 190 L 230 190" stroke="#374151" stroke-width="3" fill="none"/>
+  
+  <!-- Matrix entries -->
+  <text x="70" y="60" font-family="serif" font-size="18" fill="#374151">a₁₁</text>
+  <text x="130" y="60" font-family="serif" font-size="18" fill="#374151">a₁₂</text>
+  <text x="190" y="60" font-family="serif" font-size="18" fill="#374151">a₁₃</text>
+  
+  <text x="70" y="110" font-family="serif" font-size="18" fill="#374151">a₂₁</text>
+  <text x="130" y="110" font-family="serif" font-size="18" fill="#374151">a₂₂</text>
+  <text x="190" y="110" font-family="serif" font-size="18" fill="#374151">a₂₃</text>
+  
+  <text x="70" y="160" font-family="serif" font-size="18" fill="#374151">a₃₁</text>
+  <text x="130" y="160" font-family="serif" font-size="18" fill="#374151">a₃₂</text>
+  <text x="190" y="160" font-family="serif" font-size="18" fill="#374151">a₃₃</text>
+  
+  <!-- Row highlight (row 2) -->
+  <rect x="55" y="85" width="180" height="35" fill="#2563eb" fill-opacity="0.2" rx="5"/>
+  
+  <!-- Column highlight (column 2) -->
+  <rect x="120" y="35" width="45" height="145" fill="#dc2626" fill-opacity="0.2" rx="5"/>
+  
+  <!-- Labels -->
+  <text x="270" y="110" font-family="sans-serif" font-size="14" fill="#2563eb">← Row 2</text>
+  <text x="125" y="205" font-family="sans-serif" font-size="14" fill="#dc2626">↑</text>
+  <text x="105" y="218" font-family="sans-serif" font-size="14" fill="#dc2626">Column 2</text>
+</svg>

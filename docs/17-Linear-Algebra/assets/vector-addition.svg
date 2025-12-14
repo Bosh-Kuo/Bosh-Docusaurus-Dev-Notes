@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 280" width="350" height="280">
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+  
+  <!-- Grid -->
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="50" y1="30" x2="50" y2="250"/>
+    <line x1="100" y1="30" x2="100" y2="250"/>
+    <line x1="150" y1="30" x2="150" y2="250"/>
+    <line x1="200" y1="30" x2="200" y2="250"/>
+    <line x1="250" y1="30" x2="250" y2="250"/>
+    <line x1="300" y1="30" x2="300" y2="250"/>
+    <line x1="30" y1="50" x2="320" y2="50"/>
+    <line x1="30" y1="100" x2="320" y2="100"/>
+    <line x1="30" y1="150" x2="320" y2="150"/>
+    <line x1="30" y1="200" x2="320" y2="200"/>
+    <line x1="30" y1="250" x2="320" y2="250"/>
+  </g>
+  
+  <!-- Axes -->
+  <line x1="30" y1="230" x2="330" y2="230" stroke="#374151" stroke-width="2"/>
+  <line x1="50" y1="260" x2="50" y2="25" stroke="#374151" stroke-width="2"/>
+  
+  <!-- Axis labels -->
+  <text x="325" y="245" font-family="serif" font-size="14" font-style="italic" fill="#374151">x</text>
+  <text x="35" y="35" font-family="serif" font-size="14" font-style="italic" fill="#374151">y</text>
+  
+  <!-- Vector u (blue) -->
+  <line x1="50" y1="230" x2="150" y2="130" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-blue)"/>
+  <text x="80" y="165" font-family="serif" font-size="16" font-weight="bold" fill="#2563eb">u</text>
+  
+  <!-- Vector v from tip of u (red) -->
+  <line x1="150" y1="130" x2="280" y2="80" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-red)"/>
+  <text x="220" y="90" font-family="serif" font-size="16" font-weight="bold" fill="#dc2626">v</text>
+  
+  <!-- Vector u+v (green) -->
+  <line x1="50" y1="230" x2="280" y2="80" stroke="#16a34a" stroke-width="3" marker-end="url(#arrow-green)"/>
+  <text x="155" y="175" font-family="serif" font-size="16" font-weight="bold" fill="#16a34a">u + v</text>
+  
+  <!-- Dashed parallelogram lines -->
+  <line x1="50" y1="230" x2="180" y2="180" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <line x1="180" y1="180" x2="280" y2="80" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,5"/>
+  
+  <!-- Points -->
+  <circle cx="50" cy="230" r="4" fill="#374151"/>
+  <circle cx="150" cy="130" r="4" fill="#2563eb"/>
+  <circle cx="280" cy="80" r="4" fill="#16a34a"/>
+</svg>

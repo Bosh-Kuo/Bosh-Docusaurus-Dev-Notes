@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 350 250" width="350" height="250">
+  <defs>
+    <marker id="arrow-orig" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arrow-scaled" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+  
+  <!-- Grid -->
+  <g stroke="#e5e7eb" stroke-width="1">
+    <line x1="50" y1="30" x2="50" y2="220"/>
+    <line x1="100" y1="30" x2="100" y2="220"/>
+    <line x1="150" y1="30" x2="150" y2="220"/>
+    <line x1="200" y1="30" x2="200" y2="220"/>
+    <line x1="250" y1="30" x2="250" y2="220"/>
+    <line x1="300" y1="30" x2="300" y2="220"/>
+    <line x1="30" y1="50" x2="320" y2="50"/>
+    <line x1="30" y1="100" x2="320" y2="100"/>
+    <line x1="30" y1="150" x2="320" y2="150"/>
+    <line x1="30" y1="200" x2="320" y2="200"/>
+  </g>
+  
+  <!-- Axes -->
+  <line x1="30" y1="200" x2="330" y2="200" stroke="#374151" stroke-width="2"/>
+  <line x1="50" y1="220" x2="50" y2="25" stroke="#374151" stroke-width="2"/>
+  
+  <!-- Axis labels -->
+  <text x="325" y="215" font-family="serif" font-size="14" font-style="italic" fill="#374151">x</text>
+  <text x="35" y="35" font-family="serif" font-size="14" font-style="italic" fill="#374151">y</text>
+  
+  <!-- Original vector v (blue) -->
+  <line x1="50" y1="200" x2="120" y2="150" stroke="#2563eb" stroke-width="3" marker-end="url(#arrow-orig)"/>
+  <text x="60" y="165" font-family="serif" font-size="16" font-weight="bold" fill="#2563eb">v</text>
+  <text x="125" y="165" font-family="serif" font-size="12" fill="#2563eb">(a, b)</text>
+  
+  <!-- Scaled vector cv (red) - c=2 -->
+  <line x1="50" y1="200" x2="190" y2="100" stroke="#dc2626" stroke-width="3" marker-end="url(#arrow-scaled)"/>
+  <text x="130" y="135" font-family="serif" font-size="16" font-weight="bold" fill="#dc2626">cv</text>
+  <text x="195" y="95" font-family="serif" font-size="12" fill="#dc2626">(ca, cb)</text>
+  
+  <!-- Origin -->
+  <circle cx="50" cy="200" r="4" fill="#374151"/>
+</svg>
