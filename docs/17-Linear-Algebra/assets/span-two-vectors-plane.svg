@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 320">
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8b5cf6"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="450" height="320" fill="#fafafa"/>
+  
+  <!-- Span plane -->
+  <polygon points="50,260 180,300 400,100 270,60" fill="#3b82f6" fill-opacity="0.12" stroke="#3b82f6" stroke-width="1"/>
+  
+  <!-- Origin -->
+  <circle cx="225" cy="180" r="4" fill="#333"/>
+  <text x="210" y="198" font-family="Arial" font-size="12" fill="#333">O</text>
+  
+  <!-- Vector u1 -->
+  <line x1="225" y1="180" x2="325" y2="120" stroke="#ef4444" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <text x="335" y="115" font-family="Arial" font-size="14" font-weight="bold" fill="#ef4444">u₁</text>
+  
+  <!-- Vector u2 -->
+  <line x1="225" y1="180" x2="295" y2="230" stroke="#22c55e" stroke-width="3" marker-end="url(#arrowGreen)"/>
+  <text x="305" y="240" font-family="Arial" font-size="14" font-weight="bold" fill="#22c55e">u₂</text>
+  
+  <!-- Vector v (linear combination) -->
+  <line x1="225" y1="180" x2="360" y2="155" stroke="#8b5cf6" stroke-width="2.5" marker-end="url(#arrowPurple)"/>
+  <text x="372" y="160" font-family="Arial" font-size="14" font-weight="bold" fill="#8b5cf6">v</text>
+  
+  <!-- Dashed parallelogram lines -->
+  <line x1="325" y1="120" x2="360" y2="155" stroke="#22c55e" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="295" y1="230" x2="360" y2="155" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Formula -->
+  <text x="280" y="80" font-family="Arial" font-size="12" fill="#8b5cf6">v = c₁u₁ + c₂u₂</text>
+</svg>

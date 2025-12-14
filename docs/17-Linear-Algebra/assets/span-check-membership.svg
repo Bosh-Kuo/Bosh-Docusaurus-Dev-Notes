@@ -1,0 +1,29 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 280">
+  <defs>
+    <marker id="arrowPurple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#8b5cf6"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="280" fill="#fafafa"/>
+  
+  <!-- Span plane -->
+  <polygon points="40,200 130,230 360,90 270,60" fill="#3b82f6" fill-opacity="0.15" stroke="#3b82f6" stroke-width="1"/>
+  <text x="300" y="55" font-family="Arial" font-size="12" fill="#3b82f6">Span(S)</text>
+  
+  <!-- Origin -->
+  <circle cx="200" cy="145" r="4" fill="#333"/>
+  <text x="185" y="163" font-family="Arial" font-size="12" fill="#333">O</text>
+  
+  <!-- Vector v (inside span) - on the plane -->
+  <line x1="200" y1="145" x2="300" y2="110" stroke="#8b5cf6" stroke-width="3" marker-end="url(#arrowPurple)"/>
+  <text x="315" y="108" font-family="Arial" font-size="14" font-weight="bold" fill="#8b5cf6">v ✓</text>
+  
+  <!-- Vector w (outside span) - pointing out of plane -->
+  <line x1="200" y1="145" x2="180" y2="50" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <text x="145" y="45" font-family="Arial" font-size="14" font-weight="bold" fill="#dc2626">w ✗</text>
+</svg>

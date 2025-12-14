@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 220">
+  <defs>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#22c55e"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="220" fill="#fafafa"/>
+  
+  <!-- Large ellipse representing V -->
+  <ellipse cx="200" cy="110" rx="160" ry="90" fill="#8b5cf6" fill-opacity="0.1" stroke="#8b5cf6" stroke-width="2"/>
+  <text x="330" y="45" font-family="Arial" font-size="16" font-weight="bold" fill="#8b5cf6">V</text>
+  
+  <!-- Small set S inside -->
+  <ellipse cx="150" cy="100" rx="50" ry="35" fill="#ef4444" fill-opacity="0.2" stroke="#ef4444" stroke-width="2"/>
+  <text x="130" y="75" font-family="Arial" font-size="14" font-weight="bold" fill="#ef4444">S</text>
+  
+  <!-- Vectors in S -->
+  <circle cx="130" cy="100" r="4" fill="#ef4444"/>
+  <circle cx="155" cy="90" r="4" fill="#ef4444"/>
+  <circle cx="165" cy="110" r="4" fill="#ef4444"/>
+  
+  <!-- Arrow showing "generates" -->
+  <path d="M 200 100 Q 250 70 300 90" stroke="#22c55e" stroke-width="2" fill="none" marker-end="url(#arrowGreen)"/>
+  <text x="235" y="65" font-family="Arial" font-size="12" fill="#22c55e">Span(S) = V</text>
+</svg>

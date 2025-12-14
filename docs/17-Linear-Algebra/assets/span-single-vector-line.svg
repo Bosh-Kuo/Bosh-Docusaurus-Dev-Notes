@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 300">
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#22c55e"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f59e0b"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="400" height="300" fill="#fafafa"/>
+  
+  <!-- Axes -->
+  <line x1="50" y1="150" x2="350" y2="150" stroke="#999" stroke-width="1"/>
+  <line x1="200" y1="280" x2="200" y2="20" stroke="#999" stroke-width="1"/>
+  <text x="360" y="155" font-family="Arial" font-size="14" fill="#666">x</text>
+  <text x="208" y="25" font-family="Arial" font-size="14" fill="#666">y</text>
+  
+  <!-- Span line -->
+  <line x1="80" y1="270" x2="320" y2="30" stroke="#3b82f6" stroke-width="2" stroke-dasharray="8,4"/>
+  
+  <!-- Vector u -->
+  <line x1="200" y1="150" x2="275" y2="75" stroke="#ef4444" stroke-width="3" marker-end="url(#arrowRed)"/>
+  <text x="285" y="70" font-family="Arial" font-size="14" font-weight="bold" fill="#ef4444">u</text>
+  
+  <!-- 0.5u -->
+  <line x1="200" y1="150" x2="237" y2="113" stroke="#22c55e" stroke-width="2.5" marker-end="url(#arrowGreen)"/>
+  <text x="248" y="108" font-family="Arial" font-size="12" fill="#22c55e">0.5u</text>
+  
+  <!-- -0.5u -->
+  <line x1="200" y1="150" x2="163" y2="187" stroke="#f59e0b" stroke-width="2.5" marker-end="url(#arrowOrange)"/>
+  <text x="130" y="210" font-family="Arial" font-size="12" fill="#f59e0b">-0.5u</text>
+  
+  <!-- Label -->
+  <text x="325" y="50" font-family="Arial" font-size="13" fill="#3b82f6">Span{u}</text>
+</svg>
