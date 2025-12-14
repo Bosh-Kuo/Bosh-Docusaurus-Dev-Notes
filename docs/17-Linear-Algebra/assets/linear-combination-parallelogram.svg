@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 320">
+  <!-- Background -->
+  <rect width="400" height="320" fill="white"/>
+  
+  <!-- Axes -->
+  <line x1="50" y1="270" x2="380" y2="270" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="270" x2="50" y2="30" stroke="#333" stroke-width="2"/>
+  
+  <!-- Axis arrows -->
+  <polygon points="380,270 370,265 370,275" fill="#333"/>
+  <polygon points="50,30 45,40 55,40" fill="#333"/>
+  
+  <!-- Axis labels -->
+  <text x="385" y="275" font-size="14" fill="#333">x</text>
+  <text x="45" y="20" font-size="14" fill="#333">y</text>
+  
+  <defs>
+    <marker id="arrowU" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowV" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowW" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
+    </marker>
+  </defs>
+  
+  <!-- Parallelogram (filled) -->
+  <polygon points="50,270 170,190 290,110 170,190" fill="none"/>
+  <polygon points="50,270 170,190 290,110 170,190" fill="rgba(100,100,100,0.1)"/>
+  
+  <!-- au vector -->
+  <line x1="50" y1="270" x2="170" y2="190" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowU)"/>
+  
+  <!-- bv vector -->
+  <line x1="50" y1="270" x2="170" y2="110" stroke="#16a34a" stroke-width="3" marker-end="url(#arrowV)"/>
+  
+  <!-- Parallelogram completion lines (dashed) -->
+  <line x1="170" y1="190" x2="290" y2="110" stroke="#16a34a" stroke-width="2" stroke-dasharray="5,5"/>
+  <line x1="170" y1="110" x2="290" y2="110" stroke="#2563eb" stroke-width="2" stroke-dasharray="5,5"/>
+  
+  <!-- Result vector w = au + bv -->
+  <line x1="50" y1="270" x2="290" y2="110" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowW)"/>
+  
+  <!-- Labels -->
+  <text x="100" y="245" font-size="13" fill="#2563eb" font-weight="bold">au</text>
+  <text x="90" y="175" font-size="13" fill="#16a34a" font-weight="bold">bv</text>
+  <text x="185" y="175" font-size="13" fill="#dc2626" font-weight="bold">w = au + bv</text>
+</svg>

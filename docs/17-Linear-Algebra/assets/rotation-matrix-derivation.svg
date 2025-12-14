@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 450 350">
+  <!-- Background -->
+  <rect width="450" height="350" fill="white"/>
+  
+  <!-- Axes -->
+  <line x1="80" y1="280" x2="420" y2="280" stroke="#333" stroke-width="2"/>
+  <line x1="80" y1="280" x2="80" y2="40" stroke="#333" stroke-width="2"/>
+  
+  <!-- Axis arrows -->
+  <polygon points="420,280 410,275 410,285" fill="#333"/>
+  <polygon points="80,40 75,50 85,50" fill="#333"/>
+  
+  <!-- Axis labels -->
+  <text x="425" y="285" font-size="14" fill="#333">x</text>
+  <text x="75" y="30" font-size="14" fill="#333">y</text>
+  <text x="70" y="295" font-size="12" fill="#333">O</text>
+  
+  <defs>
+    <marker id="arrowBlue2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#ea580c"/>
+    </marker>
+  </defs>
+  
+  <!-- Original vector P0 = (x0, y0) -->
+  <line x1="80" y1="280" x2="280" y2="160" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowBlue2)"/>
+  
+  <!-- Rotated vector P1 = (x1, y1) -->
+  <line x1="80" y1="280" x2="180" y2="80" stroke="#ea580c" stroke-width="3" marker-end="url(#arrowOrange)"/>
+  
+  <!-- Arc for angle alpha (original angle) -->
+  <path d="M 130 280 A 50 50 0 0 0 115 250" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  
+  <!-- Arc for angle theta (rotation angle) -->
+  <path d="M 115 250 A 70 70 0 0 0 105 210" fill="none" stroke="#ea580c" stroke-width="1.5"/>
+  
+  <!-- Dashed lines for coordinates -->
+  <line x1="280" y1="160" x2="280" y2="280" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="280" y1="160" x2="80" y2="160" stroke="#2563eb" stroke-width="1" stroke-dasharray="4,4"/>
+  
+  <line x1="180" y1="80" x2="180" y2="280" stroke="#ea580c" stroke-width="1" stroke-dasharray="4,4"/>
+  <line x1="180" y1="80" x2="80" y2="80" stroke="#ea580c" stroke-width="1" stroke-dasharray="4,4"/>
+  
+  <!-- Radius arc (showing r is constant) -->
+  <path d="M 280 160 A 150 150 0 0 0 180 80" fill="none" stroke="#888" stroke-width="1" stroke-dasharray="3,3"/>
+  
+  <!-- Labels -->
+  <text x="290" y="155" font-size="13" fill="#2563eb" font-weight="bold">P₀ = (x₀, y₀)</text>
+  <text x="190" y="75" font-size="13" fill="#ea580c" font-weight="bold">P₁ = (x₁, y₁)</text>
+  
+  <text x="135" y="275" font-size="12" fill="#2563eb">α</text>
+  <text x="100" y="225" font-size="12" fill="#ea580c">θ</text>
+  
+  <text x="285" y="295" font-size="11" fill="#2563eb">x₀</text>
+  <text x="55" y="165" font-size="11" fill="#2563eb">y₀</text>
+  
+  <text x="185" y="295" font-size="11" fill="#ea580c">x₁</text>
+  <text x="55" y="85" font-size="11" fill="#ea580c">y₁</text>
+  
+  <text x="320" y="130" font-size="11" fill="#888">r</text>
+</svg>

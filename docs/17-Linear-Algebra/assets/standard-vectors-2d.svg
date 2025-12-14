@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 280">
+  <!-- Background -->
+  <rect width="300" height="280" fill="white"/>
+  
+  <!-- Axes -->
+  <line x1="50" y1="220" x2="270" y2="220" stroke="#333" stroke-width="2"/>
+  <line x1="50" y1="220" x2="50" y2="40" stroke="#333" stroke-width="2"/>
+  
+  <!-- Axis arrows -->
+  <polygon points="270,220 260,215 260,225" fill="#333"/>
+  <polygon points="50,40 45,50 55,50" fill="#333"/>
+  
+  <!-- Axis labels -->
+  <text x="275" y="225" font-size="14" fill="#333">x</text>
+  <text x="45" y="30" font-size="14" fill="#333">y</text>
+  
+  <defs>
+    <marker id="arrowE1" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+    <marker id="arrowE2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+  
+  <!-- e1 = [1, 0]^T -->
+  <line x1="50" y1="220" x2="150" y2="220" stroke="#2563eb" stroke-width="4" marker-end="url(#arrowE1)"/>
+  
+  <!-- e2 = [0, 1]^T -->
+  <line x1="50" y1="220" x2="50" y2="120" stroke="#16a34a" stroke-width="4" marker-end="url(#arrowE2)"/>
+  
+  <!-- Labels -->
+  <text x="160" y="225" font-size="14" fill="#2563eb" font-weight="bold">e₁</text>
+  <text x="35" y="110" font-size="14" fill="#16a34a" font-weight="bold">e₂</text>
+  
+  <!-- Unit marks -->
+  <line x1="150" y1="215" x2="150" y2="225" stroke="#2563eb" stroke-width="2"/>
+  <line x1="45" y1="120" x2="55" y2="120" stroke="#16a34a" stroke-width="2"/>
+  
+  <text x="147" y="240" font-size="10" fill="#666">1</text>
+  <text x="60" y="125" font-size="10" fill="#666">1</text>
+</svg>

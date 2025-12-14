@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 400">
+  <!-- Background -->
+  <rect width="500" height="400" fill="white"/>
+  
+  <!-- Unit Circle -->
+  <circle cx="250" cy="180" r="120" fill="none" stroke="#e5e7eb" stroke-width="2"/>
+  
+  <!-- Axes -->
+  <line x1="80" y1="180" x2="420" y2="180" stroke="#333" stroke-width="2"/>
+  <line x1="250" y1="340" x2="250" y2="20" stroke="#333" stroke-width="2"/>
+  
+  <!-- Axis arrows -->
+  <polygon points="420,180 410,175 410,185" fill="#333"/>
+  <polygon points="250,20 245,30 255,30" fill="#333"/>
+  
+  <!-- Axis labels -->
+  <text x="425" y="185" font-size="16" fill="#333" font-weight="bold">x</text>
+  <text x="255" y="18" font-size="16" fill="#333" font-weight="bold">y</text>
+  
+  <defs>
+    <marker id="arrowRed2" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#dc2626"/>
+    </marker>
+    <marker id="arrowBlue3" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#2563eb"/>
+    </marker>
+  </defs>
+  
+  <!-- Original point (1,0) on circle -->
+  <circle cx="370" cy="180" r="6" fill="#dc2626"/>
+  <text x="378" y="175" font-size="13" fill="#dc2626" font-weight="bold">(1, 0)</text>
+  
+  <!-- Original point (0,1) on circle -->
+  <circle cx="250" cy="60" r="6" fill="#2563eb"/>
+  <text x="258" y="55" font-size="13" fill="#2563eb" font-weight="bold">(0, 1)</text>
+  
+  <!-- Rotated point from (1,0) -> (cos θ, sin θ) at θ=30° on circle -->
+  <!-- cos(30°) ≈ 0.866, sin(30°) = 0.5, so point is at (250 + 120*0.866, 180 - 120*0.5) = (354, 120) -->
+  <line x1="250" y1="180" x2="349" y2="120" stroke="#dc2626" stroke-width="3" marker-end="url(#arrowRed2)"/>
+  <circle cx="354" cy="120" r="5" fill="#dc2626"/>
+  <text x="362" y="110" font-size="12" fill="#dc2626" font-weight="bold">(cos θ, sin θ)</text>
+  
+  <!-- Rotated point from (0,1) -> (-sin θ, cos θ) at θ=30° on circle -->
+  <!-- This is (0,1) rotated 30°, which is at angle 90°+30°=120° from x-axis -->
+  <!-- cos(120°) = -0.5, sin(120°) ≈ 0.866, so point is at (250 + 120*(-0.5), 180 - 120*0.866) = (190, 76) -->
+  <line x1="250" y1="180" x2="185" y2="81" stroke="#2563eb" stroke-width="3" marker-end="url(#arrowBlue3)"/>
+  <circle cx="190" cy="76" r="5" fill="#2563eb"/>
+  <text x="95" y="70" font-size="12" fill="#2563eb" font-weight="bold">(-sin θ, cos θ)</text>
+  
+  <!-- Angle arc for red vector (from x-axis) -->
+  <path d="M 290 180 A 40 40 0 0 0 285 160" fill="none" stroke="#dc2626" stroke-width="2"/>
+  <text x="292" y="168" font-size="12" fill="#dc2626">θ</text>
+  
+  <!-- Angle arc for blue vector (from y-axis) -->
+  <path d="M 250 140 A 40 40 0 0 0 230 145" fill="none" stroke="#2563eb" stroke-width="2"/>
+  <text x="232" y="138" font-size="12" fill="#2563eb">θ</text>
+  
+  <!-- Dashed lines showing original positions -->
+  <line x1="250" y1="180" x2="370" y2="180" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,5"/>
+  <line x1="250" y1="180" x2="250" y2="60" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,5"/>
+  
+  <!-- Curved arrows showing rotation -->
+  <path d="M 360 180 A 110 110 0 0 0 354 120" fill="none" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,3"/>
+  <path d="M 250 70 A 110 110 0 0 0 190 76" fill="none" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="3,3"/>
+</svg>
