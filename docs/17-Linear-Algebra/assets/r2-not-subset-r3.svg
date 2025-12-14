@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333"/>
+    </marker>
+  </defs>
+  
+  <!-- R² Section -->
+  <rect x="30" y="30" width="280" height="220" rx="12" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+  <text x="170" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#1565c0">R²</text>
+  
+  <!-- R² vectors -->
+  <rect x="60" y="90" width="80" height="60" rx="6" fill="#fff" stroke="#1976d2" stroke-width="1.5"/>
+  <text x="100" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">x₁</text>
+  <text x="100" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">x₂</text>
+  
+  <rect x="170" y="90" width="80" height="60" rx="6" fill="#fff" stroke="#1976d2" stroke-width="1.5"/>
+  <text x="210" y="115" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">1</text>
+  <text x="210" y="138" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">1</text>
+  
+  <text x="170" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#1565c0">2-component vectors</text>
+  
+  <!-- NOT EQUAL symbol -->
+  <text x="350" y="145" text-anchor="middle" font-family="Arial, sans-serif" font-size="36" font-weight="bold" fill="#d32f2f">≠</text>
+  <text x="350" y="175" text-anchor="middle" font-family="Arial, sans-serif" font-size="12" fill="#d32f2f">Different types!</text>
+  
+  <!-- R³ Section -->
+  <rect x="390" y="30" width="280" height="220" rx="12" fill="#fff3e0" stroke="#f57c00" stroke-width="2"/>
+  <text x="530" y="60" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#e65100">R³</text>
+  
+  <!-- R³ vectors -->
+  <rect x="420" y="85" width="80" height="80" rx="6" fill="#fff" stroke="#f57c00" stroke-width="1.5"/>
+  <text x="460" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">x₁</text>
+  <text x="460" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">x₂</text>
+  <text x="460" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">x₃</text>
+  
+  <rect x="530" y="85" width="80" height="80" rx="6" fill="#fff" stroke="#f57c00" stroke-width="1.5"/>
+  <text x="570" y="110" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">1</text>
+  <text x="570" y="133" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">1</text>
+  <text x="570" y="156" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#333">0</text>
+  
+  <text x="530" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="13" fill="#e65100">3-component vectors</text>
+  
+  <!-- Question mark -->
+  <text x="100" y="225" text-anchor="middle" font-family="Arial, sans-serif" font-size="14" fill="#1565c0">[1, 1]ᵀ ∈ R³ ?</text>
+  <text x="100" y="242" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#d32f2f">NO!</text>
+</svg>
