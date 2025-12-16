@@ -4,7 +4,7 @@ sidebar_label: "useImperativeHandle"
 description: 本篇文章深入探討 React useImperativeHandle 的使用時機、運作原理與實際應用場景，幫助開發者理解何時該使用這個相對冷門但實用的 Hook
 slug: "/React/useImperativeHandle"
 last_update:
-  date: 2024-12-11
+  date: 2025-12-11
 keywords: [React, Hook, useImperativeHandle, forwardRef, ref, Imperative]
 tags: [React, Hook]
 ---
