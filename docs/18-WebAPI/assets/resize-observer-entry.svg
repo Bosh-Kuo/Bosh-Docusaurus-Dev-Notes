@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 400" width="800" height="400">
+  <!-- Background -->
+  <rect width="800" height="400" fill="#f9fafb"/>
+  
+  <!-- Element Box with Box Model layers -->
+  <g transform="translate(50, 30)">
+    <!-- Border Box (outermost) -->
+    <rect x="0" y="0" width="300" height="220" fill="#fed7aa" stroke="#f59e0b" stroke-width="3" rx="4"/>
+    <text x="10" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#92400e">borderBoxSize</text>
+    
+    <!-- Content Box -->
+    <rect x="30" y="40" width="240" height="140" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="4"/>
+    <text x="40" y="62" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1e40af">contentBoxSize</text>
+    
+    <!-- Content Area -->
+    <rect x="50" y="80" width="200" height="80" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" rx="2"/>
+    <text x="150" y="125" font-family="Arial, sans-serif" font-size="14" fill="#1e40af" text-anchor="middle">Content</text>
+    
+    <!-- Dimension labels -->
+    <text x="150" y="200" font-family="Arial, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">padding: 20px / border: 30px</text>
+  </g>
+  
+  <!-- contentRect visualization -->
+  <g transform="translate(50, 270)">
+    <rect x="0" y="0" width="300" height="100" fill="#e0e7ff" stroke="#6366f1" stroke-width="2" rx="4"/>
+    <text x="10" y="22" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#4338ca">contentRect (DOMRectReadOnly)</text>
+    <text x="20" y="50" font-family="monospace" font-size="11" fill="#4338ca">x, y, width, height</text>
+    <text x="20" y="70" font-family="monospace" font-size="11" fill="#4338ca">top, right, bottom, left</text>
+  </g>
+  
+  <!-- Entry Properties Panel -->
+  <g transform="translate(420, 30)">
+    <rect x="0" y="0" width="340" height="340" fill="#ffffff" stroke="#e5e7eb" stroke-width="2" rx="8"/>
+    <text x="170" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#374151" text-anchor="middle">ResizeObserverEntry</text>
+    
+    <!-- target -->
+    <g transform="translate(20, 50)">
+      <rect x="0" y="0" width="300" height="50" fill="#fef3c7" stroke="#f59e0b" stroke-width="1" rx="4"/>
+      <text x="15" y="20" font-family="monospace" font-size="12" font-weight="bold" fill="#b45309">target</text>
+      <text x="15" y="38" font-family="Arial, sans-serif" font-size="11" fill="#92400e">Element reference</text>
+    </g>
+    
+    <!-- contentBoxSize -->
+    <g transform="translate(20, 110)">
+      <rect x="0" y="0" width="300" height="50" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="4"/>
+      <text x="15" y="20" font-family="monospace" font-size="12" font-weight="bold" fill="#1e40af">contentBoxSize[ ]</text>
+      <text x="15" y="38" font-family="Arial, sans-serif" font-size="11" fill="#1e40af">{ inlineSize, blockSize }</text>
+    </g>
+    
+    <!-- borderBoxSize -->
+    <g transform="translate(20, 170)">
+      <rect x="0" y="0" width="300" height="50" fill="#fed7aa" stroke="#f59e0b" stroke-width="1" rx="4"/>
+      <text x="15" y="20" font-family="monospace" font-size="12" font-weight="bold" fill="#92400e">borderBoxSize[ ]</text>
+      <text x="15" y="38" font-family="Arial, sans-serif" font-size="11" fill="#92400e">{ inlineSize, blockSize }</text>
+    </g>
+    
+    <!-- devicePixelContentBoxSize -->
+    <g transform="translate(20, 230)">
+      <rect x="0" y="0" width="300" height="50" fill="#dcfce7" stroke="#22c55e" stroke-width="1" rx="4"/>
+      <text x="15" y="20" font-family="monospace" font-size="12" font-weight="bold" fill="#15803d">devicePixelContentBoxSize[ ]</text>
+      <text x="15" y="38" font-family="Arial, sans-serif" font-size="11" fill="#15803d">{ inlineSize, blockSize }</text>
+    </g>
+    
+    <!-- contentRect -->
+    <g transform="translate(20, 290)">
+      <rect x="0" y="0" width="300" height="40" fill="#e0e7ff" stroke="#6366f1" stroke-width="1" rx="4"/>
+      <text x="15" y="18" font-family="monospace" font-size="12" font-weight="bold" fill="#4338ca">contentRect</text>
+      <text x="120" y="18" font-family="Arial, sans-serif" font-size="10" fill="#6366f1">(legacy)</text>
+    </g>
+  </g>
+</svg>

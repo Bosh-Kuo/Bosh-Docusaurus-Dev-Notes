@@ -1,0 +1,128 @@
+.container {
+  background: linear-gradient(135deg, #ecfdf5 0%, #d1fae5 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid #a7f3d0;
+}
+
+.header {
+  margin-bottom: 1.5rem;
+}
+
+.title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #064e3b;
+}
+
+.description {
+  margin: 0;
+  color: #047857;
+  font-size: 0.9rem;
+}
+
+.slider {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+}
+
+.sliderLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #064e3b;
+  font-size: 0.9rem;
+  font-weight: 500;
+  text-align: center;
+}
+
+.sliderInput {
+  width: 100%;
+  max-width: 400px;
+  margin: 0 auto;
+  accent-color: #10b981;
+}
+
+.demoWrapper {
+  display: flex;
+  justify-content: center;
+  padding: 1rem;
+  background: linear-gradient(45deg, #f0fdf4 25%, transparent 25%),
+    linear-gradient(-45deg, #f0fdf4 25%, transparent 25%),
+    linear-gradient(45deg, transparent 75%, #f0fdf4 75%),
+    linear-gradient(-45deg, transparent 75%, #f0fdf4 75%);
+  background-size: 20px 20px;
+  background-position: 0 0, 0 10px, 10px -10px, -10px 0px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  min-height: 150px;
+  align-items: center;
+}
+
+.textContainer {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  border-radius: 8px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.3);
+  transition: width 0.1s ease-out;
+}
+
+.dynamicText {
+  margin: 0;
+  color: white;
+  font-weight: 600;
+  line-height: 1.4;
+  text-align: center;
+  transition: font-size 0.1s ease-out;
+}
+
+.stats {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.5rem;
+  margin-top: 1.5rem;
+  padding: 1rem;
+  background: #ffffff;
+  border-radius: 8px;
+}
+
+.statItem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.statLabel {
+  font-size: 0.8rem;
+  color: #047857;
+}
+
+.statValue {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #064e3b;
+  font-family: ui-monospace, monospace;
+}
+
+.statArrow {
+  font-size: 1.5rem;
+  color: #10b981;
+}
+
+.codeHint {
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.codeHint code {
+  background: rgba(16, 185, 129, 0.15);
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  font-size: 0.85rem;
+  color: #047857;
+}

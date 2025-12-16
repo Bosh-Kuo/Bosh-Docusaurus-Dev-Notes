@@ -1,0 +1,235 @@
+.container {
+  background: linear-gradient(135deg, #fdf4ff 0%, #fae8ff 100%);
+  border-radius: 12px;
+  padding: 1.5rem;
+  margin: 1.5rem 0;
+  border: 1px solid #e9d5ff;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.title {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.25rem;
+  color: #581c87;
+}
+
+.description {
+  margin: 0;
+  color: #7e22ce;
+  font-size: 0.9rem;
+}
+
+.controls {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.controlRow {
+  display: flex;
+  justify-content: center;
+}
+
+.boxSelector {
+  display: flex;
+  gap: 0.5rem;
+  background: #f3e8ff;
+  padding: 0.25rem;
+  border-radius: 8px;
+}
+
+.optionBtn {
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: #7e22ce;
+  cursor: pointer;
+  font-size: 0.9rem;
+  font-weight: 500;
+  font-family: ui-monospace, monospace;
+  transition: all 0.2s ease;
+}
+
+.optionBtn:hover {
+  background: rgba(168, 85, 247, 0.2);
+}
+
+.optionBtn.active {
+  background: #a855f7;
+  color: white;
+  box-shadow: 0 2px 4px rgba(168, 85, 247, 0.3);
+}
+
+.sliderRow {
+  display: flex;
+  gap: 2rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.sliderLabel {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  color: #581c87;
+  font-size: 0.85rem;
+  font-weight: 500;
+}
+
+.slider {
+  width: 150px;
+  accent-color: #a855f7;
+}
+
+.content {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+@media (max-width: 768px) {
+  .content {
+    flex-direction: column;
+  }
+}
+
+.demoArea {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  background: #ffffff;
+  border-radius: 8px;
+  min-height: 250px;
+}
+
+.resizableBox {
+  width: 200px;
+  height: 150px;
+  min-width: 100px;
+  min-height: 80px;
+  max-width: 350px;
+  max-height: 300px;
+  background: linear-gradient(135deg, #c084fc 0%, #a855f7 100%);
+  border-style: solid;
+  border-color: #7e22ce;
+  border-radius: 8px;
+  resize: both;
+  overflow: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
+}
+
+.innerContent {
+  background: rgba(255, 255, 255, 0.9);
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #7e22ce;
+  font-size: 0.9rem;
+}
+
+.infoPanel {
+  flex: 1;
+  min-width: 280px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.resultCard {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 2px solid #e9d5ff;
+}
+
+.resultHeader {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #f3e8ff;
+}
+
+.observeIcon {
+  font-size: 1.25rem;
+}
+
+.boxType {
+  font-family: ui-monospace, monospace;
+  font-weight: 600;
+  color: #a855f7;
+  font-size: 1rem;
+}
+
+.resultValues {
+  display: flex;
+  gap: 1rem;
+}
+
+.valueItem {
+  flex: 1;
+  background: #faf5ff;
+  padding: 0.75rem;
+  border-radius: 6px;
+  text-align: center;
+}
+
+.valueLabel {
+  display: block;
+  font-size: 0.75rem;
+  color: #7e22ce;
+  margin-bottom: 0.25rem;
+  font-family: ui-monospace, monospace;
+}
+
+.valueNum {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #581c87;
+  font-family: ui-monospace, monospace;
+}
+
+.explanation {
+  background: #ffffff;
+  border-radius: 8px;
+  padding: 1rem;
+  border: 1px solid #e9d5ff;
+}
+
+.explanation p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+}
+
+.explanation strong {
+  color: #7e22ce;
+}
+
+.formula {
+  text-align: center;
+  min-height: 1.5rem;
+}
+
+.formula code {
+  background: #f3e8ff;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  font-size: 0.85rem;
+  color: #7e22ce;
+}

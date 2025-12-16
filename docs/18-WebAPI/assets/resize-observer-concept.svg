@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 280" width="800" height="280">
+  <!-- Background -->
+  <rect width="800" height="280" fill="#f9fafb"/>
+  
+  <!-- Step 1: Create Observer -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="80" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">1. Create</text>
+    <text x="80" y="60" font-family="monospace" font-size="11" fill="#1e40af" text-anchor="middle">new ResizeObserver(</text>
+    <text x="80" y="78" font-family="monospace" font-size="11" fill="#1e40af" text-anchor="middle">callback)</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <g transform="translate(220, 100)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+  </g>
+  
+  <!-- Step 2: Observe Element -->
+  <g transform="translate(290, 50)">
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+    <text x="80" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#15803d" text-anchor="middle">2. Observe</text>
+    <text x="80" y="60" font-family="monospace" font-size="11" fill="#15803d" text-anchor="middle">observer.observe(</text>
+    <text x="80" y="78" font-family="monospace" font-size="11" fill="#15803d" text-anchor="middle">element)</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <g transform="translate(460, 100)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+  </g>
+  
+  <!-- Step 3: Size Changes -->
+  <g transform="translate(530, 50)">
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2"/>
+    <text x="80" y="35" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#b45309" text-anchor="middle">3. Resize</text>
+    <rect x="40" y="50" width="35" height="35" fill="#fcd34d" stroke="#f59e0b" stroke-width="1" stroke-dasharray="4,2"/>
+    <rect x="85" y="45" width="45" height="45" fill="#fcd34d" stroke="#f59e0b" stroke-width="1"/>
+  </g>
+  
+  <!-- Arrow 3 (curved back) -->
+  <path d="M 610 160 L 610 200 L 130 200 L 130 160" fill="none" stroke="#6b7280" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 4: Callback -->
+  <g transform="translate(50, 180)">
+    <rect x="0" y="0" width="160" height="60" rx="8" fill="#fae8ff" stroke="#a855f7" stroke-width="2"/>
+    <text x="80" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#7e22ce" text-anchor="middle">4. Callback</text>
+    <text x="80" y="45" font-family="monospace" font-size="11" fill="#7e22ce" text-anchor="middle">entries[ ]</text>
+  </g>
+  
+  <!-- Arrow definitions -->
+  <defs>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6b7280"/>
+    </marker>
+  </defs>
+</svg>
