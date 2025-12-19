@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 300">
+  <!-- Background -->
+  <rect width="500" height="300" fill="#fafafa"/>
+  
+  <!-- Plane representing Span{u1, u2} -->
+  <polygon points="50,250 250,280 450,200 250,170" fill="#e3f2fd" stroke="#1976d2" stroke-width="1" opacity="0.6"/>
+  
+  <!-- Origin -->
+  <circle cx="200" cy="220" r="4" fill="#333"/>
+  <text x="185" y="240" font-family="Arial" font-size="12" fill="#333">O</text>
+  
+  <!-- Vector u1 -->
+  <defs>
+    <marker id="arrowhead1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1976d2"/>
+    </marker>
+    <marker id="arrowhead2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d32f2f"/>
+    </marker>
+    <marker id="arrowhead3" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#388e3c"/>
+    </marker>
+  </defs>
+  
+  <line x1="200" y1="220" x2="320" y2="190" stroke="#1976d2" stroke-width="3" marker-end="url(#arrowhead1)"/>
+  <text x="330" y="185" font-family="Arial" font-size="14" fill="#1976d2" font-weight="bold">u1</text>
+  
+  <!-- Vector u2 -->
+  <line x1="200" y1="220" x2="280" y2="260" stroke="#d32f2f" stroke-width="3" marker-end="url(#arrowhead2)"/>
+  <text x="290" y="265" font-family="Arial" font-size="14" fill="#d32f2f" font-weight="bold">u2</text>
+  
+  <!-- Vector v (in span - L.D.) -->
+  <line x1="200" y1="220" x2="350" y2="230" stroke="#388e3c" stroke-width="3" marker-end="url(#arrowhead3)"/>
+  <text x="360" y="225" font-family="Arial" font-size="14" fill="#388e3c" font-weight="bold">v</text>
+  
+  <!-- Dashed lines showing linear combination -->
+  <line x1="320" y1="190" x2="350" y2="230" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="280" y1="260" x2="350" y2="230" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Title -->
+  <text x="250" y="30" font-family="Arial" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">Linear Dependence</text>
+  
+  <!-- Explanation -->
+  <text x="250" y="55" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">v = c1·u1 + c2·u2</text>
+  <text x="250" y="75" font-family="Arial" font-size="12" fill="#666" text-anchor="middle">{u1, u2, v} is L.D.</text>
+</svg>

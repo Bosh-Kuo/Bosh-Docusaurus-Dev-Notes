@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 280">
+  <!-- Background -->
+  <rect width="600" height="280" fill="#fafafa"/>
+  
+  <!-- Left side: L.D. case -->
+  <rect x="20" y="50" width="260" height="200" fill="#ffebee" stroke="#d32f2f" stroke-width="2" rx="8"/>
+  <text x="150" y="80" font-family="Arial" font-size="14" fill="#d32f2f" text-anchor="middle" font-weight="bold">Linear Dependence (L.D.)</text>
+  
+  <!-- Matrix representation for L.D. -->
+  <text x="150" y="115" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">rank(A) &lt; n (columns)</text>
+  
+  <!-- Visual: 3 vectors but only 2D span -->
+  <g transform="translate(80, 140)">
+    <polygon points="0,80 60,100 140,60 80,40" fill="#ffcdd2" stroke="#d32f2f" stroke-width="1" opacity="0.7"/>
+    <circle cx="50" cy="70" r="3" fill="#333"/>
+    
+    <defs>
+      <marker id="arrLD1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#1976d2"/>
+      </marker>
+      <marker id="arrLD2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#d32f2f"/>
+      </marker>
+      <marker id="arrLD3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#ff9800"/>
+      </marker>
+    </defs>
+    
+    <line x1="50" y1="70" x2="110" y2="50" stroke="#1976d2" stroke-width="2.5" marker-end="url(#arrLD1)"/>
+    <line x1="50" y1="70" x2="90" y2="90" stroke="#d32f2f" stroke-width="2.5" marker-end="url(#arrLD2)"/>
+    <line x1="50" y1="70" x2="130" y2="70" stroke="#ff9800" stroke-width="2.5" marker-end="url(#arrLD3)"/>
+  </g>
+  
+  <text x="150" y="235" font-family="Arial" font-size="11" fill="#666" text-anchor="middle">3 vectors, but span only 2D</text>
+  
+  <!-- Right side: L.I. case -->
+  <rect x="320" y="50" width="260" height="200" fill="#e8f5e9" stroke="#388e3c" stroke-width="2" rx="8"/>
+  <text x="450" y="80" font-family="Arial" font-size="14" fill="#388e3c" text-anchor="middle" font-weight="bold">Linear Independence (L.I.)</text>
+  
+  <!-- Matrix representation for L.I. -->
+  <text x="450" y="115" font-family="Arial" font-size="12" fill="#333" text-anchor="middle">rank(A) = n (columns)</text>
+  
+  <!-- Visual: 3 vectors spanning 3D -->
+  <g transform="translate(380, 130)">
+    <polygon points="0,90 50,110 130,70 80,50" fill="#c8e6c9" stroke="#388e3c" stroke-width="1" opacity="0.5"/>
+    <circle cx="50" cy="80" r="3" fill="#333"/>
+    
+    <defs>
+      <marker id="arrLI1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#1976d2"/>
+      </marker>
+      <marker id="arrLI2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#d32f2f"/>
+      </marker>
+      <marker id="arrLI3" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+        <polygon points="0 0, 8 3, 0 6" fill="#388e3c"/>
+      </marker>
+    </defs>
+    
+    <line x1="50" y1="80" x2="110" y2="60" stroke="#1976d2" stroke-width="2.5" marker-end="url(#arrLI1)"/>
+    <line x1="50" y1="80" x2="90" y2="100" stroke="#d32f2f" stroke-width="2.5" marker-end="url(#arrLI2)"/>
+    <line x1="50" y1="80" x2="60" y2="30" stroke="#388e3c" stroke-width="2.5" marker-end="url(#arrLI3)"/>
+  </g>
+  
+  <text x="450" y="235" font-family="Arial" font-size="11" fill="#666" text-anchor="middle">3 vectors spanning 3D</text>
+  
+  <!-- Title -->
+  <text x="300" y="25" font-family="Arial" font-size="16" fill="#333" text-anchor="middle" font-weight="bold">Rank and Linear Dependence/Independence</text>
+</svg>
