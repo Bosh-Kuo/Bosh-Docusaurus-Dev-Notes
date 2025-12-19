@@ -24,6 +24,8 @@ tags: [Linear Algebra]
 
 ## **什麼是 Span？**
 
+![Span 概念動畫](./assets/span-concept-animation.svg)
+
 ### **直觀理解**
 
 給定一組向量，對它們進行任意的**縮放**（乘以純量）和**相加**，所有能產生的向量就構成了這組向量的 **Span**。
@@ -302,6 +304,8 @@ $$
 ## **冗餘向量與 Span**
 
 ### **什麼是冗餘向量？**
+
+![冗餘向量動畫](./assets/redundant-vectors-animation.svg)
 
 如果一個向量可以被集合中的其他向量線性組合出來，那麼這個向量就是「冗餘」的——移除它不會改變 Span。
 

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .grid { stroke: #e0e0e0; stroke-width: 0.5; }
+    .axis { stroke: #888; stroke-width: 1.5; }
+    .vector-u { stroke: #FF5252; stroke-width: 3; marker-end: url(#arrow-u); }
+    .vector-v { stroke: #448AFF; stroke-width: 3; marker-end: url(#arrow-v); }
+    .vector-w { stroke: #FFB300; stroke-width: 3; marker-end: url(#arrow-w); }
+    .label { font-family: sans-serif; font-size: 13px; font-weight: 600; text-anchor: middle; }
+    .label-u { fill: #FF5252; }
+    .label-v { fill: #448AFF; }
+    .label-w { fill: #FFB300; }
+    .span-plane { fill: rgba(124, 77, 255, 0.1); stroke: rgba(124, 77, 255, 0.4); stroke-width: 1.5; }
+    .span-line { stroke: rgba(124, 77, 255, 0.8); stroke-width: 4; stroke-linecap: round; }
+    .title { font-family: sans-serif; font-size: 14px; font-weight: bold; fill: #333; text-anchor: middle; }
+  </style>
+
+  <defs>
+    <marker id="arrow-u" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF5252" />
+    </marker>
+    <marker id="arrow-v" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#448AFF" />
+    </marker>
+    <marker id="arrow-w" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FFB300" />
+    </marker>
+  </defs>
+
+  <!-- Divider -->
+  <line x1="300" y1="20" x2="300" y2="380" stroke="#ccc" stroke-dasharray="5,5" />
+
+  <!-- LEFT PANEL: Removing Redundant Vector -->
+  <g transform="translate(150, 200)">
+    <text y="-170" class="title">Removing Redundant Vector</text>
+    
+    <!-- Plane (Stays) -->
+    <polygon points="-120,40 80,-60 120,-40 -80,60" class="span-plane" />
+    
+    <!-- Vectors -->
+    <line x1="0" y1="0" x2="60" y2="-30" class="vector-u" />
+    <text x="65" y="-35" class="label label-u">u1</text>
+    
+    <line x1="0" y1="0" x2="-30" y2="60" class="vector-v" />
+    <text x="-35" y="75" class="label label-v">u2</text>
+    
+    <g>
+      <line x1="0" y1="0" x2="30" y2="30" class="vector-w" />
+      <text x="35" y="45" class="label label-w">w (Redundant)</text>
+      <animate attributeName="opacity" values="1;1;0.2;0.2;1" dur="4s" repeatCount="indefinite" />
+    </g>
+
+    <text y="-140" class="label" style="fill: #666; font-weight: normal; font-size: 11px;">w = c1u1 + c2u2 &#8712; Span{u1, u2}</text>
+  </g>
+
+  <!-- RIGHT PANEL: Removing Essential Vector -->
+  <g transform="translate(450, 200)">
+    <text y="-170" class="title">Removing Essential Vector</text>
+    
+    <!-- Plane (Shrinks to Line) -->
+    <g>
+      <polygon points="-120,40 80,-60 120,-40 -80,60" class="span-plane">
+        <animate attributeName="opacity" values="1;1;0;0;1" dur="4s" repeatCount="indefinite" />
+      </polygon>
+      <line x1="-120" y1="60" x2="120" y2="-60" class="span-line" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;0" dur="4s" repeatCount="indefinite" />
+      </line>
+    </g>
+
+    <!-- Vectors -->
+    <line x1="0" y1="0" x2="60" y2="-30" class="vector-u" />
+    <text x="65" y="-35" class="label label-u">u1</text>
+    
+    <g>
+      <line x1="0" y1="0" x2="-30" y2="60" class="vector-v" />
+      <text x="-35" y="75" class="label label-v">u2 (Essential)</text>
+      <animate attributeName="opacity" values="1;1;0.2;0.2;1" dur="4s" repeatCount="indefinite" />
+    </g>
+  </g>
+</svg>

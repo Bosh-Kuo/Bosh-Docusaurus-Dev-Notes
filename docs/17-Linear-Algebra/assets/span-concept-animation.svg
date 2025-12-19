@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="600" height="400" viewBox="0 0 600 400" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .grid { stroke: #e0e0e0; stroke-width: 1; }
+    .axis { stroke: #888; stroke-width: 2; }
+    .vector-u { stroke: #FF5252; stroke-width: 3; marker-end: url(#arrow-u); }
+    .vector-v { stroke: #448AFF; stroke-width: 3; marker-end: url(#arrow-v); }
+    .vector-sum { stroke: #7C4DFF; stroke-width: 4; marker-end: url(#arrow-sum); stroke-dasharray: 8,4; }
+    .label { font-family: sans-serif; font-size: 14px; font-weight: 600; }
+    .label-u { fill: #FF5252; }
+    .label-v { fill: #448AFF; }
+    .label-sum { fill: #7C4DFF; }
+    .label-static { fill: #888; font-weight: 400; font-size: 12px; }
+    .span-region { fill: rgba(124, 77, 255, 0.05); }
+  </style>
+
+  <defs>
+    <marker id="arrow-u" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#FF5252" />
+    </marker>
+    <marker id="arrow-v" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#448AFF" />
+    </marker>
+    <marker id="arrow-sum" viewBox="0 0 10 10" refX="10" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#7C4DFF" />
+    </marker>
+  </defs>
+
+  <g class="grid-group">
+    <path d="M 0 200 L 600 200 M 300 0 L 300 400" class="axis" />
+    <path d="M 0 50 L 600 50 M 0 100 L 600 100 M 0 150 L 600 150 M 0 250 L 600 250 M 0 300 L 600 300 M 0 350 L 600 350" class="grid" opacity="0.5" />
+    <path d="M 50 0 L 50 400 M 100 0 L 100 400 M 150 0 L 150 400 M 200 0 L 200 400 M 250 0 L 250 400 M 350 0 L 350 400 M 400 0 L 400 400 M 450 0 L 450 400 M 500 0 L 500 400 M 550 0 L 550 400" class="grid" opacity="0.5" />
+  </g>
+
+  <g transform="translate(300, 200)">
+    <rect x="-300" y="-200" width="600" height="400" class="span-region" />
+    
+    <!-- Static Base Vectors (u1, u2) -->
+    <line x1="0" y1="0" x2="80" y2="-40" class="vector-u" opacity="0.2" pointer-events="none" />
+    <text x="85" y="-45" class="label label-static">u1</text>
+    <line x1="0" y1="0" x2="40" y2="80" class="vector-v" opacity="0.2" pointer-events="none" />
+    <text x="45" y="95" class="label label-static">u2</text>
+    
+    <!-- Dynamic Vectors -->
+    <!-- dyn-u: c1u1 from (0,0) to v1 -->
+    <line x1="0" y1="0" x2="80" y2="-40" class="vector-u">
+      <animate attributeName="x2" values="80; -120; -80; 40; 160; 80" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="-40; 60; 40; -20; -80; -40" dur="10s" repeatCount="indefinite" />
+    </line>
+    
+    <!-- dyn-v: c2u2 from v1 to tipSum -->
+    <line class="vector-v">
+      <animate attributeName="x1" values="80; -120; -80; 40; 160; 80" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="y1" values="-40; 60; 40; -20; -80; -40" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="x2" values="120; -100; -140; -20; 140; 120" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="40; 100; -80; -140; -120; 40" dur="10s" repeatCount="indefinite" />
+    </line>
+    
+    <!-- dyn-sum: v = c1u1 + c2u2 from (0,0) to tipSum -->
+    <line x1="0" y1="0" class="vector-sum">
+      <animate attributeName="x2" values="120; -100; -140; -20; 140; 120" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="y2" values="40; 100; -80; -140; -120; 40" dur="10s" repeatCount="indefinite" />
+    </line>
+    
+    <!-- Labels -->
+    <text class="label label-u">
+      c1u1
+      <animate attributeName="x" values="85; -115; -75; 45; 165; 85" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="y" values="-45; 55; 35; -25; -85; -45" dur="10s" repeatCount="indefinite" />
+    </text>
+    <text class="label label-v">
+      c2u2
+      <animate attributeName="x" values="125; -95; -135; -15; 145; 125" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="y" values="55; 115; -65; -125; -105; 55" dur="10s" repeatCount="indefinite" />
+    </text>
+    <text class="label label-sum">
+      v = c1u1 + c2u2
+      <animate attributeName="x" values="60; -50; -70; -10; 70; 60" dur="10s" repeatCount="indefinite" />
+      <animate attributeName="y" values="30; 50; -40; -70; -60; 30" dur="10s" repeatCount="indefinite" />
+    </text>
+  </g>
+  
+  <text x="20" y="30" class="label" style="fill: #333; font-size: 16px;">Span {u1, u2} fills the entire plane</text>
+</svg>
