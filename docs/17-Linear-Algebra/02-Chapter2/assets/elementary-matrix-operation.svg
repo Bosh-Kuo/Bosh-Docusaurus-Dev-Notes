@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 320">
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+    <linearGradient id="matrixGradE" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fbbf24;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#f59e0b;stop-opacity:0.2"/>
+    </linearGradient>
+    <linearGradient id="matrixGradA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#60a5fa;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#3b82f6;stop-opacity:0.2"/>
+    </linearGradient>
+    <linearGradient id="matrixGradR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#34d399;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#10b981;stop-opacity:0.2"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="750" height="320" fill="#1e1e2e"/>
+  
+  <!-- Matrix E (Elementary Matrix for R1 <-> R2) -->
+  <g transform="translate(30, 55)">
+    <rect x="0" y="0" width="110" height="150" rx="8" fill="url(#matrixGradE)" stroke="#f59e0b" stroke-width="2"/>
+    <text x="55" y="-5" text-anchor="middle" fill="#f59e0b" font-family="serif" font-size="18" font-style="italic">E</text>
+    
+    <!-- Matrix brackets -->
+    <path d="M 10,10 L 5,10 L 5,140 L 10,140" fill="none" stroke="#cdd6f4" stroke-width="2"/>
+    <path d="M 100,10 L 105,10 L 105,140 L 100,140" fill="none" stroke="#cdd6f4" stroke-width="2"/>
+    
+    <!-- Matrix elements -->
+    <!-- Highlighted interaction rows -->
+    <rect x="15" y="20" width="80" height="30" rx="4" fill="#fbbf24" fill-opacity="0.1">
+      <animate attributeName="fill-opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite"/>
+    </rect>
+    <rect x="15" y="60" width="80" height="30" rx="4" fill="#fbbf24" fill-opacity="0.1">
+      <animate attributeName="fill-opacity" values="0.1;0.4;0.1" dur="2s" repeatCount="indefinite" begin="1s"/>
+    </rect>
+
+    <text x="25" y="43" text-anchor="middle" fill="#cdd6f4" font-family="monospace" font-size="16">0</text>
+    <text x="55" y="43" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="16" font-weight="bold">1</text>
+    <text x="85" y="43" text-anchor="middle" fill="#cdd6f4" font-family="monospace" font-size="16">0</text>
+    
+    <text x="25" y="83" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="16" font-weight="bold">1</text>
+    <text x="55" y="83" text-anchor="middle" fill="#cdd6f4" font-family="monospace" font-size="16">0</text>
+    <text x="85" y="83" text-anchor="middle" fill="#cdd6f4" font-family="monospace" font-size="16">0</text>
+
+    <text x="25" y="123" text-anchor="middle" fill="#cdd6f4" font-family="monospace" font-size="16">0</text>
+    <text x="55" y="123" text-anchor="middle" fill="#cdd6f4" font-family="monospace" font-size="16">0</text>
+    <text x="85" y="123" text-anchor="middle" fill="#cdd6f4" font-family="monospace" font-size="16">1</text>
+    
+    <text x="55" y="170" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="12">R₁ ↔ R₂</text>
+  </g>
+  
+  <text x="160" y="130" text-anchor="middle" fill="#cdd6f4" font-family="serif" font-size="24">×</text>
+  
+  <!-- Matrix A (Static - Fixed) -->
+  <g transform="translate(190, 55)">
+    <rect x="0" y="0" width="130" height="150" rx="8" fill="url(#matrixGradA)" stroke="#3b82f6" stroke-width="2"/>
+    <text x="65" y="-5" text-anchor="middle" fill="#3b82f6" font-family="serif" font-size="18" font-style="italic">A</text>
+    
+    <path d="M 10,10 L 5,10 L 5,140 L 10,140" fill="none" stroke="#cdd6f4" stroke-width="2"/>
+    <path d="M 120,10 L 125,10 L 125,140 L 120,140" fill="none" stroke="#cdd6f4" stroke-width="2"/>
+    
+    <!-- Row 1 - Content is static -->
+    <rect x="15" y="20" width="100" height="30" rx="4" fill="#ef4444" fill-opacity="0.2"/>
+    <text x="35" y="43" text-anchor="middle" fill="#fecaca" font-family="monospace" font-size="14">1</text>
+    <text x="65" y="43" text-anchor="middle" fill="#fecaca" font-family="monospace" font-size="14">2</text>
+    <text x="95" y="43" text-anchor="middle" fill="#fecaca" font-family="monospace" font-size="14">3</text>
+    
+    <!-- Row 2 - Content is static -->
+    <rect x="15" y="60" width="100" height="30" rx="4" fill="#a855f7" fill-opacity="0.2"/>
+    <text x="35" y="83" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-size="14">4</text>
+    <text x="65" y="83" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-size="14">5</text>
+    <text x="95" y="83" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-size="14">6</text>
+    
+    <!-- Row 3 - Content is static -->
+    <text x="35" y="123" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="14">7</text>
+    <text x="65" y="123" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="14">8</text>
+    <text x="95" y="123" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="14">9</text>
+  </g>
+  
+  <text x="355" y="130" text-anchor="middle" fill="#cdd6f4" font-family="serif" font-size="24">=</text>
+  
+  <!-- Result EA (Animated Mapping) -->
+  <g transform="translate(385, 55)">
+    <rect x="0" y="0" width="130" height="150" rx="8" fill="url(#matrixGradR)" stroke="#10b981" stroke-width="2"/>
+    <text x="65" y="-5" text-anchor="middle" fill="#10b981" font-family="serif" font-size="18" font-style="italic">EA</text>
+    
+    <path d="M 10,10 L 5,10 L 5,140 L 10,140" fill="none" stroke="#cdd6f4" stroke-width="2"/>
+    <path d="M 120,10 L 125,10 L 125,140 L 120,140" fill="none" stroke="#cdd6f4" stroke-width="2"/>
+    
+    <!-- Row 1 (Displays mapped content) -->
+    <g>
+      <rect x="15" y="20" width="100" height="30" rx="4" fill="#a855f7" fill-opacity="0.3">
+         <animate attributeName="fill-opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite" begin="1s"/>
+      </rect>
+      <text x="35" y="43" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-size="14">4</text>
+      <text x="65" y="43" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-size="14">5</text>
+      <text x="95" y="43" text-anchor="middle" fill="#e9d5ff" font-family="monospace" font-size="14">6</text>
+    </g>
+    
+    <!-- Row 2 (Displays mapped content) -->
+    <g>
+      <rect x="15" y="60" width="100" height="30" rx="4" fill="#ef4444" fill-opacity="0.3">
+         <animate attributeName="fill-opacity" values="0.3;0.6;0.3" dur="2s" repeatCount="indefinite"/>
+      </rect>
+      <text x="35" y="83" text-anchor="middle" fill="#fecaca" font-family="monospace" font-size="14">1</text>
+      <text x="65" y="83" text-anchor="middle" fill="#fecaca" font-family="monospace" font-size="14">2</text>
+      <text x="95" y="83" text-anchor="middle" fill="#fecaca" font-family="monospace" font-size="14">3</text>
+    </g>
+    
+    <!-- Row 3 (Stays same) -->
+    <text x="35" y="123" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="14">7</text>
+    <text x="65" y="123" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="14">8</text>
+    <text x="95" y="123" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="14">9</text>
+  </g>
+  
+  <!-- Flow Indicators (Arrows showing the swap) -->
+  <path d="M 310,85 Q 345,85 345,115 T 395,115" fill="none" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="4" opacity="0.6" marker-end="url(#arrowhead)">
+    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="2s" repeatCount="indefinite"/>
+  </path>
+  <path d="M 310,125 Q 345,125 345,95 T 395,95" fill="none" stroke="#a855f7" stroke-width="1.5" stroke-dasharray="4" opacity="0.6" marker-end="url(#arrowhead)">
+    <animate attributeName="stroke-dashoffset" from="20" to="0" dur="2s" repeatCount="indefinite"/>
+  </path>
+
+  <!-- Explanation box -->
+  <g transform="translate(545, 70)">
+    <rect x="0" y="0" width="180" height="120" rx="8" fill="#313244" stroke="#6366f1" stroke-width="1"/>
+    <text x="90" y="25" text-anchor="middle" fill="#cdd6f4" font-family="sans-serif" font-size="13" font-weight="bold">Left-Multiply = Row Op</text>
+    <line x1="20" y1="35" x2="160" y2="35" stroke="#6366f1" stroke-width="1" stroke-dasharray="4"/>
+    
+    <text x="20" y="60" fill="#f59e0b" font-family="sans-serif" font-size="12">E</text>
+    <text x="35" y="60" fill="#94a3b8" font-family="sans-serif" font-size="12">: Action mapping</text>
+    
+    <text x="20" y="85" fill="#3b82f6" font-family="sans-serif" font-size="12">A</text>
+    <text x="32" y="85" fill="#94a3b8" font-family="sans-serif" font-size="12"> stays reference</text>
+    
+    <text x="90" y="110" text-anchor="middle" fill="#10b981" font-family="sans-serif" font-size="11">Result reflects EA swap</text>
+  </g>
+  
+</svg>

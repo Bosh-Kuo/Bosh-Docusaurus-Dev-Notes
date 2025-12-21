@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 520">
+  <defs>
+    <marker id="arrow1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6366f1"/>
+    </marker>
+    <linearGradient id="gradA" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#1d4ed8;stop-opacity:0.3"/>
+    </linearGradient>
+    <linearGradient id="gradR" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:0.3"/>
+    </linearGradient>
+    <linearGradient id="gradP" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:0.3"/>
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:0.3"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="520" fill="#1e1e2e"/>
+  
+  <!-- ===== PART 1: Sequential Row Operations ===== -->
+  <g transform="translate(0, 20)">
+    <!-- Section Title -->
+    <text x="350" y="15" text-anchor="middle" fill="#94a3b8" font-family="sans-serif" font-size="13">Step-by-step Row Operations</text>
+    
+    <!-- Row operations flow -->
+    <g transform="translate(50, 50)">
+      <!-- Matrix A -->
+      <rect x="0" y="0" width="65" height="80" rx="6" fill="url(#gradA)" stroke="#3b82f6" stroke-width="2"/>
+      <text x="32" y="-10" text-anchor="middle" fill="#3b82f6" font-family="serif" font-size="15" font-style="italic">A</text>
+      <path d="M 8,8 L 4,8 L 4,72 L 8,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <path d="M 57,8 L 61,8 L 61,72 L 57,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <text x="22" y="35" fill="#cdd6f4" font-family="monospace" font-size="12">a</text>
+      <text x="44" y="35" fill="#cdd6f4" font-family="monospace" font-size="12">b</text>
+      <text x="22" y="58" fill="#cdd6f4" font-family="monospace" font-size="12">c</text>
+      <text x="44" y="58" fill="#cdd6f4" font-family="monospace" font-size="12">d</text>
+      
+      <!-- Arrow 1 -->
+      <line x1="75" y1="40" x2="108" y2="40" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow1)"/>
+      <text x="91" y="30" text-anchor="middle" fill="#f59e0b" font-family="serif" font-size="11" font-style="italic">E₁</text>
+      
+      <!-- E1A -->
+      <rect x="118" y="0" width="65" height="80" rx="6" fill="#313244" stroke="#6366f1" stroke-width="1.5"/>
+      <text x="150" y="-10" text-anchor="middle" fill="#6366f1" font-family="serif" font-size="13" font-style="italic">E₁A</text>
+      <path d="M 126,8 L 122,8 L 122,72 L 126,72" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+      <path d="M 175,8 L 179,8 L 179,72 L 175,72" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="150" y="45" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="11">⋮</text>
+      
+      <!-- Arrow 2 -->
+      <line x1="193" y1="40" x2="226" y2="40" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow1)"/>
+      <text x="209" y="30" text-anchor="middle" fill="#f59e0b" font-family="serif" font-size="11" font-style="italic">E₂</text>
+      
+      <!-- E2E1A -->
+      <rect x="236" y="0" width="65" height="80" rx="6" fill="#313244" stroke="#6366f1" stroke-width="1.5"/>
+      <text x="268" y="-10" text-anchor="middle" fill="#6366f1" font-family="serif" font-size="13" font-style="italic">E₂E₁A</text>
+      <path d="M 244,8 L 240,8 L 240,72 L 244,72" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+      <path d="M 293,8 L 297,8 L 297,72 L 293,72" fill="none" stroke="#94a3b8" stroke-width="1.5"/>
+      <text x="268" y="45" text-anchor="middle" fill="#94a3b8" font-family="monospace" font-size="11">⋮</text>
+      
+      <!-- Dots -->
+      <text x="318" y="45" fill="#94a3b8" font-family="serif" font-size="20">···</text>
+      
+      <!-- Arrow k -->
+      <line x1="355" y1="40" x2="398" y2="40" stroke="#6366f1" stroke-width="2" marker-end="url(#arrow1)"/>
+      <text x="376" y="30" text-anchor="middle" fill="#f59e0b" font-family="serif" font-size="11" font-style="italic">Eₖ</text>
+      
+      <!-- RREF R -->
+      <rect x="408" y="0" width="65" height="80" rx="6" fill="url(#gradR)" stroke="#10b981" stroke-width="2"/>
+      <text x="440" y="-10" text-anchor="middle" fill="#10b981" font-family="serif" font-size="15" font-style="italic">R</text>
+      <path d="M 416,8 L 412,8 L 412,72 L 416,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <path d="M 465,8 L 469,8 L 469,72 L 465,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <text x="428" y="35" fill="#10b981" font-family="monospace" font-size="12" font-weight="bold">1</text>
+      <text x="452" y="35" fill="#cdd6f4" font-family="monospace" font-size="12">*</text>
+      <text x="428" y="58" fill="#cdd6f4" font-family="monospace" font-size="12">0</text>
+      <text x="452" y="58" fill="#10b981" font-family="monospace" font-size="12" font-weight="bold">1</text>
+      
+      <!-- RREF label -->
+      <text x="515" y="45" fill="#94a3b8" font-family="sans-serif" font-size="10">(RREF)</text>
+    </g>
+    
+    <!-- Equation below the flow -->
+    <text x="350" y="165" text-anchor="middle" fill="#f59e0b" font-family="serif" font-size="14" font-style="italic">Eₖ Eₖ₋₁ ··· E₂ E₁ A = R</text>
+  </g>
+  
+  <!-- ===== Divider with "Equivalent to" ===== -->
+  <g transform="translate(0, 220)">
+    <line x1="80" y1="0" x2="280" y2="0" stroke="#45475a" stroke-width="1" stroke-dasharray="6"/>
+    <rect x="280" y="-15" width="140" height="30" rx="15" fill="#313244" stroke="#10b981" stroke-width="1.5"/>
+    <text x="350" y="5" text-anchor="middle" fill="#10b981" font-family="sans-serif" font-size="13" font-weight="bold">Equivalent to</text>
+    <line x1="420" y1="0" x2="620" y2="0" stroke="#45475a" stroke-width="1" stroke-dasharray="6"/>
+  </g>
+  
+  <!-- ===== PART 2: Equivalent Single Multiplication P × A = R ===== -->
+  <g transform="translate(0, 255)">
+    <!-- Centered P × A = R -->
+    <g transform="translate(175, 15)">
+      <!-- P matrix -->
+      <rect x="0" y="0" width="70" height="80" rx="6" fill="url(#gradP)" stroke="#f59e0b" stroke-width="2"/>
+      <text x="35" y="-10" text-anchor="middle" fill="#f59e0b" font-family="serif" font-size="16" font-style="italic">P</text>
+      <path d="M 8,8 L 4,8 L 4,72 L 8,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <path d="M 62,8 L 66,8 L 66,72 L 62,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <text x="35" y="45" text-anchor="middle" fill="#fbbf24" font-family="monospace" font-size="10">Eₖ···E₁</text>
+      
+      <!-- Multiplication sign -->
+      <text x="82" y="45" fill="#cdd6f4" font-family="serif" font-size="22">×</text>
+      
+      <!-- A matrix -->
+      <rect x="100" y="0" width="70" height="80" rx="6" fill="url(#gradA)" stroke="#3b82f6" stroke-width="2"/>
+      <text x="135" y="-10" text-anchor="middle" fill="#3b82f6" font-family="serif" font-size="16" font-style="italic">A</text>
+      <path d="M 108,8 L 104,8 L 104,72 L 108,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <path d="M 162,8 L 166,8 L 166,72 L 162,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <text x="123" y="35" fill="#cdd6f4" font-family="monospace" font-size="12">a</text>
+      <text x="147" y="35" fill="#cdd6f4" font-family="monospace" font-size="12">b</text>
+      <text x="123" y="58" fill="#cdd6f4" font-family="monospace" font-size="12">c</text>
+      <text x="147" y="58" fill="#cdd6f4" font-family="monospace" font-size="12">d</text>
+      
+      <!-- Equals sign -->
+      <text x="190" y="45" fill="#cdd6f4" font-family="serif" font-size="22">=</text>
+      
+      <!-- R matrix -->
+      <rect x="215" y="0" width="70" height="80" rx="6" fill="url(#gradR)" stroke="#10b981" stroke-width="2"/>
+      <text x="250" y="-10" text-anchor="middle" fill="#10b981" font-family="serif" font-size="16" font-style="italic">R</text>
+      <path d="M 223,8 L 219,8 L 219,72 L 223,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <path d="M 277,8 L 281,8 L 281,72 L 277,72" fill="none" stroke="#cdd6f4" stroke-width="1.5"/>
+      <text x="235" y="35" fill="#10b981" font-family="monospace" font-size="12" font-weight="bold">1</text>
+      <text x="265" y="35" fill="#cdd6f4" font-family="monospace" font-size="12">*</text>
+      <text x="235" y="58" fill="#cdd6f4" font-family="monospace" font-size="12">0</text>
+      <text x="265" y="58" fill="#10b981" font-family="monospace" font-size="12" font-weight="bold">1</text>
+    </g>
+  </g>
+  
+  <!-- ===== Key Insight Box ===== -->
+  <g transform="translate(50, 405)">
+    <rect x="0" y="0" width="600" height="100" rx="10" fill="#313244" stroke="#6366f1" stroke-width="2"/>
+    
+    <text x="300" y="25" text-anchor="middle" fill="#cdd6f4" font-family="sans-serif" font-size="14" font-weight="bold">Key Insight</text>
+    <line x1="80" y1="38" x2="520" y2="38" stroke="#6366f1" stroke-width="1"/>
+    
+    <!-- P is invertible -->
+    <text x="45" y="62" fill="#f59e0b" font-family="serif" font-size="15" font-style="italic">P</text>
+    <text x="60" y="62" fill="#94a3b8" font-family="sans-serif" font-size="13">= Eₖ Eₖ₋₁ ··· E₂ E₁ is</text>
+    <text x="210" y="62" fill="#10b981" font-family="sans-serif" font-size="13" font-weight="bold">invertible</text>
+    <text x="285" y="62" fill="#94a3b8" font-family="sans-serif" font-size="13">(product of invertible matrices)</text>
+    
+    <!-- Core equation highlight -->
+    <rect x="195" y="68" width="210" height="26" rx="5" fill="#fbbf24" fill-opacity="0.15" stroke="#fbbf24" stroke-width="1.5"/>
+    <text x="300" y="86" text-anchor="middle" fill="#fbbf24" font-family="serif" font-size="16" font-weight="bold" font-style="italic">Row reduction = PA</text>
+  </g>
+</svg>
