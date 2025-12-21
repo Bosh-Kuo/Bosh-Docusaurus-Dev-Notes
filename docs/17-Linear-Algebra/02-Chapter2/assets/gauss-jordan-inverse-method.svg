@@ -1,0 +1,180 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 320">
+  <defs>
+    <!-- Background gradient -->
+    <linearGradient id="bgGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa"/>
+      <stop offset="100%" style="stop-color:#e9ecef"/>
+    </linearGradient>
+    
+    <!-- Arrow markers -->
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#495057"/>
+    </marker>
+    
+    <!-- Glow filter for emphasis -->
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="320" fill="url(#bgGradient)" rx="12"/>
+  
+  <!-- Title -->
+  <text x="400" y="35" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#212529" text-anchor="middle">
+    Gauss-Jordan Method: [A | I] → [I | A⁻¹]
+  </text>
+  
+  <!-- === STAGE 1: Initial augmented matrix [A | I] === -->
+  <g transform="translate(50, 80)">
+    <!-- Label -->
+    <text x="80" y="-15" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0d6efd" text-anchor="middle">Start</text>
+    
+    <!-- Large brackets for augmented matrix -->
+    <path d="M 10 0 L 0 0 L 0 100 L 10 100" stroke="#212529" stroke-width="2.5" fill="none"/>
+    <path d="M 155 0 L 165 0 L 165 100 L 155 100" stroke="#212529" stroke-width="2.5" fill="none"/>
+    
+    <!-- A section (blue background) -->
+    <rect x="15" y="5" width="65" height="90" rx="4" fill="#cfe2ff" opacity="0.5"/>
+    <text x="48" y="115" font-family="Arial, sans-serif" font-size="12" fill="#0d6efd" text-anchor="middle" font-weight="bold">A</text>
+    
+    <!-- Matrix A elements -->
+    <text x="30" y="35" font-family="Times New Roman, serif" font-size="18" font-style="italic" fill="#0d6efd">a</text>
+    <text x="60" y="35" font-family="Times New Roman, serif" font-size="18" font-style="italic" fill="#0d6efd">b</text>
+    <text x="30" y="75" font-family="Times New Roman, serif" font-size="18" font-style="italic" fill="#0d6efd">c</text>
+    <text x="60" y="75" font-family="Times New Roman, serif" font-size="18" font-style="italic" fill="#0d6efd">d</text>
+    
+    <!-- Divider line -->
+    <line x1="82" y1="5" x2="82" y2="95" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4,3"/>
+    
+    <!-- I section (green background) -->
+    <rect x="87" y="5" width="65" height="90" rx="4" fill="#d1e7dd" opacity="0.5"/>
+    <text x="120" y="115" font-family="Arial, sans-serif" font-size="12" fill="#198754" text-anchor="middle" font-weight="bold">I</text>
+    
+    <!-- Matrix I elements -->
+    <text x="100" y="35" font-family="Times New Roman, serif" font-size="18" fill="#198754">1</text>
+    <text x="135" y="35" font-family="Times New Roman, serif" font-size="18" fill="#198754">0</text>
+    <text x="100" y="75" font-family="Times New Roman, serif" font-size="18" fill="#198754">0</text>
+    <text x="135" y="75" font-family="Times New Roman, serif" font-size="18" fill="#198754">1</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <g transform="translate(230, 130)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="30" y="-10" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">Row Ops</text>
+  </g>
+  
+  <!-- === STAGE 2: Intermediate state === -->
+  <g transform="translate(310, 80)">
+    <!-- Label -->
+    <text x="80" y="-15" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#6c757d" text-anchor="middle">Processing...</text>
+    
+    <!-- Large brackets -->
+    <path d="M 10 0 L 0 0 L 0 100 L 10 100" stroke="#212529" stroke-width="2.5" fill="none"/>
+    <path d="M 155 0 L 165 0 L 165 100 L 155 100" stroke="#212529" stroke-width="2.5" fill="none"/>
+    
+    <!-- A transforming (fading blue) -->
+    <rect x="15" y="5" width="65" height="90" rx="4" fill="#cfe2ff" opacity="0.3"/>
+    
+    <!-- Intermediate matrix elements -->
+    <text x="30" y="35" font-family="Times New Roman, serif" font-size="18" fill="#6c757d">1</text>
+    <text x="60" y="35" font-family="Times New Roman, serif" font-size="18" fill="#6c757d">*</text>
+    <text x="30" y="75" font-family="Times New Roman, serif" font-size="18" fill="#6c757d">0</text>
+    <text x="60" y="75" font-family="Times New Roman, serif" font-size="18" fill="#6c757d">*</text>
+    
+    <!-- Divider line -->
+    <line x1="82" y1="5" x2="82" y2="95" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4,3"/>
+    
+    <!-- I transforming (brightening green) -->
+    <rect x="87" y="5" width="65" height="90" rx="4" fill="#d1e7dd" opacity="0.3"/>
+    
+    <!-- Intermediate I elements -->
+    <text x="100" y="35" font-family="Times New Roman, serif" font-size="18" fill="#6c757d">*</text>
+    <text x="135" y="35" font-family="Times New Roman, serif" font-size="18" fill="#6c757d">*</text>
+    <text x="100" y="75" font-family="Times New Roman, serif" font-size="18" fill="#6c757d">*</text>
+    <text x="135" y="75" font-family="Times New Roman, serif" font-size="18" fill="#6c757d">*</text>
+    
+    <!-- Processing indicator -->
+    <g>
+      <circle cx="83" cy="50" r="8" fill="none" stroke="#ffc107" stroke-width="2">
+        <animate attributeName="r" values="8;12;8" dur="1.5s" repeatCount="indefinite"/>
+        <animate attributeName="opacity" values="1;0.5;1" dur="1.5s" repeatCount="indefinite"/>
+      </circle>
+    </g>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <g transform="translate(490, 130)">
+    <line x1="0" y1="0" x2="60" y2="0" stroke="#495057" stroke-width="2" marker-end="url(#arrow)"/>
+    <text x="30" y="-10" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">Continue</text>
+  </g>
+  
+  <!-- === STAGE 3: Final result [I | A^-1] === -->
+  <g transform="translate(570, 80)">
+    <!-- Label -->
+    <text x="80" y="-15" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#198754" text-anchor="middle">Result</text>
+    
+    <!-- Large brackets -->
+    <path d="M 10 0 L 0 0 L 0 100 L 10 100" stroke="#212529" stroke-width="2.5" fill="none"/>
+    <path d="M 155 0 L 165 0 L 165 100 L 155 100" stroke="#212529" stroke-width="2.5" fill="none"/>
+    
+    <!-- I section (now identity) -->
+    <rect x="15" y="5" width="65" height="90" rx="4" fill="#d1e7dd" opacity="0.5"/>
+    <text x="48" y="115" font-family="Arial, sans-serif" font-size="12" fill="#198754" text-anchor="middle" font-weight="bold">I</text>
+    
+    <!-- Identity matrix elements -->
+    <text x="30" y="35" font-family="Times New Roman, serif" font-size="18" fill="#198754" font-weight="bold">1</text>
+    <text x="60" y="35" font-family="Times New Roman, serif" font-size="18" fill="#198754" font-weight="bold">0</text>
+    <text x="30" y="75" font-family="Times New Roman, serif" font-size="18" fill="#198754" font-weight="bold">0</text>
+    <text x="60" y="75" font-family="Times New Roman, serif" font-size="18" fill="#198754" font-weight="bold">1</text>
+    
+    <!-- Divider line -->
+    <line x1="82" y1="5" x2="82" y2="95" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="4,3"/>
+    
+    <!-- A^-1 section -->
+    <rect x="87" y="5" width="65" height="90" rx="4" fill="#dc3545" opacity="0.15" filter="url(#glow)"/>
+    <text x="120" y="115" font-family="Arial, sans-serif" font-size="12" fill="#dc3545" text-anchor="middle" font-weight="bold">A⁻¹</text>
+    
+    <!-- Inverse matrix elements -->
+    <text x="97" y="35" font-family="Times New Roman, serif" font-size="16" fill="#dc3545" font-weight="bold">p</text>
+    <text x="133" y="35" font-family="Times New Roman, serif" font-size="16" fill="#dc3545" font-weight="bold">q</text>
+    <text x="97" y="75" font-family="Times New Roman, serif" font-size="16" fill="#dc3545" font-weight="bold">r</text>
+    <text x="133" y="75" font-family="Times New Roman, serif" font-size="16" fill="#dc3545" font-weight="bold">s</text>
+    
+    <!-- Success indicator -->
+    <circle cx="155" cy="5" r="12" fill="#198754"/>
+    <path d="M 149 5 L 153 9 L 161 1" stroke="#fff" stroke-width="2" fill="none"/>
+  </g>
+  
+  <!-- Key insight box -->
+  <g transform="translate(150, 230)">
+    <rect x="0" y="0" width="500" height="70" rx="8" fill="#fff" stroke="#0d6efd" stroke-width="2"/>
+    
+    <text x="250" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0d6efd" text-anchor="middle">
+      Key Insight: Same row operations act on BOTH sides
+    </text>
+    
+    <text x="250" y="50" font-family="Arial, sans-serif" font-size="13" fill="#495057" text-anchor="middle">
+      Left side: A → I  (elementary matrices E₁, E₂, ... Eₖ)
+    </text>
+    <text x="250" y="65" font-family="Arial, sans-serif" font-size="13" fill="#495057" text-anchor="middle">
+      Right side: I → Eₖ...E₂E₁·I = P = A⁻¹
+    </text>
+  </g>
+  
+  <!-- Color legend -->
+  <g transform="translate(680, 225)">
+    <rect x="0" y="0" width="100" height="85" rx="5" fill="#fff" stroke="#dee2e6"/>
+    <text x="50" y="18" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#212529" text-anchor="middle">Legend</text>
+    <rect x="10" y="28" width="12" height="12" fill="#0d6efd" opacity="0.6" rx="2"/>
+    <text x="28" y="38" font-family="Arial, sans-serif" font-size="10" fill="#212529">Original A</text>
+    <rect x="10" y="45" width="12" height="12" fill="#198754" opacity="0.6" rx="2"/>
+    <text x="28" y="55" font-family="Arial, sans-serif" font-size="10" fill="#212529">Identity I</text>
+    <rect x="10" y="62" width="12" height="12" fill="#dc3545" opacity="0.4" rx="2"/>
+    <text x="28" y="72" font-family="Arial, sans-serif" font-size="10" fill="#212529">Inverse A⁻¹</text>
+  </g>
+</svg>
