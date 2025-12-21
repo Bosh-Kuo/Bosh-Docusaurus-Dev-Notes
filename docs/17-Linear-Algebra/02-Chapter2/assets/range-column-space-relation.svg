@@ -1,0 +1,125 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 550 320">
+  <defs>
+    <pattern id="gridRC" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e0e0e0" stroke-width="0.5"/>
+    </pattern>
+    <marker id="arrowRC" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L7,3 z" fill="#6c757d"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="275" y="25" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#212529" text-anchor="middle">Range(T) = Column Space of A</text>
+  
+  <!-- Matrix equation -->
+  <g transform="translate(40, 50)">
+    <text x="0" y="25" font-family="Arial, sans-serif" font-size="14" fill="#212529">T(x) = Ax =</text>
+    
+    <!-- Matrix A -->
+    <g transform="translate(95, 0)">
+      <!-- Brackets -->
+      <text x="0" y="30" font-family="Arial, sans-serif" font-size="40" fill="#212529">[</text>
+      <text x="95" y="30" font-family="Arial, sans-serif" font-size="40" fill="#212529">]</text>
+      
+      <!-- Column vectors with colors -->
+      <g transform="translate(15, 0)">
+        <!-- Column 1 -->
+        <rect x="0" y="5" width="25" height="40" fill="#e3f2fd" rx="3" opacity="0">
+          <animate attributeName="opacity" values="0;0.8;0.8;0" dur="6s" repeatCount="indefinite"/>
+        </rect>
+        <text x="12" y="18" font-family="Arial, sans-serif" font-size="12" fill="#1976d2" text-anchor="middle">a₁</text>
+        <text x="12" y="35" font-family="Arial, sans-serif" font-size="12" fill="#1976d2" text-anchor="middle">a₂</text>
+        
+        <!-- Column 2 -->
+        <rect x="35" y="5" width="25" height="40" fill="#f3e5f5" rx="3" opacity="0">
+          <animate attributeName="opacity" values="0;0;0.8;0.8;0" dur="6s" repeatCount="indefinite"/>
+        </rect>
+        <text x="47" y="18" font-family="Arial, sans-serif" font-size="12" fill="#7b1fa2" text-anchor="middle">b₁</text>
+        <text x="47" y="35" font-family="Arial, sans-serif" font-size="12" fill="#7b1fa2" text-anchor="middle">b₂</text>
+      </g>
+    </g>
+    
+    <!-- Vector x -->
+    <g transform="translate(210, 0)">
+      <text x="0" y="30" font-family="Arial, sans-serif" font-size="40" fill="#212529">[</text>
+      <text x="35" y="30" font-family="Arial, sans-serif" font-size="40" fill="#212529">]</text>
+      <text x="17" y="18" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle">x₁</text>
+      <text x="17" y="35" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle">x₂</text>
+    </g>
+  </g>
+  
+  <!-- Equals sign and expansion -->
+  <g transform="translate(40, 115)">
+    <text x="150" y="20" font-family="Arial, sans-serif" font-size="14" fill="#212529">=</text>
+    
+    <!-- x1 * column 1 -->
+    <g transform="translate(170, 0)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="14" fill="#212529">x₁</text>
+      
+      <rect x="20" y="-5" width="45" height="50" fill="#e3f2fd" rx="4" stroke="#1976d2" stroke-width="1" opacity="0">
+        <animate attributeName="opacity" values="0;1;1;0" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <text x="22" y="20" font-family="Arial, sans-serif" font-size="30" fill="#1976d2">[</text>
+      <text x="57" y="20" font-family="Arial, sans-serif" font-size="30" fill="#1976d2">]</text>
+      <text x="40" y="12" font-family="Arial, sans-serif" font-size="12" fill="#1976d2" text-anchor="middle">a₁</text>
+      <text x="40" y="32" font-family="Arial, sans-serif" font-size="12" fill="#1976d2" text-anchor="middle">a₂</text>
+    </g>
+    
+    <!-- Plus sign -->
+    <text x="250" y="20" font-family="Arial, sans-serif" font-size="16" fill="#212529">+</text>
+    
+    <!-- x2 * column 2 -->
+    <g transform="translate(270, 0)">
+      <text x="0" y="20" font-family="Arial, sans-serif" font-size="14" fill="#212529">x₂</text>
+      
+      <rect x="20" y="-5" width="45" height="50" fill="#f3e5f5" rx="4" stroke="#7b1fa2" stroke-width="1" opacity="0">
+        <animate attributeName="opacity" values="0;0;1;1;0" dur="6s" repeatCount="indefinite"/>
+      </rect>
+      <text x="22" y="20" font-family="Arial, sans-serif" font-size="30" fill="#7b1fa2">[</text>
+      <text x="57" y="20" font-family="Arial, sans-serif" font-size="30" fill="#7b1fa2">]</text>
+      <text x="40" y="12" font-family="Arial, sans-serif" font-size="12" fill="#7b1fa2" text-anchor="middle">b₁</text>
+      <text x="40" y="32" font-family="Arial, sans-serif" font-size="12" fill="#7b1fa2" text-anchor="middle">b₂</text>
+    </g>
+  </g>
+  
+  <!-- Visual representation -->
+  <g transform="translate(40, 180)">
+    <!-- Domain -->
+    <rect x="0" y="0" width="130" height="110" fill="#e3f2fd" stroke="#1976d2" stroke-width="1" rx="8"/>
+    <text x="65" y="-8" font-family="Arial, sans-serif" font-size="11" fill="#1976d2" text-anchor="middle" font-weight="bold">Domain Rⁿ</text>
+    <rect x="8" y="8" width="114" height="94" fill="url(#gridRC)"/>
+    
+    <!-- Input vectors -->
+    <circle cx="35" cy="40" r="4" fill="#0d6efd"/>
+    <circle cx="70" cy="25" r="4" fill="#0d6efd"/>
+    <circle cx="95" cy="65" r="4" fill="#0d6efd"/>
+    <circle cx="55" cy="85" r="4" fill="#0d6efd"/>
+    <text x="65" y="105" font-family="Arial, sans-serif" font-size="9" fill="#6c757d" text-anchor="middle">All possible x</text>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(185, 230)">
+    <path d="M 0,0 L 70,0" stroke="#6c757d" stroke-width="2" marker-end="url(#arrowRC)"/>
+    <text x="35" y="-8" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle" font-style="italic">T(x) = Ax</text>
+  </g>
+  
+  <!-- Codomain with Range highlighted -->
+  <g transform="translate(275, 180)">
+    <rect x="0" y="0" width="130" height="110" fill="#f8f9fa" stroke="#6c757d" stroke-width="1" rx="8"/>
+    <text x="65" y="-8" font-family="Arial, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle" font-weight="bold">Codomain Rᵐ</text>
+    <rect x="8" y="8" width="114" height="94" fill="url(#gridRC)"/>
+    
+    <!-- Range = Column Space (animated region) -->
+    <ellipse cx="65" cy="55" rx="45" ry="35" fill="#28a745" opacity="0.3">
+      <animate attributeName="opacity" values="0.15;0.4;0.15" dur="3s" repeatCount="indefinite"/>
+    </ellipse>
+    <text x="65" y="52" font-family="Arial, sans-serif" font-size="10" fill="#28a745" text-anchor="middle" font-weight="bold">Range(T)</text>
+    <text x="65" y="65" font-family="Arial, sans-serif" font-size="9" fill="#28a745" text-anchor="middle">= Col(A)</text>
+    
+    <!-- Output points within range -->
+    <circle cx="45" cy="45" r="4" fill="#28a745"/>
+    <circle cx="75" cy="38" r="4" fill="#28a745"/>
+    <circle cx="60" cy="68" r="4" fill="#28a745"/>
+    <circle cx="85" cy="60" r="4" fill="#28a745"/>
+  </g>
+</svg>

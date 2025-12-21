@@ -1,0 +1,69 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <pattern id="grid2D" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+    </pattern>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#6c757d"/>
+    </marker>
+  </defs>
+
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#212529" text-anchor="middle">Null Space vs. One-to-One Relationship</text>
+  <text x="300" y="50" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Why a non-zero Null Space kills One-to-One</text>
+
+  <!-- ================= LEFT: DOMAIN Rn ================= -->
+  <g transform="translate(50, 80)">
+    <text x="70" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#1976d2" font-weight="bold" text-anchor="middle">Domain</text>
+    <rect x="0" y="0" width="140" height="140" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="140" height="140" fill="url(#grid2D)"/>
+
+    <!-- Null Space (Line through origin) -->
+    <line x1="20" y1="120" x2="120" y2="20" stroke="#ffc107" stroke-width="8" opacity="0.4"/>
+    <line x1="20" y1="120" x2="120" y2="20" stroke="#ffc107" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="30" y="130" font-family="Arial, sans-serif" font-size="11" fill="#ff6f00" font-weight="bold">Null Space</text>
+
+    <!-- Zero Vector -->
+    <circle cx="70" cy="70" r="5" fill="#212529"/>
+    <text x="75" y="65" font-family="Arial, sans-serif" font-size="11" fill="#212529" font-weight="bold">0</text>
+
+    <!-- Non-zero vector u in Null Space -->
+    <circle cx="95" cy="45" r="5" fill="#d32f2f"/>
+    <text x="100" y="40" font-family="Arial, sans-serif" font-size="11" fill="#d32f2f" font-weight="bold">u</text>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="9" fill="#d32f2f">(u ≠ 0)</text>
+  </g>
+
+  <!-- ================= RIGHT: CODOMAIN Rm ================= -->
+  <g transform="translate(350, 80)">
+    <text x="70" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#2e7d32" font-weight="bold" text-anchor="middle">Codomain</text>
+    <rect x="0" y="0" width="140" height="140" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="140" height="140" fill="url(#grid2D)"/>
+
+    <!-- Zero Vector (Target) -->
+    <circle cx="70" cy="70" r="6" fill="#212529"/>
+    <text x="75" y="65" font-family="Arial, sans-serif" font-size="11" fill="#212529" font-weight="bold">0</text>
+    
+    <text x="70" y="100" font-family="Arial, sans-serif" font-size="11" fill="#1b5e20" text-anchor="middle" font-style="italic">Both map to 0!</text>
+  </g>
+
+  <!-- ================= CONNECTIONS ================= -->
+  <g>
+    <!-- 0 -> 0 -->
+    <path d="M 120,150 Q 235,150 350,150" fill="none" stroke="#212529" stroke-width="1.5" marker-end="url(#arrow)"/>
+    
+    <!-- u -> 0 (Animation) -->
+    <circle cx="145" cy="125" r="5" fill="#d32f2f" opacity="0">
+       <animate attributeName="opacity" values="1;1;0" dur="3s" repeatCount="indefinite" />
+       <animate attributeName="cx" values="145; 420; 420" dur="3s" repeatCount="indefinite" />
+       <animate attributeName="cy" values="125; 150; 150" dur="3s" repeatCount="indefinite" />
+    </circle>
+    
+    <path d="M 145,125 Q 280,100 420,150" fill="none" stroke="#d32f2f" stroke-width="2" stroke-dasharray="4,4" opacity="0.5"/>
+  </g>
+
+  <!-- Info Box -->
+  <g transform="translate(100, 240)">
+     <rect x="0" y="0" width="400" height="50" rx="5" fill="#fff3e0" stroke="#ffb74d"/>
+     <text x="200" y="20" font-family="Arial, sans-serif" font-size="12" fill="#e65100" text-anchor="middle" font-weight="bold">If u ∈ Null(A) and u ≠ 0</text>
+     <text x="200" y="38" font-family="Arial, sans-serif" font-size="11" fill="#e65100" text-anchor="middle">Then T(u) = 0 AND T(0) = 0. Two inputs → Same output.</text>
+  </g>
+</svg>

@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <defs>
+    <pattern id="grid2D" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#e0e0e0" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#dc3545" text-anchor="middle">Case 3 Counterexample: Singular Matrix</text>
+  <text x="300" y="50" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">R² ➔ R² but Rank &lt; n (Collapsed to Line)</text>
+
+  <!-- ================= LEFT: DOMAIN R2 ================= -->
+  <g transform="translate(50, 80)">
+    <text x="50" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#1976d2" font-weight="bold" text-anchor="middle">Domain R²</text>
+    <rect x="0" y="0" width="100" height="100" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="100" height="100" fill="url(#grid2D)"/>
+    
+    <line x1="0" y1="100" x2="100" y2="0" stroke="#bbdefb" stroke-width="2" stroke-dasharray="4,2"/>
+
+    <circle cx="20" cy="20" r="4" fill="#1565c0"/>
+    <text x="20" y="15" font-family="Arial, sans-serif" font-size="11" fill="#1565c0" font-weight="bold">u</text>
+    
+    <circle cx="80" cy="80" r="4" fill="#1565c0"/>
+    <text x="80" y="75" font-family="Arial, sans-serif" font-size="11" fill="#1565c0" font-weight="bold">v</text>
+  </g>
+
+  <!-- ================= RIGHT: CODOMAIN R2 ================= -->
+  <g transform="translate(350, 80)">
+    <text x="50" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#2e7d32" font-weight="bold" text-anchor="middle">Codomain R²</text>
+    <rect x="0" y="0" width="100" height="100" fill="#fff5f5" stroke="#dc3545" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="100" height="100" fill="url(#grid2D)"/>
+    
+    <line x1="10" y1="90" x2="90" y2="10" stroke="#2e7d32" stroke-width="4"/>
+    <text x="95" y="15" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32" font-weight="bold">Range</text>
+    
+    <circle cx="50" cy="50" r="5" fill="#2e7d32"/>
+    <text x="60" y="45" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32" font-weight="bold">p</text>
+    
+    <circle cx="20" cy="20" r="4" fill="#dc3545" opacity="0.4"/>
+    <text x="25" y="15" font-family="Arial, sans-serif" font-size="9" fill="#dc3545">unreachable</text>
+  </g>
+
+  <!-- ================= ANIMATED CONNECTIONS ================= -->
+  <g>
+    <line x1="70" y1="100" x2="400" y2="130" stroke="#1565c0" stroke-width="2" stroke-dasharray="5,5" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="x2" values="70;400" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="100;130" dur="3s" repeatCount="indefinite" />
+    </line> 
+    
+    <line x1="130" y1="160" x2="400" y2="130" stroke="#1565c0" stroke-width="2" stroke-dasharray="5,5" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="x2" values="130;400" dur="3s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="y2" values="160;130" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </line> 
+  </g>
+
+  <!-- Info Box -->
+  <g transform="translate(150, 260)">
+     <rect x="0" y="0" width="300" height="40" rx="5" fill="#ffebee" stroke="#ef9a9a"/>
+     <text x="150" y="25" font-family="Arial, sans-serif" font-size="11" fill="#c62828" text-anchor="middle">det(A) = 0. Singular. Different inputs → Same output.</text>
+  </g>
+</svg>

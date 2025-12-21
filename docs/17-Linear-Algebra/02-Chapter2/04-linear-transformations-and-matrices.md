@@ -3,7 +3,7 @@ title: 線性變換與矩陣 (Linear Transformations and Matrices)
 sidebar_label: "2-7 線性變換與矩陣"
 description: 本篇筆記介紹線性變換的定義與性質、線性變換與矩陣的對應關係、值域與核的概念，以及如何判斷一個函數是否為線性變換。
 last_update:
-  date: 2025-12-20
+  date: 2025-12-21
 keywords:
   [
     "Linear Algebra",

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <defs>
+    <pattern id="grid2D" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#bbdefb" stroke-width="1"/>
+    </pattern>
+    <filter id="glow3d" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="2" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#212529" text-anchor="middle">Case 1: m &gt; n (2D to 3D Embedding)</text>
+  <text x="300" y="50" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Can be 1-to-1, but NEVER Onto (Cannot fill 3D space)</text>
+
+  <!-- ================= LEFT: DOMAIN R2 ================= -->
+  <g transform="translate(50, 100)">
+    <text x="50" y="-15" font-family="Arial, sans-serif" font-size="14" fill="#1976d2" font-weight="bold" text-anchor="middle">Domain R²</text>
+    <rect x="0" y="0" width="100" height="100" fill="#e3f2fd" stroke="#1976d2" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="100" height="100" fill="url(#grid2D)"/>
+    
+    <circle cx="30" cy="30" r="4" fill="#1565c0"/>
+    <text x="30" y="20" font-family="Arial, sans-serif" font-size="11" fill="#1565c0" font-weight="bold">u</text>
+    
+    <circle cx="70" cy="70" r="4" fill="#1565c0"/>
+    <text x="70" y="60" font-family="Arial, sans-serif" font-size="11" fill="#1565c0" font-weight="bold">v</text>
+  </g>
+
+  <!-- ================= RIGHT: CODOMAIN R3 ================= -->
+  <g transform="translate(300, 50)">
+    <text x="120" y="40" font-family="Arial, sans-serif" font-size="14" fill="#2e7d32" font-weight="bold" text-anchor="middle">Codomain R³</text>
+    
+    <!-- 3D Box / Axes -->
+    <g stroke="#495057" stroke-width="1.5" fill="none">
+      <line x1="80" y1="60" x2="80" y2="180" stroke-dasharray="3,3" opacity="0.5"/>
+      <line x1="80" y1="180" x2="200" y2="180" stroke-dasharray="3,3" opacity="0.5"/>
+      <line x1="80" y1="180" x2="20" y2="220" stroke-dasharray="3,3" opacity="0.5"/>
+
+      <line x1="20" y1="60" x2="20" y2="220"/>
+      <line x1="200" y1="60" x2="200" y2="220"/>
+      <line x1="20" y1="60" x2="200" y2="60"/>
+      <line x1="20" y1="220" x2="200" y2="220"/>
+    </g>
+    
+    <!-- Range Plane -->
+    <path d="M 60,100 L 160,80 L 140,200 L 40,220 Z" fill="#c8e6c9" stroke="#2e7d32" stroke-width="2" opacity="0.75" />
+    <text x="180" y="90" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32" font-weight="bold">Range(T)</text>
+    <text x="180" y="105" font-family="Arial, sans-serif" font-size="10" fill="#2e7d32">2D Plane in 3D</text>
+
+    <!-- Mapped Points -->
+    <circle cx="75" cy="120" r="4" fill="#2e7d32"/>
+    <text x="65" y="115" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32" font-weight="bold">T(u)</text>
+    
+    <circle cx="125" cy="180" r="4" fill="#2e7d32"/>
+    <text x="135" y="175" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32" font-weight="bold">T(v)</text>
+    
+    <!-- Unreachable Point -->
+    <circle cx="160" cy="130" r="4" fill="#dc3545"/>
+    <text x="170" y="130" font-family="Arial, sans-serif" font-size="11" fill="#dc3545" font-weight="bold">b'</text>
+    <text x="170" y="142" font-family="Arial, sans-serif" font-size="9" fill="#dc3545">unreachable</text>
+  </g>
+
+  <!-- ================= ANIMATED CONNECTIONS ================= -->
+  <g>
+    <line x1="80" y1="130" x2="375" y2="170" stroke="#1565c0" stroke-width="2" stroke-dasharray="5,5" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="x2" values="80;375" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="130;170" dur="3s" repeatCount="indefinite" />
+    </line>
+    
+    <line x1="120" y1="170" x2="425" y2="230" stroke="#1565c0" stroke-width="2" stroke-dasharray="5,5" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="x2" values="120;425" dur="3s" repeatCount="indefinite" begin="1s"/>
+        <animate attributeName="y2" values="170;230" dur="3s" repeatCount="indefinite" begin="1s"/>
+    </line>
+  </g>
+
+  <!-- Info Box -->
+  <g transform="translate(150, 270)">
+     <rect x="0" y="0" width="300" height="40" rx="5" fill="#fff3e0" stroke="#ffb74d"/>
+     <text x="150" y="25" font-family="Arial, sans-serif" font-size="11" fill="#e65100" text-anchor="middle">Rank(A) ≤ 2 &lt; 3. Plane can't fill 3D space.</text>
+  </g>
+</svg>

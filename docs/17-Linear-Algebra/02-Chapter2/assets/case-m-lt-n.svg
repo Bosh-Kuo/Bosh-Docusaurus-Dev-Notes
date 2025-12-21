@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320">
+  <defs>
+    <pattern id="grid2D" width="20" height="20" patternUnits="userSpaceOnUse">
+      <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#bbdefb" stroke-width="1"/>
+    </pattern>
+  </defs>
+
+  <text x="300" y="30" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#212529" text-anchor="middle">Case 2: m &lt; n (3D to 2D Projection)</text>
+  <text x="300" y="50" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Can be Onto, but NEVER 1-to-1 (Dimension Collapse)</text>
+
+  <!-- ================= LEFT: DOMAIN R3 ================= -->
+  <g transform="translate(50, 80)">
+    <text x="80" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#1976d2" font-weight="bold" text-anchor="middle">Domain R³</text>
+    
+    <path d="M 40,40 L 120,40 L 120,120 L 40,120 Z" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <path d="M 40,40 L 70,10 L 150,10 L 120,40" fill="#bbdefb" stroke="#1976d2" stroke-width="1"/>
+    <path d="M 150,10 L 150,90 L 120,120" fill="#90caf9" stroke="#1976d2" stroke-width="1"/>
+    
+    <line x1="80" y1="30" x2="80" y2="130" stroke="#d32f2f" stroke-width="2" stroke-dasharray="4,2"/>
+    <text x="80" y="145" font-family="Arial, sans-serif" font-size="10" fill="#d32f2f" font-weight="bold" text-anchor="middle">Line in R³</text>
+    
+    <circle cx="80" cy="50" r="4" fill="#1565c0"/>
+    <text x="65" y="55" font-family="Arial, sans-serif" font-size="11" fill="#1565c0" font-weight="bold">u</text>
+    
+    <circle cx="80" cy="80" r="4" fill="#1565c0"/>
+    <text x="65" y="85" font-family="Arial, sans-serif" font-size="11" fill="#1565c0" font-weight="bold">v</text>
+    
+    <circle cx="80" cy="110" r="4" fill="#1565c0"/>
+    <text x="65" y="115" font-family="Arial, sans-serif" font-size="11" fill="#1565c0" font-weight="bold">w</text>
+  </g>
+
+  <!-- ================= RIGHT: CODOMAIN R2 ================= -->
+  <g transform="translate(350, 80)">
+    <text x="50" y="-10" font-family="Arial, sans-serif" font-size="14" fill="#2e7d32" font-weight="bold" text-anchor="middle">Codomain R²</text>
+    <rect x="0" y="0" width="100" height="100" fill="#e8f5e9" stroke="#2e7d32" stroke-width="2" rx="4"/>
+    <rect x="0" y="0" width="100" height="100" fill="url(#grid2D)"/>
+    
+    <circle cx="50" cy="50" r="5" fill="#2e7d32"/>
+    <text x="65" y="45" font-family="Arial, sans-serif" font-size="11" fill="#2e7d32" font-weight="bold">p</text>
+    
+    <text x="50" y="120" font-family="Arial, sans-serif" font-size="10" fill="#1b5e20" text-anchor="middle" font-style="italic">T(u)=T(v)=T(w)=p</text>
+  </g>
+
+  <!-- ================= ANIMATED CONNECTIONS ================= -->
+  <g>
+    <line x1="130" y1="130" x2="400" y2="130" stroke="#1565c0" stroke-width="2" stroke-dasharray="5,5" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="x2" values="130;400" dur="3s" repeatCount="indefinite" />
+        <animate attributeName="y2" values="130;130" dur="3s" repeatCount="indefinite" />
+    </line>
+    
+    <line x1="130" y1="160" x2="400" y2="130" stroke="#1565c0" stroke-width="2" stroke-dasharray="5,5" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="x2" values="130;400" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+        <animate attributeName="y2" values="160;130" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </line>
+    
+    <line x1="130" y1="190" x2="400" y2="130" stroke="#1565c0" stroke-width="2" stroke-dasharray="5,5" opacity="0">
+        <animate attributeName="opacity" values="0;0.8;0" dur="3s" repeatCount="indefinite" begin="1.0s"/>
+        <animate attributeName="x2" values="130;400" dur="3s" repeatCount="indefinite" begin="1.0s"/>
+        <animate attributeName="y2" values="190;130" dur="3s" repeatCount="indefinite" begin="1.0s"/>
+    </line>
+  </g>
+
+  <!-- Info Box -->
+  <g transform="translate(150, 260)">
+     <rect x="0" y="0" width="300" height="40" rx="5" fill="#ffebee" stroke="#ef9a9a"/>
+     <text x="150" y="25" font-family="Arial, sans-serif" font-size="11" fill="#c62828" text-anchor="middle">Rank(A) ≤ 2 &lt; 3. Many points map to ONE.</text>
+  </g>
+</svg>
