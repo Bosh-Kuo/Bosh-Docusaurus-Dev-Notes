@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 260">
+  <!-- Background -->
+  <rect width="600" height="260" fill="#f8f9fa"/>
+  
+  <!-- Title (English only) -->
+  <text x="300" y="15" text-anchor="middle" font-family="serif" font-size="14" fill="#333">Matrix Multiplication Dimension Rule</text>
+  
+  <!-- Matrix A (m x n) -->
+  <g transform="translate(50, 55)">
+    <!-- Matrix bracket left -->
+    <path d="M 0 0 L -10 0 L -10 120 L 0 120" stroke="#333" stroke-width="2" fill="none"/>
+    <!-- Matrix bracket right -->
+    <path d="M 80 0 L 90 0 L 90 120 L 80 120" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <!-- Matrix cells -->
+    <rect x="5" y="5" width="70" height="110" fill="#e3f2fd" rx="3"/>
+    
+    <!-- Dimension labels -->
+    <text x="40" y="-15" text-anchor="middle" font-family="serif" font-size="16" font-style="italic" fill="#1976d2">A</text>
+    
+    <!-- m label (height) -->
+    <text x="-30" y="60" text-anchor="middle" font-family="serif" font-size="14" font-style="italic" fill="#d32f2f">m</text>
+    <line x1="-25" y1="10" x2="-25" y2="50" stroke="#d32f2f" stroke-width="1.5"/>
+    <line x1="-25" y1="70" x2="-25" y2="110" stroke="#d32f2f" stroke-width="1.5"/>
+    
+    <!-- n label (width) -->
+    <text x="40" y="140" text-anchor="middle" font-family="serif" font-size="14" font-style="italic" fill="#388e3c">n</text>
+    <line x1="10" y1="125" x2="35" y2="125" stroke="#388e3c" stroke-width="1.5"/>
+    <line x1="45" y1="125" x2="70" y2="125" stroke="#388e3c" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Multiplication symbol (centered) -->
+  <text x="160" y="125" text-anchor="middle" font-family="serif" font-size="24" fill="#333">×</text>
+  
+  <!-- Matrix B (n x p) -->
+  <g transform="translate(210, 55)">
+    <!-- Matrix bracket left -->
+    <path d="M 0 0 L -10 0 L -10 120 L 0 120" stroke="#333" stroke-width="2" fill="none"/>
+    <!-- Matrix bracket right -->
+    <path d="M 100 0 L 110 0 L 110 120 L 100 120" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <!-- Matrix cells -->
+    <rect x="5" y="5" width="90" height="110" fill="#fff3e0" rx="3"/>
+    
+    <!-- Dimension labels -->
+    <text x="50" y="-15" text-anchor="middle" font-family="serif" font-size="16" font-style="italic" fill="#f57c00">B</text>
+    
+    <!-- n label (height) - matching color -->
+    <text x="-30" y="60" text-anchor="middle" font-family="serif" font-size="14" font-style="italic" fill="#388e3c">n</text>
+    <line x1="-25" y1="10" x2="-25" y2="50" stroke="#388e3c" stroke-width="1.5"/>
+    <line x1="-25" y1="70" x2="-25" y2="110" stroke="#388e3c" stroke-width="1.5"/>
+    
+    <!-- p label (width) -->
+    <text x="50" y="140" text-anchor="middle" font-family="serif" font-size="14" font-style="italic" fill="#7b1fa2">p</text>
+    <line x1="10" y1="125" x2="45" y2="125" stroke="#7b1fa2" stroke-width="1.5"/>
+    <line x1="55" y1="125" x2="90" y2="125" stroke="#7b1fa2" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Equals symbol (centered) -->
+  <text x="345" y="125" text-anchor="middle" font-family="serif" font-size="24" fill="#333">=</text>
+  
+  <!-- Result Matrix AB (m x p) -->
+  <g transform="translate(400, 55)">
+    <!-- Matrix bracket left -->
+    <path d="M 0 0 L -10 0 L -10 120 L 0 120" stroke="#333" stroke-width="2" fill="none"/>
+    <!-- Matrix bracket right -->
+    <path d="M 100 0 L 110 0 L 110 120 L 100 120" stroke="#333" stroke-width="2" fill="none"/>
+    
+    <!-- Matrix cells -->
+    <rect x="5" y="5" width="90" height="110" fill="#e8f5e9" rx="3"/>
+    
+    <!-- Dimension labels -->
+    <text x="50" y="-15" text-anchor="middle" font-family="serif" font-size="16" font-style="italic" fill="#2e7d32">AB</text>
+    
+    <!-- m label (height) - matching color -->
+    <text x="-30" y="60" text-anchor="middle" font-family="serif" font-size="14" font-style="italic" fill="#d32f2f">m</text>
+    <line x1="-25" y1="10" x2="-25" y2="50" stroke="#d32f2f" stroke-width="1.5"/>
+    <line x1="-25" y1="70" x2="-25" y2="110" stroke="#d32f2f" stroke-width="1.5"/>
+    
+    <!-- p label (width) - matching color -->
+    <text x="50" y="140" text-anchor="middle" font-family="serif" font-size="14" font-style="italic" fill="#7b1fa2">p</text>
+    <line x1="10" y1="125" x2="45" y2="125" stroke="#7b1fa2" stroke-width="1.5"/>
+    <line x1="55" y1="125" x2="90" y2="125" stroke="#7b1fa2" stroke-width="1.5"/>
+  </g>
+  
+  <!-- Connection arrows showing matching dimensions -->
+  <g>
+    <!-- Arrow from A's n to B's n -->
+    <path d="M 130 195 Q 170 220 200 195" stroke="#388e3c" stroke-width="2" fill="none" stroke-dasharray="5,3"/>
+    <text x="165" y="240" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#388e3c">must be equal</text>
+  </g>
+</svg>

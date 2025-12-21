@@ -1,0 +1,92 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 190">
+  <!-- Background -->
+  <rect width="650" height="190" fill="#f8f9fa"/>
+  
+  <!-- Title (English only) -->
+  <text x="325" y="22" text-anchor="middle" font-family="serif" font-size="14" fill="#333">Matrix Multiplication is NOT Commutative: AB ≠ BA</text>
+  
+  <!-- AB Calculation -->
+  <g transform="translate(25, 60)">
+    <!-- Section box -->
+    <rect x="0" y="0" width="280" height="110" fill="#fff" stroke="#1976d2" stroke-width="2" rx="8"/>
+    <text x="140" y="-8" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1976d2">AB</text>
+    
+    <!-- Matrix A -->
+    <g transform="translate(20, 20)">
+      <path d="M 0 0 L -6 0 L -6 70 L 0 70" stroke="#333" stroke-width="1.5" fill="none"/>
+      <path d="M 50 0 L 56 0 L 56 70 L 50 70" stroke="#333" stroke-width="1.5" fill="none"/>
+      <text x="10" y="28" font-family="serif" font-size="14" fill="#333">1</text>
+      <text x="35" y="28" font-family="serif" font-size="14" fill="#333">2</text>
+      <text x="10" y="55" font-family="serif" font-size="14" fill="#333">0</text>
+      <text x="35" y="55" font-family="serif" font-size="14" fill="#333">1</text>
+    </g>
+    
+    <!-- Matrix B -->
+    <g transform="translate(90, 20)">
+      <path d="M 0 0 L -6 0 L -6 70 L 0 70" stroke="#333" stroke-width="1.5" fill="none"/>
+      <path d="M 50 0 L 56 0 L 56 70 L 50 70" stroke="#333" stroke-width="1.5" fill="none"/>
+      <text x="10" y="28" font-family="serif" font-size="14" fill="#333">1</text>
+      <text x="35" y="28" font-family="serif" font-size="14" fill="#333">0</text>
+      <text x="10" y="55" font-family="serif" font-size="14" fill="#333">3</text>
+      <text x="35" y="55" font-family="serif" font-size="14" fill="#333">1</text>
+    </g>
+    
+    <!-- Equals -->
+    <text x="170" y="60" font-family="serif" font-size="18" fill="#333">=</text>
+    
+    <!-- Result AB -->
+    <g transform="translate(195, 20)">
+      <rect x="-5" y="-5" width="65" height="80" fill="#e3f2fd" rx="4"/>
+      <path d="M 0 0 L -6 0 L -6 70 L 0 70" stroke="#1976d2" stroke-width="2" fill="none"/>
+      <path d="M 55 0 L 61 0 L 61 70 L 55 70" stroke="#1976d2" stroke-width="2" fill="none"/>
+      <text x="12" y="28" font-family="serif" font-size="14" font-weight="bold" fill="#1976d2">7</text>
+      <text x="40" y="28" font-family="serif" font-size="14" font-weight="bold" fill="#1976d2">2</text>
+      <text x="12" y="55" font-family="serif" font-size="14" font-weight="bold" fill="#1976d2">3</text>
+      <text x="40" y="55" font-family="serif" font-size="14" font-weight="bold" fill="#1976d2">1</text>
+    </g>
+  </g>
+  
+  <!-- Not equals symbol in center -->
+  <text x="325" y="125" text-anchor="middle" font-family="serif" font-size="32" font-weight="bold" fill="#d32f2f">≠</text>
+  
+  <!-- BA Calculation -->
+  <g transform="translate(345, 60)">
+    <!-- Section box -->
+    <rect x="0" y="0" width="280" height="110" fill="#fff" stroke="#e65100" stroke-width="2" rx="8"/>
+    <text x="140" y="-8" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#e65100">BA</text>
+    
+    <!-- Matrix B -->
+    <g transform="translate(20, 20)">
+      <path d="M 0 0 L -6 0 L -6 70 L 0 70" stroke="#333" stroke-width="1.5" fill="none"/>
+      <path d="M 50 0 L 56 0 L 56 70 L 50 70" stroke="#333" stroke-width="1.5" fill="none"/>
+      <text x="10" y="28" font-family="serif" font-size="14" fill="#333">1</text>
+      <text x="35" y="28" font-family="serif" font-size="14" fill="#333">0</text>
+      <text x="10" y="55" font-family="serif" font-size="14" fill="#333">3</text>
+      <text x="35" y="55" font-family="serif" font-size="14" fill="#333">1</text>
+    </g>
+    
+    <!-- Matrix A -->
+    <g transform="translate(90, 20)">
+      <path d="M 0 0 L -6 0 L -6 70 L 0 70" stroke="#333" stroke-width="1.5" fill="none"/>
+      <path d="M 50 0 L 56 0 L 56 70 L 50 70" stroke="#333" stroke-width="1.5" fill="none"/>
+      <text x="10" y="28" font-family="serif" font-size="14" fill="#333">1</text>
+      <text x="35" y="28" font-family="serif" font-size="14" fill="#333">2</text>
+      <text x="10" y="55" font-family="serif" font-size="14" fill="#333">0</text>
+      <text x="35" y="55" font-family="serif" font-size="14" fill="#333">1</text>
+    </g>
+    
+    <!-- Equals -->
+    <text x="170" y="60" font-family="serif" font-size="18" fill="#333">=</text>
+    
+    <!-- Result BA -->
+    <g transform="translate(195, 20)">
+      <rect x="-5" y="-5" width="65" height="80" fill="#fff3e0" rx="4"/>
+      <path d="M 0 0 L -6 0 L -6 70 L 0 70" stroke="#e65100" stroke-width="2" fill="none"/>
+      <path d="M 55 0 L 61 0 L 61 70 L 55 70" stroke="#e65100" stroke-width="2" fill="none"/>
+      <text x="12" y="28" font-family="serif" font-size="14" font-weight="bold" fill="#e65100">1</text>
+      <text x="40" y="28" font-family="serif" font-size="14" font-weight="bold" fill="#e65100">2</text>
+      <text x="12" y="55" font-family="serif" font-size="14" font-weight="bold" fill="#e65100">3</text>
+      <text x="40" y="55" font-family="serif" font-size="14" font-weight="bold" fill="#e65100">7</text>
+    </g>
+  </g>
+</svg>

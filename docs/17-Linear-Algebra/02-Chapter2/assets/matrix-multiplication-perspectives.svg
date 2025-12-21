@@ -1,0 +1,147 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 210">
+  <!-- Background -->
+  <rect width="750" height="210" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="375" y="25" text-anchor="middle" font-family="serif" font-size="15" fill="#333">Row and Column Perspectives of Matrix Multiplication</text>
+  
+  <!-- ==================== Column Perspective ==================== -->
+  <g transform="translate(20, 50)">
+    <rect x="0" y="0" width="350" height="145" fill="#fff" stroke="#1976d2" stroke-width="2" rx="8"/>
+    
+    <!-- Matrix A -->
+    <g transform="translate(20, 20)">
+      <path d="M 0 0 L -6 0 L -6 80 L 0 80" stroke="#333" stroke-width="1.5" fill="none"/>
+      <path d="M 75 0 L 81 0 L 81 80 L 75 80" stroke="#333" stroke-width="1.5" fill="none"/>
+      
+      <!-- Column vectors highlighted -->
+      <rect x="2" y="2" width="23" height="76" fill="#bbdefb" stroke="#1976d2" stroke-width="1"/>
+      <rect x="27" y="2" width="23" height="76" fill="#c8e6c9" stroke="#388e3c" stroke-width="1"/>
+      <rect x="52" y="2" width="21" height="76" fill="#ffe0b2" stroke="#f57c00" stroke-width="1"/>
+      
+      <text x="13" y="25" text-anchor="middle" font-family="serif" font-size="11" fill="#1976d2" font-weight="bold">a₁</text>
+      <text x="38" y="25" text-anchor="middle" font-family="serif" font-size="11" fill="#388e3c" font-weight="bold">a₂</text>
+      <text x="63" y="25" text-anchor="middle" font-family="serif" font-size="11" fill="#f57c00" font-weight="bold">a₃</text>
+      
+      <text x="13" y="50" text-anchor="middle" font-family="serif" font-size="11" fill="#1976d2">•</text>
+      <text x="38" y="50" text-anchor="middle" font-family="serif" font-size="11" fill="#388e3c">•</text>
+      <text x="63" y="50" text-anchor="middle" font-family="serif" font-size="11" fill="#f57c00">•</text>
+      
+      <text x="13" y="70" text-anchor="middle" font-family="serif" font-size="11" fill="#1976d2">•</text>
+      <text x="38" y="70" text-anchor="middle" font-family="serif" font-size="11" fill="#388e3c">•</text>
+      <text x="63" y="70" text-anchor="middle" font-family="serif" font-size="11" fill="#f57c00">•</text>
+      
+      <text x="38" y="95" text-anchor="middle" font-family="serif" font-size="10" font-style="italic" fill="#666">A</text>
+    </g>
+    
+    <!-- Vector b_j -->
+    <g transform="translate(110, 20)">
+      <path d="M 0 0 L -5 0 L -5 80 L 0 80" stroke="#333" stroke-width="1.5" fill="none"/>
+      <path d="M 25 0 L 30 0 L 30 80 L 25 80" stroke="#333" stroke-width="1.5" fill="none"/>
+      
+      <rect x="2" y="2" width="21" height="76" fill="#e1bee7" stroke="#7b1fa2" stroke-width="1"/>
+      
+      <text x="12" y="25" text-anchor="middle" font-family="serif" font-size="11" fill="#7b1fa2" font-weight="bold">b₁</text>
+      <text x="12" y="50" text-anchor="middle" font-family="serif" font-size="11" fill="#7b1fa2" font-weight="bold">b₂</text>
+      <text x="12" y="70" text-anchor="middle" font-family="serif" font-size="11" fill="#7b1fa2" font-weight="bold">b₃</text>
+      
+      <text x="12" y="95" text-anchor="middle" font-family="serif" font-size="10" font-style="italic" fill="#666">bⱼ</text>
+    </g>
+    
+    <!-- Equals -->
+    <text x="165" y="65" text-anchor="middle" font-family="serif" font-size="16" fill="#333">=</text>
+    
+    <!-- Result explanation -->
+    <g transform="translate(185, 15)">
+      <text x="0" y="20" font-family="serif" font-size="11" fill="#333">
+        <tspan fill="#7b1fa2" font-weight="bold">b₁</tspan>
+        <tspan fill="#1976d2" font-weight="bold"> a₁</tspan>
+        <tspan fill="#333"> + </tspan>
+        <tspan fill="#7b1fa2" font-weight="bold">b₂</tspan>
+        <tspan fill="#388e3c" font-weight="bold"> a₂</tspan>
+        <tspan fill="#333"> + </tspan>
+        <tspan fill="#7b1fa2" font-weight="bold">b₃</tspan>
+        <tspan fill="#f57c00" font-weight="bold"> a₃</tspan>
+      </text>
+      
+      <text x="0" y="50" font-family="serif" font-size="10" fill="#555">= linear combination of</text>
+      <text x="0" y="65" font-family="serif" font-size="10" fill="#555">  A's columns</text>
+      
+      <!-- Result vector -->
+      <g transform="translate(10, 75)">
+        <path d="M 0 0 L -5 0 L -5 40 L 0 40" stroke="#2e7d32" stroke-width="1.5" fill="none"/>
+        <path d="M 25 0 L 30 0 L 30 40 L 25 40" stroke="#2e7d32" stroke-width="1.5" fill="none"/>
+        <rect x="2" y="2" width="21" height="36" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+        <text x="12" y="25" text-anchor="middle" font-family="serif" font-size="10" fill="#2e7d32" font-weight="bold">(AB)ⱼ</text>
+      </g>
+    </g>
+  </g>
+  
+  <!-- ==================== Row Perspective ==================== -->
+  <g transform="translate(380, 50)">
+    <rect x="0" y="0" width="350" height="145" fill="#fff" stroke="#e65100" stroke-width="2" rx="8"/>
+    
+    <!-- Row vector a_i^T -->
+    <g transform="translate(20, 35)">
+      <path d="M 0 0 L -5 0 L -5 25 L 0 25" stroke="#333" stroke-width="1.5" fill="none"/>
+      <path d="M 75 0 L 80 0 L 80 25 L 75 25" stroke="#333" stroke-width="1.5" fill="none"/>
+      
+      <rect x="2" y="2" width="71" height="21" fill="#bbdefb" stroke="#1976d2" stroke-width="1"/>
+      
+      <text x="15" y="18" text-anchor="middle" font-family="serif" font-size="11" fill="#1976d2" font-weight="bold">a₁</text>
+      <text x="38" y="18" text-anchor="middle" font-family="serif" font-size="11" fill="#1976d2" font-weight="bold">a₂</text>
+      <text x="61" y="18" text-anchor="middle" font-family="serif" font-size="11" fill="#1976d2" font-weight="bold">a₃</text>
+      
+      <text x="38" y="40" text-anchor="middle" font-family="serif" font-size="10" font-style="italic" fill="#666">aᵢᵀ (row i of A)</text>
+    </g>
+    
+    <!-- Matrix B -->
+    <g transform="translate(110, 20)">
+      <path d="M 0 0 L -6 0 L -6 80 L 0 80" stroke="#333" stroke-width="1.5" fill="none"/>
+      <path d="M 80 0 L 86 0 L 86 80 L 80 80" stroke="#333" stroke-width="1.5" fill="none"/>
+      
+      <!-- Row vectors highlighted -->
+      <rect x="2" y="2" stroke="#f57c00" stroke-width="1" width="76" height="23" fill="#ffe0b2"/>
+      <rect x="2" y="27" stroke="#388e3c" stroke-width="1" width="76" height="23" fill="#c8e6c9"/>
+      <rect x="2" y="52" stroke="#7b1fa2" stroke-width="1" width="76" height="24" fill="#e1bee7"/>
+      
+      <text x="20" y="18" text-anchor="middle" font-family="serif" font-size="10" fill="#f57c00" font-weight="bold">row 1</text>
+      <text x="20" y="43" text-anchor="middle" font-family="serif" font-size="10" fill="#388e3c" font-weight="bold">row 2</text>
+      <text x="20" y="68" text-anchor="middle" font-family="serif" font-size="10" fill="#7b1fa2" font-weight="bold">row 3</text>
+      
+      <text x="60" y="18" text-anchor="middle" font-family="serif" font-size="10" fill="#f57c00">= bᵀ₁</text>
+      <text x="60" y="43" text-anchor="middle" font-family="serif" font-size="10" fill="#388e3c">= bᵀ₂</text>
+      <text x="60" y="68" text-anchor="middle" font-family="serif" font-size="10" fill="#7b1fa2">= bᵀ₃</text>
+      
+      <text x="40" y="95" text-anchor="middle" font-family="serif" font-size="10" font-style="italic" fill="#666">B</text>
+    </g>
+    
+    <!-- Equals -->
+    <text x="215" y="65" text-anchor="middle" font-family="serif" font-size="16" fill="#333">=</text>
+    
+    <!-- Result explanation -->
+    <g transform="translate(230, 15)">
+      <text x="0" y="20" font-family="serif" font-size="11" fill="#333">
+        <tspan fill="#1976d2" font-weight="bold">a₁</tspan>
+        <tspan fill="#f57c00" font-weight="bold"> bᵀ₁</tspan>
+        <tspan fill="#333"> + </tspan>
+        <tspan fill="#1976d2" font-weight="bold">a₂</tspan>
+        <tspan fill="#388e3c" font-weight="bold"> bᵀ₂</tspan>
+        <tspan fill="#333"> + </tspan>
+        <tspan fill="#1976d2" font-weight="bold">a₃</tspan>
+        <tspan fill="#7b1fa2" font-weight="bold"> bᵀ₃</tspan>
+      </text>
+      
+      <text x="0" y="50" font-family="serif" font-size="10" fill="#555">= linear combination of</text>
+      <text x="0" y="65" font-family="serif" font-size="10" fill="#555">  B's rows</text>
+      
+      <!-- Result row -->
+      <g transform="translate(5, 75)">
+        <path d="M 0 0 L -5 0 L -5 25 L 0 25" stroke="#2e7d32" stroke-width="1.5" fill="none"/>
+        <path d="M 80 0 L 85 0 L 85 25 L 80 25" stroke="#2e7d32" stroke-width="1.5" fill="none"/>
+        <rect x="2" y="2" width="76" height="21" fill="#c8e6c9" stroke="#2e7d32" stroke-width="1"/>
+        <text x="40" y="17" text-anchor="middle" font-family="serif" font-size="10" fill="#2e7d32" font-weight="bold">row i of (AB)</text>
+      </g>
+    </g>
+  </g>
+</svg>
