@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <marker id="arrow-grid" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#555"/>
+    </marker>
+    <marker id="arrow-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#3498db"/>
+    </marker>
+  </defs>
+  
+  <rect width="600" height="300" fill="#fafafa"/>
+  
+  <!-- Centered Panel -->
+  <g transform="translate(300, 150)">
+    <!-- Grid -->
+    <g stroke="#ddd" stroke-width="0.5">
+      <line x1="-200" y1="-100" x2="200" y2="-100"/>
+      <line x1="-200" y1="-50" x2="200" y2="-50"/>
+      <line x1="-200" y1="0" x2="200" y2="0"/>
+      <line x1="-200" y1="50" x2="200" y2="50"/>
+      <line x1="-200" y1="100" x2="200" y2="100"/>
+      <line x1="-150" y1="-120" x2="-150" y2="120"/>
+      <line x1="-100" y1="-120" x2="-100" y2="120"/>
+      <line x1="-50" y1="-120" x2="-50" y2="120"/>
+      <line x1="0" y1="-120" x2="0" y2="120"/>
+      <line x1="50" y1="-120" x2="50" y2="120"/>
+      <line x1="100" y1="-120" x2="100" y2="120"/>
+      <line x1="150" y1="-120" x2="150" y2="120"/>
+    </g>
+    
+    <!-- Axes -->
+    <line x1="-200" y1="0" x2="200" y2="0" stroke="#555" stroke-width="1.5" marker-end="url(#arrow-grid)"/>
+    <line x1="0" y1="120" x2="0" y2="-120" stroke="#555" stroke-width="1.5" marker-end="url(#arrow-grid)"/>
+    <text x="-15" y="15" font-family="serif" font-size="12" fill="#333">O</text>
+    
+    <!-- Animated Square: Flip across X-axis (y -> -y) -->
+    <!-- Points: (50, -50) [Q1] -> (50, 50) [Q4] -->
+    <polygon points="0,0 50,0 50,-50 0,-50" fill="rgba(52, 152, 219, 0.3)" stroke="#3498db" stroke-width="2">
+      <animate attributeName="points" 
+               values="0,0 50,0 50,-50 0,-50; 0,0 50,0 50,-50 0,-50; 0,0 50,0 50,50 0,50; 0,0 50,0 50,50 0,50; 0,0 50,0 50,-50 0,-50"
+               keyTimes="0; 0.2; 0.4; 0.9; 1"
+               dur="6s" 
+               repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- e1 vector (Invariant) -->
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#e74c3c" stroke-width="3" marker-end="url(#arrow-red)"/>
+    <text x="50" y="20" font-family="serif" font-size="16" fill="#e74c3c" font-weight="bold">T(e₁)</text>
+    
+    <!-- e2 vector (Flips: -50 -> 50) -->
+    <line x1="0" y1="0" x2="0" y2="-50" stroke="#3498db" stroke-width="3" marker-end="url(#arrow-blue)">
+      <animate attributeName="y2" 
+               values="-50; -50; 50; 50; -50"
+               keyTimes="0; 0.2; 0.4; 0.9; 1"
+               dur="6s" 
+               repeatCount="indefinite"/>
+    </line>
+    <text x="-10" y="-55" font-family="serif" font-size="16" fill="#3498db" font-weight="bold">
+      T(e₂)
+      <animate attributeName="y" 
+               values="-55; -55; 45; 45; -55"
+               keyTimes="0; 0.2; 0.4; 0.9; 1"
+               dur="6s" 
+               repeatCount="indefinite"/>
+    </text>
+    
+    <text x="0" y="140" font-family="sans-serif" font-size="14" fill="#333" text-anchor="middle">Reflection: Across x-axis</text>
+  </g>
+</svg>

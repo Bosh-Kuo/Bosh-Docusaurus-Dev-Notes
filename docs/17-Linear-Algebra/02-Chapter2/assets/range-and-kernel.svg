@@ -1,0 +1,132 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 280">
+  <defs>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0,0 10,3.5 0,7" fill="#9b59b6"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="650" height="280" fill="#fafafa"/>
+  
+  <!-- ========== Domain V ========== -->
+  <g transform="translate(130, 140)">
+    <!-- Domain ellipse -->
+    <ellipse cx="0" cy="0" rx="100" ry="90" fill="rgba(52, 152, 219, 0.08)" stroke="#3498db" stroke-width="2"/>
+    
+    <!-- Kernel region -->
+    <ellipse cx="-20" cy="30" rx="45" ry="35" fill="rgba(230, 126, 34, 0.25)" stroke="#e67e22" stroke-width="2" stroke-dasharray="5,3">
+      <animate attributeName="opacity" values="0;1;1;1;1;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Kernel label -->
+    <text x="-20" y="35" font-family="serif" font-size="14" fill="#d35400" text-anchor="middle" font-weight="bold">
+      Ker(T)
+      <animate attributeName="opacity" values="0;0;1;1;1;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Points in kernel (mapped to 0) -->
+    <g>
+      <animate attributeName="opacity" values="0;0;1;1;1;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+      <circle cx="-35" cy="20" r="3" fill="#e67e22"/>
+      <circle cx="-10" cy="40" r="3" fill="#e67e22"/>
+      <circle cx="-25" cy="50" r="3" fill="#e67e22"/>
+      <circle cx="5" cy="25" r="3" fill="#e67e22"/>
+    </g>
+    
+    <!-- Other points (mapped to range) -->
+    <g>
+      <animate attributeName="opacity" values="0;1;1;1;1;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+      <circle cx="40" cy="-30" r="3" fill="#2980b9"/>
+      <circle cx="60" cy="10" r="3" fill="#2980b9"/>
+      <circle cx="-50" cy="-40" r="3" fill="#2980b9"/>
+      <circle cx="20" cy="-60" r="3" fill="#2980b9"/>
+      <circle cx="-70" cy="-10" r="3" fill="#2980b9"/>
+    </g>
+    
+    <!-- Domain label -->
+    <text x="0" y="-105" font-family="serif" font-size="18" fill="#2980b9" text-anchor="middle" font-weight="bold">V (Domain)</text>
+  </g>
+  
+  <!-- ========== Transformation Arrow T ========== -->
+  <g>
+    <path d="M 250 140 C 290 100, 340 100, 380 140" fill="none" stroke="#9b59b6" stroke-width="2.5" marker-end="url(#arrow-purple)">
+      <animate attributeName="opacity" values="0;0;0;1;1;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+    </path>
+    <text x="315" y="85" font-family="serif" font-size="20" fill="#9b59b6" font-style="italic" font-weight="bold" text-anchor="middle">
+      T
+      <animate attributeName="opacity" values="0;0;0;1;1;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  
+  <!-- ========== Codomain W ========== -->
+  <g transform="translate(500, 140)">
+    <!-- Codomain ellipse -->
+    <ellipse cx="0" cy="0" rx="110" ry="95" fill="rgba(46, 204, 113, 0.08)" stroke="#27ae60" stroke-width="2"/>
+    
+    <!-- Range region -->
+    <ellipse cx="-10" cy="-10" rx="65" ry="50" fill="rgba(46, 204, 113, 0.25)" stroke="#27ae60" stroke-width="2" stroke-dasharray="5,3">
+      <animate attributeName="opacity" values="0;0;0;0;1;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+    </ellipse>
+    
+    <!-- Range label -->
+    <text x="-10" y="-5" font-family="serif" font-size="14" fill="#1e8449" text-anchor="middle" font-weight="bold">
+      Range(T)
+      <animate attributeName="opacity" values="0;0;0;0;0;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Zero vector (target of kernel) -->
+    <g>
+      <animate attributeName="opacity" values="0;0;0;0;0;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+      <circle cx="-50" cy="20" r="5" fill="#e67e22" stroke="#d35400" stroke-width="1.5"/>
+      <text x="-50" y="40" font-family="serif" font-size="13" fill="#d35400" text-anchor="middle" font-weight="bold">0</text>
+    </g>
+    
+    <!-- Points in range -->
+    <g>
+      <animate attributeName="opacity" values="0;0;0;0;1;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+      <circle cx="20" cy="-30" r="3" fill="#27ae60"/>
+      <circle cx="40" cy="5" r="3" fill="#27ae60"/>
+      <circle cx="-25" cy="-35" r="3" fill="#27ae60"/>
+      <circle cx="10" cy="15" r="3" fill="#27ae60"/>
+    </g>
+    
+    <!-- Points outside range (unreachable) -->
+    <g>
+      <animate attributeName="opacity" values="0;0;0;0;0;1;1;1;1;0" dur="11s" repeatCount="indefinite"/>
+      <circle cx="80" cy="50" r="3" fill="#bdc3c7"/>
+      <circle cx="70" cy="-60" r="3" fill="#bdc3c7"/>
+      <circle cx="-80" cy="60" r="3" fill="#bdc3c7"/>
+    </g>
+    
+    <!-- Codomain label -->
+    <text x="0" y="-110" font-family="serif" font-size="18" fill="#27ae60" text-anchor="middle" font-weight="bold">W (Codomain)</text>
+  </g>
+  
+  <!-- ========== Mapping Arrows ========== -->
+  
+  <!-- Kernel to zero vector -->
+  <g>
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0.7;0.7;0.7;0" dur="11s" repeatCount="indefinite"/>
+    <path d="M 110 170 C 200 220, 350 220, 450 160" fill="none" stroke="#e67e22" stroke-width="1.5" stroke-dasharray="4,3"/>
+  </g>
+  
+  <!-- General vectors to range -->
+  <g>
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0.6;0.6;0.6;0" dur="11s" repeatCount="indefinite"/>
+    <path d="M 170 110 C 260 70, 380 80, 490 110" fill="none" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <path d="M 190 80 C 280 40, 400 50, 510 105" fill="none" stroke="#27ae60" stroke-width="1.5" stroke-dasharray="4,3"/>
+  </g>
+  
+  <!-- ========== Legend ========== -->
+  <g>
+    <animate attributeName="opacity" values="0;0;0;0;0;0;0;1;1;0" dur="11s" repeatCount="indefinite"/>
+    
+    <!-- Left legend -->
+    <rect x="40" y="245" width="190" height="28" rx="5" fill="rgba(230, 126, 34, 0.15)" stroke="#e67e22" stroke-width="1"/>
+    <text x="135" y="264" font-family="sans-serif" font-size="12" fill="#d35400" text-anchor="middle">Kernel: Elements mapped to zero</text>
+    
+    <!-- Right legend -->
+    <rect x="410" y="245" width="200" height="28" rx="5" fill="rgba(46, 204, 113, 0.15)" stroke="#27ae60" stroke-width="1"/>
+    <text x="510" y="264" font-family="sans-serif" font-size="12" fill="#1e8449" text-anchor="middle">Range: Actual output subspace</text>
+  </g>
+</svg>

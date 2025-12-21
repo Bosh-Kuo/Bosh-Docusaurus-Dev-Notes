@@ -1,0 +1,116 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <marker id="arrowhead-grid" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#555"/>
+    </marker>
+    <marker id="arrowhead-red" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#e74c3c"/>
+    </marker>
+    <marker id="arrowhead-blue" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0,0 8,3 0,6" fill="#3498db"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="300" fill="#fafafa"/>
+  
+  <!-- Left: Original Space -->
+  <g transform="translate(120, 150)">
+    <!-- Grid -->
+    <g stroke="#ddd" stroke-width="0.5">
+      <line x1="-100" y1="-100" x2="-100" y2="100"/>
+      <line x1="-50" y1="-100" x2="-50" y2="100"/>
+      <line x1="0" y1="-100" x2="0" y2="100"/>
+      <line x1="50" y1="-100" x2="50" y2="100"/>
+      <line x1="100" y1="-100" x2="100" y2="100"/>
+      <line x1="-100" y1="-100" x2="100" y2="-100"/>
+      <line x1="-100" y1="-50" x2="100" y2="-50"/>
+      <line x1="-100" y1="0" x2="100" y2="0"/>
+      <line x1="-100" y1="50" x2="100" y2="50"/>
+      <line x1="-100" y1="100" x2="100" y2="100"/>
+    </g>
+    
+    <!-- Axes -->
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="#555" stroke-width="1.5" marker-end="url(#arrowhead-grid)"/>
+    <line x1="0" y1="100" x2="0" y2="-100" stroke="#555" stroke-width="1.5" marker-end="url(#arrowhead-grid)"/>
+    
+    <!-- Origin -->
+    <circle cx="0" cy="0" r="3" fill="#333"/>
+    <text x="-12" y="15" font-family="serif" font-size="12" fill="#333">O</text>
+    
+    <!-- Unit Square (Original) - appears early, holds long, fades at end -->
+    <polygon points="0,0 50,0 50,-50 0,-50" fill="rgba(52, 152, 219, 0.3)" stroke="#3498db" stroke-width="2">
+      <animate attributeName="opacity" values="0;1;1;1;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Basis vector e1 -->
+    <line x1="0" y1="0" x2="45" y2="0" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrowhead-red)">
+      <animate attributeName="opacity" values="0;0;1;1;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </line>
+    <text x="50" y="18" font-family="serif" font-size="14" fill="#e74c3c" font-style="italic">
+      e₁
+      <animate attributeName="opacity" values="0;0;1;1;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Basis vector e2 -->
+    <line x1="0" y1="0" x2="0" y2="-45" stroke="#3498db" stroke-width="2.5" marker-end="url(#arrowhead-blue)">
+      <animate attributeName="opacity" values="0;0;0;1;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </line>
+    <text x="-18" y="-52" font-family="serif" font-size="14" fill="#3498db" font-style="italic">
+      e₂
+      <animate attributeName="opacity" values="0;0;0;1;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  
+  <!-- Transformation Arrow -->
+  <g>
+    <path d="M 230 150 C 260 130, 280 130, 310 150" fill="none" stroke="#9b59b6" stroke-width="2" stroke-dasharray="5,3">
+      <animate attributeName="stroke-dashoffset" from="20" to="0" dur="1s" repeatCount="indefinite"/>
+    </path>
+    <text x="260" y="115" font-family="serif" font-size="14" fill="#9b59b6" font-style="italic">T</text>
+  </g>
+  
+  <!-- Right: Transformed Space -->
+  <g transform="translate(420, 150)">
+    <!-- Deformed Grid -->
+    <g stroke="#ddd" stroke-width="0.5">
+      <line x1="-100" y1="0" x2="100" y2="0"/>
+      <line x1="0" y1="-100" x2="0" y2="100"/>
+    </g>
+    
+    <!-- Axes -->
+    <line x1="-100" y1="0" x2="100" y2="0" stroke="#555" stroke-width="1.5" marker-end="url(#arrowhead-grid)"/>
+    <line x1="0" y1="100" x2="0" y2="-100" stroke="#555" stroke-width="1.5" marker-end="url(#arrowhead-grid)"/>
+    
+    <!-- Origin -->
+    <circle cx="0" cy="0" r="3" fill="#333"/>
+    <text x="-12" y="15" font-family="serif" font-size="12" fill="#333">O</text>
+    
+    <!-- Transformed Parallelogram - holds long at end -->
+    <polygon points="0,0 60,-15 80,-70 20,-55" fill="rgba(231, 76, 60, 0.3)" stroke="#e74c3c" stroke-width="2">
+      <animate attributeName="opacity" values="0;0;0;0;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </polygon>
+    
+    <!-- Transformed T(e1) -->
+    <line x1="0" y1="0" x2="55" y2="-12" stroke="#e74c3c" stroke-width="2.5" marker-end="url(#arrowhead-red)">
+      <animate attributeName="opacity" values="0;0;0;0;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </line>
+    <text x="62" y="-5" font-family="serif" font-size="14" fill="#e74c3c" font-style="italic">
+      T(e₁)
+      <animate attributeName="opacity" values="0;0;0;0;1;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </text>
+    
+    <!-- Transformed T(e2) -->
+    <line x1="0" y1="0" x2="17" y2="-50" stroke="#3498db" stroke-width="2.5" marker-end="url(#arrowhead-blue)">
+      <animate attributeName="opacity" values="0;0;0;0;0;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </line>
+    <text x="20" y="-58" font-family="serif" font-size="14" fill="#3498db" font-style="italic">
+      T(e₂)
+      <animate attributeName="opacity" values="0;0;0;0;0;1;1;1;0" dur="5s" repeatCount="indefinite"/>
+    </text>
+  </g>
+  
+  <!-- Labels -->
+  <text x="120" y="280" font-family="sans-serif" font-size="13" fill="#333" text-anchor="middle">Original Space</text>
+  <text x="420" y="280" font-family="sans-serif" font-size="13" fill="#333" text-anchor="middle">Transformed Space</text>
+</svg>
