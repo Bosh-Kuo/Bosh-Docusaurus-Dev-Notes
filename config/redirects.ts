@@ -8,6 +8,14 @@ const redirects = [
     from: "/docs/React/mui-theme-advanced",
   },
   {
+    to: "/docs/WebAPI/BOM-DOM",
+    from: "/docs/Javascript/js-BOM-DOM",
+  },
+  {
+    to: "/docs/WebAPI/cookie-sessionStorage-localStorage",
+    from: "/docs/Web/cookie-sessionStorage-localStorage",
+  },
+  {
     to: "/blog/react-ts-jest-rtl-msw-setup",
     from: "/docs/React/TS-Jest-RTL-MSW-Setup",
   },

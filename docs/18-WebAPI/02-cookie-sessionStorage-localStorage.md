@@ -4,16 +4,12 @@ sidebar_label: "Cookie vs. SessionStorage vs. LocalStorage"
 description: 本文章介紹了 HTTP 協議的無狀態特性以及在瀏覽器端常見的三種資料儲存方式：Cookie、SessionStorage 和 LocalStorage，並深入探討它們的特性、用途及差異。透過這些機制，我們可以在前端有效地保存狀態，改善使用者體驗並實現持久性的資料儲存。
 last_update:
   date: 2024-10-01
-keywords:
-  - Cookie
-  - SessionStorage
-  - LocalStorage
-tags: [Web]
+keywords: [WebAPI, Cookie, SessionStorage, LocalStorage]
+tags: [WebAPI]
 ---
 
 > HTTP 協議本身是一種**無狀態**的通訊協議，伺服器不會保存兩個請求之間的資料（狀態）。因此，每當我們重新整理網頁時，前端的操作和資料都會消失，除非有機制幫助我們保存這些狀態。
-為了解決這個問題，瀏覽器端提供了多種方式來保存資料，讓我們可以在不同的頁面之間保持狀態，甚至在關閉瀏覽器後也能保留資料。其中，**Cookie**、**SessionStorage** 和 **LocalStorage** 是三種常見的資料儲存方式，它們各自具有不同的特性和應用場景。接下來，我們將深入介紹這三者的用途與區別。
-> 
+> 為了解決這個問題，瀏覽器端提供了多種方式來保存資料，讓我們可以在不同的頁面之間保持狀態，甚至在關閉瀏覽器後也能保留資料。其中，**Cookie**、**SessionStorage** 和 **LocalStorage** 是三種常見的資料儲存方式，它們各自具有不同的特性和應用場景。接下來，我們將深入介紹這三者的用途與區別。
 
 ## **Cookie**
 
@@ -40,15 +36,15 @@ tags: [Web]
 - **HttpOnly 標誌 (HttpOnly)**：設定此標誌可以讓 Cookie 無法被 JavaScript 訪問，增加安全性，防止 XSS 攻擊。
 - **安全標誌 (Secure)**：告訴瀏覽器這個 Cookie 只能在 HTTPS 協議下傳輸，增加資料傳輸的安全性。
 - **SameSite**：此標誌用於防止 CSRF（跨站請求偽造）攻擊，限制 Cookie 在跨站情況下的使用。可能的值包括：
-    - **Strict**：Cookie 只會在同一站點的請求中發送。
-    - **Lax**：允許部分跨站請求（如 GET 請求）發送 Cookie。
-    - **None**：允許所有跨站請求，但要求必須設置 `Secure` 標誌。
+  - **Strict**：Cookie 只會在同一站點的請求中發送。
+  - **Lax**：允許部分跨站請求（如 GET 請求）發送 Cookie。
+  - **None**：允許所有跨站請求，但要求必須設置 `Secure` 標誌。
 - **Partition Key**：此欄位表明 Cookie 是否屬於某個特定的「隔離範疇」，例如針對第三方內容的隔離。此欄位通常由瀏覽器管理，您不需要手動設置。
 - **Cross Site**：顯示 Cookie 是否可在跨站情境中使用。這通常與 `SameSite` 屬性密切相關。
 - **優先級 (Priority)**：指定 Cookie 的優先級，用於決定在瀏覽器中清除 Cookie 時的順序。可能的值包括：
-    - **Low**：低優先級。
-    - **Medium**：中等優先級。
-    - **High**：高優先級，這些 Cookie 更不容易被瀏覽器清除。
+  - **Low**：低優先級。
+  - **Medium**：中等優先級。
+  - **High**：高優先級，這些 Cookie 更不容易被瀏覽器清除。
 
 如果我們訪問一個網站，並且從開發者工具的「應用程式 (Application)」中打開它的 Cookie，我們可能會看到類似這樣的 Cookie 結構：
 
@@ -56,6 +52,7 @@ tags: [Web]
 | ---------- | --------- | ----------- | -------- | -------- | ----------------------------- | ------------ | ---------- | ------------ | ----------------- | -------------- | ------------ |
 | session_id | abc123xyz | example.com | /        | 16       | Fri, 31 Dec 2024 23:59:59 GMT | Yes          | Yes        | Lax          | No                | Yes            | Medium       |
 | lang       | en-US     | example.com | /        | 8        | Session                       | No           | No         | Strict       | No                | No             | Low          |
+
 ### **Cookie 的用途**
 
 - **會話管理**：保存使用者的登錄狀態，例如保持登入而不必在每次訪問新頁面時重新登入。
@@ -68,7 +65,8 @@ JavaScript 提供了 API 來創建、讀取、修改和刪除 Cookie。
 
 ```jsx
 // 創建或修改 Cookie
-document.cookie = "username=JohnDoe; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/";
+document.cookie =
+  "username=JohnDoe; expires=Fri, 31 Dec 2024 23:59:59 GMT; path=/";
 
 // 讀取 Cookie
 console.log(document.cookie);
@@ -104,13 +102,13 @@ JavaScript 提供了簡單的 API 來創建、讀取、修改和刪除 SessionSt
 
 ```jsx
 // 儲存資料
-sessionStorage.setItem('username', 'JohnDoe');
+sessionStorage.setItem("username", "JohnDoe");
 
 // 讀取資料
-console.log(sessionStorage.getItem('username'));
+console.log(sessionStorage.getItem("username"));
 
 // 刪除資料
-sessionStorage.removeItem('username');
+sessionStorage.removeItem("username");
 
 // 清空所有資料
 sessionStorage.clear();
@@ -142,13 +140,13 @@ JavaScript 提供了簡單的 API 來建立、讀取、修改和刪除 LocalStor
 
 ```jsx
 // 儲存資料
-localStorage.setItem('username', 'JohnDoe');
+localStorage.setItem("username", "JohnDoe");
 
 // 讀取資料
-console.log(localStorage.getItem('username'));
+console.log(localStorage.getItem("username"));
 
 // 刪除資料
-localStorage.removeItem('username');
+localStorage.removeItem("username");
 
 // 清空所有資料
 localStorage.clear();

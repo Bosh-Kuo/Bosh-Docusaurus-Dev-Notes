@@ -4,14 +4,14 @@ sidebar_label: "ResizeObserver"
 description: 完整理解 ResizeObserver API：監聯元素尺寸變化的最佳解決方案
 last_update:
   date: 2025-12-17
-keywords: [JavaScript, Web API, ResizeObserver, DOM, 響應式設計, 尺寸監聽]
-tags: [JavaScript, WebAPI]
+keywords: [Web API, JavaScript, ResizeObserver, DOM, 響應式設計, 尺寸監聽]
+tags: [WebAPI]
 ---
 
 import {
-  ResizeObserverBasicDemo,
-  ResizeObserverBoxOptions,
-  ResponsiveFontDemo
+ResizeObserverBasicDemo,
+ResizeObserverBoxOptions,
+ResponsiveFontDemo
 } from '@site/src/components/ExampleComponents/ResizeObserver';
 
 ## **為什麼需要 ResizeObserver？**
@@ -20,7 +20,7 @@ import {
 
 ```javascript
 // 方法 1：監聽 window resize 事件
-window.addEventListener('resize', () => {
+window.addEventListener("resize", () => {
   const width = element.offsetWidth;
   // 處理尺寸變化...
 });
@@ -70,13 +70,13 @@ const observer = new ResizeObserver((entries) => {
   // entries 是一個陣列，包含所有發生尺寸變化的元素資訊
   // 每個 entry 都是一個 ResizeObserverEntry 物件
   for (const entry of entries) {
-    console.log('哪個元素變化了:', entry.target);
-    console.log('新的尺寸資訊:', entry.contentBoxSize);
+    console.log("哪個元素變化了:", entry.target);
+    console.log("新的尺寸資訊:", entry.contentBoxSize);
   }
 });
 
 // 2. 開始觀察目標元素
-observer.observe(document.querySelector('.my-element'));
+observer.observe(document.querySelector(".my-element"));
 
 // 3. 不再需要時，停止觀察
 observer.disconnect();
@@ -89,7 +89,7 @@ observer.disconnect();
 ### **建構函數**
 
 ```javascript
-new ResizeObserver(callback)
+new ResizeObserver(callback);
 ```
 
 建立一個新的 ResizeObserver 實例。
@@ -122,7 +122,7 @@ const observer = new ResizeObserver(callback);
 observer.observe(element1);
 
 // 開始觀察，並指定 box 選項
-observer.observe(element2, { box: 'border-box' });
+observer.observe(element2, { box: "border-box" });
 
 // 停止觀察單一元素
 observer.unobserve(element1);
@@ -173,10 +173,10 @@ const observer = new ResizeObserver((entries) => {
   for (const entry of entries) {
     // 取得 contentBoxSize（建議使用）
     const { inlineSize, blockSize } = entry.contentBoxSize[0];
-    
+
     console.log(`寬度: ${inlineSize}px`);
     console.log(`高度: ${blockSize}px`);
-    
+
     // 也可以存取 borderBoxSize
     const borderSize = entry.borderBoxSize[0];
     console.log(`含邊框寬度: ${borderSize.inlineSize}px`);
@@ -199,9 +199,9 @@ const observer = new ResizeObserver((entries) => {
 在呼叫 `observe()` 時，可以透過 `options.box` 參數指定要觀察哪種 box 的尺寸：
 
 ```javascript
-observer.observe(element, { box: 'content-box' });  // 預設值
-observer.observe(element, { box: 'border-box' });
-observer.observe(element, { box: 'device-pixel-content-box' });
+observer.observe(element, { box: "content-box" }); // 預設值
+observer.observe(element, { box: "border-box" });
+observer.observe(element, { box: "device-pixel-content-box" });
 ```
 
 ![Box 選項比較](./assets/resize-observer-box-options.svg)
@@ -308,7 +308,7 @@ const observer = new ResizeObserver((entries) => {
 useEffect(() => {
   const observer = new ResizeObserver(callback);
   observer.observe(element);
-  
+
   // 清理函數
   return () => observer.disconnect();
 }, []);
@@ -320,7 +320,7 @@ useEffect(() => {
 
 ```javascript
 const observer = new ResizeObserver((entries) => {
-  console.log('尺寸:', entries[0].contentBoxSize[0].inlineSize);
+  console.log("尺寸:", entries[0].contentBoxSize[0].inlineSize);
 });
 
 // 呼叫 observe 後，上面的 console.log 會立即執行一次
@@ -337,15 +337,15 @@ observer.observe(element);
 const observer = new ResizeObserver((entries) => {
   // entries 可能同時包含多個元素的變化資訊
   console.log(`這次有 ${entries.length} 個元素發生變化`);
-  
+
   for (const entry of entries) {
     console.log(entry.target.id, entry.contentBoxSize[0].inlineSize);
   }
 });
 
-observer.observe(box1);  // id="box1"
-observer.observe(box2);  // id="box2"
-observer.observe(box3);  // id="box3"
+observer.observe(box1); // id="box1"
+observer.observe(box2); // id="box2"
+observer.observe(box3); // id="box3"
 
 // 當視窗縮放導致三個盒子同時變化時：
 // 輸出：這次有 3 個元素發生變化
