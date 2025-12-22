@@ -1,6 +1,6 @@
 ---
 title: 行列式的性質 (Properties of Determinants)
-sidebar_label: 3-2 行列式的性質
+sidebar_label: "3-2 行列式的性質"
 description: 本篇筆記介紹行列式的核心性質，包含 Row Operations 對行列式的影響、轉置矩陣與相乘矩陣的行列式，以及行列式與矩陣可逆性的關係。
 last_update:
   date: 2025-12-23
