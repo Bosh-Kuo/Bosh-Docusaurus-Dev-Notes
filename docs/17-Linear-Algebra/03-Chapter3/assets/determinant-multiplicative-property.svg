@@ -1,0 +1,43 @@
+<svg width="600" height="250" viewBox="0 0 600 250" xmlns="http://www.w3.org/2000/svg">
+  <style>
+    .box { fill: none; stroke: #333; stroke-width: 2; }
+    .arrow { stroke: #666; stroke-width: 2; marker-end: url(#arrowhead); }
+    .label { font-family: 'Inter', sans-serif; font-size: 14px; text-anchor: middle; }
+    .area { fill-opacity: 0.2; stroke-width: 1.5; }
+    .title { font-weight: bold; font-size: 16px; fill: #212529; }
+  </style>
+  
+  <defs>
+    <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="4" markerHeight="4" orient="auto">
+      <path d="M 0 0 L 10 5 L 0 10 z" fill="#666" />
+    </marker>
+  </defs>
+
+  <text x="300" y="30" class="label title">Geometric Interpretation: det(AB) = det(A)det(B)</text>
+
+  <!-- Step 1: Unit Square -->
+  <g transform="translate(50, 80)">
+    <rect width="60" height="60" class="area" fill="#6c757d" stroke="#6c757d" />
+    <text x="30" y="80" class="label">Unit Area (1)</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <line x1="120" y1="110" x2="180" y2="110" class="arrow" />
+  <text x="150" y="100" class="label" font-weight="bold" fill="#28a745">Transform B</text>
+
+  <!-- Step 2: After B -->
+  <g transform="translate(200, 70)">
+    <path d="M 0 20 L 80 0 L 100 60 L 20 80 Z" class="area" fill="#28a745" stroke="#28a745" />
+    <text x="50" y="100" class="label">Scaled by det(B)</text>
+  </g>
+
+  <!-- Arrow 2 -->
+  <line x1="320" y1="110" x2="380" y2="110" class="arrow" />
+  <text x="350" y="100" class="label" font-weight="bold" fill="#007bff">Transform A</text>
+
+  <!-- Step 3: After A -->
+  <g transform="translate(420, 40)">
+    <path d="M 0 40 L 120 0 L 150 120 L 30 160 Z" class="area" fill="#007bff" stroke="#007bff" />
+    <text x="75" y="180" class="label">Total Scale: det(A)·det(B)</text>
+  </g>
+</svg>
