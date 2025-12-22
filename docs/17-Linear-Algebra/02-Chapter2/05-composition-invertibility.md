@@ -131,14 +131,14 @@ $$
 
 ### **空間中的幾何意義**
 
-「映成」的直覺意義是：**變換的輸出能「覆蓋」整個目標空間**。
+「Onto」的直覺意義是：**變換的輸出能「覆蓋」整個目標空間**。
 
-下圖動態展示了 Onto 與 Not Onto 的差異。注意觀察 Domain 與 Codomain 之間的**連線**：
+下圖動態展示了 Onto 與 Not Onto 的差異。注意觀察 Domain 與 Codomain 之間的連線：
 
 ![Onto vs Not Onto](./assets/onto-transformation.svg)
 
-- **左側 (Onto)**：Codomain 中的**每一個**點都有連線指向 Domain，表示每個輸出都有對應的「原像 (preimage)」。
-- **右側 (Not Onto)**：Codomain 中有些點**沒有連線**（標示「no preimage」），這些向量無法被任何輸入映射到。輸出只能「打到」一條線上。
+- **左側 (Onto)**：Codomain 中的每一個點都有連線指向 Domain，表示每個輸出都有對應的「原像 (preimage)」。
+- **右側 (Not Onto)**：Codomain 中有些點沒有連線（標示「no preimage」），這些向量無法被任何輸入映射到。輸出只能「打到」一條線上。
 
 :::info 空間想像
 想像一台投影機（變換 $T$）照射在牆壁上（Codomain）：
@@ -182,11 +182,13 @@ $$
 \colorbox{lightblue}{$T \text{ is Onto} \iff \text{對於任意 } \mathbf{b} \in \mathbb{R}^m, \text{ 方程式 } A\mathbf{x} = \mathbf{b} \text{ 至少有一解}$}
 $$
 
-**邏輯連結**：
+:::tip 邏輯連結：
 
 1. $T$ 是 Onto 表示：任意 $\mathbf{b} \in \mathbb{R}^m$ 都在 $\text{Range}(T)$ 內
 2. $\mathbf{b} \in \text{Range}(T)$ 表示：存在某個 $\mathbf{x}$ 使得 $T(\mathbf{x}) = A\mathbf{x} = \mathbf{b}$
 3. 這正是「$A\mathbf{x} = \mathbf{b}$ 有解」的定義！
+
+:::
 
 **範例**：考慮 $A = \begin{bmatrix} 1 & 0 & 2 \\ 0 & 1 & 3 \end{bmatrix}$，對應的變換 $T: \mathbb{R}^3 \to \mathbb{R}^2$。
 
@@ -304,13 +306,15 @@ $$
 \colorbox{lightblue}{$T \text{ is One-to-One} \iff \text{對於任意 } \mathbf{b} \in \mathbb{R}^m, \text{ 方程式 } A\mathbf{x} = \mathbf{b} \text{ 最多有一解}$}
 $$
 
-**邏輯連結**：
+:::tip 邏輯連結
 
 1. 如果 $A\mathbf{x} = \mathbf{b}$ 有兩個不同的解 $\mathbf{x}_1 \neq \mathbf{x}_2$
 2. 則 $T(\mathbf{x}_1) = T(\mathbf{x}_2) = \mathbf{b}$
 3. 這違反了 One-to-One 的定義
 
 注意：「最多有一解」包含「無解」和「恰一解」兩種情況。One-to-One 只保證解的**唯一性**，不保證解的存在性。
+
+:::
 
 <br/>
 

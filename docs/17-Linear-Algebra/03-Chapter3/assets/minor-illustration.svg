@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 200">
+  <defs>
+    <pattern id="deletedPattern" patternUnits="userSpaceOnUse" width="8" height="8">
+      <rect width="8" height="8" fill="#e9ecef"/>
+      <line x1="0" y1="8" x2="8" y2="0" stroke="#adb5bd" stroke-width="1"/>
+    </pattern>
+    <!-- Arrow marker -->
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#212529"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="650" height="200" fill="#f8f9fa"/>
+  
+  <!-- Original Matrix A (3x3) -->
+  <g transform="translate(30, 20)">
+    <text x="60" y="0" font-family="Georgia, serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">Matrix A</text>
+    
+    <!-- Matrix brackets -->
+    <path d="M 10 15 L 5 15 L 5 155 L 10 155" fill="none" stroke="#212529" stroke-width="2"/>
+    <path d="M 110 15 L 115 15 L 115 155 L 110 155" fill="none" stroke="#212529" stroke-width="2"/>
+    
+    <!-- Deleted Row 1 (gray pattern) -->
+    <rect x="8" y="18" width="104" height="38" fill="url(#deletedPattern)" opacity="0.8"/>
+    
+    <!-- Deleted Column 2 (gray pattern) -->
+    <rect x="50" y="18" width="30" height="134" fill="url(#deletedPattern)" opacity="0.8"/>
+    
+    <!-- Matrix elements -->
+    <text x="30" y="45" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₁₁</text>
+    <text x="65" y="45" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₁₂</text>
+    <text x="100" y="45" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₁₃</text>
+    
+    <text x="30" y="90" font-family="Georgia, serif" font-size="18" fill="#0d6efd" font-weight="bold" text-anchor="middle">a₂₁</text>
+    <text x="65" y="90" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₂₂</text>
+    <text x="100" y="90" font-family="Georgia, serif" font-size="18" fill="#0d6efd" font-weight="bold" text-anchor="middle">a₂₃</text>
+    
+    <text x="30" y="135" font-family="Georgia, serif" font-size="18" fill="#0d6efd" font-weight="bold" text-anchor="middle">a₃₁</text>
+    <text x="65" y="135" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₃₂</text>
+    <text x="100" y="135" font-family="Georgia, serif" font-size="18" fill="#0d6efd" font-weight="bold" text-anchor="middle">a₃₃</text>
+    
+    <!-- Labels -->
+    <text x="-15" y="45" font-family="Arial, sans-serif" font-size="11" fill="#dc3545" text-anchor="middle">Row 1</text>
+    <text x="65" y="175" font-family="Arial, sans-serif" font-size="11" fill="#dc3545" text-anchor="middle">Col 2</text>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(170, 95)">
+    <line x1="0" y1="0" x2="50" y2="0" stroke="#212529" stroke-width="2" marker-end="url(#arrowhead)"/>
+    <text x="25" y="-10" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle">Delete</text>
+  </g>
+  
+  <!-- Resulting 2x2 matrix -->
+  <g transform="translate(245, 45)">
+    <text x="50" y="-20" font-family="Georgia, serif" font-size="14" fill="#212529" text-anchor="middle" font-weight="bold">Submatrix for M₁₂</text>
+    
+    <!-- Matrix brackets -->
+    <path d="M 10 0 L 5 0 L 5 90 L 10 90" fill="none" stroke="#212529" stroke-width="2"/>
+    <path d="M 90 0 L 95 0 L 95 90 L 90 90" fill="none" stroke="#212529" stroke-width="2"/>
+    
+    <!-- Matrix elements -->
+    <text x="35" y="35" font-family="Georgia, serif" font-size="20" fill="#0d6efd" font-weight="bold" text-anchor="middle">a₂₁</text>
+    <text x="75" y="35" font-family="Georgia, serif" font-size="20" fill="#0d6efd" font-weight="bold" text-anchor="middle">a₂₃</text>
+    <text x="35" y="75" font-family="Georgia, serif" font-size="20" fill="#0d6efd" font-weight="bold" text-anchor="middle">a₃₁</text>
+    <text x="75" y="75" font-family="Georgia, serif" font-size="20" fill="#0d6efd" font-weight="bold" text-anchor="middle">a₃₃</text>
+  </g>
+  
+  <!-- Equal sign -->
+  <g transform="translate(365, 95)">
+    <text x="0" y="5" font-family="Georgia, serif" font-size="20" fill="#212529">=</text>
+  </g>
+  
+  <!-- M12 = det notation -->
+  <g transform="translate(400, 50)">
+    <text x="0" y="45" font-family="Georgia, serif" font-size="16" fill="#212529">M₁₂ = det</text>
+    
+    <!-- Determinant bars -->
+    <line x1="75" y1="10" x2="75" y2="85" stroke="#212529" stroke-width="2"/>
+    <line x1="155" y1="10" x2="155" y2="85" stroke="#212529" stroke-width="2"/>
+    
+    <text x="100" y="38" font-family="Georgia, serif" font-size="16" fill="#0d6efd" text-anchor="middle">a₂₁</text>
+    <text x="135" y="38" font-family="Georgia, serif" font-size="16" fill="#0d6efd" text-anchor="middle">a₂₃</text>
+    <text x="100" y="70" font-family="Georgia, serif" font-size="16" fill="#0d6efd" text-anchor="middle">a₃₁</text>
+    <text x="135" y="70" font-family="Georgia, serif" font-size="16" fill="#0d6efd" text-anchor="middle">a₃₃</text>
+  </g>
+</svg>

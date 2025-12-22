@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320">
+  <!-- Background -->
+  <rect width="700" height="320" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="350" y="25" font-family="Georgia, serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">
+    Cofactor Expansion along Row 1
+  </text>
+  
+  <!-- Original 3x3 Matrix -->
+  <g transform="translate(20, 50)">
+    <text x="50" y="0" font-family="Georgia, serif" font-size="14" fill="#212529" text-anchor="middle">det(A) =</text>
+    
+    <!-- Determinant bars -->
+    <line x1="90" y1="10" x2="90" y2="100" stroke="#212529" stroke-width="2"/>
+    <line x1="190" y1="10" x2="190" y2="100" stroke="#212529" stroke-width="2"/>
+    
+    <!-- Matrix elements with colors -->
+    <text x="115" y="40" font-family="Georgia, serif" font-size="16" fill="#dc3545" font-weight="bold" text-anchor="middle">a₁₁</text>
+    <text x="145" y="40" font-family="Georgia, serif" font-size="16" fill="#198754" font-weight="bold" text-anchor="middle">a₁₂</text>
+    <text x="175" y="40" font-family="Georgia, serif" font-size="16" fill="#0d6efd" font-weight="bold" text-anchor="middle">a₁₃</text>
+    
+    <text x="115" y="65" font-family="Georgia, serif" font-size="16" fill="#495057" text-anchor="middle">a₂₁</text>
+    <text x="145" y="65" font-family="Georgia, serif" font-size="16" fill="#495057" text-anchor="middle">a₂₂</text>
+    <text x="175" y="65" font-family="Georgia, serif" font-size="16" fill="#495057" text-anchor="middle">a₂₃</text>
+    
+    <text x="115" y="90" font-family="Georgia, serif" font-size="16" fill="#495057" text-anchor="middle">a₃₁</text>
+    <text x="145" y="90" font-family="Georgia, serif" font-size="16" fill="#495057" text-anchor="middle">a₃₂</text>
+    <text x="175" y="90" font-family="Georgia, serif" font-size="16" fill="#495057" text-anchor="middle">a₃₃</text>
+  </g>
+  
+  <!-- Arrow down -->
+  <g transform="translate(130, 165)">
+    <line x1="0" y1="0" x2="0" y2="30" stroke="#212529" stroke-width="2"/>
+    <polygon points="-6,30 0,42 6,30" fill="#212529"/>
+  </g>
+  
+  <!-- Expansion terms -->
+  <g transform="translate(20, 215)">
+    <!-- Term 1: a11 * C11 -->
+    <g>
+      <text x="0" y="30" font-family="Georgia, serif" font-size="14" fill="#212529" text-anchor="start">=</text>
+      
+      <!-- Sign and coefficient -->
+      <text x="25" y="30" font-family="Georgia, serif" font-size="14" fill="#dc3545" font-weight="bold">+a₁₁</text>
+      
+      <text x="60" y="30" font-family="Georgia, serif" font-size="12" fill="#212529">×</text>
+      
+      <!-- 2x2 determinant -->
+      <line x1="75" y1="5" x2="75" y2="55" stroke="#dc3545" stroke-width="2"/>
+      <line x1="135" y1="5" x2="135" y2="55" stroke="#dc3545" stroke-width="2"/>
+      
+      <text x="93" y="27" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₂₂</text>
+      <text x="120" y="27" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₂₃</text>
+      <text x="93" y="50" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₃₂</text>
+      <text x="120" y="50" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₃₃</text>
+    </g>
+    
+    <!-- Term 2: a12 * C12 -->
+    <g transform="translate(155, 0)">
+      <!-- Sign and coefficient -->
+      <text x="25" y="30" font-family="Georgia, serif" font-size="14" fill="#198754" font-weight="bold">−a₁₂</text>
+      
+      <text x="60" y="30" font-family="Georgia, serif" font-size="12" fill="#212529">×</text>
+      
+      <!-- 2x2 determinant -->
+      <line x1="75" y1="5" x2="75" y2="55" stroke="#198754" stroke-width="2"/>
+      <line x1="135" y1="5" x2="135" y2="55" stroke="#198754" stroke-width="2"/>
+      
+      <text x="93" y="27" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₂₁</text>
+      <text x="120" y="27" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₂₃</text>
+      <text x="93" y="50" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₃₁</text>
+      <text x="120" y="50" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₃₃</text>
+    </g>
+    
+    <!-- Term 3: a13 * C13 -->
+    <g transform="translate(310, 0)">
+      <!-- Sign and coefficient -->
+      <text x="25" y="30" font-family="Georgia, serif" font-size="14" fill="#0d6efd" font-weight="bold">+a₁₃</text>
+      
+      <text x="60" y="30" font-family="Georgia, serif" font-size="12" fill="#212529">×</text>
+      
+      <!-- 2x2 determinant -->
+      <line x1="75" y1="5" x2="75" y2="55" stroke="#0d6efd" stroke-width="2"/>
+      <line x1="135" y1="5" x2="135" y2="55" stroke="#0d6efd" stroke-width="2"/>
+      
+      <text x="93" y="27" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₂₁</text>
+      <text x="120" y="27" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₂₂</text>
+      <text x="93" y="50" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₃₁</text>
+      <text x="120" y="50" font-family="Georgia, serif" font-size="13" fill="#495057" text-anchor="middle">a₃₂</text>
+    </g>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(520, 200)">
+    <rect x="0" y="0" width="160" height="100" rx="8" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+    <text x="80" y="20" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle" font-weight="bold">Sign Pattern</text>
+    
+    <text x="20" y="45" font-family="Georgia, serif" font-size="14" fill="#dc3545" font-weight="bold">C₁₁</text>
+    <text x="50" y="45" font-family="Arial, sans-serif" font-size="12" fill="#495057">: (+1)×M₁₁</text>
+    
+    <text x="20" y="65" font-family="Georgia, serif" font-size="14" fill="#198754" font-weight="bold">C₁₂</text>
+    <text x="50" y="65" font-family="Arial, sans-serif" font-size="12" fill="#495057">: (−1)×M₁₂</text>
+    
+    <text x="20" y="85" font-family="Georgia, serif" font-size="14" fill="#0d6efd" font-weight="bold">C₁₃</text>
+    <text x="50" y="85" font-family="Arial, sans-serif" font-size="12" fill="#495057">: (+1)×M₁₃</text>
+  </g>
+</svg>

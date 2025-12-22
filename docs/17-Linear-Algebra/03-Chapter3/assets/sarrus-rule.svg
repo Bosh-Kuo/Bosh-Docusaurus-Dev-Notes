@@ -1,0 +1,87 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 280">
+  <!-- Background -->
+  <rect width="650" height="280" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="325" y="25" font-family="Georgia, serif" font-size="16" fill="#212529" text-anchor="middle" font-weight="bold">
+    Sarrus' Rule for 3×3 Determinants
+  </text>
+  
+  <!-- Main matrix with duplicated columns -->
+  <g transform="translate(100, 50)">
+    <!-- Original matrix boundary -->
+    <rect x="0" y="0" width="160" height="140" fill="none" stroke="#212529" stroke-width="2" stroke-dasharray="none"/>
+    
+    <!-- Duplicated columns (lighter) -->
+    <rect x="160" y="0" width="110" height="140" fill="#e9ecef" stroke="#6c757d" stroke-width="1" stroke-dasharray="4,2"/>
+    
+    <!-- Matrix elements - Original -->
+    <text x="30" y="40" font-family="Georgia, serif" font-size="18" fill="#212529" text-anchor="middle">a₁₁</text>
+    <text x="80" y="40" font-family="Georgia, serif" font-size="18" fill="#212529" text-anchor="middle">a₁₂</text>
+    <text x="130" y="40" font-family="Georgia, serif" font-size="18" fill="#212529" text-anchor="middle">a₁₃</text>
+    
+    <text x="30" y="80" font-family="Georgia, serif" font-size="18" fill="#212529" text-anchor="middle">a₂₁</text>
+    <text x="80" y="80" font-family="Georgia, serif" font-size="18" fill="#212529" text-anchor="middle">a₂₂</text>
+    <text x="130" y="80" font-family="Georgia, serif" font-size="18" fill="#212529" text-anchor="middle">a₂₃</text>
+    
+    <text x="30" y="120" font-family="Georgia, serif" font-size="18" fill="#212529" text-anchor="middle">a₃₁</text>
+    <text x="80" y="120" font-family="Georgia, serif" font-size="18" fill="#212529" text-anchor="middle">a₃₂</text>
+    <text x="130" y="120" font-family="Georgia, serif" font-size="18" fill="#212529" text-anchor="middle">a₃₃</text>
+    
+    <!-- Duplicated columns -->
+    <text x="185" y="40" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₁₁</text>
+    <text x="235" y="40" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₁₂</text>
+    
+    <text x="185" y="80" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₂₁</text>
+    <text x="235" y="80" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₂₂</text>
+    
+    <text x="185" y="120" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₃₁</text>
+    <text x="235" y="120" font-family="Georgia, serif" font-size="18" fill="#6c757d" text-anchor="middle">a₃₂</text>
+    
+    <!-- Positive diagonals (green, going down-right) -->
+    <line x1="30" y1="30" x2="130" y2="130" stroke="#198754" stroke-width="3" opacity="0.6"/>
+    <line x1="80" y1="30" x2="185" y2="130" stroke="#198754" stroke-width="3" opacity="0.6"/>
+    <line x1="130" y1="30" x2="235" y2="130" stroke="#198754" stroke-width="3" opacity="0.6"/>
+    
+    <!-- Negative diagonals (red, going down-left) -->
+    <line x1="130" y1="30" x2="30" y2="130" stroke="#dc3545" stroke-width="3" opacity="0.6"/>
+    <line x1="185" y1="30" x2="80" y2="130" stroke="#dc3545" stroke-width="3" opacity="0.6"/>
+    <line x1="235" y1="30" x2="130" y2="130" stroke="#dc3545" stroke-width="3" opacity="0.6"/>
+    
+    <!-- Labels -->
+    <text x="135" y="165" font-family="Arial, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">Copy first 2 columns</text>
+    <path d="M 160 155 L 215 155" fill="none" stroke="#6c757d" stroke-width="1" marker-end="url(#smallArrow)"/>
+  </g>
+  
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="smallArrow" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#6c757d"/>
+    </marker>
+  </defs>
+  
+  <!-- Formula -->
+  <g transform="translate(100, 215)">
+    <text x="0" y="20" font-family="Georgia, serif" font-size="14" fill="#212529" text-anchor="start">
+      det(A) = 
+    </text>
+    <text x="65" y="20" font-family="Georgia, serif" font-size="13" fill="#198754" font-weight="bold">
+      (a₁₁a₂₂a₃₃ + a₁₂a₂₃a₃₁ + a₁₃a₂₁a₃₂)
+    </text>
+    <text x="320" y="20" font-family="Georgia, serif" font-size="13" fill="#dc3545" font-weight="bold">
+      − (a₁₃a₂₂a₃₁ + a₁₁a₂₃a₃₂ + a₁₂a₂₁a₃₃)
+    </text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(480, 70)">
+    <rect x="0" y="0" width="140" height="80" rx="8" fill="#ffffff" stroke="#dee2e6" stroke-width="1"/>
+    <text x="70" y="20" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle" font-weight="bold">Legend</text>
+    
+    <line x1="15" y1="40" x2="55" y2="40" stroke="#198754" stroke-width="3"/>
+    <text x="70" y="44" font-family="Arial, sans-serif" font-size="11" fill="#495057">+ (add)</text>
+    
+    <line x1="15" y1="60" x2="55" y2="60" stroke="#dc3545" stroke-width="3"/>
+    <text x="70" y="64" font-family="Arial, sans-serif" font-size="11" fill="#495057">− (subtract)</text>
+  </g>
+</svg>
