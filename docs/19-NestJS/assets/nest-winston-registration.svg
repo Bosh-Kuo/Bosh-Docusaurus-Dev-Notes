@@ -1,0 +1,83 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 350">
+  <defs>
+    <linearGradient id="bgGrad4" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="winstonGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#38a169;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#68d391;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrow4" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a0aec0"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="900" height="350" fill="url(#bgGrad4)"/>
+  
+  <!-- Timeline Labels - positioned above timeline -->
+  <text x="150" y="35" text-anchor="middle" fill="#718096" font-family="Arial, sans-serif" font-size="11">App Start</text>
+  <text x="480" y="35" text-anchor="middle" fill="#718096" font-family="Arial, sans-serif" font-size="11">DI Container Ready</text>
+  <text x="810" y="35" text-anchor="middle" fill="#718096" font-family="Arial, sans-serif" font-size="11">Running</text>
+  
+  <!-- Timeline base -->
+  <line x1="150" y1="55" x2="810" y2="55" stroke="#4a5568" stroke-width="2"/>
+  <circle cx="150" cy="55" r="6" fill="#e94560"/>
+  <circle cx="480" cy="55" r="6" fill="#faf089"/>
+  <circle cx="810" cy="55" r="6" fill="#68d391"/>
+  
+  <!-- Row 1: main.ts - Full coverage -->
+  <text x="110" y="115" text-anchor="end" fill="#f093fb" font-family="monospace" font-size="13" font-weight="bold">main.ts</text>
+  
+  <!-- Full Winston coverage bar -->
+  <rect x="150" y="100" width="660" height="30" rx="6" fill="url(#winstonGrad)" opacity="0.8"/>
+  <text x="480" y="120" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11">Winston ✓</text>
+  
+  <!-- Icons: Full coverage but no DI -->
+  <text x="835" y="120" fill="#68d391" font-family="Arial, sans-serif" font-size="18">✓</text>
+  <text x="865" y="120" fill="#fc8181" font-family="Arial, sans-serif" font-size="14">⊘DI</text>
+  
+  <!-- Row 2: AppModule - Partial coverage -->
+  <text x="110" y="195" text-anchor="end" fill="#4facfe" font-family="monospace" font-size="13" font-weight="bold">AppModule</text>
+  
+  <!-- Default logger before DI ready -->
+  <rect x="150" y="180" width="330" height="30" rx="6" fill="#4a5568" opacity="0.5"/>
+  <text x="315" y="200" text-anchor="middle" fill="#a0aec0" font-family="monospace" font-size="11">Default Logger</text>
+  
+  <!-- Winston after DI ready -->
+  <rect x="480" y="180" width="330" height="30" rx="6" fill="url(#winstonGrad)" opacity="0.8"/>
+  <text x="645" y="200" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11">Winston ✓</text>
+  
+  <!-- Icons: Partial coverage but has DI -->
+  <text x="835" y="200" fill="#faf089" font-family="Arial, sans-serif" font-size="18">◐</text>
+  <text x="865" y="200" fill="#68d391" font-family="Arial, sans-serif" font-size="14">✓DI</text>
+  
+  <!-- Row 3: bufferLogs - Best of both -->
+  <text x="110" y="275" text-anchor="end" fill="#faf089" font-family="monospace" font-size="13" font-weight="bold">bufferLogs</text>
+  
+  <!-- Buffered section -->
+  <rect x="150" y="260" width="330" height="30" rx="6" fill="#744210" opacity="0.6" stroke="#faf089" stroke-width="2" stroke-dasharray="5,3"/>
+  <text x="315" y="280" text-anchor="middle" fill="#faf089" font-family="monospace" font-size="11">Buffered</text>
+  
+  <!-- Winston after flush -->
+  <rect x="480" y="260" width="330" height="30" rx="6" fill="url(#winstonGrad)" opacity="0.8"/>
+  <text x="645" y="280" text-anchor="middle" fill="#fff" font-family="monospace" font-size="11">Winston ✓</text>
+  
+  <!-- Arrow showing flush -->
+  <path d="M430,275 Q455,275 475,275" fill="none" stroke="#faf089" stroke-width="2" marker-end="url(#arrow4)"/>
+  
+  <!-- Icons: Best of both -->
+  <text x="835" y="280" fill="#68d391" font-family="Arial, sans-serif" font-size="18">✓</text>
+  <text x="865" y="280" fill="#68d391" font-family="Arial, sans-serif" font-size="14">✓DI</text>
+  
+  <!-- Legend -->
+  <rect x="300" y="315" width="15" height="15" rx="3" fill="#68d391" opacity="0.8"/>
+  <text x="320" y="327" fill="#a0aec0" font-family="Arial, sans-serif" font-size="10">Winston Active</text>
+  
+  <rect x="440" y="315" width="15" height="15" rx="3" fill="#4a5568" opacity="0.5"/>
+  <text x="460" y="327" fill="#a0aec0" font-family="Arial, sans-serif" font-size="10">Default Logger</text>
+  
+  <rect x="580" y="315" width="15" height="15" rx="3" fill="#744210" stroke="#faf089" stroke-width="1" stroke-dasharray="2,1"/>
+  <text x="600" y="327" fill="#a0aec0" font-family="Arial, sans-serif" font-size="10">Buffered</text>
+</svg>

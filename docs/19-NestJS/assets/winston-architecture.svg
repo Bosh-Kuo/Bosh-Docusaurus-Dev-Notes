@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <linearGradient id="bgGrad3" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16213e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="logGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#faf089;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d69e2e;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="levelGradNew" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f093fb;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#f5576c;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="transportGradNew" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4facfe;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#00f2fe;stop-opacity:1" />
+    </linearGradient>
+    <marker id="arrowW" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#a0aec0"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="380" fill="url(#bgGrad3)"/>
+  
+  <!-- INPUT: Log Message -->
+  <rect x="40" y="150" width="100" height="80" rx="12" fill="url(#logGrad)"/>
+  <text x="90" y="185" text-anchor="middle" fill="#1a1a2e" font-family="Arial, sans-serif" font-size="28">📝</text>
+  <text x="90" y="215" text-anchor="middle" fill="#1a1a2e" font-family="monospace" font-size="11" font-weight="bold">Log</text>
+  
+  <!-- Arrow to Level -->
+  <line x1="140" y1="190" x2="180" y2="190" stroke="#a0aec0" stroke-width="3" marker-end="url(#arrowW)"/>
+  
+  <!-- LEVEL: Filter -->
+  <rect x="190" y="60" width="160" height="260" rx="15" fill="#1e2d4a" stroke="url(#levelGradNew)" stroke-width="3"/>
+  <text x="270" y="95" text-anchor="middle" fill="#f093fb" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Level</text>
+  
+  <!-- Filter visualization - funnel effect -->
+  <polygon points="220,120 320,120 300,300 240,300" fill="#2d3748" stroke="#f093fb" stroke-width="2"/>
+  
+  <!-- Level labels inside funnel -->
+  <text x="270" y="145" text-anchor="middle" fill="#fc8181" font-family="monospace" font-size="10">error (0)</text>
+  <text x="270" y="170" text-anchor="middle" fill="#fbd38d" font-family="monospace" font-size="10">warn (1)</text>
+  <text x="270" y="195" text-anchor="middle" fill="#68d391" font-family="monospace" font-size="10">info (2)</text>
+  <text x="270" y="220" text-anchor="middle" fill="#63b3ed" font-family="monospace" font-size="10">http (3)</text>
+  <text x="270" y="245" text-anchor="middle" fill="#b794f4" font-family="monospace" font-size="10">verbose (4)</text>
+  <text x="270" y="270" text-anchor="middle" fill="#90cdf4" font-family="monospace" font-size="10">debug (5)</text>
+  
+  <!-- Blocked logs X -->
+  <text x="270" y="245" text-anchor="middle" fill="#fc8181" font-family="Arial, sans-serif" font-size="20" opacity="0.7">╳</text>
+  <text x="270" y="270" text-anchor="middle" fill="#fc8181" font-family="Arial, sans-serif" font-size="20" opacity="0.7">╳</text>
+  
+  <!-- Arrow to Transports -->
+  <line x1="350" y1="190" x2="400" y2="190" stroke="#a0aec0" stroke-width="3" marker-end="url(#arrowW)"/>
+  
+  <!-- TRANSPORTS: Multiple outputs -->
+  <rect x="410" y="60" width="350" height="260" rx="15" fill="#1e2d4a" stroke="url(#transportGradNew)" stroke-width="3"/>
+  <text x="585" y="95" text-anchor="middle" fill="#4facfe" font-family="Arial, sans-serif" font-size="14" font-weight="bold">Transports</text>
+  
+  <!-- Transport boxes - 2x2 grid layout -->
+  <!-- Row 1 -->
+  <rect x="435" y="115" width="140" height="60" rx="8" fill="#2d3748"/>
+  <text x="475" y="152" fill="#fff" font-family="Arial, sans-serif" font-size="24">🖥️</text>
+  <text x="520" y="150" fill="#68d391" font-family="monospace" font-size="12">Console</text>
+  
+  <rect x="595" y="115" width="140" height="60" rx="8" fill="#2d3748"/>
+  <text x="635" y="152" fill="#fff" font-family="Arial, sans-serif" font-size="24">📁</text>
+  <text x="680" y="150" fill="#68d391" font-family="monospace" font-size="12">File</text>
+  
+  <!-- Row 2 -->
+  <rect x="435" y="190" width="140" height="60" rx="8" fill="#2d3748"/>
+  <text x="475" y="227" fill="#fff" font-family="Arial, sans-serif" font-size="24">📅</text>
+  <text x="520" y="225" fill="#68d391" font-family="monospace" font-size="12">Daily</text>
+  
+  <rect x="595" y="190" width="140" height="60" rx="8" fill="#2d3748"/>
+  <text x="635" y="227" fill="#fff" font-family="Arial, sans-serif" font-size="24">🌐</text>
+  <text x="680" y="225" fill="#68d391" font-family="monospace" font-size="12">HTTP</text>
+  
+  <!-- Note: Multiple outputs -->
+  <text x="585" y="280" text-anchor="middle" fill="#a0aec0" font-family="Arial, sans-serif" font-size="11">→ Multiple outputs simultaneously</text>
+  
+  <!-- Bottom labels -->
+  <text x="270" y="345" text-anchor="middle" fill="#f093fb" font-family="Arial, sans-serif" font-size="11">Filter by priority</text>
+  <text x="585" y="345" text-anchor="middle" fill="#4facfe" font-family="Arial, sans-serif" font-size="11">Route to destinations</text>
+</svg>
