@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e03131"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#1971c2"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#e8590c"/>
+    </marker>
+    <marker id="arrowTeal" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#0c8599"/>
+    </marker>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="2" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="380" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="20" font-weight="bold" fill="#212529" text-anchor="middle">Two Different Bases for R²</text>
+  
+  <!-- Left: Standard Basis -->
+  <g transform="translate(100, 80)">
+    <!-- Subtitle -->
+    <text x="100" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#495057" text-anchor="middle">Standard Basis</text>
+    <text x="100" y="20" font-family="Arial, sans-serif" font-size="13" fill="#868e96" text-anchor="middle">{e₁, e₂}</text>
+    
+    <!-- Grid -->
+    <g stroke="#dee2e6" stroke-width="1">
+      <line x1="0" y1="50" x2="200" y2="50"/>
+      <line x1="0" y1="100" x2="200" y2="100"/>
+      <line x1="0" y1="150" x2="200" y2="150"/>
+      <line x1="0" y1="200" x2="200" y2="200"/>
+      <line x1="0" y1="250" x2="200" y2="250"/>
+      <line x1="0" y1="50" x2="0" y2="250"/>
+      <line x1="50" y1="50" x2="50" y2="250"/>
+      <line x1="100" y1="50" x2="100" y2="250"/>
+      <line x1="150" y1="50" x2="150" y2="250"/>
+      <line x1="200" y1="50" x2="200" y2="250"/>
+    </g>
+    
+    <!-- Axes -->
+    <line x1="0" y1="150" x2="200" y2="150" stroke="#495057" stroke-width="2"/>
+    <line x1="100" y1="50" x2="100" y2="250" stroke="#495057" stroke-width="2"/>
+    
+    <!-- Origin label -->
+    <text x="93" y="165" font-family="Arial, sans-serif" font-size="11" fill="#495057">O</text>
+    
+    <!-- e1 vector (red) -->
+    <line x1="100" y1="150" x2="145" y2="150" stroke="#e03131" stroke-width="3" marker-end="url(#arrowRed)"/>
+    <text x="155" y="145" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e03131">e₁</text>
+    <text x="155" y="160" font-family="Arial, sans-serif" font-size="10" fill="#e03131">(1,0)</text>
+    
+    <!-- e2 vector (blue) -->
+    <line x1="100" y1="150" x2="100" y2="105" stroke="#1971c2" stroke-width="3" marker-end="url(#arrowBlue)"/>
+    <text x="108" y="95" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1971c2">e₂</text>
+    <text x="108" y="80" font-family="Arial, sans-serif" font-size="10" fill="#1971c2">(0,1)</text>
+    
+    <!-- Sample point -->
+    <circle cx="150" cy="100" r="4" fill="#37b24d"/>
+    <text x="158" y="97" font-family="Arial, sans-serif" font-size="11" fill="#37b24d">(1,1)</text>
+    
+    <!-- Dashed lines to show coordinates -->
+    <line x1="150" y1="150" x2="150" y2="100" stroke="#37b24d" stroke-width="1.5" stroke-dasharray="4,3"/>
+    <line x1="100" y1="100" x2="150" y2="100" stroke="#37b24d" stroke-width="1.5" stroke-dasharray="4,3"/>
+  </g>
+  
+  <!-- Right: Non-Standard Basis -->
+  <g transform="translate(500, 80)">
+    <!-- Subtitle -->
+    <text x="100" y="0" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#495057" text-anchor="middle">Non-Standard Basis</text>
+    <text x="100" y="20" font-family="Arial, sans-serif" font-size="13" fill="#868e96" text-anchor="middle">{v₁, v₂}</text>
+    
+    <!-- Grid (original standard grid, faded) -->
+    <g stroke="#e9ecef" stroke-width="1">
+      <line x1="0" y1="50" x2="200" y2="50"/>
+      <line x1="0" y1="100" x2="200" y2="100"/>
+      <line x1="0" y1="150" x2="200" y2="150"/>
+      <line x1="0" y1="200" x2="200" y2="200"/>
+      <line x1="0" y1="250" x2="200" y2="250"/>
+      <line x1="0" y1="50" x2="0" y2="250"/>
+      <line x1="50" y1="50" x2="50" y2="250"/>
+      <line x1="100" y1="50" x2="100" y2="250"/>
+      <line x1="150" y1="50" x2="150" y2="250"/>
+      <line x1="200" y1="50" x2="200" y2="250"/>
+    </g>
+    
+    <!-- New grid based on v1 and v2 (skewed) -->
+    <g stroke="#ced4da" stroke-width="1" stroke-dasharray="3,3">
+      <!-- Lines parallel to v1 -->
+      <line x1="50" y1="50" x2="200" y2="200"/>
+      <line x1="0" y1="100" x2="150" y2="250"/>
+      <line x1="100" y1="0" x2="200" y2="100"/>
+      <!-- Lines parallel to v2 -->
+      <line x1="0" y1="200" x2="150" y2="50"/>
+      <line x1="50" y1="250" x2="200" y2="100"/>
+      <line x1="0" y1="100" x2="100" y2="0"/>
+    </g>
+    
+    <!-- Axes -->
+    <line x1="0" y1="150" x2="200" y2="150" stroke="#868e96" stroke-width="1.5"/>
+    <line x1="100" y1="50" x2="100" y2="250" stroke="#868e96" stroke-width="1.5"/>
+    
+    <!-- Origin label -->
+    <text x="93" y="165" font-family="Arial, sans-serif" font-size="11" fill="#495057">O</text>
+    
+    <!-- v1 vector (orange): direction (1,1) -->
+    <line x1="100" y1="150" x2="145" y2="105" stroke="#e8590c" stroke-width="3" marker-end="url(#arrowOrange)"/>
+    <text x="150" y="100" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e8590c">v₁</text>
+    <text x="150" y="85" font-family="Arial, sans-serif" font-size="10" fill="#e8590c">(1,1)</text>
+    
+    <!-- v2 vector (teal): direction (-1,1) -->
+    <line x1="100" y1="150" x2="55" y2="105" stroke="#0c8599" stroke-width="3" marker-end="url(#arrowTeal)"/>
+    <text x="35" y="100" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#0c8599">v₂</text>
+    <text x="28" y="85" font-family="Arial, sans-serif" font-size="10" fill="#0c8599">(-1,1)</text>
+    
+    <!-- Same sample point (1,1) in standard coords = 1*v1 + 0*v2 in new coords -->
+    <circle cx="150" cy="100" r="4" fill="#37b24d"/>
+    <text x="158" y="97" font-family="Arial, sans-serif" font-size="11" fill="#37b24d">(1,1)std</text>
+    
+    <!-- Annotation showing new coordinates -->
+    <text x="165" y="115" font-family="Arial, sans-serif" font-size="10" fill="#37b24d">= (1, 0)ᵥ</text>
+  </g>
+  
+  <!-- Bottom explanation -->
+  <g transform="translate(100, 340)">
+    <text x="300" y="0" font-family="Arial, sans-serif" font-size="13" fill="#495057" text-anchor="middle">
+      Both bases span R². Same point has different coordinates in each system.
+    </text>
+    <text x="300" y="20" font-family="Arial, sans-serif" font-size="12" fill="#868e96" text-anchor="middle">
+      Standard: (1,1) = 1·e₁ + 1·e₂  |  Non-standard: (1,1) = 1·v₁ + 0·v₂
+    </text>
+  </g>
+</svg>
