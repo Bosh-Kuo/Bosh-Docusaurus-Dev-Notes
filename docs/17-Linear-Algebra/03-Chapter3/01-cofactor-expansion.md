@@ -202,10 +202,6 @@ Sarrus 法則**不能推廣**到 4×4 或更高階矩陣！對於高階矩陣，
 
 ### **二維空間：平行四邊形的有向面積**
 
-:::tip 為什麼行列式等於平行四邊形面積？
-這是我最初學行列式時最好奇的問題。讓我從幾何直覺出發來解釋。
-:::
-
 考慮二維向量 $\mathbf{u} = \begin{bmatrix} a \\ c \end{bmatrix}$ 和 $\mathbf{v} = \begin{bmatrix} b \\ d \end{bmatrix}$，它們張成一個平行四邊形。
 
 ![平行四邊形面積與行列式](./assets/parallelogram-area.svg)

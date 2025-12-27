@@ -1,0 +1,163 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 380">
+  <defs>
+    <linearGradient id="nullGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#ff7043;stop-opacity:0.2"/>
+      <stop offset="100%" style="stop-color:#e64a19;stop-opacity:0.4"/>
+    </linearGradient>
+    <marker id="arrowInput" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1565C0"/>
+    </marker>
+    <marker id="arrowNull" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e64a19"/>
+    </marker>
+    <marker id="arrowTrans" markerWidth="12" markerHeight="8" refX="10" refY="4" orient="auto">
+      <polygon points="0 0, 12 4, 0 8" fill="#7B1FA2"/>
+    </marker>
+    <marker id="arrowOutput" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#c2185b"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="750" height="380" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="375" y="28" font-family="Arial, sans-serif" font-size="17" font-weight="bold" fill="#333" text-anchor="middle">
+    Null Space: Vectors that Map to Zero
+  </text>
+  
+  <!-- Left side: Domain Rⁿ -->
+  <g transform="translate(50, 60)">
+    <!-- Domain box -->
+    <rect x="0" y="0" width="250" height="260" rx="10" fill="#e3f2fd" stroke="#1565C0" stroke-width="2"/>
+    <text x="125" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#1565C0" text-anchor="middle">Domain: Rⁿ</text>
+    
+    <!-- 2D coordinate system inside -->
+    <g transform="translate(125, 150)">
+      <!-- Grid lines -->
+      <g stroke="#bbdefb" stroke-width="1">
+        <line x1="-90" y1="-80" x2="90" y2="-80"/>
+        <line x1="-90" y1="-40" x2="90" y2="-40"/>
+        <line x1="-90" y1="0" x2="90" y2="0"/>
+        <line x1="-90" y1="40" x2="90" y2="40"/>
+        <line x1="-90" y1="80" x2="90" y2="80"/>
+        <line x1="-80" y1="-90" x2="-80" y2="90"/>
+        <line x1="-40" y1="-90" x2="-40" y2="90"/>
+        <line x1="0" y1="-90" x2="0" y2="90"/>
+        <line x1="40" y1="-90" x2="40" y2="90"/>
+        <line x1="80" y1="-90" x2="80" y2="90"/>
+      </g>
+      
+      <!-- Axes -->
+      <line x1="-100" y1="0" x2="100" y2="0" stroke="#1565C0" stroke-width="1.5"/>
+      <line x1="0" y1="95" x2="0" y2="-95" stroke="#1565C0" stroke-width="1.5"/>
+      
+      <!-- Null Space region (a line through origin) -->
+      <line x1="-85" y1="60" x2="85" y2="-60" stroke="#e64a19" stroke-width="12" stroke-opacity="0.35" stroke-linecap="round"/>
+      <line x1="-85" y1="60" x2="85" y2="-60" stroke="#e64a19" stroke-width="2"/>
+      
+      <!-- Origin -->
+      <circle cx="0" cy="0" r="5" fill="#333"/>
+      
+      <!-- Null space vectors (orange) -->
+      <line x1="0" y1="0" x2="50" y2="-35" stroke="#e64a19" stroke-width="2.5" marker-end="url(#arrowNull)">
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <text x="58" y="-30" font-family="Arial, sans-serif" font-size="11" fill="#e64a19" font-weight="bold">x₁</text>
+      
+      <line x1="0" y1="0" x2="-40" y2="28" stroke="#e64a19" stroke-width="2.5" marker-end="url(#arrowNull)">
+        <animate attributeName="opacity" values="1;0.5;1" dur="2s" repeatCount="indefinite" begin="0.5s"/>
+      </line>
+      <text x="-55" y="35" font-family="Arial, sans-serif" font-size="11" fill="#e64a19" font-weight="bold">x₂</text>
+      
+      <!-- Regular vector (not in Null Space - blue) -->
+      <line x1="0" y1="0" x2="60" y2="30" stroke="#1565C0" stroke-width="2.5" marker-end="url(#arrowInput)"/>
+      <text x="68" y="38" font-family="Arial, sans-serif" font-size="11" fill="#1565C0" font-weight="bold">u</text>
+    </g>
+    
+    <!-- Labels -->
+    <text x="200" y="105" font-family="Arial, sans-serif" font-size="12" fill="#e64a19" font-weight="bold">Null(A)</text>
+    <text x="90" y="250" font-family="Arial, sans-serif" font-size="11" fill="#666">
+      Null(A) = {x | Ax = 0}
+    </text>
+  </g>
+  
+  <!-- Transformation arrow -->
+  <g transform="translate(320, 180)">
+    <line x1="0" y1="0" x2="90" y2="0" stroke="#7B1FA2" stroke-width="3" marker-end="url(#arrowTrans)"/>
+    <text x="45" y="-12" font-family="Arial, sans-serif" font-size="14" fill="#7B1FA2" font-weight="bold" text-anchor="middle">T(x) = Ax</text>
+  </g>
+  
+  <!-- Right side: Codomain Rᵐ -->
+  <g transform="translate(450, 60)">
+    <!-- Codomain box -->
+    <rect x="0" y="0" width="250" height="260" rx="10" fill="#fce4ec" stroke="#c2185b" stroke-width="2"/>
+    <text x="125" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#c2185b" text-anchor="middle">Codomain: Rᵐ</text>
+    
+    <!-- 2D coordinate system inside -->
+    <g transform="translate(125, 150)">
+      <!-- Grid lines -->
+      <g stroke="#f8bbd9" stroke-width="1">
+        <line x1="-90" y1="-80" x2="90" y2="-80"/>
+        <line x1="-90" y1="-40" x2="90" y2="-40"/>
+        <line x1="-90" y1="0" x2="90" y2="0"/>
+        <line x1="-90" y1="40" x2="90" y2="40"/>
+        <line x1="-90" y1="80" x2="90" y2="80"/>
+        <line x1="-80" y1="-90" x2="-80" y2="90"/>
+        <line x1="-40" y1="-90" x2="-40" y2="90"/>
+        <line x1="0" y1="-90" x2="0" y2="90"/>
+        <line x1="40" y1="-90" x2="40" y2="90"/>
+        <line x1="80" y1="-90" x2="80" y2="90"/>
+      </g>
+      
+      <!-- Axes -->
+      <line x1="-100" y1="0" x2="100" y2="0" stroke="#c2185b" stroke-width="1.5"/>
+      <line x1="0" y1="95" x2="0" y2="-95" stroke="#c2185b" stroke-width="1.5"/>
+      
+      <!-- Zero vector (target of Null Space) - pulsing -->
+      <circle cx="0" cy="0" r="12" fill="#e64a19" fill-opacity="0.3" stroke="#e64a19" stroke-width="2">
+        <animate attributeName="r" values="10;16;10" dur="2s" repeatCount="indefinite"/>
+      </circle>
+      <circle cx="0" cy="0" r="5" fill="#e64a19"/>
+      <text x="15" y="-15" font-family="Arial, sans-serif" font-size="12" fill="#e64a19" font-weight="bold">0</text>
+      
+      <!-- T(u) output vector in Codomain -->
+      <line x1="0" y1="0" x2="50" y2="-40" stroke="#c2185b" stroke-width="2.5" marker-end="url(#arrowOutput)"/>
+      <circle cx="50" cy="-40" r="4" fill="#c2185b"/>
+      <text x="58" y="-35" font-family="Arial, sans-serif" font-size="11" fill="#c2185b" font-weight="bold">T(u)</text>
+    </g>
+  </g>
+  
+  <!-- Flow arrows: Null Space vectors -> zero (orange dashed) -->
+  <g>
+    <!-- x₁ in Null(A) -> 0 in Codomain -->
+    <path d="M 225 145 C 320 100, 420 120, 575 210" fill="none" stroke="#e64a19" stroke-width="2" stroke-dasharray="6,3">
+      <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1s" repeatCount="indefinite"/>
+    </path>
+    
+    <!-- x₂ in Null(A) -> 0 in Codomain -->
+    <path d="M 135 238 C 280 280, 420 260, 575 210" fill="none" stroke="#e64a19" stroke-width="2" stroke-dasharray="6,3">
+      <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1s" repeatCount="indefinite"/>
+    </path>
+  </g>
+  
+  <!-- Flow arrow: u -> T(u) (blue dashed) -->
+  <path d="M 235 195 C 330 200, 430 160, 620 135" fill="none" stroke="#1565C0" stroke-width="2" stroke-dasharray="6,3">
+    <animate attributeName="stroke-dashoffset" from="0" to="-18" dur="1.5s" repeatCount="indefinite"/>
+  </path>
+  
+  <!-- Bottom explanation boxes -->
+  <g transform="translate(50, 335)">
+    <rect x="0" y="0" width="310" height="35" rx="5" fill="#fff3e0" stroke="#ff9800" stroke-width="1"/>
+    <text x="155" y="22" font-family="Arial, sans-serif" font-size="12" fill="#e65100" text-anchor="middle">
+      Null(A) ⊂ Rⁿ: subspace of input space
+    </text>
+  </g>
+  
+  <g transform="translate(390, 335)">
+    <rect x="0" y="0" width="310" height="35" rx="5" fill="#fce4ec" stroke="#c2185b" stroke-width="1"/>
+    <text x="155" y="22" font-family="Arial, sans-serif" font-size="12" fill="#c2185b" text-anchor="middle">
+      All vectors in Null(A) collapse to origin
+    </text>
+  </g>
+</svg>
