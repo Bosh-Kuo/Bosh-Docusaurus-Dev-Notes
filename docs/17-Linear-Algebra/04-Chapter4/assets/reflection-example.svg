@@ -1,0 +1,106 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 400">
+  <defs>
+    <marker id="arrow-red" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc3545"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0d6efd"/>
+    </marker>
+    <marker id="arrow-gray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6c757d"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="350" y="25" font-family="Georgia, serif" font-size="16" font-weight="bold" fill="#212529" text-anchor="middle">Reflection across y = x</text>
+  
+  <!-- Grid -->
+  <g stroke="#dee2e6" stroke-width="0.5">
+    <!-- Vertical lines -->
+    <line x1="50" y1="50" x2="50" y2="350"/>
+    <line x1="100" y1="50" x2="100" y2="350"/>
+    <line x1="150" y1="50" x2="150" y2="350"/>
+    <line x1="200" y1="50" x2="200" y2="350"/>
+    <line x1="250" y1="50" x2="250" y2="350"/>
+    <line x1="300" y1="50" x2="300" y2="350"/>
+    <line x1="350" y1="50" x2="350" y2="350"/>
+    <!-- Horizontal lines -->
+    <line x1="50" y1="50" x2="350" y2="50"/>
+    <line x1="50" y1="100" x2="350" y2="100"/>
+    <line x1="50" y1="150" x2="350" y2="150"/>
+    <line x1="50" y1="200" x2="350" y2="200"/>
+    <line x1="50" y1="250" x2="350" y2="250"/>
+    <line x1="50" y1="300" x2="350" y2="300"/>
+    <line x1="50" y1="350" x2="350" y2="350"/>
+  </g>
+  
+  <!-- Axes -->
+  <line x1="50" y1="200" x2="350" y2="200" stroke="#212529" stroke-width="1.5"/>
+  <line x1="200" y1="50" x2="200" y2="350" stroke="#212529" stroke-width="1.5"/>
+  <text x="345" y="215" font-family="Arial, sans-serif" font-size="12" fill="#212529">x</text>
+  <text x="205" y="60" font-family="Arial, sans-serif" font-size="12" fill="#212529">y</text>
+  
+  <!-- Line y = x -->
+  <line x1="50" y1="350" x2="350" y2="50" stroke="#6c757d" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="310" y="85" font-family="Georgia, serif" font-size="12" fill="#6c757d">y = x</text>
+  
+  <!-- Origin -->
+  <circle cx="200" cy="200" r="3" fill="#212529"/>
+  <text x="185" y="218" font-family="Arial, sans-serif" font-size="10" fill="#212529">O</text>
+  
+  <!-- b1 vector (1,1) - on the line y=x -->
+  <line x1="200" y1="200" x2="248" y2="152" stroke="#dc3545" stroke-width="2.5" marker-end="url(#arrow-red)"/>
+  <text x="260" y="145" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#dc3545">b₁</text>
+  <text x="260" y="160" font-family="Arial, sans-serif" font-size="10" fill="#dc3545">(1,1)</text>
+  
+  <!-- b2 vector (1,-1) - perpendicular to y=x -->
+  <line x1="200" y1="200" x2="248" y2="248" stroke="#0d6efd" stroke-width="2.5" marker-end="url(#arrow-blue)"/>
+  <text x="260" y="255" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#0d6efd">b₂</text>
+  <text x="260" y="270" font-family="Arial, sans-serif" font-size="10" fill="#0d6efd">(1,-1)</text>
+  
+  <!-- T(b1) = b1 (same position, shown with dashed arrow) -->
+  <circle cx="250" cy="150" r="5" fill="none" stroke="#dc3545" stroke-width="2"/>
+  <text x="275" y="130" font-family="Georgia, serif" font-size="11" fill="#dc3545">T(b₁) = b₁</text>
+  <text x="275" y="143" font-family="Arial, sans-serif" font-size="10" fill="#dc3545">(stays on line)</text>
+  
+  <!-- T(b2) = -b2 -->
+  <line x1="200" y1="200" x2="152" y2="152" stroke="#0d6efd" stroke-width="2" stroke-dasharray="4,2" marker-end="url(#arrow-blue)"/>
+  <text x="110" y="140" font-family="Georgia, serif" font-size="11" fill="#0d6efd">T(b₂) = -b₂</text>
+  <text x="110" y="153" font-family="Arial, sans-serif" font-size="10" fill="#0d6efd">(flipped)</text>
+  
+  <!-- Right side: Result summary -->
+  <rect x="400" y="60" width="280" height="280" rx="10" fill="#f8f9fa" stroke="#dee2e6" stroke-width="1"/>
+  
+  <text x="540" y="90" font-family="Georgia, serif" font-size="14" font-weight="bold" fill="#212529" text-anchor="middle">Three Steps Result</text>
+  
+  <!-- Step 1 -->
+  <text x="420" y="125" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#0d6efd">Step 1: Apply T</text>
+  <text x="420" y="145" font-family="Georgia, serif" font-size="12" fill="#212529">T(b₁) = (1,1)</text>
+  <text x="420" y="162" font-family="Georgia, serif" font-size="12" fill="#212529">T(b₂) = (-1,1)</text>
+  
+  <!-- Step 2 -->
+  <text x="420" y="195" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#198754">Step 2: Convert to B-coords</text>
+  <text x="420" y="215" font-family="Georgia, serif" font-size="12" fill="#212529">[T(b₁)]_B = (1, 0)ᵀ</text>
+  <text x="420" y="232" font-family="Georgia, serif" font-size="12" fill="#212529">[T(b₂)]_B = (0, -1)ᵀ</text>
+  
+  <!-- Step 3 -->
+  <text x="420" y="265" font-family="Georgia, serif" font-size="12" font-weight="bold" fill="#fd7e14">Step 3: Form [T]_B</text>
+  
+  <!-- Matrix with brackets -->
+  <text x="420" y="295" font-family="Georgia, serif" font-size="14" fill="#212529">[T]_B =</text>
+  <text x="475" y="295" font-family="Georgia, serif" font-size="24" fill="#212529">[</text>
+  <text x="490" y="290" font-family="Georgia, serif" font-size="14" fill="#212529">1</text>
+  <text x="520" y="290" font-family="Georgia, serif" font-size="14" fill="#212529">0</text>
+  <text x="490" y="310" font-family="Georgia, serif" font-size="14" fill="#212529">0</text>
+  <text x="515" y="310" font-family="Georgia, serif" font-size="14" fill="#212529">-1</text>
+  <text x="545" y="295" font-family="Georgia, serif" font-size="24" fill="#212529">]</text>
+  
+  <!-- Diagonal matrix highlight -->
+  <rect x="560" y="275" width="100" height="40" rx="5" fill="#d1e7dd" stroke="#198754" stroke-width="1"/>
+  <text x="610" y="298" font-family="Georgia, serif" font-size="11" fill="#0f5132" text-anchor="middle">Diagonal!</text>
+  
+  <!-- Legend -->
+  <rect x="400" y="345" width="280" height="35" rx="5" fill="#fff3cd" stroke="#ffc107" stroke-width="1"/>
+  <text x="540" y="367" font-family="Georgia, serif" font-size="11" fill="#664d03" text-anchor="middle">b₁ on y=x (fixed) · b₂ ⊥ y=x (flipped)</text>
+  
+</svg>
