@@ -136,6 +136,47 @@ Column Space 的基底為：$\left\{ \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, 
 
 因此 $\dim(\text{Col}(A)) = 2$。
 
+### **範例：判斷向量集合是否為 Null Space 的基底**
+
+設 $A = \begin{bmatrix} 1 & 3 & 2 & 1 & 0 \\ 2 & 6 & 5 & 0 & 4 \\ 1 & 3 & 3 & -1 & 4 \\ 5 & 15 & 12 & 1 & 8 \end{bmatrix}$，$B = \left\{ \begin{bmatrix} -3 \\ 1 \\ 0 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -5 \\ 0 \\ 2 \\ 1 \\ 0 \end{bmatrix}, \begin{bmatrix} 8 \\ 0 \\ -4 \\ 0 \\ 1 \end{bmatrix} \right\}$
+
+判斷 $B$ 是否為 $\text{Null}(A)$ 的基底。
+
+**Solution**：
+
+要判斷 $B$ 是否為 $\text{Null}(A)$ 的基底，需要驗證兩件事：
+
+1. $B$ 中的向量是否都在 $\text{Null}(A)$ 中？
+2. $B$ 中的向量數量是否等於 $\dim(\text{Null}(A))$，且 $B$ 線性獨立？
+
+**Step 1：計算 $\text{nullity}(A)$**
+
+將 $A$ 化為 RREF：
+
+$$
+A \xrightarrow{\text{RREF}} R = \begin{bmatrix} 1 & 3 & 0 & 5 & -8 \\ 0 & 0 & 1 & -2 & 4 \\ 0 & 0 & 0 & 0 & 0 \\ 0 & 0 & 0 & 0 & 0 \end{bmatrix}
+$$
+
+- Pivot columns：第 1 和第 3 個 → $\text{rank}(A) = 2$
+- $A$ 有 $n = 5$ 個 columns
+- $\text{nullity}(A) = n - \text{rank}(A) = 5 - 2 = 3$
+
+**Step 2：驗證 $B \subseteq \text{Null}(A)$**
+
+需要確認 $B$ 中的每個向量 $\mathbf{v}$ 都滿足 $A\mathbf{v} = \mathbf{0}$。（計算省略，可直接驗證）
+
+**Step 3：判斷 $B$ 是否為基底**
+
+由於：
+
+- $B$ 中有 3 個向量，恰好等於 $\dim(\text{Null}(A)) = 3$
+- $B \subseteq \text{Null}(A)$
+- $B$ 中的向量線性獨立（可從它們的結構看出：每個向量在不同位置有唯一的非零分量）
+
+> 根據上一篇筆記的 [判定基底的捷徑](./02-basis-and-dimension.md#基底的定義-definition-of-basis)：當向量數量恰等於子空間維度時，只需驗證線性獨立或 $B$ 生成 $\text{Null}(A)$ 其中一個條件即可。
+
+**結論**：$B$ 是 $\text{Null}(A)$ 的基底。
+
 <br/>
 
 ## **Row Space 與 Column Space 的維度關係**
@@ -164,7 +205,7 @@ Column Space 的基底為：$\left\{ \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, 
 ## **Row Space 與 Column Space 的關鍵差異**
 
 :::tip 維度相同 ≠ 空間相同
-雖然 $\dim(\text{Row}(A)) = \dim(\text{Col}(A))$，但這不代表 Row Space 和 Column Space 是「同一個空間」。
+雖然 $\dim(\text{Row}(A)) = \dim(\text{Col}(A)) = \text{rank}(A)$，但這不代表 Row Space 和 Column Space 是「同一個空間」。
 
 對於一個 $m \times n$ 矩陣 $A$：
 
@@ -193,37 +234,37 @@ Column Space 的基底為：$\left\{ \begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}, 
 
 設 $A = \begin{bmatrix} 1 & 2 & 0 & 1 \\ 2 & 4 & 1 & 0 \\ 0 & 0 & 1 & -2 \end{bmatrix}$
 
-**Step 1**：求 RREF
+**Step 1：求 RREF**
 
 $$
 A \xrightarrow{\text{RREF}} \begin{bmatrix} 1 & 2 & 0 & 1 \\ 0 & 0 & 1 & -2 \\ 0 & 0 & 0 & 0 \end{bmatrix}
 $$
 
-**Step 2**：讀取 Rank
+**Step 2：讀取 Rank**
 
 Pivot 位置：(1,1) 和 (2,3)，共 2 個 pivot。
 
 $$\text{rank}(A) = 2$$
 
-**Step 3**：計算 Nullity
+**Step 3：計算 Nullity**
 
 矩陣有 $n = 4$ 個 columns，由 Rank-Nullity Theorem：
 
 $$\text{nullity}(A) = n - \text{rank}(A) = 4 - 2 = 2$$
 
-**Step 4**：找出 Row Space 基底
+**Step 4：找出 Row Space 基底**
 
 RREF 中的非零 rows：
 
 $$\text{Row Space 基底} = \left\{ \begin{bmatrix} 1 \\ 2 \\ 0 \\ 1 \end{bmatrix}, \begin{bmatrix} 0 \\ 0 \\ 1 \\ -2 \end{bmatrix} \right\}$$
 
-**Step 5**：找出 Column Space 基底
+**Step 5：找出 Column Space 基底**
 
 原矩陣 $A$ 中第 1 和第 3 個 column（對應 pivot columns）：
 
 $$\text{Column Space 基底} = \left\{ \begin{bmatrix} 1 \\ 2 \\ 0 \end{bmatrix}, \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix} \right\}$$
 
-**Step 6**：找出 Null Space 基底
+**Step 6：找出 Null Space 基底**
 
 從 RREF 解出 $A\mathbf{x} = \mathbf{0}$，自由變數為 $x_2 = s$，$x_4 = t$：
 
@@ -234,7 +275,5 @@ $$
 $$\text{Null Space 基底} = \left\{ \begin{bmatrix} -2 \\ 1 \\ 0 \\ 0 \end{bmatrix}, \begin{bmatrix} -1 \\ 0 \\ 2 \\ 1 \end{bmatrix} \right\}$$
 
 **驗證**：$\dim(\text{Row}(A)) = \dim(\text{Col}(A)) = \text{rank}(A) = 2$ ✓
-
-<br/>
 
 <br/>

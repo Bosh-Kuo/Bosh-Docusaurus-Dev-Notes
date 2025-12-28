@@ -241,13 +241,13 @@ $$
 
 **範例**：設 $V = \text{Span}\left\{ \begin{bmatrix} 1 \\ 2 \\ 3 \end{bmatrix}, \begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}, \begin{bmatrix} 1 \\ 1 \\ 1 \end{bmatrix} \right\}$
 
-**Step 1**：將向量排成矩陣
+**Step 1：將向量排成矩陣**
 
 $$
 A = \begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 1 \\ 3 & 6 & 1 \end{bmatrix}
 $$
 
-**Step 2**：化為 RREF
+**Step 2：化為 RREF**
 
 $$
 \begin{bmatrix} 1 & 2 & 1 \\ 2 & 4 & 1 \\ 3 & 6 & 1 \end{bmatrix}
@@ -266,11 +266,11 @@ $$
 \begin{bmatrix} 1 & 2 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}
 $$
 
-**Step 3**：識別 pivot columns
+**Step 3：識別 pivot columns**
 
 RREF 為 $\begin{bmatrix} 1 & 2 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix}$，pivot 出現在第 1 和第 3 個 column（leading 1 的位置）。
 
-**Step 4**：從原矩陣取對應的 columns
+**Step 4：從原矩陣取對應的 columns**
 
 第 2 個 column（$\begin{bmatrix} 2 \\ 4 \\ 6 \end{bmatrix}$）不是 pivot column，這代表它是其他向量的線性組合（實際上它是第 1 個向量的 2 倍），所以是「冗餘」的。
 
@@ -369,14 +369,14 @@ $$
 
 **Solution**：
 
-**Step 1**：驗證 $S \subseteq V$（每個向量都滿足 $a - b + c = 0$）
+**Step 1：驗證 $S \subseteq V$（每個向量都滿足 $a - b + c = 0$）**
 
 - $\begin{bmatrix} 1 \\ 2 \\ 1 \end{bmatrix}$：$1 - 2 + 1 = 0$ ✓
 - $\begin{bmatrix} 2 \\ 1 \\ -1 \end{bmatrix}$：$2 - 1 + (-1) = 0$ ✓
 
-**Step 2**：$S$ 有 2 個向量，恰好等於 $\dim(V) = 2$
+**Step 2：$S$ 有 2 個向量，恰好等於 $\dim(V) = 2$**
 
-**Step 3**：只需驗證線性獨立。將向量排成矩陣：
+**Step 3：只需驗證線性獨立。將向量排成矩陣：**
 
 $$
 \begin{bmatrix} 1 & 2 \\ 2 & 1 \\ 1 & -1 \end{bmatrix} \xrightarrow{\text{RREF}} \begin{bmatrix} 1 & 0 \\ 0 & 1 \\ 0 & 0 \end{bmatrix}
