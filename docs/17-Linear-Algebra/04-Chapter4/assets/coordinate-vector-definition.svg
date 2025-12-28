@@ -1,0 +1,109 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 500">
+  <defs>
+    <marker id="arrowB1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e85d04"/>
+    </marker>
+    <marker id="arrowB2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9d4edd"/>
+    </marker>
+    <marker id="arrowX" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc3545"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#adb5bd"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="350" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#212529" text-anchor="middle">Coordinate Vector Relative to Basis ℬ</text>
+  
+  <g transform="translate(350, 280)">
+    <!-- Grid -->
+    <g stroke="#e9ecef" stroke-width="1">
+      <line x1="-300" y1="-220" x2="300" y2="-220"/>
+      <line x1="-300" y1="-180" x2="300" y2="-180"/>
+      <line x1="-300" y1="-140" x2="300" y2="-140"/>
+      <line x1="-300" y1="-100" x2="300" y2="-100"/>
+      <line x1="-300" y1="-60" x2="300" y2="-60"/>
+      <line x1="-300" y1="-20" x2="300" y2="-20"/>
+      <line x1="-300" y1="20" x2="300" y2="20"/>
+      <line x1="-300" y1="60" x2="300" y2="60"/>
+      <line x1="-300" y1="100" x2="300" y2="100"/>
+      <line x1="-260" y1="-240" x2="-260" y2="120"/>
+      <line x1="-220" y1="-240" x2="-220" y2="120"/>
+      <line x1="-180" y1="-240" x2="-180" y2="120"/>
+      <line x1="-140" y1="-240" x2="-140" y2="120"/>
+      <line x1="-100" y1="-240" x2="-100" y2="120"/>
+      <line x1="-60" y1="-240" x2="-60" y2="120"/>
+      <line x1="-20" y1="-240" x2="-20" y2="120"/>
+      <line x1="20" y1="-240" x2="20" y2="120"/>
+      <line x1="60" y1="-240" x2="60" y2="120"/>
+      <line x1="100" y1="-240" x2="100" y2="120"/>
+      <line x1="140" y1="-240" x2="140" y2="120"/>
+      <line x1="180" y1="-240" x2="180" y2="120"/>
+      <line x1="220" y1="-240" x2="220" y2="120"/>
+      <line x1="260" y1="-240" x2="260" y2="120"/>
+    </g>
+    
+    <!-- Faint standard axes -->
+    <line x1="-290" y1="0" x2="290" y2="0" stroke="#adb5bd" stroke-width="1" opacity="0.3"/>
+    <line x1="0" y1="115" x2="0" y2="-235" stroke="#adb5bd" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Origin -->
+    <circle cx="0" cy="0" r="4" fill="#212529"/>
+    <text x="-15" y="20" font-family="Arial, sans-serif" font-size="13" fill="#212529" font-weight="bold">O</text>
+    
+    <!-- Basis ℬ = {b1, b2} -->
+    <!-- b1 vector -->
+    <line x1="0" y1="0" x2="80" y2="-40" stroke="#e85d04" stroke-width="3.5" marker-end="url(#arrowB1)"/>
+    <text x="95" y="-32" font-family="Arial, sans-serif" font-size="16" fill="#e85d04" font-weight="bold">b₁</text>
+    
+    <!-- b2 vector -->
+    <line x1="0" y1="0" x2="-20" y2="-80" stroke="#9d4edd" stroke-width="3.5" marker-end="url(#arrowB2)"/>
+    <text x="-35" y="-80" font-family="Arial, sans-serif" font-size="16" fill="#9d4edd" font-weight="bold">b₂</text>
+    
+    <!-- Vector x -->
+    <!-- x = 3b1 + 2b2 = 3*(80,-40) + 2*(-20,-80) = (240,-120) + (-40,-160) = (200,-280) -->
+    <!-- But let's make it fit: x = 2b1 + 1.5b2 = (160,-80) + (-30,-120) = (130, -200) -->
+    <line x1="0" y1="0" x2="140" y2="-180" stroke="#dc3545" stroke-width="4" marker-end="url(#arrowX)"/>
+    <text x="158" y="-172" font-family="Arial, sans-serif" font-size="18" fill="#dc3545" font-weight="bold">x</text>
+    
+    <!-- Decomposition visualization -->
+    <!-- 2·b1 component -->
+    <line x1="0" y1="0" x2="160" y2="-80" stroke="#e85d04" stroke-width="2" stroke-dasharray="6,4" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3s" repeatCount="indefinite"/>
+    </line>
+    <circle cx="160" cy="-80" r="3" fill="#e85d04"/>
+    
+    <!-- 1.5·b2 component from end of 2·b1 -->
+    <line x1="160" y1="-80" x2="140" y2="-180" stroke="#9d4edd" stroke-width="2" stroke-dasharray="6,4" opacity="0.7">
+      <animate attributeName="opacity" values="0.4;0.9;0.4" dur="3s" repeatCount="indefinite" begin="0.5s"/>
+    </line>
+    
+    <!-- Parallelogram construction lines -->
+    <line x1="0" y1="0" x2="-20" y2="-100" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.4"/>
+    <line x1="160" y1="-80" x2="140" y2="-180" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="3,3" opacity="0.4"/>
+    
+    <!-- Labels for decomposition -->
+    <text x="80" y="-40" font-family="Arial, sans-serif" font-size="13" fill="#e85d04" font-weight="bold">2b₁</text>
+    <text x="155" y="-135" font-family="Arial, sans-serif" font-size="13" fill="#9d4edd" font-weight="bold">1.5b₂</text>
+  </g>
+  
+  <!-- Equation box -->
+  <g transform="translate(350, 440)">
+    <rect x="-200" y="-35" width="400" height="70" rx="8" fill="#fff3cd" stroke="#ffc107" stroke-width="2"/>
+    <text x="0" y="-10" font-family="Arial, sans-serif" font-size="15" fill="#212529" text-anchor="middle" font-weight="bold">x = 2b₁ + 1.5b₂</text>
+    <text x="0" y="15" font-family="Arial, sans-serif" font-size="16" fill="#dc3545" text-anchor="middle" font-weight="bold">[x]ℬ = (2, 1.5)</text>
+  </g>
+  
+  <!-- Annotation box -->
+  <g transform="translate(70, 90)">
+    <rect x="0" y="0" width="200" height="110" rx="8" fill="#e7f1ff" stroke="#0d6efd" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#0d6efd" text-anchor="middle">Basis ℬ = {b₁, b₂}</text>
+    <line x1="20" y1="35" x2="180" y2="35" stroke="#dee2e6" stroke-width="1"/>
+    <text x="100" y="55" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle">The coordinate vector</text>
+    <text x="100" y="72" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle">[x]ℬ gives the coefficients</text>
+    <text x="100" y="89" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle">needed to express x</text>
+    <text x="100" y="104" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle">in terms of basis ℬ</text>
+  </g>
+</svg>

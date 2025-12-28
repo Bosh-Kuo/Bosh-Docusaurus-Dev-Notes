@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 380">
+  <defs>
+    <marker id="arrowStd" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6c757d"/>
+    </marker>
+    <marker id="arrowB1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e85d04"/>
+    </marker>
+    <marker id="arrowB2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9d4edd"/>
+    </marker>
+    <marker id="arrowV" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc3545"/>
+    </marker>
+    <marker id="arrowE1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0d6efd"/>
+    </marker>
+    <marker id="arrowE2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#198754"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="450" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#212529" text-anchor="middle">Same Vector, Different Coordinates</text>
+  
+  <!-- Left: Standard basis -->
+  <g transform="translate(220, 210)">
+    <text x="0" y="-145" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#495057" text-anchor="middle">Standard Basis ℰ</text>
+    
+    <!-- Grid -->
+    <g stroke="#e9ecef" stroke-width="1">
+      <line x1="-180" y1="-120" x2="180" y2="-120"/>
+      <line x1="-180" y1="-80" x2="180" y2="-80"/>
+      <line x1="-180" y1="-40" x2="180" y2="-40"/>
+      <line x1="-180" y1="0" x2="180" y2="0"/>
+      <line x1="-180" y1="40" x2="180" y2="40"/>
+      <line x1="-180" y1="80" x2="180" y2="80"/>
+      <line x1="-140" y1="-140" x2="-140" y2="100"/>
+      <line x1="-100" y1="-140" x2="-100" y2="100"/>
+      <line x1="-60" y1="-140" x2="-60" y2="100"/>
+      <line x1="-20" y1="-140" x2="-20" y2="100"/>
+      <line x1="20" y1="-140" x2="20" y2="100"/>
+      <line x1="60" y1="-140" x2="60" y2="100"/>
+      <line x1="100" y1="-140" x2="100" y2="100"/>
+      <line x1="140" y1="-140" x2="140" y2="100"/>
+    </g>
+    
+    <!-- Axes -->
+    <line x1="-170" y1="0" x2="170" y2="0" stroke="#6c757d" stroke-width="2" marker-end="url(#arrowStd)"/>
+    <line x1="0" y1="95" x2="0" y2="-135" stroke="#6c757d" stroke-width="2" marker-end="url(#arrowStd)"/>
+    
+    <!-- Origin -->
+    <circle cx="0" cy="0" r="3" fill="#212529"/>
+    
+    <!-- Standard basis vectors -->
+    <line x1="0" y1="0" x2="35" y2="0" stroke="#0d6efd" stroke-width="2" marker-end="url(#arrowE1)" opacity="0.6"/>
+    <text x="45" y="12" font-family="Arial, sans-serif" font-size="12" fill="#0d6efd">e₁</text>
+    
+    <line x1="0" y1="0" x2="0" y2="-35" stroke="#198754" stroke-width="2" marker-end="url(#arrowE2)" opacity="0.6"/>
+    <text x="-15" y="-28" font-family="Arial, sans-serif" font-size="12" fill="#198754">e₂</text>
+    
+    <!-- Vector v = (3, 2) -->
+    <line x1="0" y1="0" x2="120" y2="-80" stroke="#dc3545" stroke-width="3.5" marker-end="url(#arrowV)"/>
+    <text x="132" y="-72" font-family="Arial, sans-serif" font-size="16" fill="#dc3545" font-weight="bold">v</text>
+    
+    <!-- Coordinate box -->
+    <g transform="translate(0, 125)">
+      <rect x="-70" y="-15" width="140" height="30" rx="5" fill="#e7f1ff" stroke="#0d6efd" stroke-width="1.5"/>
+      <text x="0" y="5" font-family="Arial, sans-serif" font-size="14" fill="#dc3545" text-anchor="middle" font-weight="bold">[v]ℰ = (3, 2)</text>
+    </g>
+  </g>
+  
+  <!-- Center: Same vector marker -->
+  <g transform="translate(450, 210)">
+    <circle cx="0" cy="0" r="50" fill="none" stroke="#ffc107" stroke-width="2" stroke-dasharray="5,5"/>
+    <text x="0" y="-60" font-family="Arial, sans-serif" font-size="13" fill="#212529" text-anchor="middle" font-weight="bold">Same</text>
+    <text x="0" y="-45" font-family="Arial, sans-serif" font-size="13" fill="#212529" text-anchor="middle" font-weight="bold">Vector v</text>
+    
+    <text x="0" y="70" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle" font-style="italic">Different coordinates</text>
+    <text x="0" y="85" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle" font-style="italic">in different bases</text>
+  </g>
+  
+  <!-- Right: Custom basis -->
+  <g transform="translate(680, 210)">
+    <text x="0" y="-145" font-family="Arial, sans-serif" font-size="15" font-weight="bold" fill="#495057" text-anchor="middle">Custom Basis ℬ</text>
+    
+    <!-- Grid -->
+    <g stroke="#e9ecef" stroke-width="1">
+      <line x1="-180" y1="-120" x2="180" y2="-120"/>
+      <line x1="-180" y1="-80" x2="180" y2="-80"/>
+      <line x1="-180" y1="-40" x2="180" y2="-40"/>
+      <line x1="-180" y1="0" x2="180" y2="0"/>
+      <line x1="-180" y1="40" x2="180" y2="40"/>
+      <line x1="-180" y1="80" x2="180" y2="80"/>
+      <line x1="-140" y1="-140" x2="-140" y2="100"/>
+      <line x1="-100" y1="-140" x2="-100" y2="100"/>
+      <line x1="-60" y1="-140" x2="-60" y2="100"/>
+      <line x1="-20" y1="-140" x2="-20" y2="100"/>
+      <line x1="20" y1="-140" x2="20" y2="100"/>
+      <line x1="60" y1="-140" x2="60" y2="100"/>
+      <line x1="100" y1="-140" x2="100" y2="100"/>
+      <line x1="140" y1="-140" x2="140" y2="100"/>
+    </g>
+    
+    <!-- Faint standard axes -->
+    <line x1="-170" y1="0" x2="170" y2="0" stroke="#adb5bd" stroke-width="1" opacity="0.3"/>
+    <line x1="0" y1="95" x2="0" y2="-135" stroke="#adb5bd" stroke-width="1" opacity="0.3"/>
+    
+    <!-- Origin -->
+    <circle cx="0" cy="0" r="3" fill="#212529"/>
+    
+    <!-- Custom basis vectors: b1 = (2,1), b2 = (1,2) normalized and scaled -->
+    <!-- b1 direction -->
+    <line x1="0" y1="0" x2="60" y2="-30" stroke="#e85d04" stroke-width="2.5" marker-end="url(#arrowB1)"/>
+    <text x="72" y="-22" font-family="Arial, sans-serif" font-size="13" fill="#e85d04" font-weight="bold">b₁</text>
+    
+    <!-- b2 direction -->
+    <line x1="0" y1="0" x2="25" y2="-50" stroke="#9d4edd" stroke-width="2.5" marker-end="url(#arrowB2)"/>
+    <text x="35" y="-48" font-family="Arial, sans-serif" font-size="13" fill="#9d4edd" font-weight="bold">b₂</text>
+    
+    <!-- Same vector v -->
+    <line x1="0" y1="0" x2="120" y2="-80" stroke="#dc3545" stroke-width="3.5" marker-end="url(#arrowV)"/>
+    <text x="132" y="-72" font-family="Arial, sans-serif" font-size="16" fill="#dc3545" font-weight="bold">v</text>
+    
+    <!-- Decomposition hints -->
+    <!-- If v = c1*b1 + c2*b2, with b1=(60,-30), b2=(25,-50) -->
+    <!-- Then c1*60 + c2*25 = 120, c1*(-30) + c2*(-50) = -80 -->
+    <!-- c1*2.4 + c2 = 4.8, c1*0.6 + c2 = 1.6 -->
+    <!-- So c1 ≈ 1.78, c2 ≈ 0.53 (approximately) -->
+    <line x1="0" y1="0" x2="107" y2="-54" stroke="#e85d04" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6"/>
+    <line x1="107" y1="-54" x2="120" y2="-80" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.6"/>
+    
+    <!-- Coordinate box -->
+    <g transform="translate(0, 125)">
+      <rect x="-80" y="-15" width="160" height="30" rx="5" fill="#fff5eb" stroke="#e85d04" stroke-width="1.5"/>
+      <text x="0" y="5" font-family="Arial, sans-serif" font-size="14" fill="#dc3545" text-anchor="middle" font-weight="bold">[v]ℬ = (c₁, c₂)</text>
+    </g>
+  </g>
+  
+  <!-- Bottom note -->
+  <text x="450" y="365" font-family="Arial, sans-serif" font-size="12" fill="#0f5132" text-anchor="middle" font-style="italic">The geometric position of v is unchanged, but its numerical representation depends on the chosen basis</text>
+</svg>

@@ -1,0 +1,133 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <marker id="arrowStd" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6c757d"/>
+    </marker>
+    <marker id="arrowE1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#0d6efd"/>
+    </marker>
+    <marker id="arrowE2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#198754"/>
+    </marker>
+    <marker id="arrowB1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e85d04"/>
+    </marker>
+    <marker id="arrowB2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9d4edd"/>
+    </marker>
+    <marker id="arrowV" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc3545"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#212529" text-anchor="middle">Same Vector in Different Bases</text>
+  
+  <!-- Left: Standard Basis -->
+  <g transform="translate(100, 220)">
+    <!-- Subtitle -->
+    <text x="100" y="-160" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057" text-anchor="middle">Standard Basis</text>
+    
+    <!-- Grid -->
+    <g stroke="#e9ecef" stroke-width="1">
+      <line x1="-80" y1="-120" x2="200" y2="-120"/>
+      <line x1="-80" y1="-80" x2="200" y2="-80"/>
+      <line x1="-80" y1="-40" x2="200" y2="-40"/>
+      <line x1="-80" y1="0" x2="200" y2="0"/>
+      <line x1="-80" y1="40" x2="200" y2="40"/>
+      <line x1="-40" y1="-140" x2="-40" y2="60"/>
+      <line x1="0" y1="-140" x2="0" y2="60"/>
+      <line x1="40" y1="-140" x2="40" y2="60"/>
+      <line x1="80" y1="-140" x2="80" y2="60"/>
+      <line x1="120" y1="-140" x2="120" y2="60"/>
+      <line x1="160" y1="-140" x2="160" y2="60"/>
+    </g>
+    
+    <!-- Axes -->
+    <line x1="-60" y1="0" x2="185" y2="0" stroke="#6c757d" stroke-width="1.5" marker-end="url(#arrowStd)"/>
+    <line x1="0" y1="50" x2="0" y2="-135" stroke="#6c757d" stroke-width="1.5" marker-end="url(#arrowStd)"/>
+    
+    <!-- Origin -->
+    <circle cx="0" cy="0" r="4" fill="#212529"/>
+    <text x="-12" y="15" font-family="Arial, sans-serif" font-size="12" fill="#212529">O</text>
+    
+    <!-- e1 (blue) -->
+    <line x1="0" y1="0" x2="35" y2="0" stroke="#0d6efd" stroke-width="2.5" marker-end="url(#arrowE1)"/>
+    <text x="45" y="15" font-family="Arial, sans-serif" font-size="13" fill="#0d6efd" font-weight="bold">e₁</text>
+    
+    <!-- e2 (green) -->
+    <line x1="0" y1="0" x2="0" y2="-35" stroke="#198754" stroke-width="2.5" marker-end="url(#arrowE2)"/>
+    <text x="-18" y="-25" font-family="Arial, sans-serif" font-size="13" fill="#198754" font-weight="bold">e₂</text>
+    
+    <!-- v = (3, 2.5) scaled to 40 pixels per unit -->
+    <line x1="0" y1="0" x2="112" y2="-92" stroke="#dc3545" stroke-width="3" marker-end="url(#arrowV)"/>
+    <text x="125" y="-85" font-family="Arial, sans-serif" font-size="14" fill="#dc3545" font-weight="bold">v</text>
+    
+    <!-- Dashed projection lines -->
+    <line x1="120" y1="0" x2="120" y2="-100" stroke="#dc3545" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+    <line x1="0" y1="-100" x2="120" y2="-100" stroke="#dc3545" stroke-width="1" stroke-dasharray="4,3" opacity="0.6"/>
+    
+    <!-- Coordinate label -->
+    <text x="100" y="110" font-family="Arial, sans-serif" font-size="13" fill="#212529" text-anchor="middle">[v]ℰ = (3, 2.5)</text>
+  </g>
+  
+  <!-- Right: Custom Basis B -->
+  <g transform="translate(500, 220)">
+    <!-- Subtitle -->
+    <text x="100" y="-160" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057" text-anchor="middle">Custom Basis ℬ</text>
+    
+    <!-- Grid aligned to custom basis (parallelogram grid) -->
+    <g stroke="#e9ecef" stroke-width="1">
+      <!-- Lines parallel to b1 -->
+      <line x1="-60" y1="60" x2="180" y2="60"/>
+      <line x1="-40" y1="20" x2="200" y2="20"/>
+      <line x1="-20" y1="-20" x2="220" y2="-20"/>
+      <line x1="0" y1="-60" x2="240" y2="-60"/>
+      <line x1="20" y1="-100" x2="200" y2="-100"/>
+      <line x1="40" y1="-140" x2="180" y2="-140"/>
+      <!-- Lines parallel to b2 -->
+      <line x1="-40" y1="40" x2="40" y2="-120"/>
+      <line x1="0" y1="60" x2="80" y2="-100"/>
+      <line x1="40" y1="80" x2="120" y2="-80"/>
+      <line x1="80" y1="80" x2="160" y2="-80"/>
+      <line x1="120" y1="80" x2="200" y2="-80"/>
+      <line x1="160" y1="60" x2="220" y2="-60"/>
+    </g>
+    
+    <!-- Standard axes (faint) -->
+    <line x1="-60" y1="0" x2="185" y2="0" stroke="#adb5bd" stroke-width="1" marker-end="url(#arrowStd)" opacity="0.4"/>
+    <line x1="0" y1="50" x2="0" y2="-135" stroke="#adb5bd" stroke-width="1" marker-end="url(#arrowStd)" opacity="0.4"/>
+    
+    <!-- Origin -->
+    <circle cx="0" cy="0" r="4" fill="#212529"/>
+    <text x="-12" y="15" font-family="Arial, sans-serif" font-size="12" fill="#212529">O</text>
+    
+    <!-- b1 (orange): pointing right (1, 0) scaled -->
+    <line x1="0" y1="0" x2="35" y2="0" stroke="#e85d04" stroke-width="2.5" marker-end="url(#arrowB1)"/>
+    <text x="45" y="15" font-family="Arial, sans-serif" font-size="13" fill="#e85d04" font-weight="bold">b₁</text>
+    
+    <!-- b2 (purple): pointing (0.5, 1) direction, i.e., 20 right, 40 up -->
+    <line x1="0" y1="0" x2="16" y2="-35" stroke="#9d4edd" stroke-width="2.5" marker-end="url(#arrowB2)"/>
+    <text x="25" y="-30" font-family="Arial, sans-serif" font-size="13" fill="#9d4edd" font-weight="bold">b₂</text>
+    
+    <!-- v = same geometric position: 120, -100 -->
+    <line x1="0" y1="0" x2="112" y2="-92" stroke="#dc3545" stroke-width="3" marker-end="url(#arrowV)"/>
+    <text x="125" y="-85" font-family="Arial, sans-serif" font-size="14" fill="#dc3545" font-weight="bold">v</text>
+    
+    <!-- Show decomposition: v = c1*b1 + c2*b2 -->
+    <!-- If b1 = (1,0), b2 = (0.5, 1), and v = (3, 2.5), then c1*1 + c2*0.5 = 3, c1*0 + c2*1 = 2.5 -->
+    <!-- So c2 = 2.5, c1 = 3 - 1.25 = 1.75 -->
+    <!-- c1*b1 part: 1.75 * 40 = 70 pixels right -->
+    <line x1="0" y1="0" x2="70" y2="0" stroke="#e85d04" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
+    <!-- c2*b2 part: from (70, 0) go (2.5*20, 2.5*40) = (50, -100) relative -->
+    <line x1="70" y1="0" x2="120" y2="-100" stroke="#9d4edd" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.7"/>
+    
+    <!-- Coordinate label -->
+    <text x="100" y="110" font-family="Arial, sans-serif" font-size="13" fill="#212529" text-anchor="middle">[v]ℬ = (1.75, 2.5)</text>
+  </g>
+  
+  <!-- Legend -->
+  <g transform="translate(320, 355)">
+    <text x="80" y="0" font-family="Arial, sans-serif" font-size="12" fill="#6c757d" text-anchor="middle">Same vector v, different coordinate representations</text>
+  </g>
+</svg>
