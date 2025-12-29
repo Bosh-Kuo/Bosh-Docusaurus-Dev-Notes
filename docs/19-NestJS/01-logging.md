@@ -392,6 +392,59 @@ npm install nest-winston winston
 npm install winston-daily-rotate-file
 ```
 
+### **使用 nestLike 格式**
+
+`nest-winston` 提供了一個非常實用的 `utilities.format.nestLike()` 函數，可以讓 Winston 的輸出格式**看起來跟 NestJS 內建 Logger 一模一樣**——包括彩色的日誌等級、中括號包住的 context、時間戳記等。
+
+```typescript title="src/main.ts"
+import { NestFactory } from '@nestjs/core';
+import { WinstonModule, utilities as nestWinstonModuleUtilities } from 'nest-winston';
+import * as winston from 'winston';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  const app = await NestFactory.create(AppModule, {
+    logger: WinstonModule.createLogger({
+      transports: [
+        new winston.transports.Console({
+          // highlight-start
+          format: winston.format.combine(
+            winston.format.timestamp(),
+            nestWinstonModuleUtilities.format.nestLike('MyApp', {
+              prettyPrint: true,   // 格式化 JSON 物件
+              colors: true,        // 啟用彩色輸出
+            }),
+          ),
+          // highlight-end
+        }),
+      ],
+    }),
+  });
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+
+使用 `nestLike` 後，輸出會長得像這樣，跟 NestJS 內建 Logger 的風格一致：
+
+```bash
+[MyApp] 12345  - 12/29/2024, 4:30:00 PM     LOG [UsersService] 查詢所有使用者
+[MyApp] 12345  - 12/29/2024, 4:30:01 PM   ERROR [UsersService] 資料庫連線失敗
+```
+
+`nestLike` 的第一個參數是 **App Name**（對應原本 `[Nest]` 的位置），第二個參數是選項物件：
+
+| 選項          | 說明                             | 預設值  |
+| :------------ | :------------------------------- | :------ |
+| `colors`      | 是否啟用彩色輸出                 | `true`  |
+| `prettyPrint` | 是否格式化 JSON 物件（多行顯示） | `false` |
+| `processId`   | 是否顯示 Process ID              | `true`  |
+
+:::tip[什麼時候該用 nestLike？]
+如果團隊已經習慣 NestJS 內建 Logger 的輸出格式，使用 `nestLike` 可以讓過渡到 Winston 時更加無痛——日誌格式看起來一樣，但底層已經是功能更強大的 Winston。
+:::
+
 ### **兩種註冊方式的差異**
 
 `nest-winston` 提供兩種註冊方式，差別在於 **「誰來管理 Logger 的生命週期」**。這個選擇會影響到能不能**捕獲 NestJS 啟動階段的日誌**，以及能不能使用**依賴注入**。
@@ -446,7 +499,7 @@ bootstrap();
 ```typescript title="src/app.module.ts"
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
-import { WinstonModule } from 'nest-winston';
+import { WinstonModule, utilities as nestWinstonModuleUtilities } from 'nest-winston';
 import * as winston from 'winston';
 
 @Module({
@@ -459,7 +512,12 @@ import * as winston from 'winston';
       useFactory: (configService: ConfigService) => ({
         level: configService.get('LOG_LEVEL', 'info'),
         transports: [
-          new winston.transports.Console(),
+          new winston.transports.Console({
+            format: winston.format.combine(
+              winston.format.timestamp(),
+              nestWinstonModuleUtilities.format.nestLike('MyApp'),
+            ),
+          }),
           // 只在正式環境寫入檔案
           ...(configService.get('NODE_ENV') === 'production'
             ? [new winston.transports.File({ filename: 'logs/app.log' })]
@@ -473,26 +531,48 @@ import * as winston from 'winston';
 export class AppModule {}
 ```
 
+由於 Logger 是在 AppModule 初始化時才建立，所以在 `main.ts` 中需要**手動從 DI 容器取出並掛載**：
+
+```typescript title="src/main.ts"
+import { NestFactory } from '@nestjs/core';
+import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
+import { AppModule } from './app.module';
+
+async function bootstrap() {
+  // highlight-next-line
+  const app = await NestFactory.create(AppModule);
+
+  // 從 DI 容器取出 Winston Logger 並掛載為全域 Logger
+  // highlight-next-line
+  app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
+
+  await app.listen(3000);
+}
+bootstrap();
+```
+
 - **優點：** 可使用 DI，靈活讀取 `ConfigService`
-- **缺點：** 無法捕獲啟動階段的日誌（那些日誌會使用 NestJS 預設的 ConsoleLogger）
+- **缺點：** 無法捕獲啟動階段的日誌（在 `app.useLogger()` 執行之前的日誌會使用 NestJS 預設的 ConsoleLogger 輸出）
 
 
-### **最佳實踐：結合兩者優點**
+### **最佳實踐：AppModule 註冊 + bufferLogs**
 
-如果**既想要使用 DI 功能**（如讀取 `ConfigService`），**又想要捕獲啟動階段的日誌**，可以使用 `bufferLogs` 這個技巧：
+方式二有一個小缺點：在 DI 容器初始化完成之前，NestJS 啟動階段的日誌（如模組載入、依賴注入過程）會使用預設的 ConsoleLogger 輸出，格式會與後續的 Winston 日誌不一致。
 
-```typescript title="src/main.ts" {4,8-10}
+如果**既想要使用 DI 功能**（如讀取 `ConfigService`），**又想要讓所有日誌都走 Winston**，可以加上 `bufferLogs: true`：
+
+```typescript title="src/main.ts"
 import { NestFactory } from '@nestjs/core';
 import { WINSTON_MODULE_NEST_PROVIDER } from 'nest-winston';
 import { AppModule } from './app.module';
 
 async function bootstrap() {
   const app = await NestFactory.create(AppModule, {
-    // 1. 暫存啟動時的日誌，先不要印出來
-    bufferLogs: true,
+    // highlight-next-line
+    bufferLogs: true, // 暫存啟動階段的日誌
   });
 
-  // 2. 從已初始化的容器中取出 Winston Logger
+  // 掛載 Winston 為全域 Logger，暫存的日誌會一次補印出來
   // highlight-next-line
   app.useLogger(app.get(WINSTON_MODULE_NEST_PROVIDER));
 
@@ -505,7 +585,7 @@ bootstrap();
 
 1. **`bufferLogs: true`**：告訴 NestJS 先把啟動時的日誌**暫存在記憶體**，不要輸出
 2. **`app.get(WINSTON_MODULE_NEST_PROVIDER)`**：從已經初始化完成的 DI 容器中取出 Winston 實體
-3. **`app.useLogger(...)`**：正式掛載為全域 Logger，這時剛剛暫存的日誌會一次補印出來
+3. **`app.useLogger(...)`**：正式掛載為全域 Logger，這時剛剛暫存的日誌會**一次補印出來**，而且格式會與後續日誌一致
 
 :::tip[為什麼可以直接用 new Logger()？]
 設定完 `app.useLogger()` 之後，在任何地方使用 `new Logger()` 都會自動走 Winston。這是因為 NestJS 內建的 `Logger` 類別其實是一個**代理（Proxy）**：
