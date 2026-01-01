@@ -1,0 +1,79 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 300" style="background-color: #ffffff; font-family: 'Inter', sans-serif;">
+  <!-- Definitions -->
+  <defs>
+    <filter id="sketchy" x="-2%" y="-2%" width="104%" height="104%">
+      <feTurbulence type="fractalNoise" baseFrequency="0.05" numOctaves="3" result="noise" />
+      <feDisplacementMap in="SourceGraphic" in2="noise" scale="2" />
+    </filter>
+    <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#333333" />
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="400" y="40" font-size="20" font-weight="bold" fill="#333333" text-anchor="middle">.env to process.env Flow</text>
+
+  <!-- .env File Section -->
+  <g transform="translate(50, 80)">
+    <!-- File Outline -->
+    <path d="M0,0 L120,0 L160,40 L160,200 L0,200 Z" fill="#F0F4F8" stroke="#333333" stroke-width="2" />
+    <path d="M120,0 L120,40 L160,40" fill="none" stroke="#333333" stroke-width="2" />
+    
+    <!-- Title -->
+    <text x="80" y="30" font-size="16" font-weight="bold" fill="#4B5563" text-anchor="middle">.env File</text>
+    
+    <!-- Content -->
+    <text x="15" y="80" font-family="monospace" font-size="12" fill="#374151">PORT=3000</text>
+    <text x="15" y="105" font-family="monospace" font-size="12" fill="#374151">DB_HOST=localhost</text>
+    <text x="15" y="130" font-family="monospace" font-size="12" fill="#374151">...</text>
+    
+    <!-- Label -->
+    <text x="80" y="230" font-size="14" fill="#6B7280" text-anchor="middle">Static Text File</text>
+  </g>
+
+  <!-- Arrow 1 -->
+  <line x1="230" y1="180" x2="290" y2="180" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- ConfigModule / Parser Section -->
+  <g transform="translate(310, 80)">
+    <!-- Box -->
+    <rect x="0" y="0" width="180" height="200" rx="10" ry="10" fill="#E0E7FF" stroke="#4F46E5" stroke-width="2" stroke-dasharray="5,5" />
+    
+    <!-- Title -->
+    <text x="90" y="30" font-size="16" font-weight="bold" fill="#4338CA" text-anchor="middle">@nestjs/config</text>
+    <text x="90" y="55" font-size="14" fill="#4338CA" text-anchor="middle">(dotenv wrapper)</text>
+    
+    <!-- Inner Mechanism -->
+    <g transform="translate(20, 80)">
+        <rect x="0" y="0" width="140" height="100" rx="5" ry="5" fill="#FFFFFF" stroke="#4F46E5" stroke-width="1" />
+        <text x="70" y="25" font-size="14" font-weight="bold" fill="#333333" text-anchor="middle">Parsing Logic</text>
+        <text x="70" y="55" font-size="12" fill="#666666" text-anchor="middle">1. Read File</text>
+        <text x="70" y="75" font-size="12" fill="#666666" text-anchor="middle">2. Parse KV Pairs</text>
+    </g>
+  </g>
+
+  <!-- Arrow 2 -->
+  <line x1="510" y1="180" x2="570" y2="180" stroke="#333333" stroke-width="2" marker-end="url(#arrowhead)" />
+
+  <!-- process.env Section -->
+  <g transform="translate(590, 80)">
+     <!-- Cloud/Runtime Shape -->
+     <path d="M20,100 Q0,100 0,80 Q0,40 40,40 Q50,10 80,10 Q120,10 130,40 Q160,40 160,70 Q160,100 130,100 Z" transform="scale(1.1)" fill="#DCFCE7" stroke="#10B981" stroke-width="2" />
+     
+     <!-- Content adjustment due to scale -->
+     <g transform="translate(10, 20)">
+        <text x="80" y="40" font-size="16" font-weight="bold" fill="#047857" text-anchor="middle">process.env</text>
+        <text x="80" y="60" font-size="12" fill="#059669" text-anchor="middle">(Node.js Runtime)</text>
+        
+        <!-- Object Representation -->
+        <rect x="25" y="75" width="110" height="70" rx="4" fill="#FFFFFF" stroke="#10B981" stroke-width="1"/>
+        <text x="35" y="95" font-family="monospace" font-size="11" fill="#333333">{</text>
+        <text x="45" y="110" font-family="monospace" font-size="11" fill="#333333">  PORT: '3000',</text>
+        <text x="45" y="125" font-family="monospace" font-size="11" fill="#333333">  ...defaultEnv</text>
+        <text x="35" y="140" font-family="monospace" font-size="11" fill="#333333">}</text>
+     </g>
+  </g>
+
+
+
+</svg>

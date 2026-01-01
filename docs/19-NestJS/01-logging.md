@@ -3,18 +3,18 @@ title: NestJS Logging 完整指南：從內建 Logger 到 Winston 整合
 sidebar_label: Logging
 description: 本篇文章完整介紹 NestJS 的日誌系統，包括內建 Logger 的設定與使用、自定義 Logger 的兩種方式（implements LoggerService vs extends ConsoleLogger）、整合 Winston 第三方日誌套件，以及 nest-winston 的進階設定技巧。
 last_update:
-  date: 2024-12-26
+  date: 2025-12-26
 keywords: [NestJS, Logging, Logger, Winston, nest-winston, LoggerService, ConsoleLogger]
 tags: [NestJS]
 ---
 
 :::note[版本資訊]
-本文內容基於 **NestJS v10.x** 與 **Winston v3.x** 撰寫。NestJS 的 Logger API 在 v8 以後保持穩定，Winston 的核心 API 在 v3 以後也沒有重大變動。如果使用較早的版本，部分 API 可能有所不同，建議參考對應版本的官方文件。
+本文內容基於 **NestJS v10** 撰寫，並適用於目前最新版本的 NestJS。Logger 的核心 API 在近期版本中保持穩定。
 :::
 
 日誌（Logging）是後端開發中不可或缺的一環。無論是除錯、監控還是追蹤問題，一個設計良好的日誌系統都能讓開發事半功倍。NestJS 內建了一套簡潔的日誌機制，同時也提供了高度彈性讓開發者整合第三方日誌套件。
 
-這篇文章會從最基礎的內建 Logger 開始，一步步說明如何自定義 Logger，最後介紹如何整合業界常用的 Winston 日誌套件。
+這篇筆記會從最基礎的內建 Logger 開始，一步步說明如何自定義 Logger，最後介紹如何整合業界常用的 `Winston` 日誌套件。
 
 ![Logger 架構概覽](./assets/logger-overview.svg)
 
