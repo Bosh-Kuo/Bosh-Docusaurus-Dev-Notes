@@ -3,7 +3,7 @@ title: 特徵值與特徵向量 (Eigenvalues and Eigenvectors)
 sidebar_label: "5-1 特徵值與特徵向量"
 description: 本篇筆記介紹特徵值與特徵向量的定義、幾何意義，以及如何透過特徵多項式求解特徵值，並深入探討特徵空間 (Eigenspace) 的概念。
 last_update:
-  date: 2025-01-03
+  date: 2026-01-03
 keywords:
   [
     "Linear Algebra",
