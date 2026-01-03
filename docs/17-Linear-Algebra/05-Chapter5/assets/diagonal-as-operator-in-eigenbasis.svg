@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 650 420">
+  <defs>
+    <marker id="arrowX1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e65100"/>
+    </marker>
+    <marker id="arrowX2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1565c0"/>
+    </marker>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9e9e9e"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2e7d32"/>
+    </marker>
+  </defs>
+  
+  <!-- Title -->
+  <text x="325" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#37474f" text-anchor="middle">Eigenvector Basis: D = [T]_B</text>
+  
+  <g transform="translate(325, 230)">
+    <!-- Grid -->
+    <g stroke="#e8e8e8" stroke-width="0.5">
+      <line x1="-280" y1="-180" x2="280" y2="-180"/>
+      <line x1="-280" y1="-140" x2="280" y2="-140"/>
+      <line x1="-280" y1="-100" x2="280" y2="-100"/>
+      <line x1="-280" y1="-60" x2="280" y2="-60"/>
+      <line x1="-280" y1="-20" x2="280" y2="-20"/>
+      <line x1="-280" y1="20" x2="280" y2="20"/>
+      <line x1="-280" y1="60" x2="280" y2="60"/>
+      <line x1="-280" y1="100" x2="280" y2="100"/>
+      <line x1="-280" y1="140" x2="280" y2="140"/>
+      <line x1="-240" y1="-180" x2="-240" y2="160"/>
+      <line x1="-200" y1="-180" x2="-200" y2="160"/>
+      <line x1="-160" y1="-180" x2="-160" y2="160"/>
+      <line x1="-120" y1="-180" x2="-120" y2="160"/>
+      <line x1="-80" y1="-180" x2="-80" y2="160"/>
+      <line x1="-40" y1="-180" x2="-40" y2="160"/>
+      <line x1="40" y1="-180" x2="40" y2="160"/>
+      <line x1="80" y1="-180" x2="80" y2="160"/>
+      <line x1="120" y1="-180" x2="120" y2="160"/>
+      <line x1="160" y1="-180" x2="160" y2="160"/>
+      <line x1="200" y1="-180" x2="200" y2="160"/>
+      <line x1="240" y1="-180" x2="240" y2="160"/>
+    </g>
+    
+    <!-- Faint standard axes -->
+    <line x1="-270" y1="0" x2="270" y2="0" stroke="#bdbdbd" stroke-width="1" opacity="0.4" marker-end="url(#arrowGray)"/>
+    <line x1="0" y1="155" x2="0" y2="-175" stroke="#bdbdbd" stroke-width="1" opacity="0.4" marker-end="url(#arrowGray)"/>
+    <text x="258" y="18" font-family="Arial, sans-serif" font-size="11" fill="#9e9e9e">x</text>
+    <text x="10" y="-160" font-family="Arial, sans-serif" font-size="11" fill="#9e9e9e">y</text>
+    
+    <!-- Origin -->
+    <circle cx="0" cy="0" r="4" fill="#424242"/>
+    <text x="-18" y="18" font-family="Arial, sans-serif" font-size="12" fill="#424242" font-weight="bold">O</text>
+    
+    <!-- Eigenvector x₁ (tilted, not on axis) -->
+    <line x1="0" y1="0" x2="100" y2="-50" stroke="#e65100" stroke-width="3.5" marker-end="url(#arrowX1)"/>
+    <text x="115" y="-45" font-family="Georgia, serif" font-size="16" fill="#e65100" font-style="italic" font-weight="bold">x₁</text>
+    
+    <!-- Eigenvector x₂ (tilted, not on axis) -->
+    <line x1="0" y1="0" x2="-40" y2="-90" stroke="#1565c0" stroke-width="3.5" marker-end="url(#arrowX2)"/>
+    <text x="-60" y="-90" font-family="Georgia, serif" font-size="16" fill="#1565c0" font-style="italic" font-weight="bold">x₂</text>
+    
+    <!-- Extended eigenvector directions (eigenspaces) -->
+    <line x1="-150" y1="75" x2="200" y2="-100" stroke="#e65100" stroke-width="1.5" stroke-opacity="0.3"/>
+    <line x1="60" y1="135" x2="-80" y2="-180" stroke="#1565c0" stroke-width="1.5" stroke-opacity="0.3"/>
+    
+    <!-- Transformation: x₁ → λ₁x₁ -->
+    <line x1="100" y1="-50" x2="170" y2="-85" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrowGreen)"/>
+    <text x="185" y="-80" font-family="Georgia, serif" font-size="14" fill="#2e7d32" font-style="italic" font-weight="bold">λ₁x₁</text>
+    
+    <!-- Transformation: x₂ → λ₂x₂ -->
+    <line x1="-40" y1="-90" x2="-60" y2="-135" stroke="#2e7d32" stroke-width="2.5" stroke-dasharray="6,4" marker-end="url(#arrowGreen)"/>
+    <text x="-90" y="-135" font-family="Georgia, serif" font-size="14" fill="#2e7d32" font-style="italic" font-weight="bold">λ₂x₂</text>
+  </g>
+  
+  <!-- Bottom annotation -->
+  <g transform="translate(325, 400)">
+    <text x="0" y="0" font-family="Arial, sans-serif" font-size="13" fill="#424242" text-anchor="middle">T(x₁) = λ₁x₁ , T(x₂) = λ₂x₂  →  D = diag(λ₁, λ₂) = [T]_B</text>
+  </g>
+</svg>

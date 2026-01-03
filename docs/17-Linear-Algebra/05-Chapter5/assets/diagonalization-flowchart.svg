@@ -1,0 +1,110 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 550">
+  <defs>
+    <filter id="dropShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrow" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#78909c"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4caf50"/>
+    </marker>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#f44336"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="550" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#37474f" text-anchor="middle">Diagonalization Procedure Flowchart</text>
+  
+  <!-- Step 1: Start -->
+  <g transform="translate(330, 50)" filter="url(#dropShadow)">
+    <rect x="0" y="0" width="140" height="40" rx="20" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="70" y="25" font-family="Arial, sans-serif" font-size="12" fill="#1565c0" text-anchor="middle" font-weight="bold">Given n×n Matrix A</text>
+  </g>
+  
+  <!-- Arrow 1 -->
+  <path d="M400,90 L400,115" fill="none" stroke="#78909c" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 2: Find eigenvalues -->
+  <g transform="translate(290, 120)" filter="url(#dropShadow)">
+    <rect x="0" y="0" width="220" height="50" rx="6" fill="white" stroke="#5c6bc0" stroke-width="2"/>
+    <text x="110" y="20" font-family="Arial, sans-serif" font-size="11" fill="#3949ab" text-anchor="middle" font-weight="bold">Step 1: Find Eigenvalues</text>
+    <text x="110" y="38" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle">Solve det(A - λI) = 0</text>
+  </g>
+  
+  <!-- Arrow 2 -->
+  <path d="M400,170 L400,195" fill="none" stroke="#78909c" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 3: Quick check -->
+  <g transform="translate(280, 200)" filter="url(#dropShadow)">
+    <polygon points="120,0 240,45 120,90 0,45" fill="#fff8e1" stroke="#ffc107" stroke-width="2"/>
+    <text x="120" y="40" font-family="Arial, sans-serif" font-size="11" fill="#f57c00" text-anchor="middle" font-weight="bold">n distinct</text>
+    <text x="120" y="55" font-family="Arial, sans-serif" font-size="11" fill="#f57c00" text-anchor="middle" font-weight="bold">eigenvalues?</text>
+  </g>
+  
+  <!-- Yes branch from quick check -->
+  <path d="M520,245 L620,245 L620,480" fill="none" stroke="#4caf50" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <text x="560" y="238" font-family="Arial, sans-serif" font-size="11" fill="#4caf50" font-weight="bold">Yes</text>
+  
+  <!-- No branch -->
+  <path d="M400,290 L400,315" fill="none" stroke="#78909c" stroke-width="2" marker-end="url(#arrow)"/>
+  <text x="415" y="308" font-family="Arial, sans-serif" font-size="11" fill="#78909c">No</text>
+  
+  <!-- Step 4: Find eigenvectors -->
+  <g transform="translate(280, 320)" filter="url(#dropShadow)">
+    <rect x="0" y="0" width="240" height="50" rx="6" fill="white" stroke="#5c6bc0" stroke-width="2"/>
+    <text x="120" y="20" font-family="Arial, sans-serif" font-size="11" fill="#3949ab" text-anchor="middle" font-weight="bold">Step 2: Find Eigenvectors for each λ</text>
+    <text x="120" y="38" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle">Solve (A - λI)x = 0 for each eigenvalue</text>
+  </g>
+  
+  <!-- Arrow 4 -->
+  <path d="M400,370 L400,395" fill="none" stroke="#78909c" stroke-width="2" marker-end="url(#arrow)"/>
+  
+  <!-- Step 5: Check multiplicities -->
+  <g transform="translate(260, 400)" filter="url(#dropShadow)">
+    <polygon points="140,0 280,50 140,100 0,50" fill="#e8eaf6" stroke="#5c6bc0" stroke-width="2"/>
+    <text x="140" y="38" font-family="Arial, sans-serif" font-size="10" fill="#3949ab" text-anchor="middle" font-weight="bold">For each λ:</text>
+    <text x="140" y="55" font-family="Arial, sans-serif" font-size="10" fill="#3949ab" text-anchor="middle" font-weight="bold">gm(λ) = am(λ)?</text>
+  </g>
+  
+  <!-- Yes from check -->
+  <path d="M400,500 L400,520" fill="none" stroke="#4caf50" stroke-width="2"/>
+  <text x="415" y="515" font-family="Arial, sans-serif" font-size="11" fill="#4caf50" font-weight="bold">Yes</text>
+  
+  <!-- No from check -->
+  <path d="M260,450 L140,450 L140,510" fill="none" stroke="#f44336" stroke-width="2" marker-end="url(#arrowRed)"/>
+  <text x="190" y="443" font-family="Arial, sans-serif" font-size="11" fill="#f44336" font-weight="bold">No</text>
+  
+  <!-- Not Diagonalizable -->
+  <g transform="translate(60, 513)" filter="url(#dropShadow)">
+    <rect x="0" y="0" width="160" height="35" rx="6" fill="#ffebee" stroke="#f44336" stroke-width="2"/>
+    <text x="80" y="22" font-family="Arial, sans-serif" font-size="12" fill="#c62828" text-anchor="middle" font-weight="bold">NOT Diagonalizable</text>
+  </g>
+  
+  <!-- Diagonalizable -->
+  <g transform="translate(480, 488)" filter="url(#dropShadow)">
+    <rect x="0" y="0" width="180" height="55" rx="6" fill="#e8f5e9" stroke="#4caf50" stroke-width="2"/>
+    <text x="90" y="20" font-family="Arial, sans-serif" font-size="12" fill="#2e7d32" text-anchor="middle" font-weight="bold">DIAGONALIZABLE!</text>
+    <text x="90" y="38" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle">Form P = [x₁|x₂|...|xₙ]</text>
+    <text x="90" y="50" font-family="Arial, sans-serif" font-size="10" fill="#424242" text-anchor="middle">D = diag(λ₁, λ₂, ..., λₙ)</text>
+  </g>
+  
+  <!-- Join arrow to diagonalizable -->
+  <path d="M400,520 L480,522" fill="none" stroke="#4caf50" stroke-width="2"/>
+  
+  <!-- Legend -->
+  <g transform="translate(30, 80)">
+    <rect x="0" y="0" width="140" height="80" rx="5" fill="white" stroke="#e0e0e0" stroke-width="1"/>
+    <text x="70" y="18" font-family="Arial, sans-serif" font-size="10" fill="#616161" text-anchor="middle" font-weight="bold">Legend</text>
+    <rect x="15" y="28" width="20" height="12" rx="3" fill="#fff8e1" stroke="#ffc107" stroke-width="1"/>
+    <text x="45" y="38" font-family="Arial, sans-serif" font-size="9" fill="#424242">Decision</text>
+    <rect x="15" y="48" width="20" height="12" rx="3" fill="white" stroke="#5c6bc0" stroke-width="1"/>
+    <text x="45" y="58" font-family="Arial, sans-serif" font-size="9" fill="#424242">Process</text>
+    <rect x="15" y="68" width="20" height="8" rx="3" fill="#e8f5e9" stroke="#4caf50" stroke-width="1"/>
+    <text x="45" y="75" font-family="Arial, sans-serif" font-size="9" fill="#424242">Result</text>
+  </g>
+</svg>

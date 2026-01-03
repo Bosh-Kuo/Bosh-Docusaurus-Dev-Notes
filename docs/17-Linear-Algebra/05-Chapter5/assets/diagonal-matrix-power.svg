@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 220">
+  <defs>
+    <linearGradient id="powerGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#fff3e0"/>
+      <stop offset="100%" style="stop-color:#ffe0b2"/>
+    </linearGradient>
+    <filter id="shadowEffect" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="2" dy="2" stdDeviation="2" flood-opacity="0.15"/>
+    </filter>
+    <marker id="arrowGray" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9e9e9e"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="750" height="220" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="375" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#e65100" text-anchor="middle">Dᵏ: Simply Raise Each Diagonal Element to k-th Power</text>
+  
+  <!-- D matrix -->
+  <g transform="translate(80, 50)" filter="url(#shadowEffect)">
+    <text x="55" y="0" font-family="Georgia, serif" font-size="14" fill="#424242" text-anchor="middle" font-style="italic">D =</text>
+    <!-- Matrix brackets -->
+    <path d="M25,10 L15,10 L15,130 L25,130" fill="none" stroke="#424242" stroke-width="2"/>
+    <path d="M135,10 L145,10 L145,130 L135,130" fill="none" stroke="#424242" stroke-width="2"/>
+    <!-- Diagonal elements -->
+    <rect x="25" y="18" width="30" height="22" rx="3" fill="#fff3e0" stroke="#ff9800" stroke-width="1.5"/>
+    <text x="40" y="34" font-family="Georgia, serif" font-size="13" fill="#e65100" text-anchor="middle">λ₁</text>
+    
+    <rect x="60" y="48" width="30" height="22" rx="3" fill="#fff3e0" stroke="#ff9800" stroke-width="1.5"/>
+    <text x="75" y="64" font-family="Georgia, serif" font-size="13" fill="#e65100" text-anchor="middle">λ₂</text>
+    
+    <text x="105" y="90" font-family="Arial, sans-serif" font-size="16" fill="#757575" text-anchor="middle">⋱</text>
+    
+    <rect x="100" y="100" width="30" height="22" rx="3" fill="#fff3e0" stroke="#ff9800" stroke-width="1.5"/>
+    <text x="115" y="116" font-family="Georgia, serif" font-size="13" fill="#e65100" text-anchor="middle">λₙ</text>
+    
+    <!-- Zeros -->
+    <text x="75" y="34" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="115" y="34" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="40" y="64" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="115" y="64" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="40" y="116" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="75" y="116" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+  </g>
+  
+  <!-- Arrow -->
+  <g transform="translate(255, 115)">
+    <path d="M0,0 L60,0" fill="none" stroke="#9e9e9e" stroke-width="2" marker-end="url(#arrowGray)"/>
+    <text x="30" y="-10" font-family="Arial, sans-serif" font-size="12" fill="#757575" text-anchor="middle">k-th power</text>
+  </g>
+  
+  <!-- D^k matrix -->
+  <g transform="translate(340, 50)" filter="url(#shadowEffect)">
+    <text x="55" y="0" font-family="Georgia, serif" font-size="14" fill="#424242" text-anchor="middle" font-style="italic">D<tspan baseline-shift="super" font-size="10">k</tspan> =</text>
+    <!-- Matrix brackets -->
+    <path d="M25,10 L15,10 L15,130 L25,130" fill="none" stroke="#424242" stroke-width="2"/>
+    <path d="M135,10 L145,10 L145,130 L135,130" fill="none" stroke="#424242" stroke-width="2"/>
+    <!-- Diagonal elements -->
+    <rect x="20" y="18" width="35" height="22" rx="3" fill="#c8e6c9" stroke="#4caf50" stroke-width="1.5"/>
+    <text x="37" y="34" font-family="Georgia, serif" font-size="12" fill="#2e7d32" text-anchor="middle">λ₁<tspan baseline-shift="super" font-size="9">k</tspan></text>
+    
+    <rect x="58" y="48" width="35" height="22" rx="3" fill="#c8e6c9" stroke="#4caf50" stroke-width="1.5"/>
+    <text x="75" y="64" font-family="Georgia, serif" font-size="12" fill="#2e7d32" text-anchor="middle">λ₂<tspan baseline-shift="super" font-size="9">k</tspan></text>
+    
+    <text x="105" y="90" font-family="Arial, sans-serif" font-size="16" fill="#757575" text-anchor="middle">⋱</text>
+    
+    <rect x="98" y="100" width="35" height="22" rx="3" fill="#c8e6c9" stroke="#4caf50" stroke-width="1.5"/>
+    <text x="115" y="116" font-family="Georgia, serif" font-size="12" fill="#2e7d32" text-anchor="middle">λₙ<tspan baseline-shift="super" font-size="9">k</tspan></text>
+    
+    <!-- Zeros -->
+    <text x="75" y="34" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="115" y="34" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="40" y="64" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="115" y="64" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="40" y="116" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+    <text x="75" y="116" font-family="Georgia, serif" font-size="11" fill="#bdbdbd" text-anchor="middle">0</text>
+  </g>
+  
+  <!-- Application box -->
+  <g transform="translate(520, 55)">
+    <rect x="0" y="0" width="200" height="130" rx="8" fill="#e3f2fd" stroke="#1976d2" stroke-width="2"/>
+    <text x="100" y="25" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#1565c0" text-anchor="middle">Application to Aᵏ</text>
+    <line x1="15" y1="35" x2="185" y2="35" stroke="#90caf9" stroke-width="1"/>
+    <text x="100" y="58" font-family="Arial, sans-serif" font-size="11" fill="#424242" text-anchor="middle">If A = PDP⁻¹, then:</text>
+    <text x="100" y="85" font-family="Georgia, serif" font-size="16" fill="#1565c0" text-anchor="middle" font-weight="bold">Aᵏ = PDᵏP⁻¹</text>
+    <text x="100" y="110" font-family="Arial, sans-serif" font-size="10" fill="#616161" text-anchor="middle">Computing Dᵏ is O(n)</text>
+    <text x="100" y="123" font-family="Arial, sans-serif" font-size="10" fill="#616161" text-anchor="middle">vs O(n³·k) for direct Aᵏ</text>
+  </g>
+</svg>
