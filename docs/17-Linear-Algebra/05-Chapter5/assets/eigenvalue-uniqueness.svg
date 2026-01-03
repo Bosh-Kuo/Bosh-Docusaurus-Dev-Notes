@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320">
+  <defs>
+    <marker id="arrow1" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e63946"/>
+    </marker>
+    <marker id="arrow1b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#c1121f"/>
+    </marker>
+    <marker id="arrow2" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#457b9d"/>
+    </marker>
+    <marker id="arrow2b" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#1d3557"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="320" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="350" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d3557" text-anchor="middle">
+    Eigenvalue Uniqueness: One Vector, One Scaling Factor
+  </text>
+  
+  <!-- Left Panel: λ₁ = 3 -->
+  <g transform="translate(40, 50)">
+    <rect x="0" y="0" width="290" height="250" rx="8" fill="#fff" stroke="#e63946" stroke-width="2"/>
+    <text x="145" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e63946" text-anchor="middle">
+      λ₁ = 3
+    </text>
+    
+    <!-- Coordinate system -->
+    <g transform="translate(145, 145)">
+      <!-- Grid -->
+      <g stroke="#e9ecef" stroke-width="1">
+        <line x1="-120" y1="0" x2="120" y2="0"/>
+        <line x1="0" y1="-85" x2="0" y2="85"/>
+      </g>
+      
+      <!-- Direction line -->
+      <line x1="-30" y1="0" x2="115" y2="0" stroke="#e63946" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      
+      <!-- Eigenvector x₁ (original) -->
+      <line x1="0" y1="0" x2="35" y2="0" stroke="#e63946" stroke-width="3" marker-end="url(#arrow1)"/>
+      <text x="40" y="-8" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e63946">x₁</text>
+      
+      <!-- Transformed: Ax₁ = 3x₁ (scaled by 3) -->
+      <line x1="0" y1="0" x2="105" y2="0" stroke="#c1121f" stroke-width="3" marker-end="url(#arrow1b)"/>
+      <text x="80" y="20" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#c1121f">Ax₁ = 3x₁</text>
+    </g>
+    
+    <text x="145" y="235" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">
+      x₁ scaled by 3, same direction
+    </text>
+  </g>
+  
+  <!-- Right Panel: λ₂ = -2 -->
+  <g transform="translate(370, 50)">
+    <rect x="0" y="0" width="290" height="250" rx="8" fill="#fff" stroke="#457b9d" stroke-width="2"/>
+    <text x="145" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#457b9d" text-anchor="middle">
+      λ₂ = -2
+    </text>
+    
+    <!-- Coordinate system -->
+    <g transform="translate(145, 145)">
+      <!-- Grid -->
+      <g stroke="#e9ecef" stroke-width="1">
+        <line x1="-120" y1="0" x2="120" y2="0"/>
+        <line x1="0" y1="-85" x2="0" y2="85"/>
+      </g>
+      
+      <!-- Direction line (shows same line, opposite direction) -->
+      <line x1="-95" y1="83" x2="60" y2="-53" stroke="#457b9d" stroke-width="1" stroke-dasharray="4,3" opacity="0.4"/>
+      
+      <!-- Eigenvector x₂ (original) -->
+      <line x1="0" y1="0" x2="40" y2="-35" stroke="#457b9d" stroke-width="3" marker-end="url(#arrow2)"/>
+      <text x="48" y="-40" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#457b9d">x₂</text>
+      
+      <!-- Transformed: Ax₂ = -2x₂ (scaled by -2, flipped) -->
+      <line x1="0" y1="0" x2="-80" y2="70" stroke="#1d3557" stroke-width="3" marker-end="url(#arrow2b)"/>
+      <text x="-135" y="65" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1d3557">Ax₂ = -2x₂</text>
+    </g>
+    
+    <text x="145" y="235" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">
+      x₂ scaled by -2, flipped direction
+    </text>
+  </g>
+</svg>

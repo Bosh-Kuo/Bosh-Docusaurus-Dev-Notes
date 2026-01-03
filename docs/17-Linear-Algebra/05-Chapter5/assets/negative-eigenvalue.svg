@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280">
+  <defs>
+    <marker id="arrRed" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#e63946"/>
+    </marker>
+    <marker id="arrBlue" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#457b9d"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="700" height="280" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="350" y="28" font-family="Arial, sans-serif" font-size="16" font-weight="bold" fill="#1d3557" text-anchor="middle">
+    Geometric Meaning of Eigenvalue Sign
+  </text>
+  
+  <!-- Left Panel: λ > 0 -->
+  <g transform="translate(50, 50)">
+    <rect x="0" y="0" width="280" height="210" rx="8" fill="#fff" stroke="#2a9d8f" stroke-width="2"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2a9d8f" text-anchor="middle">
+      λ &gt; 0 (Positive)
+    </text>
+    
+    <!-- Coordinate system -->
+    <g transform="translate(140, 120)">
+      <!-- Axes -->
+      <line x1="-110" y1="0" x2="110" y2="0" stroke="#adb5bd" stroke-width="1.5"/>
+      <line x1="0" y1="-65" x2="0" y2="65" stroke="#adb5bd" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="3" fill="#212529"/>
+      
+      <!-- Original vector x -->
+      <line x1="0" y1="0" x2="40" y2="0" stroke="#e63946" stroke-width="3" marker-end="url(#arrRed)"/>
+      <text x="45" y="-8" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e63946">x</text>
+      
+      <!-- Transformed vector λx (stretched, same direction) -->
+      <line x1="0" y1="0" x2="85" y2="0" stroke="#457b9d" stroke-width="3" marker-end="url(#arrBlue)"/>
+      <text x="90" y="15" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#457b9d">λx</text>
+    </g>
+    
+    <text x="140" y="195" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">
+      Same direction, stretched/compressed
+    </text>
+  </g>
+  
+  <!-- Right Panel: λ < 0 -->
+  <g transform="translate(370, 50)">
+    <rect x="0" y="0" width="280" height="210" rx="8" fill="#fff" stroke="#e63946" stroke-width="2"/>
+    <text x="140" y="25" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e63946" text-anchor="middle">
+      λ &lt; 0 (Negative)
+    </text>
+    
+    <!-- Coordinate system -->
+    <g transform="translate(140, 120)">
+      <!-- Axes -->
+      <line x1="-110" y1="0" x2="110" y2="0" stroke="#adb5bd" stroke-width="1.5"/>
+      <line x1="0" y1="-65" x2="0" y2="65" stroke="#adb5bd" stroke-width="1.5"/>
+      <circle cx="0" cy="0" r="3" fill="#212529"/>
+      
+      <!-- Original vector x -->
+      <line x1="0" y1="0" x2="40" y2="0" stroke="#e63946" stroke-width="3" marker-end="url(#arrRed)"/>
+      <text x="45" y="-8" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e63946">x</text>
+      
+      <!-- Transformed vector λx (flipped direction) -->
+      <line x1="0" y1="0" x2="-70" y2="0" stroke="#457b9d" stroke-width="3" marker-end="url(#arrBlue)"/>
+      <text x="-90" y="15" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#457b9d">λx</text>
+    </g>
+    
+    <text x="140" y="195" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">
+      Flipped to opposite direction
+    </text>
+  </g>
+</svg>

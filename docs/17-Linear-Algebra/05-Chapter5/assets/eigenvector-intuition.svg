@@ -1,0 +1,151 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 380">
+  <defs>
+    <marker id="arrowRed" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e63946"/>
+    </marker>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#457b9d"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2a9d8f"/>
+    </marker>
+    <marker id="arrowRedLight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e63946" opacity="0.5"/>
+    </marker>
+    <marker id="arrowBlueLight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#457b9d" opacity="0.5"/>
+    </marker>
+    <marker id="arrowGreenLight" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2a9d8f" opacity="0.5"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="380" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1d3557" text-anchor="middle">
+    Eigenvector: Direction Preserved Under Transformation
+  </text>
+  
+  <!-- Left Panel: Before Transformation -->
+  <g transform="translate(50, 55)">
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057" text-anchor="middle">Before: Original Vectors</text>
+    
+    <!-- Grid -->
+    <g stroke="#e9ecef" stroke-width="1">
+      <line x1="0" y1="150" x2="300" y2="150"/>
+      <line x1="150" y1="0" x2="150" y2="300"/>
+      <line x1="50" y1="0" x2="50" y2="300" stroke-dasharray="3,3"/>
+      <line x1="100" y1="0" x2="100" y2="300" stroke-dasharray="3,3"/>
+      <line x1="200" y1="0" x2="200" y2="300" stroke-dasharray="3,3"/>
+      <line x1="250" y1="0" x2="250" y2="300" stroke-dasharray="3,3"/>
+      <line x1="0" y1="50" x2="300" y2="50" stroke-dasharray="3,3"/>
+      <line x1="0" y1="100" x2="300" y2="100" stroke-dasharray="3,3"/>
+      <line x1="0" y1="200" x2="300" y2="200" stroke-dasharray="3,3"/>
+      <line x1="0" y1="250" x2="300" y2="250" stroke-dasharray="3,3"/>
+    </g>
+    
+    <!-- Axes -->
+    <line x1="0" y1="150" x2="300" y2="150" stroke="#212529" stroke-width="2"/>
+    <line x1="150" y1="0" x2="150" y2="300" stroke="#212529" stroke-width="2"/>
+    <text x="290" y="140" font-family="Arial, sans-serif" font-size="12" fill="#212529">x</text>
+    <text x="158" y="15" font-family="Arial, sans-serif" font-size="12" fill="#212529">y</text>
+    <circle cx="150" cy="150" r="4" fill="#212529"/>
+    <text x="135" y="168" font-family="Arial, sans-serif" font-size="10" fill="#212529">O</text>
+    
+    <!-- Regular vector v1 -->
+    <line x1="150" y1="150" x2="230" y2="90" stroke="#457b9d" stroke-width="3" marker-end="url(#arrowBlue)"/>
+    <text x="240" y="80" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#457b9d">v₁</text>
+    
+    <!-- Eigenvector x -->
+    <line x1="150" y1="150" x2="220" y2="150" stroke="#e63946" stroke-width="3" marker-end="url(#arrowRed)"/>
+    <text x="225" y="140" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#e63946">x</text>
+    
+    <!-- Another regular vector v2 -->
+    <line x1="150" y1="150" x2="200" y2="210" stroke="#2a9d8f" stroke-width="3" marker-end="url(#arrowGreen)"/>
+    <text x="205" y="228" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#2a9d8f">v₂</text>
+  </g>
+  
+  <!-- Arrow indicating transformation with animation -->
+  <g transform="translate(370, 170)">
+    <path d="M 0,10 L 50,10" fill="none" stroke="#6c757d" stroke-width="2"/>
+    <polygon points="50,5 60,10 50,15" fill="#6c757d">
+      <animate attributeName="opacity" values="0.5;1;0.5" dur="1.5s" repeatCount="indefinite"/>
+    </polygon>
+    <text x="30" y="-5" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#6c757d" text-anchor="middle">T = A</text>
+  </g>
+  
+  <!-- Right Panel: After Transformation -->
+  <g transform="translate(450, 55)">
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057" text-anchor="middle">After: Transformed Vectors</text>
+    
+    <!-- Grid -->
+    <g stroke="#e9ecef" stroke-width="1">
+      <line x1="0" y1="150" x2="300" y2="150"/>
+      <line x1="150" y1="0" x2="150" y2="300"/>
+      <line x1="50" y1="0" x2="50" y2="300" stroke-dasharray="3,3"/>
+      <line x1="100" y1="0" x2="100" y2="300" stroke-dasharray="3,3"/>
+      <line x1="200" y1="0" x2="200" y2="300" stroke-dasharray="3,3"/>
+      <line x1="250" y1="0" x2="250" y2="300" stroke-dasharray="3,3"/>
+      <line x1="0" y1="50" x2="300" y2="50" stroke-dasharray="3,3"/>
+      <line x1="0" y1="100" x2="300" y2="100" stroke-dasharray="3,3"/>
+      <line x1="0" y1="200" x2="300" y2="200" stroke-dasharray="3,3"/>
+      <line x1="0" y1="250" x2="300" y2="250" stroke-dasharray="3,3"/>
+    </g>
+    
+    <!-- Axes -->
+    <line x1="0" y1="150" x2="300" y2="150" stroke="#212529" stroke-width="2"/>
+    <line x1="150" y1="0" x2="150" y2="300" stroke="#212529" stroke-width="2"/>
+    <text x="290" y="140" font-family="Arial, sans-serif" font-size="12" fill="#212529">x</text>
+    <text x="158" y="15" font-family="Arial, sans-serif" font-size="12" fill="#212529">y</text>
+    <circle cx="150" cy="150" r="4" fill="#212529"/>
+    <text x="135" y="168" font-family="Arial, sans-serif" font-size="10" fill="#212529">O</text>
+    
+    <!-- Ghost of original vectors (faded) -->
+    <line x1="150" y1="150" x2="230" y2="90" stroke="#457b9d" stroke-width="2" stroke-dasharray="4,3" opacity="0.3"/>
+    <line x1="150" y1="150" x2="220" y2="150" stroke="#e63946" stroke-width="2" stroke-dasharray="4,3" opacity="0.3"/>
+    <line x1="150" y1="150" x2="200" y2="210" stroke="#2a9d8f" stroke-width="2" stroke-dasharray="4,3" opacity="0.3"/>
+    
+    <!-- Transformed v1 (rotated) with animation -->
+    <g>
+      <line x1="150" y1="150" x2="150" y2="150" stroke="#457b9d" stroke-width="3" marker-end="url(#arrowBlue)">
+        <animate attributeName="x2" values="230;255" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="90;115" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <text font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#457b9d">
+        <animate attributeName="x" values="240;265" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="80;108" dur="2s" repeatCount="indefinite"/>
+        Av₁
+      </text>
+    </g>
+    
+    <!-- Transformed eigenvector (scaled only, same direction!) with animation -->
+    <g>
+      <line x1="150" y1="150" x2="150" y2="150" stroke="#e63946" stroke-width="3" marker-end="url(#arrowRed)">
+        <animate attributeName="x2" values="220;270" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <text font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e63946">
+        <animate attributeName="x" values="225;275" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="140;140" dur="2s" repeatCount="indefinite"/>
+        Ax = λx
+      </text>
+    </g>
+    
+    <!-- Transformed v2 (rotated) with animation -->
+    <g>
+      <line x1="150" y1="150" x2="150" y2="150" stroke="#2a9d8f" stroke-width="3" marker-end="url(#arrowGreen)">
+        <animate attributeName="x2" values="200;175" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y2" values="210;235" dur="2s" repeatCount="indefinite"/>
+      </line>
+      <text font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#2a9d8f">
+        <animate attributeName="x" values="205;155" dur="2s" repeatCount="indefinite"/>
+        <animate attributeName="y" values="228;255" dur="2s" repeatCount="indefinite"/>
+        Av₂
+      </text>
+    </g>
+    
+    <!-- Direction line for eigenvector (shows it stays on same line) -->
+    <line x1="80" y1="150" x2="285" y2="150" stroke="#e63946" stroke-width="1" stroke-dasharray="5,5" opacity="0.4"/>
+  </g>
+</svg>

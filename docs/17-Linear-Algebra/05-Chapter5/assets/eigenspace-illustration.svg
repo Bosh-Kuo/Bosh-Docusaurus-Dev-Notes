@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 450">
+  <defs>
+    <marker id="arrowE1" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#e63946"/>
+    </marker>
+    <marker id="arrowE2" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#457b9d"/>
+    </marker>
+    <linearGradient id="lineGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#e63946;stop-opacity:0.1"/>
+      <stop offset="50%" style="stop-color:#e63946;stop-opacity:0.4"/>
+      <stop offset="100%" style="stop-color:#e63946;stop-opacity:0.1"/>
+    </linearGradient>
+    <linearGradient id="planeGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#457b9d;stop-opacity:0.15"/>
+      <stop offset="100%" style="stop-color:#457b9d;stop-opacity:0.05"/>
+    </linearGradient>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="450" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="400" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1d3557" text-anchor="middle">
+    Eigenspace = Null Space of (A - λI)
+  </text>
+  
+  <!-- Left Panel: 1D Eigenspace (Line) -->
+  <g transform="translate(60, 60)">
+    <text x="130" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057" text-anchor="middle">
+      1D Eigenspace (Line)
+    </text>
+    <text x="130" y="18" font-family="Arial, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">
+      dim(Eigenspace) = 1
+    </text>
+    
+    <!-- 3D-ish coordinate frame -->
+    <g transform="translate(130, 160)">
+      <!-- Grid floor -->
+      <g stroke="#e9ecef" stroke-width="1" opacity="0.5">
+        <line x1="-100" y1="50" x2="100" y2="50"/>
+        <line x1="-80" y1="30" x2="120" y2="30"/>
+        <line x1="-60" y1="10" x2="140" y2="10"/>
+      </g>
+      
+      <!-- Axes -->
+      <line x1="-100" y1="70" x2="100" y2="70" stroke="#adb5bd" stroke-width="1.5"/>
+      <line x1="0" y1="70" x2="50" y2="-30" stroke="#adb5bd" stroke-width="1.5"/>
+      <line x1="0" y1="70" x2="0" y2="-80" stroke="#adb5bd" stroke-width="1.5"/>
+      <circle cx="0" cy="70" r="3" fill="#212529"/>
+      
+      <!-- Eigenspace line (extends through origin) -->
+      <line x1="-90" y1="70" x2="90" y2="70" stroke="#e63946" stroke-width="8" opacity="0.3"/>
+      <line x1="-90" y1="70" x2="90" y2="70" stroke="#e63946" stroke-width="2"/>
+      
+      <!-- Multiple eigenvectors on the line -->
+      <line x1="0" y1="70" x2="60" y2="70" stroke="#e63946" stroke-width="3" marker-end="url(#arrowE1)"/>
+      <line x1="0" y1="70" x2="-40" y2="70" stroke="#e63946" stroke-width="2" marker-end="url(#arrowE1)" opacity="0.6"/>
+      <line x1="0" y1="70" x2="30" y2="70" stroke="#e63946" stroke-width="2" opacity="0.6"/>
+      
+      <!-- Labels -->
+      <text x="75" y="65" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#e63946">x</text>
+      <text x="-55" y="65" font-family="Arial, sans-serif" font-size="11" fill="#e63946">cx</text>
+      
+      <!-- Annotation -->
+      <text x="0" y="120" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">
+        All scalar multiples of x
+      </text>
+      <text x="0" y="135" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">
+        are eigenvectors for λ
+      </text>
+    </g>
+  </g>
+  
+  <!-- Right Panel: 2D Eigenspace (Plane) -->
+  <g transform="translate(440, 60)">
+    <text x="150" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057" text-anchor="middle">
+      2D Eigenspace (Plane)
+    </text>
+    <text x="150" y="18" font-family="Arial, sans-serif" font-size="11" fill="#6c757d" text-anchor="middle">
+      dim(Eigenspace) = 2
+    </text>
+    
+    <!-- 3D coordinate frame -->
+    <g transform="translate(150, 160)">
+      <!-- Plane (parallelogram in perspective) -->
+      <polygon points="-80,80 80,80 120,0 -40,0" fill="url(#planeGrad)" stroke="#457b9d" stroke-width="2"/>
+      
+      <!-- Grid on plane -->
+      <g stroke="#457b9d" stroke-width="0.5" opacity="0.4">
+        <line x1="-60" y1="60" x2="100" y2="60"/>
+        <line x1="-40" y1="40" x2="120" y2="40"/>
+        <line x1="-20" y1="20" x2="140" y2="20"/>
+        <line x1="-20" y1="80" x2="20" y2="0"/>
+        <line x1="20" y1="80" x2="60" y2="0"/>
+        <line x1="60" y1="80" x2="100" y2="0"/>
+      </g>
+      
+      <!-- Origin -->
+      <circle cx="40" cy="40" r="4" fill="#212529"/>
+      <text x="25" y="50" font-family="Arial, sans-serif" font-size="10" fill="#212529">O</text>
+      
+      <!-- Basis vectors of eigenspace -->
+      <line x1="40" y1="40" x2="100" y2="40" stroke="#457b9d" stroke-width="3" marker-end="url(#arrowE2)"/>
+      <text x="110" y="45" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#457b9d">x₁</text>
+      
+      <line x1="40" y1="40" x2="60" y2="0" stroke="#457b9d" stroke-width="3" marker-end="url(#arrowE2)"/>
+      <text x="65" y="-5" font-family="Arial, sans-serif" font-size="12" font-weight="bold" fill="#457b9d">x₂</text>
+      
+      <!-- Linear combination vector -->
+      <line x1="40" y1="40" x2="95" y2="15" stroke="#2a9d8f" stroke-width="2" stroke-dasharray="4,2"/>
+      <text x="100" y="12" font-family="Arial, sans-serif" font-size="11" fill="#2a9d8f">c₁x₁ + c₂x₂</text>
+      
+      <!-- Z-axis (out of plane) -->
+      <line x1="40" y1="40" x2="40" y2="-60" stroke="#adb5bd" stroke-width="1.5"/>
+      
+      <!-- Annotation -->
+      <text x="40" y="130" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">
+        Any linear combination
+      </text>
+      <text x="40" y="145" font-family="Arial, sans-serif" font-size="11" fill="#495057" text-anchor="middle">
+        of x₁, x₂ is an eigenvector
+      </text>
+    </g>
+  </g>
+  
+  <!-- Bottom Formula Box -->
+  <g transform="translate(200, 390)">
+    <rect x="0" y="0" width="400" height="50" rx="8" fill="#fff" stroke="#dee2e6" stroke-width="1"/>
+    <text x="200" y="20" font-family="Arial, sans-serif" font-size="13" font-weight="bold" fill="#1d3557" text-anchor="middle">
+      Eigenspace Definition
+    </text>
+    <text x="200" y="38" font-family="Arial, sans-serif" font-size="12" fill="#212529" text-anchor="middle">
+      Eλ = Null(A - λI) = {x ∈ Rⁿ | (A - λI)x = 0}
+    </text>
+  </g>
+</svg>

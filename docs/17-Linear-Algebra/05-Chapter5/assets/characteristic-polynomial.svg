@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 750 340">
+  <defs>
+    <marker id="axisArrow" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#212529"/>
+    </marker>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="750" height="340" fill="#fafafa"/>
+  
+  <!-- Title -->
+  <text x="375" y="30" font-family="Arial, sans-serif" font-size="18" font-weight="bold" fill="#1d3557" text-anchor="middle">
+    Characteristic Polynomial: Finding Eigenvalues
+  </text>
+  
+  <!-- Left: Logic Flow -->
+  <g transform="translate(40, 55)">
+    <text x="120" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057" text-anchor="middle">
+      Logic Chain
+    </text>
+    
+    <!-- Step 1 -->
+    <g transform="translate(0, 25)">
+      <rect x="0" y="0" width="240" height="45" rx="6" fill="#e3f2fd" stroke="#1976d2" stroke-width="1.5"/>
+      <text x="120" y="18" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#1565c0" text-anchor="middle">
+        Start: Ax = λx
+      </text>
+      <text x="120" y="35" font-family="Arial, sans-serif" font-size="10" fill="#1565c0" text-anchor="middle">
+        (Definition of eigenvector)
+      </text>
+    </g>
+    
+    <!-- Arrow 1 -->
+    <path d="M 120,75 L 120,90" stroke="#6c757d" stroke-width="2" fill="none" marker-end="url(#axisArrow)"/>
+    
+    <!-- Step 2 -->
+    <g transform="translate(0, 95)">
+      <rect x="0" y="0" width="240" height="45" rx="6" fill="#fff3e0" stroke="#f57c00" stroke-width="1.5"/>
+      <text x="120" y="18" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e65100" text-anchor="middle">
+        Rewrite: (A - λI)x = 0
+      </text>
+      <text x="120" y="35" font-family="Arial, sans-serif" font-size="10" fill="#e65100" text-anchor="middle">
+        (Homogeneous system)
+      </text>
+    </g>
+    
+    <!-- Arrow 2 -->
+    <path d="M 120,145 L 120,160" stroke="#6c757d" stroke-width="2" fill="none" marker-end="url(#axisArrow)"/>
+    
+    <!-- Step 3 -->
+    <g transform="translate(0, 165)">
+      <rect x="0" y="0" width="240" height="45" rx="6" fill="#e8f5e9" stroke="#388e3c" stroke-width="1.5"/>
+      <text x="120" y="18" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#2e7d32" text-anchor="middle">
+        Need non-trivial solution (x ≠ 0)
+      </text>
+      <text x="120" y="35" font-family="Arial, sans-serif" font-size="10" fill="#2e7d32" text-anchor="middle">
+        (Eigenvector must be non-zero)
+      </text>
+    </g>
+    
+    <!-- Arrow 3 -->
+    <path d="M 120,215 L 120,230" stroke="#6c757d" stroke-width="2" fill="none" marker-end="url(#axisArrow)"/>
+    
+    <!-- Step 4 -->
+    <g transform="translate(0, 235)">
+      <rect x="0" y="0" width="240" height="45" rx="6" fill="#fce4ec" stroke="#c2185b" stroke-width="1.5"/>
+      <text x="120" y="18" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#ad1457" text-anchor="middle">
+        Condition: det(A - λI) = 0
+      </text>
+      <text x="120" y="35" font-family="Arial, sans-serif" font-size="10" fill="#ad1457" text-anchor="middle">
+        (Matrix must be singular)
+      </text>
+    </g>
+  </g>
+  
+  <!-- Right: Polynomial Graph -->
+  <g transform="translate(350, 50)">
+    <text x="175" y="0" font-family="Arial, sans-serif" font-size="14" font-weight="bold" fill="#495057" text-anchor="middle">
+      Characteristic Polynomial p(λ) = det(A - λI)
+    </text>
+    
+    <!-- Graph area -->
+    <g transform="translate(30, 25)">
+      <!-- Grid -->
+      <g stroke="#e9ecef" stroke-width="1">
+        <line x1="0" y1="0" x2="0" y2="220"/>
+        <line x1="60" y1="0" x2="60" y2="220" stroke-dasharray="4,4"/>
+        <line x1="120" y1="0" x2="120" y2="220" stroke-dasharray="4,4"/>
+        <line x1="180" y1="0" x2="180" y2="220" stroke-dasharray="4,4"/>
+        <line x1="240" y1="0" x2="240" y2="220" stroke-dasharray="4,4"/>
+        <line x1="300" y1="0" x2="300" y2="220"/>
+        
+        <line x1="0" y1="40" x2="300" y2="40" stroke-dasharray="4,4"/>
+        <line x1="0" y1="110" x2="300" y2="110"/>
+        <line x1="0" y1="180" x2="300" y2="180" stroke-dasharray="4,4"/>
+      </g>
+      
+      <!-- Axes -->
+      <line x1="0" y1="110" x2="310" y2="110" stroke="#212529" stroke-width="2" marker-end="url(#axisArrow)"/>
+      <line x1="30" y1="220" x2="30" y2="0" stroke="#212529" stroke-width="2" marker-end="url(#axisArrow)"/>
+      <text x="315" y="115" font-family="Arial, sans-serif" font-size="12" fill="#212529">λ</text>
+      <text x="35" y="12" font-family="Arial, sans-serif" font-size="12" fill="#212529">p(λ)</text>
+      
+      <!-- Polynomial curve (cubic example) -->
+      <path d="M 10,180 Q 60,200 90,110 Q 115,40 150,80 Q 180,110 210,110 Q 250,110 290,30" 
+            fill="none" stroke="#6366f1" stroke-width="3"/>
+      
+      <!-- Eigenvalue points (roots) -->
+      <circle cx="90" cy="110" r="7" fill="#e63946"/>
+      <text x="90" y="135" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e63946" text-anchor="middle">λ₁</text>
+      
+      <circle cx="210" cy="110" r="7" fill="#e63946"/>
+      <text x="210" y="135" font-family="Arial, sans-serif" font-size="11" font-weight="bold" fill="#e63946" text-anchor="middle">λ₂</text>
+      
+      <!-- Zero line label -->
+      <text x="-20" y="114" font-family="Arial, sans-serif" font-size="10" fill="#6c757d">0</text>
+      
+      <!-- Annotation -->
+      <g transform="translate(100, 175)">
+        <rect x="0" y="0" width="160" height="30" rx="5" fill="#fff" stroke="#e63946" stroke-width="1"/>
+        <text x="80" y="12" font-family="Arial, sans-serif" font-size="10" fill="#495057" text-anchor="middle">
+          Roots of p(λ) = 0
+        </text>
+        <text x="80" y="24" font-family="Arial, sans-serif" font-size="10" font-weight="bold" fill="#e63946" text-anchor="middle">
+          = Eigenvalues of A
+        </text>
+      </g>
+    </g>
+  </g>
+</svg>
