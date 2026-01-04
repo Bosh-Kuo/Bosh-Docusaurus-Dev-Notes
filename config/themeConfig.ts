@@ -7,7 +7,7 @@ const themeConfig = {
   announcementBar: {
     id: "announcement",
     content:
-      '如果我的筆記對你有幫助，歡迎到我的 <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bosh-Kuo/docusaurus-dev-notes">Github</a> 給我一顆星星 ⭐️',
+      '如果我的筆記對你有幫助，歡迎到我的 <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bosh-Kuo/docusaurus-dev-notes">GitHub</a> 點個 Star ⭐️ 支持',
     textColor: "#091E42",
     isCloseable: true,
   },
@@ -132,6 +132,12 @@ const themeConfig = {
     sidebar: {
       hideable: true,
       autoCollapseCategories: true,
+    },
+  },
+  // * Blog sidebar
+  blog: {
+    sidebar: {
+      groupByYear: false, // 停用年份分組，避免出現 scrollbar
     },
   },
   // * Algolia DocSearch
