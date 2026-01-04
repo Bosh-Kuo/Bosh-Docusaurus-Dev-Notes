@@ -4,9 +4,18 @@ import { useEffect, useState } from "react";
  * This hook refers to https://github.com/dawsonbooth/react-repo-card/blob/master/src/hooks/colors.ts
  * This is a hook for fetching the GitHub colors from [ozh/github-colors](https://raw.githubusercontent.com/ozh/github-colors/master/colors.json).
  */
-const useColors = () => {
-  const [colors, setColors] = useState({});
-  const [hasError, setHasError] = useState(false);
+export interface GithubColor {
+  color: string;
+  url: string;
+}
+
+export interface GithubColors {
+  [key: string]: GithubColor;
+}
+
+export function useColors() {
+  const [colors, setColors] = useState<GithubColors>({});
+  const [hasError, setHasError] = useState<boolean>(false);
   const url =
     "https://raw.githubusercontent.com/ozh/github-colors/master/colors.json";
 
@@ -15,11 +24,11 @@ const useColors = () => {
       .then(async (resp) => {
         setColors(await resp.json());
       })
-      .catch(() => {
+      .catch((error) => {
         setHasError(true);
+        console.error("Error fetching GitHub colors:", error);
       });
   }, [url]);
-  return { colors, hasError };
-};
 
-export default useColors;
+  return { colors, hasError };
+}
