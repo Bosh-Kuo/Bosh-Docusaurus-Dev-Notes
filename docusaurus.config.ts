@@ -18,7 +18,6 @@ const config: Config = {
   organizationName: "bosh-kuo", // Usually your GitHub org/user name.
   projectName: "docusaurus-dev-notes", // Usually your repo name.
   onBrokenLinks: "throw",
-  onBrokenMarkdownLinks: "warn",
 
   // * preset configurations
   presets,
@@ -35,6 +34,9 @@ const config: Config = {
   themes: ["@docusaurus/theme-mermaid", "@docusaurus/theme-live-codeblock"],
   markdown: {
     mermaid: true,
+    hooks: {
+      onBrokenMarkdownLinks: "warn",
+    },
   },
 
   // Enabling math equations
