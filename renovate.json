@@ -1,8 +1,12 @@
 {
   "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "extends": ["config:recommended", "schedule:weekends"],
+  "timezone": "Asia/Taipei", // 設定時區為台灣時間，確保排程依此執行
+  "extends": [
+    "config:recommended", // 使用官方推薦的核心設定
+    "schedule:weekends" // 僅在週末（週六與週日）執行更新
+  ],
   "vulnerabilityAlerts": {
-    "enabled": true
+    "enabled": true // 開啟安全性漏洞提醒，自動掃描受傷套件
   },
-  "osvVulnerabilityAlerts": true
+  "osvVulnerabilityAlerts": true // 使用 Google OSV 資料庫加強漏洞偵測
 }
