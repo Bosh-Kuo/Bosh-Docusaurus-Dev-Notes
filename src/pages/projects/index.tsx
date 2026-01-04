@@ -1,17 +1,17 @@
 import React from "react";
 import Layout from "@theme/Layout";
 import styles from "./styles.module.css";
-import RepoCard from "../../components/RepoCard";
-import useGithubRepos from "../../hooks/useGithubRepos";
+import RepoCard from "@site/src/components/RepoCard";
+import { useGithubRepos } from "@site/src/hooks/useGithubRepos";
 
 export default function Projects(): JSX.Element {
   const user = "Bosh-Kuo"; // 指定使用者名稱
-  const { repos, hasError: loadingRepoError } = useGithubRepos(user);
+  const { repos, loading, hasError: loadingRepoError } = useGithubRepos(user);
 
   return (
     <Layout
-      title='My Projects'
-      description='My latest updated github repositories'
+      title="My Projects"
+      description="My latest updated github repositories"
     >
       {loadingRepoError ? (
         <div className={styles.projects_container}>
@@ -23,10 +23,12 @@ export default function Projects(): JSX.Element {
           <h3>My latest updated github repositories</h3>
           <section>
             <div>
-              {repos.length > 0 ? (
+              {loading ? (
+                <p>Loading Page...</p>
+              ) : repos.length > 0 ? (
                 repos.map((repo, i) => <RepoCard key={i} repo={repo} />)
               ) : (
-                <p>Loading Page...</p>
+                <p>No repositories found.</p>
               )}
             </div>
           </section>
