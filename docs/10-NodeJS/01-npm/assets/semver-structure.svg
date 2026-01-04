@@ -1,0 +1,70 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 200">
+  <defs>
+    <linearGradient id="majorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#ef4444;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="minorGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="patchGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#22c55e;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#16a34a;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="130%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.15"/>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="600" height="200" fill="#fafafa" rx="12"/>
+  
+  <!-- Version number display -->
+  <g transform="translate(300, 70)">
+    <!-- MAJOR -->
+    <g transform="translate(-120, 0)">
+      <rect x="-45" y="-35" width="90" height="70" rx="12" fill="url(#majorGrad)" filter="url(#shadow)"/>
+      <text x="0" y="10" font-family="SF Mono, Menlo, Monaco, monospace" font-size="36" font-weight="700" fill="white" text-anchor="middle">2</text>
+    </g>
+    
+    <!-- Dot 1 -->
+    <text x="-45" y="10" font-family="SF Mono, Menlo, Monaco, monospace" font-size="36" font-weight="700" fill="#374151">.</text>
+    
+    <!-- MINOR -->
+    <g transform="translate(0, 0)">
+      <rect x="-45" y="-35" width="90" height="70" rx="12" fill="url(#minorGrad)" filter="url(#shadow)"/>
+      <text x="0" y="10" font-family="SF Mono, Menlo, Monaco, monospace" font-size="36" font-weight="700" fill="white" text-anchor="middle">4</text>
+    </g>
+    
+    <!-- Dot 2 -->
+    <text x="75" y="10" font-family="SF Mono, Menlo, Monaco, monospace" font-size="36" font-weight="700" fill="#374151">.</text>
+    
+    <!-- PATCH -->
+    <g transform="translate(120, 0)">
+      <rect x="-45" y="-35" width="90" height="70" rx="12" fill="url(#patchGrad)" filter="url(#shadow)"/>
+      <text x="0" y="10" font-family="SF Mono, Menlo, Monaco, monospace" font-size="36" font-weight="700" fill="white" text-anchor="middle">1</text>
+    </g>
+  </g>
+  
+  <!-- Labels -->
+  <g transform="translate(300, 140)">
+    <!-- MAJOR Label -->
+    <g transform="translate(-120, 0)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#dc2626" text-anchor="middle">MAJOR</text>
+      <text x="0" y="18" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Breaking Changes</text>
+    </g>
+    
+    <!-- MINOR Label -->
+    <g transform="translate(0, 0)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#d97706" text-anchor="middle">MINOR</text>
+      <text x="0" y="18" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">New Features</text>
+    </g>
+    
+    <!-- PATCH Label -->
+    <g transform="translate(120, 0)">
+      <text x="0" y="0" font-family="Inter, system-ui, sans-serif" font-size="13" font-weight="600" fill="#16a34a" text-anchor="middle">PATCH</text>
+      <text x="0" y="18" font-family="Inter, system-ui, sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Bug Fixes</text>
+    </g>
+  </g>
+</svg>

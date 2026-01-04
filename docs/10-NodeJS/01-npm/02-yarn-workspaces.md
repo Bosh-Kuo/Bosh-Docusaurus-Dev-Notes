@@ -1,6 +1,6 @@
 ---
 title: 深入解析 Yarn Workspaces：高效管理 monorepo 的必備技能
-sidebar_label: "[yarn] yarn workspaces"
+sidebar_label: "yarn workspaces"
 description: 本文章深入介紹了 Yarn Workspaces，內容涵蓋了共享依賴、集中化管理、避免依賴 hoisting 的技巧，以及常用指令的應用，幫助開發者優化多專案開發流程，提高安裝效率與依賴管理的靈活性。
 last_update:
   date: 2024-10-10
@@ -9,7 +9,6 @@ tags: [yarn]
 ---
 
 > 本文適用於 `Yarn 1.x` 的版本
-> 
 
 ## **關於 Yarn Workspaces**
 
@@ -35,7 +34,7 @@ Yarn Workspaces 允許在一個 monorepo 中同時管理多個子專案，它帶
 
 使用 Yarn Workspaces 進行開發時，必須特別注意依賴的聲明：
 
-1. **依賴未聲明的風險**：如果某個子專案 *packageA* 在開發過程中使用了另一個子專案 *packageB* 的依賴 *dependencyB*，但忘記在 *packageA* 的 package.json 中聲明該依賴，可能在開發和測試階段一切運行正常。這是因為 Workspaces 會共享根目錄的 node_modules，所以 *dependencyB* 仍能被找到。但當 *packageA* 發佈到 npm 等平台後，因為依賴聲明不完整，使用者將無法正常運行這個套件，因為 *dependencyB* 不會被自動安裝。
+1. **依賴未聲明的風險**：如果某個子專案 _packageA_ 在開發過程中使用了另一個子專案 _packageB_ 的依賴 _dependencyB_，但忘記在 _packageA_ 的 package.json 中聲明該依賴，可能在開發和測試階段一切運行正常。這是因為 Workspaces 會共享根目錄的 node_modules，所以 _dependencyB_ 仍能被找到。但當 _packageA_ 發佈到 npm 等平台後，因為依賴聲明不完整，使用者將無法正常運行這個套件，因為 _dependencyB_ 不會被自動安裝。
 2. **無自動檢查**：目前 Yarn Workspaces 沒有自動檢測未聲明依賴的機制，因此開發者需要格外注意，確保每個子專案的 package.json 文件中包含了所有必要的依賴聲明。
 
 ## **配置 Yarn Workspaces**
@@ -48,16 +47,13 @@ Yarn Workspaces 允許在一個 monorepo 中同時管理多個子專案，它帶
 
 1. **private**：在根目錄的 package.json 中，必須將 private 設為 true，這是因為 monorepo 的根目錄通常不會作為一個單獨的 npm 套件發佈，而只是用來管理 Workspaces 和共享依賴。如果未將 private 設為 true，Yarn 會警告你這個專案是可發佈的。
 2. **workspaces**：這是一個字串數組，用來定義哪些目錄是 Workspaces。Yarn 支持使用 glob patterns 來匹配特定路徑。例如，`"packages/*"` 會告訴 Yarn Workspaces 所有位於 packages/ 資料夾下的子目錄都是 Workspaces。
-    
-    ```json title='package.json'
-    {
-      "private": true,
-      "workspaces": [
-        "packages/*"
-      ]
-    }
-    ```
-    
+
+   ```json title='package.json'
+   {
+     "private": true,
+     "workspaces": ["packages/*"]
+   }
+   ```
 
 ### **個別 workspace 配置**
 
@@ -133,42 +129,39 @@ yarn add typescript -W
   "devDependencies": {
     "chalk": "^2.0.1"
   },
-  "workspaces": [
-    "packages/*"
-  ]
+  "workspaces": ["packages/*"]
 }
 ```
 
 其中兩個子專案的範例：
 
 1. `jest-matcher-utils`：
-    
-    ```json title='package.json'
-    {
-      "name": "jest-matcher-utils",
-      "version": "20.0.3",
-      "dependencies": {
-        "chalk": "^1.1.3",
-        "pretty-format": "^20.0.3"
-      }
-    }
-    ```
-    
+
+   ```json title='package.json'
+   {
+     "name": "jest-matcher-utils",
+     "version": "20.0.3",
+     "dependencies": {
+       "chalk": "^1.1.3",
+       "pretty-format": "^20.0.3"
+     }
+   }
+   ```
+
 2. `jest-diff`（依賴於 `jest-matcher-utils`）：
-    
-    ```json title='package.json'
-    {
-      "name": "jest-diff",
-      "version": "20.0.3",
-      "dependencies": {
-        "chalk": "^1.1.3",
-        "diff": "^3.2.0",
-        "jest-matcher-utils": "^20.0.3",
-        "pretty-format": "^20.0.3"
-      }
-    }
-    ```
-    
+
+   ```json title='package.json'
+   {
+     "name": "jest-diff",
+     "version": "20.0.3",
+     "dependencies": {
+       "chalk": "^1.1.3",
+       "diff": "^3.2.0",
+       "jest-matcher-utils": "^20.0.3",
+       "pretty-format": "^20.0.3"
+     }
+   }
+   ```
 
 ### **Lerna 的傳統方式**
 
@@ -232,46 +225,42 @@ Yarn Workspaces 的 **hoisting** 機制會自動將子專案（Workspaces）中�
 
 有兩種方式可以設定 **nohoist**：
 
-1. **在任意 workspace 中設定**：
-你可以在單一 workspace 的 `package.json` 中使用 glob patterns 來指定哪些依賴不應該被 hoist。這允許你為特定的子專案保留獨立的依賴安裝方式。
-    
-    ```json title='package.json'
-    {
-      "name": "my-package",
-      "version": "1.0.0",
-      "private": true,
-      "dependencies": {
-        "example-package": "^1.0.0"
-      },
-      "workspaces": {
-        "nohoist": [
-          "**/example-package",
-          "**/example-package/**"
-        ]
-      }
-    }
-    ```
-    
-    在這個例子中，`example-package` 及其所有子依賴將不會被 hoist，會保留在 `my-package` 的 `node_modules` 中。
-    
-2. **在根目錄的 package.json 中統一設定**：
-如果多個 workspace 都有相同的需求，可以在專案的根目錄 package.json 中進行設定，這樣你可以在全局統一管理哪些依賴需要 nohoist。
-    
-    ```json title='package.json'
-    {
-      "private": true,
-      "workspaces": {
-        "packages": ["packages/*"],
-        "nohoist": [
-          "packages/**/example-package",
-          "packages/**/example-package/**"
-        ]
-      }
-    }
-    ```
-    
-    在這種情況下，所有位於 packages/ 資料夾中的 workspace 都會根據設定，避免 hoist 指定的依賴。
-    
+1.  **在任意 workspace 中設定**：
+    你可以在單一 workspace 的 `package.json` 中使用 glob patterns 來指定哪些依賴不應該被 hoist。這允許你為特定的子專案保留獨立的依賴安裝方式。
+        ```json title='package.json'
+        {
+          "name": "my-package",
+          "version": "1.0.0",
+          "private": true,
+          "dependencies": {
+            "example-package": "^1.0.0"
+          },
+          "workspaces": {
+            "nohoist": [
+              "**/example-package",
+              "**/example-package/**"
+            ]
+          }
+        }
+        ```
+
+        在這個例子中，`example-package` 及其所有子依賴將不會被 hoist，會保留在 `my-package` 的 `node_modules` 中。
+2.  **在根目錄的 package.json 中統一設定**：
+    如果多個 workspace 都有相同的需求，可以在專案的根目錄 package.json 中進行設定，這樣你可以在全局統一管理哪些依賴需要 nohoist。
+        ```json title='package.json'
+        {
+          "private": true,
+          "workspaces": {
+            "packages": ["packages/*"],
+            "nohoist": [
+              "packages/**/example-package",
+              "packages/**/example-package/**"
+            ]
+          }
+        }
+        ```
+
+        在這種情況下，所有位於 packages/ 資料夾中的 workspace 都會根據設定，避免 hoist 指定的依賴。
 
 ### **注意事項**
 
