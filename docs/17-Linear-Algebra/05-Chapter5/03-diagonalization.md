@@ -465,35 +465,121 @@ $$
 
 **Step 2：求特徵向量**
 
+求特徵向量的核心問題是：對於每個特徵值 $\lambda$，解齊次線性方程組 $(A - \lambda I)\mathbf{x} = \mathbf{0}$。
+
 **對於 $\lambda = 1$**：
 
-$$
-A - I = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 1 \end{bmatrix} \xrightarrow{\text{RREF}} \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}
-$$
-
-自由變數：$x_1, x_2$。解空間：
+**子步驟 2.1：計算 $A - \lambda I$**
 
 $$
-\mathbf{x} = x_1\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + x_2\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+A - I = \begin{bmatrix} 1-1 & 0 & 0 \\ 0 & 1-1 & 1 \\ 0 & 0 & 2-1 \end{bmatrix} = \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 1 \end{bmatrix}
 $$
 
-$E_1$ 的基底：$\mathbf{x}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$, $\mathbf{x}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$
+**子步驟 2.2：化簡為 RREF**
+
+$$
+\begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 1 \end{bmatrix} \xrightarrow{R_3 - R_2} \begin{bmatrix} 0 & 0 & 0 \\ 0 & 0 & 1 \\ 0 & 0 & 0 \end{bmatrix} \xrightarrow{\text{交換}} \begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}
+$$
+
+**子步驟 2.3：將 RREF 轉換回方程式**
+
+RREF 的每一列代表一個方程式。把矩陣 $\begin{bmatrix} 0 & 0 & 1 \\ 0 & 0 & 0 \\ 0 & 0 & 0 \end{bmatrix}$ 對應的增廣矩陣還原成方程組：
+
+- 第一列 $[0, 0, 1 | 0]$：$0 \cdot x_1 + 0 \cdot x_2 + 1 \cdot x_3 = 0$ → $x_3 = 0$
+- 第二列和第三列都是 $[0, 0, 0 | 0]$：這是恆成立的 $0 = 0$，不提供任何資訊
+
+結論：**唯一的約束是 $x_3 = 0$**，而 $x_1$ 和 $x_2$ 完全沒有被約束。
+
+**子步驟 2.4：識別自由變數與寫出通解**
+
+在 RREF 中：
+
+- **Pivot column（主元行）**：有 leading 1 的那些 column。這裡只有第 3 行有 leading 1
+- **自由變數**：不在 pivot column 的變數可以「自由選擇」任意值。這裡 $x_1, x_2$ 是自由變數
+
+既然 $x_1, x_2$ 可以自由取值，而 $x_3 = 0$ 是固定的，通解就是：
+
+$$
+\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ 0 \end{bmatrix} \quad \text{其中 } x_1, x_2 \in \mathbb{R} \text{ 任意}
+$$
+
+**子步驟 2.5：分離自由變數，找出基底向量**
+
+從子步驟 2.4 我們已經知道有 2 個自由變數（$x_1, x_2$），所以解空間的維度 = 2。
+
+但對角化不只需要知道「維度是多少」，還需要**實際寫出基底向量**來組成矩陣 $P$。通解 $\begin{bmatrix} x_1 \\ x_2 \\ 0 \end{bmatrix}$ 描述的是「無限多個向量的集合」，我們必須從中挑出**具體的基底向量**。
+
+標準做法是：把通解改寫成「固定向量的線性組合」，讓每個自由變數各自乘上一個固定向量：
+
+$$
+\mathbf{x} = \begin{bmatrix} x_1 \\ x_2 \\ 0 \end{bmatrix} = \begin{bmatrix} x_1 \\ 0 \\ 0 \end{bmatrix} + \begin{bmatrix} 0 \\ x_2 \\ 0 \end{bmatrix} = x_1 \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix} + x_2 \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}
+$$
+
+這樣就能讀出：特徵空間 $E_1$ 的基底是 $\begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$ 和 $\begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$，正是我們要放進矩陣 $P$ 的向量。
+
+$E_1$ 的基底：$\mathbf{v}_1 = \begin{bmatrix} 1 \\ 0 \\ 0 \end{bmatrix}$, $\mathbf{v}_2 = \begin{bmatrix} 0 \\ 1 \\ 0 \end{bmatrix}$
 
 $\text{gm}(1) = 2 = \text{am}(1)$ ✓
 
+:::tip 特徵「向量」解出來卻是平面？
+這是一個常見的誤解：很多人以為解特徵向量會得到「一個向量」，但實際上解齊次方程組 $(A - \lambda I)\mathbf{x} = \mathbf{0}$ 得到的是一個**子空間**（特徵空間 $E_\lambda$）。
+
+在這個例子中，$\lambda = 1$ 的特徵空間 $E_1$ 是一個**二維平面**（由 $\mathbf{v}_1, \mathbf{v}_2$ 張成），而不是單一向量。這個平面上的**任何非零向量**都是 $\lambda = 1$ 的特徵向量！
+
+特徵空間的維度（幾何重根數）告訴我們：
+
+- 維度 = 1：特徵向量都在同一條線上
+- 維度 = 2：特徵向量張成一個平面
+- 維度 = $k$：特徵向量張成 $k$ 維子空間
+  :::
+
+---
+
 **對於 $\lambda = 2$**：
 
-$$
-A - 2I = \begin{bmatrix} -1 & 0 & 0 \\ 0 & -1 & 1 \\ 0 & 0 & 0 \end{bmatrix} \xrightarrow{\text{RREF}} \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix}
-$$
-
-自由變數：$x_3$。解空間：
+**子步驟 2.1：計算 $A - 2I$**
 
 $$
-\mathbf{x} = x_3\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
+A - 2I = \begin{bmatrix} 1-2 & 0 & 0 \\ 0 & 1-2 & 1 \\ 0 & 0 & 2-2 \end{bmatrix} = \begin{bmatrix} -1 & 0 & 0 \\ 0 & -1 & 1 \\ 0 & 0 & 0 \end{bmatrix}
 $$
 
-$E_2$ 的基底：$\mathbf{x}_3 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}$
+**子步驟 2.2：化簡為 RREF**
+
+$$
+\begin{bmatrix} -1 & 0 & 0 \\ 0 & -1 & 1 \\ 0 & 0 & 0 \end{bmatrix} \xrightarrow{-R_1, -R_2} \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & -1 \\ 0 & 0 & 0 \end{bmatrix}
+$$
+
+**子步驟 2.3：將 RREF 轉換回方程式**
+
+- 第一列 $[1, 0, 0 | 0]$：$x_1 = 0$
+- 第二列 $[0, 1, -1 | 0]$：$x_2 - x_3 = 0$ → $x_2 = x_3$
+- 第三列 $[0, 0, 0 | 0]$：$0 = 0$（恆成立）
+
+**子步驟 2.4：識別自由變數與寫出通解**
+
+- Pivot columns：第 1 行和第 2 行（有 leading 1）
+- 自由變數：$x_3$（第 3 行不是 pivot column）
+
+既然 $x_3$ 是自由的，設 $x_3 = t$（任意實數），則：
+
+- $x_2 = x_3 = t$
+- $x_1 = 0$
+
+通解：
+
+$$
+\mathbf{x} = \begin{bmatrix} 0 \\ t \\ t \end{bmatrix} \quad \text{其中 } t \in \mathbb{R} \text{ 任意}
+$$
+
+**子步驟 2.5：分離自由變數，找出基底向量**
+
+$$
+\mathbf{x} = \begin{bmatrix} 0 \\ t \\ t \end{bmatrix} = t \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}
+$$
+
+這告訴我們：**解空間是由 $\begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}$ 張成的一條線**。
+
+$E_2$ 的基底：$\mathbf{v}_3 = \begin{bmatrix} 0 \\ 1 \\ 1 \end{bmatrix}$
 
 $\text{gm}(2) = 1 = \text{am}(2)$ ✓
 
@@ -501,9 +587,13 @@ $\text{gm}(2) = 1 = \text{am}(2)$ ✓
 
 由於每個特徵值的 $\text{gm} = \text{am}$，矩陣可對角化。
 
+將所有特徵向量排成 $P$ 的 columns，對應的特徵值排成 $D$ 的對角線：
+
 $$
-P = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix}, \quad D = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix}
+P = \begin{bmatrix} | & | & | \\ \mathbf{v}_1 & \mathbf{v}_2 & \mathbf{v}_3 \\ | & | & | \end{bmatrix} = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 1 \\ 0 & 0 & 1 \end{bmatrix}, \quad D = \begin{bmatrix} 1 & 0 & 0 \\ 0 & 1 & 0 \\ 0 & 0 & 2 \end{bmatrix}
 $$
+
+（$\mathbf{v}_1, \mathbf{v}_2$ 對應 $\lambda = 1$，$\mathbf{v}_3$ 對應 $\lambda = 2$）
 
 則 $A = PDP^{-1}$。
 
