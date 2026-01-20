@@ -1,598 +1,766 @@
 ---
-title: "使用 shadcn/ui 前該補的 TailwindCSS 基礎知識(五) - shadcn/ui 生態系工具鏈"
+title: "使用 shadcn/ui 前該補的 TailwindCSS 基礎知識(五) - 解析 shadcn/ui 的設計系統"
 slug: tailwindcss-knowledge-before-shadcn-ui-5
 authors: bosh
-description: 深入探討 shadcn/ui 背後的核心工具鏈：clsx、tailwind-merge、tw-animate-css、CVA 和 components.json。學習如何透過這些工具解決條件式樣式、className 衝突、動畫實作、元件變體管理等實際開發問題，打造更靈活且易維護的 UI 元件系統。
-keywords:
-  [
-    shadcn/ui,
-    TailwindCSS,
-    clsx,
-    tailwind-merge,
-    tw-animate-css,
-    CVA,
-    components.json,
-  ]
+description: 深入解析 shadcn/ui 的 index.css（或 globals.css）設計系統，完整理解 @theme inline、@custom-variant、@layer 等進階語法，以及兩種深色模式實作方式的運作原理。透過視覺化圖解，徹底搞懂 CSS 變數如何在亮暗主題間動態切換。
+keywords: [shadcn/ui, TailwindCSS, 深色模式, Dark Mode, Design System]
 tags: [shadcn/ui, TailwindCSS]
-date: 2025-11-12
-image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762873277/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/shadcn-tools_xmlnga.png
+date: 2025-11-10
+image: https://res.cloudinary.com/djtoo8orh/image/upload/v1768926887/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/shadcn-design-system-flow_dnkruf.png
 ---
 
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1762873277/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/shadcn-tools_xmlnga.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1768926887/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/shadcn-design-system-flow_dnkruf.png)
 
 <!-- truncate -->
 
-> 本文是「使用 shadcn/ui 前該補的 TailwindCSS 基礎知識」系列文章的第四篇
+> 本文是「使用 shadcn/ui 前該補的 TailwindCSS 基礎知識」系列文章的第五篇
 >
 > **系列文章：**
 >
 > 1. [從 MUI 到 TailwindCSS 設計哲學的轉變](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-1)
 > 2. [理解 TailwindCSS 的運作原理](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-2)
-> 3. [TailwindCSS v4 基礎語法速查](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-3)
-> 4. [深入 TailwindCSS v4 的進階配置](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-4)
-> 5. **shadcn/ui 生態系工具鏈（本篇）**
+> 3. [TailwindCSS v4 內建 Utility Classes 速查](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-3)
+> 4. [透過 @theme 自訂設計系統](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-4)
+> 5. **解析 shadcn/ui 的設計系統（本篇）**
+> 6. [shadcn/ui 生態系工具鏈](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-6)
 
-在使用過 shadcn/ui 的提供的程式碼後，會發現 shadcn/ui 並不是只有單純使用 Tailwind 而已，常會搭配幾個工具來解決在實際開發中會遇到的各種問題，例如：條件式樣式、className 衝突、元件變體管理等。以下將逐一介紹這些工具。
-
-## **clsx 與 tailwind-merge：className 管理的最佳拍檔**
-
-### **clsx：條件式 className 組合**
-
-在寫 React 元件時，經常會遇到需要根據 props 或狀態來決定要套用哪些 className 的情況。例如：
-
-- 按鈕有不同的變體（primary、secondary、outline）
-- 元件有不同的尺寸（sm、md、lg）
-- 根據狀態顯示不同樣式（active、disabled、loading）
-
-如果用傳統的字串拼接，程式碼會變得很難維護：
-
-```tsx
-// ❌ 難以維護的寫法
-const className =
-  "btn" +
-  (isPrimary ? " btn-primary" : "") +
-  (isLarge ? " btn-large" : "") +
-  (isDisabled ? " btn-disabled" : "");
-```
-
-`clsx`  就是為了解決這個問題而生的工具。它讓你可以用更直觀的方式組合條件式的 className：
-
-```tsx
-import clsx from "clsx";
-
-// ✅ 清晰易讀的寫法
-const className = clsx("btn", {
-  "btn-primary": isPrimary,
-  "btn-large": isLarge,
-  "btn-disabled": isDisabled,
-});
-```
-
-### **tailwind-merge：解決 className 衝突**
-
-在建立可重複使用的元件時，經常會遇到一個棘手的問題：**使用者傳入的 className 可能會與元件預設的 className 衝突**。
-
-例如，元件預設有  `p-4`  的內距，但使用者想要傳入  `p-8`  來覆蓋它。如果只用 clsx，兩個 className 都會存在，而實際套用哪個取決於 CSS 載入順序，結果不可預測：
-
-```tsx
-// ❌ 問題：兩個 padding 都存在
-<div className={clsx("p-4", customPadding)}>
-  {/* 如果 customPadding = 'p-8'，p-4 和 p-8 都會存在 */}
-  {/* 實際套用哪個？不確定！ */}
-</div>
-```
-
-`tailwind-merge`  會智慧地判斷哪些 className 是衝突的，並保留後面的那一個：
-
-```tsx
-import { twMerge } from "tailwind-merge";
-
-// ✅ 解決方案：後面的覆蓋前面的
-<div className={twMerge("p-4", "p-8")}>{/* 結果: "p-8"（p-4 被移除） */}</div>;
-```
-
-### **cn 函數：clsx + tailwind-merge 的完美組合**
-
-在實際開發中，通常會同時需要 `clsx` 的條件式組合能力和 `tailwind-merge` 的衝突解決能力。因此，shadcn/ui 定義了一個  `cn`  函數，結合了兩者的優勢。
-
-在 shadcn/ui 的  `utils.ts`  中可以看到這個函數的定義：
-
-```tsx
-import { clsx, type ClassValue } from "clsx";
-import { twMerge } from "tailwind-merge";
-
-export function cn(...inputs: ClassValue[]) {
-  return twMerge(clsx(inputs));
-}
-```
-
-這個簡單的函數先用 clsx 處理條件式組合，再用 tailwind-merge 解決衝突。使用者可以輕鬆地覆蓋預設樣式，而不用擔心 className 衝突的問題。
-
-<br/>
-
-## **tw-animate-css：TailwindCSS v4 的動畫解決方案**
-
-在 TailwindCSS v4 推出後，原本廣泛使用的  `tailwindcss-animate`  插件因為基於舊的 JavaScript 插件系統而無法直接使用。`tw-animate-css`  就是為了解決這個問題而生的替代方案，它採用 TailwindCSS v4 的 CSS-first 架構，提供純 CSS 的動畫解決方案。
-
-### **安裝與使用**
-
-```bash
-npm install tw-animate-css
-```
-
-在 CSS 入口檔案中引入：
+當你使用 `npx shadcn@latest init` 初始化 shadcn/ui 專案時，它會自動生成一個 `index.css`（或 `globals.css`）檔案。這個檔案乍看之下可能讓人有些困惑：
 
 ```css
 @import "tailwindcss";
-@import "tw-animate-css";
-```
 
-### **基本用法**
+@custom-variant dark (&:is(.dark *));
 
-**Enter/Exit 動畫：**
+@theme inline {
+  --color-background: var(--background);
+  --color-primary: var(--primary);
+  /* ... 更多 token */
+}
 
-```tsx
-// 淡入動畫
-<div className="animate-in fade-in duration-500">
-  淡入效果
-</div>
+:root {
+  --background: white;
+  --primary: oklch(0.6171 0.1375 39.0427);
+}
 
-// 從上方滑入
-<div className="animate-in slide-in-from-top duration-300">
-  從上方滑入
-</div>
+.dark {
+  --background: #1a1a1a;
+  --primary: oklch(0.8 0.15 250);
+}
 
-// 淡出動畫
-<div className="animate-out fade-out duration-500">
-  淡出效果
-</div>
-
-// 組合多種效果
-<div className="animate-in fade-in slide-in-from-bottom duration-700 delay-100">
-  延遲 100ms 後，從下方淡入滑入
-</div>
-```
-
-**動畫參數控制：**
-
-```tsx
-// 控制動畫時長
-<div className="animate-in fade-in duration-150">快速淡入</div>
-<div className="animate-in fade-in duration-1000">慢速淡入</div>
-
-// 控制緩動函數
-<div className="animate-in slide-in-from-left ease-in-out">
-  使用 ease-in-out
-</div>
-
-// 控制延遲
-<div className="animate-in fade-in delay-500">延遲 500ms</div>
-
-// 控制重複次數
-<div className="animate-bounce repeat-infinite">無限彈跳</div>
-<div className="animate-pulse repeat-3">重複 3 次</div>
-
-// 控制方向
-<div className="animate-bounce direction-alternate">來回彈跳</div>
-```
-
-**現成的動畫：**
-
-```tsx
-// Accordion 動畫（常用於展開/收合元件）
-<div className="animate-accordion-down">展開</div>
-<div className="animate-accordion-up">收合</div>
-
-// 閃爍游標（常用於輸入提示）
-<span className="animate-caret-blink">|</span>
-```
-
-shadcn/ui 的許多元件都內建了動畫效果，這些動畫大多使用  `tw-animate-css`  或類似的動畫工具實作。例如：
-
-- **Accordion**：使用  `accordion-down`  和  `accordion-up`
-- **Dialog**：使用  `fade-in`  和  `slide-in-from-bottom`
-- **Dropdown Menu**：使用  `slide-in-from-top`  和  `fade-in`
-- **Toast**：使用  `slide-in-from-right`  和  `fade-in`
-
-可以查看  [tw-animate-css GitHub](https://github.com/Wombosvideo/tw-animate-css)  可以了解更多進階用法和完整的 API 文件。
-
-<br/>
-
-## **Class Variance Authority (CVA)：元件變體管理**
-
-在建立可重複使用的元件時，經常會遇到這樣的需求：
-
-- 按鈕有不同的外觀變體（primary、secondary、outline、ghost）
-- 每個變體有不同的尺寸（sm、md、lg）
-- 需要組合這些變體（例如：大尺寸的 outline 按鈕）
-
-如果用傳統的方式，需要寫很多 if-else 或 switch-case 來處理這些組合，程式碼會變得很難維護。
-
-**CVA (Class Variance Authority)**  就是為了解決這個問題而生的工具。它讓我們可以用宣告式的方式定義元件的「基礎樣式」和「變體樣式」，然後根據 props 自動組合出正確的 className。
-
-### **CVA 的核心概念**
-
-CVA 將元件的樣式分為三個部分：
-
-1. **基礎樣式 (Base)**：所有變體都共用的樣式
-2. **變體樣式 (Variants)**：不同變體的專屬樣式
-3. **複合變體 (Compound Variants)**：當多個變體組合時的特殊樣式（選用）
-
-### **實際應用：Button 元件**
-
-以 shadcn/ui 的  Button 元件為例，來看看 CVA 如何使用：
-
-```tsx
-import { cva, type VariantProps } from "class-variance-authority";
-
-const buttonVariants = cva(
-  // 基礎樣式：所有按鈕都會套用
-  "inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-md text-sm font-medium transition-all disabled:pointer-events-none disabled:opacity-50",
-  {
-    variants: {
-      // variant 變體：定義不同的外觀
-      variant: {
-        default: "bg-primary text-primary-foreground hover:bg-primary/90",
-        destructive: "bg-destructive text-white hover:bg-destructive/90",
-        outline:
-          "border bg-background shadow-xs hover:bg-accent hover:text-accent-foreground",
-        secondary:
-          "bg-secondary text-secondary-foreground hover:bg-secondary/80",
-        ghost: "hover:bg-accent hover:text-accent-foreground",
-        link: "text-primary underline-offset-4 hover:underline",
-      },
-      // size 變體：定義不同的尺寸
-      size: {
-        default: "h-9 px-4 py-2",
-        sm: "h-8 rounded-md px-3",
-        lg: "h-10 rounded-md px-6",
-        icon: "size-9",
-      },
-    },
-    // 預設值：當使用者沒有指定時使用
-    defaultVariants: {
-      variant: "default",
-      size: "default",
-    },
+@layer base {
+  body {
+    @apply bg-background text-foreground;
   }
-);
+}
 ```
 
-定義好  `buttonVariants`  後，在元件中使用：
+這些 `@theme inline`、`@custom-variant`、`@layer` 到底是什麼？`:root` 和 `.dark` 又是如何實現主題切換的？
+
+本篇文章將**逐一拆解 shadcn/ui 的 CSS 設計系統**，幫助你完全理解每一行程式碼背後的原理。
+
+## **@theme：定義設計 Token**
+
+### **什麼是 Design Token？**
+
+在 shadcn/ui 範例程式碼的  `index.css`  或  `globals.css`  中，經常會看到類似這樣的程式碼：
+
+```css
+@theme inline {
+  --color-primary: var(--primary);
+  --radius-lg: var(--radius);
+}
+
+:root {
+  --primary: oklch(0.6171 0.1375 39.0427);
+  --radius: 0.5rem;
+}
+
+.dark {
+  --primary: oklch(0.8 0.15 250);
+}
+```
+
+剛開始用 shadcn/ui 時，我大概能猜得到  `:root`  和  `.dark`  是在定義主題變數，但還是有幾個疑問：
+
+- `@theme inline`  是什麼？看起來也挺像主題變數的，跟  `:root`  有什麼差別？
+- 這些變數如何變成 TailwindCSS 的 utility class？
+
+這些變數其實就是  **Design Token**，它就像是設計系統的「變數庫」。在設計一個網站時，會需要定義：
+
+- 主色調、次要色調
+- 不同大小的間距
+- 統一的圓角大小
+- 陰影效果
+
+這些都可以定義成 Token，然後在整個專案中重複使用。`@theme`  就是 TailwindCSS v4 提供的工具，用來將這些 Design Token 轉換成可用的 utility class。
+
+### **@theme 的基本語法與使用方式**
+
+以下是一段範例程式碼：
+
+```css
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+
+  --color-primary: var(--primary);
+  --color-secondary: var(--secondary);
+  --color-destructive: var(--destructive);
+}
+
+:root {
+  --radius: 0.5rem;
+  --primary: oklch(0.6171 0.1375 39.0427);
+  --secondary: oklch(0.9245 0.0138 92.9892);
+}
+```
+
+這段程式碼做了什麼？
+
+```mermaid
+graph TD
+    A[":root 定義原始變數"] --> B["--radius: 0.5rem"]
+    A --> C["--primary: oklch..."]
+    B --> D["@theme 將變數轉換成 Token"]
+    C --> D
+    D --> E["--radius-lg 可用於 TailwindCSS"]
+    D --> F["--color-primary 可用於 TailwindCSS"]
+    E --> G["rounded-lg"]
+    F --> H["bg-primary"]
+```
+
+### **Token 轉換成 Utility Class 的規則**
+
+從上面的例子我們可以看出，定義了  `--color-primary`  後，在 React 或 HTML 中就可以使用  `bg-primary`。這背後有一套明確的命名轉換規則。
+
+:::tip
+關於各種 Token 類型的詳細用法，可以參考 [TailwindCSS v4 官方文件 - Theme](https://tailwindcss.com/docs/v4-beta#theme) 以及本系列的第四篇文章：[透過 @theme 自訂設計系統](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-4)。
+:::
+
+**規則 1：移除類型前綴**
+
+Token 名稱的類型前綴（如  `--color-`、`--spacing-`、`--radius-`  等）在轉換成 utility class 時會被移除，只保留語意名稱。
+
+**規則 2：配合屬性前綴使用**
+
+不同的 CSS 屬性有不同的 TailwindCSS 前綴，需要搭配使用：
+
+| Token 類型 | 定義範例                | 使用方式                                 |
+| ---------- | ----------------------- | ---------------------------------------- |
+| 顏色       | `--color-brand`         | `bg-brand`、`text-brand`、`border-brand` |
+| 間距       | `--spacing-lg`          | `p-lg`、`m-lg`、`gap-lg`                 |
+| 圓角       | `--radius-card`         | `rounded-card`                           |
+| 寬度       | `--width-sidebar`       | `w-sidebar`、`min-w-sidebar`             |
+| 高度       | `--height-header`       | `h-header`、`max-h-header`               |
+| 字型       | `--font-family-heading` | `font-heading`                           |
+| 字體大小   | `--font-size-xl`        | `text-xl`                                |
+| 字重       | `--font-weight-bold`    | `font-bold`                              |
+| 陰影       | `--shadow-card`         | `shadow-card`                            |
+| 透明度     | `--opacity-soft`        | `opacity-soft`                           |
+
+**實際範例：**
+
+```css
+/* 在 index.css 定義 */
+@theme inline {
+  --color-brand: #ff6b6b;
+  --spacing-card: 1.5rem;
+  --radius-button: 0.375rem;
+  --font-family-heading: "Inter", sans-serif;
+  --font-size-xl: 1.25rem;
+  --shadow-elevated: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --width-sidebar: 16rem;
+}
+```
 
 ```tsx
-function Button({ className, variant, size, ...props }: ButtonProps) {
+// 在 React/HTML 中使用
+function Card() {
   return (
-    <button
-      className={cn(buttonVariants({ variant, size, className }))}
-      {...props}
-    />
-  )
+    <div
+      className="
+      bg-brand              {/* --color-brand */}
+      p-card                {/* --spacing-card */}
+      rounded-button        {/* --radius-button */}
+      shadow-elevated       {/* --shadow-elevated */}
+      w-sidebar             {/* --width-sidebar */}
+    "
+    >
+      <h1 className="font-heading text-xl">
+        {" "}
+        {/* --font-family-heading, --font-size-xl */}
+        標題
+      </h1>
+    </div>
+  );
+}
+```
+
+:::info[圓角的命名差異]
+
+圓角的轉換規則有一個特別之處：Token 定義時使用  `--radius-`，但對應的 utility class 前綴是  `rounded-`：
+
+- `--radius-lg` → `rounded-lg`（Token 用  `radius`，utility 用  `rounded`）
+- `--radius-button` → `rounded-button`
+
+這與其他 Token 不同，例如顏色：
+
+- `--color-primary` → `bg-primary`（都是  `color`  相關）
+  :::
+
+<br/>
+
+## **@theme inline：inline 關鍵字的作用**
+
+在前面的範例中，我們看到的都是  `@theme inline`，而不是單純的  `@theme`。這兩者之間的差異在於是否保留 CSS 變數的動態特性，而這個差異將會直接影響了暗色模式等主題切換功能的實現（會在後面的「方法二：使用語意化顏色」章節中詳細介紹）。
+
+### **inline 關鍵字的作用：保留動態特性**
+
+`inline`  這個關鍵字非常重要，它告訴 Tailwind：「這些主題變數的值是『動態的』，它們的值會在瀏覽器執行時 (runtime) 透過引用其他 CSS 變數來決定，而不是在編譯時 (build time) 就固定下來。」
+
+讓我們用實際範例來理解：
+
+**不加  `inline`  的情況：**
+
+```css
+/* 定義 */
+@theme {
+  --color-primary: var(--primary);
 }
 
-// 使用範例
-<Button>預設按鈕</Button>
-<Button variant="destructive" size="lg">大尺寸刪除按鈕</Button>
-<Button variant="ghost" size="icon"><Icon /></Button>
+:root {
+  --primary: oklch(0.6171 0.1375 39.0427);
+}
+
+.dark {
+  --primary: oklch(0.8 0.15 250);
+}
 ```
 
-**CVA 的核心優勢：**
+TailwindCSS 在編譯時會生成：
 
-1. **型別安全**：TypeScript 會自動推斷可用的變體選項，寫錯會直接報錯
-2. **易於維護**：所有樣式集中在一個地方，修改時不用到處找
-3. **靈活組合**：可以輕鬆組合不同的變體，不用手動處理邏輯
-4. **預設值支援**：可以設定預設的變體，簡化使用
+```css
+:root {
+  --color-primary: var(--primary); /* 編譯出的全域變數 */
+}
 
-### **進階功能：compoundVariants**
-
-CVA 還支援  `compoundVariants`，用於定義「當多個變體組合時的特殊樣式」。例如：
-
-```tsx
-const buttonVariants = cva("base-styles", {
-  variants: {
-    variant: {
-      primary: "bg-blue-500",
-      secondary: "bg-gray-500",
-    },
-    size: {
-      sm: "text-sm",
-      lg: "text-lg",
-    },
-    outlined: {
-      true: "border-2",
-      false: "",
-    },
-  },
-  // 複合變體：當多個條件同時滿足時套用
-  compoundVariants: [
-    {
-      // 當 variant="primary" 且 outlined=true 時
-      variant: "primary",
-      outlined: true,
-      class: "border-blue-500 bg-transparent text-blue-500 hover:bg-blue-50",
-    },
-    {
-      // 當 size="lg" 且 outlined=true 時
-      size: "lg",
-      outlined: true,
-      class: "border-4", // 大尺寸的外框按鈕使用更粗的邊框
-    },
-  ],
-  defaultVariants: {
-    variant: "primary",
-    size: "sm",
-    outlined: false,
-  },
-});
+.bg-primary {
+  background-color: var(
+    --color-primary
+  ); /* utility 使用上面的 --color-primary */
+}
 ```
 
-使用範例：
+這樣做的問題是，`--color-primary`  的值在  `:root`  層級就被「鎖定」了。當在深層的  `.dark`  選擇器中改變  `--primary`  的值時（關於  `.dark`  的原理後面會詳細說明），`--color-primary`  可能無法即時反應這個變化，導致  `bg-primary`  拿到的仍然是舊的值。
+
+**加上  `inline`  的情況：**
+
+```css
+/* 定義 */
+@theme inline {
+  --color-primary: var(--primary);
+}
+
+:root {
+  --primary: oklch(0.6171 0.1375 39.0427);
+}
+
+.dark {
+  --primary: oklch(0.8 0.15 250);
+}
+```
+
+TailwindCSS 會跳過中間的  `--color-primary`  變數，直接讓 utility class 引用你指定的語意變數：
+
+```css
+.bg-primary {
+  background-color: var(
+    --primary
+  ); /* 沒有中繼的 --color-primary，直接引用 --primary */
+}
+```
+
+這樣一來，`--primary`  的值在任何層級被改動（無論是  `.dark`、`[data-theme="..."]`，甚至是某個特定的元件容器），`bg-primary`  都會即時地、正確地反映出最新的顏色。
+
+<br/>
+
+## **實作亮暗主題 - 方法一：使用 dark: 前綴**
+
+在理解了  `@theme inline`  的運作原理後，接下來探討如何實作完整的亮暗主題切換功能。
+
+在 TailwindCSS 中，有**兩種主要方式**實現亮暗主題：
+
+1. **方法一：使用  `dark:`  前綴**（需要為每個樣式寫兩次）
+2. **方法二：使用語意化顏色**（自動適應，推薦）
+
+本章節先介紹**方法一**，這種方式需要為每個樣式明確指定亮色和暗色兩種狀態。
+
+**使用方式：**
+
+```html
+<div class="bg-white dark:bg-gray-800 text-gray-900 dark:text-white">
+  需要為每個樣式寫兩次
+</div>
+```
+
+關鍵就在  `dark:`  這個前綴，我們稱之為**變體 (Variant)**。它就像一個條件觸發器，意思是：「當『dark』這個條件成立時，才套用後面的樣式」。
+
+:::info[常見的變體有:]
+
+- `hover:` → 滑鼠 hover 狀態才套用
+- `focus:` → 元件被 focus 才套用
+- `dark:` → 在  `.dark`  主題下才套用
+  :::
+
+> 那麼，這個叫做  dark  的條件到底是什麼？這就需要我們親自來定義它。
+
+### **用 @custom-variant 定義 dark: 變體**
+
+Tailwind v4 提供了  `@custom-variant`  工具，可以自訂變體。要定義  `dark:`  變體，需要在 CSS 中加上這一行：
+
+```css
+@custom-variant dark (&:is(.dark *)); /* shadcn 預設定義 */
+```
+
+我們把它拆解成三個部分來看：
+
+1. **`@custom-variant`**：這是告訴 Tailwind：「我要創造一個新的變體了！」
+2. **`dark`**：這是你為這個變體取的名字。因為我們取名為  `dark`，所以之後就能用  `dark:`。如果你把它取名為  `night-mode`，那你之後就要寫  `night-mode:bg-primary`。
+3. **`(&:is(.dark *))`**：這是最關鍵的觸發規則，它在定義 CSS 選擇器。把它翻譯成白話文就是：「當我這個元素（`&`）被放在任何一個帶有  `.dark` class 的祖先元素裡面時」。
+
+### **背後的編譯原理**
+
+當寫下  `dark:bg-foreground dark:text-background`  時，背後的編譯流程如下：
+
+**1. Tailwind 編譯基本的 utility class**
+
+當 Tailwind 看到  `bg-background text-foreground`，它會根據  `@theme`  的設定產生基本的 utility class：
+
+```css
+.bg-background {
+  background-color: var(--color-background);
+}
+.text-foreground {
+  color: var(--color-foreground);
+}
+```
+
+**2. Tailwind 編譯 dark: 變體**
+
+當 Tailwind 看到  `dark:bg-foreground dark:text-background`，它會去查找叫做  `dark`  的變體。它找到了你用  `@custom-variant`  定義的規則  `(&:is(.dark *))`。於是，它會把這個規則和 utility class 結合起來，產生一個新的、帶有條件的 class：
+
+```css
+/* dark 變體展開後 → 等價於加上 .dark 包起來 */
+.dark .dark\:bg-foreground {
+  background-color: var(--color-foreground);
+}
+.dark .dark\:text-background {
+  color: var(--color-background);
+}
+```
+
+這個新選擇器  `.dark .dark\:bg-foreground`  的意思是：「只有當一個元素同時擁有  `dark:bg-foreground`  這個 class，『並且』它是  `.dark`  元素的後代時，這個樣式才會生效。」
+
+:::info[為什麼要用 &:is(.dark *) 而不是 .dark &？]
+`&:is(.dark *)` 允許 `.dark` class 在元素的**任何祖先層級**生效，而不是只能在直接父層。這樣不論 `.dark` 加在 `<html>` 還是 `<body>` 上，深層的子元素都能正確套用暗色樣式。
+:::
+
+### **在 React 中控制亮暗主題**
+
+根據上面解釋的原理，要讓 `dark:` 樣式生效，元素必須是 `.dark` 的後代。因此，最常見的做法是**在 `<html>` 元素上切換 `.dark` class**，這樣整個頁面的所有元素都會成為 `.dark` 的後代，所有 `dark:` 樣式就會同時生效：
 
 ```tsx
-// 會套用 primary + outlined 的複合變體樣式
-<Button variant="primary" outlined={true}>
-  Primary Outlined Button
-</Button>
+import { useState, useEffect } from "react";
 
-// 會套用 lg + outlined 的複合變體樣式
-<Button size="lg" outlined={true}>
-  Large Outlined Button
-</Button>
+export default function App() {
+  const [dark, setDark] = useState(false);
 
-// 會同時套用兩個複合變體的樣式
-<Button variant="primary" size="lg" outlined={true}>
-  Large Primary Outlined Button
-</Button>
+  useEffect(() => {
+    // 在 <html> 上切換 .dark class
+    // 讓所有 dark: 樣式同時生效或失效
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
+
+  return (
+    <div className="min-h-screen grid place-items-center">
+      <button
+        className="px-4 py-2 rounded-md bg-white dark:bg-gray-800 text-gray-900 dark:text-white"
+        onClick={() => setDark((d) => !d)}
+      >
+        切換 {dark ? "Light" : "Dark"}
+      </button>
+    </div>
+  );
+}
+```
+
+**完整流程：**
+
+```mermaid
+graph TD
+    A["Step 1: CSS 定義"] -->|"@custom-variant"| B("定義 dark: 變體")
+    B --> C["Step 2: 元件撰寫"]
+    C -->|"撰寫 className"| D("手動為每個顏色寫兩次樣式<br/>例如：bg-white dark:bg-black")
+    D --> E["Step 3: JS 控制"]
+    E -->|"classList.toggle"| F("切換 html 元素的 .dark class")
 ```
 
 <br/>
 
-## **components.json：shadcn/ui 的配置中心**
+## **實作亮暗主題 - 方法二：使用語意化顏色（推薦）**
 
-`components.json`  是 shadcn/ui CLI 的核心配置檔。當使用  `npx shadcn@latest add button`  安裝元件時，CLI 會讀取這個檔案來決定：
+這是 shadcn/ui 採用的方法，也是前面「@theme inline：inline 關鍵字的作用」章節介紹的  `@theme inline`  與  `:root`/`.dark`  分工的實際應用。這種方法只需要定義一次樣式，顏色會自動適應主題。
 
-- 元件應該安裝到哪個目錄
-- 使用什麼樣的風格（default 或 new-york）
-- 是否使用 TypeScript
-- 路徑別名是什麼
-- 是否使用 CSS 變數
-- 從哪些 registry 安裝元件
+### **切換機制：CSS 變數的覆蓋原理**
 
-### **components.json 的完整結構**
+這個方法的核心在於 **CSS 變數的覆蓋機制**：
+- 當元素**沒有** `.dark` 祖先時，瀏覽器使用 `:root` 定義的變數值
+- 當元素**有** `.dark` 祖先時，`.dark` 定義的變數值會覆蓋 `:root` 的值
 
-以下是一個完整的  `components.json`  範例：
+下圖展示了這個機制的運作流程：
 
-```json
-{
-  "$schema": "https://ui.shadcn.com/schema.json",
-  "style": "new-york",
-  "rsc": false,
-  "tsx": true,
-  "tailwind": {
-    "config": "",
-    "css": "src/index.css",
-    "baseColor": "neutral",
-    "cssVariables": true,
-    "prefix": ""
-  },
-  "iconLibrary": "lucide",
-  "aliases": {
-    "components": "@/components",
-    "utils": "@/lib/utils",
-    "ui": "@/components/ui",
-    "lib": "@/lib",
-    "hooks": "@/hooks"
-  },
-  "registries": {}
+![語意化顏色的運作流程](./dark-mode-flow.svg)
+
+### **設定方式**
+
+```css
+/* index.css */
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+}
+
+:root {
+  --background: white; /* 亮色模式的背景色 */
+  --foreground: black; /* 亮色模式的文字色 */
+}
+
+.dark {
+  --background: #1a1a1a; /* 暗色模式的背景色 */
+  --foreground: white; /* 暗色模式的文字色 */
 }
 ```
 
-### **各欄位說明**
+**使用方式：**
 
-**$schema**
-
-```json
-"$schema": "https://ui.shadcn.com/schema.json"
+```tsx
+<div className="bg-background text-foreground">
+  自動適應亮暗主題，不需要 dark: 前綴
+</div>
 ```
 
-指向 shadcn/ui 的 JSON schema，提供 IDE 自動完成功能和欄位驗證。
+之所以可以這樣自動切換，關鍵在於：
+1. `bg-background` 最終會被編譯成 `background-color: var(--background)`
+2. 當 `<html>` 沒有 `.dark` class 時，`--background` 的值是 `:root` 定義的 `white`
+3. 當 `<html>` 有 `.dark` class 時，`.dark` 定義的 `#1a1a1a` 會覆蓋 `:root` 的值
 
-**style**
+### **@theme inline 與 :root/.dark 的分工**
 
-```json
-"style": "new-york"// 或 "default"
-```
+在這個設計中，Design Token 的定義分成兩層：
 
-選擇元件風格。shadcn/ui 提供兩種預設風格：
+**第一層：`:root`  和  `.dark`  定義原始值**
 
-- **default**：較為簡潔的設計
-- **new-york**：更現代、更精緻的設計
+```css
+:root {
+  --background: white; /* 亮色模式的背景色 */
+  --foreground: black; /* 亮色模式的文字色 */
+}
 
-不同風格的元件在視覺設計和細節上有所不同，但功能完全相同。
-
-**rsc**
-
-```json
-"rsc": false
-```
-
-是否使用 React Server Components（Next.js 13+ 的功能）。如果專案使用 Next.js App Router，可以設為  `true`。
-
-**tsx**
-
-```json
-"tsx": true
-```
-
-是否使用 TypeScript。設為  `true`  時，安裝的元件會是  `.tsx`  檔案；設為  `false`  則是  `.jsx`  檔案。
-
-**tailwind**
-
-```json
-"tailwind": {
-  "config": "",
-  "css": "src/index.css",
-  "baseColor": "neutral",
-  "cssVariables": true,
-  "prefix": ""
+.dark {
+  --background: #1a1a1a; /* 暗色模式的背景色 */
+  --foreground: white; /* 暗色模式的文字色 */
 }
 ```
 
-TailwindCSS 相關配置：
+這些是  **CSS 變數**，只能用  `var(--background)`  的方式在 CSS 中使用，**不能直接用於 TailwindCSS class**。
 
-- **config**：tailwind.config 檔案的位置（TailwindCSS v4 通常不需要此檔案，可留空）
-- **css**：CSS 入口檔案的位置，CLI 會在這個檔案中注入必要的 CSS 變數
-- **baseColor**：基礎顏色主題，可選：`zinc`、`slate`、`stone`、`gray`、`neutral`
-- **cssVariables**：是否使用 CSS 變數（強烈建議開啟，支援暗色模式和主題切換）
-- **prefix**：TailwindCSS class 的前綴（例如設為  `"tw-"`  後，所有 class 都會變成  `tw-flex`、`tw-p-4`  等）
+**第二層：`@theme inline`  將原始值轉換成 TailwindCSS Token**
 
-**iconLibrary**
-
-```json
-"iconLibrary": "lucide"
-```
-
-指定使用的圖示庫。shadcn/ui 預設使用  [Lucide Icons](https://lucide.dev/)。
-
-**aliases**
-
-```json
-"aliases": {
-  "components": "@/components",
-  "utils": "@/lib/utils",
-  "ui": "@/components/ui",
-  "lib": "@/lib",
-  "hooks": "@/hooks"
+```css
+@theme inline {
+  --color-background: var(--background); /* 將 --background 轉換成 TailwindCSS 可用的 Token */
+  --color-foreground: var(--foreground);
 }
 ```
 
-路徑別名配置，告訴 CLI 各種檔案應該安裝到哪裡：
+這些是  **TailwindCSS Token**，可以直接用於 utility class：
 
-- **components**：元件的根目錄
-- **utils**：工具函數的位置（`cn`  函數會安裝在這裡）
-- **ui**：UI 元件的目標目錄
-- **lib**：函式庫目錄
-- **hooks**：自訂 hooks 的目錄
+```tsx
+// ✅ 可以使用：bg-background 會產生 background-color: var(--background)
+<div className="bg-background text-foreground">
 
-這些別名必須與專案的  `tsconfig.json`  或  `jsconfig.json`  中的  `paths`  設定一致。
+// ❌ 雖然技術上可行，但不建議這樣寫
+// 因為 TailwindCSS 無法追蹤這個變數，也無法在 IDE 中提供自動完成
+<div className="bg-[var(--background)]">
+```
 
-### **registries：自訂元件來源**
+這種分層設計的好處是：
 
-`registries`  是 components.json 中最強大但也最容易被忽略的功能。它允許從多個來源安裝元件，包括：
+1. **在  `:root`/`.dark`  中切換主題值**（例如暗色模式）
+2. **在  `@theme inline`  中定義 TailwindCSS Token**
+3. **Token 會自動反映主題值的變化**
 
-- shadcn/ui 官方 registry
-- 第三方 registry（如 v0.dev、Magic UI）
-- 私有 registry（公司內部的元件庫）
-- 自建 registry
+:::tip[關鍵在於  `inline`]
+因為使用了  `@theme inline`，TailwindCSS 會保留 CSS 變數的動態特性，讓 utility class 直接引用  `var(--background)`  而不是固定的值。這樣當  `.dark` class 覆蓋 CSS 變數時，utility class 就能自動反映新的值。
+:::
 
-### **基本配置**
+### **在 React 中控制主題**
 
-```json
-{
-  "registries": {
-    "@v0": "https://v0.dev/chat/b/{name}",
-    "@magicui": "https://magicui.design/r/{name}.json",
-    "@acme": "https://registry.acme.com/{name}.json"
+與方法一相同，在 React 中透過切換 `<html>` 的 `.dark` class 來控制主題。差別在於這裡**不需要為每個樣式寫 `dark:` 前綴**，因為 CSS 變數會根據 `.dark` 的存在與否自動切換：
+
+```tsx
+import { useState, useEffect } from "react";
+
+export default function App() {
+  const [dark, setDark] = useState(false);
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", dark);
+  }, [dark]);
+
+  return (
+    <div className="min-h-screen grid place-items-center">
+      <button
+        className="px-4 py-2 rounded-md bg-primary text-primary-foreground"
+        onClick={() => setDark((d) => !d)}
+      >
+        切換 {dark ? "Light" : "Dark"}
+      </button>
+    </div>
+  );
+}
+```
+
+**完整流程：**
+
+```mermaid
+graph TD
+    A["Step 1: CSS 變數"] -->|":root / .dark"| B("分別定義亮/暗原始顏色值")
+    B --> C["Step 2: Token 轉換"]
+    C -->|"@theme inline"| D("將變數轉換成 Tailwind Token")
+    D --> E["Step 3: 元件使用"]
+    E -->|"撰寫 className"| F("直接使用 bg-background<br/>不需加 dark: 前綴")
+    F --> G["Step 4: JS 控制"]
+    G -->|"classList.toggle"| H("切換 html 元素的 .dark class")
+```
+
+### **兩種方法的對比**
+
+| 比較項目      | 方法一：`dark:` 前綴 | 方法二：語意化顏色（推薦） |
+| ------------- | -------------------- | -------------------------- |
+| **寫法**      | 每個樣式寫兩次       | 只寫一次                   |
+| **維護性**    | 較差，修改需改多處   | 較佳，改 CSS 變數即可      |
+| **程式碼量**  | 較多                 | 較少                       |
+| **用途**      | 臨時覆蓋、特殊情況   | 系統性的主題設計           |
+| **shadcn/ui** | ❌ 非主要方式         | ✅ 預設使用                 |
+
+```tsx
+// ❌ 方法一：每個顏色都要寫兩次
+<div className="bg-white dark:bg-gray-900 text-black dark:text-white border-gray-200 dark:border-gray-700">
+  內容
+</div>
+
+// ✅ 方法二：語意化顏色，簡潔易維護
+<div className="bg-background text-foreground border-border">
+  內容
+</div>
+```
+
+<br/>
+
+## **@layer：組織樣式**
+
+`@layer`  讓你可以控制樣式的優先順序，並且組織自訂的 CSS。
+
+### **TailwindCSS 的三個層級**
+
+TailwindCSS 將 CSS 分成三個層級：
+
+```css
+@layer base {
+  /* 基礎樣式：重置、預設樣式 */
+}
+
+@layer components {
+  /* 元件樣式：可重複使用的元件 class */
+}
+
+@layer utilities {
+  /* 工具樣式：單一用途的 utility class */
+}
+```
+
+**層級優先順序：**
+
+```
+utilities > components > base
+```
+
+### **實務範例：@layer base 的應用**
+
+```css
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+  body {
+    @apply bg-background text-foreground;
   }
 }
 ```
 
-`{name}`  會被替換成元件名稱。例如執行：
+這段程式碼做了什麼？
 
-```bash
-npx shadcn@latest add @v0/dashboard
+1. **所有元素（\*）**：
+   - 預設邊框顏色使用  `border-border`
+   - 預設 outline 顏色使用  `outline-ring/50`（50% 透明度）
+2. **body 元素**：
+   - 背景色使用  `bg-background`
+   - 文字顏色使用  `text-foreground`
+
+**@apply 指令：**
+
+`@apply`  讓你可以在 CSS 中使用 TailwindCSS 的 utility classes：
+
+```css
+.my-button {
+  @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600;
+}
 ```
 
-CLI 會從  `https://v0.dev/chat/b/dashboard`  下載元件。
+### **什麼時候使用 @layer？**
 
-### **進階配置：帶認證的私有 registry**
+三個層級的使用時機可以用「**你想要改變什麼？**」來判斷：
 
-```json
-{
-  "registries": {
-    "@company": {
-      "url": "https://registry.company.com/ui/{name}.json",
-      "headers": {
-        "Authorization": "Bearer ${REGISTRY_TOKEN}",
-        "X-API-Key": "${API_KEY}"
-      },
-      "params": {
-        "version": "latest",
-        "team": "frontend"
-      }
-    }
+**@layer base：改變 HTML 元素的預設樣式**
+
+**使用時機：**  當你想要改變「所有  `<h1>`」、「所有  `<a>`」、「所有  `<body>`」等  **HTML 元素本身**  的預設外觀時。
+
+**特徵：**
+
+- 針對 HTML 標籤（`h1`, `body`, `a`,   等）
+- 全域生效，影響整個網站
+- 通常在專案初期設定一次就不再修改
+
+**範例：**
+
+```css
+@layer base {
+  /* 設定所有 h1 的預設樣式 */
+  h1 {
+    @apply text-4xl font-bold;
+  }
+
+  /* 設定所有連結的預設樣式 */
+  a {
+    @apply text-blue-500 hover:underline;
+  }
+
+  /* 設定所有元素的預設邊框和 outline */
+  * {
+    @apply border-border outline-ring/50;
   }
 }
 ```
 
-環境變數（`${VAR_NAME}`  格式）會自動從系統環境變數中讀取。
+**實際效果：**  之後在 HTML 中寫  `<h1>標題</h1>`，就會自動套用  `text-4xl font-bold`，不需要額外加 class。
 
-使用方式：
+---
 
-```bash
-# 設定環境變數export REGISTRY_TOKEN="your-token"
-export API_KEY="your-api-key"
+**@layer components：建立可重複使用的元件 class**
 
-# 安裝私有元件
-npx shadcn@latest add @company/custom-button
-```
+**使用時機：**  當你有一組樣式需要在多個地方重複使用，並且這組樣式代表一個「元件」（如按鈕、卡片）時。
 
-### **多 registry 混合使用**
+**特徵：**
 
-```json
-{
-  "registries": {
-    "@shadcn": "https://ui.shadcn.com/r/{name}.json",
-    "@v0": "https://v0.dev/chat/b/{name}",
-    "@company": {
-      "url": "https://registry.company.com/{name}.json",
-      "headers": {
-        "Authorization": "Bearer ${COMPANY_TOKEN}"
-      }
-    },
-    "@team": {
-      "url": "https://team.company.com/{name}.json",
-      "params": {
-        "team": "frontend",
-        "version": "${REGISTRY_VERSION}"
-      }
-    }
+- 針對自訂的 class 名稱（`.btn-primary`, `.card`  等）
+- 需要在 HTML 中手動加上 class 才會生效
+- 通常用於建立設計系統中的元件
+
+**範例：**
+
+```css
+@layer components {
+  .btn-primary {
+    @apply bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600;
+  }
+
+  .card {
+    @apply bg-white rounded-lg shadow-md p-6;
   }
 }
 ```
 
-這樣就可以從不同來源安裝元件：
+**使用方式：**
 
-```bash
-# 從 shadcn/ui 官方安裝
-npx shadcn@latest add @shadcn/button
-
-# 從 v0.dev 安裝
-npx shadcn@latest add @v0/dashboard
-
-# 從公司內部 registry 安裝
-npx shadcn@latest add @company/auth-form
-
-# 從團隊 registry 安裝
-npx shadcn@latest add @team/data-table
+```html
+<button class="btn-primary">按鈕</button>
+<div class="card">卡片內容</div>
 ```
 
-> components.json 與 shadcn CLI 的關係  components.json  是 shadcn CLI 的「設定檔」，CLI 會根據這個檔案：
->
-> 1. **決定安裝位置**：根據  `aliases`  決定檔案要放在哪裡
-> 2. **選擇元件風格**：根據  `style`  下載對應風格的元件
-> 3. **處理依賴**：自動安裝元件所需的 npm 套件
-> 4. **注入 CSS 變數**：在  `tailwind.css`  中注入必要的 CSS 變數
-> 5. **解析 registry**：從指定的 registry 下載元件
+:::warning[注意]
+在現代的 TailwindCSS 開發中，通常**不建議過度使用 @layer components**。因為這會失去 Utility-First 的優勢。更好的做法是直接在 React/Vue 元件中組合 utility classes，或使用 CVA（下一篇文章會介紹）。
+:::
+
+---
+
+**@layer utilities：建立自訂的 utility class**
+
+**使用時機：**  當 TailwindCSS 內建的 utility class 不夠用，你需要新增一個「單一用途」的工具類別時。
+
+**特徵：**
+
+- 針對自訂的 utility class（`.text-balance`, `.scrollbar-hide`  等）
+- 每個 class 只做一件事（單一職責）
+- 用來擴充 TailwindCSS 的工具類別
+
+**範例：**
+
+```css
+@layer utilities {
+  /* 新增文字平衡排版 */
+  .text-balance {
+    text-wrap: balance;
+  }
+
+  /* 新增隱藏捲軸的工具 */
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none;
+  }
+}
+```
+
+**使用方式：**
+
+```html
+<h1 class="text-balance">這段標題會使用平衡排版</h1>
+<div class="overflow-auto scrollbar-hide">捲動區域，但不顯示捲軸</div>
+```
+
+---
+
+**快速判斷表**
+
+| 我想要...                        | 使用哪個 layer                            | 範例                                      |
+| -------------------------------- | ----------------------------------------- | ----------------------------------------- |
+| 改變所有  `<h1>`  的預設樣式     | `@layer base`                             | `h1 { @apply text-4xl; }`                 |
+| 建立一個按鈕元件 class           | `@layer components`                       | `.btn { @apply px-4 py-2; }`              |
+| 新增一個工具 class（如隱藏捲軸） | `@layer utilities`                        | `.scrollbar-hide { ... }`                 |
+| 在 React 元件中組合樣式          | **不使用 @layer**，直接用 utility classes | `<div className="px-4 py-2 bg-blue-500">` |
 
 <br/>
 
 ## **Reference**
 
-- [**TailwindCSS**](https://tailwindcss.com/)
-- [**shadcn/ui**](https://ui.shadcn.com/)
-- [**clsx**](https://github.com/lukeed/clsx)
-- [**tailwind-merge**](https://github.com/dcastil/tailwind-merge)
-- [**tw-animate-css**](https://github.com/Wombosvideo/tw-animate-css)
-- [**Class Variance Authority (CVA)**](https://cva.style/)
-- [**shadcn/ui Registry**](https://ui.shadcn.com/docs/registry)
+- [**TailwindCSS v4 Beta Documentation**](https://tailwindcss.com/docs/v4-beta)
+- [**Theme Configuration - @theme**](https://tailwindcss.com/docs/v4-beta#theme)
+- [**Custom Variants - @custom-variant**](https://tailwindcss.com/docs/v4-beta#custom-variants)
+- [**Layers - @layer**](https://tailwindcss.com/docs/v4-beta#layers)
+- [**Dark Mode**](https://tailwindcss.com/docs/dark-mode)

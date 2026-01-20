@@ -6,10 +6,10 @@ description: 這篇技術筆記深入探討 TailwindCSS 的核心運作原理，
 keywords: [shadcn/ui, TailwindCSS]
 tags: [shadcn/ui, TailwindCSS]
 date: 2025-11-04
-image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762265528/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/tailwind-philosophy_cpfp2c.png
+image: https://res.cloudinary.com/djtoo8orh/image/upload/v1768927327/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/tailwindcss_jit_architecture_diagram_bhdocl.png
 ---
 
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1762265528/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/tailwind-philosophy_cpfp2c.png)
+![](https://res.cloudinary.com/djtoo8orh/image/upload/v1768927327/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/tailwindcss_jit_architecture_diagram_bhdocl.png)
 
 <!-- truncate -->
 
@@ -19,9 +19,10 @@ image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762265528/Docusaurus%
 >
 > 1. [從 MUI 到 TailwindCSS 設計哲學的轉變](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-1)
 > 2. **理解 TailwindCSS 的運作原理（本篇）**
-> 3. [TailwindCSS v4 基礎語法速查](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-3)
-> 4. [深入 TailwindCSS v4 的進階配置](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-4)
-> 5. [shadcn/ui 生態系工具鏈](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-5)
+> 3. [TailwindCSS v4 內建 Utility Classes 速查](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-3)
+> 4. [透過 @theme 自訂設計系統](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-4)
+> 5. [解析 shadcn/ui 的設計系統](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-5)
+> 6. [shadcn/ui 生態系工具鏈](https://notes.boshkuo.com/blog/tailwindcss-knowledge-before-shadcn-ui-6)
 
 ## **核心套件：tailwindcss**
 
@@ -33,7 +34,7 @@ image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762265528/Docusaurus%
 - 掃描所有使用到的 class 名稱
 - 生成對應的 CSS 規則
 
-```tsx
+```tsx {4,6}
 // TailwindCSS 會掃描這個檔案
 function Card() {
   return (
@@ -46,29 +47,44 @@ function Card() {
 }
 ```
 
-然後生成對應的 CSS：
+TailwindCSS 會解析這些 utility class 名稱，並根據內建的**命名規則**生成對應的 CSS：
 
-```css
+```css {3,8,13,18,23,29}
+/* bg-white → 「bg-」代表 background，「white」是顏色值 */
 .bg-white {
   background-color: #fff;
 }
+
+/* rounded-lg → 「rounded-」代表 border-radius，「lg」是 large（0.5rem） */
 .rounded-lg {
   border-radius: 0.5rem;
 }
+
+/* p-4 → 「p-」代表 padding (四邊)，「4」代表 1rem（TailwindCSS 的間距單位：4 × 0.25rem = 1rem） */
 .p-4 {
   padding: 1rem;
 }
+
+/* shadow-md → 「shadow-」代表 box-shadow，「md」是 medium 預設陰影值 */
 .shadow-md {
   box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
 }
+
+/* text-xl → 「text-」代表字體相關，「xl」是 extra-large（1.25rem） */
 .text-xl {
   font-size: 1.25rem;
   line-height: 1.75rem;
 }
+
+/* font-bold → 「font-」代表 font-weight，「bold」對應 700 */
 .font-bold {
   font-weight: 700;
 }
 ```
+
+簡單來說，TailwindCSS 的轉換邏輯遵循一個 **「前綴-值」** 的命名模式：
+- **前綴**（如 `bg-`、`p-`、`text-`）決定要設定哪個 CSS 屬性
+- **值**（如 `white`、`4`、`xl`）決定該屬性的具體數值
 
 這就是 TailwindCSS 的核心工作：**將 utility class 名稱轉換成真正的 CSS 規則**。但這個轉換過程是如何發生的呢？在探究這個問題之前我們需要先理解 TailwindCSS 與 PostCSS 的關係。
 
@@ -94,7 +110,7 @@ graph LR
 
 實際範例：
 
-```css
+```css {4-6}
 /* src/index.css - 輸入 */
 @import "tailwindcss";
 
@@ -105,7 +121,7 @@ graph LR
 
 PostCSS + TailwindCSS 處理後：
 
-```css
+```css {6-12}
 /* 輸出 - 瀏覽器能理解的 CSS */
 :root {
   --color-primary: oklch(0.6171 0.1375 39.0427);
@@ -122,6 +138,21 @@ PostCSS + TailwindCSS 處理後：
 /* ... 其他使用到的 utility classes */
 ```
 
+:::info[**@theme 命名空間規則**]
+在 `@theme` 區塊中定義的 CSS 變數，TailwindCSS 會根據**變數名稱的前綴**自動判斷要產生哪些 utility classes：
+
+| 變數前綴        | 產生的 utility classes                     | 範例                                               |
+| --------------- | ------------------------------------------ | -------------------------------------------------- |
+| `--color-*`     | `.bg-*`、`.text-*`、`.border-*` 等顏色相關 | `--color-primary` → `.bg-primary`、`.text-primary` |
+| `--spacing-*`   | `.p-*`、`.m-*`、`.gap-*` 等間距相關        | `--spacing-lg` → `.p-lg`、`.m-lg`                  |
+| `--font-size-*` | `.text-*` 字體大小                         | `--font-size-huge` → `.text-huge`                  |
+| `--radius-*`    | `.rounded-*` 圓角                          | `--radius-xl` → `.rounded-xl`                      |
+
+換句話說，當你定義 `--color-primary` 時，TailwindCSS 會自動理解這是一個「顏色」類型的設計 token，因此會為所有需要顏色的 utility classes（背景、文字、邊框等）都產生對應的 `.xxx-primary` 類別。
+
+關於這些規則的詳細設定方式與更多範例，我們會在 [透過 @theme 自訂設計系統](./tailwindcss-knowledge-before-shadcn-ui-4) 中深入探討。
+:::
+
 <br/>
 
 ## **JIT 引擎：Just-In-Time 編譯**
@@ -134,7 +165,7 @@ TailwindCSS 使用 **JIT (Just-In-Time) 即時編譯引擎** 來解決這個問�
 
 在開發模式下，JIT 引擎會監聽檔案變化（如  `.html`、`.jsx`、`.tsx`、`.vue`  等），即時掃描新的 class 並立即生成對應的 CSS。
 
-```tsx
+```tsx {4}
 // 你在開發時新增了一個元件
 function NewComponent() {
   return (
@@ -156,18 +187,41 @@ graph LR
     D --> E[注入到瀏覽器<br/>熱更新 HMR]
 ```
 
-```css
+```css {7,17,23}
 /* 生成的 CSS */
+
+/* bg-gradient-to-r：設定漸層方向為「向右」 */
+/* 使用 CSS 的 linear-gradient，「to right」表示從左到右 */
+/* 顏色來源會參考 --tw-gradient-from 和 --tw-gradient-to 這兩個 CSS 變數 */
 .bg-gradient-to-r {
-  background-image: linear-gradient(to right, ...);
+  background-image: linear-gradient(
+    to right,
+    var(--tw-gradient-from),      /* 起始顏色 */
+    var(--tw-gradient-to)         /* 結束顏色 */
+  );
 }
+
+/* from-purple-500：設定漸層的「起始顏色」 */
+/* 這個 class 只負責定義 CSS 變數的值，不直接設定 background */
 .from-purple-500 {
-  --tw-gradient-from: #a855f7;
+  --tw-gradient-from: #a855f7;   /* 紫色 */
 }
+
+/* to-pink-500：設定漸層的「結束顏色」 */
+/* 同樣只定義 CSS 變數，與 from-* 搭配使用 */
 .to-pink-500 {
-  --tw-gradient-to: #ec4899;
+  --tw-gradient-to: #ec4899;     /* 粉紅色 */
 }
 ```
+
+:::tip[**漸層 class 的協作機制**]
+這三個 class 展示了 TailwindCSS 的設計哲學 — **組合式設計**：
+- `bg-gradient-to-r`：定義「要用漸層」且「方向向右」
+- `from-purple-500`：定義「起始顏色是紫色」
+- `to-pink-500`：定義「結束顏色是粉紅色」
+
+它們透過 CSS 變數（`--tw-gradient-from`、`--tw-gradient-to`）互相協作，最終組合成完整的漸層效果。這讓你可以靈活地混搭不同的方向和顏色，而不需要記住一堆組合好的 class 名稱。
+:::
 
 :::tip[**JIT 的優勢：**]
 
