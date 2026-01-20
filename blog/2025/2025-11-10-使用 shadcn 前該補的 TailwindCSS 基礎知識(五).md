@@ -421,7 +421,7 @@ graph TD
 
 下圖展示了這個機制的運作流程：
 
-![語意化顏色的運作流程](./dark-mode-flow.svg)
+![語意化顏色的運作流程](../assets/dark-mode-flow.svg)
 
 ### **設定方式**
 
