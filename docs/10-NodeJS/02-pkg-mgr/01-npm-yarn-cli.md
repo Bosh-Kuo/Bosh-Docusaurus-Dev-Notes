@@ -4,14 +4,8 @@ sidebar_label: "常用 npm & yarn 指令對照表"
 description: 本篇文章記錄常用的 npm 與 yarn 指令
 last_update:
   date: 2023-04-30
-keywords:
-  - npm
-  - yarn
-  - npm cli
-  - yarn cli
-tags:
-  - npm
-  - yarn
+keywords: [npm, yarn, npm cli, yarn cli]
+tags: [npm, yarn]
 ---
 
 ### **安裝與初始化相關**

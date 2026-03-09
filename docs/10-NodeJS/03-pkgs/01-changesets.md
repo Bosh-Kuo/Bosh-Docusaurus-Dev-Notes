@@ -4,14 +4,8 @@ sidebar_label: Changesets
 description: 本文章涵蓋了 Changesets 的基本概念、常用指令、配置方法、與 Git 的互動，以及手動發佈流程。通過詳細的介紹和實際範例，幫助開發者了解如何在 monorepo 環境中高效地進行版本控制和發布，並提供了一些關鍵的使用建議和注意事項。
 last_update:
   date: 2024-07-29
-keywords:
-  - npm 套件
-  - npm packages
-  - changesets
-  - Semantic Versioning
-  - GitHub Actions
-tags:
-  - npm packages
+keywords: [npm 套件, npm packages, changesets, Semantic Versioning, GitHub Actions]
+tags: [npm packages]
 ---
 
 `monorepo` 是一種能夠將多個專案項目整合在一個倉庫中集中管理的一種架構，在現代軟題開發中十分盛行，許多知名的 npm 套件像是: [**material-ui**](https://github.com/mui/material-ui),  [**Chakra UI**](https://chakra-ui.com/), [**pnpm**](https://pnpm.js.org/) 等，都採用了 monorepo 架構在單一倉庫中管理多個套件。然而，使用 monorepo 同時管理多個套件同時也面臨了一個挑戰：**該如何為這些套件進行獨立版本控制 ?** 若手動進行，這將是極其繁瑣的工作。而這正是 `Changesets` 發揮作用的地方。

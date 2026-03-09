@@ -4,12 +4,8 @@ sidebar_label: "pnpm 的依賴管理機制"
 description: 本文深入探討 pnpm 的獨特依賴管理機制，詳細解析其三層尋址策略如何通過軟連結（symlink）、硬連結（hard link）和全域存儲（global store）機制等，有效解決 Phantom Dependency 問題，節省磁碟空間，並提高依賴管理的效率。
 last_update:
   date: 2024-07-29
-keywords:
-  - pnpm
-  - npm
-  - yarn
-tags:
-  - pnpm
+keywords: [pnpm, npm, yarn]
+tags: [pnpm]
 ---
 
 在現代 Node.js 開發生態系中，依賴管理工具（如 npm、yarn）扮演著至關重要的角色。這些工具幫助我們管理專案中的外部套件和模組，確保我們的應用程式能夠順利運行和構建。然而，隨著專案規模和複雜度的增長，傳統的依賴管理工具也面臨了一些挑戰，例如重複安裝、安裝時間過長和依賴衝突等問題。在這樣的背景下，`pnpm` 應運而生。pnpm 是一個高效的套件管理工具，專注於快速、安全和節省空間的依賴管理。在本文中，我們將深入解析 pnpm 的依賴管理機制，並探討它如何解決上述問題。

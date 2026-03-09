@@ -4,12 +4,8 @@ sidebar_label: Commitlint
 description: 這篇文章將帶你深入了解 commitlint 的作用、安裝與配置過程，以及如何在開發流程中應用它來提升專案的品質和協作效率。無論你是版本控制的新手還是有經驗的開發者，都能從中獲得實用的建議和技巧，確保你的提交訊息始終保持一致和可讀性。
 last_update:
   date: 2024-08-01
-keywords:
-  - npm 套件
-  - npm packages
-  - Commitlint
-tags:
-  - npm packages
+keywords: [npm 套件, npm packages, Commitlint]
+tags: [npm packages]
 ---
 
 一直以來，不論是過去在實習的時候或是做自己的專案的時候，我大都沒有特別在意我的 commit message 格式，直到去年加入目前的公司後，開發團隊要求以有固定的 commit message 格式提交 commit ，我才發現原來 GitHub 上大多數的知名開源專案也都有自己的 commit message 格式要求。這才意識到，對於多人協作開發的專案，保持 commit 訊息的一致性與可讀性對專案的長期維護是一件很重要的事情。
