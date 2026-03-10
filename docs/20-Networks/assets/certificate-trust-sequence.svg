@@ -1,0 +1,63 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .actor { fill: #f8fafc; stroke: #475569; stroke-width: 2; rx: 8; }
+            .actor-ca { fill: #eff6ff; stroke: #2563eb; stroke-width: 2; rx: 8; }
+            .actor-text { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+            .ca-text { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #1e3a8a; text-anchor: middle; }
+            .line { stroke: #cbd5e1; stroke-width: 2; stroke-dasharray: 4; }
+            .msg-line { stroke: #0ea5e9; stroke-width: 2; }
+            .msg-text { font-family: system-ui, sans-serif; font-size: 14px; fill: #0369a1; text-anchor: middle; }
+            .box { fill: #fffbeb; stroke: #d97706; stroke-width: 2; rx: 4; }
+            .box-text { font-family: system-ui, sans-serif; font-size: 14px; fill: #92400e; text-anchor: middle; }
+            .success-text { font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; fill: #166534; text-anchor: middle; }
+        </style>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#0ea5e9" />
+        </marker>
+        <marker id="ca-arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#2563eb" />
+        </marker>
+    </defs>
+
+    <rect width="800" height="450" fill="#ffffff" rx="12" />
+
+    <!-- Actors -->
+    <rect x="50" y="40" width="120" height="40" class="actor" />
+    <text x="110" y="66" class="actor-text">Client (瀏覽器)</text>
+    <line x1="110" y1="80" x2="110" y2="420" class="line" />
+
+    <rect x="340" y="40" width="120" height="40" class="actor" />
+    <text x="400" y="66" class="actor-text">Server (伺服器)</text>
+    <line x1="400" y1="80" x2="400" y2="420" class="line" />
+
+    <rect x="630" y="40" width="120" height="40" class="actor-ca" />
+    <text x="690" y="66" class="ca-text">CA (第三方機構)</text>
+    <line x1="690" y1="80" x2="690" y2="420" class="line" />
+
+    <!-- Step 0: Server requests certificate -->
+    <path d="M 400 110 L 680 110" stroke="#2563eb" stroke-width="2" stroke-dasharray="4" marker-end="url(#ca-arrow)" />
+    <text x="545" y="100" class="msg-text" fill="#1e3a8a">0. 提交公鑰與網域申請</text>
+
+    <path d="M 680 140 L 410 140" stroke="#2563eb" stroke-width="2" marker-end="url(#ca-arrow)" />
+    <text x="545" y="130" class="msg-text" fill="#1e3a8a">0. 簽發「數位憑證 🪪」</text>
+
+    <!-- Step 1: Send Certificate -->
+    <path d="M 400 190 L 120 190" class="msg-line" marker-end="url(#arrow)" />
+    <text x="255" y="180" class="msg-text">1. Client 請求連線，Server 傳送「數位憑證 🪪」</text>
+
+    <!-- Box at Client -->
+    <rect x="20" y="210" width="280" height="80" class="box" />
+    <text x="150" y="235" class="box-text">瀏覽器利用內建清單中的「CA 公鑰」</text>
+    <text x="150" y="255" class="box-text">解開並驗證憑證上的「數位簽章」</text>
+    <text x="150" y="275" class="success-text">✅ 驗證成功！這個 Server 公鑰是真的</text>
+
+    <!-- Step 2: Use Real Public Key -->
+    <rect x="20" y="320" width="260" height="40" class="box" fill="#f0fdf4" stroke="#22c55e" />
+    <text x="150" y="345" class="box-text" fill="#14532d">安心地用此公鑰加密「Premaster Secret」</text>
+
+    <path d="M 110 380 L 390 380" class="msg-line" stroke="#22c55e" marker-end="url(#arrow)" />
+    <text x="255" y="375" class="msg-text" fill="#166534">2. [密文] 傳送被鎖上的 Secret </text>
+
+    <text x="400" y="440" class="msg-text" fill="#64748b" font-size="12">CA 的介入打破了中間人攻擊，確保客戶端拿到的公鑰值得信任。</text>
+</svg>

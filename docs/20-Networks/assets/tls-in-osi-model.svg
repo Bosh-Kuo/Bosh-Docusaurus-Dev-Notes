@@ -1,0 +1,86 @@
+<svg viewBox="0 0 800 500" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .layer { fill: #f8fafc; stroke: #94a3b8; stroke-width: 2; rx: 8; }
+            .layer-http { fill: #e0f2fe; stroke: #38bdf8; stroke-width: 2; rx: 8; }
+            .layer-tls { fill: #fef08a; stroke: #eab308; stroke-width: 2; rx: 8; stroke-dasharray: 4; }
+            .layer-tcp { fill: #dcfce7; stroke: #4ade80; stroke-width: 2; rx: 8; }
+            .text-title { font-family: system-ui, sans-serif; font-size: 18px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+            .text-layer { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #334155; }
+            .text-desc { font-family: system-ui, sans-serif; font-size: 14px; fill: #64748b; }
+            .bracket { fill: none; stroke: #64748b; stroke-width: 2; }
+            .arrow { fill: #64748b; stroke: none; }
+        </style>
+    </defs>
+
+    <!-- Background -->
+    <rect width="800" height="500" fill="#ffffff" rx="12" />
+    
+    <text x="400" y="40" class="text-title" font-size="22">TLS 在 OSI 參考模型與 TCP/IP 模型的位置</text>
+
+    <!-- OSI Model Column -->
+    <text x="180" y="80" class="text-title">OSI 參考模型 (7層)</text>
+    
+    <!-- Layer 7 -->
+    <rect x="50" y="100" width="260" height="40" class="layer" />
+    <text x="60" y="126" class="text-layer">7. 應用層 (Application)</text>
+    
+    <!-- Layer 6 / 5 -->
+    <rect x="50" y="150" width="260" height="40" class="layer" />
+    <text x="60" y="176" class="text-layer">6. 表達層 (Presentation)</text>
+    
+    <rect x="50" y="200" width="260" height="40" class="layer" />
+    <text x="60" y="226" class="text-layer">5. 會議層 (Session)</text>
+
+    <!-- Layer 4 -->
+    <rect x="50" y="250" width="260" height="40" class="layer" />
+    <text x="60" y="276" class="text-layer">4. 傳輸層 (Transport)</text>
+
+    <!-- Layers 1-3 -->
+    <rect x="50" y="300" width="260" height="40" class="layer" />
+    <text x="60" y="326" class="text-layer">3. 網路層 (Network)</text>
+    <rect x="50" y="350" width="260" height="40" class="layer" />
+    <text x="60" y="376" class="text-layer">2. 資料連結層 (Data Link)</text>
+    <rect x="50" y="400" width="260" height="40" class="layer" />
+    <text x="60" y="426" class="text-layer">1. 實體層 (Physical)</text>
+
+    <!-- TCP/IP Model Column + Protocol Stack -->
+    <text x="560" y="80" class="text-title">實際通訊協定堆疊</text>
+
+    <!-- HTTP -->
+    <rect x="420" y="100" width="280" height="45" class="layer-http" />
+    <text x="560" y="128" class="text-title" fill="#0369a1">HTTP</text>
+    <text x="430" y="128" class="text-desc" fill="#0ea5e9">應用層</text>
+    
+    <!-- Arrow down -->
+    <path d="M560 145 L560 160" stroke="#94a3b8" stroke-width="2" />
+    <polygon points="555,160 565,160 560,168" class="arrow" fill="#94a3b8" />
+
+    <!-- TLS -->
+    <rect x="420" y="170" width="280" height="60" class="layer-tls" />
+    <text x="560" y="200" class="text-title" fill="#a16207">SSL / TLS</text>
+    <text x="560" y="220" class="text-desc" fill="#ca8a04">負責加密、認證與資料完整性</text>
+    <text x="430" y="205" class="text-desc" fill="#eab308">安全層</text>
+    
+    <!-- Arrow down -->
+    <path d="M560 230 L560 245" stroke="#94a3b8" stroke-width="2" />
+    <polygon points="555,245 565,245 560,253" class="arrow" fill="#94a3b8" />
+
+    <!-- TCP -->
+    <rect x="420" y="255" width="280" height="45" class="layer-tcp" />
+    <text x="560" y="283" class="text-title" fill="#166534">TCP</text>
+    <text x="430" y="283" class="text-desc" fill="#22c55e">傳輸層</text>
+
+    <!-- Connecting Brackets -->
+    <path d="M320 100 L340 100 L340 140 L320 140" class="bracket" />
+    <text x="360" y="125" class="text-desc">處理</text>
+    
+    <path d="M320 150 L340 150 L340 240 L320 240" class="bracket" stroke="#eab308" />
+    <text x="350" y="200" class="text-desc" fill="#ca8a04">TLS</text>
+
+    <!-- IP & Below -->
+    <rect x="420" y="310" width="280" height="45" class="layer" />
+    <text x="560" y="338" class="text-title">IP</text>
+    <rect x="420" y="365" width="280" height="75" class="layer" />
+    <text x="560" y="408" class="text-title">乙太網路 / Wi-Fi</text>
+</svg>

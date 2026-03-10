@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300">
+  <defs>
+    <style>
+      .text { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif; }
+      .title { font-size: 18px; font-weight: bold; fill: #333; }
+      .label { font-size: 14px; fill: #555; }
+      .box { fill: white; stroke: #ccc; stroke-width: 2; rx: 8; }
+      .http-bg { fill: #f9f9f9; }
+      .https-bg { fill: #eef9f0; }
+    </style>
+  </defs>
+  
+  <rect x="0" y="0" width="600" height="140" class="http-bg" />
+  <text x="20" y="30" class="text title">HTTP (明文傳輸)</text>
+  
+  <rect x="50" y="60" width="80" height="50" class="box" />
+  <text x="65" y="90" class="text label">Client</text>
+  
+  <rect x="470" y="60" width="80" height="50" class="box" />
+  <text x="485" y="90" class="text label">Server</text>
+  
+  <line x1="140" y1="85" x2="460" y2="85" stroke="#999" stroke-width="2" stroke-dasharray="5,5" />
+  <polygon points="460,85 450,80 450,90" fill="#999" />
+  
+  <rect x="250" y="60" width="100" height="30" fill="#fff" stroke="#999" rx="4" />
+  <text x="260" y="80" class="text" style="font-size: 12px; fill: #d9534f;">"id:123, pw:abc"</text>
+  
+  <rect x="260" y="105" width="80" height="25" fill="#f8d7da" stroke="#d9534f" rx="4" />
+  <text x="280" y="122" class="text" style="font-size: 12px; fill: #d9534f;">Hacker 👀</text>
+  <line x1="300" y1="90" x2="300" y2="105" stroke="#d9534f" stroke-width="2" />
+
+  <rect x="0" y="150" width="600" height="150" class="https-bg" />
+  <text x="20" y="180" class="text title">HTTPS (密文傳輸 - 經 SSL/TLS 加密)</text>
+  
+  <rect x="50" y="210" width="80" height="50" class="box" />
+  <text x="65" y="240" class="text label">Client</text>
+  
+  <rect x="470" y="210" width="80" height="50" class="box" />
+  <text x="485" y="240" class="text label">Server</text>
+  
+  <line x1="140" y1="235" x2="460" y2="235" stroke="#5cb85c" stroke-width="3" />
+  <polygon points="460,235 450,230 450,240" fill="#5cb85c" />
+  
+  <rect x="250" y="215" width="100" height="30" fill="#5cb85c" rx="4" />
+  <text x="260" y="235" class="text" style="font-size: 12px; fill: #fff;">"*********"</text>
+  <text x="295" y="210" class="text" style="font-size: 16px;">🔒</text>
+  
+  <rect x="260" y="260" width="80" height="25" fill="#f8d7da" stroke="#d9534f" rx="4" />
+  <text x="268" y="277" class="text" style="font-size: 12px; fill: #d9534f;">Hacker ❌</text>
+  <line x1="300" y1="245" x2="300" y2="260" stroke="#d9534f" stroke-width="2" stroke-dasharray="3,3" />
+</svg>

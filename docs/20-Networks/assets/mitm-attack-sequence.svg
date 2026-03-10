@@ -1,0 +1,254 @@
+<svg viewBox="0 0 800 1100" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .actor { fill: #f8fafc; stroke: #334155; stroke-width: 2; rx: 8; }
+            .hacker { fill: #fee2e2; stroke: #ef4444; stroke-width: 2; rx: 8; }
+            .actor-text { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #0f172a; text-anchor: middle; }
+            .hacker-text { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #b91c1c; text-anchor: middle; }
+            .line { stroke: #cbd5e1; stroke-width: 2; stroke-dasharray: 4; }
+            .hacker-line { stroke: #fca5a5; stroke-width: 2; stroke-dasharray: 4; }
+            
+            .msg-blue-line { stroke: #64748b; stroke-width: 2; }
+            .msg-blue-text { font-family: system-ui, sans-serif; font-size: 14px; fill: #334155; text-anchor: middle; }
+            
+            .msg-red-line { stroke: #ef4444; stroke-width: 2; }
+            .msg-red-text { font-family: system-ui, sans-serif; font-size: 14px; fill: #b91c1c; font-weight: bold; text-anchor: middle; }
+
+            .box-blue { fill: #ecfdf5; stroke: #10b981; stroke-width: 2; rx: 4; }
+            .box-blue-text { font-family: system-ui, sans-serif; font-size: 14px; fill: #065f46; text-anchor: middle; }
+            
+            .box-red { fill: #fef2f2; stroke: #ef4444; stroke-width: 2; rx: 4; }
+            .box-red-text { font-family: system-ui, sans-serif; font-size: 14px; fill: #991b1b; text-anchor: middle; }
+
+            .box-gray { fill: #f8fafc; stroke: #94a3b8; stroke-width: 2; rx: 4; }
+            .box-gray-text { font-family: system-ui, sans-serif; font-size: 14px; fill: #334155; text-anchor: middle; }
+        </style>
+
+        <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+        </marker>
+        <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#ef4444" />
+        </marker>
+
+        <!-- True Keys (Server) -->
+        <g id="pub-key-true" transform="scale(0.8)">
+            <rect x="8" y="14" width="16" height="12" rx="2" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+            <path d="M 11 14 V 9 A 5 5 0 0 1 21 9 V 14" fill="none" stroke="#0284c7" stroke-width="2"/>
+        </g>
+        <g id="priv-key-true" transform="scale(0.8)">
+            <circle cx="10" cy="10" r="5" fill="none" stroke="#2563eb" stroke-width="2"/>
+            <line x1="15" y1="10" x2="28" y2="10" stroke="#2563eb" stroke-width="2"/>
+            <line x1="22" y1="10" x2="22" y2="14" stroke="#2563eb" stroke-width="2"/>
+            <line x1="26" y1="10" x2="26" y2="14" stroke="#2563eb" stroke-width="2"/>
+        </g>
+
+        <!-- Fake Keys (Hacker) -->
+        <g id="pub-key-fake" transform="scale(0.8)">
+            <rect x="8" y="14" width="16" height="12" rx="2" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+            <path d="M 11 14 V 9 A 5 5 0 0 1 21 9 V 14" fill="none" stroke="#dc2626" stroke-width="2"/>
+        </g>
+        <g id="priv-key-fake" transform="scale(0.8)">
+            <circle cx="10" cy="10" r="5" fill="none" stroke="#dc2626" stroke-width="2"/>
+            <line x1="15" y1="10" x2="28" y2="10" stroke="#dc2626" stroke-width="2"/>
+            <line x1="22" y1="10" x2="22" y2="14" stroke="#dc2626" stroke-width="2"/>
+            <line x1="26" y1="10" x2="26" y2="14" stroke="#dc2626" stroke-width="2"/>
+        </g>
+
+        <!-- Premaster A (Pink) -> For Hacker -->
+        <g id="premaster-a" transform="scale(0.8)">
+            <circle cx="10" cy="10" r="5" fill="#fbcfe8" stroke="#db2777" stroke-width="2"/>
+            <line x1="15" y1="10" x2="28" y2="10" stroke="#db2777" stroke-width="2"/>
+            <line x1="22" y1="10" x2="22" y2="14" stroke="#db2777" stroke-width="2"/>
+        </g>
+
+        <!-- Premaster B (Purple) -> For Server -->
+        <g id="premaster-b" transform="scale(0.8)">
+            <circle cx="10" cy="10" r="5" fill="#e9d5ff" stroke="#9333ea" stroke-width="2"/>
+            <line x1="15" y1="10" x2="28" y2="10" stroke="#9333ea" stroke-width="2"/>
+            <line x1="22" y1="10" x2="22" y2="14" stroke="#9333ea" stroke-width="2"/>
+        </g>
+
+        <!-- Session Key A (Yellow/Red rim) -->
+        <g id="session-a" transform="scale(0.8)">
+            <circle cx="10" cy="10" r="6" fill="#fef08a" stroke="#dc2626" stroke-width="2"/>
+            <line x1="16" y1="10" x2="30" y2="10" stroke="#dc2626" stroke-width="2"/>
+            <line x1="22" y1="10" x2="22" y2="16" stroke="#dc2626" stroke-width="2"/>
+        </g>
+
+        <!-- Session Key B (Yellow/Blue rim) -->
+        <g id="session-b" transform="scale(0.8)">
+            <circle cx="10" cy="10" r="6" fill="#fef08a" stroke="#2563eb" stroke-width="2"/>
+            <line x1="16" y1="10" x2="30" y2="10" stroke="#2563eb" stroke-width="2"/>
+            <line x1="22" y1="10" x2="22" y2="16" stroke="#2563eb" stroke-width="2"/>
+        </g>
+
+        <!-- Ciphertext Red (Locked by Fake Pub Key) -->
+        <g id="ciphertext-red" transform="scale(0.8)">
+            <rect x="0" y="0" width="20" height="26" rx="2" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+            <path d="M 5 7 h 10 M 5 13 h 10 M 5 19 h 6" stroke="#fca5a5" stroke-width="2" stroke-linecap="round"/>
+            <rect x="10" y="14" width="14" height="10" rx="1.5" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+            <path d="M 13 14 V 9 A 4 4 0 0 1 21 9 V 14" fill="none" stroke="#dc2626" stroke-width="2"/>
+        </g>
+
+        <!-- Ciphertext Blue (Locked by True Pub Key) -->
+        <g id="ciphertext-blue" transform="scale(0.8)">
+            <rect x="0" y="0" width="20" height="26" rx="2" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="2"/>
+            <path d="M 5 7 h 10 M 5 13 h 10 M 5 19 h 6" stroke="#bae6fd" stroke-width="2" stroke-linecap="round"/>
+            <rect x="10" y="14" width="14" height="10" rx="1.5" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+            <path d="M 13 14 V 9 A 4 4 0 0 1 21 9 V 14" fill="none" stroke="#0284c7" stroke-width="2"/>
+        </g>
+        
+        <!-- Data Icon -->
+        <g id="data-icon" transform="scale(0.8)">
+            <rect x="0" y="0" width="20" height="26" rx="2" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+            <path d="M 5 7 h 10 M 5 13 h 10 M 5 19 h 6" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+        </g>
+
+        <!-- Symmetric Ciphertext Red (Locked by Session Key A) -->
+        <g id="sym-ciphertext-red" transform="scale(0.8)">
+            <rect x="0" y="0" width="20" height="26" rx="2" fill="#fef2f2" stroke="#ef4444" stroke-width="2"/>
+            <path d="M 5 7 h 10 M 5 13 h 10 M 5 19 h 6" stroke="#fca5a5" stroke-width="2" stroke-linecap="round"/>
+            <rect x="10" y="14" width="14" height="10" rx="1.5" fill="#fef08a" stroke="#dc2626" stroke-width="2"/>
+            <path d="M 13 14 V 9 A 4 4 0 0 1 21 9 V 14" fill="none" stroke="#dc2626" stroke-width="2"/>
+        </g>
+        
+        <!-- Symmetric Ciphertext Blue (Locked by Session Key B) -->
+        <g id="sym-ciphertext-blue" transform="scale(0.8)">
+            <rect x="0" y="0" width="20" height="26" rx="2" fill="#f0f9ff" stroke="#0ea5e9" stroke-width="2"/>
+            <path d="M 5 7 h 10 M 5 13 h 10 M 5 19 h 6" stroke="#bae6fd" stroke-width="2" stroke-linecap="round"/>
+            <rect x="10" y="14" width="14" height="10" rx="1.5" fill="#fef08a" stroke="#2563eb" stroke-width="2"/>
+            <path d="M 13 14 V 9 A 4 4 0 0 1 21 9 V 14" fill="none" stroke="#2563eb" stroke-width="2"/>
+        </g>
+    </defs>
+
+    <rect width="800" height="1100" fill="#ffffff" rx="12" />
+
+    <!-- Actors -->
+    <rect x="90" y="40" width="120" height="40" class="actor" />
+    <text x="150" y="66" class="actor-text">Client</text>
+    <line x1="150" y1="80" x2="150" y2="1080" class="line" />
+
+    <rect x="340" y="40" width="120" height="40" class="hacker" />
+    <text x="400" y="66" class="hacker-text">駭客 (假扮雙方)</text>
+    <line x1="400" y1="80" x2="400" y2="1080" class="hacker-line" />
+
+    <rect x="590" y="40" width="120" height="40" class="actor" />
+    <text x="650" y="66" class="actor-text">Server</text>
+    <line x1="650" y1="80" x2="650" y2="1080" class="line" />
+
+    <!-- Server Generates True Keys -->
+    <rect x="550" y="100" width="200" height="60" class="box-blue" fill="#f0fdf4" stroke="#22c55e" />
+    <text x="650" y="125" class="box-blue-text" font-weight="bold">生成「真的」公鑰 / 私鑰</text>
+    <use href="#pub-key-true" x="660" y="135" />
+    <use href="#priv-key-true" x="700" y="140" />
+
+    <!-- 1. Server sends true public key -> Intercepted -->
+    <path d="M 650 180 L 400 180" class="msg-blue-line" marker-end="url(#arrow-blue)" />
+    <text x="525" y="170" class="msg-blue-text">1. 傳送「真公鑰」 (被攔截！)</text>
+    <use href="#pub-key-true" x="500" y="135" />
+
+    <!-- Hacker Intercepts & Generates Fake Keys -->
+    <rect x="290" y="200" width="220" height="60" class="box-red" />
+    <text x="400" y="225" class="box-red-text" font-weight="bold">自己產生「駭客公鑰/私鑰」</text>
+    <use href="#pub-key-fake" x="420" y="235" />
+    <use href="#priv-key-fake" x="450" y="240" />
+
+    <!-- 2. Hacker sends Fake Public Key to Client -->
+    <path d="M 400 290 L 150 290" class="msg-red-line" marker-end="url(#arrow-red)" />
+    <text x="275" y="280" class="msg-red-text">2. 傳給 Client「駭客公鑰」</text>
+    <use href="#pub-key-fake" x="300" y="285" />
+
+    <!-- Client Encrypts Premaster A -->
+    <rect x="30" y="320" width="240" height="60" class="box-gray" />
+    <text x="150" y="340" class="box-gray-text">用假公鑰加上 Premaster Secret A</text>
+    <use href="#pub-key-fake" x="70" y="350" />
+    <text x="105" y="365" class="box-gray-text">+</text>
+    <use href="#premaster-a" x="120" y="355" />
+    <text x="155" y="365" class="box-gray-text">→</text>
+    <use href="#ciphertext-red" x="180" y="350" />
+
+    <!-- 3. Client sends Encrypted Premaster A to Hacker -->
+    <path d="M 150 410 L 400 410" class="msg-red-line" marker-end="url(#arrow-red)" />
+    <text x="275" y="400" class="msg-red-text">3. [密文] 傳送被鎖上的 Secret A</text>
+    <use href="#ciphertext-red" x="385" y="380" />
+
+    <!-- Hacker Decrypts Secret A -->
+    <rect x="290" y="440" width="220" height="60" class="box-red" />
+    <text x="400" y="460" class="box-red-text" font-weight="bold">用駭客私鑰解出 Secret A</text>
+    <use href="#ciphertext-red" x="325" y="470" />
+    <text x="360" y="485" class="box-red-text">+</text>
+    <use href="#priv-key-fake" x="375" y="475" />
+    <text x="410" y="485" class="box-red-text">→</text>
+    <use href="#premaster-a" x="430" y="475" />
+
+    <!-- Hacker generates Premaster B and Encrypts with True Pub Key -->
+    <rect x="260" y="520" width="280" height="60" class="box-red" />
+    <text x="400" y="540" class="box-red-text" font-weight="bold">生成 Secret B，用偷來的「真公鑰」鎖上</text>
+    <use href="#pub-key-true" x="310" y="550" />
+    <text x="345" y="565" class="box-red-text">+</text>
+    <use href="#premaster-b" x="360" y="555" />
+    <text x="395" y="565" class="box-red-text">→</text>
+    <use href="#ciphertext-blue" x="415" y="550" />
+    
+    <!-- 4. Hacker sends Encrypted Premaster B to Server -->
+    <path d="M 400 610 L 650 610" class="msg-blue-line" marker-end="url(#arrow-blue)" />
+    <text x="525" y="600" class="msg-blue-text">4. [密文] 假冒 Client 傳送給 Server</text>
+    <use href="#ciphertext-blue" x="640" y="580" />
+
+    <!-- Server Decrypts Secret B -->
+    <rect x="540" y="640" width="220" height="60" class="box-blue" />
+    <text x="650" y="660" class="box-blue-text" font-weight="bold">用真私鑰解出 Secret B</text>
+    <use href="#ciphertext-blue" x="575" y="670" />
+    <text x="610" y="685" class="box-blue-text">+</text>
+    <use href="#priv-key-true" x="625" y="675" />
+    <text x="660" y="685" class="box-blue-text">→</text>
+    <use href="#premaster-b" x="680" y="675" />
+
+    <!-- Conclusion: Setup with two session keys -->
+    <rect x="150" y="730" width="500" height="40" class="box-gray" fill="#fff1f2" stroke="#f43f5e" />
+    <text x="400" y="755" class="msg-red-text" font-size="12">完全掌控：駭客成功在中間建立了互相獨立的 Session Key A 與 B！</text>
+    <use href="#session-a" x="610" y="738" />
+    <use href="#session-b" x="635" y="738" />
+
+    <!-- New Phase: Intercepting Symmetric Data -->
+    <rect x="250" y="790" width="300" height="30" class="box-red" />
+    <text x="400" y="810" class="box-red-text" font-weight="bold">進入 HTTPS 資料傳輸階段 (被看光光)</text>
+
+    <!-- Client encrypts HTTP data -->
+    <rect x="40" y="840" width="220" height="60" class="box-gray" />
+    <text x="150" y="860" class="box-gray-text">用金鑰 A 加密 HTTP 請求</text>
+    <use href="#data-icon" x="80" y="870" />
+    <text x="115" y="885" class="box-gray-text">+</text>
+    <use href="#session-a" x="130" y="870" />
+    <text x="165" y="885" class="box-gray-text">→</text>
+    <use href="#sym-ciphertext-red" x="190" y="870" />
+
+    <!-- Send Intercepted Data (Client -> Hacker) -->
+    <path d="M 150 930 L 400 930" class="msg-red-line" marker-end="url(#arrow-red)" />
+    <text x="275" y="920" class="msg-red-text">5. [密文] 傳送加密的 HTTP 請求</text>
+    <use href="#sym-ciphertext-red" x="385" y="900" />
+
+    <!-- Hacker decrypts and views data -->
+    <rect x="290" y="940" width="220" height="50" class="box-red" />
+    <text x="400" y="960" class="box-red-text" font-weight="bold">駭客用金鑰 A 解開偷看/篡改</text>
+    <use href="#sym-ciphertext-red" x="330" y="965" />
+    <text x="365" y="980" class="box-red-text">+</text>
+    <use href="#session-a" x="380" y="965" />
+    <text x="415" y="980" class="box-red-text">→</text>
+    <use href="#data-icon" x="435" y="965" />
+
+    <!-- Hacker re-encrypts with Key B -->
+    <rect x="290" y="1000" width="220" height="50" class="box-red" />
+    <text x="400" y="1020" class="box-red-text" font-weight="bold">駭客用金鑰 B 重新加密傳送</text>
+    <use href="#data-icon" x="330" y="1025" />
+    <text x="365" y="1040" class="box-red-text">+</text>
+    <use href="#session-b" x="380" y="1025" />
+    <text x="415" y="1040" class="box-red-text">→</text>
+    <use href="#sym-ciphertext-blue" x="435" y="1025" />
+
+    <!-- Send Intercepted Data (Hacker -> Server) -->
+    <path d="M 400 1080 L 650 1080" class="msg-blue-line" marker-end="url(#arrow-blue)" />
+    <text x="525" y="1070" class="msg-blue-text">6. [密文] 假冒 Client 傳送請求給 Server</text>
+    <use href="#sym-ciphertext-blue" x="660" y="1055" />
+</svg>

@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .bg { fill: #ffffff; rx: 12; }
+            .box-normal { fill: #f8fafc; stroke: #94a3b8; stroke-width: 2; rx: 4; }
+            .box-hacker { fill: #fee2e2; stroke: #ef4444; stroke-width: 2; rx: 4; }
+            .text-main { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #1e293b; }
+            .text-center { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+            .text-red { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #b91c1c; text-anchor: middle; }
+            .text-green { font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; fill: #15803d; text-anchor: middle; }
+            .text-desc { font-family: system-ui, sans-serif; font-size: 14px; fill: #475569; }
+        </style>
+    </defs>
+
+    <rect width="800" height="400" class="bg" />
+
+    <text x="400" y="40" class="text-center" font-size="20">當駭客試圖篡改憑證時會發生什麼？</text>
+
+    <!-- Tampered Certificate -->
+    <rect x="50" y="80" width="300" height="240" class="box-hacker" />
+    <text x="200" y="110" class="text-red">被竄改的憑證 (信封)</text>
+    
+    <rect x="70" y="130" width="260" height="40" class="box-hacker" fill="#fef2f2" />
+    <text x="200" y="155" class="text-red">⚠️ 假公鑰 (被偷換)</text>
+    
+    <rect x="70" y="180" width="260" height="40" class="box-normal" fill="#ffffff" />
+    <text x="200" y="205" class="text-center">網域：google.com (未改)</text>
+
+    <!-- Digital Signature at bottom -->
+    <rect x="50" y="320" width="300" height="50" class="box-normal" fill="#e2e8f0" stroke-dasharray="4" />
+    <text x="200" y="350" class="text-center">CA 原本的數位簽章 (沒變)</text>
+
+    <!-- Arrows for Verification -->
+    <path d="M 360 170 L 450 170" stroke="#0369a1" stroke-width="3" fill="none" />
+    <text x="405" y="160" class="text-desc" fill="#0369a1">A.自己算指紋</text>
+
+    <path d="M 360 345 L 450 345" stroke="#0ea5e9" stroke-width="3" fill="none" />
+    <text x="405" y="335" class="text-desc" fill="#0ea5e9">B.公鑰解簽章</text>
+
+    <!-- Results Box -->
+    <rect x="460" y="140" width="120" height="60" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" rx="4" />
+    <text x="520" y="175" class="text-center">指紋 1 (新)</text>
+
+    <rect x="460" y="315" width="120" height="60" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" rx="4" />
+    <text x="520" y="350" class="text-center">指紋 2 (舊)</text>
+
+    <!-- Comparison -->
+    <path d="M 590 170 L 630 250" stroke="#94a3b8" stroke-width="2" fill="none" />
+    <path d="M 590 345 L 630 250" stroke="#94a3b8" stroke-width="2" fill="none" />
+
+    <text x="680" y="255" class="text-red" font-size="28">≠</text>
+
+    <rect x="620" y="270" width="140" height="40" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="20" />
+    <text x="690" y="295" class="text-red" font-size="14">警告：簽章不符！</text>
+    
+    <text x="690" y="330" class="text-desc" text-anchor="middle" font-size="12">瀏覽器中斷連線</text>
+
+</svg>

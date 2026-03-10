@@ -1,0 +1,103 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .actor { fill: #f8fafc; stroke: #475569; stroke-width: 2; rx: 8; }
+            .actor-text { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+            .line { stroke: #cbd5e1; stroke-width: 2; stroke-dasharray: 4; }
+            .msg-line { stroke: #10b981; stroke-width: 2; }
+            .msg-text { font-family: system-ui, sans-serif; font-size: 14px; fill: #047857; text-anchor: middle; }
+            .danger-text { font-family: system-ui, sans-serif; font-size: 12px; font-weight: bold; fill: #b91c1c; text-anchor: middle; }
+            .box { fill: #ecfdf5; stroke: #10b981; stroke-width: 2; rx: 4; }
+            .box-text { font-family: system-ui, sans-serif; font-size: 14px; fill: #065f46; text-anchor: middle; }
+        </style>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#10b981" />
+        </marker>
+        <g id="pub-key-icon" transform="scale(0.8)">
+            <!-- Lock Icon for Public Key -->
+            <rect x="8" y="14" width="16" height="12" rx="2" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+            <path d="M 11 14 V 9 A 5 5 0 0 1 21 9 V 14" fill="none" stroke="#0284c7" stroke-width="2"/>
+        </g>
+        <g id="priv-key-icon" transform="scale(0.8)">
+            <!-- Blue Key Icon for Private Key -->
+            <circle cx="10" cy="10" r="5" fill="none" stroke="#2563eb" stroke-width="2"/>
+            <line x1="15" y1="10" x2="28" y2="10" stroke="#2563eb" stroke-width="2"/>
+            <line x1="22" y1="10" x2="22" y2="14" stroke="#2563eb" stroke-width="2"/>
+            <line x1="26" y1="10" x2="26" y2="14" stroke="#2563eb" stroke-width="2"/>
+        </g>
+        <g id="data-icon" transform="scale(0.8)">
+            <!-- Document icon representing plaintext data -->
+            <rect x="0" y="0" width="20" height="26" rx="2" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+            <path d="M 5 7 h 10 M 5 13 h 10 M 5 19 h 6" stroke="#cbd5e1" stroke-width="2" stroke-linecap="round"/>
+        </g>
+        <g id="ciphertext-icon" transform="scale(0.8)">
+            <!-- Document icon with a lock representing encrypted data -->
+            <rect x="0" y="0" width="20" height="26" rx="2" fill="#e2e8f0" stroke="#64748b" stroke-width="2"/>
+            <path d="M 5 7 h 10 M 5 13 h 10 M 5 19 h 6" stroke="#94a3b8" stroke-width="2" stroke-linecap="round"/>
+            <rect x="10" y="14" width="14" height="10" rx="1.5" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+            <path d="M 13 14 V 9 A 4 4 0 0 1 21 9 V 14" fill="none" stroke="#0284c7" stroke-width="2"/>
+        </g>
+    </defs>
+
+    <rect width="800" height="450" fill="#ffffff" rx="12" />
+
+    <!-- Actors -->
+    <rect x="100" y="40" width="120" height="40" class="actor" />
+    <text x="160" y="66" class="actor-text">Client (客戶端)</text>
+    <line x1="160" y1="80" x2="160" y2="420" class="line" />
+
+    <rect x="340" y="40" width="120" height="40" class="actor" fill="#fee2e2" stroke="#ef4444" />
+    <text x="400" y="66" class="actor-text" fill="#b91c1c">駭客</text>
+    <line x1="400" y1="80" x2="400" y2="420" class="line" stroke="#fca5a5" />
+
+    <rect x="580" y="40" width="120" height="40" class="actor" />
+    <text x="640" y="66" class="actor-text">Server (伺服器)</text>
+    <line x1="640" y1="80" x2="640" y2="420" class="line" />
+
+    <!-- Server Generates Keys -->
+    <rect x="530" y="80" width="220" height="70" class="box" />
+    <text x="640" y="100" class="box-text">生成一對：</text>
+    <text x="640" y="120" class="box-text">公鑰 (投遞口) / 私鑰 (底鑰)</text>
+    <use href="#pub-key-icon" x="590" y="125" />
+    <use href="#priv-key-icon" x="660" y="125" />
+
+    <!-- Step 1: Send Public Key -->
+    <path d="M 640 160 L 170 160" class="msg-line" marker-end="url(#arrow)" />
+    <text x="250" y="150" class="msg-text">1. 傳送公鑰</text>
+    <use href="#pub-key-icon" x="380" y="145" />
+    
+    <rect x="420" y="140" width="160" height="30" fill="#fef2f2" stroke="#ef4444" stroke-width="2" rx="4" />
+    <text x="500" y="160" class="danger-text">拿到公鑰也無法解密！</text>
+
+    <!-- Client Encrypts -->
+    <rect x="70" y="190" width="180" height="60" class="box" />
+    <text x="160" y="210" class="box-text">用公鑰加密資料</text>
+    <use href="#pub-key-icon" x="95" y="220" />
+    <text x="125" y="235" class="box-text">+</text>
+    <use href="#data-icon" x="140" y="220" />
+    <text x="173" y="235" class="box-text">→</text>
+    <use href="#ciphertext-icon" x="190" y="220" />
+
+    <!-- Step 2: Send Encrypted Data -->
+    <path d="M 160 260 L 630 260" class="msg-line" marker-end="url(#arrow)" />
+    <text x="250" y="275" class="msg-text">2. [密文] 遞給 Server</text>
+    <use href="#ciphertext-icon" x="380" y="235" />
+
+    <rect x="420" y="240" width="160" height="30" fill="#fef2f2" stroke="#ef4444" stroke-width="2" rx="4" />
+    <text x="500" y="260" class="danger-text">沒有私鑰，打不開！😭</text>
+
+    <!-- Server Decrypts -->
+    <rect x="530" y="290" width="200" height="60" class="box" />
+    <text x="630" y="310" class="box-text">用「私鑰」解開密文</text>
+    <use href="#ciphertext-icon" x="565" y="320" />
+    <text x="595" y="335" class="box-text">+</text>
+    <use href="#priv-key-icon" x="610" y="325" />
+    <text x="640" y="335" class="box-text">→</text>
+    <use href="#data-icon" x="660" y="320" />
+
+    <!-- Conclusion Box -->
+    <rect x="180" y="360" width="440" height="50" class="box" fill="#ecfdf5" stroke="#10b981" />
+    <text x="400" y="380" class="actor-text" font-size="14">非對稱加密優勢</text>
+    <text x="400" y="400" class="box-text">完美解決金鑰配送難題，但運算速度極慢，無法用於大量資料傳輸。</text>
+
+</svg>

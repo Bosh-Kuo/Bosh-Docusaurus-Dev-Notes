@@ -1,0 +1,28 @@
+<svg viewBox="0 0 800 400" xmlns="http://www.w3.org/2000/svg">
+    <polygon points="400,80 230,320 570,320" fill="#f8fafc" stroke="#cbd5e1" stroke-width="8" stroke-linejoin="round"/>
+    
+    <!-- Nodes -->
+    <circle cx="400" cy="80" r="60" fill="#bae6fd" stroke="#0284c7" stroke-width="4"/>
+    <circle cx="230" cy="320" r="60" fill="#fef08a" stroke="#ca8a04" stroke-width="4"/>
+    <circle cx="570" cy="320" r="60" fill="#dcfce7" stroke="#16a34a" stroke-width="4"/>
+    
+    <!-- Text Integrity -->
+    <text x="400" y="70" font-family="system-ui" font-size="20" font-weight="bold" fill="#0369a1" text-anchor="middle">完整性</text>
+    <text x="400" y="90" font-family="system-ui" font-size="14" fill="#0369a1" text-anchor="middle">Integrity</text>
+    <text x="400" y="110" font-family="system-ui" font-size="12" fill="#0369a1" text-anchor="middle">(防篡改)</text>
+    
+    <!-- Text Confidentiality -->
+    <text x="230" y="310" font-family="system-ui" font-size="20" font-weight="bold" fill="#a16207" text-anchor="middle">保密性</text>
+    <text x="230" y="330" font-family="system-ui" font-size="14" fill="#a16207" text-anchor="middle">Confidentiality</text>
+    <text x="230" y="350" font-family="system-ui" font-size="12" fill="#a16207" text-anchor="middle">(防竊聽/加密)</text>
+    
+    <!-- Text Authentication -->
+    <text x="570" y="310" font-family="system-ui" font-size="20" font-weight="bold" fill="#14532d" text-anchor="middle">驗證</text>
+    <text x="570" y="330" font-family="system-ui" font-size="14" fill="#14532d" text-anchor="middle">Authentication</text>
+    <text x="570" y="350" font-family="system-ui" font-size="12" fill="#14532d" text-anchor="middle">(確保身分真實)</text>
+    
+    <!-- Center text -->
+    <circle cx="400" cy="225" r="45" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+    <text x="400" y="222" font-family="system-ui" font-size="24" font-weight="bold" fill="#1e293b" text-anchor="middle">TLS</text>
+    <text x="400" y="242" font-family="system-ui" font-size="14" fill="#64748b" text-anchor="middle">核心作用</text>
+</svg>

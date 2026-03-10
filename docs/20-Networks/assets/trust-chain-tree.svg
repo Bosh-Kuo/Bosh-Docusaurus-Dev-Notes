@@ -1,0 +1,74 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .bg { fill: #ffffff; rx: 12; }
+            .root-node { fill: #fef08a; stroke: #ca8a04; stroke-width: 2; rx: 40; }
+            .inter-node { fill: #bae6fd; stroke: #0284c7; stroke-width: 2; rx: 12; }
+            .leaf-node { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; rx: 4; }
+            .compromised { fill: #fee2e2; stroke: #ef4444; stroke-width: 2; rx: 12; }
+            .compromised-leaf { fill: #fef2f2; stroke: #ef4444; stroke-width: 2; rx: 4; stroke-dasharray: 4; }
+            
+            .text-main { font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+            .text-red { font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; fill: #b91c1c; text-anchor: middle; }
+            
+            .branch { stroke: #94a3b8; stroke-width: 2; fill: none; }
+            .branch-cut { stroke: #ef4444; stroke-width: 2; fill: none; stroke-dasharray: 6; }
+        </style>
+    </defs>
+
+    <rect width="800" height="450" class="bg" />
+    <text x="400" y="40" class="text-main" font-size="20">憑證樹狀結構：損害控制 (Damage Control)</text>
+
+    <!-- Root CA (Top) -->
+    <rect x="330" y="80" width="140" height="60" class="root-node" />
+    <text x="400" y="110" class="text-main">根憑證 (Root CA)</text>
+    <text x="400" y="125" class="text-main" font-size="12" fill="#ca8a04">(離線保存・最高機密)</text>
+
+    <!-- Branches to Intermediates -->
+    <path d="M 400 140 L 200 220" class="branch" />
+    <path d="M 400 140 L 400 220" class="branch" />
+    <path d="M 400 140 L 600 220" class="branch-cut" />
+    
+    <!-- Red Cross on cut branch -->
+    <path d="M 520 170 L 540 190 M 540 170 L 520 190" stroke="#ef4444" stroke-width="4" />
+
+    <!-- Intermediate CAs -->
+    <rect x="130" y="220" width="140" height="40" class="inter-node" />
+    <text x="200" y="245" class="text-main">中繼 CA (A)</text>
+
+    <rect x="330" y="220" width="140" height="40" class="inter-node" />
+    <text x="400" y="245" class="text-main">中繼 CA (B)</text>
+
+    <rect x="530" y="220" width="140" height="40" class="compromised" />
+    <text x="600" y="245" class="text-red">中繼 CA 被駭 (C)</text>
+
+    <!-- Leaves CA A -->
+    <path d="M 200 260 L 140 330" class="branch" />
+    <path d="M 200 260 L 260 330" class="branch" />
+    
+    <rect x="90" y="330" width="100" height="30" class="leaf-node" />
+    <text x="140" y="350" class="text-main" font-size="12">伺服器 A1</text>
+    
+    <rect x="210" y="330" width="100" height="30" class="leaf-node" />
+    <text x="260" y="350" class="text-main" font-size="12">伺服器 A2</text>
+
+    <!-- Leaves CA B -->
+    <path d="M 400 260 L 400 330" class="branch" />
+    <rect x="350" y="330" width="100" height="30" class="leaf-node" />
+    <text x="400" y="350" class="text-main" font-size="12">伺服器 B1</text>
+
+    <!-- Leaves CA C (Compromised) -->
+    <path d="M 600 260 L 540 330" class="branch-cut" />
+    <path d="M 600 260 L 660 330" class="branch-cut" />
+    
+    <rect x="490" y="330" width="100" height="30" class="compromised-leaf" />
+    <text x="540" y="350" class="text-red" font-size="12">撤銷連帶網站</text>
+    
+    <rect x="610" y="330" width="100" height="30" class="compromised-leaf" />
+    <text x="660" y="350" class="text-red" font-size="12">撤銷連帶網站</text>
+
+    <!-- Concept text bottom -->
+    <rect x="150" y="390" width="500" height="40" rx="8" fill="#f1f5f9" />
+    <text x="400" y="415" class="text-main" fill="#475569">只要撤銷被駭的「中繼憑證 C」，其餘分支皆不受影響</text>
+
+</svg>

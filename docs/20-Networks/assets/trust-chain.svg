@@ -1,0 +1,58 @@
+<svg viewBox="0 0 800 450" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+        <style>
+            .bg { fill: #ffffff; rx: 12; }
+            .box-root { fill: #fef08a; stroke: #ca8a04; stroke-width: 2; rx: 8; }
+            .box-inter { fill: #bae6fd; stroke: #0284c7; stroke-width: 2; rx: 8; }
+            .box-server { fill: #dcfce7; stroke: #16a34a; stroke-width: 2; rx: 8; }
+            .text-title { font-family: system-ui, sans-serif; font-size: 16px; font-weight: bold; fill: #1e293b; text-anchor: middle; }
+            .text-desc { font-family: system-ui, sans-serif; font-size: 14px; fill: #475569; text-anchor: middle; }
+            .text-sign { font-family: system-ui, sans-serif; font-size: 14px; font-weight: bold; fill: #0f172a; text-anchor: middle; }
+        </style>
+        <marker id="arrow" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#64748b" />
+        </marker>
+        <marker id="arrow-verify" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto" markerUnits="strokeWidth">
+            <path d="M0,0 L0,6 L9,3 z" fill="#16a34a" />
+        </marker>
+    </defs>
+
+    <rect width="800" height="450" class="bg" />
+
+    <text x="400" y="40" class="text-title" font-size="20">憑證的信任傳遞鏈 (Certificate Trust Chain)</text>
+
+    <!-- OS Built-in Area -->
+    <rect x="50" y="80" width="260" height="340" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" stroke-dasharray="4" rx="8" />
+    <text x="180" y="110" class="text-title" fill="#475569">作業系統/瀏覽器內建</text>
+    <text x="180" y="130" class="text-desc" font-size="12">(預設絕對信任)</text>
+
+    <!-- Root CA -->
+    <rect x="80" y="150" width="200" height="80" class="box-root" />
+    <text x="180" y="180" class="text-title" fill="#854d0e">根憑證 (Root CA)</text>
+    <text x="180" y="200" class="text-desc" fill="#a16207">自己簽給自己的憑證</text>
+    <text x="180" y="215" class="text-desc" font-size="12" fill="#ca8a04">包含：Root 公鑰</text>
+
+    <!-- Issued by Root CA -> Intermediate CA -->
+    <path d="M 280 190 L 520 190" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="400" y="180" class="text-sign">用 Root 私鑰簽署 ✍️</text>
+
+    <!-- Intermediate CA -->
+    <rect x="530" y="150" width="200" height="80" class="box-inter" />
+    <text x="630" y="180" class="text-title" fill="#0369a1">中繼憑證 (Intermediate)</text>
+    <text x="630" y="200" class="text-desc" fill="#0284c7">DigiCert, Let's Encrypt</text>
+    <text x="630" y="215" class="text-desc" font-size="12" fill="#0ea5e9">包含：中繼公鑰</text>
+
+    <!-- Issued by Intermediate -> Server -->
+    <path d="M 630 230 L 630 330" stroke="#64748b" stroke-width="2" marker-end="url(#arrow)" />
+    <text x="710" y="285" class="text-sign">用中繼私鑰<br/>簽署 ✍️</text>
+
+    <!-- Server Cert -->
+    <rect x="530" y="340" width="200" height="80" class="box-server" />
+    <text x="630" y="370" class="text-title" fill="#14532d">伺服器憑證 (Server Leaf)</text>
+    <text x="630" y="390" class="text-desc" fill="#15803d">google.com</text>
+    <text x="630" y="405" class="text-desc" font-size="12" fill="#22c55e">包含：目標伺服器公鑰</text>
+
+    <!-- Verification Upward path -->
+    <path d="M 520 380 L 180 380 L 180 240" stroke="#16a34a" stroke-width="3" stroke-dasharray="6" fill="none" marker-end="url(#arrow-verify)" />
+    <text x="350" y="370" class="text-desc" fill="#15803d" font-weight="bold">瀏覽器收到憑證包，沿著鏈條往上驗證 (直到碰觸根憑證)</text>
+</svg>
