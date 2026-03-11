@@ -53,8 +53,8 @@
     <text x="150" y="275" class="success-text">✅ 驗證成功！這個 Server 公鑰是真的</text>
 
     <!-- Step 2: Use Real Public Key -->
-    <rect x="20" y="320" width="260" height="40" class="box" fill="#f0fdf4" stroke="#22c55e" />
-    <text x="150" y="345" class="box-text" fill="#14532d">安心地用此公鑰加密「Premaster Secret」</text>
+    <rect x="20" y="320" width="280" height="40" class="box" fill="#f0fdf4" stroke="#22c55e" />
+    <text x="165" y="345" class="box-text" fill="#14532d">安心地用此公鑰加密「Premaster Secret」</text>
 
     <path d="M 110 380 L 390 380" class="msg-line" stroke="#22c55e" marker-end="url(#arrow)" />
     <text x="255" y="375" class="msg-text" fill="#166534">2. [密文] 傳送被鎖上的 Secret </text>

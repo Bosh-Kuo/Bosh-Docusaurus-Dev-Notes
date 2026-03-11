@@ -27,22 +27,22 @@ tags: [Networks]
 
 ## **前言**
 
-早期的網際網路就像是一個巨大的郵局，在 HTTPS 還沒發展之前，我們使用的 **HTTP (HyperText Transfer Protocol)** 協定本質上就是在寄送「明信片」。當你在網站上填寫個人資料、甚至是匯款帳號並點擊送出時，這些資料就赤裸裸地寫在明信片上。中途經過的電信商、路由器節點，甚至是剛好坐在你旁邊連著同一個咖啡廳 Wi-Fi 的駭客，只要稍微看一眼，就能把機密看光光。不僅如此，他們甚至還能偷偷拿橡皮擦把明信片上的匯款帳號改成他們自己的，而收件人完全不會發現。
+網際網路就像是一個巨大的郵局，早期在 HTTPS 還沒發展之前，我們使用的 **HTTP (HyperText Transfer Protocol)** 協定本質上就是在寄送「明信片」。當你在網站上填寫個人資料、甚至是匯款帳號並點擊送出時，這些資料就赤裸裸地寫在明信片上。中途經過的電信商、路由器節點，甚至是剛好坐在你旁邊連著同一個咖啡廳 Wi-Fi 的駭客，只要稍微看一眼，就能把機密看光光。不僅如此，他們甚至還能偷偷拿橡皮擦把明信片上的匯款帳號改成他們自己的，而收件人完全不會發現。
 
-這種「不保密、不防偽」的資訊裸奔環境，促使了 **HTTPS (HyperText Transfer Protocol Secure)** 的誕生。但 HTTPS 並不是一個全新的協議，而是一套為了解決上述「竊聽」與「篡改」問題而逐步疊加的防護機制。接下來，我們將循序漸進地了解，網路通訊是如何從寄送明信片，變成把信放進保險箱、找公證人蓋章，最終演變成今天銅牆鐵壁般的安全標準。
+這種「不保密、不防偽」的資訊裸奔環境，促使了 **HTTPS (HyperText Transfer Protocol Secure)** 的誕生。但 HTTPS 並不是一個全新的協議，而是一套為了解決上述「竊聽」與「篡改」問題而逐步疊加的防護機制。接下來，我們將循序漸進地了解，網路通訊是如何從如同裸奔的 HTTP，演變成今天安全的 HTTPS。
 
 <br/>
 
 ## **SSL/TLS：為通訊披上加密外衣**
 
-要將不安全的 HTTP 升級成安全的 HTTPS，最核心的關鍵就是加入了 **SSL/TLS** 這個安全協定層。它就像是在原本的 HTTP 訊息外圍，套上了一層可以進行「加解密與隱藏」的裝甲。
+HTTP 與 HTTPS 最大的差異就在於 HTTPS 多了一道加/解密程序。而要將不安全的 HTTP 升級成安全的 HTTPS，最核心的關鍵就是加入了 **SSL/TLS** 這個安全協定層。它就像是在原本的 HTTP 訊息外圍，套上了一層可以進行「加解密與隱藏」的裝甲。
 
 ![HTTP vs HTTPS](./assets/http-vs-https.svg)
 
 ### **SSL 與 TLS 的區別**
 
-在網路安全協定的發展史上，你一定經常聽到 SSL 和 TLS 這兩個詞互換使用，但它們其實是有歷史淵源的：
-- **SSL (Secure Sockets Layer)**：早在 1994 年由 [網景公司 (Netscape)](https://zh.wikipedia.org/zh-tw/%E7%BD%91%E6%99%AF) 所開發。但發展到 SSL 3.0 後，因為被發現存在嚴重且無法修復的安全漏洞，目前已經被全面棄用。
+在網路安全協定的發展史上，一定經常聽到 SSL 和 TLS 這兩個詞，這兩個詞常常會被搞混或者互換使用，實際上他們是完全不同的東西，但它們之間確實有歷史淵源：
+- **SSL (Secure Sockets Layer)**：早在 1994 年由 [網景公司 (Netscape)](https://zh.wikipedia.org/zh-tw/%E7%BD%91%E6%99%AF) 所開發的網路安全協定。但發展到 SSL 3.0 後，因為被發現存在嚴重且無法修復的安全漏洞，目前已經被全面棄用。
 - **TLS (Transport Layer Security)**：[IETF (網際網路工程任務組)](https://zh.wikipedia.org/zh-tw/%E4%BA%92%E8%81%AF%E7%B6%B2%E5%B7%A5%E7%A8%8B%E4%BB%BB%E5%8B%99%E7%B5%84) 接手了 SSL 3.0 的架構並進行了標準化與升級，更名為 TLS。現在我們所使用的安全連線，實際上跑的全部都是 TLS（目前主流為 TLS 1.2 與極速的 TLS 1.3）。
 
 :::info 日常溝通的慣用語
@@ -64,10 +64,9 @@ tags: [Networks]
 
 ### **TLS 在 OSI 模型的位置**
 
-在標準的 OSI 七層參考模型中，HTTP 屬於最高層的「應用層」（第 7 層），而負責點對點傳輸的 TCP 屬於「傳輸層」（第 4 層）。
+前面提到 TLS 就像是在 HTTP 訊息外圍，套上了一層可以進行「加解密與隱藏」的裝甲。那麼 TLS 在 OSI 模型中位於哪裡呢？
 
-那麼 TLS 到底在哪裡？
-嚴格來說，TLS 在設計上位於應用層與傳輸層之間。它在 OSI 模型中承擔了**表達層 (Presentation Layer, 第 6 層)** 負責資料加密與解密的工作，以及部分**會議層 (Session Layer, 第 5 層)** 負責交握與連線狀態管理的工作。
+在標準的 OSI 七層參考模型中，HTTP 屬於最高層的「應用層」（第 7 層），而負責點對點傳輸的 TCP 屬於「傳輸層」（第 4 層）。嚴格來說，TLS 在設計上位於應用層與傳輸層之間。它在 OSI 模型中承擔了**表達層 (Presentation Layer, 第 6 層)** 負責資料加密與解密的工作，以及部分**會議層 (Session Layer, 第 5 層)** 負責交握與連線狀態管理的工作。
 
 當瀏覽器要發送 HTTP 請求時，資料會先向下傳遞給 TLS，TLS 負責把內容加密打包好之後，再丟給下方的 TCP 去分割傳送；接收端的流程則反之。這種分層設計非常優雅，因為這意味著 **HTTP 協定本身完全不需要去管加密的邏輯**，它只要把資料交給下層的 TLS 就好了。
 
@@ -244,6 +243,25 @@ tags: [Networks]
 你可以把信任鏈想像成一棵大樹。如果中繼 CA 的私鑰不小心被駭客竊取了（樹枝斷了），這雖然是嚴重的資安事件，但根 CA 只需要發布撤銷命令，將這個中繼 CA 註銷掉，砍掉這根樹枝就好，其他沒受牽連的中繼 CA 與底下的網站依然安全。
 
 但如果根 CA（樹頭）的私鑰被盜了，那是毀滅性災難。整個網際網路的地基會崩塌，所有電腦都必須緊急強制更新作業系統來移除這個根 CA。這就是為什麼根憑證絕對不能輕易出馬，必須透過信任鏈來作緩衝。
+
+### **實戰演練：從瀏覽器查看網站的 CA 憑證**
+
+了解了這麼多關於憑證的原理後，現在我們來親自操作看看，如何從瀏覽器中看到我們所訪問的網站的憑證：
+
+1. 首先，點擊瀏覽器網址列左邊的按鈕，可以打開安全資訊面板，並找到這個網站的 CA 憑證。
+   ![瀏覽器查看 CA 憑證](https://res.cloudinary.com/djtoo8orh/image/upload/v1773192622/Docusaurus%20Blog/Networks/HTTPS%20and%20TLS/ca-cert_nwgn1w.png)
+
+2. 在憑證詳細資訊中找到「發行者 (Issuer)」，可以看到是哪個 CA 頒發了這個憑證。
+   ![尋找憑證發行者](https://res.cloudinary.com/djtoo8orh/image/upload/v1773192621/Docusaurus%20Blog/Networks/HTTPS%20and%20TLS/cert-issuer_d0mdaw.png)
+
+3. 我們可以用 Mac 的 Spotlight 打開「鑰匙圈存取 (Keychain Access)」，找尋這個發行者的 CN (Common Name)，果然成功找到系統裡面內建有這份根憑證（或中繼憑證）。
+   ![系統內建 CA 憑證](https://res.cloudinary.com/djtoo8orh/image/upload/v1773192622/Docusaurus%20Blog/Networks/HTTPS%20and%20TLS/mac-ca-cert_agfe1u.png)
+
+4. 系統接著提取這份內建憑證內的公鑰，用它來解密並驗證這個網站 CA 憑證的數位簽章。
+   ![驗證憑證簽章](https://res.cloudinary.com/djtoo8orh/image/upload/v1773192622/Docusaurus%20Blog/Networks/HTTPS%20and%20TLS/sign_lveqcb.png)
+
+5. 最後，瀏覽器還會檢查憑證「主體 (Subject)」的 CN 是否跟當下訪問的域名一致，證明這個證書跟域名確實是綁定的。這也說明了，若是沒有使用 HTTPS，很難確認自己訪問的是不是真實的官網，因為第三方 CA 在同意頒發憑證之前，都會對網站所有者進行嚴格的網站信息審查。
+   ![檢查憑證主體網域](https://res.cloudinary.com/djtoo8orh/image/upload/v1773192621/Docusaurus%20Blog/Networks/HTTPS%20and%20TLS/ca-cert-domain_dvqgb6.png)
 
 <br/>
 

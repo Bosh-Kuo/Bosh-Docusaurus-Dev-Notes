@@ -161,7 +161,7 @@
 
     <!-- Client Encrypts Premaster A -->
     <rect x="30" y="320" width="240" height="60" class="box-gray" />
-    <text x="150" y="340" class="box-gray-text">用假公鑰加上 Premaster Secret A</text>
+    <text x="150" y="340" class="box-gray-text">用假公鑰加密 Premaster Secret A</text>
     <use href="#pub-key-fake" x="70" y="350" />
     <text x="105" y="365" class="box-gray-text">+</text>
     <use href="#premaster-a" x="120" y="355" />
@@ -183,8 +183,8 @@
     <use href="#premaster-a" x="430" y="475" />
 
     <!-- Hacker generates Premaster B and Encrypts with True Pub Key -->
-    <rect x="260" y="520" width="280" height="60" class="box-red" />
-    <text x="400" y="540" class="box-red-text" font-weight="bold">生成 Secret B，用偷來的「真公鑰」鎖上</text>
+    <rect x="250" y="520" width="300" height="60" class="box-red" />
+    <text x="400" y="540" class="box-red-text" font-weight="bold">駭客生成 Secret B，用偷來的「真公鑰」鎖上</text>
     <use href="#pub-key-true" x="310" y="550" />
     <text x="345" y="565" class="box-red-text">+</text>
     <use href="#premaster-b" x="360" y="555" />
@@ -206,10 +206,10 @@
     <use href="#premaster-b" x="680" y="675" />
 
     <!-- Conclusion: Setup with two session keys -->
-    <rect x="150" y="730" width="500" height="40" class="box-gray" fill="#fff1f2" stroke="#f43f5e" />
-    <text x="400" y="755" class="msg-red-text" font-size="12">完全掌控：駭客成功在中間建立了互相獨立的 Session Key A 與 B！</text>
-    <use href="#session-a" x="610" y="738" />
-    <use href="#session-b" x="635" y="738" />
+    <rect x="80" y="730" width="640" height="40" class="box-gray" fill="#fff1f2" stroke="#f43f5e" />
+    <text x="400" y="755" class="msg-red-text" font-size="12">駭客成功在中間用偷來的 Secret A 與自己生成的 Secret B 建立了互相獨立的 Session Key A 與 B！</text>
+    <use href="#session-a" x="640" y="725" />
+    <use href="#session-b" x="680" y="725" />
 
     <!-- New Phase: Intercepting Symmetric Data -->
     <rect x="250" y="790" width="300" height="30" class="box-red" />
