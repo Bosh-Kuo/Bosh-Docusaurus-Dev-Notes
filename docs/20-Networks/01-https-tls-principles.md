@@ -1,6 +1,6 @@
 ---
 title: 圖解 HTTPS / TLS 原理：從密碼學機制到安全交握流程
-sidebar_label: "HTTPS 與 TLS 通訊原理"
+sidebar_label: "HTTPS & TLS"
 description: 本篇筆記將從頭詳細講解 HTTPS 的通訊原理，包含 HTTP 與 HTTPS 的差異、對稱與非對稱加密演算法、數位憑證與 CA 簽章的作用，並透過序列圖完整拆解 TLS 的交握流程與相關安全攻擊。
 last_update:
   date: 2026-03-10

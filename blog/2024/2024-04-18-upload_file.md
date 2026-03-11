@@ -1,22 +1,16 @@
 ---
 title: 以 React + Express 為範例探討 Web 應用中的檔案上傳機制
-sidebar_label: "Web 檔案上傳功能"
+slug: upload_file
+authors: bosh
 description: 本篇技術筆記將以 React + Express 為例，探討 Web 應用中的檔案上傳機制。本文章將介紹如何使用 React 搭配 react-dropzone 套件建立前端上傳介面，以及如何使用 Express 搭配 multer 套件在後端處理上傳的檔案。
-last_update:
-  date: 2024-04-18
-keywords:
-  - Web 檔案上傳機制
-  - upload
-  - React
-  - Express
-  - File
-  - Buffer
-  - multer
-  - react-dropzone
+keywords: [Web 檔案上傳機制, upload, React, Express, File, Buffer, multer, react-dropzone]
 tags: [Web]
+date: 2024-04-18
 ---
 
 最近在工作遇到了需要處理上傳檔案的需求，借此機會完整地學習 Web 前後端處理檔案上傳的機制。本篇筆記以一個簡單範例輔助學習，該範例提供使用者在畫面中上傳任意圖片格式的單一圖片檔案，並儲存於伺服器端的特定資料夾中。使用者可以透過拖放的方式將檔案上傳至網站上，亦可以用點擊的方式打開資料總管，選擇要上傳的檔案。
+
+<!-- truncate -->
 
 :::note
 本篇筆記專注於探討 React 專案中檔案上傳的各種機制與資料結構。本文不會深入討論元件的樣式問題。本筆記提供的範例程式碼將專注於功能實現。

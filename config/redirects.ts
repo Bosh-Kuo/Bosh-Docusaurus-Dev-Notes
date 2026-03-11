@@ -67,6 +67,26 @@ const redirects = [
     to: "/docs/NodeJS/pkgs/exceljs",
     from: "/docs/NodeJS/npm-packages/exceljs",
   },
+  {
+    to: "/blog/upload_file",
+    from: "/docs/Web/upload_file",
+  },
+  {
+    to: "/docs/Networks/url",
+    from: "/docs/Web/url",
+  },
+  {
+    to: "/docs/Software-Engineering/Auth/jwt",
+    from: "/docs/Web/jwt",
+  },
+  {
+    to: "/docs/Software-Engineering/Security/sop-and-cors",
+    from: "/docs/Web/sop-and-cors",
+  },
+  {
+    to: "/docs/Software-Engineering/Security/XSS",
+    from: "/docs/Web/XSS",
+  },
 ];
 
 export default redirects;
