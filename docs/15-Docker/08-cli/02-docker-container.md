@@ -8,6 +8,8 @@ keywords: [Docker, docker container, Docker 常用指令, Docker 容器操作指
 tags: [Docker]
 ---
 
+`docker container` 指令是 Docker 中專門用於管理容器生命週期的指令集合，涵蓋了容器從建立、啟動、停止到刪除的完整操作流程。透過這組子命令，使用者可以靈活地控制容器的運行狀態、查看執行日誌、在容器與主機之間傳輸檔案、進入容器執行互動式命令，以及即時監控資源使用狀況。
+
 ### **`commit`: 創建容器當前狀態的映像**
 
 | 說明     | 從運行中或停止的容器創建新的映像，保存容器的當前狀態             |
@@ -299,3 +301,7 @@ docker stop my-container
 
 > 詳細 Options 說明可參閱 [**@docker container stop**](https://docs.docker.com/reference/cli/docker/container/stop/)
 >
+
+
+## **Reference**
+- [**docker container**](https://docs.docker.com/reference/cli/docker/container/)
