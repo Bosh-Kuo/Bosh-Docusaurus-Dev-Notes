@@ -1,0 +1,98 @@
+<svg viewBox="0 0 820 320" xmlns="http://www.w3.org/2000/svg">
+  <rect width="820" height="320" fill="#ffffff"/>
+  <text x="410" y="26" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">TCP vs UDP：兩種截然不同的傳輸哲學</text>
+
+  <!-- ===== Left: TCP ===== -->
+  <rect x="15" y="38" width="378" height="268" fill="#faf5ff" stroke="#7c3aed" stroke-width="2" rx="8"/>
+  <rect x="15" y="38" width="378" height="32" fill="#7c3aed" rx="8"/>
+  <rect x="15" y="58" width="378" height="12" fill="#7c3aed"/>
+  <text x="204" y="59" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">TCP — 可靠傳輸（Reliable）</text>
+
+  <!-- Sender box (TCP) -->
+  <rect x="30" y="84" width="70" height="36" fill="#7c3aed" rx="6"/>
+  <text x="65" y="106" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Sender</text>
+
+  <!-- Receiver box (TCP) -->
+  <rect x="315" y="84" width="70" height="36" fill="#7c3aed" rx="6"/>
+  <text x="350" y="106" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Receiver</text>
+
+  <!-- Packet 1 →  ACK 1 ← -->
+  <rect x="110" y="92" width="44" height="22" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5" rx="3"/>
+  <text x="132" y="107" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">Seg 1</text>
+  <line x1="100" y1="103" x2="315" y2="103" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+  <!-- ACK back -->
+  <text x="220" y="136" font-size="10" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">✓ ACK 1</text>
+  <line x1="315" y1="130" x2="100" y2="130" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5" marker-end="url(#arrowGreen)"/>
+
+  <!-- Packet 2 → ACK 2 ← -->
+  <rect x="110" y="156" width="44" height="22" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5" rx="3"/>
+  <text x="132" y="171" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">Seg 2</text>
+  <line x1="100" y1="167" x2="315" y2="167" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+  <!-- ACK back -->
+  <text x="220" y="200" font-size="10" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">✓ ACK 2</text>
+  <line x1="315" y1="194" x2="100" y2="194" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5" marker-end="url(#arrowGreen)"/>
+
+  <!-- Packet 3 → ACK 3 ← -->
+  <rect x="110" y="220" width="44" height="22" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5" rx="3"/>
+  <text x="132" y="235" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">Seg 3</text>
+  <line x1="100" y1="231" x2="315" y2="231" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arrowPurple)"/>
+  <!-- ACK back -->
+  <text x="220" y="264" font-size="10" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">✓ ACK 3</text>
+  <line x1="315" y1="258" x2="100" y2="258" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5" marker-end="url(#arrowGreen)"/>
+
+  <!-- TCP label bottom -->
+  <text x="204" y="294" font-size="11" fill="#6d28d9" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">每個 Segment 都需確認應答（ACK），確保送達</text>
+
+  <!-- ===== Right: UDP ===== -->
+  <rect x="427" y="38" width="378" height="268" fill="#fff7ed" stroke="#ea580c" stroke-width="2" rx="8"/>
+  <rect x="427" y="38" width="378" height="32" fill="#ea580c" rx="8"/>
+  <rect x="427" y="58" width="378" height="12" fill="#ea580c"/>
+  <text x="616" y="59" font-size="13" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">UDP — 快速傳輸（Best Effort）</text>
+
+  <!-- Sender box (UDP) -->
+  <rect x="442" y="84" width="70" height="36" fill="#ea580c" rx="6"/>
+  <text x="477" y="106" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Sender</text>
+
+  <!-- Receiver box (UDP) -->
+  <rect x="727" y="84" width="70" height="36" fill="#ea580c" rx="6"/>
+  <text x="762" y="106" font-size="12" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Receiver</text>
+
+  <!-- Datagram 1 → delivered -->
+  <rect x="522" y="92" width="50" height="22" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5" rx="3"/>
+  <text x="547" y="107" font-size="10" fill="#9a3412" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">DG 1</text>
+  <line x1="512" y1="103" x2="727" y2="103" stroke="#ea580c" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+  <text x="762" y="124" font-size="10" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">✓ 收到</text>
+
+  <!-- Datagram 2 → LOST -->
+  <rect x="522" y="152" width="50" height="22" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5" rx="3"/>
+  <text x="547" y="167" font-size="10" fill="#9a3412" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">DG 2</text>
+  <line x1="512" y1="163" x2="620" y2="163" stroke="#ea580c" stroke-width="1.5" stroke-dasharray="5"/>
+  <!-- X mark for lost packet -->
+  <circle cx="660" cy="163" r="14" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+  <text x="660" y="168" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">✕</text>
+  <text x="660" y="192" font-size="10" fill="#b91c1c" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">封包遺失</text>
+  <text x="660" y="204" font-size="10" fill="#b91c1c" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">不重傳！</text>
+
+  <!-- Datagram 3 → delivered -->
+  <rect x="522" y="222" width="50" height="22" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5" rx="3"/>
+  <text x="547" y="237" font-size="10" fill="#9a3412" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">DG 3</text>
+  <line x1="512" y1="233" x2="727" y2="233" stroke="#ea580c" stroke-width="1.5" marker-end="url(#arrowOrange)"/>
+  <text x="762" y="254" font-size="10" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">✓ 收到</text>
+
+  <!-- UDP label bottom -->
+  <text x="616" y="285" font-size="11" fill="#9a3412" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">發送後不管，不確認、不重傳，速度快</text>
+  <text x="616" y="299" font-size="11" fill="#9a3412" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">適用：串流影音、DNS、線上遊戲</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrowPurple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrowOrange" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ea580c"/>
+    </marker>
+  </defs>
+</svg>

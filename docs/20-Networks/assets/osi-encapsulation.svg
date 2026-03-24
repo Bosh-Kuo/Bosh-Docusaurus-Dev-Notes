@@ -1,0 +1,99 @@
+<svg viewBox="0 0 900 480" xmlns="http://www.w3.org/2000/svg">
+  <rect width="900" height="480" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="450" y="28" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">封裝機制 (Encapsulation)：資料向下傳遞，每層加入標頭</text>
+
+  <!-- ========== ROW HELPER: Layer labels on left, PDU name on right ========== -->
+
+  <!-- ===== ROW 1: L7-L5 Application Data ===== -->
+  <text x="92" y="73" font-size="12" font-weight="bold" fill="#3b82f6" text-anchor="end" font-family="system-ui, -apple-system, sans-serif">L7 — L5</text>
+  <!-- Application Data block -->
+  <rect x="100" y="52" width="380" height="44" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="2" rx="4"/>
+  <text x="290" y="79" font-size="13" fill="#0369a1" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">Application Data（應用資料）</text>
+  <!-- PDU label -->
+  <text x="496" y="75" font-size="12" fill="#64748b" font-family="system-ui, -apple-system, sans-serif">→  Data / Message</text>
+
+  <!-- Arrow: L5 → L4 -->
+  <line x1="295" y1="96" x2="295" y2="110" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="289,110 301,110 295,118" fill="#94a3b8"/>
+  <text x="508" y="107" font-size="11" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif">L4 加上傳輸層標頭 (Port, Sequence#)</text>
+
+  <!-- ===== ROW 2: L4 Segment ===== -->
+  <text x="92" y="147" font-size="12" font-weight="bold" fill="#7c3aed" text-anchor="end" font-family="system-ui, -apple-system, sans-serif">L4</text>
+  <!-- L4 Header -->
+  <rect x="100" y="126" width="58" height="44" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+  <text x="129" y="148" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">L4</text>
+  <text x="129" y="162" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Header</text>
+  <!-- Application Data block -->
+  <rect x="158" y="126" width="380" height="44" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="2" rx="4"/>
+  <text x="348" y="153" font-size="13" fill="#0369a1" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Application Data</text>
+  <!-- PDU label -->
+  <text x="554" y="149" font-size="12" fill="#64748b" font-family="system-ui, -apple-system, sans-serif">→  Segment / Datagram</text>
+
+  <!-- Arrow: L4 → L3 -->
+  <line x1="320" y1="170" x2="320" y2="184" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="314,184 326,184 320,192" fill="#94a3b8"/>
+  <text x="508" y="181" font-size="11" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif">L3 加上網路層標頭 (IP 地址)</text>
+
+  <!-- ===== ROW 3: L3 Packet ===== -->
+  <text x="92" y="221" font-size="12" font-weight="bold" fill="#16a34a" text-anchor="end" font-family="system-ui, -apple-system, sans-serif">L3</text>
+  <!-- L3 Header -->
+  <rect x="100" y="200" width="58" height="44" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <text x="129" y="222" font-size="10" fill="#166534" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">L3</text>
+  <text x="129" y="236" font-size="10" fill="#166534" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Header</text>
+  <!-- L4 Header (carried) -->
+  <rect x="158" y="200" width="58" height="44" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+  <text x="187" y="222" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">L4</text>
+  <text x="187" y="236" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Header</text>
+  <!-- Application Data block -->
+  <rect x="216" y="200" width="380" height="44" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="2" rx="4"/>
+  <text x="406" y="227" font-size="13" fill="#0369a1" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Application Data</text>
+  <!-- PDU label -->
+  <text x="612" y="223" font-size="12" fill="#64748b" font-family="system-ui, -apple-system, sans-serif">→  Packet（封包）</text>
+
+  <!-- Arrow: L3 → L2 -->
+  <line x1="345" y1="244" x2="345" y2="258" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="339,258 351,258 345,266" fill="#94a3b8"/>
+  <text x="508" y="255" font-size="11" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif">L2 加上幀標頭 (MAC 地址) 與幀尾 (FCS)</text>
+
+  <!-- ===== ROW 4: L2 Frame ===== -->
+  <text x="92" y="295" font-size="12" font-weight="bold" fill="#d97706" text-anchor="end" font-family="system-ui, -apple-system, sans-serif">L2</text>
+  <!-- L2 Header -->
+  <rect x="100" y="274" width="58" height="44" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="4"/>
+  <text x="129" y="296" font-size="10" fill="#92400e" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">L2</text>
+  <text x="129" y="310" font-size="10" fill="#92400e" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Header</text>
+  <!-- L3 Header (carried) -->
+  <rect x="158" y="274" width="58" height="44" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <text x="187" y="296" font-size="10" fill="#166534" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">L3</text>
+  <text x="187" y="310" font-size="10" fill="#166534" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Header</text>
+  <!-- L4 Header (carried) -->
+  <rect x="216" y="274" width="58" height="44" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="4"/>
+  <text x="245" y="296" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">L4</text>
+  <text x="245" y="310" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Header</text>
+  <!-- Application Data block -->
+  <rect x="274" y="274" width="295" height="44" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="2" rx="4"/>
+  <text x="421" y="301" font-size="13" fill="#0369a1" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Application Data</text>
+  <!-- L2 Trailer (FCS) -->
+  <rect x="569" y="274" width="52" height="44" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="4"/>
+  <text x="595" y="296" font-size="10" fill="#b91c1c" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">L2</text>
+  <text x="595" y="310" font-size="10" fill="#b91c1c" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Trailer</text>
+  <!-- PDU label -->
+  <text x="636" y="297" font-size="12" fill="#64748b" font-family="system-ui, -apple-system, sans-serif">→  Frame（幀）</text>
+
+  <!-- Arrow: L2 → L1 -->
+  <line x1="380" y1="318" x2="380" y2="332" stroke="#94a3b8" stroke-width="2"/>
+  <polygon points="374,332 386,332 380,340" fill="#94a3b8"/>
+  <text x="508" y="329" font-size="11" fill="#94a3b8" font-family="system-ui, -apple-system, sans-serif">L1 轉換為電訊號 / 光訊號 / 無線電波</text>
+
+  <!-- ===== ROW 5: L1 Bits ===== -->
+  <text x="92" y="382" font-size="12" font-weight="bold" fill="#64748b" text-anchor="end" font-family="system-ui, -apple-system, sans-serif">L1</text>
+  <rect x="100" y="348" width="520" height="44" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" rx="4"/>
+  <text x="360" y="375" font-size="13" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" letter-spacing="3">0 1 0 1 1 0 1 0  0 0 1 1 0 1 0 1  1 0 1 0 0 1 1 0  . . .</text>
+  <text x="636" y="371" font-size="12" fill="#64748b" font-family="system-ui, -apple-system, sans-serif">→  Bits（位元）</text>
+
+  <!-- Legend at bottom -->
+  <rect x="100" y="416" width="520" height="50" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" rx="6"/>
+  <text x="360" y="432" font-size="11" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">接收端（解封裝 Decapsulation）：方向反轉 — 每層拆除自己的標頭，向上傳遞</text>
+  <text x="360" y="453" font-size="11" fill="#94a3b8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">L1 接收位元 → L2 驗 MAC 拆幀 → L3 驗 IP 拆包 → L4 驗 Port 拆段 → L7 應用程式處理</text>
+</svg>

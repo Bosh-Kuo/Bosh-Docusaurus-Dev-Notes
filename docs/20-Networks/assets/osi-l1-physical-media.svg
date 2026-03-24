@@ -1,0 +1,86 @@
+<svg viewBox="0 0 780 290" xmlns="http://www.w3.org/2000/svg">
+  <rect width="780" height="290" fill="#ffffff"/>
+  <text x="390" y="26" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">L1 實體層：三種主要傳輸介質</text>
+
+  <!-- ===== Panel 1: Copper Wire (Amber) ===== -->
+  <rect x="15" y="40" width="230" height="235" fill="#fefce8" stroke="#d97706" stroke-width="2" rx="8"/>
+  <text x="130" y="62" font-size="13" font-weight="bold" fill="#92400e" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">銅線（雙絞線）</text>
+  <text x="130" y="79" font-size="10" fill="#a16207" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Cat5e · Cat6 · RJ-45</text>
+
+  <!-- Cable icon: horizontal rectangle -->
+  <rect x="40" y="96" width="180" height="14" rx="7" fill="#d97706"/>
+  <rect x="60" y="99" width="20" height="8" rx="2" fill="#fde68a"/>
+  <rect x="90" y="99" width="20" height="8" rx="2" fill="#fde68a"/>
+  <rect x="120" y="99" width="20" height="8" rx="2" fill="#fde68a"/>
+  <rect x="150" y="99" width="20" height="8" rx="2" fill="#fde68a"/>
+  <rect x="180" y="99" width="20" height="8" rx="2" fill="#fde68a"/>
+
+  <!-- Sine wave: electrical signal -->
+  <text x="130" y="135" font-size="10" fill="#92400e" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">電壓訊號（Electrical Signal）</text>
+  <path d="M 30,162 C 45,138 55,138 70,162 C 85,186 95,186 110,162 C 125,138 135,138 150,162 C 165,186 175,186 190,162 C 205,138 215,138 230,162"
+        fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <!-- Axis -->
+  <line x1="25" y1="162" x2="235" y2="162" stroke="#fde68a" stroke-width="1" stroke-dasharray="3"/>
+
+  <!-- Description -->
+  <rect x="25" y="198" width="210" height="66" fill="#fef3c7" stroke="#d97706" stroke-width="1" rx="4"/>
+  <text x="130" y="216" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">傳輸方式</text>
+  <text x="130" y="232" font-size="10" fill="#78350f" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">以電壓高低（1/0）</text>
+  <text x="130" y="246" font-size="10" fill="#78350f" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">傳輸二進位資料</text>
+  <text x="130" y="260" font-size="10" fill="#78350f" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">最高速率：10Gbps (Cat6a)</text>
+
+  <!-- ===== Panel 2: Fiber Optic (Purple) ===== -->
+  <rect x="275" y="40" width="230" height="235" fill="#faf5ff" stroke="#7c3aed" stroke-width="2" rx="8"/>
+  <text x="390" y="62" font-size="13" font-weight="bold" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">光纖（光導纖維）</text>
+  <text x="390" y="79" font-size="10" fill="#6d28d9" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Single-mode · Multi-mode</text>
+
+  <!-- Fiber icon: thin tube -->
+  <rect x="300" y="96" width="180" height="14" rx="7" fill="#c4b5fd"/>
+  <!-- Glowing center line -->
+  <line x1="300" y1="103" x2="480" y2="103" stroke="#7c3aed" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  <!-- Bright light dots -->
+  <circle cx="320" cy="103" r="5" fill="#a78bfa" opacity="0.9"/>
+  <circle cx="350" cy="103" r="3" fill="#ffffff" opacity="0.8"/>
+  <circle cx="380" cy="103" r="5" fill="#a78bfa" opacity="0.9"/>
+  <circle cx="410" cy="103" r="3" fill="#ffffff" opacity="0.8"/>
+  <circle cx="440" cy="103" r="5" fill="#a78bfa" opacity="0.9"/>
+  <circle cx="465" cy="103" r="3" fill="#ffffff" opacity="0.8"/>
+
+  <!-- Square wave / digital pulses: light signal -->
+  <text x="390" y="135" font-size="10" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">光脈衝訊號（Light Pulses）</text>
+  <path d="M 290,172 L 310,172 L 310,144 L 326,144 L 326,172 L 342,172 L 342,144 L 374,144 L 374,172 L 390,172 L 390,144 L 406,144 L 406,172 L 422,172 L 422,144 L 454,144 L 454,172 L 470,172 L 470,144 L 490,144 L 490,172"
+        fill="none" stroke="#7c3aed" stroke-width="2.5" stroke-linecap="square"/>
+  <line x1="285" y1="172" x2="495" y2="172" stroke="#ddd6fe" stroke-width="1" stroke-dasharray="3"/>
+
+  <!-- Description -->
+  <rect x="285" y="198" width="210" height="66" fill="#ede9fe" stroke="#7c3aed" stroke-width="1" rx="4"/>
+  <text x="390" y="216" font-size="11" font-weight="bold" fill="#5b21b6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">傳輸方式</text>
+  <text x="390" y="232" font-size="10" fill="#4c1d95" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">以光的有無（1/0）</text>
+  <text x="390" y="246" font-size="10" fill="#4c1d95" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">傳輸二進位資料</text>
+  <text x="390" y="260" font-size="10" fill="#4c1d95" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">速率可達 400Gbps 以上</text>
+
+  <!-- ===== Panel 3: Wireless (Blue) ===== -->
+  <rect x="535" y="40" width="230" height="235" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="650" y="62" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">無線（電磁波）</text>
+  <text x="650" y="79" font-size="10" fill="#2563eb" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Wi-Fi · 5G · Bluetooth</text>
+
+  <!-- Wi-Fi icon: antenna + arcs -->
+  <circle cx="650" cy="118" r="5" fill="#3b82f6"/>
+  <!-- 3 arcs (Wi-Fi style) -->
+  <path d="M 626,104 C 634,91 666,91 674,104" fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M 614,93 C 626,72 674,72 686,93" fill="none" stroke="#3b82f6" stroke-width="2" stroke-linecap="round" opacity="0.65"/>
+  <path d="M 602,82 C 618,54 682,54 698,82" fill="none" stroke="#3b82f6" stroke-width="1.5" stroke-linecap="round" opacity="0.35"/>
+
+  <!-- Sine-like radio wave -->
+  <text x="650" y="148" font-size="10" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">電磁波訊號（Radio Waves）</text>
+  <path d="M 550,170 C 562,152 568,152 580,170 C 592,188 598,188 610,170 C 622,152 628,152 640,170 C 652,188 658,188 670,170 C 682,152 688,152 700,170 C 712,188 718,188 730,170 C 742,152 748,152 755,170"
+        fill="none" stroke="#3b82f6" stroke-width="2.5" stroke-linecap="round"/>
+  <line x1="545" y1="170" x2="760" y2="170" stroke="#bfdbfe" stroke-width="1" stroke-dasharray="3"/>
+
+  <!-- Description -->
+  <rect x="545" y="198" width="210" height="66" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="650" y="216" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">傳輸方式</text>
+  <text x="650" y="232" font-size="10" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">以電磁波的調變方式</text>
+  <text x="650" y="246" font-size="10" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">傳輸二進位資料</text>
+  <text x="650" y="260" font-size="10" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Wi-Fi 6 最高達 9.6Gbps</text>
+</svg>

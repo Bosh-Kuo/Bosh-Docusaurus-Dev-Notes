@@ -1,0 +1,80 @@
+<svg viewBox="0 0 820 290" xmlns="http://www.w3.org/2000/svg">
+  <rect width="820" height="290" fill="#ffffff"/>
+
+  <!-- Title -->
+  <text x="410" y="26" font-size="16" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">MAC 地址結構（48 位元 / 6 個 Byte）</text>
+
+  <!-- ===== 6 Octets Visual Blocks ===== -->
+  <!-- Octet 1 (OUI) -->
+  <rect x="50" y="50" width="110" height="60" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="4"/>
+  <text x="105" y="76" font-size="16" font-weight="bold" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">00</text>
+  <text x="105" y="96" font-size="11" fill="#3b82f6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Byte 1</text>
+
+  <!-- Separator colon -->
+  <text x="168" y="84" font-size="18" font-weight="bold" fill="#94a3b8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">:</text>
+
+  <!-- Octet 2 (OUI) -->
+  <rect x="178" y="50" width="110" height="60" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="4"/>
+  <text x="233" y="76" font-size="16" font-weight="bold" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">1A</text>
+  <text x="233" y="96" font-size="11" fill="#3b82f6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Byte 2</text>
+
+  <!-- Separator colon -->
+  <text x="296" y="84" font-size="18" font-weight="bold" fill="#94a3b8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">:</text>
+
+  <!-- Octet 3 (OUI) -->
+  <rect x="306" y="50" width="110" height="60" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="4"/>
+  <text x="361" y="76" font-size="16" font-weight="bold" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">2B</text>
+  <text x="361" y="96" font-size="11" fill="#3b82f6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Byte 3</text>
+
+  <!-- Big separator between OUI and Device ID -->
+  <text x="428" y="84" font-size="22" font-weight="bold" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">:</text>
+
+  <!-- Octet 4 (Device) -->
+  <rect x="448" y="50" width="110" height="60" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <text x="503" y="76" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">3C</text>
+  <text x="503" y="96" font-size="11" fill="#16a34a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Byte 4</text>
+
+  <!-- Separator colon -->
+  <text x="566" y="84" font-size="18" font-weight="bold" fill="#94a3b8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">:</text>
+
+  <!-- Octet 5 (Device) -->
+  <rect x="576" y="50" width="110" height="60" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <text x="631" y="76" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">4D</text>
+  <text x="631" y="96" font-size="11" fill="#16a34a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Byte 5</text>
+
+  <!-- Separator colon -->
+  <text x="694" y="84" font-size="18" font-weight="bold" fill="#94a3b8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">:</text>
+
+  <!-- Octet 6 (Device) -->
+  <rect x="704" y="50" width="110" height="60" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <text x="759" y="76" font-size="16" font-weight="bold" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">5E</text>
+  <text x="759" y="96" font-size="11" fill="#16a34a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Byte 6</text>
+
+  <!-- OUI Group bracket -->
+  <line x1="50" y1="122" x2="50" y2="133" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="50" y1="133" x2="416" y2="133" stroke="#3b82f6" stroke-width="2"/>
+  <line x1="416" y1="122" x2="416" y2="133" stroke="#3b82f6" stroke-width="2"/>
+
+  <!-- OUI Label Box -->
+  <rect x="80" y="139" width="310" height="68" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5" rx="6"/>
+  <text x="235" y="158" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">OUI（廠商識別碼）</text>
+  <text x="235" y="175" font-size="11" fill="#1e40af" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Organizationally Unique Identifier</text>
+  <text x="235" y="191" font-size="11" fill="#3b82f6" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">由 IEEE 統一分配給硬體製造商</text>
+
+  <!-- Device ID Group bracket -->
+  <line x1="448" y1="122" x2="448" y2="133" stroke="#16a34a" stroke-width="2"/>
+  <line x1="448" y1="133" x2="814" y2="133" stroke="#16a34a" stroke-width="2"/>
+  <line x1="814" y1="122" x2="814" y2="133" stroke="#16a34a" stroke-width="2"/>
+
+  <!-- Device ID Label Box -->
+  <rect x="466" y="139" width="330" height="68" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" rx="6"/>
+  <text x="631" y="158" font-size="13" font-weight="bold" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">UAA（裝置識別碼）</text>
+  <text x="631" y="175" font-size="11" fill="#14532d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Universally Administered Address</text>
+  <text x="631" y="191" font-size="11" fill="#16a34a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">由製造商自行分配給每塊網路卡</text>
+
+  <!-- Key insight at bottom -->
+  <rect x="50" y="222" width="720" height="56" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5" rx="6"/>
+  <text x="410" y="242" font-size="12" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">全球唯一性保障機制</text>
+  <text x="410" y="259" font-size="11" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">IEEE 確保各廠商的 OUI 絕對不重複，廠商再對每塊網卡分配唯一的 UAA</text>
+  <text x="410" y="272" font-size="11" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">每個 OUI 可衍生 2²⁴ ≈ 1,677 萬個地址，全球 48 位元空間總計約 281 兆個</text>
+</svg>

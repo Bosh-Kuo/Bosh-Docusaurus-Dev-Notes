@@ -1,0 +1,78 @@
+<svg viewBox="0 0 760 280" xmlns="http://www.w3.org/2000/svg">
+  <rect width="760" height="280" fill="#ffffff"/>
+  <text x="380" y="26" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">L7 應用層：為應用程式提供網路服務介面</text>
+
+  <!-- ===== Top row: Applications ===== -->
+  <text x="380" y="50" font-size="11" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">使用者的應用程式（不直接處理網路細節）</text>
+
+  <!-- App 1: Browser -->
+  <rect x="30" y="58" width="130" height="46" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5" rx="6"/>
+  <text x="95" y="78" font-size="12" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">🌐 瀏覽器</text>
+  <text x="95" y="96" font-size="10" fill="#2563eb" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Chrome / Safari</text>
+
+  <!-- App 2: Email -->
+  <rect x="195" y="58" width="130" height="46" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5" rx="6"/>
+  <text x="260" y="78" font-size="12" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">📧 郵件客戶端</text>
+  <text x="260" y="96" font-size="10" fill="#2563eb" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Outlook / Gmail App</text>
+
+  <!-- App 3: Terminal -->
+  <rect x="360" y="58" width="130" height="46" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5" rx="6"/>
+  <text x="425" y="78" font-size="12" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">💻 終端機</text>
+  <text x="425" y="96" font-size="10" fill="#2563eb" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">iTerm / Terminal</text>
+
+  <!-- App 4: File Transfer -->
+  <rect x="525" y="58" width="210" height="46" fill="#dbeafe" stroke="#3b82f6" stroke-width="1.5" rx="6"/>
+  <text x="630" y="78" font-size="12" fill="#1d4ed8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">📁 檔案傳輸 / 其他服務</text>
+  <text x="630" y="96" font-size="10" fill="#2563eb" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">FileZilla · DNS Resolver · DHCP Client</text>
+
+  <!-- Arrows down to L7 -->
+  <line x1="95" y1="104" x2="95" y2="126" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrGray)"/>
+  <line x1="260" y1="104" x2="260" y2="126" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrGray)"/>
+  <line x1="425" y1="104" x2="425" y2="126" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrGray)"/>
+  <line x1="630" y1="104" x2="630" y2="126" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#arrGray)"/>
+
+  <!-- ===== Middle: L7 Protocol Layer ===== -->
+  <rect x="20" y="130" width="720" height="66" fill="#bfdbfe" stroke="#3b82f6" stroke-width="2.5" rx="8"/>
+  <text x="56" y="150" font-size="12" font-weight="bold" fill="#1d4ed8" font-family="system-ui, -apple-system, sans-serif">L7 應用層（Application Layer）— 標準化網路服務協定</text>
+
+  <!-- Protocol boxes inside L7 -->
+  <rect x="32" y="158" width="90" height="28" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="77" y="177" font-size="11" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">HTTP/HTTPS</text>
+
+  <rect x="132" y="158" width="90" height="28" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="177" y="177" font-size="11" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">SMTP/IMAP</text>
+
+  <rect x="232" y="158" width="90" height="28" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="277" y="177" font-size="11" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">SSH / Telnet</text>
+
+  <rect x="332" y="158" width="70" height="28" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="367" y="177" font-size="11" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">FTP/SFTP</text>
+
+  <rect x="412" y="158" width="60" height="28" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="442" y="177" font-size="11" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">DNS</text>
+
+  <rect x="482" y="158" width="66" height="28" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="515" y="177" font-size="11" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">DHCP</text>
+
+  <rect x="558" y="158" width="82" height="28" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="599" y="177" font-size="11" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">WebSocket</text>
+
+  <rect x="650" y="158" width="76" height="28" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" rx="4"/>
+  <text x="688" y="177" font-size="11" fill="#1e3a8a" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-weight="bold">gRPC · ...</text>
+
+  <!-- Arrow down from L7 to L4-L1 -->
+  <line x1="380" y1="196" x2="380" y2="216" stroke="#94a3b8" stroke-width="2" marker-end="url(#arrGray)"/>
+
+  <!-- ===== Bottom: Lower layers ===== -->
+  <rect x="20" y="218" width="720" height="36" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" rx="8"/>
+  <text x="380" y="241" font-size="12" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">L6 表達層 → L5 會話層 → L4 傳輸層 → L3 網路層 → L2 資料連結層 → L1 實體層</text>
+
+  <!-- Key message -->
+  <text x="380" y="268" font-size="11" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">L7 是「應用程式」與「網路傳輸機制」之間的標準介面，而非應用程式本身</text>
+
+  <defs>
+    <marker id="arrGray" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+</svg>

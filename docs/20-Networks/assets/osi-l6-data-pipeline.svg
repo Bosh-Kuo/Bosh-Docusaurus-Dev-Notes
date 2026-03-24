@@ -1,0 +1,68 @@
+<svg viewBox="0 0 820 190" xmlns="http://www.w3.org/2000/svg">
+  <rect width="820" height="190" fill="#ffffff"/>
+  <text x="410" y="26" font-size="15" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">L6 表達層：資料的三道處理程序</text>
+
+  <!-- Stage 1: Original Data -->
+  <rect x="20" y="50" width="120" height="80" fill="#f0f9ff" stroke="#7dd3fc" stroke-width="2" rx="8"/>
+  <text x="80" y="82" font-size="22" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">📄</text>
+  <text x="80" y="102" font-size="12" font-weight="bold" fill="#0369a1" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">原始資料</text>
+  <text x="80" y="118" font-size="10" fill="#0284c7" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Raw Data</text>
+  <text x="80" y="147" font-size="10" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">應用程式產生</text>
+
+  <!-- Arrow 1 -->
+  <line x1="140" y1="90" x2="168" y2="90" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrSlate)"/>
+  <text x="154" y="82" font-size="9" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">①</text>
+
+  <!-- Stage 2: Encoding -->
+  <rect x="170" y="50" width="140" height="80" fill="#fef9c3" stroke="#eab308" stroke-width="2" rx="8"/>
+  <text x="240" y="78" font-size="12" font-weight="bold" fill="#713f12" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">資料轉譯</text>
+  <text x="240" y="94" font-size="11" fill="#78350f" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Translation</text>
+  <text x="240" y="113" font-size="10" fill="#713f12" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">統一編碼格式</text>
+  <text x="240" y="126" font-size="10" fill="#a16207" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">ASCII · UTF-8</text>
+  <text x="240" y="147" font-size="10" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">確保雙方看得懂</text>
+
+  <!-- Arrow 2 -->
+  <line x1="310" y1="90" x2="338" y2="90" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrSlate)"/>
+  <text x="324" y="82" font-size="9" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">②</text>
+
+  <!-- Stage 3: Encryption -->
+  <rect x="340" y="50" width="140" height="80" fill="#fdf2f8" stroke="#a855f7" stroke-width="2" rx="8"/>
+  <text x="410" y="78" font-size="12" font-weight="bold" fill="#6b21a8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">資料加密</text>
+  <text x="410" y="94" font-size="11" fill="#7e22ce" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Encryption</text>
+  <text x="410" y="113" font-size="10" fill="#6b21a8" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">將明文轉為密文</text>
+  <text x="410" y="126" font-size="10" fill="#7e22ce" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">TLS / SSL</text>
+  <text x="410" y="147" font-size="10" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">防止中途被竊看</text>
+
+  <!-- Arrow 3 -->
+  <line x1="480" y1="90" x2="508" y2="90" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrSlate)"/>
+  <text x="494" y="82" font-size="9" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">③</text>
+
+  <!-- Stage 4: Compression -->
+  <rect x="510" y="50" width="140" height="80" fill="#f0fdf4" stroke="#22c55e" stroke-width="2" rx="8"/>
+  <text x="580" y="78" font-size="12" font-weight="bold" fill="#14532d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">資料壓縮</text>
+  <text x="580" y="94" font-size="11" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Compression</text>
+  <text x="580" y="113" font-size="10" fill="#14532d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">縮減位元數量</text>
+  <text x="580" y="126" font-size="10" fill="#15803d" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">JPEG · MP4 · MP3</text>
+  <text x="580" y="147" font-size="10" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">加快傳輸速度</text>
+
+  <!-- Arrow 4 -->
+  <line x1="650" y1="90" x2="678" y2="90" stroke="#94a3b8" stroke-width="2.5" marker-end="url(#arrSlate)"/>
+  <text x="664" y="82" font-size="9" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">→ L4</text>
+
+  <!-- Stage 5: Result -->
+  <rect x="680" y="50" width="120" height="80" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" rx="8"/>
+  <text x="740" y="78" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">處理完成</text>
+  <text x="740" y="94" font-size="10" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">已編碼</text>
+  <text x="740" y="108" font-size="10" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">已加密</text>
+  <text x="740" y="122" font-size="10" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">已壓縮</text>
+  <text x="740" y="147" font-size="10" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">交給 L4 傳輸</text>
+
+  <!-- Bottom note -->
+  <text x="410" y="175" font-size="11" fill="#64748b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">接收端的 L6 執行反向操作：解壓縮 → 解密 → 轉譯，還原原始資料</text>
+
+  <defs>
+    <marker id="arrSlate" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#94a3b8"/>
+    </marker>
+  </defs>
+</svg>
