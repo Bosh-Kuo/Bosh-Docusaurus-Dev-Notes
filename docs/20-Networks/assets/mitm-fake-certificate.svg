@@ -21,7 +21,7 @@
     <text x="200" y="110" class="text-red">被竄改的憑證 (信封)</text>
     
     <rect x="70" y="130" width="260" height="40" class="box-hacker" fill="#fef2f2" />
-    <text x="200" y="155" class="text-red">⚠️ 假公鑰 (被偷換)</text>
+    <text x="200" y="155" class="text-red">⚠️ 假伺服器公鑰 (被偷換)</text>
     
     <rect x="70" y="180" width="260" height="40" class="box-normal" fill="#ffffff" />
     <text x="200" y="205" class="text-center">網域：google.com (未改)</text>
@@ -32,10 +32,10 @@
 
     <!-- Arrows for Verification -->
     <path d="M 360 170 L 450 170" stroke="#0369a1" stroke-width="3" fill="none" />
-    <text x="405" y="160" class="text-desc" fill="#0369a1">A.自己算指紋</text>
+    <text x="355" y="160" class="text-desc" fill="#0369a1">A.自己算指紋</text>
 
     <path d="M 360 345 L 450 345" stroke="#0ea5e9" stroke-width="3" fill="none" />
-    <text x="405" y="335" class="text-desc" fill="#0ea5e9">B.公鑰解簽章</text>
+    <text x="355" y="335" class="text-desc" fill="#0ea5e9">B. CA公鑰解簽章</text>
 
     <!-- Results Box -->
     <rect x="460" y="140" width="120" height="60" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" rx="4" />
