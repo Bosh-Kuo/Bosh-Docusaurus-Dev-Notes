@@ -1,0 +1,141 @@
+<svg viewBox="0 0 920 400" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="920" height="400" fill="#ffffff" rx="8"/>
+
+  <!-- Title -->
+  <text x="460" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">IPv4 地址類別（Classful Addressing）</text>
+
+  <!-- Table outer border -->
+  <rect x="20" y="42" width="880" height="328" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" rx="4"/>
+
+  <!-- Header row background -->
+  <rect x="20" y="42" width="880" height="34" fill="#f1f5f9" stroke="none" rx="4"/>
+  <rect x="20" y="58" width="880" height="18" fill="#f1f5f9"/>
+
+  <!-- Column positions:
+       Class col: x=20, w=80 → center=60
+       First Octet Range: x=100, w=160 → center=180
+       Default Subnet Mask: x=260, w=190 → center=355
+       Networks: x=450, w=150 → center=525
+       Hosts per Network: x=600, w=150 → center=675
+       Intended Use: x=750, w=150 → center=825
+  -->
+
+  <!-- Header text -->
+  <text x="60" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">類別</text>
+  <text x="180" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">第一 Octet 範圍</text>
+  <text x="355" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">預設 Subnet Mask</text>
+  <text x="525" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">網路數量</text>
+  <text x="675" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">每網路主機數</text>
+  <text x="825" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">預定用途</text>
+
+  <!-- Column dividers (vertical lines) -->
+  <line x1="100" y1="42" x2="100" y2="370" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="260" y1="42" x2="260" y2="370" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="450" y1="42" x2="450" y2="370" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="600" y1="42" x2="600" y2="370" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="750" y1="42" x2="750" y2="370" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row height = 56px, starting y=76 -->
+
+  <!-- === CLASS A ROW === y=76 to 132 -->
+  <rect x="21" y="77" width="878" height="55" fill="#dcfce7"/>
+  <!-- Badge A -->
+  <rect x="28" y="88" width="44" height="22" fill="#16a34a" rx="8"/>
+  <text x="50" y="104" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">A</text>
+  <!-- First Octet Range -->
+  <text x="180" y="108" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">1 ~ 126</text>
+  <!-- Default Subnet Mask -->
+  <text x="345" y="103" text-anchor="middle" font-size="13" fill="#1e293b">255.0.0.0</text>
+  <rect x="395" y="91" width="38" height="20" fill="#16a34a" rx="5"/>
+  <text x="414" y="106" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">/8</text>
+  <!-- Networks -->
+  <text x="525" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">128</text>
+  <!-- Hosts per Network -->
+  <text x="675" y="108" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">~16.7 million</text>
+  <!-- Intended Use -->
+  <text x="825" y="108" text-anchor="middle" font-size="13" fill="#1e293b">大型機構</text>
+
+  <!-- Row divider -->
+  <line x1="20" y1="132" x2="900" y2="132" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- === CLASS B ROW === y=132 to 188 -->
+  <rect x="21" y="133" width="878" height="55" fill="#dbeafe"/>
+  <!-- Badge B -->
+  <rect x="28" y="144" width="44" height="22" fill="#3b82f6" rx="8"/>
+  <text x="50" y="160" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">B</text>
+  <!-- First Octet Range -->
+  <text x="180" y="164" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">128 ~ 191</text>
+  <!-- Default Subnet Mask -->
+  <text x="340" y="159" text-anchor="middle" font-size="13" fill="#1e293b">255.255.0.0</text>
+  <rect x="400" y="147" width="38" height="20" fill="#3b82f6" rx="5"/>
+  <text x="419" y="162" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">/16</text>
+  <!-- Networks -->
+  <text x="525" y="164" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">16,384</text>
+  <!-- Hosts per Network -->
+  <text x="675" y="164" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">~65,000</text>
+  <!-- Intended Use -->
+  <text x="825" y="164" text-anchor="middle" font-size="13" fill="#1e293b">中型機構</text>
+
+  <!-- Row divider -->
+  <line x1="20" y1="188" x2="900" y2="188" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- === CLASS C ROW === y=188 to 244 -->
+  <rect x="21" y="189" width="878" height="55" fill="#fef3c7"/>
+  <!-- Badge C -->
+  <rect x="28" y="200" width="44" height="22" fill="#d97706" rx="8"/>
+  <text x="50" y="216" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">C</text>
+  <!-- First Octet Range -->
+  <text x="180" y="220" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">192 ~ 223</text>
+  <!-- Default Subnet Mask -->
+  <text x="330" y="215" text-anchor="middle" font-size="13" fill="#1e293b">255.255.255.0</text>
+  <rect x="400" y="203" width="38" height="20" fill="#d97706" rx="5"/>
+  <text x="419" y="218" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">/24</text>
+  <!-- Networks -->
+  <text x="525" y="220" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">2+ million</text>
+  <!-- Hosts per Network -->
+  <text x="675" y="220" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">254</text>
+  <!-- Intended Use -->
+  <text x="825" y="220" text-anchor="middle" font-size="13" fill="#1e293b">小型機構</text>
+
+  <!-- Row divider -->
+  <line x1="20" y1="244" x2="900" y2="244" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- === CLASS D ROW === y=244 to 300 -->
+  <rect x="21" y="245" width="878" height="55" fill="#ede9fe"/>
+  <!-- Badge D -->
+  <rect x="28" y="256" width="44" height="22" fill="#7c3aed" rx="8"/>
+  <text x="50" y="272" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">D</text>
+  <!-- First Octet Range -->
+  <text x="180" y="276" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">224 ~ 239</text>
+  <!-- Default Subnet Mask -->
+  <text x="355" y="276" text-anchor="middle" font-size="13" fill="#64748b">N/A</text>
+  <!-- Networks -->
+  <text x="525" y="276" text-anchor="middle" font-size="13" fill="#64748b">N/A</text>
+  <!-- Hosts per Network -->
+  <text x="675" y="276" text-anchor="middle" font-size="13" fill="#64748b">N/A</text>
+  <!-- Intended Use -->
+  <text x="825" y="276" text-anchor="middle" font-size="13" fill="#1e293b">Multicast</text>
+
+  <!-- Row divider -->
+  <line x1="20" y1="300" x2="900" y2="300" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- === CLASS E ROW === y=300 to 356 -->
+  <rect x="21" y="301" width="878" height="55" fill="#f1f5f9"/>
+  <!-- Badge E -->
+  <rect x="28" y="312" width="44" height="22" fill="#64748b" rx="8"/>
+  <text x="50" y="328" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">E</text>
+  <!-- First Octet Range -->
+  <text x="180" y="332" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">240 ~ 255</text>
+  <!-- Default Subnet Mask -->
+  <text x="355" y="332" text-anchor="middle" font-size="13" fill="#64748b">N/A</text>
+  <!-- Networks -->
+  <text x="525" y="332" text-anchor="middle" font-size="13" fill="#64748b">N/A</text>
+  <!-- Hosts per Network -->
+  <text x="675" y="332" text-anchor="middle" font-size="13" fill="#64748b">N/A</text>
+  <!-- Intended Use -->
+  <text x="825" y="332" text-anchor="middle" font-size="13" fill="#1e293b">實驗保留</text>
+
+  <!-- Footnote -->
+  <text x="460" y="388" text-anchor="middle" font-size="11" fill="#475569">※ 127.0.0.0/8 保留給 Loopback，故 Class A 範圍從 1 開始（不含 127）</text>
+</svg>

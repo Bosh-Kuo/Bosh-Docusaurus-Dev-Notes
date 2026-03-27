@@ -1,0 +1,137 @@
+<svg viewBox="0 0 920 400" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="920" height="400" fill="#ffffff" rx="8"/>
+
+  <!-- Title -->
+  <text x="460" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">TTL 遞減機制與 traceroute 運作原理</text>
+
+  <!-- Top nodes -->
+  <!-- Source -->
+  <rect x="20" y="44" width="120" height="50" fill="#f1f5f9" stroke="#64748b" stroke-width="2" rx="6"/>
+  <text x="80" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Source</text>
+  <text x="80" y="82" text-anchor="middle" font-size="10" fill="#475569">192.168.1.1</text>
+
+  <!-- Router A -->
+  <rect x="270" y="44" width="120" height="50" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="6"/>
+  <text x="330" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#d97706">Router A</text>
+  <text x="330" y="82" text-anchor="middle" font-size="10" fill="#475569">203.x.x.1</text>
+
+  <!-- Router B -->
+  <rect x="520" y="44" width="120" height="50" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="6"/>
+  <text x="580" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#d97706">Router B</text>
+  <text x="580" y="82" text-anchor="middle" font-size="10" fill="#475569">198.x.x.1</text>
+
+  <!-- Destination -->
+  <rect x="770" y="44" width="130" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="6"/>
+  <text x="835" y="65" text-anchor="middle" font-size="12" font-weight="bold" fill="#16a34a">Destination</text>
+  <text x="835" y="82" text-anchor="middle" font-size="10" fill="#475569">8.8.8.8</text>
+
+  <!-- === ROW 1: TTL=1 === -->
+  <!-- Row label -->
+  <rect x="0" y="113" width="18" height="62" fill="#fee2e2" rx="2"/>
+  <text x="9" y="148" text-anchor="middle" font-size="9" fill="#ef4444" transform="rotate(-90, 9, 148)">TTL=1</text>
+
+  <!-- Forward arrow: Source → Router A -->
+  <line x1="140" y1="135" x2="268" y2="135" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-fwd)"/>
+  <!-- TTL badge on arrow -->
+  <rect x="184" y="120" width="40" height="18" fill="#16a34a" rx="8"/>
+  <text x="204" y="133" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">TTL=1</text>
+
+  <!-- Router A drops: TTL→0 -->
+  <text x="330" y="118" text-anchor="middle" font-size="10" fill="#d97706">TTL 1→0</text>
+  <!-- X mark at Router A -->
+  <text x="330" y="150" text-anchor="middle" font-size="18" fill="#ef4444">✕</text>
+  <text x="330" y="168" text-anchor="middle" font-size="10" fill="#ef4444">丟棄封包</text>
+
+  <!-- ICMP return arrow (red dashed) -->
+  <line x1="268" y1="155" x2="142" y2="155" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-icmp)"/>
+  <text x="204" y="168" text-anchor="middle" font-size="9" fill="#ef4444">ICMP Time Exceeded</text>
+
+  <!-- Annotation: hop 1 revealed -->
+  <rect x="20" y="170" width="240" height="20" fill="#fee2e2" rx="3"/>
+  <text x="140" y="184" text-anchor="middle" font-size="10" fill="#b91c1c">第 1 跳 IP 揭露：203.x.x.1</text>
+
+  <!-- === ROW 2: TTL=2 === -->
+  <rect x="0" y="205" width="18" height="62" fill="#fef3c7" rx="2"/>
+  <text x="9" y="240" text-anchor="middle" font-size="9" fill="#d97706" transform="rotate(-90, 9, 240)">TTL=2</text>
+
+  <!-- Forward arrow: Source → Router A -->
+  <line x1="140" y1="222" x2="268" y2="222" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-fwd)"/>
+  <rect x="184" y="208" width="40" height="18" fill="#16a34a" rx="8"/>
+  <text x="204" y="221" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">TTL=2</text>
+
+  <!-- Router A decrements: TTL→1, forwards -->
+  <text x="330" y="212" text-anchor="middle" font-size="10" fill="#d97706">TTL 2→1</text>
+  <text x="330" y="227" text-anchor="middle" font-size="10" fill="#d97706">轉發 →</text>
+
+  <!-- Forward arrow: Router A → Router B -->
+  <line x1="390" y1="222" x2="518" y2="222" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-fwd)"/>
+  <rect x="430" y="208" width="40" height="18" fill="#d97706" rx="8"/>
+  <text x="450" y="221" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">TTL=1</text>
+
+  <!-- Router B drops: TTL→0 -->
+  <text x="580" y="212" text-anchor="middle" font-size="10" fill="#d97706">TTL 1→0</text>
+  <text x="580" y="240" text-anchor="middle" font-size="18" fill="#ef4444">✕</text>
+  <text x="580" y="258" text-anchor="middle" font-size="10" fill="#ef4444">丟棄封包</text>
+
+  <!-- ICMP return from Router B -->
+  <line x1="518" y1="248" x2="142" y2="248" stroke="#ef4444" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-icmp)"/>
+  <text x="380" y="264" text-anchor="middle" font-size="9" fill="#ef4444">ICMP Time Exceeded</text>
+
+  <!-- Annotation: hop 2 revealed -->
+  <rect x="20" y="266" width="240" height="20" fill="#fef3c7" rx="3"/>
+  <text x="140" y="280" text-anchor="middle" font-size="10" fill="#b45309">第 2 跳 IP 揭露：198.x.x.1</text>
+
+  <!-- === ROW 3: TTL=3 === -->
+  <rect x="0" y="296" width="18" height="62" fill="#dcfce7" rx="2"/>
+  <text x="9" y="332" text-anchor="middle" font-size="9" fill="#16a34a" transform="rotate(-90, 9, 332)">TTL=3</text>
+
+  <!-- Source → Router A -->
+  <line x1="140" y1="315" x2="268" y2="315" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-fwd)"/>
+  <rect x="184" y="301" width="40" height="18" fill="#16a34a" rx="8"/>
+  <text x="204" y="314" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">TTL=3</text>
+
+  <!-- Router A: TTL→2 -->
+  <text x="330" y="308" text-anchor="middle" font-size="10" fill="#d97706">TTL 3→2</text>
+
+  <!-- Router A → Router B -->
+  <line x1="390" y1="315" x2="518" y2="315" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-fwd)"/>
+  <rect x="430" y="301" width="40" height="18" fill="#d97706" rx="8"/>
+  <text x="450" y="314" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">TTL=2</text>
+
+  <!-- Router B: TTL→1 -->
+  <text x="580" y="308" text-anchor="middle" font-size="10" fill="#d97706">TTL 2→1</text>
+
+  <!-- Router B → Destination -->
+  <line x1="640" y1="315" x2="768" y2="315" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-fwd)"/>
+  <rect x="682" y="301" width="40" height="18" fill="#d97706" rx="8"/>
+  <text x="702" y="314" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">TTL=1</text>
+
+  <!-- Destination: Echo Reply -->
+  <text x="835" y="308" text-anchor="middle" font-size="10" fill="#16a34a">ICMP</text>
+  <text x="835" y="321" text-anchor="middle" font-size="10" fill="#16a34a">Echo Reply</text>
+
+  <!-- Return arrow (green solid) -->
+  <line x1="768" y1="330" x2="142" y2="330" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-green-ret)"/>
+
+  <!-- Annotation: destination reached -->
+  <rect x="20" y="348" width="820" height="22" fill="#dcfce7" rx="3"/>
+  <text x="440" y="364" text-anchor="middle" font-size="11" font-weight="bold" fill="#16a34a">目標到達！traceroute 輸出：1 203.x.x.1  5ms   2 198.x.x.1  12ms   3 8.8.8.8  18ms</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-fwd" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-icmp" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#ef4444"/>
+    </marker>
+    <marker id="arrow-green-ret" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom caption -->
+  <rect x="20" y="378" width="880" height="18" fill="#f1f5f9" rx="3"/>
+  <text x="460" y="391" text-anchor="middle" font-size="10" fill="#475569">TTL 初始值通常為 64（Linux/macOS）或 128（Windows）｜每經過一個路由器遞減 1｜* 表示 ICMP 被封鎖或逾時</text>
+</svg>

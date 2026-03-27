@@ -1,0 +1,101 @@
+<svg viewBox="0 0 920 420" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="920" height="420" fill="#ffffff" rx="8"/>
+
+  <!-- Title -->
+  <text x="460" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">特殊用途 IP 地址速查表</text>
+
+  <!-- Table outer border -->
+  <rect x="15" y="38" width="890" height="368" fill="#ffffff" stroke="#94a3b8" stroke-width="2" rx="4"/>
+
+  <!-- Header background -->
+  <rect x="15" y="38" width="890" height="34" fill="#1e293b" rx="4"/>
+  <rect x="15" y="58" width="890" height="14" fill="#1e293b"/>
+
+  <!-- Column dividers -->
+  <!-- Columns: IP地址(190), 名稱(130), 用途說明(250), 常見場景(320) -->
+  <line x1="205" y1="38" x2="205" y2="406" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="335" y1="38" x2="335" y2="406" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="585" y1="38" x2="585" y2="406" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Header text -->
+  <text x="110" y="61" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">IP 地址</text>
+  <text x="270" y="61" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">名稱</text>
+  <text x="460" y="61" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">用途說明</text>
+  <text x="752" y="61" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">常見場景</text>
+
+  <!-- Row dividers -->
+  <line x1="15" y1="72" x2="905" y2="72" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="15" y1="126" x2="905" y2="126" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="15" y1="180" x2="905" y2="180" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="15" y1="234" x2="905" y2="234" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="15" y1="288" x2="905" y2="288" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="15" y1="348" x2="905" y2="348" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- === ROW 1: 127.0.0.1 === -->
+  <rect x="16" y="73" width="888" height="52" fill="#dcfce7"/>
+  <rect x="16" y="73" width="6" height="52" fill="#16a34a"/>
+  <text x="115" y="95" text-anchor="middle" font-size="13" font-weight="bold" fill="#16a34a">127.0.0.1</text>
+  <text x="115" y="112" text-anchor="middle" font-size="10" fill="#475569">（127.0.0.0/8）</text>
+  <text x="270" y="103" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Loopback</text>
+  <text x="460" y="96" text-anchor="middle" font-size="12" fill="#1e293b">本機回環位址，封包不經過網卡</text>
+  <text x="460" y="112" text-anchor="middle" font-size="11" fill="#475569">OS 直接處理，不進入實體網路</text>
+  <text x="752" y="96" text-anchor="middle" font-size="12" fill="#1e293b">localhost:3000 本機開發</text>
+  <text x="752" y="112" text-anchor="middle" font-size="11" fill="#475569">curl http://localhost:8080</text>
+
+  <!-- === ROW 2: 0.0.0.0 === -->
+  <rect x="16" y="127" width="888" height="52" fill="#ffffff"/>
+  <rect x="16" y="127" width="6" height="52" fill="#64748b"/>
+  <text x="115" y="149" text-anchor="middle" font-size="13" font-weight="bold" fill="#64748b">0.0.0.0</text>
+  <text x="115" y="166" text-anchor="middle" font-size="10" fill="#475569">（未指定地址）</text>
+  <text x="270" y="157" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">萬用匹配符</text>
+  <text x="460" y="150" text-anchor="middle" font-size="12" fill="#1e293b">監聽所有介面 / DHCP 來源位址</text>
+  <text x="460" y="166" text-anchor="middle" font-size="11" fill="#475569">代表「此機器上的任意 IP」</text>
+  <text x="752" y="150" text-anchor="middle" font-size="12" fill="#1e293b">0.0.0.0:8080 對外開放服務</text>
+  <text x="752" y="166" text-anchor="middle" font-size="11" fill="#475569">DHCP Discover 封包來源</text>
+
+  <!-- === ROW 3: 0.0.0.0/0 === -->
+  <rect x="16" y="181" width="888" height="52" fill="#f8fafc"/>
+  <rect x="16" y="181" width="6" height="52" fill="#64748b"/>
+  <text x="115" y="203" text-anchor="middle" font-size="13" font-weight="bold" fill="#64748b">0.0.0.0/0</text>
+  <text x="115" y="220" text-anchor="middle" font-size="10" fill="#475569">（預設路由）</text>
+  <text x="270" y="211" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Default Route</text>
+  <text x="460" y="204" text-anchor="middle" font-size="12" fill="#1e293b">路由表萬用匹配，最低優先級</text>
+  <text x="460" y="220" text-anchor="middle" font-size="11" fill="#475569">其他所有路由都不匹配時才使用</text>
+  <text x="752" y="204" text-anchor="middle" font-size="12" fill="#1e293b">指向預設閘道 (Default Gateway)</text>
+  <text x="752" y="220" text-anchor="middle" font-size="11" fill="#475569">家用路由器通常是 192.168.1.1</text>
+
+  <!-- === ROW 4: 169.254.x.x === -->
+  <rect x="16" y="235" width="888" height="52" fill="#fef3c7"/>
+  <rect x="16" y="235" width="6" height="52" fill="#d97706"/>
+  <text x="115" y="257" text-anchor="middle" font-size="13" font-weight="bold" fill="#d97706">169.254.0.0/16</text>
+  <text x="115" y="274" text-anchor="middle" font-size="10" fill="#475569">（APIPA）</text>
+  <text x="270" y="261" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Link-Local</text>
+  <text x="460" y="258" text-anchor="middle" font-size="12" fill="#1e293b">DHCP 失敗時 OS 自動配發</text>
+  <text x="460" y="274" text-anchor="middle" font-size="11" fill="#475569">只在同一鏈路內有效，不被路由</text>
+  <text x="752" y="258" text-anchor="middle" font-size="12" fill="#1e293b">看到此 IP = DHCP 異常警訊</text>
+  <text x="752" y="274" text-anchor="middle" font-size="11" fill="#475569">排查：網路線、Wi-Fi、DHCP 服務</text>
+
+  <!-- === ROW 5: 255.255.255.255 === -->
+  <rect x="16" y="289" width="888" height="52" fill="#fee2e2"/>
+  <rect x="16" y="289" width="6" height="52" fill="#ef4444"/>
+  <text x="115" y="311" text-anchor="middle" font-size="12" font-weight="bold" fill="#ef4444">255.255.255.255</text>
+  <text x="115" y="328" text-anchor="middle" font-size="10" fill="#475569">（有限廣播）</text>
+  <text x="270" y="319" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Limited Broadcast</text>
+  <text x="460" y="312" text-anchor="middle" font-size="12" fill="#1e293b">廣播至本地所有裝置，不被路由</text>
+  <text x="460" y="328" text-anchor="middle" font-size="11" fill="#475569">路由器不轉發此封包</text>
+  <text x="752" y="312" text-anchor="middle" font-size="12" fill="#1e293b">DHCP Discover 目標位址</text>
+  <text x="752" y="328" text-anchor="middle" font-size="11" fill="#475569">ARP 廣播查詢</text>
+
+  <!-- === ROW 6: RFC 1918 private === -->
+  <rect x="16" y="349" width="888" height="56" fill="#f8fafc"/>
+  <rect x="16" y="349" width="6" height="56" fill="#475569"/>
+  <text x="115" y="367" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">10.0.0.0/8</text>
+  <text x="115" y="381" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">172.16.0.0/12</text>
+  <text x="115" y="395" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">192.168.0.0/16</text>
+  <text x="270" y="375" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">RFC 1918 私有地址</text>
+  <text x="460" y="368" text-anchor="middle" font-size="12" fill="#1e293b">不在公網路由，可在不同網路重複使用</text>
+  <text x="460" y="384" text-anchor="middle" font-size="11" fill="#475569">需透過 NAT 連接網際網路</text>
+  <text x="752" y="368" text-anchor="middle" font-size="12" fill="#1e293b">家庭/企業/雲端私有網路</text>
+  <text x="752" y="384" text-anchor="middle" font-size="11" fill="#475569">AWS VPC: 10.0.0.0/16</text>
+</svg>

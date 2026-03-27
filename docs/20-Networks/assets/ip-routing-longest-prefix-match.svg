@@ -1,0 +1,105 @@
+<svg viewBox="0 0 880 400" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="880" height="400" fill="#ffffff" rx="8"/>
+
+  <!-- Title -->
+  <text x="440" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">最長前綴匹配（Longest Prefix Match）</text>
+
+  <!-- === LEFT: Routing Table === -->
+  <rect x="20" y="44" width="420" height="272" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" rx="8"/>
+  <rect x="20" y="44" width="420" height="34" fill="#1e293b" rx="8"/>
+  <rect x="20" y="64" width="420" height="14" fill="#1e293b"/>
+  <text x="230" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">路由表（Routing Table）</text>
+
+  <!-- Column headers -->
+  <text x="100" y="92" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">目標網路</text>
+  <text x="270" y="92" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">Next Hop</text>
+  <text x="400" y="92" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">前綴長度</text>
+  <line x1="20" y1="98" x2="440" y2="98" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="170" y1="78" x2="170" y2="316" stroke="#e2e8f0" stroke-width="1"/>
+  <line x1="355" y1="78" x2="355" y2="316" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 1: 0.0.0.0/0 (gray, lowest priority) -->
+  <rect x="21" y="99" width="418" height="46" fill="#f1f5f9"/>
+  <text x="100" y="120" text-anchor="middle" font-size="13" fill="#64748b">0.0.0.0/0</text>
+  <text x="100" y="136" text-anchor="middle" font-size="10" fill="#94a3b8">（預設路由）</text>
+  <text x="262" y="127" text-anchor="middle" font-size="11" fill="#64748b">203.x.x.1 (預設閘道)</text>
+  <rect x="368" y="109" width="40" height="22" fill="#64748b" rx="8"/>
+  <text x="388" y="125" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">/0</text>
+  <line x1="20" y1="145" x2="440" y2="145" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 2: 10.0.0.0/8 (blue) -->
+  <rect x="21" y="146" width="418" height="46" fill="#dbeafe"/>
+  <text x="100" y="167" text-anchor="middle" font-size="13" font-weight="bold" fill="#1d4ed8">10.0.0.0/8</text>
+  <text x="100" y="183" text-anchor="middle" font-size="10" fill="#3b82f6">Class A 私有範圍</text>
+  <text x="262" y="174" text-anchor="middle" font-size="11" fill="#1e293b">內部路由器 A</text>
+  <rect x="366" y="156" width="44" height="22" fill="#3b82f6" rx="8"/>
+  <text x="388" y="172" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">/8</text>
+  <line x1="20" y1="192" x2="440" y2="192" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 3: 10.0.1.0/24 (green, WINNER) -->
+  <rect x="21" y="193" width="418" height="46" fill="#dcfce7"/>
+  <text x="100" y="214" text-anchor="middle" font-size="13" font-weight="bold" fill="#15803d">10.0.1.0/24</text>
+  <text x="100" y="230" text-anchor="middle" font-size="10" fill="#16a34a">精確子網路</text>
+  <text x="262" y="221" text-anchor="middle" font-size="11" fill="#1e293b">內部路由器 B</text>
+  <rect x="366" y="203" width="44" height="22" fill="#16a34a" rx="8"/>
+  <text x="388" y="219" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">/24</text>
+  <!-- Winner badge -->
+  <rect x="20" y="193" width="6" height="46" fill="#16a34a"/>
+  <text x="448" y="216" font-size="11" font-weight="bold" fill="#16a34a">勝出！</text>
+  <line x1="20" y1="239" x2="440" y2="239" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 4: 192.168.0.0/16 -->
+  <rect x="21" y="240" width="418" height="46" fill="#ffffff"/>
+  <text x="100" y="261" text-anchor="middle" font-size="13" fill="#1e293b">192.168.0.0/16</text>
+  <text x="100" y="277" text-anchor="middle" font-size="10" fill="#94a3b8">常見私有範圍</text>
+  <text x="262" y="268" text-anchor="middle" font-size="11" fill="#1e293b">內部路由器 C</text>
+  <rect x="362" y="250" width="52" height="22" fill="#64748b" rx="8"/>
+  <text x="388" y="266" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">/16</text>
+
+  <!-- Rule annotation at bottom of routing table -->
+  <rect x="20" y="316" width="420" height="0" fill="none"/>
+
+  <!-- === RIGHT: Destination Packet + Match Result === -->
+  <!-- Destination packet -->
+  <rect x="480" y="44" width="380" height="70" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" rx="8"/>
+  <text x="670" y="68" text-anchor="middle" font-size="13" font-weight="bold" fill="#7c3aed">傳入封包目標 IP</text>
+  <text x="670" y="94" text-anchor="middle" font-size="24" font-weight="bold" fill="#1e293b">10.0.1.5</text>
+
+  <!-- Match indicators -->
+  <rect x="480" y="130" width="380" height="192" fill="#f8fafc" stroke="#94a3b8" stroke-width="1.5" rx="8"/>
+  <text x="670" y="152" text-anchor="middle" font-size="12" font-weight="bold" fill="#475569">路由匹配結果</text>
+
+  <!-- Match 1: 0.0.0.0/0 matches (gray) -->
+  <rect x="496" y="162" width="348" height="38" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1" rx="4"/>
+  <text x="516" y="186" font-size="20" fill="#64748b">✓</text>
+  <text x="550" y="178" font-size="12" fill="#64748b">符合 0.0.0.0/0</text>
+  <text x="550" y="194" font-size="11" fill="#94a3b8">前綴長度 /0（最低優先級）</text>
+
+  <!-- Match 2: 10.0.0.0/8 matches (blue) -->
+  <rect x="496" y="208" width="348" height="38" fill="#dbeafe" stroke="#3b82f6" stroke-width="1" rx="4"/>
+  <text x="516" y="232" font-size="20" fill="#3b82f6">✓</text>
+  <text x="550" y="224" font-size="12" fill="#3b82f6">符合 10.0.0.0/8</text>
+  <text x="550" y="240" font-size="11" fill="#475569">前綴長度 /8</text>
+
+  <!-- Match 3: 10.0.1.0/24 matches (green, WINNER) -->
+  <rect x="496" y="254" width="348" height="46" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="4"/>
+  <text x="516" y="282" font-size="20" fill="#16a34a">✓</text>
+  <text x="550" y="270" font-size="13" font-weight="bold" fill="#16a34a">符合 10.0.1.0/24 ← 最長前綴</text>
+  <text x="550" y="289" font-size="12" font-weight="bold" fill="#1e293b">選擇此路由 → 內部路由器 B</text>
+  <!-- Left accent bar for winner -->
+  <rect x="496" y="254" width="5" height="46" fill="#16a34a" rx="2"/>
+
+  <!-- Arrow from packet to result -->
+  <line x1="670" y1="114" x2="670" y2="128" stroke="#7c3aed" stroke-width="2" marker-end="url(#arrow-purple)"/>
+
+  <defs>
+    <marker id="arrow-purple" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <!-- Bottom annotation -->
+  <rect x="20" y="332" width="840" height="40" fill="#1e293b" rx="6"/>
+  <text x="440" y="356" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">前綴越長 = 路由越精確 = 優先級越高｜/24 比 /8 比 /0 更具體，最終選擇 /24</text>
+</svg>

@@ -1,0 +1,126 @@
+<svg viewBox="0 0 860 340" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="860" height="340" fill="#ffffff" rx="8"/>
+
+  <!-- Title -->
+  <text x="430" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">CIDR 地址劃分：以 192.168.1.0/24 為例</text>
+
+  <!-- Section labels above bit cells -->
+  <!-- Network portion label -->
+  <text x="233" y="52" text-anchor="middle" font-size="12" font-weight="bold" fill="#16a34a">← 網路部分（24 bits）→</text>
+  <!-- Host portion label -->
+  <text x="659" y="52" text-anchor="middle" font-size="12" font-weight="bold" fill="#d97706">← 主機部分（8 bits）→</text>
+
+  <!-- 32 bit cells: bits 1-24 = network (green), bits 25-32 = host (amber) -->
+  <!-- Cell width = 22px, starting x=30, y=60 -->
+  <!-- Network bits (1-24): fill #16a34a, white "N" -->
+  <!-- Row of 32 cells -->
+  <!-- Bits 1-8 (first octet: 192 = 11000000) -->
+  <rect x="30" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="41" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="54" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="65" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="78" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="89" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="102" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="113" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="126" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="137" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="150" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="161" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="174" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="185" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="198" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="209" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <!-- Bits 9-16 (second octet) -->
+  <rect x="225" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="236" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="249" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="260" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="273" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="284" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="297" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="308" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="321" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="332" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="345" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="356" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="369" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="380" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="393" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="404" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <!-- Bits 17-24 (third octet) -->
+  <rect x="420" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="431" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="444" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="455" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="468" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="479" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="492" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="503" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="516" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="527" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="540" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="551" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="564" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="575" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <rect x="588" y="60" width="22" height="28" fill="#16a34a" rx="2"/>
+  <text x="599" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">N</text>
+  <!-- Bits 25-32 (host portion, amber) -->
+  <rect x="615" y="60" width="22" height="28" fill="#d97706" rx="2"/>
+  <text x="626" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">H</text>
+  <rect x="639" y="60" width="22" height="28" fill="#d97706" rx="2"/>
+  <text x="650" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">H</text>
+  <rect x="663" y="60" width="22" height="28" fill="#d97706" rx="2"/>
+  <text x="674" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">H</text>
+  <rect x="687" y="60" width="22" height="28" fill="#d97706" rx="2"/>
+  <text x="698" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">H</text>
+  <rect x="711" y="60" width="22" height="28" fill="#d97706" rx="2"/>
+  <text x="722" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">H</text>
+  <rect x="735" y="60" width="22" height="28" fill="#d97706" rx="2"/>
+  <text x="746" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">H</text>
+  <rect x="759" y="60" width="22" height="28" fill="#d97706" rx="2"/>
+  <text x="770" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">H</text>
+  <rect x="783" y="60" width="22" height="28" fill="#d97706" rx="2"/>
+  <text x="794" y="79" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">H</text>
+
+  <!-- Octet labels below bit cells -->
+  <text x="114" y="104" text-anchor="middle" font-size="11" fill="#475569">192</text>
+  <text x="309" y="104" text-anchor="middle" font-size="11" fill="#475569">168</text>
+  <text x="504" y="104" text-anchor="middle" font-size="11" fill="#475569">1</text>
+  <text x="700" y="104" text-anchor="middle" font-size="11" fill="#475569">0~255</text>
+
+  <!-- Separator line between network and host sections -->
+  <line x1="613" y1="55" x2="613" y2="108" stroke="#1e293b" stroke-width="2" stroke-dasharray="4,2"/>
+
+  <!-- Three result boxes -->
+  <!-- Network Address box (left, green) -->
+  <rect x="30" y="120" width="240" height="100" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="8"/>
+  <text x="150" y="142" text-anchor="middle" font-size="11" font-weight="bold" fill="#16a34a">網路位址 (Network Address)</text>
+  <text x="150" y="165" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e293b">192.168.1.0</text>
+  <text x="150" y="185" text-anchor="middle" font-size="10" fill="#475569">主機部分全為 0</text>
+  <text x="150" y="200" text-anchor="middle" font-size="10" fill="#475569">識別網路本身，不分配給裝置</text>
+
+  <!-- Usable range box (center) -->
+  <rect x="290" y="120" width="280" height="100" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" rx="8"/>
+  <text x="430" y="142" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">可用 IP 範圍</text>
+  <text x="430" y="163" text-anchor="middle" font-size="14" font-weight="bold" fill="#16a34a">192.168.1.1</text>
+  <text x="430" y="180" text-anchor="middle" font-size="13" fill="#475569">~</text>
+  <text x="430" y="197" text-anchor="middle" font-size="14" font-weight="bold" fill="#16a34a">192.168.1.254</text>
+  <text x="430" y="213" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">254 個可用 IP</text>
+
+  <!-- Broadcast Address box (right, red) -->
+  <rect x="590" y="120" width="240" height="100" fill="#fee2e2" stroke="#ef4444" stroke-width="2" rx="8"/>
+  <text x="710" y="142" text-anchor="middle" font-size="11" font-weight="bold" fill="#ef4444">廣播位址 (Broadcast Address)</text>
+  <text x="710" y="165" text-anchor="middle" font-size="20" font-weight="bold" fill="#1e293b">192.168.1.255</text>
+  <text x="710" y="185" text-anchor="middle" font-size="10" fill="#475569">主機部分全為 1</text>
+  <text x="710" y="200" text-anchor="middle" font-size="10" fill="#475569">發送給網路內所有裝置</text>
+
+  <!-- Bottom stats bar -->
+  <rect x="30" y="240" width="800" height="38" fill="#1e293b" rx="6"/>
+  <text x="430" y="264" text-anchor="middle" font-size="13" font-weight="bold" fill="#ffffff">總計: 256 個地址（2⁸）｜可用主機: 254 個｜保留: 2 個（Network + Broadcast）</text>
+
+  <!-- Subnet mask annotation -->
+  <rect x="30" y="292" width="800" height="34" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1" rx="6"/>
+  <text x="430" y="314" text-anchor="middle" font-size="12" fill="#475569">Subnet Mask: 255.255.255.0 ← 前 24 位元全為 1，後 8 位元全為 0</text>
+</svg>

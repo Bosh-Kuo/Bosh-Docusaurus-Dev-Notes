@@ -1,0 +1,130 @@
+<svg viewBox="0 0 920 460" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="920" height="460" fill="#ffffff" rx="8"/>
+
+  <!-- Title -->
+  <text x="460" y="28" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">NAT 運作原理（Network Address Translation）</text>
+
+  <!-- === LEFT ZONE: Private Network === -->
+  <rect x="15" y="42" width="220" height="280" fill="#fef3c7" stroke="#d97706" stroke-width="2" rx="8"/>
+  <text x="125" y="62" text-anchor="middle" font-size="12" font-weight="bold" fill="#d97706">私有網路 (Private Network)</text>
+
+  <!-- Device: Laptop -->
+  <rect x="30" y="72" width="190" height="56" fill="#ffffff" stroke="#d97706" stroke-width="1.5" rx="6"/>
+  <text x="125" y="91" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">💻 筆電</text>
+  <text x="125" y="108" text-anchor="middle" font-size="12" font-weight="bold" fill="#d97706">192.168.1.2</text>
+  <text x="125" y="122" text-anchor="middle" font-size="10" fill="#475569">正在發送請求 →</text>
+
+  <!-- Device: Phone -->
+  <rect x="30" y="144" width="190" height="50" fill="#ffffff" stroke="#94a3b8" stroke-width="1" rx="6"/>
+  <text x="125" y="163" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">📱 手機</text>
+  <text x="125" y="183" text-anchor="middle" font-size="12" font-weight="bold" fill="#64748b">192.168.1.3</text>
+
+  <!-- Device: Tablet -->
+  <rect x="30" y="210" width="190" height="50" fill="#ffffff" stroke="#94a3b8" stroke-width="1" rx="6"/>
+  <text x="125" y="229" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">📟 平板</text>
+  <text x="125" y="249" text-anchor="middle" font-size="12" font-weight="bold" fill="#64748b">192.168.1.4</text>
+
+  <!-- Annotation: private IPs are non-routable -->
+  <text x="125" y="300" text-anchor="middle" font-size="10" fill="#d97706">私有 IP 無法在公網路由</text>
+  <text x="125" y="314" text-anchor="middle" font-size="10" fill="#d97706">需透過 NAT 轉換</text>
+
+  <!-- === MIDDLE ZONE: Router + NAT Table === -->
+  <rect x="255" y="42" width="310" height="280" fill="#f1f5f9" stroke="#94a3b8" stroke-width="2" rx="8"/>
+  <text x="410" y="62" text-anchor="middle" font-size="12" font-weight="bold" fill="#475569">路由器 / NAT Gateway</text>
+
+  <!-- Router box -->
+  <rect x="275" y="70" width="270" height="44" fill="#475569" rx="6"/>
+  <text x="410" y="87" text-anchor="middle" font-size="12" font-weight="bold" fill="#ffffff">Router</text>
+  <text x="410" y="103" text-anchor="middle" font-size="11" fill="#ffffff">公有 IP: 203.x.x.x</text>
+
+  <!-- NAT Connection Tracking Table -->
+  <rect x="270" y="126" width="280" height="172" fill="#ffffff" stroke="#94a3b8" stroke-width="1.5" rx="4"/>
+  <text x="410" y="144" text-anchor="middle" font-size="11" font-weight="bold" fill="#1e293b">NAT 連線追蹤表</text>
+  <line x1="270" y1="150" x2="550" y2="150" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Table header -->
+  <text x="348" y="165" text-anchor="middle" font-size="10" font-weight="bold" fill="#475569">內部 IP:Port</text>
+  <line x1="420" y1="152" x2="420" y2="298" stroke="#e2e8f0" stroke-width="1"/>
+  <text x="488" y="165" text-anchor="middle" font-size="10" font-weight="bold" fill="#475569">外部 IP:Port</text>
+  <line x1="270" y1="170" x2="550" y2="170" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 1: active (highlighted) -->
+  <rect x="271" y="171" width="278" height="28" fill="#dcfce7"/>
+  <text x="348" y="189" text-anchor="middle" font-size="10" font-weight="bold" fill="#16a34a">192.168.1.2:54321</text>
+  <text x="488" y="189" text-anchor="middle" font-size="10" font-weight="bold" fill="#16a34a">203.x.x.x:40001</text>
+  <line x1="270" y1="199" x2="550" y2="199" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 2 -->
+  <text x="348" y="215" text-anchor="middle" font-size="10" fill="#475569">192.168.1.3:44100</text>
+  <text x="488" y="215" text-anchor="middle" font-size="10" fill="#475569">203.x.x.x:40002</text>
+  <line x1="270" y1="225" x2="550" y2="225" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Row 3 -->
+  <text x="348" y="241" text-anchor="middle" font-size="10" fill="#475569">192.168.1.4:33800</text>
+  <text x="488" y="241" text-anchor="middle" font-size="10" fill="#475569">203.x.x.x:40003</text>
+  <line x1="270" y1="251" x2="550" y2="251" stroke="#e2e8f0" stroke-width="1"/>
+
+  <!-- Legend -->
+  <rect x="275" y="256" width="12" height="12" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="294" y="267" font-size="10" fill="#16a34a">目前活躍連線</text>
+  <text x="375" y="267" font-size="10" fill="#475569">回傳封包時依此表反向查詢</text>
+
+  <!-- === RIGHT ZONE: Internet === -->
+  <rect x="585" y="42" width="320" height="280" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="8"/>
+  <text x="745" y="62" text-anchor="middle" font-size="12" font-weight="bold" fill="#3b82f6">網際網路 (Internet)</text>
+
+  <!-- Web Server -->
+  <rect x="620" y="130" width="250" height="80" fill="#ffffff" stroke="#3b82f6" stroke-width="1.5" rx="6"/>
+  <text x="745" y="153" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e293b">Web Server</text>
+  <text x="745" y="172" text-anchor="middle" font-size="12" font-weight="bold" fill="#3b82f6">142.250.x.x</text>
+  <text x="745" y="190" text-anchor="middle" font-size="10" fill="#475569">(Google)</text>
+  <text x="745" y="206" text-anchor="middle" font-size="10" fill="#475569">只看到 203.x.x.x:40001</text>
+
+  <!-- === ARROWS === -->
+  <!-- Arrow 1: Laptop → Router (private) -->
+  <line x1="220" y1="100" x2="253" y2="100" stroke="#d97706" stroke-width="2" marker-end="url(#arrow-amber)"/>
+  <text x="240" y="94" text-anchor="middle" font-size="9" fill="#d97706">192.168.1.2:54321</text>
+  <text x="240" y="115" text-anchor="middle" font-size="9" fill="#d97706">→ 142.250.x.x:80</text>
+
+  <!-- Arrow 2: Router → Internet (after translation) -->
+  <line x1="565" y1="170" x2="618" y2="170" stroke="#16a34a" stroke-width="2" marker-end="url(#arrow-green)"/>
+  <text x="592" y="162" text-anchor="middle" font-size="9" fill="#16a34a">203.x.x.x:40001</text>
+  <text x="592" y="186" text-anchor="middle" font-size="9" fill="#16a34a">→ 142.250.x.x:80</text>
+
+  <!-- Arrow 3: Return (Internet → Router, dashed) -->
+  <line x1="618" y1="200" x2="565" y2="200" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-blue)"/>
+  <text x="592" y="226" text-anchor="middle" font-size="9" fill="#3b82f6">回傳: 142.250.x.x → 203.x.x.x:40001</text>
+
+  <!-- Arrow 4: Router → Laptop (reverse mapped) -->
+  <line x1="253" y1="125" x2="220" y2="125" stroke="#3b82f6" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arrow-blue2)"/>
+  <text x="236" y="140" text-anchor="middle" font-size="9" fill="#3b82f6">查表映射回 192.168.1.2:54321</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-amber" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#d97706"/>
+    </marker>
+    <marker id="arrow-green" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+    <marker id="arrow-blue" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrow-blue2" markerWidth="8" markerHeight="8" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <!-- SNAT label on router zone -->
+  <rect x="270" y="340" width="280" height="22" fill="#475569" rx="4"/>
+  <text x="410" y="355" text-anchor="middle" font-size="11" font-weight="bold" fill="#ffffff">SNAT（來源 IP 替換）：私有 → 公有</text>
+
+  <!-- Bottom warning note -->
+  <rect x="15" y="370" width="890" height="40" fill="#fef3c7" stroke="#d97706" stroke-width="1.5" rx="6"/>
+  <text x="460" y="385" text-anchor="middle" font-size="11" font-weight="bold" fill="#d97706">⚠ DNAT / Port Forwarding</text>
+  <text x="460" y="402" text-anchor="middle" font-size="11" fill="#1e293b">若需從外部主動連入（如架設伺服器），必須在路由器設定連接埠轉送（Port Forwarding），外部才能主動連入</text>
+
+  <!-- Separation label between private and translated -->
+  <text x="410" y="306" text-anchor="middle" font-size="10" fill="#475569">路由器持有唯一公有 IP，透過 Port 區分不同內部連線</text>
+</svg>

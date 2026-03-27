@@ -1,0 +1,157 @@
+<svg viewBox="0 0 860 280" xmlns="http://www.w3.org/2000/svg" font-family="system-ui, -apple-system, sans-serif">
+  <!-- Background -->
+  <rect width="860" height="280" fill="#ffffff" rx="8"/>
+
+  <!-- Title -->
+  <text x="430" y="30" text-anchor="middle" font-size="16" font-weight="bold" fill="#1e293b">IPv4 地址結構（32 位元 / 4 個 Octet）</text>
+
+  <!-- Top annotation bracket: IPv4 Address label -->
+  <text x="430" y="58" text-anchor="middle" font-size="13" font-weight="bold" fill="#16a34a">IPv4 Address: 192.168.1.100</text>
+  <line x1="60" y1="63" x2="800" y2="63" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="60" y1="63" x2="60" y2="70" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="800" y1="63" x2="800" y2="70" stroke="#16a34a" stroke-width="1.5"/>
+
+  <!-- === OCTET 1: 192 = 11000000 === -->
+  <!-- Octet block background -->
+  <rect x="50" y="75" width="180" height="130" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="6"/>
+  <text x="140" y="93" text-anchor="middle" font-size="11" fill="#475569">Octet 1</text>
+
+  <!-- Bit cells for 192 = 11000000 -->
+  <!-- Bit 1: 1 -->
+  <rect x="58" y="98" width="18" height="22" fill="#16a34a" rx="2"/>
+  <text x="67" y="114" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1</text>
+  <!-- Bit 2: 1 -->
+  <rect x="78" y="98" width="18" height="22" fill="#16a34a" rx="2"/>
+  <text x="87" y="114" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1</text>
+  <!-- Bit 3: 0 -->
+  <rect x="98" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="107" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 4: 0 -->
+  <rect x="118" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="127" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 5: 0 -->
+  <rect x="138" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="147" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 6: 0 -->
+  <rect x="158" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="167" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 7: 0 -->
+  <rect x="178" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="187" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 8: 0 -->
+  <rect x="198" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="207" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+
+  <text x="140" y="138" text-anchor="middle" font-size="11" fill="#475569">11000000</text>
+  <text x="140" y="165" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e293b">192</text>
+  <text x="140" y="185" text-anchor="middle" font-size="10" fill="#475569">128+64 = 192</text>
+
+  <!-- Dot separator 1 -->
+  <text x="238" y="165" text-anchor="middle" font-size="28" font-weight="bold" fill="#1e293b">.</text>
+
+  <!-- === OCTET 2: 168 = 10101000 === -->
+  <rect x="250" y="75" width="180" height="130" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="6"/>
+  <text x="340" y="93" text-anchor="middle" font-size="11" fill="#475569">Octet 2</text>
+
+  <!-- Bit cells for 168 = 10101000 -->
+  <!-- Bit 1: 1 -->
+  <rect x="258" y="98" width="18" height="22" fill="#16a34a" rx="2"/>
+  <text x="267" y="114" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1</text>
+  <!-- Bit 2: 0 -->
+  <rect x="278" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="287" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 3: 1 -->
+  <rect x="298" y="98" width="18" height="22" fill="#16a34a" rx="2"/>
+  <text x="307" y="114" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1</text>
+  <!-- Bit 4: 0 -->
+  <rect x="318" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="327" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 5: 1 -->
+  <rect x="338" y="98" width="18" height="22" fill="#16a34a" rx="2"/>
+  <text x="347" y="114" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1</text>
+  <!-- Bit 6: 0 -->
+  <rect x="358" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="367" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 7: 0 -->
+  <rect x="378" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="387" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 8: 0 -->
+  <rect x="398" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="407" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+
+  <text x="340" y="138" text-anchor="middle" font-size="11" fill="#475569">10101000</text>
+  <text x="340" y="165" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e293b">168</text>
+  <text x="340" y="185" text-anchor="middle" font-size="10" fill="#475569">128+32+8 = 168</text>
+
+  <!-- Dot separator 2 -->
+  <text x="438" y="165" text-anchor="middle" font-size="28" font-weight="bold" fill="#1e293b">.</text>
+
+  <!-- === OCTET 3: 1 = 00000001 === -->
+  <rect x="450" y="75" width="180" height="130" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="6"/>
+  <text x="540" y="93" text-anchor="middle" font-size="11" fill="#475569">Octet 3</text>
+
+  <!-- Bit cells for 1 = 00000001 -->
+  <!-- Bits 1-7: 0 -->
+  <rect x="458" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="467" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <rect x="478" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="487" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <rect x="498" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="507" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <rect x="518" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="527" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <rect x="538" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="547" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <rect x="558" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="567" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <rect x="578" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="587" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 8: 1 -->
+  <rect x="598" y="98" width="18" height="22" fill="#16a34a" rx="2"/>
+  <text x="607" y="114" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1</text>
+
+  <text x="540" y="138" text-anchor="middle" font-size="11" fill="#475569">00000001</text>
+  <text x="540" y="165" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e293b">1</text>
+  <text x="540" y="185" text-anchor="middle" font-size="10" fill="#475569">1 = 1</text>
+
+  <!-- Dot separator 3 -->
+  <text x="638" y="165" text-anchor="middle" font-size="28" font-weight="bold" fill="#1e293b">.</text>
+
+  <!-- === OCTET 4: 100 = 01100100 === -->
+  <rect x="650" y="75" width="180" height="130" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="6"/>
+  <text x="740" y="93" text-anchor="middle" font-size="11" fill="#475569">Octet 4</text>
+
+  <!-- Bit cells for 100 = 01100100 -->
+  <!-- Bit 1: 0 -->
+  <rect x="658" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="667" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 2: 1 -->
+  <rect x="678" y="98" width="18" height="22" fill="#16a34a" rx="2"/>
+  <text x="687" y="114" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1</text>
+  <!-- Bit 3: 1 -->
+  <rect x="698" y="98" width="18" height="22" fill="#16a34a" rx="2"/>
+  <text x="707" y="114" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1</text>
+  <!-- Bit 4: 0 -->
+  <rect x="718" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="727" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 5: 0 -->
+  <rect x="738" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="747" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 6: 1 -->
+  <rect x="758" y="98" width="18" height="22" fill="#16a34a" rx="2"/>
+  <text x="767" y="114" text-anchor="middle" font-size="10" font-weight="bold" fill="#ffffff">1</text>
+  <!-- Bit 7: 0 -->
+  <rect x="778" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="787" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+  <!-- Bit 8: 0 -->
+  <rect x="798" y="98" width="18" height="22" fill="#f8fafc" stroke="#94a3b8" stroke-width="1" rx="2"/>
+  <text x="807" y="114" text-anchor="middle" font-size="10" fill="#94a3b8">0</text>
+
+  <text x="740" y="138" text-anchor="middle" font-size="11" fill="#475569">01100100</text>
+  <text x="740" y="165" text-anchor="middle" font-size="22" font-weight="bold" fill="#1e293b">100</text>
+  <text x="740" y="185" text-anchor="middle" font-size="10" fill="#475569">64+32+4 = 100</text>
+
+  <!-- Bottom total label -->
+  <rect x="50" y="225" width="760" height="38" fill="#f1f5f9" stroke="#94a3b8" stroke-width="1.5" rx="6"/>
+  <text x="430" y="249" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e293b">32 位元 = 4 × 8 位元（每個 Octet 範圍：0 ~ 255）｜總計約 43 億個地址（2³²）</text>
+</svg>
