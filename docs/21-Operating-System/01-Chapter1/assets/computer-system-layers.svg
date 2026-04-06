@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 310" width="480" height="310">
+  <!-- Hardware layer (bottom) -->
+  <rect x="20" y="235" width="440" height="60" rx="8" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="240" y="260" font-family="sans-serif" font-size="14" font-weight="bold" fill="#b91c1c" text-anchor="middle">Computer Hardware</text>
+  <text x="240" y="282" font-family="sans-serif" font-size="12" fill="#7f1d1d" text-anchor="middle">CPU  ·  Memory  ·  I/O Devices</text>
+
+  <!-- OS layer -->
+  <rect x="20" y="163" width="440" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="240" y="188" font-family="sans-serif" font-size="14" font-weight="bold" fill="#15803d" text-anchor="middle">Operating System</text>
+  <text x="240" y="210" font-family="sans-serif" font-size="12" fill="#14532d" text-anchor="middle">Kernel  ·  Middleware  ·  System Programs</text>
+
+  <!-- Application layer -->
+  <rect x="20" y="91" width="440" height="60" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="240" y="116" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Application Programs</text>
+  <text x="240" y="138" font-family="sans-serif" font-size="12" fill="#1e3a8a" text-anchor="middle">Compilers  ·  Web Browsers  ·  Word Processors</text>
+
+  <!-- User layer (top) -->
+  <rect x="20" y="18" width="440" height="60" rx="8" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="240" y="43" font-family="sans-serif" font-size="14" font-weight="bold" fill="#92400e" text-anchor="middle">User</text>
+  <text x="240" y="65" font-family="sans-serif" font-size="12" fill="#78350f" text-anchor="middle">End Users  ·  Programs  ·  External Systems</text>
+
+  <!-- Arrows between layers -->
+  <defs>
+    <marker id="arr" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#9ca3af"/>
+    </marker>
+  </defs>
+  <line x1="240" y1="78" x2="240" y2="93" stroke="#9ca3af" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="240" y1="150" x2="240" y2="165" stroke="#9ca3af" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="240" y1="222" x2="240" y2="237" stroke="#9ca3af" stroke-width="2" marker-end="url(#arr)"/>
+</svg>

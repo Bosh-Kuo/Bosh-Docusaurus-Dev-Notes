@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 240" width="520" height="240">
+  <!-- OS box at top -->
+  <rect x="170" y="15" width="180" height="48" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="260" y="36" font-family="sans-serif" font-size="13" font-weight="bold" fill="#6d28d9" text-anchor="middle">Operating System</text>
+  <text x="260" y="53" font-family="sans-serif" font-size="11" fill="#5b21b6" text-anchor="middle">Two Roles from System View</text>
+
+  <!-- Branch lines -->
+  <line x1="200" y1="63" x2="130" y2="105" stroke="#9ca3af" stroke-width="2"/>
+  <line x1="320" y1="63" x2="390" y2="105" stroke="#9ca3af" stroke-width="2"/>
+
+  <!-- Resource Allocator box -->
+  <rect x="20" y="105" width="220" height="118" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="130" y="128" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Resource Allocator</text>
+  <text x="130" y="148" font-family="sans-serif" font-size="11" fill="#1e40af" text-anchor="middle">Manages resources fairly:</text>
+  <text x="38" y="168" font-family="sans-serif" font-size="11" fill="#1e3a8a">• CPU Time</text>
+  <text x="38" y="185" font-family="sans-serif" font-size="11" fill="#1e3a8a">• Memory Space</text>
+  <text x="38" y="202" font-family="sans-serif" font-size="11" fill="#1e3a8a">• I/O Devices  ·  Storage</text>
+
+  <!-- Control Program box -->
+  <rect x="280" y="105" width="220" height="118" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="390" y="128" font-family="sans-serif" font-size="13" font-weight="bold" fill="#be185d" text-anchor="middle">Control Program</text>
+  <text x="390" y="148" font-family="sans-serif" font-size="11" fill="#831843" text-anchor="middle">Manages program execution:</text>
+  <text x="298" y="168" font-family="sans-serif" font-size="11" fill="#9d174d">• Prevents Errors</text>
+  <text x="298" y="185" font-family="sans-serif" font-size="11" fill="#9d174d">• Prevents Improper Use</text>
+  <text x="298" y="202" font-family="sans-serif" font-size="11" fill="#9d174d">• Controls I/O Devices</text>
+</svg>
