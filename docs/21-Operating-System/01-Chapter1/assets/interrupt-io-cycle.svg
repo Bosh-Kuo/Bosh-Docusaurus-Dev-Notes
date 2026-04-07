@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 545 430" width="545" height="430">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Column headers -->
+  <text x="160" y="18" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">CPU</text>
+  <text x="415" y="18" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">I/O controller</text>
+
+  <!-- Step 1 label (above first CPU box) -->
+  <text x="160" y="40" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">1</text>
+
+  <!-- Box 1 (CPU): device driver initiates I/O (white box) -->
+  <rect x="55" y="46" width="210" height="48" rx="4" fill="white" stroke="#374151" stroke-width="1.5"/>
+  <text x="160" y="74" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">device driver initiates I/O</text>
+
+  <!-- Arrow 2: CPU box 1 → I/O box A (horizontal, left to right) -->
+  <line x1="265" y1="70" x2="318" y2="70" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="291" y="63" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">2</text>
+
+  <!-- Box A (I/O controller): initiates I/O (blue box) -->
+  <rect x="322" y="46" width="193" height="48" rx="4" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="419" y="74" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">initiates I/O</text>
+
+  <!-- CPU column: dashed line (while I/O is in progress) -->
+  <line x1="160" y1="94" x2="160" y2="175" stroke="#374151" stroke-width="1.5" stroke-dasharray="5,4"/>
+  <!-- "CPU executing..." text (to the right of the dashed line) -->
+  <text x="175" y="125" font-family="sans-serif" font-size="10" fill="#6b7280">CPU executing checks for</text>
+  <text x="175" y="140" font-family="sans-serif" font-size="10" fill="#6b7280">interrupts between instructions</text>
+
+  <!-- Arrow 3: I/O box A → I/O box B (vertical, downward in I/O column) -->
+  <line x1="419" y1="94" x2="419" y2="170" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="432" y="137" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">3</text>
+
+  <!-- Box (CPU): CPU receiving interrupt, transfers control to interrupt handler (gray) -->
+  <rect x="55" y="175" width="210" height="72" rx="4" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="160" y="197" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">CPU receiving interrupt,</text>
+  <text x="160" y="212" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">transfers control to</text>
+  <text x="160" y="227" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">interrupt handler</text>
+
+  <!-- Arrow 4: I/O box B → CPU receiving box (horizontal, right to left) -->
+  <line x1="322" y1="220" x2="267" y2="220" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="295" y="212" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">4</text>
+
+  <!-- Box B (I/O controller): input ready / generates interrupt signal (gray) -->
+  <rect x="322" y="175" width="193" height="72" rx="4" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="419" y="197" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">input ready, output</text>
+  <text x="419" y="212" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">complete, or error</text>
+  <text x="419" y="227" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">generates interrupt signal</text>
+
+  <!-- Arrow 5: CPU receiving → interrupt handler (vertical, downward) -->
+  <line x1="160" y1="247" x2="160" y2="272" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="172" y="264" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">5</text>
+
+  <!-- Box (CPU): interrupt handler processes data, returns from interrupt (blue) -->
+  <rect x="55" y="272" width="210" height="65" rx="4" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1.5"/>
+  <text x="160" y="294" font-family="sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle">interrupt handler</text>
+  <text x="160" y="309" font-family="sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle">processes data,</text>
+  <text x="160" y="324" font-family="sans-serif" font-size="11" fill="#1d4ed8" text-anchor="middle">returns from interrupt</text>
+
+  <!-- Arrow 6: interrupt handler → CPU resumes (vertical, downward) -->
+  <line x1="160" y1="337" x2="160" y2="362" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="172" y="354" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">6</text>
+
+  <!-- Box (CPU): CPU resumes processing of interrupted task (white) -->
+  <rect x="55" y="362" width="210" height="58" rx="4" fill="white" stroke="#374151" stroke-width="1.5"/>
+  <text x="160" y="383" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">CPU resumes</text>
+  <text x="160" y="398" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">processing of</text>
+  <text x="160" y="413" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">interrupted task</text>
+
+  <!-- Arrow 7: loop from CPU resumes → back to device driver (left side) -->
+  <path d="M 55 391 L 26 391 L 26 70 L 53 70" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="14" y="235" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">7</text>
+</svg>

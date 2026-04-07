@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 290" width="580" height="290">
+  <!-- Devices row (top) -->
+  <rect x="30" y="20" width="90" height="40" rx="6" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="75" y="36" font-family="sans-serif" font-size="10" fill="#78350f" text-anchor="middle">Mouse /</text>
+  <text x="75" y="50" font-family="sans-serif" font-size="10" fill="#78350f" text-anchor="middle">Keyboard</text>
+
+  <rect x="210" y="20" width="80" height="40" rx="6" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="250" y="36" font-family="sans-serif" font-size="10" fill="#78350f" text-anchor="middle">Monitor /</text>
+  <text x="250" y="50" font-family="sans-serif" font-size="10" fill="#78350f" text-anchor="middle">Printer</text>
+
+  <rect x="390" y="20" width="80" height="40" rx="6" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="430" y="36" font-family="sans-serif" font-size="10" fill="#78350f" text-anchor="middle">HDD /</text>
+  <text x="430" y="50" font-family="sans-serif" font-size="10" fill="#78350f" text-anchor="middle">SSD / NVM</text>
+
+  <!-- Controllers row -->
+  <rect x="20" y="95" width="110" height="60" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="75" y="117" font-family="sans-serif" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">USB Controller</text>
+  <text x="75" y="133" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">+ Device Driver</text>
+  <text x="75" y="147" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">(provided by OS)</text>
+
+  <rect x="195" y="95" width="110" height="60" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="250" y="117" font-family="sans-serif" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">Graphics Ctrl</text>
+  <text x="250" y="133" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">+ Device Driver</text>
+  <text x="250" y="147" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">(provided by OS)</text>
+
+  <rect x="370" y="95" width="110" height="60" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="425" y="117" font-family="sans-serif" font-size="11" font-weight="bold" fill="#b45309" text-anchor="middle">Disk Controller</text>
+  <text x="425" y="133" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">+ Device Driver</text>
+  <text x="425" y="147" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">(provided by OS)</text>
+
+  <!-- Lines from devices to controllers -->
+  <line x1="75" y1="60" x2="75" y2="95" stroke="#ca8a04" stroke-width="1.5"/>
+  <line x1="250" y1="60" x2="250" y2="95" stroke="#ca8a04" stroke-width="1.5"/>
+  <line x1="430" y1="60" x2="430" y2="95" stroke="#ca8a04" stroke-width="1.5"/>
+
+  <!-- System Bus -->
+  <rect x="10" y="178" width="560" height="22" rx="4" fill="#374151"/>
+  <text x="290" y="193" font-family="sans-serif" font-size="12" font-weight="bold" fill="white" text-anchor="middle">System Bus</text>
+
+  <!-- Lines from controllers to bus -->
+  <line x1="75" y1="155" x2="75" y2="178" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="250" y1="155" x2="250" y2="178" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="425" y1="155" x2="425" y2="178" stroke="#6b7280" stroke-width="1.5"/>
+
+  <!-- CPU box -->
+  <rect x="490" y="95" width="80" height="60" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="530" y="118" font-family="sans-serif" font-size="13" font-weight="bold" fill="#15803d" text-anchor="middle">CPU</text>
+  <text x="530" y="136" font-family="sans-serif" font-size="10" fill="#14532d" text-anchor="middle">Registers</text>
+  <text x="530" y="148" font-family="sans-serif" font-size="10" fill="#14532d" text-anchor="middle">Cache</text>
+  <line x1="530" y1="155" x2="530" y2="178" stroke="#16a34a" stroke-width="1.5"/>
+
+  <!-- Memory box -->
+  <rect x="220" y="225" width="140" height="55" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="290" y="249" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Memory</text>
+  <text x="290" y="269" font-family="sans-serif" font-size="11" fill="#1e3a8a" text-anchor="middle">Main RAM (DRAM)</text>
+
+  <!-- Memory Controller label -->
+  <text x="198" y="222" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="end">Memory</text>
+  <text x="198" y="234" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="end">Controller</text>
+
+  <line x1="290" y1="200" x2="290" y2="225" stroke="#2563eb" stroke-width="1.5"/>
+</svg>

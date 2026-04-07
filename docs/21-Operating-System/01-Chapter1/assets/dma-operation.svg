@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 270" width="560" height="270">
+  <!-- Title -->
+  <text x="280" y="20" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">DMA Operation (Direct Memory Access)</text>
+
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="a-green" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="a-blue" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="a-red" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="a-pink" markerWidth="9" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#db2777"/>
+    </marker>
+  </defs>
+
+  <!-- Arrow ①: CPU → Controller at top (y=52), label ABOVE arrow -->
+  <text x="210" y="38" font-family="sans-serif" font-size="10" font-weight="bold" fill="#15803d" text-anchor="middle">① Setup</text>
+  <text x="210" y="50" font-family="sans-serif" font-size="9" fill="#15803d" text-anchor="middle">buffers, pointers, counters</text>
+  <line x1="118" y1="58" x2="192" y2="58" stroke="#16a34a" stroke-width="2" marker-end="url(#a-green)"/>
+
+  <!-- Arrow ②: Controller → Memory at y=58, label ABOVE -->
+  <text x="380" y="38" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1d4ed8" text-anchor="middle">② DMA Transfer (No CPU)</text>
+  <line x1="352" y1="58" x2="422" y2="58" stroke="#2563eb" stroke-width="2.5" marker-end="url(#a-blue)"/>
+
+  <!-- CPU box -->
+  <rect x="20" y="68" width="98" height="70" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="69" y="92" font-family="sans-serif" font-size="13" font-weight="bold" fill="#15803d" text-anchor="middle">CPU</text>
+  <text x="69" y="110" font-family="sans-serif" font-size="10" fill="#14532d" text-anchor="middle">Continues</text>
+  <text x="69" y="124" font-family="sans-serif" font-size="10" fill="#14532d" text-anchor="middle">other work</text>
+
+  <!-- Device Controller box -->
+  <rect x="192" y="65" width="160" height="105" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="272" y="88" font-family="sans-serif" font-size="12" font-weight="bold" fill="#b45309" text-anchor="middle">Device Controller</text>
+  <text x="272" y="103" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">(with DMA logic)</text>
+  <text x="272" y="118" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">Local Buffer</text>
+  <text x="272" y="133" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">Registers</text>
+  <text x="272" y="148" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">Counters / Pointers</text>
+
+  <!-- Memory box -->
+  <rect x="422" y="68" width="118" height="70" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="481" y="97" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Memory</text>
+  <text x="481" y="114" font-family="sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle">Main RAM</text>
+  <text x="481" y="127" font-family="sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle">(DRAM)</text>
+
+  <!-- Arrow ③: Controller → CPU at bottom (y=178), dashed, label BELOW -->
+  <line x1="192" y1="178" x2="118" y2="178" stroke="#dc2626" stroke-width="2" stroke-dasharray="5,3" marker-end="url(#a-red)"/>
+  <text x="155" y="193" font-family="sans-serif" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">③ One Interrupt (per block)</text>
+
+  <!-- I/O Device box -->
+  <rect x="202" y="200" width="140" height="55" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="272" y="222" font-family="sans-serif" font-size="12" font-weight="bold" fill="#be185d" text-anchor="middle">I/O Device</text>
+  <text x="272" y="241" font-family="sans-serif" font-size="10" fill="#9d174d" text-anchor="middle">Disk / SSD / NVM</text>
+
+  <!-- Arrow: Controller ↔ I/O Device (vertical) -->
+  <line x1="272" y1="170" x2="272" y2="198" stroke="#db2777" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#a-pink)"/>
+  <text x="318" y="188" font-family="sans-serif" font-size="9" fill="#be185d">Data I/O</text>
+</svg>
