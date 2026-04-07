@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 370" width="480" height="370">
+  <defs>
+    <!-- Standard auto-orient arrowhead -->
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- memory0 (top-left) -->
+  <rect x="20" y="15" width="120" height="40" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="80" y="40" text-anchor="middle" font-size="13" fill="#1d4ed8" font-family="sans-serif" font-weight="bold">memory&#x2080;</text>
+
+  <!-- memory1 (top-right) -->
+  <rect x="340" y="15" width="120" height="40" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="400" y="40" text-anchor="middle" font-size="13" fill="#1d4ed8" font-family="sans-serif" font-weight="bold">memory&#x2081;</text>
+
+  <!-- Solid lines: memory to CPU (local, direct access) -->
+  <line x1="80" y1="55" x2="80" y2="100" stroke="#374151" stroke-width="1.5"/>
+  <line x1="400" y1="55" x2="400" y2="100" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- CPU0 (upper-left) -->
+  <rect x="20" y="100" width="120" height="50" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="80" y="130" text-anchor="middle" font-size="14" fill="#15803d" font-family="sans-serif" font-weight="bold">CPU&#x2080;</text>
+
+  <!-- CPU1 (upper-right) -->
+  <rect x="340" y="100" width="120" height="50" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="400" y="130" text-anchor="middle" font-size="14" fill="#15803d" font-family="sans-serif" font-weight="bold">CPU&#x2081;</text>
+
+  <!-- Dashed lines: CPU to interconnect (network access) -->
+  <line x1="140" y1="125" x2="175" y2="125" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="305" y1="125" x2="340" y2="125" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- CPU2 (lower-left) -->
+  <rect x="20" y="215" width="120" height="50" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="80" y="245" text-anchor="middle" font-size="14" fill="#15803d" font-family="sans-serif" font-weight="bold">CPU&#x2082;</text>
+
+  <!-- CPU3 (lower-right) -->
+  <rect x="340" y="215" width="120" height="50" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="400" y="245" text-anchor="middle" font-size="14" fill="#15803d" font-family="sans-serif" font-weight="bold">CPU&#x2083;</text>
+
+  <!-- Dashed lines: CPU to interconnect -->
+  <line x1="140" y1="240" x2="175" y2="240" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="305" y1="240" x2="340" y2="240" stroke="#6b7280" stroke-width="1.5" stroke-dasharray="5,3"/>
+
+  <!-- Central interconnect box (dashed border) -->
+  <rect x="175" y="95" width="130" height="175" rx="4" fill="#f9fafb" stroke="#6b7280" stroke-width="2" stroke-dasharray="7,4"/>
+  <text x="240" y="185" text-anchor="middle" font-size="12" fill="#374151" font-family="sans-serif">interconnect</text>
+
+  <!-- Solid lines: CPU to memory (local access) -->
+  <line x1="80" y1="265" x2="80" y2="305" stroke="#374151" stroke-width="1.5"/>
+  <line x1="400" y1="265" x2="400" y2="305" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- memory2 (bottom-left) -->
+  <rect x="20" y="305" width="120" height="40" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="80" y="330" text-anchor="middle" font-size="13" fill="#1d4ed8" font-family="sans-serif" font-weight="bold">memory&#x2082;</text>
+
+  <!-- memory3 (bottom-right) -->
+  <rect x="340" y="305" width="120" height="40" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="400" y="330" text-anchor="middle" font-size="13" fill="#1d4ed8" font-family="sans-serif" font-weight="bold">memory&#x2083;</text>
+</svg>
