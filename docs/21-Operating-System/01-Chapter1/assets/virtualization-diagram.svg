@@ -1,0 +1,100 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 820 460" width="820" height="460">
+  <defs>
+    <marker id="arr-sm" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ========== (a) Single OS ========== -->
+
+  <!-- outer border -->
+  <rect x="15" y="15" width="165" height="385" fill="white" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- "processes" text -->
+  <text x="97" y="115" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">processes</text>
+
+  <!-- hollow down arrow: shaft y=145 to y=232, arrowhead tip y=248, center x=97 -->
+  <polygon points="91,145 103,145 103,232 111,232 97,248 83,232 91,232 91,145"
+           fill="white" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- kernel fill -->
+  <rect x="15" y="248" width="165" height="47" fill="#bfdbfe"/>
+  <line x1="15" y1="248" x2="180" y2="248" stroke="#374151" stroke-width="1.2"/>
+  <text x="97" y="278" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1d4ed8">kernel</text>
+
+  <!-- hardware fill -->
+  <rect x="15" y="295" width="165" height="105" fill="#d1d5db"/>
+  <line x1="15" y1="295" x2="180" y2="295" stroke="#374151" stroke-width="1.2"/>
+  <text x="97" y="352" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">hardware</text>
+
+  <!-- (a) label -->
+  <text x="97" y="425" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">(a)</text>
+
+  <!-- ========== "programming interface" annotation ========== -->
+  <!-- label centered at the processes/kernel boundary line (y=248) -->
+  <text x="222" y="242" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#374151">programming</text>
+  <text x="222" y="255" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#374151">interface</text>
+  <!-- arrows at y=248, pointing to the boundary line of (a) and (b) -->
+  <line x1="205" y1="248" x2="182" y2="248" stroke="#374151" stroke-width="1" marker-end="url(#arr-sm)"/>
+  <line x1="240" y1="248" x2="263" y2="248" stroke="#374151" stroke-width="1" marker-end="url(#arr-sm)"/>
+
+  <!-- ========== (b) Three Virtual Machines ========== -->
+
+  <!-- outer border -->
+  <rect x="265" y="15" width="540" height="385" fill="white" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- vertical dividers (from top down to VM label row bottom) -->
+  <line x1="445" y1="15" x2="445" y2="332" stroke="#374151" stroke-width="1"/>
+  <line x1="625" y1="15" x2="625" y2="332" stroke="#374151" stroke-width="1"/>
+
+  <!-- VM1 "processes" (highest) -->
+  <text x="355" y="58" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">processes</text>
+  <!-- VM1 hollow down arrow: shaft y=84 to y=232, tip y=248, center x=355 -->
+  <polygon points="349,84 361,84 361,232 369,232 355,248 341,232 349,232 349,84"
+           fill="white" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- VM2 "processes" (middle) -->
+  <text x="535" y="93" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">processes</text>
+  <!-- VM2 hollow down arrow: shaft y=119 to y=232, tip y=248, center x=535 -->
+  <polygon points="529,119 541,119 541,232 549,232 535,248 521,232 529,232 529,119"
+           fill="white" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- VM3 "processes" (lowest) -->
+  <text x="715" y="128" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#374151">processes</text>
+  <!-- VM3 hollow down arrow: shaft y=154 to y=232, tip y=248, center x=715 -->
+  <polygon points="709,154 721,154 721,232 729,232 715,248 701,232 709,232 709,154"
+           fill="white" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- kernel row: y=248 to y=295 -->
+  <rect x="265" y="248" width="540" height="47" fill="#bfdbfe"/>
+  <line x1="265" y1="248" x2="805" y2="248" stroke="#374151" stroke-width="1.2"/>
+  <!-- dividers within kernel row -->
+  <line x1="445" y1="248" x2="445" y2="295" stroke="#374151" stroke-width="1"/>
+  <line x1="625" y1="248" x2="625" y2="295" stroke="#374151" stroke-width="1"/>
+  <text x="355" y="278" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1d4ed8">kernel</text>
+  <text x="535" y="278" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1d4ed8">kernel</text>
+  <text x="715" y="278" text-anchor="middle" font-family="sans-serif" font-size="14" fill="#1d4ed8">kernel</text>
+
+  <!-- VM label row: y=295 to y=332 -->
+  <line x1="265" y1="295" x2="805" y2="295" stroke="#374151" stroke-width="1.2"/>
+  <line x1="445" y1="295" x2="445" y2="332" stroke="#374151" stroke-width="1"/>
+  <line x1="625" y1="295" x2="625" y2="332" stroke="#374151" stroke-width="1"/>
+  <text x="355" y="318" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">VM1</text>
+  <text x="535" y="318" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">VM2</text>
+  <text x="715" y="318" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">VM3</text>
+
+  <!-- virtual machine manager: y=332 to y=382 -->
+  <rect x="265" y="332" width="540" height="50" fill="#bfdbfe"/>
+  <line x1="265" y1="332" x2="805" y2="332" stroke="#374151" stroke-width="1.2"/>
+  <text x="535" y="354" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1d4ed8">virtual machine</text>
+  <text x="535" y="371" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1d4ed8">manager</text>
+
+  <!-- hardware: y=382 to y=400 -->
+  <rect x="265" y="382" width="540" height="18" fill="#d1d5db"/>
+  <line x1="265" y1="382" x2="805" y2="382" stroke="#374151" stroke-width="1.2"/>
+  <text x="535" y="396" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">hardware</text>
+
+  <!-- (b) label -->
+  <text x="535" y="425" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">(b)</text>
+
+</svg>
