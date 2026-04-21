@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 130" width="560" height="130">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Node 1 -->
+  <rect x="15" y="28" width="72" height="34" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <rect x="87" y="28" width="30" height="34" rx="2" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="51" y="50" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#1d4ed8">data</text>
+  <circle cx="102" cy="45" r="5" fill="#2563eb"/>
+
+  <!-- Node 2 -->
+  <rect x="155" y="28" width="72" height="34" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <rect x="227" y="28" width="30" height="34" rx="2" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="191" y="50" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#1d4ed8">data</text>
+  <circle cx="242" cy="45" r="5" fill="#2563eb"/>
+
+  <!-- Node 3 -->
+  <rect x="295" y="28" width="72" height="34" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <rect x="367" y="28" width="30" height="34" rx="2" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="331" y="50" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#1d4ed8">data</text>
+  <circle cx="382" cy="45" r="5" fill="#2563eb"/>
+
+  <!-- Node 4 -->
+  <rect x="435" y="28" width="72" height="34" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <rect x="507" y="28" width="30" height="34" rx="2" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="471" y="50" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#1d4ed8">data</text>
+  <circle cx="522" cy="45" r="5" fill="#2563eb"/>
+
+  <!-- Arrows: Node1 -> Node2 -> Node3 -> Node4 -->
+  <line x1="117" y1="45" x2="153" y2="45" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="257" y1="45" x2="293" y2="45" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="397" y1="45" x2="433" y2="45" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Circular arrow: Node4 pointer -> down -> left -> up -> Node1 -->
+  <polyline points="522,62 522,110 51,110 51,64"
+            fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+</svg>

@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 460 300" width="460" height="300">
+  <!-- Tree edges (drawn first so nodes appear on top) -->
+  <!-- 17 -> 12 -->
+  <line x1="225" y1="40" x2="110" y2="112" stroke="#6b7280" stroke-width="1.5"/>
+  <!-- 17 -> 35 -->
+  <line x1="225" y1="40" x2="350" y2="112" stroke="#6b7280" stroke-width="1.5"/>
+  <!-- 12 -> 6 -->
+  <line x1="110" y1="115" x2="48" y2="187" stroke="#6b7280" stroke-width="1.5"/>
+  <!-- 12 -> 14 -->
+  <line x1="110" y1="115" x2="175" y2="187" stroke="#6b7280" stroke-width="1.5"/>
+  <!-- 35 -> 40 (right child only) -->
+  <line x1="350" y1="115" x2="412" y2="187" stroke="#6b7280" stroke-width="1.5"/>
+  <!-- 40 -> 38 (left child only) -->
+  <line x1="412" y1="190" x2="372" y2="260" stroke="#6b7280" stroke-width="1.5"/>
+
+  <!-- Root: 17 -->
+  <circle cx="225" cy="40" r="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="225" y="46" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#15803d" font-weight="bold">17</text>
+
+  <!-- Level 1: 12, 35 -->
+  <circle cx="110" cy="115" r="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="110" y="121" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#15803d" font-weight="bold">12</text>
+
+  <circle cx="350" cy="115" r="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="350" y="121" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#15803d" font-weight="bold">35</text>
+
+  <!-- Level 2: 6, 14, 40 -->
+  <circle cx="48" cy="190" r="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="48" y="196" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#15803d" font-weight="bold">6</text>
+
+  <circle cx="175" cy="190" r="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="175" y="196" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#15803d" font-weight="bold">14</text>
+
+  <circle cx="412" cy="190" r="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="412" y="196" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#15803d" font-weight="bold">40</text>
+
+  <!-- Level 3: 38 (left child of 40) -->
+  <circle cx="372" cy="262" r="22" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="372" y="268" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#15803d" font-weight="bold">38</text>
+</svg>
