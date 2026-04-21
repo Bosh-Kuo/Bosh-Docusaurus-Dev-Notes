@@ -1,0 +1,31 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 255" width="500" height="255">
+
+  <!-- Connections: server <-> network, network <-> each client -->
+  <line x1="160" y1="128" x2="180" y2="128" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="330" y1="85" x2="380" y2="70" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="330" y1="128" x2="380" y2="128" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="330" y1="173" x2="380" y2="190" stroke="#6b7280" stroke-width="1.5"/>
+
+  <!-- Server (left) -->
+  <ellipse cx="90" cy="128" rx="68" ry="48" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="90" y="124" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#15803d">server</text>
+
+  <!-- Network (center) -->
+  <ellipse cx="255" cy="128" rx="75" ry="55" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="255" y="132" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#1d4ed8">network</text>
+
+  <!-- Client: desktop (top right) -->
+  <ellipse cx="420" cy="68" rx="68" ry="30" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="420" y="64" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">client</text>
+  <text x="420" y="78" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">desktop</text>
+
+  <!-- Client: laptop (middle right) -->
+  <ellipse cx="420" cy="128" rx="68" ry="30" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="420" y="124" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">client</text>
+  <text x="420" y="138" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">laptop</text>
+
+  <!-- Client: smartphone (bottom right) -->
+  <ellipse cx="420" cy="190" rx="68" ry="30" fill="#f3f4f6" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="420" y="186" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">client</text>
+  <text x="420" y="200" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">smartphone</text>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 450" width="680" height="450">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Cloud blob (drawn first, behind all boxes) -->
+  <!-- Bumps roughly align above: VM1(x=95), VM2(x=222), Storage(x=348), CMS(x=561) -->
+  <path d="M 18,270
+    Q 15,222 40,212
+    Q 55,186 95,179   Q 135,186 142,212
+    Q 148,220 155,212
+    Q 168,186 222,179 Q 278,186 285,212
+    Q 292,220 300,212
+    Q 312,186 348,179 Q 388,186 395,212
+    Q 402,222 418,212
+    Q 440,183 561,176 Q 628,183 652,215
+    Q 665,240 660,272
+    L 660,428 Q 660,436 650,436 L 28,436 Q 18,436 18,428 Z"
+    fill="#e0f2fe" stroke="#9ca3af" stroke-width="1.5"/>
+
+  <!-- Internet oval (above cloud) -->
+  <ellipse cx="215" cy="42" rx="105" ry="33" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+  <text x="215" y="47" text-anchor="middle" font-size="14" font-family="sans-serif" fill="#374151">Internet</text>
+
+  <!-- Solid arrow: Internet -> Firewall -->
+  <line x1="215" y1="75" x2="215" y2="86" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Dashed arrow: Internet -> Cloud Customer Interface ("customer requests") -->
+  <line x1="318" y1="46" x2="458" y2="98" stroke="#374151" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <text x="378" y="60" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#374151">customer</text>
+  <text x="378" y="72" text-anchor="middle" font-size="10" font-family="sans-serif" fill="#374151">requests</text>
+
+  <!-- Firewall -->
+  <rect x="65" y="88" width="300" height="40" rx="3" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="215" y="113" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#374151">firewall</text>
+
+  <!-- Cloud Customer Interface (no dashed border — solid box per textbook) -->
+  <rect x="458" y="78" width="200" height="72" rx="3" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="558" y="108" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">cloud customer</text>
+  <text x="558" y="124" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">interface</text>
+
+  <!-- Horizontal line: Firewall right edge -> CCI left edge (connecting at y=108) -->
+  <line x1="365" y1="108" x2="458" y2="108" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Solid arrow: Firewall -> Load Balancer -->
+  <line x1="215" y1="128" x2="215" y2="148" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Load Balancer -->
+  <rect x="65" y="148" width="300" height="40" rx="3" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="215" y="173" text-anchor="middle" font-size="13" font-family="sans-serif" fill="#374151">load balancer</text>
+
+  <!-- T-branches from Load Balancer to 4 boxes inside cloud -->
+  <!-- Vertical: LB center down to junction -->
+  <line x1="215" y1="188" x2="215" y2="210" stroke="#374151" stroke-width="1.5"/>
+  <!-- Horizontal: spanning all 4 branch points -->
+  <line x1="95" y1="210" x2="561" y2="210" stroke="#374151" stroke-width="1.5"/>
+  <!-- 4 verticals from horizontal to each box -->
+  <line x1="95"  y1="210" x2="95"  y2="217" stroke="#374151" stroke-width="1.5"/>
+  <line x1="222" y1="210" x2="222" y2="217" stroke="#374151" stroke-width="1.5"/>
+  <line x1="348" y1="210" x2="348" y2="230" stroke="#374151" stroke-width="1.5"/>
+  <line x1="561" y1="210" x2="561" y2="217" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- VM1 box -->
+  <rect x="28" y="219" width="135" height="60" rx="3" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="95" y="246" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">virtual</text>
+  <text x="95" y="261" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">machines</text>
+
+  <!-- VM2 box -->
+  <rect x="154" y="219" width="135" height="60" rx="3" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="222" y="246" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">virtual</text>
+  <text x="222" y="261" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">machines</text>
+
+  <!-- Storage box -->
+  <rect x="293" y="232" width="110" height="38" rx="3" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="348" y="256" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">storage</text>
+
+  <!-- Cloud Management Services box -->
+  <rect x="458" y="219" width="206" height="60" rx="3" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="561" y="246" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">cloud</text>
+  <text x="561" y="261" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">managment services</text>
+
+  <!-- "servers" text labels under VM1 and VM2 (text only, no box) -->
+  <text x="95"  y="302" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">servers</text>
+  <text x="222" y="302" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">servers</text>
+
+  <!-- Dashed arrow: CCI bottom -> Cloud Management Services (represents "cloud management commands") -->
+  <line x1="558" y1="150" x2="561" y2="217" stroke="#374151" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+
+  <!-- "cloud management commands" text label (to the LEFT of the dashed arrow, in gap between LB and CCI) -->
+  <text x="412" y="172" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">cloud</text>
+  <text x="412" y="185" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">management</text>
+  <text x="412" y="198" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#374151">commands</text>
+</svg>
