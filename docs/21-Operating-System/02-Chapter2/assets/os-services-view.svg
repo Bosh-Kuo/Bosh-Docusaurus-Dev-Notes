@@ -1,0 +1,93 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 510" width="720" height="510">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Outer border -->
+  <rect x="8" y="8" width="704" height="494" rx="4" fill="none" stroke="#9ca3af" stroke-width="1.5"/>
+
+  <!-- ① user and other system programs -->
+  <rect x="16" y="16" width="688" height="46" rx="3" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="360" y="44" text-anchor="middle" font-family="sans-serif" font-size="14" font-weight="600" fill="#1f2937">user and other system programs</text>
+
+  <!-- ② user interfaces section background -->
+  <rect x="16" y="70" width="610" height="58" rx="3" fill="#eff6ff" stroke="#93c5fd" stroke-width="1"/>
+
+  <!-- GUI box -->
+  <rect x="26" y="78" width="174" height="42" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="113" y="104" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#1d4ed8">GUI</text>
+
+  <!-- touch screen box -->
+  <rect x="212" y="78" width="190" height="42" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="307" y="104" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#1d4ed8">touch screen</text>
+
+  <!-- command line box -->
+  <rect x="414" y="78" width="200" height="42" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="514" y="104" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="500" fill="#1d4ed8">command line</text>
+
+  <!-- user interfaces label -->
+  <line x1="632" y1="99" x2="648" y2="99" stroke="#6b7280" stroke-width="1.2"/>
+  <line x1="648" y1="78" x2="648" y2="128" stroke="#6b7280" stroke-width="1.2"/>
+  <line x1="648" y1="78" x2="640" y2="78" stroke="#6b7280" stroke-width="1.2"/>
+  <line x1="648" y1="128" x2="640" y2="128" stroke="#6b7280" stroke-width="1.2"/>
+  <text x="662" y="96" text-anchor="start" font-family="sans-serif" font-size="12" fill="#374151">user</text>
+  <text x="662" y="111" text-anchor="start" font-family="sans-serif" font-size="12" fill="#374151">interfaces</text>
+
+  <!-- ③ system calls bar -->
+  <rect x="16" y="136" width="688" height="32" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="360" y="157" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#92400e">system calls</text>
+
+  <!-- ④ Services outer container -->
+  <rect x="16" y="176" width="640" height="296" rx="3" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+
+  <!-- Row A: 6 user-helpful service boxes (2 rows of 3) -->
+  <!-- Row A1: program execution, I/O operations, file systems -->
+  <rect x="26" y="186" width="196" height="58" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="124" y="212" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">program</text>
+  <text x="124" y="228" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">execution</text>
+
+  <rect x="232" y="186" width="196" height="58" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="330" y="212" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">I/O</text>
+  <text x="330" y="228" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">operations</text>
+
+  <rect x="438" y="186" width="200" height="58" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="538" y="212" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">file</text>
+  <text x="538" y="228" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">systems</text>
+
+  <!-- Row A2: communication, resource allocation, accounting -->
+  <rect x="26" y="254" width="196" height="58" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="124" y="280" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">communication</text>
+
+  <rect x="232" y="254" width="196" height="58" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="330" y="275" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">resource</text>
+  <text x="330" y="291" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">allocation</text>
+
+  <rect x="438" y="254" width="200" height="58" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="538" y="280" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="500" fill="#14532d">accounting</text>
+
+  <!-- Divider line -->
+  <line x1="26" y1="326" x2="636" y2="326" stroke="#86efac" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- Row B: error detection (left) + protection and security (right) -->
+  <rect x="26" y="334" width="68" height="124" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="60" y="396" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="11" font-weight="500" fill="#9d174d" transform="rotate(-90, 60, 396)">error detection</text>
+
+  <rect x="560" y="334" width="90" height="124" rx="3" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="605" y="396" text-anchor="middle" dominant-baseline="middle" font-family="sans-serif" font-size="11" font-weight="500" fill="#4c1d95" transform="rotate(-90, 605, 396)">protection and security</text>
+
+  <!-- Center OS label in bottom section -->
+  <text x="320" y="388" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="600" fill="#374151">operating system</text>
+
+  <!-- "services" bracket label on right -->
+  <line x1="664" y1="196" x2="678" y2="196" stroke="#6b7280" stroke-width="1.2"/>
+  <line x1="678" y1="196" x2="678" y2="452" stroke="#6b7280" stroke-width="1.2"/>
+  <line x1="678" y1="452" x2="664" y2="452" stroke="#6b7280" stroke-width="1.2"/>
+  <line x1="678" y1="324" x2="692" y2="324" stroke="#6b7280" stroke-width="1.2"/>
+  <text x="697" y="318" text-anchor="start" font-family="sans-serif" font-size="12" fill="#374151">services</text>
+
+  <!-- ⑤ hardware bar -->
+  <rect x="16" y="480" width="688" height="20" rx="3" fill="#374151" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="360" y="494" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="600" fill="#ffffff">hardware</text>
+</svg>
