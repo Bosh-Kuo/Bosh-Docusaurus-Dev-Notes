@@ -1,0 +1,71 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <marker id="arr-b" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- ── USER APP (top) ── -->
+  <rect x="195" y="18" width="210" height="44" rx="22" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="300" y="36" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">user</text>
+  <text x="300" y="52" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">application</text>
+
+  <!-- ── CALL ARROW (down, left side) ── -->
+  <line x1="240" y1="62" x2="240" y2="116" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="252" y="94" font-family="sans-serif" font-size="11" fill="#374151">open()</text>
+
+  <!-- ── User mode / Kernel mode labels ── -->
+  <text x="26" y="126" font-family="sans-serif" font-size="11" fill="#6b7280">user</text>
+  <text x="26" y="140" font-family="sans-serif" font-size="11" fill="#6b7280">mode</text>
+  <line x1="80" y1="140" x2="520" y2="140" stroke="#d1d5db" stroke-width="1" stroke-dasharray="5,3"/>
+  <text x="26" y="160" font-family="sans-serif" font-size="11" fill="#6b7280">kernel</text>
+  <text x="26" y="174" font-family="sans-serif" font-size="11" fill="#6b7280">mode</text>
+
+  <!-- ── SYSTEM CALL INTERFACE BOX ── -->
+  <rect x="80" y="118" width="440" height="38" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="300" y="134" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#1d4ed8">system call interface</text>
+  <text x="300" y="148" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1d4ed8">(table indexed by system call number)</text>
+
+  <!-- ── ARROW from interface down to table ── -->
+  <line x1="240" y1="156" x2="240" y2="200" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Kernel interior background ── -->
+  <rect x="80" y="200" width="440" height="240" rx="4" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- ── Index Table (left side in kernel) ── -->
+  <rect x="100" y="212" width="130" height="120" rx="3" fill="#fff" stroke="#9ca3af" stroke-width="1.2"/>
+  <text x="165" y="230" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6b7280">...</text>
+  <rect x="100" y="236" width="130" height="20" fill="#bfdbfe" stroke="none"/>
+  <text x="165" y="250" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1d4ed8">i → open()</text>
+  <text x="165" y="272" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6b7280">...</text>
+  <text x="165" y="292" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6b7280">...</text>
+  <text x="165" y="312" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#6b7280">...</text>
+
+  <!-- ── ARROW from table to open() implementation ── -->
+  <line x1="230" y1="246" x2="310" y2="246" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-b)"/>
+
+  <!-- ── open() Implementation box ── -->
+  <rect x="312" y="212" width="190" height="100" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="407" y="234" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#15803d">open()</text>
+  <text x="407" y="252" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#15803d">Implementation</text>
+  <text x="407" y="268" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#15803d">of open()</text>
+  <text x="407" y="286" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#15803d">system call</text>
+
+  <!-- ── RETURN path ── -->
+  <!-- vertical down from open() box -->
+  <line x1="407" y1="312" x2="407" y2="356" stroke="#374151" stroke-width="1.5"/>
+  <!-- horizontal left to center -->
+  <line x1="120" y1="356" x2="407" y2="356" stroke="#374151" stroke-width="1.5"/>
+  <!-- vertical back up to user app area -->
+  <line x1="120" y1="356" x2="120" y2="440" stroke="#374151" stroke-width="1.5"/>
+  <line x1="120" y1="440" x2="348" y2="440" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="128" y="410" font-family="sans-serif" font-size="11" fill="#374151">return</text>
+
+  <!-- ── USER APP (bottom, same as top — showing return destination) ── -->
+  <rect x="195" y="444" width="210" height="44" rx="22" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="300" y="462" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">user</text>
+  <text x="300" y="478" text-anchor="middle" font-family="sans-serif" font-size="13" fill="#374151">application</text>
+</svg>

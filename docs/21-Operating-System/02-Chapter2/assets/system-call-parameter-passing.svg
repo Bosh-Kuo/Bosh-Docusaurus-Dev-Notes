@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 340" width="700" height="340">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ── LEFT: User Program ── -->
+  <rect x="20" y="120" width="170" height="100" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="105" y="142" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">user program</text>
+
+  <!-- load address X (action item) -->
+  <rect x="32" y="152" width="146" height="24" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="105" y="168" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1d4ed8">load address X</text>
+
+  <!-- system call 13 (action item) -->
+  <rect x="32" y="184" width="146" height="24" rx="3" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="105" y="200" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6d28d9">system call 13</text>
+
+  <!-- ── CENTER: Register + Parameter block ── -->
+
+  <!-- Register box -->
+  <rect x="285" y="60" width="130" height="44" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="350" y="79" text-anchor="middle" font-family="sans-serif" font-size="11" font-weight="bold" fill="#92400e">register</text>
+  <text x="350" y="95" text-anchor="middle" font-family="sans-serif" font-size="13" font-weight="bold" fill="#92400e">X</text>
+
+  <!-- Parameter block in memory -->
+  <rect x="268" y="148" width="164" height="70" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="350" y="168" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8">X: parameters</text>
+  <text x="350" y="184" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1d4ed8">for call</text>
+  <text x="350" y="204" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#3b82f6">(block in memory)</text>
+
+  <!-- Arrow: load address X → register -->
+  <line x1="178" y1="164" x2="283" y2="90" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Arrow: register → parameter block -->
+  <line x1="350" y1="104" x2="350" y2="146" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── RIGHT: Operating System ── -->
+  <rect x="510" y="120" width="170" height="100" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="595" y="142" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">operating system</text>
+
+  <!-- use parameters from table X -->
+  <rect x="522" y="152" width="146" height="24" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="595" y="163" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1d4ed8">use parameters</text>
+  <text x="595" y="173" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#1d4ed8">from table X</text>
+
+  <!-- code for system call 13 -->
+  <rect x="522" y="184" width="146" height="24" rx="3" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="595" y="195" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#6d28d9">code for</text>
+  <text x="595" y="205" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#6d28d9">system call 13</text>
+
+  <!-- Arrow: parameter block → use parameters -->
+  <line x1="432" y1="183" x2="520" y2="164" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Arrow: system call 13 → code for system call 13 -->
+  <line x1="178" y1="196" x2="520" y2="196" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ── Labels at bottom ── -->
+  <text x="105" y="298" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6b7280">User Space</text>
+  <text x="350" y="298" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6b7280">Memory (parameter block)</text>
+  <text x="595" y="298" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#6b7280">Kernel Space</text>
+
+  <!-- Divider lines -->
+  <line x1="220" y1="100" x2="220" y2="270" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,3"/>
+  <line x1="480" y1="100" x2="480" y2="270" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="4,3"/>
+</svg>
