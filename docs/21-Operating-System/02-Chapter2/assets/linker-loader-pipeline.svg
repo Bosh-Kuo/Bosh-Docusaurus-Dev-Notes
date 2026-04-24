@@ -1,0 +1,112 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 660" width="560" height="660">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <marker id="arr-sm" markerWidth="8" markerHeight="6" refX="8" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ============================================================ -->
+  <!--  LEFT PIPELINE                                               -->
+  <!-- ============================================================ -->
+
+  <!-- source program (oval) -->
+  <ellipse cx="168" cy="52" rx="62" ry="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="168" y="47" font-family="sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle">source</text>
+  <text x="168" y="63" font-family="sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle">program</text>
+
+  <!-- Arrow: source program → compiler -->
+  <line x1="168" y1="82" x2="168" y2="112" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- compiler (rounded rect / tool) -->
+  <rect x="100" y="114" width="136" height="36" rx="14" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="168" y="136" font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">compiler</text>
+
+  <!-- Arrow: compiler → object file -->
+  <line x1="168" y1="150" x2="168" y2="200" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- object file (oval) -->
+  <ellipse cx="168" cy="228" rx="58" ry="28" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="168" y="223" font-family="sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle">object</text>
+  <text x="168" y="239" font-family="sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle">file</text>
+
+  <!-- other object files (oval, to the left) -->
+  <ellipse cx="58" cy="318" rx="52" ry="34" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="58" y="306" font-family="sans-serif" font-size="11" fill="#1e3a8a" text-anchor="middle">other</text>
+  <text x="58" y="320" font-family="sans-serif" font-size="11" fill="#1e3a8a" text-anchor="middle">object</text>
+  <text x="58" y="334" font-family="sans-serif" font-size="11" fill="#1e3a8a" text-anchor="middle">files</text>
+
+  <!-- Arrow: object file → linker -->
+  <line x1="168" y1="256" x2="168" y2="316" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Dashed arrow: other object files → linker -->
+  <line x1="110" y1="325" x2="154" y2="334" stroke="#374151" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-sm)"/>
+
+  <!-- linker (rounded rect / tool) -->
+  <rect x="100" y="320" width="136" height="36" rx="14" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="168" y="342" font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">linker</text>
+
+  <!-- Arrow: linker → executable file -->
+  <line x1="168" y1="356" x2="168" y2="406" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- executable file (oval) -->
+  <ellipse cx="168" cy="434" rx="66" ry="28" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="168" y="429" font-family="sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle">executable</text>
+  <text x="168" y="445" font-family="sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle">file</text>
+
+  <!-- Arrow: executable file → loader -->
+  <line x1="168" y1="462" x2="168" y2="494" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- loader (rounded rect / tool) -->
+  <rect x="100" y="496" width="136" height="36" rx="14" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="168" y="518" font-family="sans-serif" font-size="13" fill="#374151" text-anchor="middle">loader</text>
+
+  <!-- Arrow: loader → program in memory -->
+  <line x1="168" y1="532" x2="168" y2="570" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- dynamically linked libraries (oval, to the left) -->
+  <ellipse cx="58" cy="598" rx="52" ry="36" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="58" y="585" font-family="sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle">dynamically</text>
+  <text x="58" y="598" font-family="sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle">linked</text>
+  <text x="58" y="611" font-family="sans-serif" font-size="10" fill="#1e3a8a" text-anchor="middle">libraries</text>
+
+  <!-- Dashed arrow: dynamically linked libraries → program in memory -->
+  <line x1="110" y1="606" x2="148" y2="610" stroke="#374151" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr-sm)"/>
+
+  <!-- program in memory (oval) -->
+  <ellipse cx="168" cy="614" rx="64" ry="28" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="168" y="609" font-family="sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle">program</text>
+  <text x="168" y="625" font-family="sans-serif" font-size="13" fill="#1e3a8a" text-anchor="middle">in memory</text>
+
+  <!-- ============================================================ -->
+  <!--  RIGHT COLUMN  (plain text, aligned to left nodes)           -->
+  <!-- ============================================================ -->
+
+  <!-- main.c  — aligned with source program (cy=52) -->
+  <text x="308" y="58" font-family="monospace" font-size="17" fill="#111827">main.c</text>
+
+  <!-- gcc -c main.c  — aligned with compiler (center y=132) -->
+  <text x="308" y="138" font-family="monospace" font-size="15" fill="#111827">gcc -c main.c</text>
+
+  <!-- generates arrow (right column, between compiler and object file) -->
+  <line x1="336" y1="148" x2="336" y2="186" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="350" y="172" font-family="sans-serif" font-size="11" fill="#6b7280" font-style="italic">generates</text>
+
+  <!-- main.o  — aligned with object file (cy=228) -->
+  <text x="308" y="234" font-family="monospace" font-size="17" fill="#111827">main.o</text>
+
+  <!-- gcc -o main main.o -lm  — aligned with linker (center y=338) -->
+  <text x="290" y="344" font-family="monospace" font-size="13" fill="#111827">gcc -o main main.o -lm</text>
+
+  <!-- generates arrow (right column, between linker and executable file) -->
+  <line x1="336" y1="354" x2="336" y2="392" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="350" y="378" font-family="sans-serif" font-size="11" fill="#6b7280" font-style="italic">generates</text>
+
+  <!-- main  — aligned with executable file (cy=434) -->
+  <text x="308" y="440" font-family="monospace" font-size="17" fill="#111827">main</text>
+
+  <!-- ./main  — aligned with loader (center y=514) -->
+  <text x="308" y="520" font-family="monospace" font-size="17" fill="#111827">./main</text>
+</svg>
