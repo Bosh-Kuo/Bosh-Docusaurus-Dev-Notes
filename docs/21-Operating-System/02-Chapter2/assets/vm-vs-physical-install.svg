@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 330" width="640" height="330">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Left column header: Physical Machine (green) -->
+  <rect x="20" y="10" width="265" height="38" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="152" y="28" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#14532d">Physical Machine</text>
+  <text x="152" y="42" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#16a34a">(OS runs directly on hardware)</text>
+
+  <!-- Right column header: Virtual Machine (purple) -->
+  <rect x="355" y="10" width="265" height="38" rx="6" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="487" y="28" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#4c1d95">Virtual Machine</text>
+  <text x="487" y="42" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#7c3aed">(OS runs on top of a hypervisor)</text>
+
+  <!-- LEFT: Box 1 - User Applications -->
+  <rect x="38" y="62" width="228" height="36" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="152" y="83" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#1d4ed8">User Applications</text>
+
+  <line x1="152" y1="98" x2="152" y2="116" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- LEFT: Box 2 - OS Kernel -->
+  <rect x="38" y="118" width="228" height="36" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="152" y="139" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#14532d">Ubuntu OS Kernel</text>
+
+  <!-- Direct access annotation arrow -->
+  <line x1="152" y1="154" x2="152" y2="172" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="162" y="167" font-family="sans-serif" font-size="9" fill="#16a34a" font-style="italic">direct access</text>
+
+  <!-- LEFT: Box 3 - Physical Hardware (larger, represents full hardware access) -->
+  <rect x="38" y="174" width="228" height="82" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="152" y="200" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">Physical Hardware</text>
+  <text x="152" y="218" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#6b7280">CPU, RAM, Disk</text>
+  <text x="152" y="235" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#9ca3af">(fully accessible to OS kernel)</text>
+  <text x="152" y="249" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#9ca3af">(disk = real partition on physical disk)</text>
+
+  <!-- RIGHT: VM boundary dashed rectangle (surrounds guest OS layers) -->
+  <rect x="365" y="56" width="245" height="120" rx="8" fill="none" stroke="#7c3aed" stroke-dasharray="6,3" stroke-width="1.5"/>
+  <text x="598" y="70" text-anchor="end" font-family="sans-serif" font-size="9" fill="#7c3aed" font-style="italic">Virtual Machine</text>
+
+  <!-- RIGHT: Box 1 - Guest User Applications -->
+  <rect x="373" y="62" width="228" height="34" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="487" y="82" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#1d4ed8">Guest User Applications</text>
+
+  <line x1="487" y1="96" x2="487" y2="110" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- RIGHT: Box 2 - Guest OS Kernel (Ubuntu) -->
+  <rect x="373" y="112" width="228" height="34" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="487" y="132" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#14532d">Guest OS Kernel (Ubuntu)</text>
+
+  <!-- Arrow crosses VM boundary -->
+  <line x1="487" y1="146" x2="487" y2="164" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="497" y="159" font-family="sans-serif" font-size="9" fill="#7c3aed" font-style="italic">intercepted</text>
+
+  <!-- RIGHT: Box 3 - Hypervisor -->
+  <rect x="373" y="166" width="228" height="36" rx="6" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="487" y="184" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4c1d95">Hypervisor</text>
+  <text x="487" y="197" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#7c3aed">(VirtualBox / VMware)</text>
+
+  <line x1="487" y1="202" x2="487" y2="216" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- RIGHT: Box 4 - Host OS -->
+  <rect x="373" y="218" width="228" height="36" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="487" y="235" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#92400e">Host OS</text>
+  <text x="487" y="249" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#d97706">(Windows / macOS)</text>
+
+  <line x1="487" y1="254" x2="487" y2="268" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- RIGHT: Box 5 - Physical Hardware -->
+  <rect x="373" y="270" width="228" height="46" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="487" y="290" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">Physical Hardware</text>
+  <text x="487" y="306" text-anchor="middle" font-family="sans-serif" font-size="9" fill="#6b7280">(disk = a .vmdk/.vdi file on host OS)</text>
+</svg>

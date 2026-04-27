@@ -162,7 +162,7 @@ tags: [Operating System]
 
 <br/>
 
-### **2.3.3.1 行程控制 (Process Control)**
+### **行程控制 (Process Control)**
 
 行程 (Process) 是程式執行時在記憶體中的實例。一個完整的行程生命週期需要 OS 提供全方位的控制介面。
 
@@ -222,7 +222,7 @@ FreeBSD 啟動一支新程式的流程如下：
 
 <br/>
 
-### **2.3.3.2 檔案管理 (File Management)**
+### **檔案管理 (File Management)**
 
 檔案系統是 OS 最重要的服務之一，本書第 13–15 章會深入討論。這裡先整理核心的檔案管理系統呼叫。
 
@@ -242,7 +242,7 @@ FreeBSD 啟動一支新程式的流程如下：
 
 <br/>
 
-### **2.3.3.3 裝置管理 (Device Management)**
+### **裝置管理 (Device Management)**
 
 行程在執行時需要多種資源：主記憶體、磁碟、網路介面……所有這些受 OS 管控的資源，都可以被視為**裝置 (Device)**，包括實體裝置（如磁碟）和虛擬/抽象裝置（如檔案）。
 
@@ -262,7 +262,7 @@ UNIX 系統將檔案與 I/O 裝置合併為一個統一的結構（file–device
 
 <br/>
 
-### **2.3.3.4 資訊維護 (Information Maintenance)**
+### **資訊維護 (Information Maintenance)**
 
 這一類系統呼叫的目的是在使用者程式與 OS 之間交換資訊，或提供除錯工具。
 
@@ -276,7 +276,7 @@ UNIX 系統將檔案與 I/O 裝置合併為一個統一的結構（file–device
 
 <br/>
 
-### **2.3.3.5 通訊 (Communications)**
+### **通訊 (Communications)**
 
 行程之間有時需要交換資訊，稱為**行程間通訊 (Inter-Process Communication, IPC)**。OS 提供兩種不同的通訊模型，各有適用場景：
 
@@ -316,7 +316,7 @@ UNIX 系統將檔案與 I/O 裝置合併為一個統一的結構（file–device
 
 <br/>
 
-### **2.3.3.6 保護 (Protection)**
+### **保護 (Protection)**
 
 保護 (Protection) 提供控制電腦系統資源存取的機制。在早期，保護主要是多使用者系統的問題；現代社會從伺服器到手持裝置都需要應對網路威脅，保護成為所有 OS 的基本需求。
 

@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 388" width="720" height="388">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Column 1 background (green) -->
+  <rect x="10" y="10" width="210" height="355" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <!-- Column 2 background (yellow) -->
+  <rect x="255" y="10" width="210" height="355" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <!-- Column 3 background (purple) -->
+  <rect x="500" y="10" width="210" height="355" rx="8" fill="#f5f3ff" stroke="#7c3aed" stroke-width="1.5"/>
+
+  <!-- Column 1 header -->
+  <rect x="10" y="10" width="210" height="46" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="115" y="30" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#14532d">Approach 1</text>
+  <text x="115" y="47" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#14532d">System Build</text>
+
+  <!-- Column 2 header -->
+  <rect x="255" y="10" width="210" height="46" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="360" y="30" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#92400e">Approach 2</text>
+  <text x="360" y="47" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#92400e">Module Library</text>
+
+  <!-- Column 3 header -->
+  <rect x="500" y="10" width="210" height="46" rx="8" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="605" y="30" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#4c1d95">Approach 3</text>
+  <text x="605" y="47" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4c1d95">Fully Modular</text>
+
+  <!-- Row 1: Config File (shared input) -->
+  <rect x="30" y="78" width="170" height="36" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="115" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">Config File</text>
+
+  <rect x="275" y="78" width="170" height="36" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="360" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">Config File</text>
+
+  <rect x="520" y="78" width="170" height="36" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="605" y="100" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#374151">Config File</text>
+
+  <!-- Arrows: Row 1 to Row 2 -->
+  <line x1="115" y1="114" x2="115" y2="140" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="360" y1="114" x2="360" y2="140" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="605" y1="114" x2="605" y2="140" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Row 2: Configuration action (different per approach) -->
+  <!-- Approach 1: Modify OS Source Code -->
+  <rect x="30" y="145" width="170" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="115" y="164" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#14532d">Modify OS</text>
+  <text x="115" y="180" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#14532d">Source Code</text>
+
+  <!-- Approach 2: Select Precompiled Modules from Library -->
+  <rect x="275" y="145" width="170" height="46" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="360" y="164" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#92400e">Select Precompiled</text>
+  <text x="360" y="180" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#92400e">Object Modules</text>
+
+  <!-- Approach 3: Set System Configuration Parameters -->
+  <rect x="520" y="145" width="170" height="46" rx="6" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="605" y="164" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4c1d95">Set System</text>
+  <text x="605" y="180" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4c1d95">Parameters</text>
+
+  <!-- Arrows: Row 2 to Row 3 -->
+  <line x1="115" y1="191" x2="115" y2="217" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="360" y1="191" x2="360" y2="217" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="605" y1="191" x2="605" y2="217" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Row 3: Build / generation action -->
+  <!-- Approach 1: Full Compile (System Build) -->
+  <rect x="30" y="222" width="170" height="46" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="115" y="241" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#14532d">Full Compile</text>
+  <text x="115" y="257" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#14532d">(System Build)</text>
+
+  <!-- Approach 2: Link Selected Modules -->
+  <rect x="275" y="222" width="170" height="46" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="360" y="241" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#92400e">Link Selected</text>
+  <text x="360" y="257" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#92400e">Modules</text>
+
+  <!-- Approach 3: Load Modules at Execution Time -->
+  <rect x="520" y="222" width="170" height="46" rx="6" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="605" y="241" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4c1d95">Load Modules</text>
+  <text x="605" y="257" text-anchor="middle" font-family="sans-serif" font-size="11" fill="#4c1d95">at Execution Time</text>
+
+  <!-- Arrows: Row 3 to Row 4 -->
+  <line x1="115" y1="268" x2="115" y2="294" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="360" y1="268" x2="360" y2="294" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <line x1="605" y1="268" x2="605" y2="294" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Row 4: OS Binary output (shared) -->
+  <rect x="30" y="299" width="170" height="36" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="115" y="321" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">OS Binary</text>
+
+  <rect x="275" y="299" width="170" height="36" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="360" y="321" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">OS Binary</text>
+
+  <rect x="520" y="299" width="170" height="36" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="605" y="321" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">OS Binary</text>
+
+  <!-- Bottom labels: when selection occurs -->
+  <text x="115" y="356" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#16a34a" font-style="italic">selection at compile time</text>
+  <text x="360" y="356" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#d97706" font-style="italic">selection at link time</text>
+  <text x="605" y="356" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#7c3aed" font-style="italic">selection at execution time</text>
+</svg>

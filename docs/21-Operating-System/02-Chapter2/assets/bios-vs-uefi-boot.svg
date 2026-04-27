@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 440" width="600" height="440">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Column header banners -->
+  <rect x="20" y="10" width="235" height="30" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="137" y="29" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#92400e">BIOS Boot (Multi-stage)</text>
+
+  <rect x="345" y="10" width="235" height="30" rx="6" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="462" y="29" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#4c1d95">UEFI Boot (Single-stage)</text>
+
+  <!-- Power On (centered, shared start) -->
+  <rect x="200" y="53" width="200" height="35" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="300" y="74" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151">Power On</text>
+
+  <!-- Fork arrows from Power On bottom -->
+  <!-- Left fork to BIOS column -->
+  <line x1="275" y1="88" x2="137" y2="118" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Right fork to UEFI column -->
+  <line x1="325" y1="88" x2="462" y2="118" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- BIOS Step 1: BIOS Firmware -->
+  <rect x="20" y="123" width="235" height="44" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="137" y="142" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400e">BIOS Firmware</text>
+  <text x="137" y="158" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#92400e">(in nonvolatile firmware)</text>
+
+  <!-- Arrow label above arrow -->
+  <text x="137" y="177" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#6b7280" font-style="italic">load 2nd-stage code</text>
+  <line x1="137" y1="182" x2="137" y2="206" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- BIOS Step 2: Boot Block -->
+  <rect x="20" y="211" width="235" height="44" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="137" y="230" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400e">Boot Block</text>
+  <text x="137" y="246" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#92400e">(fixed disk location)</text>
+
+  <!-- Arrow label above arrow -->
+  <text x="137" y="265" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#6b7280" font-style="italic">load full bootstrap</text>
+  <line x1="137" y1="270" x2="137" y2="294" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- BIOS Step 3: Bootstrap Program -->
+  <rect x="20" y="299" width="235" height="44" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="137" y="318" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#92400e">Bootstrap Program</text>
+  <text x="137" y="334" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#92400e">(diagnostics, init, load kernel)</text>
+
+  <!-- Arrow label above arrow -->
+  <text x="137" y="353" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#6b7280" font-style="italic">start kernel</text>
+  <line x1="137" y1="358" x2="137" y2="382" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- BIOS: OS Kernel (running) -->
+  <rect x="20" y="387" width="235" height="38" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="137" y="404" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#14532d">OS Kernel</text>
+  <text x="137" y="418" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#14532d">(loaded and running)</text>
+
+  <!-- UEFI Step 1: UEFI Firmware -->
+  <rect x="345" y="123" width="235" height="44" rx="6" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="462" y="142" text-anchor="middle" font-family="sans-serif" font-size="12" fill="#4c1d95">UEFI Firmware</text>
+  <text x="462" y="158" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#4c1d95">(complete boot manager)</text>
+
+  <!-- Long arrow from UEFI Firmware directly to OS Kernel -->
+  <!-- Label above the long arrow (placed to the right of the line) -->
+  <text x="510" y="230" font-family="sans-serif" font-size="10" fill="#6b7280" font-style="italic">diagnostics,</text>
+  <text x="510" y="244" font-family="sans-serif" font-size="10" fill="#6b7280" font-style="italic">init, load kernel</text>
+  <line x1="462" y1="167" x2="462" y2="382" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- UEFI: OS Kernel (running) - same vertical level as BIOS final box -->
+  <rect x="345" y="387" width="235" height="38" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="462" y="404" text-anchor="middle" font-family="sans-serif" font-size="12" font-weight="bold" fill="#14532d">OS Kernel</text>
+  <text x="462" y="418" text-anchor="middle" font-family="sans-serif" font-size="10" fill="#14532d">(loaded and running)</text>
+</svg>
