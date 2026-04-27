@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 395" width="660" height="395">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="660" height="395" fill="white"/>
+
+  <!-- Title -->
+  <text x="330" y="18" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#111827">Linux bcc/BPF Tracing Tools Architecture</text>
+
+  <!-- === USER SPACE REGION === -->
+  <rect x="10" y="26" width="640" height="110" rx="6" fill="#fdf2f8" stroke="#db2777" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="20" y="39" font-family="sans-serif" font-size="9" fill="#9d174d" font-weight="bold">USER SPACE</text>
+
+  <!-- Applications box -->
+  <rect x="22" y="42" width="616" height="40" rx="4" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="330" y="67" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#9d174d">Applications</text>
+
+  <!-- System Libraries box -->
+  <rect x="22" y="88" width="616" height="40" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="330" y="113" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#92400e">System Libraries</text>
+
+  <!-- === SYSTEM CALL INTERFACE === -->
+  <rect x="10" y="142" width="640" height="30" rx="4" fill="#d1d5db" stroke="#6b7280" stroke-width="2"/>
+  <text x="330" y="162" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#374151">System Call Interface</text>
+
+  <!-- === KERNEL SPACE REGION === -->
+  <rect x="10" y="176" width="640" height="166" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="20" y="189" font-family="sans-serif" font-size="9" fill="#1e40af" font-weight="bold">KERNEL SPACE</text>
+
+  <!-- Kernel Row 1: VFS | Sockets | Scheduler -->
+  <rect x="22" y="192" width="175" height="40" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="109" y="217" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1d4ed8">VFS</text>
+
+  <rect x="207" y="192" width="175" height="40" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="294" y="217" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Sockets</text>
+
+  <rect x="392" y="192" width="246" height="40" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="515" y="217" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Scheduler</text>
+
+  <!-- Kernel Row 2: File Systems | TCP/UDP -->
+  <rect x="22" y="240" width="175" height="40" rx="4" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="109" y="265" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1e40af">File Systems</text>
+
+  <rect x="207" y="240" width="175" height="40" rx="4" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="294" y="265" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#1e40af">TCP / UDP</text>
+
+  <!-- Kernel Row 3: Block Device Interface | Ethernet | IP | Volume Manager | Memory -->
+  <rect x="22" y="288" width="128" height="46" rx="4" fill="#93c5fd" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="86" y="307" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Block Device</text>
+  <text x="86" y="320" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Interface</text>
+
+  <rect x="158" y="288" width="90" height="46" rx="4" fill="#93c5fd" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="203" y="315" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Ethernet</text>
+
+  <rect x="256" y="288" width="70" height="46" rx="4" fill="#93c5fd" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="291" y="315" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1e3a8a">IP</text>
+
+  <rect x="334" y="288" width="118" height="46" rx="4" fill="#93c5fd" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="393" y="307" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Volume</text>
+  <text x="393" y="320" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Manager</text>
+
+  <rect x="460" y="288" width="178" height="46" rx="4" fill="#93c5fd" stroke="#1d4ed8" stroke-width="1.5"/>
+  <text x="549" y="315" font-family="sans-serif" font-size="9" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Memory</text>
+
+  <!-- === HARDWARE === -->
+  <rect x="10" y="348" width="640" height="42" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+  <text x="20" y="361" font-family="sans-serif" font-size="9" fill="#6b7280" font-weight="bold">HARDWARE</text>
+
+  <rect x="22" y="364" width="296" height="20" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="170" y="378" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#374151">DRAM</text>
+
+  <rect x="326" y="364" width="312" height="20" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="482" y="378" font-family="sans-serif" font-size="10" font-weight="bold" text-anchor="middle" fill="#15803d">CPU</text>
+</svg>
