@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 390" width="500" height="390">
+
+  <!-- applications -->
+  <rect x="70" y="10" width="360" height="38" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="250" y="34" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#374151">applications</text>
+
+  <!-- library interface -->
+  <rect x="70" y="58" width="360" height="38" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="250" y="82" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#374151">library interface</text>
+
+  <!-- System call interface row: Mach traps | BSD system calls -->
+  <rect x="70" y="106" width="168" height="38" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="154" y="124" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#be185d">Mach</text>
+  <text x="154" y="138" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#be185d">traps</text>
+
+  <rect x="262" y="106" width="168" height="38" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="346" y="124" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#be185d">BSD (POSIX)</text>
+  <text x="346" y="138" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#be185d">system calls</text>
+
+  <!-- Mach Kernel outer box -->
+  <rect x="70" y="154" width="360" height="210" rx="4" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <text x="418" y="178" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="end" fill="#1d4ed8">Mach kernel</text>
+
+  <!-- Core kernel services row -->
+  <rect x="84" y="164" width="106" height="46" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="137" y="186" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#1d4ed8">memory</text>
+  <text x="137" y="200" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#1d4ed8">management</text>
+
+  <rect x="206" y="164" width="100" height="46" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="256" y="186" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#1d4ed8">scheduling</text>
+
+  <rect x="322" y="164" width="98" height="46" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="371" y="186" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#1d4ed8">IPC</text>
+
+  <!-- I/O Kit -->
+  <rect x="84" y="224" width="150" height="46" rx="3" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="159" y="250" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#5b21b6">I/O kit</text>
+  <text x="159" y="264" font-family="sans-serif" font-size="9" text-anchor="middle" fill="#7c3aed">(device drivers)</text>
+
+  <!-- kexts -->
+  <rect x="84" y="284" width="150" height="46" rx="3" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="159" y="304" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#5b21b6">kexts</text>
+  <text x="159" y="318" font-family="sans-serif" font-size="9" text-anchor="middle" fill="#7c3aed">(kernel extensions)</text>
+
+  <!-- Hardware -->
+  <rect x="70" y="374" width="360" height="8" rx="2" fill="#374151"/>
+  <text x="250" y="370" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#6b7280">hardware</text>
+</svg>

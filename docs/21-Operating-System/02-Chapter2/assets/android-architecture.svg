@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 490" width="520" height="490">
+
+  <!-- applications -->
+  <rect x="60" y="10" width="400" height="38" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="260" y="34" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#374151">applications</text>
+
+  <!-- Row 2: ART VM | Android frameworks | JNI -->
+  <rect x="60" y="58" width="100" height="72" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="110" y="90" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">ART</text>
+  <text x="110" y="106" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">VM</text>
+
+  <rect x="178" y="58" width="184" height="72" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="270" y="90" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">Android</text>
+  <text x="270" y="106" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">frameworks</text>
+
+  <rect x="380" y="58" width="80" height="72" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="420" y="98" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">JNI</text>
+
+  <!-- native libraries label -->
+  <text x="260" y="148" font-family="sans-serif" font-size="11" font-weight="bold" text-anchor="middle" fill="#374151">native libraries</text>
+
+  <!-- native libraries row 1: SQLite | openGL | webkit -->
+  <rect x="60" y="156" width="114" height="36" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="117" y="179" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#92400e">SQLite</text>
+
+  <rect x="190" y="156" width="114" height="36" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="247" y="179" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#92400e">openGL</text>
+
+  <rect x="320" y="156" width="140" height="36" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="390" y="179" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#92400e">webkit</text>
+
+  <!-- native libraries row 2: surface manager | SSL | media framework -->
+  <rect x="60" y="200" width="136" height="36" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="128" y="218" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#92400e">surface</text>
+  <text x="128" y="230" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#92400e">manager</text>
+
+  <rect x="212" y="200" width="92" height="36" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="258" y="223" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#92400e">SSL</text>
+
+  <rect x="320" y="200" width="140" height="36" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="390" y="218" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#92400e">media</text>
+  <text x="390" y="230" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#92400e">framework</text>
+
+  <!-- HAL -->
+  <rect x="60" y="250" width="400" height="38" rx="3" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="260" y="274" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#5b21b6">HAL  (Hardware Abstraction Layer)</text>
+
+  <!-- Bionic -->
+  <rect x="60" y="298" width="400" height="38" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="260" y="322" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#be185d">Bionic  (standard C library)</text>
+
+  <!-- Linux kernel -->
+  <rect x="60" y="346" width="400" height="48" rx="3" fill="#bfdbfe" stroke="#2563eb" stroke-width="2"/>
+  <text x="260" y="368" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1d4ed8">Linux kernel</text>
+  <text x="260" y="384" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#2563eb">(modified for Android)</text>
+
+  <!-- hardware -->
+  <rect x="60" y="408" width="400" height="38" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="260" y="432" font-family="sans-serif" font-size="13" text-anchor="middle" fill="#1d4ed8">hardware</text>
+</svg>

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320">
+
+  <!-- Layer N (outermost) -->
+  <rect x="20" y="15" width="440" height="290" rx="10" fill="#f3f4f6" stroke="#9ca3af" stroke-width="2"/>
+  <text x="38" y="42" font-family="sans-serif" font-size="12" font-weight="bold" fill="#6b7280">layer N</text>
+  <text x="38" y="58" font-family="sans-serif" font-size="11" fill="#9ca3af">user interface</text>
+
+  <!-- Dots between Layer N ring and Layer 1 -->
+  <text x="56" y="148" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#9ca3af">•</text>
+  <text x="56" y="168" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#9ca3af">•</text>
+  <text x="56" y="188" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#9ca3af">•</text>
+
+  <!-- Layer 1 -->
+  <rect x="90" y="90" width="300" height="140" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="108" y="115" font-family="sans-serif" font-size="12" font-weight="bold" fill="#92400e">layer 1</text>
+
+  <!-- Dots between Layer 1 ring and Layer 0 -->
+  <text x="120" y="160" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#d97706">•</text>
+  <text x="120" y="178" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#d97706">•</text>
+  <text x="120" y="196" font-family="sans-serif" font-size="16" text-anchor="middle" fill="#d97706">•</text>
+
+  <!-- Layer 0 (innermost) -->
+  <rect x="160" y="148" width="160" height="68" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="240" y="176" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1d4ed8">layer 0</text>
+  <text x="240" y="194" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#1d4ed8">hardware</text>
+</svg>
