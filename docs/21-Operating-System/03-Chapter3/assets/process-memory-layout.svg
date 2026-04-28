@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 300 330" width="300" height="330">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- max label -->
+  <text x="150" y="20" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">max</text>
+
+  <!-- stack section -->
+  <rect x="85" y="28" width="130" height="50" rx="4" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="150" y="57" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d174d" text-anchor="middle">stack</text>
+
+  <!-- free space (dashed border) — drawn before arrows so arrows appear on top -->
+  <rect x="85" y="78" width="130" height="75" rx="4" fill="#f9fafb" stroke="#d1d5db" stroke-width="1.2" stroke-dasharray="5 3"/>
+
+  <!-- stack growth arrow (downward into free space) — drawn after free space rect -->
+  <line x1="140" y1="85" x2="140" y2="115" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- heap growth arrow (upward into free space) — drawn after free space rect -->
+  <line x1="160" y1="148" x2="160" y2="118" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- heap section -->
+  <rect x="85" y="153" width="130" height="50" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="150" y="182" font-family="sans-serif" font-size="13" font-weight="bold" fill="#166534" text-anchor="middle">heap</text>
+
+  <!-- data section -->
+  <rect x="85" y="203" width="130" height="50" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="150" y="232" font-family="sans-serif" font-size="13" font-weight="bold" fill="#92400e" text-anchor="middle">data</text>
+
+  <!-- text section -->
+  <rect x="85" y="253" width="130" height="50" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="150" y="282" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle">text</text>
+
+  <!-- 0 label -->
+  <text x="150" y="320" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">0</text>
+
+  <!-- right-side annotations -->
+  <text x="222" y="55" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="start">grows down</text>
+  <text x="222" y="180" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="start">grows up</text>
+  <text x="222" y="231" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="start">fixed size</text>
+  <text x="222" y="280" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="start">fixed size</text>
+</svg>

@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 710 265" width="710" height="265">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- new state -->
+  <ellipse cx="72" cy="105" rx="62" ry="26" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="72" y="109" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle">new</text>
+
+  <!-- ready state -->
+  <ellipse cx="258" cy="105" rx="65" ry="26" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="258" y="109" font-family="sans-serif" font-size="13" font-weight="bold" fill="#92400e" text-anchor="middle">ready</text>
+
+  <!-- running state -->
+  <ellipse cx="450" cy="105" rx="68" ry="26" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="450" y="109" font-family="sans-serif" font-size="13" font-weight="bold" fill="#166534" text-anchor="middle">running</text>
+
+  <!-- waiting state -->
+  <ellipse cx="354" cy="215" rx="75" ry="26" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="354" y="219" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d174d" text-anchor="middle">waiting</text>
+
+  <!-- terminated state -->
+  <ellipse cx="622" cy="105" rx="75" ry="26" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="622" y="109" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">terminated</text>
+
+  <!-- Arrow 1: new → ready (admitted) -->
+  <line x1="134" y1="105" x2="193" y2="105" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="163" y="95" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">admitted</text>
+
+  <!-- Arrow 2: ready → running (scheduler dispatch, lower path) -->
+  <line x1="323" y1="114" x2="382" y2="114" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="352" y="130" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">scheduler dispatch</text>
+
+  <!-- Arrow 3: running → ready (interrupt, upper path) -->
+  <line x1="382" y1="96" x2="323" y2="96" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="352" y="86" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">interrupt</text>
+
+  <!-- Arrow 4: running → waiting (I/O or event wait) -->
+  <line x1="440" y1="131" x2="405" y2="189" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="468" y="162" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="start">I/O or event wait</text>
+
+  <!-- Arrow 5: waiting → ready (I/O or event completion) -->
+  <line x1="292" y1="191" x2="258" y2="131" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="240" y="165" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="end">I/O or event completion</text>
+
+  <!-- Arrow 6: running → terminated (exit) -->
+  <line x1="518" y1="105" x2="547" y2="105" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="532" y="95" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">exit</text>
+</svg>
