@@ -1,0 +1,145 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 420" width="720" height="420">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ============================================================
+       TOP ROW: entry → ready queue → CPU → exit
+  ============================================================ -->
+
+  <!-- Entry arrow -->
+  <line x1="0" y1="52" x2="18" y2="52" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Ready queue box (gray) -->
+  <rect x="20" y="30" width="148" height="44" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="94" y="57" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">ready queue</text>
+
+  <!-- Arrow: ready queue → CPU -->
+  <line x1="168" y1="52" x2="568" y2="52" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- CPU circle (light blue) -->
+  <circle cx="604" cy="52" r="34" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="604" y="57" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">CPU</text>
+
+  <!-- Exit arrow: continues right past CPU -->
+  <line x1="638" y1="52" x2="720" y2="52" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Right vertical rail: from CPU right side going down -->
+  <line x1="660" y1="52" x2="660" y2="400" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Left return rail (connects all event circles/boxes back to ready queue) -->
+  <line x1="15" y1="52" x2="15" y2="390" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- ============================================================
+       ROW 1: I/O path (center y=132)
+  ============================================================ -->
+
+  <!-- Right rail → I/O request box -->
+  <line x1="660" y1="132" x2="562" y2="132" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- "I/O request" box -->
+  <rect x="392" y="110" width="170" height="44" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="477" y="137" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">I/O request</text>
+
+  <!-- I/O request box → I/O wait queue -->
+  <line x1="392" y1="132" x2="368" y2="132" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- "I/O wait queue" box -->
+  <rect x="182" y="110" width="186" height="44" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="275" y="137" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">I/O wait queue</text>
+
+  <!-- I/O wait queue → I/O circle -->
+  <line x1="182" y1="132" x2="140" y2="132" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- I/O circle (light blue) -->
+  <circle cx="104" cy="132" r="34" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="104" y="137" font-family="sans-serif" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">I/O</text>
+
+  <!-- I/O circle → left return rail -->
+  <line x1="70" y1="132" x2="15" y2="132" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- ============================================================
+       ROW 2: time slice expired (center y=198)
+  ============================================================ -->
+
+  <!-- Right rail → time slice expired box -->
+  <line x1="660" y1="198" x2="562" y2="198" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- "time slice expired" box -->
+  <rect x="392" y="176" width="170" height="44" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="477" y="194" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">time slice</text>
+  <text x="477" y="210" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">expired</text>
+
+  <!-- time slice expired box → left return rail (no circle; direct horizontal line) -->
+  <line x1="392" y1="198" x2="15" y2="198" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Dividing line between I/O section and child/interrupt section -->
+  <line x1="15" y1="234" x2="700" y2="234" stroke="#9ca3af" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- ============================================================
+       ROW 3: create child process / child termination (center y=284)
+  ============================================================ -->
+
+  <!-- Right rail → create child process box -->
+  <line x1="660" y1="284" x2="562" y2="284" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- "create child process" box -->
+  <rect x="392" y="262" width="170" height="44" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="477" y="280" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">create child</text>
+  <text x="477" y="296" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">process</text>
+
+  <!-- create child → child termination wait queue -->
+  <line x1="392" y1="284" x2="368" y2="284" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- "child termination wait queue" box -->
+  <rect x="154" y="262" width="214" height="44" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="261" y="280" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">child termination</text>
+  <text x="261" y="296" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">wait queue</text>
+
+  <!-- child termination wait queue → child terminates oval -->
+  <line x1="154" y1="284" x2="116" y2="284" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- "child terminates" oval (light blue) -->
+  <ellipse cx="70" cy="284" rx="44" ry="28" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="70" y="281" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">child</text>
+  <text x="70" y="293" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">terminates</text>
+
+  <!-- child terminates oval → left return rail -->
+  <line x1="26" y1="284" x2="15" y2="284" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- ============================================================
+       ROW 4: wait for an interrupt / interrupt wait queue (center y=362)
+  ============================================================ -->
+
+  <!-- Right rail → wait for an interrupt box -->
+  <line x1="660" y1="362" x2="562" y2="362" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- "wait for an interrupt" box -->
+  <rect x="392" y="340" width="170" height="44" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="477" y="358" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">wait for an</text>
+  <text x="477" y="374" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">interrupt</text>
+
+  <!-- wait for an interrupt → interrupt wait queue -->
+  <line x1="392" y1="362" x2="368" y2="362" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- "interrupt wait queue" box -->
+  <rect x="154" y="340" width="214" height="44" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="261" y="362" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">interrupt</text>
+  <text x="261" y="376" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">wait queue</text>
+
+  <!-- interrupt wait queue → interrupt occurs oval -->
+  <line x1="154" y1="362" x2="116" y2="362" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- "interrupt occurs" oval (light blue) -->
+  <ellipse cx="70" cy="362" rx="44" ry="28" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="70" y="359" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">interrupt</text>
+  <text x="70" y="371" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">occurs</text>
+
+  <!-- interrupt occurs oval → left return rail -->
+  <line x1="26" y1="362" x2="15" y2="362" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Left return rail: arrowhead pointing UP toward ready queue level -->
+  <line x1="15" y1="52" x2="20" y2="52" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+</svg>

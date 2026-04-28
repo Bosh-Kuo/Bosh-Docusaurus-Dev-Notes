@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 220" width="700" height="220">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <marker id="arr-d" markerWidth="7" markerHeight="10" refX="3.5" refY="9" orient="auto">
+      <polygon points="0 0, 7 0, 3.5 10" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Node 1: task_struct ===== -->
+  <rect x="20" y="30" width="150" height="100" rx="3" fill="#f9fafb" stroke="#6b7280" stroke-width="1.5"/>
+  <rect x="20" y="30" width="150" height="26" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="95" y="48" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">struct task_struct</text>
+  <text x="95" y="70" font-family="sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">process information</text>
+  <text x="95" y="96" font-family="sans-serif" font-size="15" fill="#9ca3af" text-anchor="middle">• • •</text>
+  <text x="95" y="120" font-family="sans-serif" font-size="15" fill="#9ca3af" text-anchor="middle">• • •</text>
+
+  <!-- ===== Node 2: task_struct ===== -->
+  <rect x="270" y="30" width="150" height="100" rx="3" fill="#f9fafb" stroke="#6b7280" stroke-width="1.5"/>
+  <rect x="270" y="30" width="150" height="26" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="345" y="48" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">struct task_struct</text>
+  <text x="345" y="70" font-family="sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">process information</text>
+  <text x="345" y="96" font-family="sans-serif" font-size="15" fill="#9ca3af" text-anchor="middle">• • •</text>
+  <text x="345" y="120" font-family="sans-serif" font-size="15" fill="#9ca3af" text-anchor="middle">• • •</text>
+
+  <!-- ===== Ellipsis between node 2 and node 3 ===== -->
+  <text x="470" y="82" font-family="sans-serif" font-size="18" fill="#9ca3af" text-anchor="middle">. . .</text>
+
+  <!-- ===== Node 3: task_struct ===== -->
+  <rect x="530" y="30" width="150" height="100" rx="3" fill="#f9fafb" stroke="#6b7280" stroke-width="1.5"/>
+  <rect x="530" y="30" width="150" height="26" rx="3" fill="#e5e7eb" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="605" y="48" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">struct task_struct</text>
+  <text x="605" y="70" font-family="sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">process information</text>
+  <text x="605" y="96" font-family="sans-serif" font-size="15" fill="#9ca3af" text-anchor="middle">• • •</text>
+  <text x="605" y="120" font-family="sans-serif" font-size="15" fill="#9ca3af" text-anchor="middle">• • •</text>
+
+  <!-- ===== Forward arrows (node1→node2, node2→...) ===== -->
+  <!-- Arc over the top: node1 top → node2 top -->
+  <path d="M 95 30 C 95 8, 345 8, 345 30" stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <!-- node2 top → node3 (via ellipsis) -->
+  <path d="M 345 30 C 345 8, 605 8, 605 30" stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- ===== Backward arrows (node2→node1, node3→...) ===== -->
+  <!-- Arc under the bottom: node2 bottom → node1 bottom -->
+  <path d="M 345 130 C 345 152, 95 152, 95 130" stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <!-- node3 bottom → node2 (via ellipsis) -->
+  <path d="M 605 130 C 605 152, 345 152, 345 130" stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- ===== "current" pointer (from below, pointing up to node 2) ===== -->
+  <!-- Arrow: (345,190) → (345,132) -->
+  <line x1="345" y1="192" x2="345" y2="134" stroke="#374151" stroke-width="1.8" marker-end="url(#arr)"/>
+
+  <!-- "current" label -->
+  <text x="345" y="207" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">current</text>
+  <text x="345" y="220" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">(currently executing process)</text>
+</svg>
