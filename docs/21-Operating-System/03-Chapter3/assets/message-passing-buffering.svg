@@ -1,0 +1,105 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 810 276" width="810" height="276">
+  <defs>
+    <marker id="arrb" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#6b7280"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Panel 1: Zero Capacity ===== -->
+  <rect x="6" y="6" width="252" height="264" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="132" y="32" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#1e293b">Zero Capacity</text>
+  <text x="132" y="50" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#64748b">no buffering</text>
+
+  <!-- Sender -->
+  <rect x="20" y="90" width="72" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="56" y="116" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#1e40af">Sender</text>
+
+  <!-- "No buffer" dashed line -->
+  <line x1="92" y1="111" x2="167" y2="111" stroke="#94a3b8" stroke-width="1.5" stroke-dasharray="5,4" marker-end="url(#arrb)"/>
+  <text x="129" y="105" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#94a3b8">no queue</text>
+
+  <!-- Receiver -->
+  <rect x="167" y="90" width="72" height="42" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="203" y="116" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#15803d">Receiver</text>
+
+  <!-- Behavior -->
+  <text x="132" y="162" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">Sender blocks until</text>
+  <text x="132" y="178" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">receiver calls receive().</text>
+  <rect x="18" y="195" width="224" height="58" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="130" y="213" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#92400e" font-weight="bold">Rendezvous required:</text>
+  <text x="130" y="229" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#92400e">sender and receiver must</text>
+  <text x="130" y="244" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#92400e">be simultaneously ready.</text>
+
+  <!-- ===== Panel 2: Bounded Capacity ===== -->
+  <rect x="276" y="6" width="252" height="264" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="402" y="32" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#1e293b">Bounded Capacity</text>
+  <text x="402" y="50" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#64748b">automatic buffering, capacity n</text>
+
+  <!-- Sender -->
+  <rect x="288" y="90" width="62" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="319" y="116" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#1e40af">Sender</text>
+
+  <!-- Arrow Sender -> Queue -->
+  <line x1="350" y1="111" x2="357" y2="111" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrb)"/>
+
+  <!-- Queue slots: slot 1 (filled) -->
+  <rect x="358" y="90" width="26" height="42" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="371" y="114" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#92400e">msg</text>
+  <!-- slot 2 (filled) -->
+  <rect x="384" y="90" width="26" height="42" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="397" y="114" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#92400e">msg</text>
+  <!-- slot 3 (empty) -->
+  <rect x="410" y="90" width="26" height="42" rx="2" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+  <!-- slot 4 (empty) -->
+  <rect x="436" y="90" width="26" height="42" rx="2" fill="#f1f5f9" stroke="#cbd5e1" stroke-width="1.5"/>
+
+  <!-- capacity label above queue -->
+  <text x="407" y="82" text-anchor="middle" font-family="'Courier New', monospace" font-size="9" fill="#64748b">capacity = n = 4</text>
+
+  <!-- Arrow Queue -> Receiver -->
+  <line x1="462" y1="111" x2="469" y2="111" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrb)"/>
+
+  <!-- Receiver -->
+  <rect x="470" y="90" width="48" height="42" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="494" y="116" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#15803d">Recv</text>
+
+  <!-- Behavior -->
+  <text x="402" y="162" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">Sender continues if queue</text>
+  <text x="402" y="178" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">is not full.</text>
+  <text x="402" y="200" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">Sender blocks when</text>
+  <text x="402" y="216" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">queue is full.</text>
+
+  <!-- ===== Panel 3: Unbounded Capacity ===== -->
+  <rect x="546" y="6" width="258" height="264" rx="8" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1.5"/>
+  <text x="675" y="32" text-anchor="middle" font-family="'Courier New', monospace" font-size="12" font-weight="bold" fill="#1e293b">Unbounded Capacity</text>
+  <text x="675" y="50" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#64748b">automatic buffering, no limit</text>
+
+  <!-- Sender -->
+  <rect x="558" y="90" width="62" height="42" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="589" y="116" text-anchor="middle" font-family="'Courier New', monospace" font-size="11" font-weight="bold" fill="#1e40af">Sender</text>
+
+  <!-- Arrow Sender -> Queue -->
+  <line x1="620" y1="111" x2="627" y2="111" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrb)"/>
+
+  <!-- Queue slots: 3 filled + "..." -->
+  <rect x="628" y="90" width="26" height="42" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="641" y="114" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#92400e">msg</text>
+  <rect x="654" y="90" width="26" height="42" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="667" y="114" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#92400e">msg</text>
+  <rect x="680" y="90" width="26" height="42" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="693" y="114" text-anchor="middle" font-family="'Courier New', monospace" font-size="8" fill="#92400e">msg</text>
+  <text x="716" y="115" text-anchor="middle" font-family="'Courier New', monospace" font-size="15" font-weight="bold" fill="#d97706">...</text>
+
+  <!-- Arrow Queue -> Receiver -->
+  <line x1="726" y1="111" x2="733" y2="111" stroke="#6b7280" stroke-width="1.5" marker-end="url(#arrb)"/>
+
+  <!-- Receiver -->
+  <rect x="734" y="90" width="54" height="42" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="761" y="116" text-anchor="middle" font-family="'Courier New', monospace" font-size="10" font-weight="bold" fill="#15803d">Recv</text>
+
+  <!-- Behavior -->
+  <text x="675" y="162" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">Sender never blocks.</text>
+  <text x="675" y="184" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">Queue length is potentially</text>
+  <text x="675" y="200" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">infinite; sender always</text>
+  <text x="675" y="216" text-anchor="middle" font-family="sans-serif" font-size="10.5" fill="#374151">continues immediately.</text>
+</svg>
