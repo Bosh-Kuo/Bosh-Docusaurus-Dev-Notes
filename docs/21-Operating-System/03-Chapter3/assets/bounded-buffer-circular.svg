@@ -1,0 +1,96 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 280" width="760" height="280">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="380" y="22" font-family="sans-serif" font-size="14" fill="#374151" text-anchor="middle" font-weight="600">Bounded Buffer - Circular Array (BUFFER_SIZE = 10)</text>
+
+  <!-- Buffer cells: 10 cells, each 60px wide, 50px tall, starting at x=30, y=60 -->
+  <!-- Cells 0-3: filled (consumed territory, out=0 side) -->
+  <!-- Let's show: out=2, in=7, so cells 2,3,4,5,6 are filled -->
+
+  <!-- Cell 0 - empty -->
+  <rect x="30" y="55" width="60" height="50" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="60" y="85" font-family="sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">empty</text>
+  <text x="60" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[0]</text>
+
+  <!-- Cell 1 - empty -->
+  <rect x="90" y="55" width="60" height="50" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="120" y="85" font-family="sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">empty</text>
+  <text x="120" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[1]</text>
+
+  <!-- Cell 2 - out pointer here, filled -->
+  <rect x="150" y="55" width="60" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="180" y="82" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">item</text>
+  <text x="180" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[2]</text>
+
+  <!-- Cell 3 - filled -->
+  <rect x="210" y="55" width="60" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="240" y="82" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">item</text>
+  <text x="240" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[3]</text>
+
+  <!-- Cell 4 - filled -->
+  <rect x="270" y="55" width="60" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="300" y="82" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">item</text>
+  <text x="300" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[4]</text>
+
+  <!-- Cell 5 - filled -->
+  <rect x="330" y="55" width="60" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="360" y="82" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">item</text>
+  <text x="360" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[5]</text>
+
+  <!-- Cell 6 - filled -->
+  <rect x="390" y="55" width="60" height="50" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="420" y="82" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle">item</text>
+  <text x="420" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[6]</text>
+
+  <!-- Cell 7 - in pointer here, empty -->
+  <rect x="450" y="55" width="60" height="50" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="480" y="85" font-family="sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">empty</text>
+  <text x="480" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[7]</text>
+
+  <!-- Cell 8 - empty -->
+  <rect x="510" y="55" width="60" height="50" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="540" y="85" font-family="sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">empty</text>
+  <text x="540" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[8]</text>
+
+  <!-- Cell 9 - empty -->
+  <rect x="570" y="55" width="60" height="50" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="600" y="85" font-family="sans-serif" font-size="12" fill="#6b7280" text-anchor="middle">empty</text>
+  <text x="600" y="115" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">[9]</text>
+
+  <!-- Circular wrap-back annotation -->
+  <text x="672" y="75" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">wraps</text>
+  <text x="672" y="88" font-family="sans-serif" font-size="11" fill="#9ca3af" text-anchor="middle">to [0]</text>
+
+  <!-- out pointer (green, points down to cell 2) -->
+  <line x1="180" y1="35" x2="180" y2="52" stroke="#16a34a" stroke-width="2" marker-end="url(#arr-green)"/>
+  <text x="180" y="29" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="600">out</text>
+  <text x="180" y="42" font-family="sans-serif" font-size="10" fill="#15803d" text-anchor="middle">(consumer reads)</text>
+
+  <!-- in pointer (blue, points down to cell 7) -->
+  <line x1="480" y1="35" x2="480" y2="52" stroke="#2563eb" stroke-width="2" marker-end="url(#arr-blue)"/>
+  <text x="480" y="29" font-family="sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">in</text>
+  <text x="480" y="42" font-family="sans-serif" font-size="10" fill="#1d4ed8" text-anchor="middle">(producer writes)</text>
+
+  <!-- Legend -->
+  <rect x="30" y="155" width="18" height="18" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="55" y="168" font-family="sans-serif" font-size="12" fill="#374151">Filled slot (item produced, not yet consumed)</text>
+
+  <rect x="30" y="182" width="18" height="18" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="55" y="195" font-family="sans-serif" font-size="12" fill="#374151">Empty slot</text>
+
+  <!-- Rules -->
+  <text x="380" y="230" font-family="sans-serif" font-size="12" fill="#374151" text-anchor="middle">Buffer empty: in == out</text>
+  <text x="380" y="250" font-family="sans-serif" font-size="12" fill="#374151" text-anchor="middle">Buffer full: ((in + 1) % BUFFER_SIZE) == out</text>
+  <text x="380" y="270" font-family="sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Max usable capacity = BUFFER_SIZE - 1 items</text>
+</svg>

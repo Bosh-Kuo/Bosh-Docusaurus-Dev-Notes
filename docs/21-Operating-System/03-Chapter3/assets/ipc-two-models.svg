@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 310" width="740" height="310">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ===== (a) Shared Memory Model ===== -->
+  <!-- Outer container -->
+  <rect x="10" y="15" width="340" height="265" rx="5" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5"/>
+
+  <!-- process A -->
+  <rect x="70" y="35" width="200" height="45" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="170" y="62" font-family="sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="500">process A</text>
+
+  <!-- shared memory -->
+  <rect x="70" y="120" width="200" height="45" rx="4" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="170" y="148" font-family="sans-serif" font-size="14" fill="#5b21b6" text-anchor="middle" font-weight="500">shared memory</text>
+
+  <!-- process B -->
+  <rect x="70" y="200" width="200" height="45" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="170" y="228" font-family="sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="500">process B</text>
+
+  <!-- kernel -->
+  <rect x="70" y="255" width="200" height="22" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="170" y="271" font-family="sans-serif" font-size="12" fill="#374151" text-anchor="middle">kernel</text>
+
+  <!-- (a) label -->
+  <text x="180" y="298" font-family="sans-serif" font-size="12" fill="#374151" text-anchor="middle">(a)</text>
+
+  <!-- ===== (b) Message Passing Model ===== -->
+  <!-- Outer container -->
+  <rect x="390" y="15" width="340" height="265" rx="5" fill="#f9fafb" stroke="#9ca3af" stroke-width="1.5"/>
+
+  <!-- process A -->
+  <rect x="400" y="35" width="135" height="45" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="467" y="62" font-family="sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="500">process A</text>
+
+  <!-- process B -->
+  <rect x="595" y="35" width="125" height="45" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="657" y="62" font-family="sans-serif" font-size="14" fill="#92400e" text-anchor="middle" font-weight="500">process B</text>
+
+  <!-- Message queue row header label -->
+  <text x="557" y="120" font-family="sans-serif" font-size="11" fill="#5b21b6" text-anchor="middle">message queue</text>
+
+  <!-- Message queue boxes: m0 m1 m2 m3 ... mn -->
+  <!-- Box width 46, gap 2, start x=400 -->
+  <rect x="402" y="128" width="46" height="30" rx="2" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="425" y="148" font-family="sans-serif" font-size="12" fill="#5b21b6" text-anchor="middle">m0</text>
+
+  <rect x="450" y="128" width="46" height="30" rx="2" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="473" y="148" font-family="sans-serif" font-size="12" fill="#5b21b6" text-anchor="middle">m1</text>
+
+  <rect x="498" y="128" width="46" height="30" rx="2" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="521" y="148" font-family="sans-serif" font-size="12" fill="#5b21b6" text-anchor="middle">m2</text>
+
+  <rect x="546" y="128" width="46" height="30" rx="2" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="569" y="148" font-family="sans-serif" font-size="12" fill="#5b21b6" text-anchor="middle">m3</text>
+
+  <!-- ellipsis -->
+  <text x="613" y="148" font-family="sans-serif" font-size="14" fill="#5b21b6" text-anchor="middle">. . .</text>
+
+  <rect x="638" y="128" width="46" height="30" rx="2" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="661" y="148" font-family="sans-serif" font-size="12" fill="#5b21b6" text-anchor="middle">mn</text>
+
+  <!-- kernel -->
+  <rect x="420" y="255" width="280" height="22" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="560" y="271" font-family="sans-serif" font-size="12" fill="#374151" text-anchor="middle">kernel</text>
+
+  <!-- (b) label -->
+  <text x="560" y="298" font-family="sans-serif" font-size="12" fill="#374151" text-anchor="middle">(b)</text>
+</svg>
