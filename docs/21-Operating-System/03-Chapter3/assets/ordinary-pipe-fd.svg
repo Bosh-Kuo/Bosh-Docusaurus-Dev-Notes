@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 240" width="620" height="240">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Process labels -->
+  <text x="75" y="28" font-family="sans-serif" font-size="14" fill="#1d4ed8" font-weight="700" text-anchor="middle">Parent</text>
+  <text x="545" y="28" font-family="sans-serif" font-size="14" fill="#15803d" font-weight="700" text-anchor="middle">Child</text>
+
+  <!-- Parent fd labels -->
+  <text x="50" y="73" font-family="'Courier New', monospace" font-size="13" fill="#374151">fd [0]</text>
+  <text x="50" y="110" font-family="'Courier New', monospace" font-size="13" fill="#374151">fd [1]</text>
+
+  <!-- Child fd labels -->
+  <text x="500" y="73" font-family="'Courier New', monospace" font-size="13" fill="#374151">fd [0]</text>
+  <text x="500" y="110" font-family="'Courier New', monospace" font-size="13" fill="#374151">fd [1]</text>
+
+  <!-- "pipe" label above pipe structure -->
+  <text x="310" y="115" font-family="sans-serif" font-size="13" fill="#9d174d" text-anchor="middle" font-weight="600">pipe</text>
+
+  <!-- Pipe structure -->
+  <!-- Top solid border -->
+  <line x1="195" y1="122" x2="425" y2="122" stroke="#374151" stroke-width="2"/>
+  <!-- Read channel: dashed, arrow pointing LEFT (← data flows out to readers) -->
+  <line x1="420" y1="138" x2="200" y2="138" stroke="#374151" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arr)"/>
+  <!-- Middle separator -->
+  <line x1="195" y1="154" x2="425" y2="154" stroke="#374151" stroke-width="2"/>
+  <!-- Write channel: dashed, arrow pointing RIGHT (→ data flows in from writers) -->
+  <line x1="200" y1="170" x2="420" y2="170" stroke="#374151" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arr)"/>
+  <!-- Bottom solid border -->
+  <line x1="195" y1="186" x2="425" y2="186" stroke="#374151" stroke-width="2"/>
+  <!-- Left and right vertical borders -->
+  <line x1="195" y1="122" x2="195" y2="186" stroke="#374151" stroke-width="2"/>
+  <line x1="425" y1="122" x2="425" y2="186" stroke="#374151" stroke-width="2"/>
+
+  <!-- Curved paths: Parent (left) side -->
+  <!-- fd[0] read end: pipe left → fd[0] text; arrowhead points LEFT at fd[0] -->
+  <path d="M 195,138 C 155,138 148,69 100,69"
+        stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <!-- fd[1] write end: fd[1] text → pipe left; arrowhead points RIGHT into pipe -->
+  <path d="M 100,106 C 148,106 155,170 195,170"
+        stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Curved paths: Child (right) side -->
+  <!-- fd[0] read end: pipe right → fd[0] text; arrowhead points RIGHT at fd[0] -->
+  <path d="M 425,138 C 462,138 468,69 496,69"
+        stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+  <!-- fd[1] write end: fd[1] text → pipe right; arrowhead points LEFT into pipe -->
+  <path d="M 496,106 C 468,106 462,170 425,170"
+        stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
+
+  <!-- Footnote -->
+  <text x="310" y="212" font-family="sans-serif" font-size="10.5" fill="#6b7280" text-anchor="middle">After fork(), both parent and child inherit both ends of the pipe.</text>
+  <text x="310" y="228" font-family="sans-serif" font-size="10.5" fill="#6b7280" text-anchor="middle">Each must close() the unused end before communicating.</text>
+</svg>

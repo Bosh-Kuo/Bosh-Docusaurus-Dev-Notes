@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 740 285" width="740" height="285">
+  <defs>
+    <marker id="arr-b" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arr-o" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d97706"/>
+    </marker>
+    <marker id="arr-g" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#9ca3af"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Producer Process ===== -->
+  <rect x="10" y="10" width="270" height="185" rx="6" fill="#f0f7ff" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="145" y="34" font-family="sans-serif" font-size="13" fill="#1d4ed8" text-anchor="middle" font-weight="600">Producer Process</text>
+
+  <!-- API steps -->
+  <text x="28" y="60" font-family="'Courier New', monospace" font-size="10.5" fill="#374151">1. shm_open("OS", O_CREAT|O_RDWR)</text>
+  <text x="28" y="80" font-family="'Courier New', monospace" font-size="10.5" fill="#374151">2. ftruncate(fd, 4096)</text>
+  <text x="28" y="100" font-family="'Courier New', monospace" font-size="10.5" fill="#374151">3. ptr = mmap(0, SIZE, ...)</text>
+  <text x="28" y="120" font-family="'Courier New', monospace" font-size="10.5" fill="#374151">4. sprintf(ptr, "Hello World!")</text>
+
+  <!-- mmap virtual region -->
+  <rect x="28" y="133" width="234" height="38" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="145" y="149" font-family="sans-serif" font-size="10" fill="#1e40af" text-anchor="middle">virtual address space</text>
+  <text x="145" y="163" font-family="'Courier New', monospace" font-size="10" fill="#2563eb" text-anchor="middle">ptr ──▶ [mmap region]</text>
+
+  <!-- ===== Consumer Process ===== -->
+  <rect x="460" y="10" width="270" height="185" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text x="595" y="34" font-family="sans-serif" font-size="13" fill="#92400e" text-anchor="middle" font-weight="600">Consumer Process</text>
+
+  <text x="478" y="60" font-family="'Courier New', monospace" font-size="10.5" fill="#374151">1. shm_open("OS", O_RDONLY)</text>
+  <text x="478" y="80" font-family="'Courier New', monospace" font-size="10.5" fill="#374151">2. ptr = mmap(0, SIZE, ...)</text>
+  <text x="478" y="100" font-family="'Courier New', monospace" font-size="10.5" fill="#374151">3. printf("%s", ptr)</text>
+  <text x="478" y="120" font-family="'Courier New', monospace" font-size="10.5" fill="#374151">4. shm_unlink("OS")</text>
+
+  <!-- mmap virtual region -->
+  <rect x="478" y="133" width="234" height="38" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="595" y="149" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">virtual address space</text>
+  <text x="595" y="163" font-family="'Courier New', monospace" font-size="10" fill="#d97706" text-anchor="middle">ptr ──▶ [mmap region]</text>
+
+  <!-- ===== Shared Memory Object ===== -->
+  <rect x="255" y="200" width="230" height="62" rx="6" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="370" y="222" font-family="sans-serif" font-size="13" fill="#5b21b6" text-anchor="middle" font-weight="600">Shared Memory Object</text>
+  <text x="370" y="240" font-family="sans-serif" font-size="11" fill="#7c3aed" text-anchor="middle">name = "OS" | 4096 bytes</text>
+  <text x="370" y="256" font-family="sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">backed by memory-mapped file</text>
+
+  <!-- Arrow: Producer mmap region -> Shared Memory Object -->
+  <line x1="145" y1="171" x2="300" y2="200" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-b)"/>
+
+  <!-- Arrow: Consumer mmap region -> Shared Memory Object -->
+  <line x1="595" y1="171" x2="440" y2="200" stroke="#d97706" stroke-width="1.5" marker-end="url(#arr-o)"/>
+</svg>

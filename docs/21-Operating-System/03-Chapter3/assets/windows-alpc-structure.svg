@@ -1,0 +1,72 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 435" width="700" height="435">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Labels above tall boxes ===== -->
+  <text x="72" y="20" font-family="sans-serif" font-size="14" fill="#1d4ed8" text-anchor="middle" font-weight="600">Client</text>
+  <text x="628" y="20" font-family="sans-serif" font-size="14" fill="#15803d" text-anchor="middle" font-weight="600">Server</text>
+
+  <!-- ===== Client tall box ===== -->
+  <rect x="10" y="27" width="124" height="388" rx="4" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5"/>
+
+  <!-- ===== Server tall box ===== -->
+  <rect x="566" y="27" width="124" height="388" rx="4" fill="#f0fff4" stroke="#16a34a" stroke-width="1.5"/>
+
+  <!-- ===== Connection Port (top center) ===== -->
+  <rect x="285" y="52" width="130" height="62" rx="4" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="350" y="78" font-family="sans-serif" font-size="12" fill="#9d174d" text-anchor="middle" font-weight="600">Connection</text>
+  <text x="350" y="96" font-family="sans-serif" font-size="12" fill="#9d174d" text-anchor="middle" font-weight="600">Port</text>
+
+  <!-- ===== Client Communication Port (middle upper) ===== -->
+  <rect x="235" y="168" width="230" height="65" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="350" y="194" font-family="sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Client</text>
+  <text x="350" y="213" font-family="sans-serif" font-size="12" fill="#1d4ed8" text-anchor="middle" font-weight="600">Communication Port</text>
+
+  <!-- ===== Server Communication Port (middle lower) ===== -->
+  <rect x="235" y="265" width="230" height="65" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="350" y="291" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="600">Server</text>
+  <text x="350" y="310" font-family="sans-serif" font-size="12" fill="#15803d" text-anchor="middle" font-weight="600">Communication Port</text>
+
+  <!-- ===== Shared Section Object (bottom center) ===== -->
+  <rect x="228" y="360" width="244" height="50" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="350" y="381" font-family="sans-serif" font-size="12" fill="#92400e" text-anchor="middle" font-weight="600">Shared Section Object</text>
+  <text x="350" y="398" font-family="sans-serif" font-size="11" fill="#d97706" text-anchor="middle">(> 256 bytes)</text>
+
+  <!-- ===== Arrow 1: Client → Connection Port ("Connection request") ===== -->
+  <line x1="134" y1="83" x2="283" y2="83" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="209" y="75" font-family="sans-serif" font-size="10.5" fill="#374151" text-anchor="middle">Connection</text>
+  <text x="209" y="90" font-family="sans-serif" font-size="10.5" fill="#374151" text-anchor="middle">request</text>
+
+  <!-- ===== Arrow 2: Connection Port → Server ("Handle") ===== -->
+  <line x1="415" y1="83" x2="564" y2="83" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="490" y="76" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">Handle</text>
+
+  <!-- ===== Arrow 3: Client Communication Port → Client ("Handle", pointing LEFT) ===== -->
+  <line x1="235" y1="200" x2="136" y2="200" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="186" y="193" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">Handle</text>
+
+  <!-- ===== Arrow 4: Server Communication Port → Server ("Handle", pointing RIGHT) ===== -->
+  <line x1="465" y1="297" x2="564" y2="297" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="514" y="290" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">Handle</text>
+
+  <!-- ===== Arrow 5a: Client Comm Port → Server Comm Port (DOWN) ===== -->
+  <line x1="338" y1="233" x2="338" y2="263" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Arrow 5b: Server Comm Port → Client Comm Port (UP) ===== -->
+  <line x1="362" y1="265" x2="362" y2="235" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Arrows: Client ↔ Shared Section Object ===== -->
+  <!-- Section Object → Client (pointing LEFT) -->
+  <line x1="228" y1="374" x2="136" y2="374" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Client → Section Object (pointing RIGHT) -->
+  <line x1="136" y1="390" x2="228" y2="390" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Arrows: Shared Section Object ↔ Server ===== -->
+  <!-- Section Object → Server (pointing RIGHT) -->
+  <line x1="472" y1="374" x2="564" y2="374" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Server → Section Object (pointing LEFT) -->
+  <line x1="564" y1="390" x2="472" y2="390" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+</svg>
