@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 300" width="420" height="300">
+  <!-- User space background -->
+  <rect x="10" y="10" width="400" height="140" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="330" y="34" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">user</text>
+  <text x="330" y="48" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">space</text>
+
+  <!-- Kernel space background -->
+  <rect x="10" y="160" width="400" height="120" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text x="330" y="208" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#92400e">kernel</text>
+  <text x="330" y="222" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#92400e">space</text>
+
+  <!-- User threads (5) -->
+  <text x="155" y="26" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#15803d">user threads</text>
+
+  <path d="M40,40  L50,53  L30,66  L50,79  L30,92  L40,105 L40,126" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M90,40  L100,53 L80,66  L100,79 L80,92  L90,105 L90,126" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M145,40 L155,53 L135,66 L155,79 L135,92 L145,105 L145,126" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M200,40 L210,53 L190,66 L210,79 L190,92 L200,105 L200,126" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M255,40 L265,53 L245,66 L265,79 L245,92 L255,105 L255,126" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Kernel threads (3 — mix: some shared, one bound) -->
+  <path d="M70,170  L80,183  L60,196  L80,209  L60,222  L70,235  L70,250" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M145,170 L155,183 L135,196 L155,209 L135,222 L145,235 L145,250" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M220,170 L230,183 L210,196 L230,209 L210,222 L220,235 L220,250" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Many-to-many mappings for first few threads -->
+  <line x1="40"  y1="128" x2="70"  y2="168" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="90"  y1="128" x2="70"  y2="168" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="200" y1="128" x2="145" y2="168" stroke="#9ca3af" stroke-width="1.2"/>
+
+  <!-- One-to-one (bound) mapping: user thread 4 → kernel thread 4 — highlighted -->
+  <line x1="145" y1="128" x2="145" y2="168" stroke="#dc2626" stroke-width="2"/>
+  <line x1="255" y1="128" x2="220" y2="168" stroke="#9ca3af" stroke-width="1.2"/>
+
+  <!-- Bound annotation -->
+  <rect x="118" y="133" width="56" height="18" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="1"/>
+  <text x="146" y="146" font-family="sans-serif" font-size="9" text-anchor="middle" fill="#9d174d">bound 1:1</text>
+
+  <!-- Labels -->
+  <text x="155" y="278" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#92400e">kernel threads</text>
+
+  <!-- Legend -->
+  <line x1="20" y1="295" x2="44" y2="295" stroke="#dc2626" stroke-width="2"/>
+  <text x="48" y="299" font-family="sans-serif" font-size="10" fill="#374151">bound (1:1)</text>
+  <line x1="130" y1="295" x2="154" y2="295" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="158" y="299" font-family="sans-serif" font-size="10" fill="#374151">unbound (many:many)</text>
+</svg>

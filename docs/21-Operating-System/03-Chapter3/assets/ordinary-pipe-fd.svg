@@ -23,11 +23,11 @@
   <!-- Pipe structure -->
   <!-- Top solid border -->
   <line x1="195" y1="122" x2="425" y2="122" stroke="#374151" stroke-width="2"/>
-  <!-- Read channel: dashed, arrow pointing LEFT (← data flows out to readers) -->
+  <!-- Upper channel: dashed, arrow pointing LEFT (← data exits to readers) -->
   <line x1="420" y1="138" x2="200" y2="138" stroke="#374151" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arr)"/>
   <!-- Middle separator -->
   <line x1="195" y1="154" x2="425" y2="154" stroke="#374151" stroke-width="2"/>
-  <!-- Write channel: dashed, arrow pointing RIGHT (→ data flows in from writers) -->
+  <!-- Lower channel: dashed, arrow pointing RIGHT (→ data enters from writers) -->
   <line x1="200" y1="170" x2="420" y2="170" stroke="#374151" stroke-width="1.5" stroke-dasharray="6,3" marker-end="url(#arr)"/>
   <!-- Bottom solid border -->
   <line x1="195" y1="186" x2="425" y2="186" stroke="#374151" stroke-width="2"/>
@@ -36,19 +36,19 @@
   <line x1="425" y1="122" x2="425" y2="186" stroke="#374151" stroke-width="2"/>
 
   <!-- Curved paths: Parent (left) side -->
-  <!-- fd[0] read end: pipe left → fd[0] text; arrowhead points LEFT at fd[0] -->
+  <!-- Parent fd[0] ← upper channel left exit: arrowhead points LEFT at fd[0] -->
   <path d="M 195,138 C 155,138 148,69 100,69"
         stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
-  <!-- fd[1] write end: fd[1] text → pipe left; arrowhead points RIGHT into pipe -->
+  <!-- Parent fd[1] → lower channel left entry: arrowhead points RIGHT into pipe -->
   <path d="M 100,106 C 148,106 155,170 195,170"
         stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
 
-  <!-- Curved paths: Child (right) side -->
-  <!-- fd[0] read end: pipe right → fd[0] text; arrowhead points RIGHT at fd[0] -->
-  <path d="M 425,138 C 462,138 468,69 496,69"
+  <!-- Curved paths: Child (right) side — cross-wired -->
+  <!-- Child fd[1] → upper channel right entry: arrowhead points LEFT into pipe -->
+  <path d="M 496,106 C 468,106 462,138 425,138"
         stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
-  <!-- fd[1] write end: fd[1] text → pipe right; arrowhead points LEFT into pipe -->
-  <path d="M 496,106 C 468,106 462,170 425,170"
+  <!-- Child fd[0] ← lower channel right exit: arrowhead points RIGHT at fd[0] -->
+  <path d="M 425,170 C 462,170 468,69 496,69"
         stroke="#374151" stroke-width="1.5" fill="none" marker-end="url(#arr)"/>
 
   <!-- Footnote -->

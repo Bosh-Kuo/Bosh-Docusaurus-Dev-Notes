@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 280" width="420" height="280">
+  <!-- User space background -->
+  <rect x="10" y="10" width="400" height="130" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="330" y="34" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">user</text>
+  <text x="330" y="48" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">space</text>
+
+  <!-- Kernel space background -->
+  <rect x="10" y="150" width="400" height="110" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text x="330" y="195" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#92400e">kernel</text>
+  <text x="330" y="209" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#92400e">space</text>
+
+  <!-- User threads (6 — more than kernel threads) -->
+  <text x="165" y="26" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#15803d">user threads</text>
+
+  <path d="M40,40  L50,52  L30,64  L50,76  L30,88  L40,100  L40,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M85,40  L95,52  L75,64  L95,76  L75,88  L85,100  L85,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M130,40 L140,52 L120,64 L140,76 L120,88 L130,100 L130,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M175,40 L185,52 L165,64 L185,76 L165,88 L175,100 L175,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M220,40 L230,52 L210,64 L230,76 L210,88 L220,100 L220,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M265,40 L275,52 L255,64 L275,76 L255,88 L265,100 L265,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Kernel threads (4 — fewer than user threads) -->
+  <path d="M65,160  L75,173  L55,186  L75,199  L55,212  L65,225  L65,240" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M125,160 L135,173 L115,186 L135,199 L115,212 L125,225 L125,240" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M185,160 L195,173 L175,186 L195,199 L175,212 L185,225 L185,240" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M245,160 L255,173 L235,186 L255,199 L235,212 L245,225 L245,240" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Many-to-many mapping lines -->
+  <line x1="40"  y1="120" x2="65"  y2="158" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="85"  y1="120" x2="65"  y2="158" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="130" y1="120" x2="125" y2="158" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="175" y1="120" x2="125" y2="158" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="220" y1="120" x2="185" y2="158" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="220" y1="120" x2="245" y2="158" stroke="#9ca3af" stroke-width="1.2"/>
+  <line x1="265" y1="120" x2="245" y2="158" stroke="#9ca3af" stroke-width="1.2"/>
+
+  <!-- Labels -->
+  <text x="165" y="266" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#92400e">kernel threads</text>
+  <text x="305" y="140" font-family="sans-serif" font-size="11" fill="#7c3aed">many → many (M ≥ N)</text>
+</svg>

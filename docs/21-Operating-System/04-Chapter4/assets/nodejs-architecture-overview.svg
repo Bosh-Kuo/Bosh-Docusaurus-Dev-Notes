@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 310" width="560" height="310">
+  <defs>
+    <marker id="arr-amber" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#d97706"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <!-- JS Layer zone -->
+  <rect x="10" y="10" width="540" height="118" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="22" y="28" font-family="sans-serif" font-size="10" fill="#15803d" font-weight="bold">JavaScript 層（你寫的程式碼）</text>
+
+  <!-- Main Thread box -->
+  <rect x="28" y="34" width="504" height="82" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="280" y="59" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">Main Thread（V8 引擎）</text>
+  <text x="280" y="76" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#374151">所有 JS 程式碼在此執行　同一時間只有一條執行緒</text>
+  <rect x="100" y="84" width="360" height="20" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="1"/>
+  <text x="280" y="98" font-family="sans-serif" font-size="9" text-anchor="middle" fill="#9d174d">✗  CPU Bound（for 迴圈、純 JS 運算）永遠留在這裡，無法外包</text>
+
+  <!-- Arrows in gap: down = delegate, up = callback -->
+  <!-- Left pair (to Thread Pool) -->
+  <line x1="148" y1="118" x2="148" y2="170" stroke="#d97706" stroke-width="1.5" marker-end="url(#arr-amber)"/>
+  <line x1="160" y1="170" x2="160" y2="118" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-green)"/>
+  <text x="10"  y="142" font-family="sans-serif" font-size="9" fill="#92400e">外包 fs / crypto 工作 →</text>
+  <text x="10"  y="156" font-family="sans-serif" font-size="9" fill="#15803d">← Callback 回傳結果</text>
+
+  <!-- Right pair (to OS I/O) -->
+  <line x1="408" y1="118" x2="408" y2="170" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-blue)"/>
+  <line x1="420" y1="170" x2="420" y2="118" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-green)"/>
+  <text x="430" y="142" font-family="sans-serif" font-size="9" fill="#1d4ed8">← 外包網路 I/O</text>
+  <text x="430" y="156" font-family="sans-serif" font-size="9" fill="#15803d">← 完成通知</text>
+
+  <!-- libuv Layer zone -->
+  <rect x="10" y="172" width="540" height="128" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="22" y="190" font-family="sans-serif" font-size="10" fill="#92400e" font-weight="bold">libuv 層（C++ runtime）</text>
+
+  <!-- Thread Pool box -->
+  <rect x="28" y="196" width="238" height="90" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="147" y="218" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#92400e">執行緒池 (Thread Pool)</text>
+  <text x="147" y="234" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#6b7280">預設 4 條背景執行緒</text>
+  <text x="147" y="252" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#92400e">fs · crypto · zlib · DNS 查詢</text>
+  <text x="147" y="269" font-family="sans-serif" font-size="9" text-anchor="middle" fill="#92400e">需要真實執行緒的重度 C++ 工作</text>
+
+  <!-- OS I/O box -->
+  <rect x="294" y="196" width="238" height="90" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="413" y="218" font-family="sans-serif" font-size="12" font-weight="bold" text-anchor="middle" fill="#1d4ed8">OS 非阻塞 I/O</text>
+  <text x="413" y="234" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#6b7280">epoll (Linux) · kqueue (macOS)</text>
+  <text x="413" y="252" font-family="sans-serif" font-size="10" text-anchor="middle" fill="#1d4ed8">TCP · HTTP · WebSocket</text>
+  <text x="413" y="269" font-family="sans-serif" font-size="9" text-anchor="middle" fill="#1d4ed8">等待 I/O 期間不佔用任何執行緒</text>
+</svg>

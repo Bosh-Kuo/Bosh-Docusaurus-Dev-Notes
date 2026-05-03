@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 270" width="420" height="270">
+  <!-- User space background -->
+  <rect x="10" y="10" width="400" height="120" rx="8" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="330" y="34" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">user</text>
+  <text x="330" y="48" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#15803d">space</text>
+
+  <!-- Kernel space background -->
+  <rect x="10" y="140" width="400" height="110" rx="8" fill="#fffbeb" stroke="#d97706" stroke-width="1.5"/>
+  <text x="330" y="184" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#92400e">kernel</text>
+  <text x="330" y="198" font-family="sans-serif" font-size="11" text-anchor="middle" fill="#92400e">space</text>
+
+  <!-- User threads (4) -->
+  <text x="145" y="26" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#15803d">user threads</text>
+
+  <path d="M60,40  L70,52  L50,64  L70,76  L50,88  L60,100 L60,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M120,40 L130,52 L110,64 L130,76 L110,88 L120,100 L120,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M180,40 L190,52 L170,64 L190,76 L170,88 L180,100 L180,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M240,40 L250,52 L230,64 L250,76 L230,88 L240,100 L240,118" fill="none" stroke="#16a34a" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Kernel threads (4 — one per user thread) -->
+  <path d="M60,150  L70,162  L50,174  L70,186  L50,198  L60,208  L60,220" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M120,150 L130,162 L110,174 L130,186 L110,198 L120,208 L120,220" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M180,150 L190,162 L170,174 L190,186 L170,198 L180,208 L180,220" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+  <path d="M240,150 L250,162 L230,174 L250,186 L230,198 L240,208 L240,220" fill="none" stroke="#d97706" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- 1:1 vertical connections -->
+  <line x1="60"  y1="120" x2="60"  y2="148" stroke="#9ca3af" stroke-width="1.5"/>
+  <line x1="120" y1="120" x2="120" y2="148" stroke="#9ca3af" stroke-width="1.5"/>
+  <line x1="180" y1="120" x2="180" y2="148" stroke="#9ca3af" stroke-width="1.5"/>
+  <line x1="240" y1="120" x2="240" y2="148" stroke="#9ca3af" stroke-width="1.5"/>
+
+  <!-- Labels -->
+  <text x="145" y="248" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#92400e">kernel threads</text>
+  <text x="290" y="134" font-family="sans-serif" font-size="11" fill="#2563eb">one → one</text>
+</svg>
