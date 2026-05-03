@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 255" width="520" height="255">
+  <!-- ForkJoinTask (parent, abstract base class) -->
+  <rect x="155" y="20" width="210" height="68" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <line x1="155" y1="52" x2="365" y2="52" stroke="#2563eb" stroke-width="1"/>
+  <text x="260" y="41" text-anchor="middle" font-size="13" font-family="monospace" fill="#1d4ed8" font-weight="700">ForkJoinTask&lt;V&gt;</text>
+  <text x="260" y="65" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#1d4ed8" font-style="italic">&lt;&lt;abstract&gt;&gt;</text>
+
+  <!-- Inheritance lines: horizontal bar at y=122, verticals, and diagonal/orthogonal to children -->
+  <!-- Vertical from parent bottom (260, 88) → junction at (260, 122) -->
+  <line x1="260" y1="88" x2="260" y2="110" stroke="#374151" stroke-width="1.5"/>
+  <!-- Hollow triangle at parent bottom: apex (260,88), base (252,106)-(268,106) -->
+  <polygon points="260,88 252,106 268,106" fill="white" stroke="#374151" stroke-width="1.5"/>
+  <!-- Line from triangle base center to junction bar -->
+  <line x1="260" y1="106" x2="260" y2="122" stroke="#374151" stroke-width="1.5"/>
+  <!-- Horizontal bar -->
+  <line x1="115" y1="122" x2="405" y2="122" stroke="#374151" stroke-width="1.5"/>
+  <!-- Left vertical down to RecursiveTask -->
+  <line x1="115" y1="122" x2="115" y2="152" stroke="#374151" stroke-width="1.5"/>
+  <!-- Right vertical down to RecursiveAction -->
+  <line x1="405" y1="122" x2="405" y2="152" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- RecursiveTask (left child) -->
+  <rect x="20" y="152" width="190" height="88" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="20" y1="185" x2="210" y2="185" stroke="#16a34a" stroke-width="1"/>
+  <line x1="20" y1="202" x2="210" y2="202" stroke="#16a34a" stroke-width="1"/>
+  <text x="115" y="173" text-anchor="middle" font-size="12" font-family="monospace" fill="#166534" font-weight="700">RecursiveTask&lt;V&gt;</text>
+  <text x="115" y="197" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#166534" font-style="italic">&lt;&lt;abstract&gt;&gt;</text>
+  <text x="115" y="225" text-anchor="middle" font-size="11" font-family="monospace" fill="#166534">V compute()</text>
+
+  <!-- RecursiveAction (right child) -->
+  <rect x="310" y="152" width="190" height="88" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <line x1="310" y1="185" x2="500" y2="185" stroke="#d97706" stroke-width="1"/>
+  <line x1="310" y1="202" x2="500" y2="202" stroke="#d97706" stroke-width="1"/>
+  <text x="405" y="173" text-anchor="middle" font-size="12" font-family="monospace" fill="#92400e" font-weight="700">RecursiveAction</text>
+  <text x="405" y="197" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#92400e" font-style="italic">&lt;&lt;abstract&gt;&gt;</text>
+  <text x="405" y="225" text-anchor="middle" font-size="11" font-family="monospace" fill="#92400e">void compute()</text>
+</svg>
