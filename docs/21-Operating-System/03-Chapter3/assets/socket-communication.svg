@@ -1,0 +1,30 @@
+<svg width="700" height="210" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#4b5563"/>
+    </marker>
+  </defs>
+
+  <!-- Host X label group -->
+  <text x="160" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#1e3a8a">host X</text>
+  <text x="160" y="48" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#2563eb">(146.86.5.20)</text>
+
+  <!-- Host X socket oval -->
+  <ellipse cx="160" cy="135" rx="120" ry="50" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="160" y="127" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e3a8a">socket</text>
+  <text x="160" y="148" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#1e40af">(146.86.5.20:1625)</text>
+
+  <!-- Web server label group -->
+  <text x="540" y="26" font-family="Arial, sans-serif" font-size="16" font-weight="bold" text-anchor="middle" fill="#14532d">web server</text>
+  <text x="540" y="48" font-family="Arial, sans-serif" font-size="13" text-anchor="middle" fill="#15803d">(161.25.19.8)</text>
+
+  <!-- Web server socket oval -->
+  <ellipse cx="540" cy="135" rx="120" ry="50" fill="#dcfce7" stroke="#22c55e" stroke-width="2"/>
+  <text x="540" y="127" font-family="Arial, sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#14532d">socket</text>
+  <text x="540" y="148" font-family="Arial, sans-serif" font-size="12" text-anchor="middle" fill="#166534">(161.25.19.8:80)</text>
+
+  <!-- Connection: right arrow (client -> server) -->
+  <line x1="282" y1="129" x2="418" y2="129" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)"/>
+  <!-- Connection: left arrow (server -> client) -->
+  <line x1="418" y1="141" x2="282" y2="141" stroke="#4b5563" stroke-width="2" marker-end="url(#arr)"/>
+</svg>
