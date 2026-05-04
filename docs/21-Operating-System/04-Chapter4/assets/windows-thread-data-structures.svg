@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 400" width="580" height="400">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Kernel space background -->
+  <rect x="10" y="10" width="368" height="378" rx="8" fill="#eff6ff" stroke="#93c5fd" stroke-width="1.5"/>
+  <text x="185" y="374" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#1e40af">kernel space</text>
+
+  <!-- User space background -->
+  <rect x="388" y="10" width="182" height="378" rx="8" fill="#f0fdf4" stroke="#86efac" stroke-width="1.5"/>
+  <text x="479" y="374" font-family="sans-serif" font-size="12" text-anchor="middle" fill="#15803d">user space</text>
+
+  <!-- ETHREAD box -->
+  <rect x="22" y="28" width="152" height="170" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="98" y="48" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e40af">ETHREAD</text>
+  <line x1="22" y1="56" x2="174" y2="56" stroke="#2563eb" stroke-width="1"/>
+  <text x="38" y="75" font-family="sans-serif" font-size="11" fill="#1e40af">thread start</text>
+  <text x="38" y="90" font-family="sans-serif" font-size="11" fill="#1e40af">address</text>
+  <text x="38" y="112" font-family="sans-serif" font-size="11" fill="#1e40af">pointer to</text>
+  <text x="38" y="127" font-family="sans-serif" font-size="11" fill="#1e40af">parent process</text>
+  <text x="38" y="152" font-family="sans-serif" font-size="18" fill="#93c5fd">•  •  •</text>
+
+  <!-- Arrow: ETHREAD → KTHREAD (horizontal, at pointer level) -->
+  <line x1="174" y1="165" x2="198" y2="165" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- KTHREAD box -->
+  <rect x="198" y="72" width="152" height="248" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="274" y="92" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#92400e">KTHREAD</text>
+  <line x1="198" y1="100" x2="350" y2="100" stroke="#d97706" stroke-width="1"/>
+  <text x="214" y="119" font-family="sans-serif" font-size="11" fill="#92400e">scheduling and</text>
+  <text x="214" y="134" font-family="sans-serif" font-size="11" fill="#92400e">synchronization</text>
+  <text x="214" y="149" font-family="sans-serif" font-size="11" fill="#92400e">information</text>
+  <text x="214" y="172" font-family="sans-serif" font-size="18" fill="#fbbf24">•  •  •</text>
+  <text x="214" y="208" font-family="sans-serif" font-size="11" fill="#92400e">kernel stack</text>
+  <text x="214" y="240" font-family="sans-serif" font-size="18" fill="#fbbf24">•  •  •</text>
+
+  <!-- Arrow: KTHREAD → TEB (horizontal) -->
+  <line x1="350" y1="196" x2="388" y2="196" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- TEB box -->
+  <rect x="398" y="72" width="162" height="248" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="479" y="92" font-family="sans-serif" font-size="13" font-weight="bold" text-anchor="middle" fill="#15803d">TEB</text>
+  <line x1="398" y1="100" x2="560" y2="100" stroke="#16a34a" stroke-width="1"/>
+  <text x="414" y="119" font-family="sans-serif" font-size="11" fill="#15803d">thread identifier</text>
+  <text x="414" y="144" font-family="sans-serif" font-size="18" fill="#86efac">•</text>
+  <text x="414" y="170" font-family="sans-serif" font-size="11" fill="#15803d">user stack</text>
+  <text x="414" y="195" font-family="sans-serif" font-size="18" fill="#86efac">•  •  •</text>
+  <text x="414" y="228" font-family="sans-serif" font-size="11" fill="#15803d">thread-local</text>
+  <text x="414" y="243" font-family="sans-serif" font-size="11" fill="#15803d">storage</text>
+  <text x="414" y="270" font-family="sans-serif" font-size="18" fill="#86efac">•  •  •</text>
+</svg>
