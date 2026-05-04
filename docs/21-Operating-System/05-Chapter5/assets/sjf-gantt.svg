@@ -1,0 +1,113 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 540 295" width="540" height="295"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+
+  <!-- ===== Part 1: Non-Preemptive SJF ===== -->
+  <text x="270" y="22" text-anchor="middle" fill="#374151" font-size="13" font-weight="600">
+    Non-Preemptive SJF      Avg Waiting = 7 ms
+  </text>
+  <text x="270" y="37" text-anchor="middle" fill="#64748b" font-size="11">
+    Processes: P1(6) P2(8) P3(7) P4(3)  - sorted by burst length at time 0
+  </text>
+
+  <!-- Scale: 1ms = 16px, start x=50 -->
+  <!-- P4: 0-3 → width=48 -->
+  <rect x="50" y="44" width="48" height="40" rx="2" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="73" y="68" text-anchor="middle" fill="#9d174d" font-weight="700" font-size="14">P</text>
+  <text x="82" y="74" text-anchor="start" fill="#9d174d" font-size="9">4</text>
+
+  <!-- P1: 3-9 → width=96 -->
+  <rect x="98" y="44" width="96" height="40" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="146" y="68" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="14">P</text>
+  <text x="155" y="74" text-anchor="start" fill="#1e40af" font-size="9">1</text>
+
+  <!-- P3: 9-16 → width=112 -->
+  <rect x="194" y="44" width="112" height="40" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="250" y="68" text-anchor="middle" fill="#5b21b6" font-weight="700" font-size="14">P</text>
+  <text x="259" y="74" text-anchor="start" fill="#5b21b6" font-size="9">3</text>
+
+  <!-- P2: 16-24 → width=128 -->
+  <rect x="306" y="44" width="128" height="40" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="370" y="68" text-anchor="middle" fill="#15803d" font-weight="700" font-size="14">P</text>
+  <text x="379" y="74" text-anchor="start" fill="#15803d" font-size="9">2</text>
+
+  <!-- Axis and ticks -->
+  <line x1="44" y1="84" x2="450" y2="84" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="50" y1="80" x2="50" y2="89" stroke="#64748b" stroke-width="1.5"/>
+  <text x="50" y="101" text-anchor="middle" fill="#64748b" font-size="11">0</text>
+  <line x1="98" y1="80" x2="98" y2="89" stroke="#64748b" stroke-width="1.5"/>
+  <text x="98" y="101" text-anchor="middle" fill="#64748b" font-size="11">3</text>
+  <line x1="194" y1="80" x2="194" y2="89" stroke="#64748b" stroke-width="1.5"/>
+  <text x="194" y="101" text-anchor="middle" fill="#64748b" font-size="11">9</text>
+  <line x1="306" y1="80" x2="306" y2="89" stroke="#64748b" stroke-width="1.5"/>
+  <text x="306" y="101" text-anchor="middle" fill="#64748b" font-size="11">16</text>
+  <line x1="434" y1="80" x2="434" y2="89" stroke="#64748b" stroke-width="1.5"/>
+  <text x="434" y="101" text-anchor="middle" fill="#64748b" font-size="11">24</text>
+
+  <!-- Waiting times -->
+  <text x="50" y="116" fill="#64748b" font-size="11">Waiting:  P4 = 0 ms,  P1 = 3 ms,  P3 = 9 ms,  P2 = 16 ms</text>
+
+  <!-- Separator -->
+  <line x1="20" y1="130" x2="520" y2="130" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="6,3"/>
+
+  <!-- ===== Part 2: Preemptive SJF (SRTF) ===== -->
+  <text x="270" y="150" text-anchor="middle" fill="#374151" font-size="13" font-weight="600">
+    Preemptive SJF (SRTF)      Avg Waiting = 6.5 ms
+  </text>
+  <text x="270" y="166" text-anchor="middle" fill="#64748b" font-size="11">
+    P1(0,8)  P2(1,4)  P3(2,9)  P4(3,5)  - (arrival, burst)
+  </text>
+
+  <!-- Scale: 1ms = 15px, start x=50 -->
+  <!-- P1: 0-1 → width=15 -->
+  <rect x="50" y="173" width="15" height="40" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="57" y="197" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="10">P1</text>
+
+  <!-- P2: 1-5 → width=60 -->
+  <rect x="65" y="173" width="60" height="40" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="95" y="197" text-anchor="middle" fill="#15803d" font-weight="700" font-size="14">P</text>
+  <text x="104" y="203" text-anchor="start" fill="#15803d" font-size="9">2</text>
+
+  <!-- P4: 5-10 → width=75 -->
+  <rect x="125" y="173" width="75" height="40" rx="2" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="162" y="197" text-anchor="middle" fill="#9d174d" font-weight="700" font-size="14">P</text>
+  <text x="171" y="203" text-anchor="start" fill="#9d174d" font-size="9">4</text>
+
+  <!-- P1: 10-17 → width=105 -->
+  <rect x="200" y="173" width="105" height="40" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="252" y="197" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="14">P</text>
+  <text x="261" y="203" text-anchor="start" fill="#1e40af" font-size="9">1</text>
+
+  <!-- P3: 17-26 → width=135 -->
+  <rect x="305" y="173" width="135" height="40" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="372" y="197" text-anchor="middle" fill="#5b21b6" font-weight="700" font-size="14">P</text>
+  <text x="381" y="203" text-anchor="start" fill="#5b21b6" font-size="9">3</text>
+
+  <!-- Preemption markers (vertical dashed lines inside chart) -->
+  <line x1="65" y1="173" x2="65" y2="213" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="125" y1="173" x2="125" y2="213" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="200" y1="173" x2="200" y2="213" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+
+  <!-- Axis and ticks -->
+  <line x1="44" y1="213" x2="455" y2="213" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="50" y1="209" x2="50" y2="218" stroke="#64748b" stroke-width="1.5"/>
+  <text x="50" y="230" text-anchor="middle" fill="#64748b" font-size="11">0</text>
+  <line x1="65" y1="209" x2="65" y2="218" stroke="#64748b" stroke-width="1.5"/>
+  <text x="65" y="230" text-anchor="middle" fill="#64748b" font-size="11">1</text>
+  <line x1="125" y1="209" x2="125" y2="218" stroke="#64748b" stroke-width="1.5"/>
+  <text x="125" y="230" text-anchor="middle" fill="#64748b" font-size="11">5</text>
+  <line x1="200" y1="209" x2="200" y2="218" stroke="#64748b" stroke-width="1.5"/>
+  <text x="200" y="230" text-anchor="middle" fill="#64748b" font-size="11">10</text>
+  <line x1="305" y1="209" x2="305" y2="218" stroke="#64748b" stroke-width="1.5"/>
+  <text x="305" y="230" text-anchor="middle" fill="#64748b" font-size="11">17</text>
+  <line x1="440" y1="209" x2="440" y2="218" stroke="#64748b" stroke-width="1.5"/>
+  <text x="440" y="230" text-anchor="middle" fill="#64748b" font-size="11">26</text>
+
+  <!-- Waiting times -->
+  <text x="50" y="246" fill="#64748b" font-size="11">Waiting:  P1 = 9 ms,  P2 = 0 ms,  P3 = 15 ms,  P4 = 2 ms</text>
+
+  <!-- Callout box -->
+  <rect x="20" y="257" width="500" height="30" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="270" y="277" text-anchor="middle" fill="#1e40af" font-size="11">
+    P1 preempted at t=1 (P2 has shorter remaining burst);  P1 resumes at t=10 after P4 finishes
+  </text>
+</svg>

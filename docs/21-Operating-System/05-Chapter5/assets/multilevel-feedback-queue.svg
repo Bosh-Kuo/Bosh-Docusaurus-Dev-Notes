@@ -1,0 +1,77 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 340" width="580" height="340"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arr-b" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arr-r" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="arr-g" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <!-- "New process" entry label -->
+  <text x="430" y="16" fill="#64748b" font-size="11">New process enters here</text>
+  <line x1="440" y1="20" x2="440" y2="48" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- ===== Queue 0: quantum = 8 (highest priority) ===== -->
+  <rect x="80" y="50" width="340" height="46" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="250" y="72" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="13">Queue 0</text>
+  <text x="250" y="88" text-anchor="middle" fill="#2563eb" font-size="11">quantum = 8 ms  (Round-Robin)</text>
+  <!-- quantum=8 label on left -->
+  <text x="45" y="78" text-anchor="end" fill="#2563eb" font-size="11" font-weight="600">Highest</text>
+  <text x="45" y="92" text-anchor="end" fill="#2563eb" font-size="11" font-weight="600">Priority</text>
+
+  <!-- Arrow: CPU selects from Q0 first (to CPU box) -->
+  <!-- Arrow: if not done in 8ms → demote to Q1 -->
+  <line x1="420" y1="96" x2="420" y2="118" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="432" y="110" fill="#dc2626" font-size="10">not done</text>
+  <line x1="420" y1="118" x2="421" y2="127" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- ===== Queue 1: quantum = 16 ===== -->
+  <rect x="80" y="128" width="340" height="46" rx="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="250" y="150" text-anchor="middle" fill="#5b21b6" font-weight="700" font-size="13">Queue 1</text>
+  <text x="250" y="166" text-anchor="middle" fill="#7c3aed" font-size="11">quantum = 16 ms  (Round-Robin)</text>
+
+  <!-- Arrow: if not done in 16ms → demote to Q2 -->
+  <line x1="420" y1="174" x2="420" y2="196" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="432" y="188" fill="#dc2626" font-size="10">not done</text>
+  <line x1="420" y1="196" x2="421" y2="206" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- ===== Queue 2: FCFS (lowest priority) ===== -->
+  <rect x="80" y="207" width="340" height="46" rx="5" fill="#f0fdf4" stroke="#16a34a" stroke-width="2"/>
+  <text x="250" y="229" text-anchor="middle" fill="#15803d" font-weight="700" font-size="13">Queue 2</text>
+  <text x="250" y="245" text-anchor="middle" fill="#16a34a" font-size="11">FCFS  (no time limit)</text>
+  <text x="45" y="234" text-anchor="end" fill="#16a34a" font-size="11" font-weight="600">Lowest</text>
+  <text x="45" y="248" text-anchor="end" fill="#16a34a" font-size="11" font-weight="600">Priority</text>
+
+  <!-- CPU box -->
+  <rect x="460" y="145" width="100" height="44" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="510" y="165" text-anchor="middle" fill="#92400e" font-weight="700" font-size="14">CPU</text>
+  <text x="510" y="181" text-anchor="middle" fill="#b45309" font-size="11">scheduler</text>
+
+  <!-- Arrows from queues to CPU (horizontal) -->
+  <!-- Q0 → CPU -->
+  <line x1="420" y1="73" x2="458" y2="155" stroke="#2563eb" stroke-width="1.5" marker-end="url(#arr-b)"/>
+  <!-- Q1 → CPU (when Q0 empty) -->
+  <line x1="420" y1="151" x2="458" y2="163" stroke="#7c3aed" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- Q2 → CPU (when Q0 and Q1 empty) -->
+  <line x1="420" y1="230" x2="458" y2="178" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Aging: upward promotion arrow (left side) -->
+  <text x="50" y="286" text-anchor="middle" fill="#d97706" font-size="10" font-weight="600">Aging</text>
+  <text x="50" y="300" text-anchor="middle" fill="#d97706" font-size="10">(promotion)</text>
+  <line x1="55" y1="253" x2="55" y2="150" stroke="#d97706" stroke-width="1.5" stroke-dasharray="4,2" marker-end="url(#arr)"/>
+  <line x1="55" y1="253" x2="80" y2="253" stroke="#d97706" stroke-width="1.5"/>
+
+  <!-- Explanation box -->
+  <rect x="20" y="270" width="540" height="62" rx="6" fill="#fef9c3" stroke="#d97706" stroke-width="1.2"/>
+  <text x="290" y="288" text-anchor="middle" fill="#92400e" font-size="11" font-weight="700">How It Works</text>
+  <text x="290" y="305" text-anchor="middle" fill="#92400e" font-size="11">New process enters Q0. If CPU burst &lt; 8 ms: runs to completion. If not: demoted to Q1.</text>
+  <text x="290" y="320" text-anchor="middle" fill="#92400e" font-size="11">Q1 gives 16 ms; if still unfinished: moves to Q2 (FCFS). Aging prevents starvation in Q2.</text>
+</svg>

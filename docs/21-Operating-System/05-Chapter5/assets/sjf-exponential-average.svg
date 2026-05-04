@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" width="640" height="240"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+
+  <!-- Chart area: origin (40, 180), y-axis up, 1 unit = 11px -->
+  <!-- x positions for t values (7 bursts): 120, 195, 270, 345, 420, 495, 570 -->
+  <!-- τ step segments: [55,120][120,195][195,270][270,345][345,420][420,495][495,570][570,620] -->
+
+  <!-- Y-axis grid lines (light) -->
+  <line x1="55" y1="180" x2="620" y2="180" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="55" y1="158" x2="620" y2="158" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="55" y1="136" x2="620" y2="136" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="55" y1="114" x2="620" y2="114" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="55" y1="92" x2="620" y2="92" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="55" y1="70" x2="620" y2="70" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="55" y1="48" x2="620" y2="48" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="55" y1="26" x2="620" y2="26" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- Y-axis labels (value = (180 - y) / 11) -->
+  <!-- y=180 → 0, y=158 → 2, y=136 → 4, y=114 → 6, y=92 → 8, y=70 → 10, y=48 → 12 -->
+  <text x="48" y="183" text-anchor="end" fill="#64748b" font-size="10">0</text>
+  <text x="48" y="161" text-anchor="end" fill="#64748b" font-size="10">2</text>
+  <text x="48" y="139" text-anchor="end" fill="#64748b" font-size="10">4</text>
+  <text x="48" y="117" text-anchor="end" fill="#64748b" font-size="10">6</text>
+  <text x="48" y="95" text-anchor="end" fill="#64748b" font-size="10">8</text>
+  <text x="48" y="73" text-anchor="end" fill="#64748b" font-size="10">10</text>
+  <text x="48" y="51" text-anchor="end" fill="#64748b" font-size="10">12</text>
+
+  <!-- Y-axis label -->
+  <text x="14" y="105" text-anchor="middle" fill="#64748b" font-size="11" transform="rotate(-90 14 105)">burst / guess</text>
+
+  <!-- Y-axis line -->
+  <line x1="55" y1="20" x2="55" y2="182" stroke="#94a3b8" stroke-width="1.5"/>
+
+  <!-- X-axis line -->
+  <line x1="55" y1="180" x2="625" y2="180" stroke="#94a3b8" stroke-width="1.5"/>
+
+  <!-- ===== Actual CPU burst bars (t_i) — light blue fill ===== -->
+  <!-- t1=6 at x=120: bar height=66, y from 114 to 180, width=10 -->
+  <rect x="115" y="114" width="10" height="66" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+  <!-- t2=4 at x=195: bar height=44, y from 136 to 180 -->
+  <rect x="190" y="136" width="10" height="44" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+  <!-- t3=6 at x=270: height=66 -->
+  <rect x="265" y="114" width="10" height="66" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+  <!-- t4=4 at x=345: height=44 -->
+  <rect x="340" y="136" width="10" height="44" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+  <!-- t5=13 at x=420: height=143 (y=37 to 180) -->
+  <rect x="415" y="37" width="10" height="143" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+  <!-- t6=13 at x=495: height=143 -->
+  <rect x="490" y="37" width="10" height="143" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+  <!-- t7=13 at x=570: height=143 -->
+  <rect x="565" y="37" width="10" height="143" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+
+  <!-- ===== τ step function — orange line ===== -->
+  <!-- τ0=10 → y=70: x from 55 to 120 -->
+  <line x1="55" y1="70" x2="120" y2="70" stroke="#d97706" stroke-width="2"/>
+  <!-- step down at x=120: τ1=8 → y=92 -->
+  <line x1="120" y1="70" x2="120" y2="92" stroke="#d97706" stroke-width="2"/>
+  <!-- τ1=8 → y=92: x from 120 to 195 -->
+  <line x1="120" y1="92" x2="195" y2="92" stroke="#d97706" stroke-width="2"/>
+  <!-- step down at x=195: τ2=6 → y=114 -->
+  <line x1="195" y1="92" x2="195" y2="114" stroke="#d97706" stroke-width="2"/>
+  <!-- τ2=6 → y=114: x from 195 to 270 -->
+  <line x1="195" y1="114" x2="270" y2="114" stroke="#d97706" stroke-width="2"/>
+  <!-- step: same level at x=270: τ3=6 → y=114 -->
+  <line x1="270" y1="114" x2="270" y2="114" stroke="#d97706" stroke-width="2"/>
+  <!-- τ3=6: x from 270 to 345 -->
+  <line x1="270" y1="114" x2="345" y2="114" stroke="#d97706" stroke-width="2"/>
+  <!-- step down: τ4=5 → y=125 -->
+  <line x1="345" y1="114" x2="345" y2="125" stroke="#d97706" stroke-width="2"/>
+  <!-- τ4=5: x from 345 to 420 -->
+  <line x1="345" y1="125" x2="420" y2="125" stroke="#d97706" stroke-width="2"/>
+  <!-- step up: τ5=9 → y=81 (=(180-9*11)=180-99=81) -->
+  <line x1="420" y1="125" x2="420" y2="81" stroke="#d97706" stroke-width="2"/>
+  <!-- τ5=9: x from 420 to 495 -->
+  <line x1="420" y1="81" x2="495" y2="81" stroke="#d97706" stroke-width="2"/>
+  <!-- step up: τ6=11 → y=59 -->
+  <line x1="495" y1="81" x2="495" y2="59" stroke="#d97706" stroke-width="2"/>
+  <!-- τ6=11: x from 495 to 570 -->
+  <line x1="495" y1="59" x2="570" y2="59" stroke="#d97706" stroke-width="2"/>
+  <!-- step up: τ7=12 → y=48 -->
+  <line x1="570" y1="59" x2="570" y2="48" stroke="#d97706" stroke-width="2"/>
+  <!-- τ7=12: x from 570 to 620 -->
+  <line x1="570" y1="48" x2="620" y2="48" stroke="#d97706" stroke-width="2" stroke-dasharray="4,3"/>
+
+  <!-- x-axis labels (time index) -->
+  <text x="55" y="194" text-anchor="middle" fill="#64748b" font-size="10">...</text>
+  <text x="120" y="194" text-anchor="middle" fill="#64748b" font-size="10">t1</text>
+  <text x="195" y="194" text-anchor="middle" fill="#64748b" font-size="10">t2</text>
+  <text x="270" y="194" text-anchor="middle" fill="#64748b" font-size="10">t3</text>
+  <text x="345" y="194" text-anchor="middle" fill="#64748b" font-size="10">t4</text>
+  <text x="420" y="194" text-anchor="middle" fill="#64748b" font-size="10">t5</text>
+  <text x="495" y="194" text-anchor="middle" fill="#64748b" font-size="10">t6</text>
+  <text x="570" y="194" text-anchor="middle" fill="#64748b" font-size="10">t7</text>
+  <text x="620" y="194" text-anchor="middle" fill="#64748b" font-size="10">...</text>
+
+  <!-- Data table below chart -->
+  <text x="55" y="214" fill="#64748b" font-size="10.5" font-weight="600">CPU burst (t):</text>
+  <text x="195" y="214" fill="#2563eb" font-size="10.5">6</text>
+  <text x="270" y="214" fill="#2563eb" font-size="10.5">4</text>
+  <text x="345" y="214" fill="#2563eb" font-size="10.5">6</text>
+  <text x="420" y="214" fill="#2563eb" font-size="10.5">4</text>
+  <text x="495" y="214" fill="#2563eb" font-size="10.5">13</text>
+  <text x="565" y="214" fill="#2563eb" font-size="10.5">13</text>
+
+  <text x="55" y="228" fill="#64748b" font-size="10.5" font-weight="600">Guess (tau):</text>
+  <text x="120" y="228" fill="#d97706" font-size="10.5">10</text>
+  <text x="195" y="228" fill="#d97706" font-size="10.5">8</text>
+  <text x="270" y="228" fill="#d97706" font-size="10.5">6</text>
+  <text x="345" y="228" fill="#d97706" font-size="10.5">6</text>
+  <text x="420" y="228" fill="#d97706" font-size="10.5">5</text>
+  <text x="495" y="228" fill="#d97706" font-size="10.5">9</text>
+  <text x="570" y="228" fill="#d97706" font-size="10.5">11</text>
+
+  <!-- Legend -->
+  <rect x="420" y="10" width="12" height="12" rx="2" fill="#93c5fd" stroke="#2563eb" stroke-width="1"/>
+  <text x="436" y="20" fill="#64748b" font-size="11">Actual CPU burst (t)</text>
+  <line x1="420" y1="36" x2="432" y2="36" stroke="#d97706" stroke-width="2"/>
+  <text x="436" y="40" fill="#64748b" font-size="11">Predicted burst (tau), alpha=0.5, tau_0=10</text>
+</svg>

@@ -1,0 +1,82 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 292" width="500" height="292"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+
+  <!-- ===== Example 1: Order P1, P2, P3 ===== -->
+  <text x="250" y="22" text-anchor="middle" fill="#374151" font-size="13" font-weight="600">
+    Order: P1 -> P2 -> P3      Avg Waiting = 17 ms
+  </text>
+
+  <!-- Scale: 1ms = 13px, start x=50 -->
+  <!-- P1: 0-24 → width=312 -->
+  <rect x="50" y="30" width="312" height="40" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="200" y="54" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="14">P</text>
+  <text x="213" y="60" text-anchor="start" fill="#1e40af" font-size="9">1</text>
+
+  <!-- P2: 24-27 → width=39 -->
+  <rect x="362" y="30" width="39" height="40" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="381" y="54" text-anchor="middle" fill="#15803d" font-weight="700" font-size="14">P</text>
+  <text x="390" y="60" text-anchor="start" fill="#15803d" font-size="9">2</text>
+
+  <!-- P3: 27-30 → width=39 -->
+  <rect x="401" y="30" width="39" height="40" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="420" y="54" text-anchor="middle" fill="#5b21b6" font-weight="700" font-size="14">P</text>
+  <text x="429" y="60" text-anchor="start" fill="#5b21b6" font-size="9">3</text>
+
+  <!-- Axis and time ticks -->
+  <line x1="44" y1="70" x2="455" y2="70" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="50" y1="66" x2="50" y2="75" stroke="#64748b" stroke-width="1.5"/>
+  <text x="50" y="88" text-anchor="middle" fill="#64748b" font-size="11">0</text>
+  <line x1="362" y1="66" x2="362" y2="75" stroke="#64748b" stroke-width="1.5"/>
+  <text x="362" y="88" text-anchor="middle" fill="#64748b" font-size="11">24</text>
+  <line x1="401" y1="66" x2="401" y2="75" stroke="#64748b" stroke-width="1.5"/>
+  <text x="401" y="88" text-anchor="middle" fill="#64748b" font-size="11">27</text>
+  <line x1="440" y1="66" x2="440" y2="75" stroke="#64748b" stroke-width="1.5"/>
+  <text x="440" y="88" text-anchor="middle" fill="#64748b" font-size="11">30</text>
+
+  <!-- Waiting time note -->
+  <text x="50" y="103" fill="#64748b" font-size="11">Waiting:  P1 = 0 ms,  P2 = 24 ms,  P3 = 27 ms</text>
+
+  <!-- Separator -->
+  <line x1="20" y1="118" x2="480" y2="118" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="6,3"/>
+
+  <!-- ===== Example 2: Order P2, P3, P1 ===== -->
+  <text x="250" y="138" text-anchor="middle" fill="#374151" font-size="13" font-weight="600">
+    Order: P2 -> P3 -> P1      Avg Waiting = 3 ms
+  </text>
+
+  <!-- P2: 0-3 → width=39 -->
+  <rect x="50" y="145" width="39" height="40" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="69" y="169" text-anchor="middle" fill="#15803d" font-weight="700" font-size="14">P</text>
+  <text x="78" y="175" text-anchor="start" fill="#15803d" font-size="9">2</text>
+
+  <!-- P3: 3-6 → width=39 -->
+  <rect x="89" y="145" width="39" height="40" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="108" y="169" text-anchor="middle" fill="#5b21b6" font-weight="700" font-size="14">P</text>
+  <text x="117" y="175" text-anchor="start" fill="#5b21b6" font-size="9">3</text>
+
+  <!-- P1: 6-30 → width=312 -->
+  <rect x="128" y="145" width="312" height="40" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="284" y="169" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="14">P</text>
+  <text x="297" y="175" text-anchor="start" fill="#1e40af" font-size="9">1</text>
+
+  <!-- Axis and time ticks -->
+  <line x1="44" y1="185" x2="455" y2="185" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="50" y1="181" x2="50" y2="190" stroke="#64748b" stroke-width="1.5"/>
+  <text x="50" y="203" text-anchor="middle" fill="#64748b" font-size="11">0</text>
+  <line x1="89" y1="181" x2="89" y2="190" stroke="#64748b" stroke-width="1.5"/>
+  <text x="89" y="203" text-anchor="middle" fill="#64748b" font-size="11">3</text>
+  <line x1="128" y1="181" x2="128" y2="190" stroke="#64748b" stroke-width="1.5"/>
+  <text x="128" y="203" text-anchor="middle" fill="#64748b" font-size="11">6</text>
+  <line x1="440" y1="181" x2="440" y2="190" stroke="#64748b" stroke-width="1.5"/>
+  <text x="440" y="203" text-anchor="middle" fill="#64748b" font-size="11">30</text>
+
+  <!-- Waiting time note -->
+  <text x="50" y="218" fill="#64748b" font-size="11">Waiting:  P2 = 0 ms,  P3 = 3 ms,  P1 = 6 ms</text>
+
+  <!-- Convoy Effect callout -->
+  <rect x="20" y="230" width="460" height="50" rx="6" fill="#fef9c3" stroke="#d97706" stroke-width="1.2"/>
+  <text x="250" y="250" text-anchor="middle" fill="#92400e" font-size="11" font-weight="700">Convoy Effect</text>
+  <text x="250" y="268" text-anchor="middle" fill="#92400e" font-size="11">
+    Putting the long process first forces short processes to wait -> avg wait jumps from 3ms to 17ms (5.7x worse)
+  </text>
+</svg>

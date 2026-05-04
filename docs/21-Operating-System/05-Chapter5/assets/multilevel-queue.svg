@@ -1,0 +1,74 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" width="560" height="320"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arr-r" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- CPU box (top center) -->
+  <rect x="215" y="10" width="130" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="280" y="30" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="14">CPU</text>
+  <text x="280" y="46" text-anchor="middle" fill="#2563eb" font-size="11">scheduler</text>
+
+  <!-- Arrow from CPU to queues area (pointing down to priority hierarchy) -->
+  <line x1="280" y1="54" x2="280" y2="72" stroke="#64748b" stroke-width="1.5" stroke-dasharray="4,2"/>
+
+  <!-- Priority label on left -->
+  <text x="18" y="105" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">Highest</text>
+  <text x="18" y="120" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="600">Priority</text>
+  <line x1="18" y1="128" x2="18" y2="275" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="18" y="285" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600">Lowest</text>
+  <text x="18" y="300" text-anchor="middle" fill="#64748b" font-size="11" font-weight="600">Priority</text>
+
+  <!-- Priority arrow (going down) -->
+  <line x1="18" y1="128" x2="18" y2="270" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- Queue 1: Real-time processes (y=75 to 107) -->
+  <rect x="40" y="75" width="440" height="32" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="260" y="96" text-anchor="middle" fill="#b91c1c" font-weight="700" font-size="13">Real-time processes</text>
+  <!-- Incoming arrow from right -->
+  <line x1="500" y1="91" x2="482" y2="91" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Queue 2: System processes (y=118 to 150) -->
+  <rect x="40" y="118" width="440" height="32" rx="4" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="260" y="139" text-anchor="middle" fill="#9d174d" font-weight="700" font-size="13">System processes</text>
+  <line x1="500" y1="134" x2="482" y2="134" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Queue 3: Interactive processes (y=161 to 193) -->
+  <rect x="40" y="161" width="440" height="32" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="260" y="182" text-anchor="middle" fill="#92400e" font-weight="700" font-size="13">Interactive processes</text>
+  <line x1="500" y1="177" x2="482" y2="177" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Queue 4: Batch processes (y=204 to 236) -->
+  <rect x="40" y="204" width="440" height="32" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="260" y="225" text-anchor="middle" fill="#15803d" font-weight="700" font-size="13">Batch processes</text>
+  <line x1="500" y1="220" x2="482" y2="220" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- CPU selection arrows from each queue to CPU (going up-left) -->
+  <!-- Simplified: show that CPU picks from highest non-empty queue -->
+  <line x1="40" y1="91" x2="24" y2="91" stroke="#64748b" stroke-width="1.2"/>
+  <line x1="40" y1="134" x2="24" y2="134" stroke="#64748b" stroke-width="1.2"/>
+  <line x1="40" y1="177" x2="24" y2="177" stroke="#64748b" stroke-width="1.2"/>
+  <line x1="40" y1="220" x2="24" y2="220" stroke="#64748b" stroke-width="1.2"/>
+  <line x1="24" y1="75" x2="24" y2="236" stroke="#64748b" stroke-width="1.2"/>
+  <line x1="24" y1="75" x2="215" y2="54" stroke="#64748b" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- Scheduling algorithm labels on right -->
+  <text x="510" y="88" fill="#64748b" font-size="10">Preemptive</text>
+  <text x="510" y="101" fill="#64748b" font-size="10">Priority</text>
+  <text x="510" y="131" fill="#64748b" font-size="10">Preemptive</text>
+  <text x="510" y="144" fill="#64748b" font-size="10">Priority</text>
+  <text x="510" y="174" fill="#64748b" font-size="10">Round-Robin</text>
+  <text x="510" y="187" fill="#64748b" font-size="10">(RR)</text>
+  <text x="510" y="217" fill="#64748b" font-size="10">FCFS</text>
+
+  <!-- Rule explanation -->
+  <rect x="40" y="252" width="480" height="58" rx="5" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="280" y="270" text-anchor="middle" fill="#374151" font-size="11" font-weight="600">Fixed Priority Preemptive Scheduling Between Queues</text>
+  <text x="280" y="287" text-anchor="middle" fill="#64748b" font-size="11">No batch process can run while any real-time, system, or interactive process is ready.</text>
+  <text x="280" y="302" text-anchor="middle" fill="#64748b" font-size="11">Each queue can have its own internal scheduling algorithm (RR, FCFS, etc.).</text>
+</svg>
