@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 400" width="620" height="400" font-family="monospace, sans-serif" font-size="13">
+
+  <rect width="620" height="400" fill="#f8fafc" rx="8"/>
+
+  <!-- ===== Processor outer box ===== -->
+  <rect x="15" y="15" width="590" height="242" fill="#eff6ff" stroke="#2563eb" stroke-width="2" rx="8"/>
+  <text x="310" y="40" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">processor</text>
+
+  <!-- core 0 (top-left) -->
+  <rect x="30" y="50" width="264" height="92" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
+  <text x="162" y="68" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">core 0</text>
+  <rect x="46" y="74" width="218" height="22" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+  <text x="155" y="89" text-anchor="middle" fill="#1e40af" font-size="11">hardware thread</text>
+  <rect x="46" y="100" width="218" height="22" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+  <text x="155" y="115" text-anchor="middle" fill="#1e40af" font-size="11">hardware thread</text>
+
+  <!-- core 1 (top-right) -->
+  <rect x="326" y="50" width="264" height="92" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
+  <text x="458" y="68" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">core 1</text>
+  <rect x="342" y="74" width="218" height="22" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+  <text x="451" y="89" text-anchor="middle" fill="#1e40af" font-size="11">hardware thread</text>
+  <rect x="342" y="100" width="218" height="22" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+  <text x="451" y="115" text-anchor="middle" fill="#1e40af" font-size="11">hardware thread</text>
+
+  <!-- core 2 (bottom-left) -->
+  <rect x="30" y="158" width="264" height="92" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
+  <text x="162" y="176" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">core 2</text>
+  <rect x="46" y="182" width="218" height="22" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+  <text x="155" y="197" text-anchor="middle" fill="#1e40af" font-size="11">hardware thread</text>
+  <rect x="46" y="208" width="218" height="22" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+  <text x="155" y="223" text-anchor="middle" fill="#1e40af" font-size="11">hardware thread</text>
+
+  <!-- core 3 (bottom-right) -->
+  <rect x="326" y="158" width="264" height="92" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" rx="6"/>
+  <text x="458" y="176" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">core 3</text>
+  <rect x="342" y="182" width="218" height="22" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+  <text x="451" y="197" text-anchor="middle" fill="#1e40af" font-size="11">hardware thread</text>
+  <rect x="342" y="208" width="218" height="22" fill="#bfdbfe" stroke="#3b82f6" stroke-width="1" rx="3"/>
+  <text x="451" y="223" text-anchor="middle" fill="#1e40af" font-size="11">hardware thread</text>
+
+  <!-- ===== Arrow processor → OS view ===== -->
+  <line x1="310" y1="257" x2="310" y2="285" stroke="#64748b" stroke-width="1.8" marker-end="url(#arr)"/>
+  <text x="360" y="275" fill="#64748b" font-size="11">OS perceives 8 logical CPUs</text>
+
+  <!-- ===== OS view box ===== -->
+  <rect x="15" y="288" width="590" height="88" fill="#fef9c3" stroke="#ca8a04" stroke-width="2" rx="8"/>
+  <text x="310" y="308" text-anchor="middle" font-size="14" font-weight="bold" fill="#92400e">operating system view</text>
+
+  <!-- 8 CPU boxes: total width = 8×60 + 7×8 = 536, start x = 15+(590-536)/2 = 42 -->
+  <rect x="42"  y="316" width="60" height="30" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5" rx="4"/>
+  <text x="72"  y="336" text-anchor="middle" fill="#78350f" font-weight="bold" font-size="12">CPU 0</text>
+  <rect x="110" y="316" width="60" height="30" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5" rx="4"/>
+  <text x="140" y="336" text-anchor="middle" fill="#78350f" font-weight="bold" font-size="12">CPU 1</text>
+  <rect x="178" y="316" width="60" height="30" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5" rx="4"/>
+  <text x="208" y="336" text-anchor="middle" fill="#78350f" font-weight="bold" font-size="12">CPU 2</text>
+  <rect x="246" y="316" width="60" height="30" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5" rx="4"/>
+  <text x="276" y="336" text-anchor="middle" fill="#78350f" font-weight="bold" font-size="12">CPU 3</text>
+  <rect x="314" y="316" width="60" height="30" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5" rx="4"/>
+  <text x="344" y="336" text-anchor="middle" fill="#78350f" font-weight="bold" font-size="12">CPU 4</text>
+  <rect x="382" y="316" width="60" height="30" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5" rx="4"/>
+  <text x="412" y="336" text-anchor="middle" fill="#78350f" font-weight="bold" font-size="12">CPU 5</text>
+  <rect x="450" y="316" width="60" height="30" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5" rx="4"/>
+  <text x="480" y="336" text-anchor="middle" fill="#78350f" font-weight="bold" font-size="12">CPU 6</text>
+  <rect x="518" y="316" width="60" height="30" fill="#fde68a" stroke="#ca8a04" stroke-width="1.5" rx="4"/>
+  <text x="548" y="336" text-anchor="middle" fill="#78350f" font-weight="bold" font-size="12">CPU 7</text>
+
+  <!-- Caption -->
+  <text x="310" y="390" text-anchor="middle" fill="#475569" font-size="11">4 cores × 2 hardware threads = 8 logical CPUs visible to OS</text>
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+
+</svg>

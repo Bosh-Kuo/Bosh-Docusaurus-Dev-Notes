@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 130" width="560" height="130" font-family="monospace, sans-serif" font-size="13">
+
+  <rect width="560" height="130" fill="#f8fafc" rx="8"/>
+
+  <!-- Legend -->
+  <rect x="30" y="14" width="22" height="18" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5" rx="3"/>
+  <text x="58" y="27" fill="#1e293b" font-size="12">compute cycle (C)</text>
+  <rect x="220" y="14" width="22" height="18" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" rx="3"/>
+  <text x="248" y="27" fill="#1e293b" font-size="12">memory stall cycle (M)</text>
+
+  <!-- "thread" label -->
+  <text x="12" y="83" fill="#475569" font-size="12">thread</text>
+
+  <!-- Timeline segments: C M C M C M C M -->
+  <!-- Each cell: width=52, height=30, y=62 -->
+  <!-- C blocks: blue, M blocks: red -->
+  <rect x="65"  y="62" width="52" height="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5" rx="3"/>
+  <text x="91"  y="82" text-anchor="middle" fill="#1e40af" font-weight="bold">C</text>
+
+  <rect x="117" y="62" width="52" height="30" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" rx="3"/>
+  <text x="143" y="82" text-anchor="middle" fill="#991b1b" font-weight="bold">M</text>
+
+  <rect x="169" y="62" width="52" height="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5" rx="3"/>
+  <text x="195" y="82" text-anchor="middle" fill="#1e40af" font-weight="bold">C</text>
+
+  <rect x="221" y="62" width="52" height="30" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" rx="3"/>
+  <text x="247" y="82" text-anchor="middle" fill="#991b1b" font-weight="bold">M</text>
+
+  <rect x="273" y="62" width="52" height="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5" rx="3"/>
+  <text x="299" y="82" text-anchor="middle" fill="#1e40af" font-weight="bold">C</text>
+
+  <rect x="325" y="62" width="52" height="30" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" rx="3"/>
+  <text x="351" y="82" text-anchor="middle" fill="#991b1b" font-weight="bold">M</text>
+
+  <rect x="377" y="62" width="52" height="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5" rx="3"/>
+  <text x="403" y="82" text-anchor="middle" fill="#1e40af" font-weight="bold">C</text>
+
+  <rect x="429" y="62" width="52" height="30" fill="#fecaca" stroke="#dc2626" stroke-width="1.5" rx="3"/>
+  <text x="455" y="82" text-anchor="middle" fill="#991b1b" font-weight="bold">M</text>
+
+  <!-- time arrow -->
+  <line x1="65" y1="110" x2="490" y2="110" stroke="#94a3b8" stroke-width="1.5" marker-end="url(#tarr)"/>
+  <text x="498" y="114" fill="#64748b" font-size="12">time</text>
+
+  <defs>
+    <marker id="tarr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#94a3b8"/>
+    </marker>
+  </defs>
+
+</svg>

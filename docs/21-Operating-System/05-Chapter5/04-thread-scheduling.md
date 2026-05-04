@@ -3,7 +3,7 @@ title: 執行緒排程 (Thread Scheduling)
 sidebar_label: "5-4 執行緒排程"
 description: 深入說明使用者層級執行緒與核心層級執行緒的排程差異、PCS 與 SCS 兩種競爭範圍的機制與原因，以及 POSIX Pthread 排程 API 的實際用法。
 last_update:
-  date: 2026-04-24
+  date: 2026-05-04
 keywords:
   [
     "Thread Scheduling",

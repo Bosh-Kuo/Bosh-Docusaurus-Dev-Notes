@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 320" width="600" height="320" font-family="monospace, sans-serif" font-size="13">
+
+  <rect width="600" height="320" fill="#f8fafc" rx="8"/>
+
+  <!-- ===== Left node: CPU + memory ===== -->
+  <rect x="30" y="30" width="160" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+  <text x="110" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">CPU</text>
+
+  <line x1="110" y1="90" x2="110" y2="148" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrg)"/>
+  <text x="128" y="126" fill="#16a34a" font-size="11" font-weight="bold">fast access</text>
+
+  <rect x="30" y="150" width="160" height="52" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="6"/>
+  <text x="110" y="181" text-anchor="middle" font-size="15" font-weight="bold" fill="#15803d">memory</text>
+
+  <!-- ===== Right node: CPU + memory ===== -->
+  <rect x="410" y="30" width="160" height="60" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+  <text x="490" y="66" text-anchor="middle" font-size="15" font-weight="bold" fill="#1e40af">CPU</text>
+
+  <line x1="490" y1="90" x2="490" y2="148" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrg)"/>
+  <text x="508" y="126" fill="#16a34a" font-size="11" font-weight="bold">fast access</text>
+
+  <rect x="410" y="150" width="160" height="52" fill="#dcfce7" stroke="#16a34a" stroke-width="2" rx="6"/>
+  <text x="490" y="181" text-anchor="middle" font-size="15" font-weight="bold" fill="#15803d">memory</text>
+
+  <!-- ===== Interconnect bus ===== -->
+  <rect x="140" y="196" width="320" height="20" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5" rx="4"/>
+  <text x="300" y="210" text-anchor="middle" fill="#475569" font-size="11">interconnect</text>
+
+  <line x1="110" y1="202" x2="140" y2="206" stroke="#94a3b8" stroke-width="1.5"/>
+  <line x1="490" y1="202" x2="460" y2="206" stroke="#94a3b8" stroke-width="1.5"/>
+
+  <!-- ===== Slow access diagonal ===== -->
+  <line x1="190" y1="60" x2="410" y2="152" stroke="#dc2626" stroke-width="2" stroke-dasharray="7,4" marker-end="url(#arrr)"/>
+  <text x="310" y="88" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="bold">slow access</text>
+
+  <!-- Node labels -->
+  <text x="110" y="244" text-anchor="middle" fill="#475569" font-size="12">Node 0</text>
+  <text x="490" y="244" text-anchor="middle" fill="#475569" font-size="12">Node 1</text>
+
+  <!-- NUMA note (2 lines) -->
+  <rect x="20" y="260" width="560" height="48" fill="#fef9c3" stroke="#ca8a04" stroke-width="1" rx="4"/>
+  <text x="300" y="277" text-anchor="middle" fill="#78350f" font-size="11">NUMA: accessing local memory is fast; accessing the other node's memory</text>
+  <text x="300" y="295" text-anchor="middle" fill="#78350f" font-size="11">requires going through the interconnect and is significantly slower</text>
+
+  <defs>
+    <marker id="arrg" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arrr" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+</svg>

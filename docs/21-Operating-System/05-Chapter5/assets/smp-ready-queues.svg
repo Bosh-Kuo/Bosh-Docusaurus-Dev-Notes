@@ -1,0 +1,104 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 320" width="680" height="320" font-family="monospace, sans-serif" font-size="13">
+
+  <!-- Background -->
+  <rect width="680" height="320" fill="#f8fafc" rx="8"/>
+
+  <!-- ===== (a) Common Ready Queue ===== -->
+  <text x="170" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">(a) Common Ready Queue</text>
+
+  <!-- Queue box -->
+  <rect x="30" y="38" width="280" height="42" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5" rx="4"/>
+  <!-- Thread cells -->
+  <rect x="36"  y="44" width="38" height="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="55"  y="64" text-anchor="middle" fill="#1e40af" font-weight="bold">T₀</text>
+  <rect x="80"  y="44" width="38" height="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="99"  y="64" text-anchor="middle" fill="#1e40af" font-weight="bold">T₁</text>
+  <rect x="124" y="44" width="38" height="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="143" y="64" text-anchor="middle" fill="#1e40af" font-weight="bold">T₂</text>
+  <text x="196" y="64" text-anchor="middle" fill="#64748b" font-size="18">···</text>
+  <rect x="224" y="44" width="38" height="30" fill="#bfdbfe" stroke="#2563eb" stroke-width="1" rx="3"/>
+  <text x="243" y="64" text-anchor="middle" fill="#1e40af" font-weight="bold">Tₙ</text>
+
+  <!-- Arrows from queue to cores -->
+  <!-- core0 arrow -->
+  <line x1="80" y1="80" x2="50" y2="168" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- core1 arrow -->
+  <line x1="143" y1="80" x2="143" y2="168" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <!-- coren arrow -->
+  <line x1="250" y1="80" x2="275" y2="168" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="200" y="128" text-anchor="middle" fill="#64748b" font-size="16">···</text>
+
+  <!-- Cores row (a) -->
+  <rect x="20"  y="170" width="60" height="38" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" rx="5"/>
+  <text x="50"  y="194" text-anchor="middle" fill="#15803d" font-weight="bold">core₀</text>
+  <rect x="113" y="170" width="60" height="38" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" rx="5"/>
+  <text x="143" y="194" text-anchor="middle" fill="#15803d" font-weight="bold">core₁</text>
+  <text x="218" y="194" text-anchor="middle" fill="#64748b" font-size="16">···</text>
+  <rect x="245" y="170" width="60" height="38" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" rx="5"/>
+  <text x="275" y="194" text-anchor="middle" fill="#15803d" font-weight="bold">coreₙ</text>
+
+  <!-- Label (a) -->
+  <text x="170" y="232" text-anchor="middle" fill="#475569" font-size="12">common ready queue</text>
+
+  <!-- ===== Divider ===== -->
+  <line x1="340" y1="20" x2="340" y2="300" stroke="#cbd5e1" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- ===== (b) Per-core Run Queues ===== -->
+  <text x="510" y="24" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">(b) Per-core Run Queues</text>
+
+  <!-- Core 0 with its queue -->
+  <rect x="358" y="38" width="90" height="88" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5" rx="5"/>
+  <!-- queue inside core0 box -->
+  <rect x="366" y="44" width="26" height="22" fill="#fde68a" stroke="#ca8a04" stroke-width="1" rx="2"/>
+  <text x="379" y="60" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">T₀</text>
+  <rect x="396" y="44" width="26" height="22" fill="#fde68a" stroke="#ca8a04" stroke-width="1" rx="2"/>
+  <text x="409" y="60" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">T₁</text>
+  <rect x="366" y="70" width="26" height="22" fill="#fde68a" stroke="#ca8a04" stroke-width="1" rx="2"/>
+  <text x="379" y="86" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">T₂</text>
+  <text x="415" y="84" text-anchor="middle" fill="#64748b" font-size="14">···</text>
+  <!-- core0 box -->
+  <rect x="358" y="136" width="90" height="38" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" rx="5"/>
+  <text x="403" y="160" text-anchor="middle" fill="#15803d" font-weight="bold">core₀</text>
+  <!-- arrow queue→core0 -->
+  <line x1="403" y1="126" x2="403" y2="136" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Core 1 with its queue -->
+  <rect x="468" y="38" width="90" height="88" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5" rx="5"/>
+  <rect x="476" y="44" width="26" height="22" fill="#fde68a" stroke="#ca8a04" stroke-width="1" rx="2"/>
+  <text x="489" y="60" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">T₀</text>
+  <rect x="506" y="44" width="26" height="22" fill="#fde68a" stroke="#ca8a04" stroke-width="1" rx="2"/>
+  <text x="519" y="60" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">T₁</text>
+  <rect x="476" y="70" width="26" height="22" fill="#fde68a" stroke="#ca8a04" stroke-width="1" rx="2"/>
+  <text x="489" y="86" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">T₂</text>
+  <text x="525" y="84" text-anchor="middle" fill="#64748b" font-size="14">···</text>
+  <rect x="468" y="136" width="90" height="38" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" rx="5"/>
+  <text x="513" y="160" text-anchor="middle" fill="#15803d" font-weight="bold">core₁</text>
+  <line x1="513" y1="126" x2="513" y2="136" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- dots between core1 and coren -->
+  <text x="586" y="84" text-anchor="middle" fill="#64748b" font-size="16">···</text>
+  <text x="586" y="160" text-anchor="middle" fill="#64748b" font-size="16">···</text>
+
+  <!-- Core n with its queue -->
+  <rect x="600" y="38" width="62" height="88" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5" rx="5"/>
+  <rect x="607" y="44" width="22" height="22" fill="#fde68a" stroke="#ca8a04" stroke-width="1" rx="2"/>
+  <text x="618" y="60" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">T₁</text>
+  <rect x="607" y="70" width="22" height="22" fill="#fde68a" stroke="#ca8a04" stroke-width="1" rx="2"/>
+  <text x="618" y="86" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">T₂</text>
+  <rect x="631" y="70" width="22" height="22" fill="#fde68a" stroke="#ca8a04" stroke-width="1" rx="2"/>
+  <text x="642" y="86" text-anchor="middle" fill="#92400e" font-size="11" font-weight="bold">T₃</text>
+  <rect x="600" y="136" width="62" height="38" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5" rx="5"/>
+  <text x="631" y="160" text-anchor="middle" fill="#15803d" font-weight="bold">coreₙ</text>
+  <line x1="631" y1="126" x2="631" y2="136" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Label (b) -->
+  <text x="510" y="205" text-anchor="middle" fill="#475569" font-size="12">per-core run queues</text>
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+
+</svg>
