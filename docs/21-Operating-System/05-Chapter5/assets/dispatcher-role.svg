@@ -1,0 +1,57 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 400" width="400" height="400" font-family="'Segoe UI', Arial, sans-serif" font-size="13">
+  <defs>
+    <marker id="arr-d" markerWidth="8" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 8 3.5, 0 7" fill="#64748b"/>
+    </marker>
+    <marker id="arr-brace" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+      <polygon points="0 0, 6 3, 0 6" fill="#f59e0b"/>
+    </marker>
+  </defs>
+
+  <!-- P0 executing block -->
+  <rect x="110" y="30" width="180" height="48" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.8"/>
+  <text x="200" y="50" text-anchor="middle" fill="#1e40af" font-weight="700">P</text>
+  <text x="210" y="55" text-anchor="middle" fill="#1e40af" font-size="10">0</text>
+  <text x="200" y="70" text-anchor="middle" fill="#1e40af" font-size="12">executing</text>
+
+  <!-- Arrow down -->
+  <line x1="200" y1="78" x2="200" y2="108" stroke="#64748b" stroke-width="1.8" marker-end="url(#arr-d)"/>
+
+  <!-- save state box -->
+  <rect x="110" y="110" width="180" height="52" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+  <text x="200" y="133" text-anchor="middle" fill="#92400e" font-weight="600">save state</text>
+  <text x="200" y="152" text-anchor="middle" fill="#92400e">into PCB</text>
+  <text x="204" y="156" text-anchor="start" fill="#92400e" font-size="10">0</text>
+
+  <!-- Arrow down -->
+  <line x1="200" y1="162" x2="200" y2="212" stroke="#64748b" stroke-width="1.8" marker-end="url(#arr-d)"/>
+
+  <!-- dispatch latency annotation -->
+  <!-- vertical brace on the right -->
+  <line x1="308" y1="110" x2="320" y2="110" stroke="#f59e0b" stroke-width="1.5"/>
+  <line x1="320" y1="110" x2="320" y2="268" stroke="#f59e0b" stroke-width="1.5"/>
+  <line x1="320" y1="268" x2="308" y2="268" stroke="#f59e0b" stroke-width="1.5"/>
+  <!-- midpoint tick -->
+  <line x1="320" y1="189" x2="330" y2="189" stroke="#f59e0b" stroke-width="1.5"/>
+  <text x="335" y="183" fill="#b45309" font-size="11" font-weight="600">dispatch</text>
+  <text x="335" y="198" fill="#b45309" font-size="11" font-weight="600">latency</text>
+
+  <!-- restore state box -->
+  <rect x="110" y="214" width="180" height="52" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.8"/>
+  <text x="200" y="237" text-anchor="middle" fill="#92400e" font-weight="600">restore state</text>
+  <text x="200" y="255" text-anchor="middle" fill="#92400e">from PCB</text>
+  <text x="207" y="259" text-anchor="start" fill="#92400e" font-size="10">1</text>
+
+  <!-- Arrow down -->
+  <line x1="200" y1="266" x2="200" y2="296" stroke="#64748b" stroke-width="1.8" marker-end="url(#arr-d)"/>
+
+  <!-- P1 executing block -->
+  <rect x="110" y="298" width="180" height="48" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.8"/>
+  <text x="200" y="318" text-anchor="middle" fill="#15803d" font-weight="700">P</text>
+  <text x="210" y="323" text-anchor="middle" fill="#15803d" font-size="10">1</text>
+  <text x="200" y="338" text-anchor="middle" fill="#15803d" font-size="12">executing</text>
+
+  <!-- Legend / title -->
+  <text x="200" y="375" text-anchor="middle" fill="#64748b" font-size="12">Context Switch: P0 → P1</text>
+  <text x="200" y="393" text-anchor="middle" fill="#94a3b8" font-size="11">Dispatcher saves P0 state, restores P1 state</text>
+</svg>

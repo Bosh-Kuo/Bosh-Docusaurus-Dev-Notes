@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 320" width="480" height="320" font-family="'Segoe UI', Arial, sans-serif" font-size="13">
+  <!-- Background -->
+  <rect width="480" height="320" fill="#fafafa" rx="8"/>
+
+  <!-- Title -->
+  <text x="240" y="28" text-anchor="middle" font-size="14" font-weight="700" fill="#1e293b">CPU-Burst Duration Distribution</text>
+
+  <!-- Axes -->
+  <!-- Y axis -->
+  <line x1="70" y1="40" x2="70" y2="250" stroke="#64748b" stroke-width="2"/>
+  <!-- X axis -->
+  <line x1="70" y1="250" x2="430" y2="250" stroke="#64748b" stroke-width="2"/>
+
+  <!-- Y axis arrow -->
+  <polygon points="70,34 66,44 74,44" fill="#64748b"/>
+  <!-- X axis arrow -->
+  <polygon points="436,250 426,246 426,254" fill="#64748b"/>
+
+  <!-- Y axis label -->
+  <text x="22" y="150" fill="#475569" font-size="12" text-anchor="middle" transform="rotate(-90, 22, 150)">frequency</text>
+
+  <!-- X axis label -->
+  <text x="250" y="282" fill="#475569" font-size="12" text-anchor="middle">burst duration</text>
+
+  <!-- Exponential-decay histogram bars -->
+  <!-- Bar widths represent duration bins; heights represent frequency (exponential decay) -->
+  <rect x="76"  y="68"  width="28" height="182" fill="#6366f1" opacity="0.85" rx="2"/>
+  <rect x="108" y="115" width="28" height="135" fill="#6366f1" opacity="0.85" rx="2"/>
+  <rect x="140" y="148" width="28" height="102" fill="#6366f1" opacity="0.85" rx="2"/>
+  <rect x="172" y="172" width="28" height="78"  fill="#6366f1" opacity="0.80" rx="2"/>
+  <rect x="204" y="190" width="28" height="60"  fill="#6366f1" opacity="0.75" rx="2"/>
+  <rect x="236" y="204" width="28" height="46"  fill="#6366f1" opacity="0.70" rx="2"/>
+  <rect x="268" y="215" width="28" height="35"  fill="#6366f1" opacity="0.65" rx="2"/>
+  <rect x="300" y="223" width="28" height="27"  fill="#6366f1" opacity="0.60" rx="2"/>
+  <rect x="332" y="229" width="28" height="21"  fill="#6366f1" opacity="0.55" rx="2"/>
+  <rect x="364" y="233" width="28" height="17"  fill="#6366f1" opacity="0.50" rx="2"/>
+  <rect x="396" y="236" width="28" height="14"  fill="#6366f1" opacity="0.45" rx="2"/>
+
+  <!-- Smooth curve overlay (exponential decay) -->
+  <path d="M90,68 C120,68 108,115 124,115 C150,115 140,148 156,148 C180,148 172,172 188,172 C210,172 204,190 220,190 C244,190 236,204 252,204 C274,204 268,215 284,215 C308,215 300,223 316,223 C342,223 332,229 348,229 C374,229 364,233 380,233 C404,233 396,236 412,236" fill="none" stroke="#4f46e5" stroke-width="2.5" stroke-linecap="round"/>
+
+  <!-- Annotation: many short bursts -->
+  <line x1="100" y1="58" x2="100" y2="48" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="100" y="44" fill="#1d4ed8" font-size="11" text-anchor="middle">many short</text>
+  <text x="100" y="56" fill="#1d4ed8" font-size="11" text-anchor="middle">bursts</text>
+
+  <!-- Annotation: few long bursts -->
+  <line x1="390" y1="226" x2="390" y2="215" stroke="#7c3aed" stroke-width="1.2"/>
+  <text x="390" y="209" fill="#6d28d9" font-size="11" text-anchor="middle">few long</text>
+  <text x="390" y="221" fill="#6d28d9" font-size="11" text-anchor="middle">bursts</text>
+
+  <!-- Legend -->
+  <rect x="300" y="50" width="12" height="12" fill="#6366f1" opacity="0.85" rx="2"/>
+  <text x="316" y="61" fill="#475569" font-size="11">I/O-bound dominant</text>
+  <text x="316" y="76" fill="#94a3b8" font-size="10">(hyperexponential distribution)</text>
+</svg>
