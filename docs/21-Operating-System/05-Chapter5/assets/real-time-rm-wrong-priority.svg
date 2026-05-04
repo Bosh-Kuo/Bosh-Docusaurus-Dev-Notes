@@ -1,0 +1,102 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 470 120" width="470" height="120"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+
+  <rect width="470" height="120" fill="#f8fafc" rx="6"/>
+
+  <defs>
+    <marker id="arr-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- === Deadline arrows (scale=3.0, xStart=60) === -->
+  <!-- x(t) = 60 + t*3 -->
+
+  <!-- "deadlines" label -->
+  <text x="6" y="20" fill="#94a3b8" font-size="9">deadlines</text>
+
+  <!-- P1 deadline at t=50 -> x=210 (MISSED - red) -->
+  <text x="210" y="10" text-anchor="middle" fill="#dc2626" font-size="9" font-weight="bold">P</text>
+  <text x="215" y="13" fill="#dc2626" font-size="7">1</text>
+  <text x="230" y="10" fill="#dc2626" font-size="9">MISSED</text>
+  <line x1="210" y1="12" x2="210" y2="41" stroke="#dc2626" stroke-width="1.5"/>
+  <polygon points="206,38 214,38 210,44" fill="#dc2626"/>
+
+  <!-- P1 deadline at t=100 -> x=360 (met, blue) -->
+  <text x="353" y="10" text-anchor="middle" fill="#2563eb" font-size="9" font-weight="bold">P</text>
+  <text x="358" y="13" fill="#2563eb" font-size="7">1</text>
+  <line x1="353" y1="12" x2="353" y2="41" stroke="#2563eb" stroke-width="1.5"/>
+  <polygon points="349,38 357,38 353,44" fill="#2563eb"/>
+
+  <!-- P2 deadline at t=100 -> x=360 (offset +8, green) -->
+  <text x="367" y="10" text-anchor="middle" fill="#16a34a" font-size="9" font-weight="bold">P</text>
+  <text x="372" y="13" fill="#16a34a" font-size="7">2</text>
+  <line x1="367" y1="12" x2="367" y2="41" stroke="#16a34a" stroke-width="1.5"/>
+  <polygon points="363,38 371,38 367,44" fill="#16a34a"/>
+
+  <!-- === Gantt bar (y=44 to y=80) === -->
+
+  <!-- P2(0-35): x=60, w=105 (green) -->
+  <rect x="60" y="44" width="105" height="36" rx="1" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="107" y="65" text-anchor="middle" fill="#15803d" font-weight="bold" font-size="14">P</text>
+  <text x="117" y="70" fill="#15803d" font-size="9">2</text>
+
+  <!-- P1(35-55): x=165, w=60 (blue) -->
+  <rect x="165" y="44" width="60" height="36" rx="1" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="190" y="65" text-anchor="middle" fill="#1e40af" font-weight="bold" font-size="14">P</text>
+  <text x="200" y="70" fill="#1e40af" font-size="9">1</text>
+
+  <!-- === Timeline === -->
+  <line x1="50" y1="80" x2="440" y2="80" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- Time ticks (every 10 units): x = 60 + t*3 -->
+  <!-- t=0: x=60 -->
+  <line x1="60" y1="76" x2="60" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="60" y="97" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+
+  <!-- t=10: x=90 -->
+  <line x1="90" y1="77" x2="90" y2="83" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- t=20: x=120 -->
+  <line x1="120" y1="77" x2="120" y2="83" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- t=30: x=150 -->
+  <line x1="150" y1="77" x2="150" y2="83" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- t=40: x=180 -->
+  <line x1="180" y1="76" x2="180" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="180" y="97" text-anchor="middle" fill="#64748b" font-size="10">40</text>
+
+  <!-- t=50: x=210 -->
+  <line x1="210" y1="76" x2="210" y2="84" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="210" y="97" text-anchor="middle" fill="#dc2626" font-size="10">50</text>
+
+  <!-- t=60: x=240 -->
+  <line x1="240" y1="76" x2="240" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="240" y="97" text-anchor="middle" fill="#64748b" font-size="10">60</text>
+
+  <!-- t=70: x=270 -->
+  <line x1="270" y1="77" x2="270" y2="83" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- t=80: x=300 -->
+  <line x1="300" y1="76" x2="300" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="300" y="97" text-anchor="middle" fill="#64748b" font-size="10">80</text>
+
+  <!-- t=90: x=330 -->
+  <line x1="330" y1="77" x2="330" y2="83" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- t=100: x=360 -->
+  <line x1="360" y1="76" x2="360" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="360" y="97" text-anchor="middle" fill="#64748b" font-size="10">100</text>
+
+  <!-- t=110: x=390 -->
+  <line x1="390" y1="77" x2="390" y2="83" stroke="#94a3b8" stroke-width="1"/>
+
+  <!-- t=120: x=420 -->
+  <line x1="420" y1="76" x2="420" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="420" y="97" text-anchor="middle" fill="#64748b" font-size="10">120</text>
+
+  <!-- Deadline missed note -->
+  <text x="145" y="112" text-anchor="middle" fill="#dc2626" font-size="9">P1 completes at t=55</text>
+
+</svg>

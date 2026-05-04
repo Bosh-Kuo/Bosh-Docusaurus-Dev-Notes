@@ -1,0 +1,62 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 165" width="560" height="165"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+
+  <rect width="560" height="165" fill="#f8fafc" rx="6"/>
+
+  <defs>
+    <marker id="arr-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+    </marker>
+    <marker id="arr-d" markerWidth="6" markerHeight="8" refX="3" refY="7" orient="auto">
+      <polygon points="0 0, 6 0, 3 8" fill="#374151"/>
+    </marker>
+    <marker id="brack-r" markerWidth="6" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 6 5, 0 10" fill="#64748b"/>
+    </marker>
+    <marker id="brack-l" markerWidth="6" markerHeight="10" refX="1" refY="5" orient="auto">
+      <polygon points="6 0, 0 5, 6 10" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- === Phase blocks (y=50 to y=90) === -->
+
+  <!-- task T running -->
+  <rect x="40" y="50" width="130" height="40" rx="2" fill="#e2e8f0" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="105" y="74" text-anchor="middle" fill="#475569" font-size="11">task T running</text>
+
+  <!-- interrupt vertical dashed line -->
+  <line x1="172" y1="20" x2="172" y2="50" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="3,2"/>
+  <polygon points="168,47 176,47 172,53" fill="#dc2626"/>
+  <text x="172" y="16" text-anchor="middle" fill="#dc2626" font-size="11" font-weight="bold">interrupt</text>
+
+  <!-- determine interrupt type -->
+  <rect x="175" y="50" width="120" height="40" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="235" y="68" text-anchor="middle" fill="#1e40af" font-size="10">determine</text>
+  <text x="235" y="82" text-anchor="middle" fill="#1e40af" font-size="10">interrupt type</text>
+
+  <!-- context switch -->
+  <rect x="298" y="50" width="105" height="40" rx="2" fill="#fef9c3" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="350" y="68" text-anchor="middle" fill="#78350f" font-size="10">context</text>
+  <text x="350" y="82" text-anchor="middle" fill="#78350f" font-size="10">switch</text>
+
+  <!-- ISR -->
+  <rect x="406" y="50" width="120" height="40" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="466" y="74" text-anchor="middle" fill="#15803d" font-size="12" font-weight="bold">ISR</text>
+
+  <!-- Timeline -->
+  <line x1="30" y1="90" x2="540" y2="90" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- Time label -->
+  <text x="543" y="94" fill="#64748b" font-size="11">time</text>
+
+  <!-- Interrupt latency bracket (below timeline) -->
+  <!-- bracket line: from interrupt mark (x=172) to ISR start (x=406) -->
+  <line x1="172" y1="110" x2="406" y2="110" stroke="#64748b" stroke-width="1.5"
+        marker-start="url(#brack-l)" marker-end="url(#brack-r)"/>
+  <!-- vertical connectors from timeline to bracket -->
+  <line x1="172" y1="90" x2="172" y2="107" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+  <line x1="406" y1="90" x2="406" y2="107" stroke="#64748b" stroke-width="1" stroke-dasharray="3,2"/>
+  <!-- bracket label -->
+  <text x="289" y="125" text-anchor="middle" fill="#475569" font-size="11">interrupt latency</text>
+
+</svg>

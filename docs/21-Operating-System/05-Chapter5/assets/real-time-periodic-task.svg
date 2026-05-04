@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 115" width="580" height="115"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+
+  <rect width="580" height="115" fill="#f8fafc" rx="6"/>
+
+  <defs>
+    <marker id="arr-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#374151"/>
+    </marker>
+    <marker id="brack-r" markerWidth="6" markerHeight="10" refX="5" refY="5" orient="auto">
+      <polygon points="0 0, 6 5, 0 10" fill="#475569"/>
+    </marker>
+    <marker id="brack-l" markerWidth="6" markerHeight="10" refX="1" refY="5" orient="auto">
+      <polygon points="6 0, 0 5, 6 10" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- === Period dimensions (each period = 160px wide, t=65px, d=100px within period) === -->
+  <!-- Period 1: x=30 to x=190  -->
+  <!-- Period 2: x=190 to x=350 -->
+  <!-- Period 3: x=350 to x=510 -->
+
+  <!-- === Period 1 === -->
+  <!-- Execution box (t) -->
+  <rect x="30" y="38" width="65" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="62" y="59" text-anchor="middle" fill="#1e40af" font-size="11" font-weight="bold">t</text>
+
+  <!-- p span (top, bidirectional arrow) -->
+  <line x1="33" y1="18" x2="187" y2="18" stroke="#374151" stroke-width="1"
+        marker-start="url(#brack-l)" marker-end="url(#brack-r)"/>
+  <text x="110" y="13" text-anchor="middle" fill="#374151" font-size="11" font-weight="bold">p</text>
+
+  <!-- d marker (deadline tick within period) -->
+  <line x1="130" y1="28" x2="130" y2="70" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="137" y="25" fill="#dc2626" font-size="11" font-weight="bold">d</text>
+
+  <!-- Period 1 border (right edge = period end) -->
+  <line x1="190" y1="35" x2="190" y2="73" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- === Period 2 === -->
+  <rect x="190" y="38" width="65" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="222" y="59" text-anchor="middle" fill="#1e40af" font-size="11" font-weight="bold">t</text>
+
+  <line x1="193" y1="18" x2="347" y2="18" stroke="#374151" stroke-width="1"
+        marker-start="url(#brack-l)" marker-end="url(#brack-r)"/>
+  <text x="270" y="13" text-anchor="middle" fill="#374151" font-size="11" font-weight="bold">p</text>
+
+  <line x1="290" y1="28" x2="290" y2="70" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="297" y="25" fill="#dc2626" font-size="11" font-weight="bold">d</text>
+
+  <line x1="350" y1="35" x2="350" y2="73" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- === Period 3 === -->
+  <rect x="350" y="38" width="65" height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="382" y="59" text-anchor="middle" fill="#1e40af" font-size="11" font-weight="bold">t</text>
+
+  <line x1="353" y1="18" x2="507" y2="18" stroke="#374151" stroke-width="1"
+        marker-start="url(#brack-l)" marker-end="url(#brack-r)"/>
+  <text x="430" y="13" text-anchor="middle" fill="#374151" font-size="11" font-weight="bold">p</text>
+
+  <line x1="450" y1="28" x2="450" y2="70" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="457" y="25" fill="#dc2626" font-size="11" font-weight="bold">d</text>
+
+  <line x1="510" y1="35" x2="510" y2="73" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Timeline -->
+  <line x1="20" y1="70" x2="548" y2="70" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-r)"/>
+  <text x="552" y="74" fill="#64748b" font-size="11">Time</text>
+
+  <!-- Period labels below -->
+  <text x="110" y="88" text-anchor="middle" fill="#64748b" font-size="10">period</text>
+  <text x="110" y="100" text-anchor="middle" fill="#64748b" font-size="10">1</text>
+  <text x="270" y="88" text-anchor="middle" fill="#64748b" font-size="10">period</text>
+  <text x="270" y="100" text-anchor="middle" fill="#64748b" font-size="10">2</text>
+  <text x="430" y="88" text-anchor="middle" fill="#64748b" font-size="10">period</text>
+  <text x="430" y="100" text-anchor="middle" fill="#64748b" font-size="10">3</text>
+
+</svg>

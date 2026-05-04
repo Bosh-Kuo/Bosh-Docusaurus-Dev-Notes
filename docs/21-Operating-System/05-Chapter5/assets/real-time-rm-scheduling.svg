@@ -1,0 +1,142 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 610 120" width="610" height="120"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+
+  <rect width="610" height="120" fill="#f8fafc" rx="6"/>
+
+  <defs>
+    <marker id="arr-r" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- === Scale: x(t) = 60 + t*2.5 === -->
+  <!-- x(0)=60, x(20)=110, x(50)=185, x(70)=235, x(75)=247.5 -->
+  <!-- x(100)=310, x(120)=360, x(150)=435, x(170)=485, x(175)=497.5, x(200)=560 -->
+
+  <!-- === Deadline arrows === -->
+  <text x="6" y="20" fill="#94a3b8" font-size="9">deadlines</text>
+
+  <!-- P1 deadlines at t=50(x=185), 100(x=310), 150(x=435), 200(x=560) -->
+  <!-- t=50 P1: x=185 -->
+  <text x="180" y="10" text-anchor="middle" fill="#2563eb" font-size="9" font-weight="bold">P</text>
+  <text x="185" y="13" fill="#2563eb" font-size="7">1</text>
+  <line x1="180" y1="12" x2="180" y2="41" stroke="#2563eb" stroke-width="1.5"/>
+  <polygon points="176,38 184,38 180,44" fill="#2563eb"/>
+
+  <!-- t=100 P1: x=305, P2: x=315 -->
+  <text x="300" y="10" text-anchor="middle" fill="#2563eb" font-size="9" font-weight="bold">P</text>
+  <text x="305" y="13" fill="#2563eb" font-size="7">1</text>
+  <line x1="300" y1="12" x2="300" y2="41" stroke="#2563eb" stroke-width="1.5"/>
+  <polygon points="296,38 304,38 300,44" fill="#2563eb"/>
+
+  <text x="315" y="10" text-anchor="middle" fill="#16a34a" font-size="9" font-weight="bold">P</text>
+  <text x="320" y="13" fill="#16a34a" font-size="7">2</text>
+  <line x1="315" y1="12" x2="315" y2="41" stroke="#16a34a" stroke-width="1.5"/>
+  <polygon points="311,38 319,38 315,44" fill="#16a34a"/>
+
+  <!-- t=150 P1: x=430 -->
+  <text x="425" y="10" text-anchor="middle" fill="#2563eb" font-size="9" font-weight="bold">P</text>
+  <text x="430" y="13" fill="#2563eb" font-size="7">1</text>
+  <line x1="425" y1="12" x2="425" y2="41" stroke="#2563eb" stroke-width="1.5"/>
+  <polygon points="421,38 429,38 425,44" fill="#2563eb"/>
+
+  <!-- t=200 P1: x=555, P2: x=565 -->
+  <text x="550" y="10" text-anchor="middle" fill="#2563eb" font-size="9" font-weight="bold">P</text>
+  <text x="555" y="13" fill="#2563eb" font-size="7">1</text>
+  <line x1="550" y1="12" x2="550" y2="41" stroke="#2563eb" stroke-width="1.5"/>
+  <polygon points="546,38 554,38 550,44" fill="#2563eb"/>
+
+  <text x="563" y="10" text-anchor="middle" fill="#16a34a" font-size="9" font-weight="bold">P</text>
+  <text x="568" y="13" fill="#16a34a" font-size="7">2</text>
+  <line x1="563" y1="12" x2="563" y2="41" stroke="#16a34a" stroke-width="1.5"/>
+  <polygon points="559,38 567,38 563,44" fill="#16a34a"/>
+
+  <!-- === Gantt bar (y=44 to y=80) === -->
+
+  <!-- P1(0-20): x=60, w=50 -->
+  <rect x="60" y="44" width="50" height="36" rx="1" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="80" y="65" text-anchor="middle" fill="#1e40af" font-weight="bold" font-size="13">P</text>
+  <text x="88" y="70" fill="#1e40af" font-size="9">1</text>
+
+  <!-- P2(20-50): x=110, w=75 -->
+  <rect x="110" y="44" width="75" height="36" rx="1" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="142" y="65" text-anchor="middle" fill="#15803d" font-weight="bold" font-size="13">P</text>
+  <text x="150" y="70" fill="#15803d" font-size="9">2</text>
+
+  <!-- P1(50-70): x=185, w=50 -->
+  <rect x="185" y="44" width="50" height="36" rx="1" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="205" y="65" text-anchor="middle" fill="#1e40af" font-weight="bold" font-size="13">P</text>
+  <text x="213" y="70" fill="#1e40af" font-size="9">1</text>
+
+  <!-- P2(70-75): x=235, w=12.5 (narrow - no text) -->
+  <rect x="235" y="44" width="12.5" height="36" rx="1" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+
+  <!-- Idle(75-100): x=247.5, w=62.5 -->
+  <rect x="247.5" y="44" width="62.5" height="36" rx="1" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- P1(100-120): x=310, w=50 -->
+  <rect x="310" y="44" width="50" height="36" rx="1" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="330" y="65" text-anchor="middle" fill="#1e40af" font-weight="bold" font-size="13">P</text>
+  <text x="338" y="70" fill="#1e40af" font-size="9">1</text>
+
+  <!-- P2(120-150): x=360, w=75 -->
+  <rect x="360" y="44" width="75" height="36" rx="1" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="392" y="65" text-anchor="middle" fill="#15803d" font-weight="bold" font-size="13">P</text>
+  <text x="400" y="70" fill="#15803d" font-size="9">2</text>
+
+  <!-- P1(150-170): x=435, w=50 -->
+  <rect x="435" y="44" width="50" height="36" rx="1" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="455" y="65" text-anchor="middle" fill="#1e40af" font-weight="bold" font-size="13">P</text>
+  <text x="463" y="70" fill="#1e40af" font-size="9">1</text>
+
+  <!-- P2(170-175): x=485, w=12.5 (narrow - no text) -->
+  <rect x="485" y="44" width="12.5" height="36" rx="1" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+
+  <!-- Idle(175-200): x=497.5, w=62.5 -->
+  <rect x="497.5" y="44" width="62.5" height="36" rx="1" fill="#f8fafc" stroke="#e2e8f0" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- === Timeline === -->
+  <line x1="50" y1="80" x2="576" y2="80" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- Time ticks (major at every 50, minor at every 10) -->
+  <!-- Minor ticks (no label): 10,20,30,40,60,70,80,90,110,120,130,140,160,170,180,190 -->
+  <line x1="85" y1="77" x2="85" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="110" y1="77" x2="110" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="135" y1="77" x2="135" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="160" y1="77" x2="160" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="210" y1="77" x2="210" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="235" y1="77" x2="235" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="247.5" y1="77" x2="247.5" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="260" y1="77" x2="260" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="285" y1="77" x2="285" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="335" y1="77" x2="335" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="360" y1="77" x2="360" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="385" y1="77" x2="385" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="410" y1="77" x2="410" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="460" y1="77" x2="460" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="485" y1="77" x2="485" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="497.5" y1="77" x2="497.5" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="510" y1="77" x2="510" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+  <line x1="535" y1="77" x2="535" y2="83" stroke="#cbd5e1" stroke-width="1"/>
+
+  <!-- Major ticks with labels at t=0,50,100,150,200 -->
+  <line x1="60" y1="76" x2="60" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="60" y="97" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+
+  <line x1="185" y1="76" x2="185" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="185" y="97" text-anchor="middle" fill="#64748b" font-size="10">50</text>
+
+  <line x1="310" y1="76" x2="310" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="310" y="97" text-anchor="middle" fill="#64748b" font-size="10">100</text>
+
+  <line x1="435" y1="76" x2="435" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="435" y="97" text-anchor="middle" fill="#64748b" font-size="10">150</text>
+
+  <line x1="560" y1="76" x2="560" y2="84" stroke="#64748b" stroke-width="1.5"/>
+  <text x="560" y="97" text-anchor="middle" fill="#64748b" font-size="10">200</text>
+
+  <!-- Note for narrow P2 blocks -->
+  <text x="235" y="112" text-anchor="middle" fill="#15803d" font-size="8">P2</text>
+  <text x="485" y="112" text-anchor="middle" fill="#15803d" font-size="8">P2</text>
+
+</svg>
