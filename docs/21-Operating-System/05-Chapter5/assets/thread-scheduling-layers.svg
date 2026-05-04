@@ -1,0 +1,105 @@
+<svg viewBox="0 0 720 510" xmlns="http://www.w3.org/2000/svg" font-family="'Segoe UI', system-ui, sans-serif">
+  <!-- Background -->
+  <rect width="720" height="510" fill="#f8fafc" rx="10"/>
+
+  <!-- ═══ USER SPACE ZONE ═══ -->
+  <rect x="20" y="20" width="680" height="215" rx="8" fill="#eff6ff" stroke="#2563eb" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="32" y="42" font-size="12" font-weight="bold" fill="#1e40af">User Space</text>
+  <text x="688" y="42" text-anchor="end" font-size="10" fill="#9ca3af" font-style="italic">Kernel has no visibility here</text>
+
+  <!-- User-Level Thread label -->
+  <text x="360" y="62" text-anchor="middle" font-size="11" fill="#374151">User-Level Threads</text>
+
+  <!-- Thread boxes -->
+  <rect x="65"  y="70" width="80" height="36" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="105" y="93" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">T1</text>
+
+  <rect x="195" y="70" width="80" height="36" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="235" y="93" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">T2</text>
+
+  <rect x="325" y="70" width="80" height="36" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="365" y="93" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">T3</text>
+
+  <rect x="455" y="70" width="80" height="36" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="495" y="93" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">T4</text>
+
+  <!-- Arrows: threads → thread library -->
+  <line x1="105" y1="106" x2="105" y2="135" stroke="#2563eb" stroke-width="1.4"/>
+  <polygon points="105,135 100,126 110,126" fill="#2563eb"/>
+
+  <line x1="235" y1="106" x2="235" y2="135" stroke="#2563eb" stroke-width="1.4"/>
+  <polygon points="235,135 230,126 240,126" fill="#2563eb"/>
+
+  <line x1="365" y1="106" x2="365" y2="135" stroke="#2563eb" stroke-width="1.4"/>
+  <polygon points="365,135 360,126 370,126" fill="#2563eb"/>
+
+  <line x1="495" y1="106" x2="495" y2="135" stroke="#2563eb" stroke-width="1.4"/>
+  <polygon points="495,135 490,126 500,126" fill="#2563eb"/>
+
+  <!-- Thread Library box -->
+  <rect x="55" y="135" width="530" height="38" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="320" y="150" text-anchor="middle" font-size="11" font-weight="bold" fill="#92400e">Thread Library Scheduler</text>
+  <text x="320" y="165" text-anchor="middle" font-size="10" fill="#b45309">(manages user threads, selects which ones run on LWPs)</text>
+
+  <!-- Arrows: thread library → LWPs -->
+  <line x1="200" y1="173" x2="200" y2="200" stroke="#d97706" stroke-width="1.5"/>
+  <polygon points="200,200 195,191 205,191" fill="#d97706"/>
+
+  <line x1="440" y1="173" x2="440" y2="200" stroke="#d97706" stroke-width="1.5"/>
+  <polygon points="440,200 435,191 445,191" fill="#d97706"/>
+
+  <!-- ═══ LWP ZONE (Bridge) ═══ -->
+  <rect x="20" y="245" width="680" height="75" rx="8" fill="#fefce8" stroke="#ca8a04" stroke-width="1.5"/>
+  <text x="32" y="265" font-size="11" font-weight="bold" fill="#854d0e">LWP Bridge</text>
+  <text x="688" y="265" text-anchor="end" font-size="10" fill="#9ca3af" font-style="italic">Virtual Processor (user view) = Kernel Thread (kernel view)</text>
+
+  <!-- LWP boxes -->
+  <rect x="130" y="255" width="140" height="50" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="200" y="275" text-anchor="middle" font-size="11" font-weight="bold" fill="#14532d">LWP 1</text>
+  <text x="200" y="291" text-anchor="middle" font-size="9"  fill="#166534">Kernel Thread #1</text>
+  <text x="200" y="302" text-anchor="middle" font-size="9"  fill="#166534">(= virtual processor)</text>
+
+  <rect x="450" y="255" width="140" height="50" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="520" y="275" text-anchor="middle" font-size="11" font-weight="bold" fill="#14532d">LWP 2</text>
+  <text x="520" y="291" text-anchor="middle" font-size="9"  fill="#166534">Kernel Thread #2</text>
+  <text x="520" y="302" text-anchor="middle" font-size="9"  fill="#166534">(= virtual processor)</text>
+
+  <!-- LWP arrows from thread library -->
+  <line x1="200" y1="200" x2="200" y2="255" stroke="#d97706" stroke-width="1.5"/>
+  <polygon points="200,255 195,246 205,246" fill="#d97706"/>
+
+  <line x1="440" y1="200" x2="440" y2="255" stroke="#d97706" stroke-width="1.5"/>
+  <polygon points="440,255 435,246 445,246" fill="#d97706"/>
+
+  <!-- Kernel visibility boundary label -->
+  <line x1="20" y1="330" x2="700" y2="330" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="8 4"/>
+  <rect x="230" y="320" width="260" height="20" rx="4" fill="#f8fafc"/>
+  <text x="360" y="334" text-anchor="middle" font-size="10" fill="#7c3aed" font-weight="bold">Kernel Visibility Boundary</text>
+
+  <!-- ═══ KERNEL SPACE ZONE ═══ -->
+  <rect x="20" y="340" width="680" height="150" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6 3"/>
+  <text x="32" y="360" font-size="12" font-weight="bold" fill="#5b21b6">Kernel Space</text>
+  <text x="688" y="360" text-anchor="end" font-size="10" fill="#9ca3af" font-style="italic">OS sees only Kernel Threads (LWPs) — not user threads</text>
+
+  <!-- Arrows from LWPs down into kernel space -->
+  <line x1="200" y1="305" x2="200" y2="375" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="520" y1="305" x2="520" y2="375" stroke="#16a34a" stroke-width="1.5"/>
+
+  <!-- OS Scheduler box -->
+  <rect x="130" y="375" width="460" height="36" rx="6" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="360" y="390" text-anchor="middle" font-size="11" font-weight="bold" fill="#4c1d95">OS Kernel Scheduler (SCS)</text>
+  <text x="360" y="405" text-anchor="middle" font-size="10" fill="#6d28d9">(sees Kernel Threads from ALL processes — picks one for CPU)</text>
+
+  <!-- Arrow from OS scheduler to LWPs (arriving) -->
+  <polygon points="200,375 195,366 205,366" fill="#16a34a"/>
+  <polygon points="520,375 515,366 525,366" fill="#16a34a"/>
+
+  <!-- Arrow: OS Scheduler → CPU -->
+  <line x1="360" y1="411" x2="360" y2="436" stroke="#7c3aed" stroke-width="1.8"/>
+  <polygon points="360,436 355,427 365,427" fill="#7c3aed"/>
+
+  <!-- CPU box -->
+  <rect x="275" y="436" width="170" height="44" rx="8" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="360" y="455" text-anchor="middle" font-size="12" font-weight="bold" fill="#9d174d">CPU Core</text>
+  <text x="360" y="472" text-anchor="middle" font-size="10" fill="#be185d">physical processor</text>
+</svg>
