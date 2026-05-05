@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 200" width="680" height="200"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+
+  <!-- Arrow marker -->
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+
+  <!-- Accuracy spectrum label (top) -->
+  <text x="340" y="18" text-anchor="middle" fill="#94a3b8" font-size="11">Accuracy / Cost</text>
+  <line x1="60" y1="22" x2="620" y2="22" stroke="#94a3b8" stroke-width="1" marker-end="url(#arr)"/>
+  <text x="62" y="35" fill="#94a3b8" font-size="10">low</text>
+  <text x="594" y="35" fill="#94a3b8" font-size="10">high</text>
+
+  <!-- Box 1: Deterministic Modeling -->
+  <rect x="20" y="45" width="145" height="100" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="92" y="68" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="12">Deterministic</text>
+  <text x="92" y="83" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="12">Modeling</text>
+  <line x1="35" y1="92" x2="150" y2="92" stroke="#bfdbfe" stroke-width="1"/>
+  <text x="92" y="107" text-anchor="middle" fill="#1e3a8a" font-size="10">Fixed workload</text>
+  <text x="92" y="121" text-anchor="middle" fill="#1e3a8a" font-size="10">Exact numbers</text>
+  <text x="92" y="135" text-anchor="middle" fill="#1e3a8a" font-size="10">Limited generality</text>
+
+  <!-- Arrow 1->2 -->
+  <line x1="168" y1="95" x2="190" y2="95" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box 2: Queueing Models -->
+  <rect x="193" y="45" width="145" height="100" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="265" y="68" text-anchor="middle" fill="#15803d" font-weight="700" font-size="12">Queueing</text>
+  <text x="265" y="83" text-anchor="middle" fill="#15803d" font-weight="700" font-size="12">Models</text>
+  <line x1="208" y1="92" x2="323" y2="92" stroke="#bbf7d0" stroke-width="1"/>
+  <text x="265" y="107" text-anchor="middle" fill="#14532d" font-size="10">Probability distributions</text>
+  <text x="265" y="121" text-anchor="middle" fill="#14532d" font-size="10">Little's Formula</text>
+  <text x="265" y="135" text-anchor="middle" fill="#14532d" font-size="10">Math assumptions</text>
+
+  <!-- Arrow 2->3 -->
+  <line x1="341" y1="95" x2="363" y2="95" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box 3: Simulations -->
+  <rect x="366" y="45" width="145" height="100" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="438" y="68" text-anchor="middle" fill="#92400e" font-weight="700" font-size="12">Simulations</text>
+  <line x1="381" y1="78" x2="496" y2="78" stroke="#fde68a" stroke-width="1"/>
+  <text x="438" y="95" text-anchor="middle" fill="#78350f" font-size="10">System model + clock</text>
+  <text x="438" y="109" text-anchor="middle" fill="#78350f" font-size="10">Random / trace-driven</text>
+  <text x="438" y="123" text-anchor="middle" fill="#78350f" font-size="10">High cost (time/storage)</text>
+
+  <!-- Arrow 3->4 -->
+  <line x1="514" y1="95" x2="536" y2="95" stroke="#64748b" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box 4: Implementation -->
+  <rect x="539" y="45" width="125" height="100" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="601" y="68" text-anchor="middle" fill="#5b21b6" font-weight="700" font-size="12">Implementation</text>
+  <line x1="554" y1="78" x2="649" y2="78" stroke="#ddd6fe" stroke-width="1"/>
+  <text x="601" y="95" text-anchor="middle" fill="#3b0764" font-size="10">Real OS integration</text>
+  <text x="601" y="109" text-anchor="middle" fill="#3b0764" font-size="10">Real workload</text>
+  <text x="601" y="123" text-anchor="middle" fill="#3b0764" font-size="10">Env. change risk</text>
+
+  <!-- Bottom labels -->
+  <text x="92" y="162" text-anchor="middle" fill="#64748b" font-size="10">5.8.1</text>
+  <text x="265" y="162" text-anchor="middle" fill="#64748b" font-size="10">5.8.2</text>
+  <text x="438" y="162" text-anchor="middle" fill="#64748b" font-size="10">5.8.3</text>
+  <text x="601" y="162" text-anchor="middle" fill="#64748b" font-size="10">5.8.4</text>
+
+  <!-- Bottom note -->
+  <text x="340" y="188" text-anchor="middle" fill="#94a3b8" font-size="10">Each method trades mathematical tractability for real-world fidelity</text>
+</svg>

@@ -1,0 +1,173 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 420" width="620" height="420"
+     font-family="'Segoe UI', Arial, sans-serif" font-size="12">
+
+  <!-- Process color palette -->
+  <!-- P1=blue, P2=green, P3=purple, P4=orange, P5=pink -->
+
+  <!-- ===================================================== -->
+  <!-- Section: FCFS -->
+  <!-- ===================================================== -->
+  <text x="310" y="20" text-anchor="middle" fill="#374151" font-size="13" font-weight="700">FCFS</text>
+  <text x="310" y="36" text-anchor="middle" fill="#64748b" font-size="11">Order: P1, P2, P3, P4, P5   |   Avg Waiting = 28 ms</text>
+
+  <!-- Scale: total=61ms, usable width=540px (x:40 to 580), 1ms ≈ 8.85px -->
+  <!-- P1: 0-10 → x=40, w=88 -->
+  <rect x="40"  y="44" width="88"  height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="84"  y="64" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="12">P1</text>
+
+  <!-- P2: 10-39 → w=256 -->
+  <rect x="128" y="44" width="257" height="32" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="256" y="64" text-anchor="middle" fill="#15803d" font-weight="700" font-size="12">P2</text>
+
+  <!-- P3: 39-42 → w=27 -->
+  <rect x="385" y="44" width="27"  height="32" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="398" y="64" text-anchor="middle" fill="#5b21b6" font-weight="700" font-size="12">P3</text>
+
+  <!-- P4: 42-49 → w=62 -->
+  <rect x="412" y="44" width="62"  height="32" rx="2" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="443" y="64" text-anchor="middle" fill="#9a3412" font-weight="700" font-size="12">P4</text>
+
+  <!-- P5: 49-61 → w=106 -->
+  <rect x="474" y="44" width="106" height="32" rx="2" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="527" y="64" text-anchor="middle" fill="#9d174d" font-weight="700" font-size="12">P5</text>
+
+  <!-- Time axis -->
+  <line x1="34" y1="76" x2="592" y2="76" stroke="#94a3b8" stroke-width="1"/>
+  <!-- Ticks: 0, 10, 39, 42, 49, 61 -->
+  <line x1="40"  y1="72" x2="40"  y2="80" stroke="#64748b" stroke-width="1.5"/>
+  <text x="40"  y="91" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+  <line x1="128" y1="72" x2="128" y2="80" stroke="#64748b" stroke-width="1.5"/>
+  <text x="128" y="91" text-anchor="middle" fill="#64748b" font-size="10">10</text>
+  <line x1="385" y1="72" x2="385" y2="80" stroke="#64748b" stroke-width="1.5"/>
+  <text x="385" y="91" text-anchor="middle" fill="#64748b" font-size="10">39</text>
+  <line x1="412" y1="72" x2="412" y2="80" stroke="#64748b" stroke-width="1.5"/>
+  <text x="412" y="91" text-anchor="middle" fill="#64748b" font-size="10">42</text>
+  <line x1="474" y1="72" x2="474" y2="80" stroke="#64748b" stroke-width="1.5"/>
+  <text x="474" y="91" text-anchor="middle" fill="#64748b" font-size="10">49</text>
+  <line x1="580" y1="72" x2="580" y2="80" stroke="#64748b" stroke-width="1.5"/>
+  <text x="580" y="91" text-anchor="middle" fill="#64748b" font-size="10">61</text>
+
+  <!-- Waiting times -->
+  <text x="40" y="106" fill="#64748b" font-size="10">Waiting:  P1=0,  P2=10,  P3=39,  P4=42,  P5=49  ms</text>
+
+  <!-- Separator -->
+  <line x1="10" y1="118" x2="610" y2="118" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- ===================================================== -->
+  <!-- Section: SJF -->
+  <!-- ===================================================== -->
+  <text x="310" y="136" text-anchor="middle" fill="#374151" font-size="13" font-weight="700">SJF (Non-preemptive)</text>
+  <text x="310" y="152" text-anchor="middle" fill="#64748b" font-size="11">Order: P3, P4, P1, P5, P2   |   Avg Waiting = 13 ms</text>
+
+  <!-- P3: 0-3 → x=40, w=27 -->
+  <rect x="40"  y="159" width="27"  height="32" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="53"  y="179" text-anchor="middle" fill="#5b21b6" font-weight="700" font-size="12">P3</text>
+
+  <!-- P4: 3-10 → w=62 -->
+  <rect x="67"  y="159" width="62"  height="32" rx="2" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="98"  y="179" text-anchor="middle" fill="#9a3412" font-weight="700" font-size="12">P4</text>
+
+  <!-- P1: 10-20 → w=88 -->
+  <rect x="129" y="159" width="88"  height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="173" y="179" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="12">P1</text>
+
+  <!-- P5: 20-32 → w=106 -->
+  <rect x="217" y="159" width="106" height="32" rx="2" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="270" y="179" text-anchor="middle" fill="#9d174d" font-weight="700" font-size="12">P5</text>
+
+  <!-- P2: 32-61 → w=256 -->
+  <rect x="323" y="159" width="257" height="32" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="451" y="179" text-anchor="middle" fill="#15803d" font-weight="700" font-size="12">P2</text>
+
+  <!-- Time axis -->
+  <line x1="34" y1="191" x2="592" y2="191" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="40"  y1="187" x2="40"  y2="195" stroke="#64748b" stroke-width="1.5"/>
+  <text x="40"  y="206" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+  <line x1="67"  y1="187" x2="67"  y2="195" stroke="#64748b" stroke-width="1.5"/>
+  <text x="67"  y="206" text-anchor="middle" fill="#64748b" font-size="10">3</text>
+  <line x1="129" y1="187" x2="129" y2="195" stroke="#64748b" stroke-width="1.5"/>
+  <text x="129" y="206" text-anchor="middle" fill="#64748b" font-size="10">10</text>
+  <line x1="217" y1="187" x2="217" y2="195" stroke="#64748b" stroke-width="1.5"/>
+  <text x="217" y="206" text-anchor="middle" fill="#64748b" font-size="10">20</text>
+  <line x1="323" y1="187" x2="323" y2="195" stroke="#64748b" stroke-width="1.5"/>
+  <text x="323" y="206" text-anchor="middle" fill="#64748b" font-size="10">32</text>
+  <line x1="580" y1="187" x2="580" y2="195" stroke="#64748b" stroke-width="1.5"/>
+  <text x="580" y="206" text-anchor="middle" fill="#64748b" font-size="10">61</text>
+
+  <!-- Waiting times -->
+  <text x="40" y="221" fill="#64748b" font-size="10">Waiting:  P1=10,  P2=32,  P3=0,  P4=3,  P5=20  ms</text>
+
+  <!-- Separator -->
+  <line x1="10" y1="233" x2="610" y2="233" stroke="#e5e7eb" stroke-width="1" stroke-dasharray="5,3"/>
+
+  <!-- ===================================================== -->
+  <!-- Section: RR (q=10) -->
+  <!-- ===================================================== -->
+  <text x="310" y="251" text-anchor="middle" fill="#374151" font-size="13" font-weight="700">RR (quantum = 10 ms)</text>
+  <text x="310" y="267" text-anchor="middle" fill="#64748b" font-size="11">Order: P1, P2, P3, P4, P5, P2, P5, P2   |   Avg Waiting = 23 ms</text>
+
+  <!-- Scale same: 1ms=8.85px, x0=40 -->
+  <!-- P1: 0-10 w=88 -->
+  <rect x="40"  y="274" width="88"  height="32" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="84"  y="294" text-anchor="middle" fill="#1e40af" font-weight="700" font-size="12">P1</text>
+
+  <!-- P2: 10-20 w=88 -->
+  <rect x="128" y="274" width="88"  height="32" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="172" y="294" text-anchor="middle" fill="#15803d" font-weight="700" font-size="12">P2</text>
+
+  <!-- P3: 20-23 w=27 -->
+  <rect x="216" y="274" width="27"  height="32" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="229" y="294" text-anchor="middle" fill="#5b21b6" font-weight="700" font-size="12">P3</text>
+
+  <!-- P4: 23-30 w=62 -->
+  <rect x="243" y="274" width="62"  height="32" rx="2" fill="#fed7aa" stroke="#ea580c" stroke-width="1.5"/>
+  <text x="274" y="294" text-anchor="middle" fill="#9a3412" font-weight="700" font-size="12">P4</text>
+
+  <!-- P5: 30-40 w=88 -->
+  <rect x="305" y="274" width="88"  height="32" rx="2" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="349" y="294" text-anchor="middle" fill="#9d174d" font-weight="700" font-size="12">P5</text>
+
+  <!-- P2: 40-50 w=88 -->
+  <rect x="393" y="274" width="88"  height="32" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="437" y="294" text-anchor="middle" fill="#15803d" font-weight="700" font-size="12">P2</text>
+
+  <!-- P5: 50-52 w=18 -->
+  <rect x="481" y="274" width="18"  height="32" rx="2" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="490" y="294" text-anchor="middle" fill="#9d174d" font-weight="700" font-size="9">P5</text>
+
+  <!-- P2: 52-61 w=79 -->
+  <rect x="499" y="274" width="79"  height="32" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="538" y="294" text-anchor="middle" fill="#15803d" font-weight="700" font-size="12">P2</text>
+
+  <!-- Time axis -->
+  <line x1="34" y1="306" x2="592" y2="306" stroke="#94a3b8" stroke-width="1"/>
+  <line x1="40"  y1="302" x2="40"  y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <text x="40"  y="320" text-anchor="middle" fill="#64748b" font-size="10">0</text>
+  <line x1="128" y1="302" x2="128" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <text x="128" y="320" text-anchor="middle" fill="#64748b" font-size="10">10</text>
+  <line x1="216" y1="302" x2="216" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <text x="216" y="320" text-anchor="middle" fill="#64748b" font-size="10">20</text>
+  <line x1="243" y1="302" x2="243" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <text x="243" y="320" text-anchor="middle" fill="#64748b" font-size="10">23</text>
+  <line x1="305" y1="302" x2="305" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <text x="305" y="320" text-anchor="middle" fill="#64748b" font-size="10">30</text>
+  <line x1="393" y1="302" x2="393" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <text x="393" y="320" text-anchor="middle" fill="#64748b" font-size="10">40</text>
+  <line x1="481" y1="302" x2="481" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <text x="481" y="320" text-anchor="middle" fill="#64748b" font-size="10">50</text>
+  <line x1="499" y1="302" x2="499" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <text x="499" y="320" text-anchor="middle" fill="#64748b" font-size="10">52</text>
+  <line x1="578" y1="302" x2="578" y2="310" stroke="#64748b" stroke-width="1.5"/>
+  <text x="578" y="320" text-anchor="middle" fill="#64748b" font-size="10">61</text>
+
+  <!-- Waiting times -->
+  <text x="40" y="336" fill="#64748b" font-size="10">Waiting:  P1=0,  P2=32,  P3=20,  P4=23,  P5=40  ms</text>
+
+  <!-- Summary box -->
+  <rect x="10" y="352" width="600" height="56" rx="6" fill="#f8fafc" stroke="#cbd5e1" stroke-width="1.2"/>
+  <text x="310" y="370" text-anchor="middle" fill="#374151" font-size="11" font-weight="700">Average Waiting Time Comparison</text>
+  <text x="180" y="389" text-anchor="middle" fill="#1e40af" font-size="11" font-weight="600">FCFS: 28 ms</text>
+  <text x="310" y="389" text-anchor="middle" fill="#15803d" font-size="11" font-weight="600">SJF: 13 ms (optimal)</text>
+  <text x="450" y="389" text-anchor="middle" fill="#9a3412" font-size="11" font-weight="600">RR: 23 ms</text>
+  <text x="310" y="403" text-anchor="middle" fill="#64748b" font-size="10">Same 5-process workload, all arrive at time 0</text>
+</svg>
