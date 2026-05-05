@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 160" width="660" height="160" font-family="monospace, sans-serif" font-size="13">
+
+  <rect width="660" height="160" fill="#f8fafc" rx="8"/>
+
+  <!-- Title -->
+  <text x="330" y="26" text-anchor="middle" font-size="14" font-weight="bold" fill="#1e293b">Linux Thread Priority Ranges</text>
+
+  <!-- Real-time range bar (0–99) -->
+  <rect x="40" y="48" width="290" height="44" fill="#fee2e2" stroke="#dc2626" stroke-width="2" rx="6"/>
+  <text x="185" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#991b1b">real-time</text>
+  <text x="185" y="84" text-anchor="middle" font-size="12" fill="#991b1b">SCHED_FIFO / SCHED_RR</text>
+
+  <!-- Normal range bar (100–139) -->
+  <rect x="340" y="48" width="280" height="44" fill="#dbeafe" stroke="#2563eb" stroke-width="2" rx="6"/>
+  <text x="480" y="66" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">normal</text>
+  <text x="480" y="84" text-anchor="middle" font-size="12" fill="#1e40af">CFS (SCHED_OTHER)</text>
+
+  <!-- Tick labels — 0 and 139 at outer edges, 99 and 100 separated clearly -->
+  <text x="40"  y="108" text-anchor="middle" font-size="12" fill="#475569">0</text>
+  <text x="326" y="108" text-anchor="end"    font-size="12" fill="#475569">99</text>
+  <text x="354" y="108" text-anchor="start"  font-size="12" fill="#475569">100</text>
+  <text x="620" y="108" text-anchor="middle" font-size="12" fill="#475569">139</text>
+
+  <!-- Priority direction arrow -->
+  <defs>
+    <marker id="arrd" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#64748b"/>
+    </marker>
+  </defs>
+  <line x1="90" y1="128" x2="580" y2="128" stroke="#64748b" stroke-width="1.5" marker-end="url(#arrd)"/>
+  <text x="40"  y="148" text-anchor="middle" font-size="11" fill="#475569">higher</text>
+  <text x="610" y="148" text-anchor="middle" font-size="11" fill="#475569">lower</text>
+  <text x="330" y="148" text-anchor="middle" font-size="11" fill="#64748b">priority</text>
+
+</svg>

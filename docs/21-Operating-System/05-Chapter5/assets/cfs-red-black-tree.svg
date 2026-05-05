@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 680 340" width="680" height="340" font-family="monospace, sans-serif" font-size="13">
+
+  <rect width="680" height="340" fill="#f8fafc" rx="8"/>
+
+  <defs>
+    <marker id="arr" markerWidth="8" markerHeight="6" refX="7" refY="3" orient="auto">
+      <polygon points="0 0, 8 3, 0 6" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Tree edges ===== -->
+  <!-- T0 -> T1 -->
+  <line x1="340" y1="68" x2="220" y2="128" stroke="#94a3b8" stroke-width="2"/>
+  <!-- T0 -> T2 -->
+  <line x1="340" y1="68" x2="460" y2="128" stroke="#94a3b8" stroke-width="2"/>
+  <!-- T1 -> T3 -->
+  <line x1="220" y1="148" x2="140" y2="208" stroke="#94a3b8" stroke-width="2"/>
+  <!-- T1 -> T4 -->
+  <line x1="220" y1="148" x2="300" y2="208" stroke="#94a3b8" stroke-width="2"/>
+  <!-- T2 -> T5 -->
+  <line x1="460" y1="148" x2="380" y2="208" stroke="#94a3b8" stroke-width="2"/>
+  <!-- T2 -> T6 -->
+  <line x1="460" y1="148" x2="540" y2="208" stroke="#94a3b8" stroke-width="2"/>
+  <!-- T3 -> T7 -->
+  <line x1="140" y1="228" x2="80"  y2="288" stroke="#94a3b8" stroke-width="2"/>
+  <!-- T3 -> T8 -->
+  <line x1="140" y1="228" x2="200" y2="288" stroke="#94a3b8" stroke-width="2"/>
+  <!-- T5 -> T9 -->
+  <line x1="380" y1="228" x2="380" y2="288" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- ===== Tree nodes ===== -->
+  <!-- T0 (root) -->
+  <circle cx="340" cy="52" r="20" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="340" y="57" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">T0</text>
+
+  <!-- T1 (left child of T0) -->
+  <circle cx="220" cy="138" r="20" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="220" y="143" text-anchor="middle" font-size="13" font-weight="bold" fill="#991b1b">T1</text>
+
+  <!-- T2 -->
+  <circle cx="460" cy="138" r="20" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="460" y="143" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">T2</text>
+
+  <!-- T3 -->
+  <circle cx="140" cy="218" r="20" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="140" y="223" text-anchor="middle" font-size="13" font-weight="bold" fill="#991b1b">T3</text>
+
+  <!-- T4 -->
+  <circle cx="300" cy="218" r="20" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="300" y="223" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">T4</text>
+
+  <!-- T5 -->
+  <circle cx="380" cy="218" r="20" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="380" y="223" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">T5</text>
+
+  <!-- T6 -->
+  <circle cx="540" cy="218" r="20" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="540" y="223" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">T6</text>
+
+  <!-- T7 (leftmost leaf) -->
+  <circle cx="80"  cy="308" r="20" fill="#fee2e2" stroke="#dc2626" stroke-width="2.5"/>
+  <text x="80"  y="313" text-anchor="middle" font-size="13" font-weight="bold" fill="#991b1b">T7</text>
+
+  <!-- T8 -->
+  <circle cx="200" cy="308" r="20" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="200" y="313" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">T8</text>
+
+  <!-- T9 -->
+  <circle cx="380" cy="308" r="20" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="380" y="313" text-anchor="middle" font-size="13" font-weight="bold" fill="#92400e">T9</text>
+
+  <!-- ===== Label: task with smallest vruntime ===== -->
+  <!-- Arrow from label to T1 -->
+  <line x1="70" y1="100" x2="196" y2="128" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3" marker-end="url(#arr)"/>
+  <rect x="2" y="76" width="124" height="36" fill="#fff1f2" stroke="#fca5a5" stroke-width="1" rx="4"/>
+  <text x="64" y="90" text-anchor="middle" font-size="10" fill="#991b1b">task with the smallest</text>
+  <text x="64" y="104" text-anchor="middle" font-size="10" fill="#991b1b">value of vruntime</text>
+
+  <!-- ===== Bottom axis labels ===== -->
+  <text x="110" y="336" text-anchor="middle" font-size="11" fill="#16a34a" font-weight="bold">smaller</text>
+  <line x1="150" y1="332" x2="480" y2="332" stroke="#94a3b8" stroke-width="1"/>
+  <text x="510" y="336" text-anchor="middle" font-size="11" fill="#dc2626" font-weight="bold">larger</text>
+  <text x="330" y="330" text-anchor="middle" font-size="10" fill="#64748b">value of vruntime</text>
+
+</svg>

@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 480" width="500" height="480" font-family="monospace, sans-serif" font-size="12">
+
+  <rect width="500" height="480" fill="#f8fafc" rx="8"/>
+
+  <defs>
+    <!-- upward arrowhead (for line going bottom→top) -->
+    <marker id="arru" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#475569"/>
+    </marker>
+    <!-- downward arrowhead (for line going top→bottom) -->
+    <marker id="arrd" markerWidth="9" markerHeight="7" refX="8" refY="3.5" orient="auto">
+      <polygon points="0 0, 9 3.5, 0 7" fill="#475569"/>
+    </marker>
+  </defs>
+
+  <!-- ===== Column headers ===== -->
+  <text x="36"  y="18" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">global</text>
+  <text x="36"  y="30" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">priority</text>
+  <text x="464" y="18" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">scheduling</text>
+  <text x="464" y="30" text-anchor="middle" font-size="11" font-weight="bold" fill="#475569">order</text>
+
+  <!-- ===== Left upward arrow (global priority direction) ===== -->
+  <!-- Line from bottom (y=445) to top (y=48): direction is upward → marker points up -->
+  <line x1="36" y1="445" x2="36" y2="52" stroke="#475569" stroke-width="1.5" marker-end="url(#arru)"/>
+  <text x="36" y="460" text-anchor="middle" font-size="11" fill="#475569">lowest</text>
+  <text x="36" y="46"  text-anchor="middle" font-size="11" fill="#475569">highest</text>
+
+  <!-- ===== Right downward arrow (scheduling order) ===== -->
+  <!-- Line from top (y=45) to bottom (y=445): direction is downward → marker points down -->
+  <line x1="464" y1="45" x2="464" y2="440" stroke="#475569" stroke-width="1.5" marker-end="url(#arrd)"/>
+  <text x="464" y="40"  text-anchor="middle" font-size="11" fill="#475569">first</text>
+  <text x="464" y="460" text-anchor="middle" font-size="11" fill="#475569">last</text>
+
+  <!-- ===== Center vertical bar ===== -->
+  <!-- Bar spans x=80 to x=390, y=48 to y=448 (height=400) -->
+  <!-- Section heights (top=highest priority): -->
+  <!--   Interrupt (160-169): 45px  → y: 48-93  -->
+  <!--   RT        (100-159): 130px → y: 93-223 -->
+  <!--   SYS       (60-99):   90px  → y: 223-313 -->
+  <!--   TS group  (0-59):    135px → y: 313-448 -->
+
+  <!-- Interrupt threads (160-169): light gray -->
+  <rect x="80" y="48"  width="310" height="45"  fill="#d1d5db" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="235" y="76" text-anchor="middle" font-size="13" font-weight="bold" fill="#374151">interrupt threads</text>
+
+  <!-- Real-time threads (100-159): light blue -->
+  <rect x="80" y="93"  width="310" height="130" fill="#bfdbfe" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="235" y="163" text-anchor="middle" font-size="13" font-weight="bold" fill="#1e40af">realtime (RT) threads</text>
+
+  <!-- System threads (60-99): light gray -->
+  <rect x="80" y="223" width="310" height="90"  fill="#d1d5db" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="235" y="273" text-anchor="middle" font-size="13" font-weight="bold" fill="#374151">system (SYS) threads</text>
+
+  <!-- TS / IA / FSS / FP group (0-59): light blue, 4 stacked labels -->
+  <rect x="80" y="313" width="310" height="135" fill="#bfdbfe" stroke="#94a3b8" stroke-width="1.5"/>
+  <text x="235" y="340" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">fair share (FSS) threads</text>
+  <text x="235" y="360" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">fixed priority (FX) threads</text>
+  <text x="235" y="380" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">timeshare (TS) threads</text>
+  <text x="235" y="400" text-anchor="middle" font-size="12" font-weight="bold" fill="#1e40af">interactive (IA) threads</text>
+
+  <!-- Outer border around entire bar -->
+  <rect x="80" y="48"  width="310" height="400" fill="none" stroke="#64748b" stroke-width="2" rx="2"/>
+
+  <!-- ===== Priority numbers on left edge of bar ===== -->
+  <!-- top: 169 -->
+  <text x="74" y="54"  text-anchor="end" font-size="11" fill="#374151">169</text>
+  <!-- interrupt/RT boundary: 160 above, 159 below -->
+  <text x="74" y="91"  text-anchor="end" font-size="11" fill="#374151">160</text>
+  <text x="74" y="103" text-anchor="end" font-size="11" fill="#374151">159</text>
+  <!-- RT/SYS boundary: 100 above, 99 below -->
+  <text x="74" y="221" text-anchor="end" font-size="11" fill="#374151">100</text>
+  <text x="74" y="233" text-anchor="end" font-size="11" fill="#374151">99</text>
+  <!-- SYS/TS boundary: 60 above, 59 below -->
+  <text x="74" y="311" text-anchor="end" font-size="11" fill="#374151">60</text>
+  <text x="74" y="323" text-anchor="end" font-size="11" fill="#374151">59</text>
+  <!-- bottom: 0 -->
+  <text x="74" y="450" text-anchor="end" font-size="11" fill="#374151">0</text>
+
+  <!-- Divider lines at section boundaries (inside bar) -->
+  <line x1="80" y1="93"  x2="390" y2="93"  stroke="#64748b" stroke-width="1.5"/>
+  <line x1="80" y1="223" x2="390" y2="223" stroke="#64748b" stroke-width="1.5"/>
+  <line x1="80" y1="313" x2="390" y2="313" stroke="#64748b" stroke-width="1.5"/>
+
+</svg>
