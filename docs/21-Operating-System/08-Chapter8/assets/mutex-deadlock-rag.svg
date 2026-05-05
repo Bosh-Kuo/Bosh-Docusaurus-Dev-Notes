@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="315" viewBox="0 0 700 315">
+  <defs>
+    <marker id="req" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="asgn" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+  </defs>
+
+  <!-- Resource: first_mutex -->
+  <rect x="88" y="26" width="164" height="55" rx="4" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="170" y="42" text-anchor="middle" font-size="13" font-family="monospace" fill="#78350f">first_mutex</text>
+  <circle cx="170" cy="60" r="8" fill="#92400e"/>
+
+  <!-- Resource: second_mutex -->
+  <rect x="448" y="26" width="164" height="55" rx="4" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="530" y="42" text-anchor="middle" font-size="13" font-family="monospace" fill="#78350f">second_mutex</text>
+  <circle cx="530" cy="60" r="8" fill="#92400e"/>
+
+  <!-- Thread: thread_one -->
+  <ellipse cx="180" cy="236" rx="80" ry="44" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="180" y="241" text-anchor="middle" font-size="13" font-family="monospace" fill="#1e3a8a">thread_one</text>
+
+  <!-- Thread: thread_two -->
+  <ellipse cx="520" cy="236" rx="80" ry="44" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="520" y="241" text-anchor="middle" font-size="13" font-family="monospace" fill="#1e3a8a">thread_two</text>
+
+  <!-- Assignment: first_mutex -> thread_one (green solid) -->
+  <line x1="170" y1="81" x2="175" y2="192" stroke="#16a34a" stroke-width="2.2" marker-end="url(#asgn)"/>
+
+  <!-- Assignment: second_mutex -> thread_two (green solid) -->
+  <line x1="530" y1="81" x2="523" y2="192" stroke="#16a34a" stroke-width="2.2" marker-end="url(#asgn)"/>
+
+  <!-- Request: thread_one -> second_mutex (red dashed) — crosses with the line below -->
+  <line x1="257" y1="214" x2="450" y2="79" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#req)"/>
+
+  <!-- Request: thread_two -> first_mutex (red dashed) — crosses with the line above -->
+  <line x1="443" y1="214" x2="250" y2="79" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#req)"/>
+
+  <!-- Legend -->
+  <line x1="38" y1="302" x2="70" y2="302" stroke="#16a34a" stroke-width="2.2" marker-end="url(#asgn)"/>
+  <text x="78" y="306" font-size="11.5" font-family="sans-serif" fill="#374151">Assignment edge (R → T)</text>
+  <line x1="290" y1="302" x2="322" y2="302" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,3" marker-end="url(#req)"/>
+  <text x="330" y="306" font-size="11.5" font-family="sans-serif" fill="#374151">Request edge (T → R)</text>
+</svg>
