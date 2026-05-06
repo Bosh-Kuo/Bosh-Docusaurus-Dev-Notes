@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="460" height="300" viewBox="0 0 460 300">
+  <!-- Outer ellipse: all states -->
+  <ellipse cx="230" cy="155" rx="215" ry="135" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+
+  <!-- Unsafe region: upper sub-ellipse -->
+  <ellipse cx="255" cy="120" rx="155" ry="100" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+
+  <!-- Deadlock box: inside unsafe -->
+  <rect x="165" y="78" width="120" height="62" rx="6" fill="#fca5a5" stroke="#dc2626" stroke-width="1.5"/>
+
+  <!-- Labels -->
+  <text x="240" y="115" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#7f1d1d">deadlock</text>
+  <text x="355" y="75" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#dc2626">unsafe</text>
+  <text x="90" y="240" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#16a34a">safe</text>
+</svg>

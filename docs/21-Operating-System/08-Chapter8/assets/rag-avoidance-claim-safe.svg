@@ -1,0 +1,51 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="440" height="410" viewBox="0 0 440 410">
+  <defs>
+    <marker id="asgn" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="req" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="claim" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#7c3aed"/>
+    </marker>
+  </defs>
+
+  <!-- R1: top center -->
+  <rect x="180" y="18" width="80" height="54" rx="4" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="220" y="34" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#78350f">R1</text>
+  <circle cx="220" cy="52" r="7" fill="#92400e"/>
+
+  <!-- T1: left middle -->
+  <circle cx="70" cy="200" r="38" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="70" y="205" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T1</text>
+
+  <!-- T2: right middle -->
+  <circle cx="370" cy="200" r="38" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="370" y="205" text-anchor="middle" font-size="15" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T2</text>
+
+  <!-- R2: bottom center -->
+  <rect x="180" y="318" width="80" height="54" rx="4" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <text x="220" y="334" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#78350f">R2</text>
+  <circle cx="220" cy="352" r="7" fill="#92400e"/>
+
+  <!-- Assignment: R1 -> T1 (green solid) -->
+  <line x1="183" y1="56" x2="99" y2="170" stroke="#16a34a" stroke-width="2.2" marker-end="url(#asgn)"/>
+
+  <!-- Request: T2 -> R1 (red solid) -->
+  <line x1="343" y1="170" x2="258" y2="56" stroke="#dc2626" stroke-width="2" marker-end="url(#req)"/>
+
+  <!-- Claim: T1 -> R2 (purple dashed) -->
+  <line x1="97" y1="230" x2="181" y2="318" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7,4" marker-end="url(#claim)"/>
+
+  <!-- Claim: T2 -> R2 (purple dashed) -->
+  <line x1="343" y1="226" x2="259" y2="321" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7,4" marker-end="url(#claim)"/>
+
+  <!-- Legend -->
+  <line x1="20" y1="398" x2="52" y2="398" stroke="#16a34a" stroke-width="2.2" marker-end="url(#asgn)"/>
+  <text x="60" y="402" font-size="11" font-family="sans-serif" fill="#374151">Assignment (R->T)</text>
+  <line x1="175" y1="398" x2="207" y2="398" stroke="#dc2626" stroke-width="2" marker-end="url(#req)"/>
+  <text x="215" y="402" font-size="11" font-family="sans-serif" fill="#374151">Request (T->R)</text>
+  <line x1="315" y1="398" x2="347" y2="398" stroke="#7c3aed" stroke-width="2" stroke-dasharray="7,4" marker-end="url(#claim)"/>
+  <text x="355" y="402" font-size="11" font-family="sans-serif" fill="#374151">Claim (T->R)</text>
+</svg>
