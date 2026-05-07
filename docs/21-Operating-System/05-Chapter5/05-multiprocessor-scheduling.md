@@ -78,7 +78,8 @@ tags: [Operating System]
 
 ![SMP 的 Ready Queue 組織策略](./assets/smp-ready-queues.svg)
 
-圖左 (a) 的共用 Ready Queue 讓所有 Thread 集中在一個佇列，所有核心都從同一個地方取用執行緒。圖右 (b) 的 Per-core Run Queue 讓每個核心擁有各自的私有佇列，彼此獨立運作，不需競爭同一資源。
+- 圖左 (a) 的共用 Ready Queue 讓所有 Thread 集中在一個佇列，所有核心都從同一個地方取用執行緒。
+- 圖右 (b) 的 Per-core Run Queue 讓每個核心擁有各自的私有佇列，彼此獨立運作，不需競爭同一資源。
 
 兩種策略的核心差異在於**競爭代價**：共用 Ready Queue 必須用鎖（locking）保護以避免 Race Condition（競態條件），當多個 CPU 同時搶著從佇列取 Thread 時，鎖的爭用會成為嚴重的效能瓶頸。Per-core Run Queue 完全避免了這個問題，每個核心在自己的佇列上獨立排程，也因此是現代 SMP 系統最常採用的方案。此外，Per-core Run Queue 對快取記憶體的使用也更有效率（原因詳見 5.5.4 節的 Processor Affinity 討論）。
 
