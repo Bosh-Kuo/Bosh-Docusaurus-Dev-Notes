@@ -132,6 +132,34 @@ CPU 的實體 Registers 在任何時刻只能被一條執行緒使用。**Contex
 這也解釋了為什麼執行緒的建立成本遠低於進程：OS 只需在 RAM 裡配置幾 MB 給 Stack、幾 KB 給 TCB 就完工，不需要像建立進程那樣複製整張分頁表 (Page Table) 和所有檔案描述符 (File Descriptors)。
 :::
 
+:::info 執行緒建立 vs. 進程建立：所需資源對比
+
+建立一條新 **Thread** 時，OS 只需配置兩樣東西：
+
+- **TCB（Thread Control Block）**：數 KB，存放於 Kernel Space，用來備份 PC 與 registers
+- **Stack**：數 MB，在進程既有的 User Space 中劃出一塊專屬區域
+
+進程的 code section、data section、heap、open files 等資源由同進程內所有執行緒**直接共享**，不需重新配置。
+
+建立一個新 **Process** 時，OS 的工作量則大得多：
+
+- 建立獨立的 **PCB（Process Control Block）**
+- 配置完整的**獨立虛擬位址空間**（text、data、heap、stack 各區段全部重新配置）
+- 複製父進程的 **Page Table（分頁表）**，建立獨立的記憶體映射
+- 複製 **File Descriptor Table**（所有開啟中的檔案描述符）
+- 複製訊號處理設定、環境變數等 OS 資源
+
+| | Thread 建立 | Process 建立 |
+| :--- | :---: | :---: |
+| 虛擬位址空間 | 共享，不複製 | 全新獨立配置 |
+| Page Table | 共享 | 複製一份 |
+| File Descriptors | 共享 | 複製一份 |
+| 私有控制結構 | TCB（數 KB） | PCB（含更多欄位） |
+| 私有 Stack | 配置數 MB | 配置數 MB |
+
+這正是執行緒被稱為「**輕量級進程 (Lightweight Process)**」的根本原因。
+:::
+
 **4. 可擴展性 (Scalability)**
 
 單執行緒進程無論系統有多少個 CPU，都只能在一個處理器上執行。多執行緒進程則可以讓不同的執行緒真正同時運行在不同的處理核心上，隨著硬體規模增加而自動獲得更高的吞吐量。
@@ -338,7 +366,8 @@ $$speedup \leq \frac{1}{S + \frac{1-S}{N}}$$
 
 ![Figure 4.5 — Data and task parallelism](./assets/data-task-parallelism.svg)
 
-資料平行（上半部）：同一份資料被切成 4 塊，每個核心執行相同的 `sum()` 操作。任務平行（下半部）：同一份資料傳給 4 個核心，每個核心執行不同的統計操作。
+- 資料平行（上半部）：同一份資料被切成 4 塊，每個核心執行相同的 `sum()` 操作。
+- 任務平行（下半部）：同一份資料傳給 4 個核心，每個核心執行不同的統計操作。
 
 這兩種類型並非互斥，實際應用中常見兩者混合使用的混合平行策略 (Hybrid Parallelism)。
 
@@ -360,6 +389,23 @@ $$speedup \leq \frac{1}{S + \frac{1-S}{N}}$$
 ![Figure 4.6 — User and kernel threads](./assets/user-kernel-threads.svg)
 
 由於 OS 排程的對象是核心執行緒，使用者執行緒最終必須**對應到**核心執行緒才能實際在 CPU 上執行。這種對應方式有三種主要模型，各有不同的特性與取捨。
+
+:::info User Thread vs. Kernel Thread：兩項核心差異
+
+**差異一：管理者與核心可見性**
+
+User Thread 由 Thread Library 在 user space 管理，OS 核心對其一無所知，建立與 context switch 完全不涉及 system call，速度快。Kernel Thread 則由 OS 核心直接管理，核心能看見並控制每一條執行緒，每次建立或切換都需進入 kernel mode。
+
+**差異二：阻塞行為與多核平行能力**
+
+User Thread 有一個致命限制：只要任一條 user thread 發出 blocking system call，核心會阻塞對應的那條 kernel thread，導致同進程的**所有** user thread 一起被掛起；且多條 user thread 無法真正同時跑在不同 CPU core 上。Kernel Thread 則沒有這個問題，一條阻塞不影響其他條，並可在多核上真正平行執行。
+
+**各自更適合的情境：**
+
+User Thread 較佳的場景：需要大量建立執行緒且切換極為頻繁（如 coroutine、green thread 模型）、希望自訂排程策略，或在不支援 kernel thread 的環境中執行。
+
+Kernel Thread 較佳的場景：需要真正的多核平行計算、執行緒中包含阻塞式 I/O 且不能讓整個進程卡住，或需要 OS 層級的即時排程保證。現代主流 OS（Linux、Windows、macOS）皆採 One-to-One 模型，將每條 user thread 直接對應一條 kernel thread，在建立成本可接受的前提下，讓開發者直接享有 kernel thread 的所有優勢。
+:::
 
 <br/>
 
