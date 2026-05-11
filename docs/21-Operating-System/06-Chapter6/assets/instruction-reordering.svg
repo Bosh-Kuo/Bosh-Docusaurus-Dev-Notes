@@ -1,0 +1,65 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" width="640" height="230">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="320" y="22" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">Instruction Reordering: Both Processes Enter Critical Section</text>
+
+  <!-- Row labels (left side, enough margin) -->
+  <text x="14" y="85" font-family="sans-serif" font-size="11" font-weight="bold" fill="#166534" text-anchor="start">process&#x2080;</text>
+  <text x="14" y="148" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="start">process&#x2081;</text>
+
+  <!-- Process 0 timeline (row y ~62–100) -->
+  <!-- turn = j (reordered first) -->
+  <rect x="100" y="62" width="100" height="36" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="150" y="79" font-family="monospace" font-size="10" fill="#166534" text-anchor="middle">turn = j</text>
+  <text x="150" y="92" font-family="sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">reordered 1st</text>
+
+  <line x1="200" y1="80" x2="218" y2="80" stroke="#374151" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- flag[i] = true (reordered second) -->
+  <rect x="220" y="62" width="110" height="36" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="275" y="79" font-family="monospace" font-size="10" fill="#166534" text-anchor="middle">flag[i] = true</text>
+  <text x="275" y="92" font-family="sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">reordered 2nd</text>
+
+  <line x1="330" y1="80" x2="348" y2="80" stroke="#374151" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- CS for process 0 -->
+  <rect x="350" y="54" width="80" height="52" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="390" y="77" font-family="monospace" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">CS</text>
+  <text x="390" y="92" font-family="sans-serif" font-size="9" fill="#d97706" text-anchor="middle">critical section</text>
+
+  <!-- Process 1 timeline (row y ~125–163) -->
+  <!-- flag[j]=true + turn=i (normal order, simultaneous) -->
+  <rect x="100" y="125" width="190" height="36" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="195" y="143" font-family="monospace" font-size="10" fill="#1e40af" text-anchor="middle">flag[j]=true,  turn=i</text>
+  <text x="195" y="155" font-family="sans-serif" font-size="9" fill="#2563eb" text-anchor="middle">normal order, concurrent</text>
+
+  <line x1="290" y1="143" x2="348" y2="143" stroke="#374151" stroke-width="1.2" marker-end="url(#arr)"/>
+
+  <!-- CS for process 1 -->
+  <rect x="350" y="117" width="80" height="52" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="390" y="140" font-family="monospace" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">CS</text>
+  <text x="390" y="155" font-family="sans-serif" font-size="9" fill="#d97706" text-anchor="middle">critical section</text>
+
+  <!-- Overlap warning box -->
+  <rect x="440" y="54" width="185" height="115" rx="6" fill="#fff1f2" stroke="#dc2626" stroke-width="2"/>
+  <text x="532" y="81" font-family="sans-serif" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">Mutual Exclusion</text>
+  <text x="532" y="96" font-family="sans-serif" font-size="11" font-weight="bold" fill="#dc2626" text-anchor="middle">VIOLATED!</text>
+  <line x1="455" y1="106" x2="612" y2="106" stroke="#dc2626" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="532" y="121" font-family="sans-serif" font-size="10" fill="#991b1b" text-anchor="middle">Both processes are in</text>
+  <text x="532" y="135" font-family="sans-serif" font-size="10" fill="#991b1b" text-anchor="middle">the critical section</text>
+  <text x="532" y="149" font-family="sans-serif" font-size="10" fill="#991b1b" text-anchor="middle">simultaneously</text>
+
+  <!-- Dashed lines from CS boxes to warning -->
+  <line x1="430" y1="80" x2="440" y2="95" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="3,2"/>
+  <line x1="430" y1="143" x2="440" y2="140" stroke="#dc2626" stroke-width="1.2" stroke-dasharray="3,2"/>
+
+  <!-- time axis -->
+  <line x1="100" y1="195" x2="610" y2="195" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="618" y="199" font-family="sans-serif" font-size="11" fill="#6b7280">time</text>
+
+</svg>

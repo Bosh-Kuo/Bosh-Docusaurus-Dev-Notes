@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 340" width="420" height="340">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="420" height="340" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="210" y="28" font-family="monospace" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">while (true) {</text>
+
+  <!-- Entry Section Box -->
+  <rect x="80" y="44" width="260" height="52" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="210" y="66" font-family="monospace" font-size="13" font-weight="bold" fill="#166534" text-anchor="middle">entry section</text>
+  <text x="210" y="84" font-family="sans-serif" font-size="10" fill="#16a34a" text-anchor="middle">(request permission to enter)</text>
+
+  <!-- Arrow down -->
+  <line x1="210" y1="96" x2="210" y2="118" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="205,115 210,122 215,115" fill="#6b7280"/>
+
+  <!-- Critical Section (plain, highlighted differently) -->
+  <rect x="80" y="122" width="260" height="44" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="210" y="144" font-family="monospace" font-size="13" font-weight="bold" fill="#92400e" text-anchor="middle">critical section</text>
+  <text x="210" y="159" font-family="sans-serif" font-size="10" fill="#d97706" text-anchor="middle">(shared data access)</text>
+
+  <!-- Arrow down -->
+  <line x1="210" y1="166" x2="210" y2="188" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="205,185 210,192 215,185" fill="#6b7280"/>
+
+  <!-- Exit Section Box -->
+  <rect x="80" y="192" width="260" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="210" y="214" font-family="monospace" font-size="13" font-weight="bold" fill="#1e40af" text-anchor="middle">exit section</text>
+  <text x="210" y="229" font-family="sans-serif" font-size="10" fill="#2563eb" text-anchor="middle">(release permission)</text>
+
+  <!-- Arrow down -->
+  <line x1="210" y1="236" x2="210" y2="258" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="205,255 210,262 215,255" fill="#6b7280"/>
+
+  <!-- Remainder Section -->
+  <rect x="80" y="262" width="260" height="40" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="210" y="284" font-family="monospace" font-size="13" fill="#6b7280" text-anchor="middle">remainder section</text>
+  <text x="210" y="297" font-family="sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">(non-critical code)</text>
+
+  <!-- Closing brace -->
+  <text x="210" y="323" font-family="monospace" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">}</text>
+
+  <!-- Side labels -->
+  <rect x="342" y="44" width="70" height="52" rx="4" fill="none" stroke="#16a34a" stroke-width="0"/>
+  <text x="355" y="62" font-family="sans-serif" font-size="9" fill="#16a34a">protected</text>
+  <text x="355" y="74" font-family="sans-serif" font-size="9" fill="#16a34a">by protocol</text>
+
+</svg>
