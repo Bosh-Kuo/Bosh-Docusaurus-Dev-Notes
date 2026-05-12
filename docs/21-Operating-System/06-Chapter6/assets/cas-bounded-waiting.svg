@@ -1,0 +1,84 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 380" width="620" height="380">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="620" height="380" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="310" y="26" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">Bounded-Waiting CAS — Exit Section Cyclic Scan</text>
+
+  <!-- ===== waiting[] array ===== -->
+  <text x="310" y="52" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">waiting[] array (n = 5 processes, current = P2)</text>
+
+  <!-- Array cells -->
+  <!-- P0 -->
+  <rect x="40" y="62" width="80" height="44" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="80" y="80" font-family="sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">P0</text>
+  <text x="80" y="97" font-family="monospace" font-size="11" fill="#16a34a" text-anchor="middle">true</text>
+
+  <!-- P1 -->
+  <rect x="130" y="62" width="80" height="44" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="170" y="80" font-family="sans-serif" font-size="10" font-weight="bold" fill="#374151" text-anchor="middle">P1</text>
+  <text x="170" y="97" font-family="monospace" font-size="11" fill="#6b7280" text-anchor="middle">false</text>
+
+  <!-- P2 (current) -->
+  <rect x="220" y="54" width="80" height="60" rx="4" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="260" y="74" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">P2 (me)</text>
+  <text x="260" y="89" font-family="monospace" font-size="11" fill="#d97706" text-anchor="middle">true</text>
+  <text x="260" y="104" font-family="sans-serif" font-size="8" fill="#d97706" text-anchor="middle">exiting CS</text>
+
+  <!-- P3 -->
+  <rect x="310" y="62" width="80" height="44" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="350" y="80" font-family="sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">P3</text>
+  <text x="350" y="97" font-family="monospace" font-size="11" fill="#16a34a" text-anchor="middle">true</text>
+
+  <!-- P4 -->
+  <rect x="400" y="62" width="80" height="44" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="440" y="80" font-family="sans-serif" font-size="10" font-weight="bold" fill="#374151" text-anchor="middle">P4</text>
+  <text x="440" y="97" font-family="monospace" font-size="11" fill="#6b7280" text-anchor="middle">false</text>
+
+  <!-- Scan direction arrow (cyclic from i+1) -->
+  <!-- Scan order: P3, P4, P0, P1 (back to P2) -->
+  <text x="310" y="134" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7c3aed" text-anchor="middle">Cyclic scan starting at j = (i+1) % n = 3</text>
+
+  <!-- Scan arrow below P3 -->
+  <line x1="350" y1="106" x2="350" y2="148" stroke="#7c3aed" stroke-width="2"/>
+  <polygon points="345,145 350,152 355,145" fill="#7c3aed"/>
+  <text x="310" y="148" font-family="sans-serif" font-size="9" fill="#7c3aed">scan j=3</text>
+
+  <!-- P3 is waiting → chosen -->
+  <rect x="290" y="156" width="200" height="50" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="390" y="175" font-family="sans-serif" font-size="10" font-weight="bold" fill="#5b21b6" text-anchor="middle">waiting[3] == true</text>
+  <text x="390" y="190" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">P3 is the next process!</text>
+  <text x="390" y="202" font-family="sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">Stop scan here</text>
+
+  <!-- Arrow to action -->
+  <line x1="390" y1="206" x2="390" y2="226" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="385,223 390,230 395,223" fill="#6b7280"/>
+
+  <!-- Action boxes side by side -->
+  <!-- If found waiting[j] -->
+  <rect x="220" y="230" width="210" height="50" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="325" y="248" font-family="sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">Found waiting process</text>
+  <text x="325" y="262" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">waiting[j] = false</text>
+  <text x="325" y="275" font-family="sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">P3 can enter CS next</text>
+
+  <!-- If no one waiting -->
+  <rect x="440" y="230" width="160" height="50" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="520" y="248" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">No one waiting</text>
+  <text x="520" y="262" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">lock = 0</text>
+  <text x="520" y="275" font-family="sans-serif" font-size="9" fill="#2563eb" text-anchor="middle">Release for anyone</text>
+
+  <!-- Condition split -->
+  <rect x="160" y="230" width="55" height="50" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+  <text x="188" y="251" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">j == i ?</text>
+  <text x="188" y="263" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">(full cycle)</text>
+  <text x="188" y="275" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">no wait found</text>
+  <line x1="216" y1="255" x2="220" y2="255" stroke="#9ca3af" stroke-width="1"/>
+
+  <!-- Bounded wait guarantee -->
+  <rect x="60" y="306" width="500" height="56" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="310" y="326" font-family="sans-serif" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">Bounded Waiting Guarantee</text>
+  <text x="310" y="343" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">Any waiting process Pi is handed the lock within at most n-1 turns.</text>
+  <text x="310" y="357" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">The cyclic scan visits each process in order, so no starvation occurs.</text>
+
+</svg>

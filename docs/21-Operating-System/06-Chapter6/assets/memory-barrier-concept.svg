@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 430" width="700" height="430">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="700" height="430" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- ===== LEFT SIDE: No Barrier ===== -->
+  <text x="175" y="28" font-family="sans-serif" font-size="13" font-weight="bold" fill="#dc2626" text-anchor="middle">Without Memory Barrier</text>
+  <text x="175" y="44" font-family="sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">(weakly ordered — reorder may happen)</text>
+
+  <!-- Thread 2 box -->
+  <rect x="20" y="58" width="140" height="78" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="90" y="76" font-family="sans-serif" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">Thread 2</text>
+  <text x="90" y="93" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">x = 100;</text>
+  <!-- reorder indicator -->
+  <line x1="30" y1="100" x2="150" y2="100" stroke="#dc2626" stroke-width="1" stroke-dasharray="3,2"/>
+  <text x="37" y="97" font-family="sans-serif" font-size="8" fill="#dc2626">reorder ↕</text>
+  <text x="90" y="120" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">flag = true;</text>
+
+  <!-- Thread 1 box — while loop + print OUTSIDE -->
+  <!-- while loop part -->
+  <rect x="170" y="58" width="150" height="48" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="245" y="76" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">Thread 1</text>
+  <text x="245" y="93" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">while (!flag) ;</text>
+
+  <!-- arrow: loop exits when flag=true -->
+  <line x1="245" y1="106" x2="245" y2="122" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="240,119 245,126 250,119" fill="#6b7280"/>
+
+  <!-- print x OUTSIDE loop -->
+  <rect x="170" y="126" width="150" height="28" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="245" y="144" font-family="monospace" font-size="10" fill="#dc2626" text-anchor="middle">print x;  → 0 ✗</text>
+
+  <!-- WRONG result label -->
+  <rect x="60" y="172" width="220" height="34" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="170" y="187" font-family="sans-serif" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">Result: prints 0 (WRONG)</text>
+  <text x="170" y="200" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">flag=true seen before x=100 propagates</text>
+
+  <!-- ===== DIVIDER ===== -->
+  <line x1="350" y1="50" x2="350" y2="220" stroke="#e5e7eb" stroke-width="2"/>
+
+  <!-- ===== RIGHT SIDE: With Barrier ===== -->
+  <text x="525" y="28" font-family="sans-serif" font-size="13" font-weight="bold" fill="#16a34a" text-anchor="middle">With Memory Barrier</text>
+  <text x="525" y="44" font-family="sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">(order enforced)</text>
+
+  <!-- Thread 2 box with barrier -->
+  <rect x="370" y="58" width="150" height="96" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="445" y="76" font-family="sans-serif" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">Thread 2</text>
+  <text x="445" y="93" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">x = 100;</text>
+  <line x1="380" y1="100" x2="510" y2="100" stroke="#7c3aed" stroke-width="2" stroke-dasharray="4,2"/>
+  <text x="445" y="114" font-family="sans-serif" font-size="9" font-weight="bold" fill="#7c3aed" text-anchor="middle">memory_barrier()</text>
+  <text x="445" y="132" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">flag = true;</text>
+
+  <!-- Thread 1 box — while loop with barrier -->
+  <rect x="535" y="58" width="150" height="66" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="610" y="76" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">Thread 1</text>
+  <text x="610" y="93" font-family="monospace" font-size="9" fill="#374151" text-anchor="middle">while (!flag)</text>
+  <text x="610" y="107" font-family="monospace" font-size="9" fill="#374151" text-anchor="middle">  memory_barrier();</text>
+
+  <!-- arrow: loop exits -->
+  <line x1="610" y1="124" x2="610" y2="140" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="605,137 610,144 615,137" fill="#6b7280"/>
+
+  <!-- print x OUTSIDE loop -->
+  <rect x="535" y="144" width="150" height="28" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="610" y="162" font-family="monospace" font-size="10" fill="#166534" text-anchor="middle">print x;  → 100 ✓</text>
+
+  <!-- Label: print x is outside loop -->
+  <text x="610" y="184" font-family="sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">(executes after loop exits)</text>
+
+  <!-- CORRECT result label -->
+  <rect x="415" y="196" width="235" height="34" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="532" y="211" font-family="sans-serif" font-size="10" font-weight="bold" fill="#16a34a" text-anchor="middle">Result: prints 100 (CORRECT)</text>
+  <text x="532" y="224" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">x=100 visible before flag=true propagates</text>
+
+  <!-- ===== BOTTOM: Execution flow annotation ===== -->
+  <rect x="20" y="244" width="660" height="52" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="350" y="262" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">Key insight: print x is OUTSIDE the while loop — it runs only after flag becomes true</text>
+  <text x="350" y="279" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">Bug: if flag=true propagates before x=100, Thread 1 exits the loop and prints stale x (= 0)</text>
+
+  <!-- ===== BOTTOM: Memory Model Comparison ===== -->
+  <text x="350" y="318" font-family="sans-serif" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">Memory Model Comparison</text>
+
+  <!-- Strongly Ordered box -->
+  <rect x="30" y="326" width="290" height="86" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="175" y="346" font-family="sans-serif" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">Strongly Ordered</text>
+  <text x="175" y="362" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">A write on one processor is immediately visible to all others.</text>
+  <text x="175" y="376" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">e.g., x86 (mostly), SPARC TSO</text>
+  <text x="175" y="390" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Barrier rarely needed in practice</text>
+  <text x="175" y="404" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Kernel still uses barriers for portability</text>
+
+  <!-- Weakly Ordered box -->
+  <rect x="380" y="326" width="290" height="86" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="525" y="346" font-family="sans-serif" font-size="11" font-weight="bold" fill="#5b21b6" text-anchor="middle">Weakly Ordered</text>
+  <text x="525" y="362" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">A write may not be immediately visible to other processors.</text>
+  <text x="525" y="376" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">e.g., ARM, POWER, Alpha, RISC-V</text>
+  <text x="525" y="390" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Barrier required to enforce ordering</text>
+  <text x="525" y="404" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Most mobile / server CPUs fall here</text>
+
+</svg>

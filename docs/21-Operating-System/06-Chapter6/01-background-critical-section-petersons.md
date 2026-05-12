@@ -3,7 +3,7 @@ title: 背景、臨界區問題與 Peterson's Solution
 sidebar_label: "6-1/2/3 背景、臨界區問題與 Peterson's Solution"
 description: 從生產者-消費者問題出發，介紹競爭條件（Race Condition）的成因，定義臨界區問題（Critical-Section Problem）及其三大正確性需求，並詳細分析軟體解法 Peterson's Solution 的演算法設計、正確性證明，以及在現代架構下因指令重排（Instruction Reordering）而失效的根本原因。
 last_update:
-  date: 2026-04-24
+  date: 2026-05-11
 keywords:
   [
     "Race Condition",

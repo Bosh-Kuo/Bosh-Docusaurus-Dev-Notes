@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 360" width="620" height="360">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="620" height="360" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="310" y="26" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">compare_and_swap() — Conditional Atomic Swap</text>
+
+  <!-- ===== LEFT: Function signature + steps ===== -->
+  <!-- Three inputs -->
+  <rect x="20" y="46" width="110" height="32" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="75" y="60" font-family="monospace" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">int *value</text>
+  <text x="75" y="73" font-family="sans-serif" font-size="9" fill="#2563eb" text-anchor="middle">(target variable)</text>
+
+  <rect x="145" y="46" width="110" height="32" rx="5" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="200" y="60" font-family="monospace" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">int expected</text>
+  <text x="200" y="73" font-family="sans-serif" font-size="9" fill="#db2777" text-anchor="middle">(expected old val)</text>
+
+  <rect x="270" y="46" width="110" height="32" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="325" y="60" font-family="monospace" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">int new_value</text>
+  <text x="325" y="73" font-family="sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">(desired new val)</text>
+
+  <!-- Arrows to step 1 -->
+  <line x1="75" y1="78" x2="200" y2="120" stroke="#6b7280" stroke-width="1"/>
+  <line x1="200" y1="78" x2="200" y2="120" stroke="#6b7280" stroke-width="1"/>
+  <line x1="325" y1="78" x2="200" y2="120" stroke="#6b7280" stroke-width="1"/>
+  <polygon points="195,117 200,124 205,117" fill="#6b7280"/>
+
+  <!-- Step 1: Save temp -->
+  <rect x="100" y="128" width="200" height="36" rx="5" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="200" y="144" font-family="sans-serif" font-size="10" font-weight="bold" fill="#374151" text-anchor="middle">① Save original value</text>
+  <text x="200" y="157" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">temp = *value</text>
+
+  <!-- Arrow -->
+  <line x1="200" y1="164" x2="200" y2="184" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="195,181 200,188 205,181" fill="#6b7280"/>
+
+  <!-- Step 2: Compare -->
+  <rect x="100" y="188" width="200" height="36" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="200" y="204" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">② Compare</text>
+  <text x="200" y="217" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">*value == expected ?</text>
+
+  <!-- YES branch arrow -->
+  <line x1="200" y1="224" x2="200" y2="244" stroke="#16a34a" stroke-width="1.5"/>
+  <polygon points="195,241 200,248 205,241" fill="#16a34a"/>
+  <text x="210" y="238" font-family="sans-serif" font-size="9" fill="#16a34a">YES</text>
+
+  <!-- NO branch arrow (to right) -->
+  <line x1="300" y1="206" x2="380" y2="206" stroke="#dc2626" stroke-width="1.5"/>
+  <polygon points="377,202 384,206 377,210" fill="#dc2626"/>
+  <text x="335" y="200" font-family="sans-serif" font-size="9" fill="#dc2626">NO</text>
+
+  <!-- YES box -->
+  <rect x="100" y="248" width="200" height="36" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="200" y="264" font-family="sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">③ Write new value</text>
+  <text x="200" y="277" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">*value = new_value</text>
+
+  <!-- Arrow to return -->
+  <line x1="200" y1="284" x2="200" y2="310" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="195,307 200,314 205,307" fill="#6b7280"/>
+
+  <!-- Return box -->
+  <rect x="100" y="314" width="200" height="30" rx="5" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="200" y="333" font-family="monospace" font-size="11" font-weight="bold" fill="#5b21b6" text-anchor="middle">return temp</text>
+
+  <!-- NO box (skip write) -->
+  <rect x="385" y="188" width="200" height="36" rx="5" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="485" y="204" font-family="sans-serif" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">③ Skip — no write</text>
+  <text x="485" y="217" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">*value unchanged</text>
+
+  <!-- NO box arrow down to return -->
+  <line x1="485" y1="224" x2="485" y2="314" stroke="#6b7280" stroke-width="1.5"/>
+  <line x1="485" y1="314" x2="300" y2="314" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="297,310 304,314 297,318" fill="#6b7280"/>
+
+  <!-- ATOMIC wrapper -->
+  <rect x="90" y="118" width="220" height="240" rx="8" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="200" y="350" font-family="sans-serif" font-size="9" font-weight="bold" fill="#7c3aed" text-anchor="middle">Always returns ORIGINAL value (temp)</text>
+
+</svg>

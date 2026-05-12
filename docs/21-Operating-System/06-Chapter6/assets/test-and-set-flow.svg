@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 320" width="560" height="320">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="560" height="320" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="280" y="26" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">test_and_set() — Atomic Read-Then-Set</text>
+
+  <!-- ===== LEFT: Function internals ===== -->
+  <!-- Step 1: Read *target -->
+  <rect x="30" y="44" width="200" height="48" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="130" y="63" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">① Read current value</text>
+  <text x="130" y="79" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">rv = *target</text>
+
+  <!-- Arrow -->
+  <line x1="130" y1="92" x2="130" y2="114" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="125,111 130,118 135,111" fill="#6b7280"/>
+
+  <!-- Step 2: Set *target = true -->
+  <rect x="30" y="118" width="200" height="48" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="130" y="137" font-family="sans-serif" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">② Force *target = true</text>
+  <text x="130" y="153" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">*target = true</text>
+
+  <!-- Arrow -->
+  <line x1="130" y1="166" x2="130" y2="188" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="125,185 130,192 135,185" fill="#6b7280"/>
+
+  <!-- Step 3: Return rv -->
+  <rect x="30" y="192" width="200" height="48" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="130" y="211" font-family="sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">③ Return OLD value</text>
+  <text x="130" y="227" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">return rv</text>
+
+  <!-- ATOMIC wrapper -->
+  <rect x="20" y="34" width="220" height="216" rx="8" fill="none" stroke="#7c3aed" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="130" y="266" font-family="sans-serif" font-size="9" font-weight="bold" fill="#7c3aed" text-anchor="middle">All steps execute atomically</text>
+  <text x="130" y="279" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">(cannot be interrupted mid-way)</text>
+
+  <!-- ===== DIVIDER ===== -->
+  <line x1="265" y1="30" x2="265" y2="300" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- ===== RIGHT: Usage (lock acquisition) ===== -->
+  <text x="415" y="50" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">Usage: Mutual Exclusion</text>
+
+  <!-- lock = false initially -->
+  <rect x="290" y="62" width="250" height="28" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+  <text x="415" y="80" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">bool lock = false  // init</text>
+
+  <!-- Arrow -->
+  <line x1="415" y1="90" x2="415" y2="108" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="410,105 415,112 420,105" fill="#6b7280"/>
+
+  <!-- while test_and_set -->
+  <rect x="290" y="112" width="250" height="60" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="415" y="130" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">Entry Section</text>
+  <text x="415" y="148" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">while (test_and_set(&amp;lock))</text>
+  <text x="415" y="164" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">  ;  // busy wait</text>
+
+  <!-- Arrow -->
+  <line x1="415" y1="172" x2="415" y2="192" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="410,189 415,196 420,189" fill="#6b7280"/>
+
+  <!-- critical section -->
+  <rect x="290" y="196" width="250" height="34" rx="6" fill="#fef9c3" stroke="#ca8a04" stroke-width="2" stroke-dasharray="6,3"/>
+  <text x="415" y="217" font-family="monospace" font-size="10" fill="#92400e" text-anchor="middle">/* critical section */</text>
+
+  <!-- Arrow -->
+  <line x1="415" y1="230" x2="415" y2="250" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="410,247 415,254 420,247" fill="#6b7280"/>
+
+  <!-- lock = false -->
+  <rect x="290" y="254" width="250" height="34" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="415" y="269" font-family="sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">Exit Section</text>
+  <text x="415" y="283" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">lock = false</text>
+
+  <!-- annotations -->
+  <text x="415" y="308" font-family="sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">Returns false → acquired lock, enter CS</text>
+
+</svg>
