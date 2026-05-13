@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 500" width="760" height="500">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="760" height="500" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="380" y="26" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">Semaphore Blocking Implementation</text>
+
+  <!-- ========== TOP: Semaphore struct + Waiting Queue ========== -->
+
+  <!-- LEFT: struct box -->
+  <text x="130" y="50" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">Semaphore Struct</text>
+  <rect x="24" y="58" width="212" height="92" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="130" y="76" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">typedef struct {</text>
+  <rect x="44" y="82" width="172" height="26" rx="4" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="130" y="99" font-family="monospace" font-size="10" fill="#1e40af" text-anchor="middle">int value</text>
+  <rect x="44" y="112" width="172" height="24" rx="4" fill="#fce7f3" stroke="#db2777" stroke-width="1"/>
+  <text x="130" y="128" font-family="monospace" font-size="10" fill="#be185d" text-anchor="middle">struct process *list</text>
+  <text x="130" y="148" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">} semaphore</text>
+
+  <!-- Arrow from list to queue -->
+  <line x1="236" y1="124" x2="276" y2="124" stroke="#db2777" stroke-width="1.5"/>
+  <polygon points="273,119 280,124 273,129" fill="#db2777"/>
+
+  <!-- RIGHT: Waiting Queue (PCBs) -->
+  <text x="480" y="50" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">Waiting Queue (process list)</text>
+
+  <rect x="280" y="108" width="64" height="32" rx="4" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="312" y="122" font-family="sans-serif" font-size="9" font-weight="bold" fill="#be185d" text-anchor="middle">PCB</text>
+  <text x="312" y="134" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">P1</text>
+
+  <line x1="344" y1="124" x2="364" y2="124" stroke="#9ca3af" stroke-width="1.5"/>
+  <polygon points="361,119 368,124 361,129" fill="#9ca3af"/>
+
+  <rect x="368" y="108" width="64" height="32" rx="4" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="400" y="122" font-family="sans-serif" font-size="9" font-weight="bold" fill="#be185d" text-anchor="middle">PCB</text>
+  <text x="400" y="134" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">P2</text>
+
+  <line x1="432" y1="124" x2="452" y2="124" stroke="#9ca3af" stroke-width="1.5"/>
+  <polygon points="449,119 456,124 449,129" fill="#9ca3af"/>
+
+  <rect x="456" y="108" width="64" height="32" rx="4" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="488" y="122" font-family="sans-serif" font-size="9" font-weight="bold" fill="#be185d" text-anchor="middle">PCB</text>
+  <text x="488" y="134" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">P3</text>
+
+  <text x="532" y="128" font-family="sans-serif" font-size="13" fill="#9ca3af" text-anchor="middle">null</text>
+
+  <!-- FIFO note -->
+  <text x="400" y="158" font-family="sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">FIFO order ensures bounded waiting — prevents starvation</text>
+
+  <!-- Horizontal divider -->
+  <line x1="16" y1="172" x2="744" y2="172" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- ========== BOTTOM LEFT: wait(S) ========== -->
+
+  <text x="190" y="194" font-family="monospace" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">wait(S) — blocking</text>
+
+  <!-- Step 1: decrement value -->
+  <rect x="80" y="204" width="220" height="36" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="190" y="219" font-family="sans-serif" font-size="10" font-weight="bold" fill="#374151" text-anchor="middle">① Decrement counter</text>
+  <text x="190" y="233" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">S-&gt;value--</text>
+
+  <!-- Arrow down -->
+  <line x1="190" y1="240" x2="190" y2="258" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="185,255 190,262 195,255" fill="#6b7280"/>
+
+  <!-- Diamond: value < 0? -->
+  <polygon points="190,262 252,294 190,326 128,294" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="190" y="290" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">value</text>
+  <text x="190" y="304" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">&lt; 0 ?</text>
+
+  <!-- YES branch: right → sleep box -->
+  <text x="260" y="292" font-family="sans-serif" font-size="10" font-weight="bold" fill="#dc2626">YES</text>
+  <line x1="252" y1="294" x2="290" y2="294" stroke="#dc2626" stroke-width="1.5"/>
+  <polygon points="287,289 294,294 287,299" fill="#dc2626"/>
+  <rect x="294" y="274" width="160" height="40" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="374" y="290" font-family="sans-serif" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">Add to S-&gt;list</text>
+  <text x="374" y="306" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">sleep()</text>
+
+  <!-- NO branch: left → down → enter CS -->
+  <text x="108" y="292" font-family="sans-serif" font-size="10" font-weight="bold" fill="#16a34a" text-anchor="middle">NO</text>
+  <line x1="128" y1="294" x2="72" y2="294" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="72" y1="294" x2="72" y2="348" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="72" y1="348" x2="148" y2="348" stroke="#16a34a" stroke-width="1.5"/>
+  <polygon points="145,343 152,348 145,353" fill="#16a34a"/>
+  <rect x="152" y="336" width="124" height="24" rx="4" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="214" y="352" font-family="sans-serif" font-size="9" fill="#166534" text-anchor="middle">enter critical section</text>
+
+  <!-- Negative value note -->
+  <rect x="16" y="390" width="360" height="40" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="196" y="406" font-family="sans-serif" font-size="9" font-weight="bold" fill="#5b21b6" text-anchor="middle">Negative value insight</text>
+  <text x="196" y="421" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">|S-&gt;value| = number of processes currently waiting</text>
+
+  <!-- ========== BOTTOM RIGHT: signal(S) ========== -->
+
+  <!-- Vertical divider -->
+  <line x1="470" y1="172" x2="470" y2="490" stroke="#e5e7eb" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <text x="610" y="194" font-family="monospace" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">signal(S) — wakeup</text>
+
+  <!-- Step 1: value++ -->
+  <rect x="500" y="204" width="220" height="36" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="610" y="219" font-family="sans-serif" font-size="10" font-weight="bold" fill="#374151" text-anchor="middle">① Increment counter</text>
+  <text x="610" y="233" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">S-&gt;value++</text>
+
+  <!-- Arrow down -->
+  <line x1="610" y1="240" x2="610" y2="258" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="605,255 610,262 615,255" fill="#6b7280"/>
+
+  <!-- Diamond: value <= 0? -->
+  <polygon points="610,262 672,294 610,326 548,294" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="610" y="290" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">value</text>
+  <text x="610" y="304" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">&lt;= 0 ?</text>
+
+  <!-- YES branch: right → wakeup box -->
+  <text x="680" y="292" font-family="sans-serif" font-size="10" font-weight="bold" fill="#16a34a">YES</text>
+  <line x1="672" y1="294" x2="700" y2="294" stroke="#16a34a" stroke-width="1.5"/>
+  <polygon points="697,289 704,294 697,299" fill="#16a34a"/>
+  <rect x="704" y="270" width="44" height="48" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="726" y="290" font-family="sans-serif" font-size="9" font-weight="bold" fill="#166534" text-anchor="middle">Wake</text>
+  <text x="726" y="304" font-family="sans-serif" font-size="9" font-weight="bold" fill="#166534" text-anchor="middle">up P</text>
+
+  <!-- NO branch: left → down → done -->
+  <text x="530" y="292" font-family="sans-serif" font-size="10" font-weight="bold" fill="#9ca3af" text-anchor="middle">NO</text>
+  <line x1="548" y1="294" x2="508" y2="294" stroke="#9ca3af" stroke-width="1.5"/>
+  <line x1="508" y1="294" x2="508" y2="348" stroke="#9ca3af" stroke-width="1.5"/>
+  <line x1="508" y1="348" x2="560" y2="348" stroke="#9ca3af" stroke-width="1.5"/>
+  <polygon points="557,343 564,348 557,353" fill="#9ca3af"/>
+  <rect x="564" y="336" width="90" height="24" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+  <text x="609" y="352" font-family="sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">no waiters, done</text>
+
+  <!-- Wakeup explanation -->
+  <rect x="484" y="390" width="260" height="40" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="614" y="406" font-family="sans-serif" font-size="9" font-weight="bold" fill="#166534" text-anchor="middle">wakeup(P): P moves from</text>
+  <text x="614" y="421" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">waiting state to ready queue</text>
+
+</svg>

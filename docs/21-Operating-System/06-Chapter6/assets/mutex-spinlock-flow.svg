@@ -1,0 +1,98 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 620 360" width="620" height="360">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="620" height="360" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="310" y="26" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">Mutex Lock: acquire() and release()</text>
+
+  <!-- ====== LEFT: acquire() ====== -->
+  <text x="150" y="52" font-family="monospace" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">acquire()</text>
+
+  <!-- Check available -->
+  <!-- Diamond shape -->
+  <polygon points="150,70 200,100 150,130 100,100" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="150" y="96" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">available</text>
+  <text x="150" y="110" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">== true?</text>
+
+  <!-- NO branch: busy wait loop (left/back up) -->
+  <text x="68" y="98" font-family="sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">NO</text>
+  <!-- Arrow left from diamond -->
+  <line x1="100" y1="100" x2="40" y2="100" stroke="#dc2626" stroke-width="1.5"/>
+  <!-- Arrow up -->
+  <line x1="40" y1="100" x2="40" y2="60" stroke="#dc2626" stroke-width="1.5"/>
+  <!-- Busy wait label box -->
+  <rect x="0" y="56" width="38" height="24" rx="4" fill="#fee2e2" stroke="#dc2626" stroke-width="1"/>
+  <text x="19" y="66" font-family="sans-serif" font-size="8" fill="#dc2626" text-anchor="middle">busy</text>
+  <text x="19" y="76" font-family="sans-serif" font-size="8" fill="#dc2626" text-anchor="middle">wait</text>
+  <!-- Arrow curving back down to diamond -->
+  <line x1="40" y1="56" x2="40" y2="44" stroke="#dc2626" stroke-width="1.5"/>
+  <line x1="40" y1="44" x2="150" y2="44" stroke="#dc2626" stroke-width="1.5"/>
+  <line x1="150" y1="44" x2="150" y2="70" stroke="#dc2626" stroke-width="1.5"/>
+  <polygon points="145,67 150,74 155,67" fill="#dc2626"/>
+
+  <!-- YES branch: down -->
+  <text x="210" y="98" font-family="sans-serif" font-size="10" fill="#16a34a" text-anchor="middle">YES</text>
+  <line x1="200" y1="100" x2="240" y2="100" stroke="#16a34a" stroke-width="1.5"/>
+  <!-- curve to below diamond -->
+  <line x1="240" y1="100" x2="240" y2="155" stroke="#16a34a" stroke-width="1.5"/>
+  <line x1="240" y1="155" x2="150" y2="155" stroke="#16a34a" stroke-width="1.5"/>
+  <polygon points="153,150 146,155 153,160" fill="#16a34a"/>
+
+  <!-- Set available = false -->
+  <rect x="60" y="155" width="180" height="44" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="150" y="174" font-family="sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">Set available = false</text>
+  <text x="150" y="190" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">available = false</text>
+
+  <!-- Arrow down -->
+  <line x1="150" y1="199" x2="150" y2="221" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="145,218 150,225 155,218" fill="#6b7280"/>
+
+  <!-- Lock acquired (enter CS) -->
+  <rect x="60" y="225" width="180" height="40" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="150" y="244" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">Lock acquired</text>
+  <text x="150" y="259" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">→ enter critical section</text>
+
+  <!-- acquire() atomic boundary -->
+  <rect x="50" y="62" width="200" height="215" rx="8" fill="none" stroke="#7c3aed" stroke-width="1.5" stroke-dasharray="6,3"/>
+  <text x="150" y="295" font-family="sans-serif" font-size="9" font-weight="bold" fill="#7c3aed" text-anchor="middle">Must execute atomically</text>
+
+  <!-- ====== DIVIDER ====== -->
+  <line x1="310" y1="36" x2="310" y2="330" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- ====== RIGHT: release() ====== -->
+  <text x="470" y="52" font-family="monospace" font-size="12" font-weight="bold" fill="#374151" text-anchor="middle">release()</text>
+
+  <!-- Exit CS -->
+  <rect x="360" y="62" width="220" height="40" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="470" y="79" font-family="sans-serif" font-size="10" font-weight="bold" fill="#92400e" text-anchor="middle">Critical section done</text>
+  <text x="470" y="94" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">→ call release()</text>
+
+  <!-- Arrow -->
+  <line x1="470" y1="102" x2="470" y2="124" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="465,121 470,128 475,121" fill="#6b7280"/>
+
+  <!-- Set available = true -->
+  <rect x="360" y="128" width="220" height="44" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="470" y="147" font-family="sans-serif" font-size="10" font-weight="bold" fill="#166534" text-anchor="middle">Set available = true</text>
+  <text x="470" y="163" font-family="monospace" font-size="10" fill="#374151" text-anchor="middle">available = true</text>
+
+  <!-- Arrow -->
+  <line x1="470" y1="172" x2="470" y2="194" stroke="#6b7280" stroke-width="1.5"/>
+  <polygon points="465,191 470,198 475,191" fill="#6b7280"/>
+
+  <!-- Other waiting threads can proceed -->
+  <rect x="360" y="198" width="220" height="44" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="470" y="217" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">Lock released</text>
+  <text x="470" y="233" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">→ waiting threads resume spinning</text>
+
+  <!-- Spinlock note -->
+  <rect x="350" y="262" width="245" height="54" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="472" y="279" font-family="sans-serif" font-size="10" font-weight="bold" fill="#5b21b6" text-anchor="middle">Spinlock (Busy Wait)</text>
+  <text x="472" y="294" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">Waiting thread loops in acquire().</text>
+  <text x="472" y="308" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">No context switch — low latency.</text>
+
+  <!-- Bottom note -->
+  <text x="310" y="345" font-family="sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">Both acquire() and release() must be atomic — typically implemented using CAS</text>
+
+</svg>
