@@ -1,0 +1,101 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 520" width="760" height="520">
+
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <marker id="arr-blue" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+    <marker id="arr-green" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arr-pink" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#db2777"/>
+    </marker>
+  </defs>
+
+  <!-- Background -->
+  <rect x="0" y="0" width="760" height="520" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="380" y="26" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">Implementing a Monitor Using Semaphores</text>
+
+  <!-- ===== LEFT COLUMN: Semaphore Variables ===== -->
+  <text x="160" y="52" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">Control Variables</text>
+
+  <!-- mutex -->
+  <rect x="20" y="62" width="280" height="52" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="30" y="80" font-family="monospace" font-size="10" font-weight="bold" fill="#166534">semaphore mutex = 1</text>
+  <text x="30" y="98" font-family="sans-serif" font-size="9" fill="#374151">Guards monitor entry (only 1 process inside)</text>
+
+  <!-- next -->
+  <rect x="20" y="124" width="280" height="52" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="30" y="142" font-family="monospace" font-size="10" font-weight="bold" fill="#1e40af">semaphore next = 0</text>
+  <text x="30" y="160" font-family="sans-serif" font-size="9" fill="#374151">Suspends the signaling process (signal-and-wait)</text>
+
+  <!-- next_count -->
+  <rect x="20" y="186" width="280" height="38" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="30" y="204" font-family="monospace" font-size="10" font-weight="bold" fill="#374151">int next_count = 0</text>
+  <text x="30" y="218" font-family="sans-serif" font-size="9" fill="#6b7280">Counts processes suspended on next</text>
+
+  <!-- Divider -->
+  <line x1="20" y1="240" x2="300" y2="240" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Per-condition variable -->
+  <text x="160" y="262" font-family="sans-serif" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">Per Condition Variable x</text>
+
+  <!-- x_sem -->
+  <rect x="20" y="272" width="280" height="52" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="30" y="290" font-family="monospace" font-size="10" font-weight="bold" fill="#be185d">semaphore x_sem = 0</text>
+  <text x="30" y="308" font-family="sans-serif" font-size="9" fill="#374151">Blocks processes waiting on condition x</text>
+
+  <!-- x_count -->
+  <rect x="20" y="334" width="280" height="38" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="30" y="352" font-family="monospace" font-size="10" font-weight="bold" fill="#374151">int x_count = 0</text>
+  <text x="30" y="366" font-family="sans-serif" font-size="9" fill="#6b7280">Counts processes waiting on x</text>
+
+  <!-- ===== RIGHT COLUMN: Code / Logic ===== -->
+  <line x1="320" y1="42" x2="320" y2="490" stroke="#e5e7eb" stroke-width="1.5" stroke-dasharray="4,3"/>
+
+  <!-- Function F wrapper -->
+  <text x="540" y="52" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">External Function F — Wrapper</text>
+
+  <rect x="330" y="62" width="410" height="120" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="345" y="82" font-family="monospace" font-size="10" fill="#374151">wait(mutex);          // acquire monitor</text>
+  <text x="345" y="100" font-family="monospace" font-size="10" fill="#374151">...</text>
+  <text x="345" y="114" font-family="monospace" font-size="10" fill="#166534">  body of F</text>
+  <text x="345" y="128" font-family="monospace" font-size="10" fill="#374151">...</text>
+  <text x="345" y="148" font-family="monospace" font-size="10" fill="#374151">if (next_count &gt; 0)  // signaler waiting?</text>
+  <text x="345" y="164" font-family="monospace" font-size="10" fill="#1e40af">    signal(next);     // wake signaler first</text>
+  <text x="345" y="178" font-family="monospace" font-size="10" fill="#374151">else signal(mutex);  // release monitor</text>
+
+  <!-- x.wait() implementation -->
+  <text x="540" y="210" font-family="sans-serif" font-size="10" font-weight="bold" fill="#be185d" text-anchor="middle">x.wait() Implementation</text>
+  <rect x="330" y="218" width="410" height="106" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="345" y="238" font-family="monospace" font-size="10" fill="#374151">x_count++;           // one more waiter</text>
+  <text x="345" y="254" font-family="monospace" font-size="10" fill="#374151">if (next_count &gt; 0)</text>
+  <text x="345" y="270" font-family="monospace" font-size="10" fill="#1e40af">    signal(next);    // let signaler continue</text>
+  <text x="345" y="286" font-family="monospace" font-size="10" fill="#374151">else signal(mutex);  // release monitor</text>
+  <text x="345" y="302" font-family="monospace" font-size="10" fill="#be185d">wait(x_sem);         // block on condition</text>
+  <text x="345" y="318" font-family="monospace" font-size="10" fill="#374151">x_count--;           // woke up, decrement</text>
+
+  <!-- x.signal() implementation -->
+  <text x="540" y="350" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">x.signal() Implementation</text>
+  <rect x="330" y="358" width="410" height="90" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="345" y="378" font-family="monospace" font-size="10" fill="#374151">if (x_count &gt; 0) {  // anyone waiting?</text>
+  <text x="345" y="394" font-family="monospace" font-size="10" fill="#374151">    next_count++;    // I'm about to suspend</text>
+  <text x="345" y="410" font-family="monospace" font-size="10" fill="#16a34a">    signal(x_sem);   // wake one waiter</text>
+  <text x="345" y="426" font-family="monospace" font-size="10" fill="#be185d">    wait(next);      // signaler suspends itself</text>
+  <text x="345" y="442" font-family="monospace" font-size="10" fill="#374151">    next_count--;    // resumed, decrement</text>
+  <text x="345" y="458" font-family="monospace" font-size="10" fill="#374151">}                    // if no waiters: no-op</text>
+
+  <!-- Key insight note -->
+  <rect x="20" y="396" width="280" height="76" rx="6" fill="#ede9fe" stroke="#7c3aed" stroke-width="1"/>
+  <text x="160" y="415" font-family="sans-serif" font-size="9" font-weight="bold" fill="#5b21b6" text-anchor="middle">Signal-and-Wait Scheme</text>
+  <text x="160" y="431" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">When P signals Q via x.signal():</text>
+  <text x="160" y="445" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">P suspends on next, Q runs immediately.</text>
+  <text x="160" y="459" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">When Q leaves or waits again, P resumes.</text>
+  <text x="160" y="473" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Only one process active at a time.</text>
+
+</svg>

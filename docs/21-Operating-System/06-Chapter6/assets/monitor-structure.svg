@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 510" width="580" height="510">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <!-- Clip to the top-cap region (shared data) -->
+    <clipPath id="topCap">
+      <rect x="0" y="0" width="580" height="136"/>
+    </clipPath>
+    <!-- Clip to the bottom-cap region (initialization code) -->
+    <clipPath id="btmCap">
+      <rect x="0" y="408" width="580" height="102"/>
+    </clipPath>
+  </defs>
+
+  <!-- Canvas background -->
+  <rect x="0" y="0" width="580" height="510" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Oval parameters: cx=245 cy=272 rx=158 ry=218  (top y=54, bottom y=490) -->
+
+  <!-- 1. White oval base — makes the operations area white -->
+  <ellipse cx="245" cy="272" rx="158" ry="218" fill="white" stroke="none"/>
+
+  <!-- 2. Blue top cap (shared data) — clipped to y < 136 -->
+  <ellipse cx="245" cy="272" rx="158" ry="218" fill="#bfdbfe" stroke="none" clip-path="url(#topCap)"/>
+
+  <!-- 3. Blue bottom cap (initialization code) — clipped to y > 408 -->
+  <ellipse cx="245" cy="272" rx="158" ry="218" fill="#bfdbfe" stroke="none" clip-path="url(#btmCap)"/>
+
+  <!-- 4. Oval outline -->
+  <ellipse cx="245" cy="272" rx="158" ry="218" fill="none" stroke="#374151" stroke-width="2"/>
+
+  <!-- Separator line at y=136 -->
+  <!-- half-width = 158*sqrt(1-(136/218)^2) = 158*0.782 ≈ 124 → x: 121 to 369 -->
+  <line x1="121" y1="136" x2="369" y2="136" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Separator line at y=408 (symmetric) -->
+  <line x1="121" y1="408" x2="369" y2="408" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- "shared data" label in top blue cap -->
+  <text x="245" y="104" font-family="sans-serif" font-size="14" fill="#1e40af" text-anchor="middle">shared data</text>
+
+  <!-- Three operation columns (y=158 to y=325, height=167) -->
+  <rect x="138" y="158" width="46" height="167" rx="2" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.5"/>
+  <rect x="210" y="158" width="46" height="167" rx="2" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="280" y="254" font-family="sans-serif" font-size="20" fill="#9ca3af" text-anchor="middle">···</text>
+  <rect x="305" y="158" width="46" height="167" rx="2" fill="#d1d5db" stroke="#9ca3af" stroke-width="1.5"/>
+
+  <!-- Curly brace below columns (columns end at y=325) -->
+  <!-- Brace spans x=138 to x=351, centre at x=245, downward bump -->
+  <path d="M 138,333 Q 138,344 149,344 L 232,344 Q 245,344 245,355 Q 245,344 258,344 L 340,344 Q 351,344 351,333"
+        stroke="#374151" stroke-width="1.5" fill="none"/>
+
+  <!-- "operations" label below brace -->
+  <text x="245" y="374" font-family="sans-serif" font-size="14" fill="#374151" text-anchor="middle">operations</text>
+
+  <!-- "initialization code" label in bottom blue cap -->
+  <text x="245" y="439" font-family="sans-serif" font-size="14" fill="#1e40af" text-anchor="middle">initialization</text>
+  <text x="245" y="460" font-family="sans-serif" font-size="14" fill="#1e40af" text-anchor="middle">code</text>
+
+  <!-- ===== Entry queue (top-right, diagonal) ===== -->
+  <!-- Contact dot on oval right boundary at y=136 (x=369) -->
+  <circle cx="369" cy="136" r="4" fill="#374151"/>
+
+  <!-- Arrow: contact → Box 1 -->
+  <line x1="369" y1="136" x2="402" y2="113" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box 1: center (415,107), rect x=402,y=94 w=27 h=27 (lightest blue — next to enter) -->
+  <rect x="402" y="94" width="27" height="27" rx="2" fill="#bfdbfe" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Arrow: Box 1 → Box 2 -->
+  <line x1="429" y1="105" x2="454" y2="86" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box 2: center (466,79), rect x=452,y=66 w=27 h=27 -->
+  <rect x="452" y="66" width="27" height="27" rx="2" fill="#93c5fd" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- Arrow: Box 2 → Box 3 -->
+  <line x1="479" y1="78" x2="503" y2="59" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Box 3: center (516,52), rect x=503,y=39 w=27 h=27 (darker gray — further back) -->
+  <rect x="503" y="39" width="27" height="27" rx="2" fill="#9ca3af" stroke="#6b7280" stroke-width="1.5"/>
+
+  <!-- Terminator after Box 3 (⊢ symbol: a line with a perpendicular cap) -->
+  <line x1="530" y1="50" x2="546" y2="40" stroke="#374151" stroke-width="1.5"/>
+  <line x1="543" y1="34" x2="550" y2="46" stroke="#374151" stroke-width="2.5"/>
+
+  <!-- "entry queue" label above the queue -->
+  <text x="478" y="30" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">entry queue</text>
+
+</svg>
