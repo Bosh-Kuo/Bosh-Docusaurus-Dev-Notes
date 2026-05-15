@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 440" width="760" height="440">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="760" height="440" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="380" y="26" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">Deadlock: Circular Wait (Resource Allocation Graph)</text>
+  <text x="380" y="42" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">P0 holds S and waits for Q; P1 holds Q and waits for S — neither can ever proceed</text>
+
+  <!-- ===== BOXES ===== -->
+
+  <!-- P0: top-left, process (blue) -->
+  <rect x="60" y="58" width="168" height="60" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="144" y="78" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Process P0</text>
+  <text x="144" y="95" font-family="sans-serif" font-size="10" fill="#16a34a" text-anchor="middle">acquired S ✓</text>
+  <text x="144" y="110" font-family="sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">waiting for Q...</text>
+
+  <!-- Q: top-right, semaphore (amber) -->
+  <rect x="532" y="58" width="168" height="60" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="616" y="76" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">Semaphore</text>
+  <text x="616" y="95" font-family="sans-serif" font-size="16" font-weight="bold" fill="#92400e" text-anchor="middle">Q</text>
+  <text x="616" y="111" font-family="sans-serif" font-size="10" fill="#16a34a" text-anchor="middle">held by P1</text>
+
+  <!-- S: bottom-left, semaphore (amber) -->
+  <rect x="60" y="312" width="168" height="60" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="144" y="330" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">Semaphore</text>
+  <text x="144" y="349" font-family="sans-serif" font-size="16" font-weight="bold" fill="#92400e" text-anchor="middle">S</text>
+  <text x="144" y="365" font-family="sans-serif" font-size="10" fill="#16a34a" text-anchor="middle">held by P0</text>
+
+  <!-- P1: bottom-right, process (blue) -->
+  <rect x="532" y="312" width="168" height="60" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="616" y="332" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1e40af" text-anchor="middle">Process P1</text>
+  <text x="616" y="349" font-family="sans-serif" font-size="10" fill="#16a34a" text-anchor="middle">acquired Q ✓</text>
+  <text x="616" y="364" font-family="sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">waiting for S...</text>
+
+  <!-- ===== ARROWS ===== -->
+
+  <!-- Arrow 1: P0 → Q (request: P0 waits for Q), red dashed, rightward -->
+  <line x1="230" y1="88" x2="522" y2="88" stroke="#dc2626" stroke-width="2" stroke-dasharray="8,4"/>
+  <polygon points="512,83 525,88 512,93" fill="#dc2626"/>
+  <text x="378" y="78" font-family="sans-serif" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">waits for</text>
+
+  <!-- Arrow 2: Q → P1 (assignment: Q held by P1), green solid, downward -->
+  <line x1="616" y1="120" x2="616" y2="306" stroke="#16a34a" stroke-width="2"/>
+  <polygon points="611,296 616,309 621,296" fill="#16a34a"/>
+  <text x="648" y="218" font-family="sans-serif" font-size="10" font-weight="bold" fill="#16a34a" text-anchor="start">held by</text>
+
+  <!-- Arrow 3: P1 → S (request: P1 waits for S), red dashed, leftward -->
+  <line x1="530" y1="342" x2="238" y2="342" stroke="#dc2626" stroke-width="2" stroke-dasharray="8,4"/>
+  <polygon points="248,337 235,342 248,347" fill="#dc2626"/>
+  <text x="378" y="364" font-family="sans-serif" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">waits for</text>
+
+  <!-- Arrow 4: S → P0 (assignment: S held by P0), green solid, upward -->
+  <line x1="144" y1="310" x2="144" y2="124" stroke="#16a34a" stroke-width="2"/>
+  <polygon points="139,134 144,121 149,134" fill="#16a34a"/>
+  <text x="112" y="218" font-family="sans-serif" font-size="10" font-weight="bold" fill="#16a34a" text-anchor="end">held by</text>
+
+  <!-- ===== CENTER DEADLOCK BADGE ===== -->
+  <circle cx="380" cy="215" r="66" fill="#fee2e2" stroke="#dc2626" stroke-width="2"/>
+  <text x="380" y="205" font-family="sans-serif" font-size="16" font-weight="bold" fill="#dc2626" text-anchor="middle">DEADLOCK</text>
+  <text x="380" y="222" font-family="sans-serif" font-size="9" fill="#7f1d1d" text-anchor="middle">circular wait:</text>
+  <text x="380" y="235" font-family="sans-serif" font-size="9" fill="#7f1d1d" text-anchor="middle">no process can proceed</text>
+
+  <!-- ===== LEGEND ===== -->
+  <rect x="90" y="392" width="580" height="36" rx="6" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <line x1="108" y1="410" x2="140" y2="410" stroke="#dc2626" stroke-width="2" stroke-dasharray="6,3"/>
+  <polygon points="132,405 144,410 132,415" fill="#dc2626"/>
+  <text x="150" y="414" font-family="sans-serif" font-size="9" fill="#374151">request edge — process waits for resource</text>
+  <line x1="398" y1="410" x2="430" y2="410" stroke="#16a34a" stroke-width="2"/>
+  <polygon points="422,405 434,410 422,415" fill="#16a34a"/>
+  <text x="440" y="414" font-family="sans-serif" font-size="9" fill="#374151">assignment edge — resource held by process</text>
+
+</svg>

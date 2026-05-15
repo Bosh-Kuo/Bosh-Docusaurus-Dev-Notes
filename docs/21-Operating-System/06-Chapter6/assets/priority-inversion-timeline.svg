@@ -1,0 +1,155 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 490" width="760" height="490">
+
+  <!-- Background -->
+  <rect x="0" y="0" width="760" height="490" rx="8" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- Title -->
+  <text x="380" y="22" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">Priority Inversion: Problem vs. Priority-Inheritance Protocol Fix</text>
+
+  <!-- ==================== SECTION 1: WITHOUT PRIORITY INHERITANCE ==================== -->
+  <rect x="8" y="30" width="744" height="18" rx="3" fill="#fee2e2"/>
+  <text x="380" y="43" font-family="sans-serif" font-size="10" font-weight="bold" fill="#dc2626" text-anchor="middle">Without Priority Inheritance (Problem)</text>
+
+  <!-- Row labels (Section 1) -->
+  <!-- H -->
+  <text x="46" y="70" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">H</text>
+  <text x="46" y="82" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">pri=3</text>
+  <!-- M -->
+  <text x="46" y="110" font-family="sans-serif" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">M</text>
+  <text x="46" y="122" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">pri=2</text>
+  <!-- L -->
+  <text x="46" y="150" font-family="sans-serif" font-size="11" font-weight="bold" fill="#be185d" text-anchor="middle">L</text>
+  <text x="46" y="162" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">pri=1</text>
+
+  <!-- Phase boundaries: t0=96, t1=208, t2=316, t3=490, t4=572, tend=700 -->
+
+  <!-- H bars (Section 1, y=56 h=32) -->
+  <rect x="96"  y="56" width="112" height="32" rx="3" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="208" y="56" width="364" height="32" rx="3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="390" y="77" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">waiting for S (blocked by L...)</text>
+  <rect x="572" y="56" width="128" height="32" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="636" y="77" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">RUNS</text>
+
+  <!-- M bars (Section 1, y=96 h=32) -->
+  <rect x="96"  y="96" width="220" height="32" rx="3" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="316" y="96" width="174" height="32" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="403" y="117" font-family="sans-serif" font-size="9" font-weight="bold" fill="#92400e" text-anchor="middle">RUNS — preempts L!</text>
+  <rect x="490" y="96" width="210" height="32" rx="3" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- L bars (Section 1, y=136 h=32) -->
+  <rect x="96"  y="136" width="220" height="32" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="206" y="157" font-family="sans-serif" font-size="9" font-weight="bold" fill="#be185d" text-anchor="middle">RUNS (holds S)</text>
+  <rect x="316" y="136" width="174" height="32" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="1.5" stroke-dasharray="5,3" opacity="0.55"/>
+  <text x="403" y="157" font-family="sans-serif" font-size="9" fill="#9d174d" text-anchor="middle">preempted by M</text>
+  <rect x="490" y="136" width="82"  height="32" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="531" y="157" font-family="sans-serif" font-size="8" fill="#be185d" text-anchor="middle">resumes</text>
+  <rect x="572" y="136" width="128" height="32" rx="3" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="636" y="157" font-family="sans-serif" font-size="8" fill="#16a34a" text-anchor="middle">released S</text>
+
+  <!-- Vertical event markers (Section 1) -->
+  <line x1="208" y1="52" x2="208" y2="178" stroke="#374151" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+  <line x1="316" y1="52" x2="316" y2="178" stroke="#d97706" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+  <line x1="490" y1="52" x2="490" y2="178" stroke="#374151" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+  <line x1="572" y1="52" x2="572" y2="178" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+
+  <!-- Section 1 phase labels -->
+  <text x="152" y="192" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">L runs</text>
+  <text x="262" y="192" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">H blocks</text>
+  <text x="403" y="192" font-family="sans-serif" font-size="8" fill="#d97706" text-anchor="middle">M preempts L (H stuck!)</text>
+  <text x="531" y="192" font-family="sans-serif" font-size="8" fill="#be185d" text-anchor="middle">L releases S</text>
+  <text x="636" y="192" font-family="sans-serif" font-size="8" fill="#2563eb" text-anchor="middle">H finally runs</text>
+
+  <!-- H wait duration bracket (Section 1) -->
+  <line x1="208" y1="57" x2="572" y2="57" stroke="#dc2626" stroke-width="1.5"/>
+  <polygon points="212,53 206,57 212,61" fill="#dc2626"/>
+  <polygon points="568,53 574,57 568,61" fill="#dc2626"/>
+  <text x="390" y="53" font-family="sans-serif" font-size="8" font-weight="bold" fill="#dc2626" text-anchor="middle">H blocked for a long time (M delays H!)</text>
+
+  <!-- ==================== DIVIDER ==================== -->
+  <line x1="8" y1="208" x2="752" y2="208" stroke="#d1d5db" stroke-width="1.5"/>
+
+  <!-- ==================== SECTION 2: WITH PRIORITY INHERITANCE ==================== -->
+  <rect x="8" y="214" width="744" height="18" rx="3" fill="#dcfce7"/>
+  <text x="380" y="227" font-family="sans-serif" font-size="10" font-weight="bold" fill="#16a34a" text-anchor="middle">With Priority Inheritance (Solution)</text>
+
+  <!-- Row labels (Section 2) -->
+  <text x="46" y="254" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1e40af" text-anchor="middle">H</text>
+  <text x="46" y="266" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">pri=3</text>
+  <text x="46" y="294" font-family="sans-serif" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">M</text>
+  <text x="46" y="306" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">pri=2</text>
+  <text x="46" y="334" font-family="sans-serif" font-size="11" font-weight="bold" fill="#be185d" text-anchor="middle">L</text>
+  <text x="46" y="346" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">pri=1</text>
+
+  <!-- H bars (Section 2, y=240 h=32) -->
+  <rect x="96"  y="240" width="112" height="32" rx="3" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="208" y="240" width="282" height="32" rx="3" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="349" y="261" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">waiting for S (shorter!)</text>
+  <rect x="490" y="240" width="122" height="32" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="551" y="261" font-family="sans-serif" font-size="10" font-weight="bold" fill="#1e40af" text-anchor="middle">RUNS earlier!</text>
+  <rect x="612" y="240" width="88"  height="32" rx="3" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+
+  <!-- M bars (Section 2, y=280 h=32) -->
+  <rect x="96"  y="280" width="220" height="32" rx="3" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="316" y="280" width="296" height="32" rx="3" fill="#f3f4f6" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <text x="464" y="301" font-family="sans-serif" font-size="9" fill="#dc2626" text-anchor="middle">blocked — L has H's priority, M cannot preempt!</text>
+  <rect x="612" y="280" width="88"  height="32" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="656" y="301" font-family="sans-serif" font-size="9" font-weight="bold" fill="#92400e" text-anchor="middle">RUNS</text>
+
+  <!-- L bars (Section 2, y=320 h=32) -->
+  <rect x="96"  y="320" width="220" height="32" rx="3" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="206" y="341" font-family="sans-serif" font-size="9" font-weight="bold" fill="#be185d" text-anchor="middle">RUNS (holds S)</text>
+  <rect x="316" y="320" width="174" height="32" rx="3" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="403" y="336" font-family="sans-serif" font-size="8" font-weight="bold" fill="#5b21b6" text-anchor="middle">RUNS (inherited</text>
+  <text x="403" y="348" font-family="sans-serif" font-size="8" fill="#5b21b6" text-anchor="middle">priority = 3)</text>
+  <rect x="490" y="320" width="210" height="32" rx="3" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="600" y="341" font-family="sans-serif" font-size="8" fill="#16a34a" text-anchor="middle">released S, done</text>
+
+  <!-- Vertical event markers (Section 2) -->
+  <line x1="208" y1="236" x2="208" y2="362" stroke="#374151" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+  <line x1="316" y1="236" x2="316" y2="362" stroke="#7c3aed" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+  <line x1="490" y1="236" x2="490" y2="362" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+  <line x1="612" y1="236" x2="612" y2="362" stroke="#d97706" stroke-width="1" stroke-dasharray="3,2" opacity="0.6"/>
+
+  <!-- Section 2 phase labels -->
+  <text x="152" y="376" font-family="sans-serif" font-size="8" fill="#6b7280" text-anchor="middle">L runs</text>
+  <text x="262" y="376" font-family="sans-serif" font-size="8" fill="#7c3aed" text-anchor="middle">H blocks,</text>
+  <text x="262" y="386" font-family="sans-serif" font-size="8" fill="#7c3aed" text-anchor="middle">L inherits pri</text>
+  <text x="403" y="376" font-family="sans-serif" font-size="8" fill="#5b21b6" text-anchor="middle">M blocked (L runs through)</text>
+  <text x="551" y="376" font-family="sans-serif" font-size="8" fill="#2563eb" text-anchor="middle">H runs (earlier!)</text>
+  <text x="656" y="376" font-family="sans-serif" font-size="8" fill="#d97706" text-anchor="middle">M runs last</text>
+
+  <!-- H wait duration bracket (Section 2) -->
+  <line x1="208" y1="241" x2="490" y2="241" stroke="#16a34a" stroke-width="1.5"/>
+  <polygon points="212,237 206,241 212,245" fill="#16a34a"/>
+  <polygon points="486,237 492,241 486,245" fill="#16a34a"/>
+  <text x="349" y="237" font-family="sans-serif" font-size="8" font-weight="bold" fill="#16a34a" text-anchor="middle">H blocked for shorter time — runs sooner</text>
+
+  <!-- ==================== LEGEND ==================== -->
+  <rect x="8" y="400" width="744" height="82" rx="6" fill="#f3f4f6" stroke="#e5e7eb" stroke-width="1"/>
+  <text x="20" y="416" font-family="sans-serif" font-size="9" font-weight="bold" fill="#374151">Legend:</text>
+  <!-- Blue = H running -->
+  <rect x="72" y="406" width="14" height="14" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="90" y="417" font-family="sans-serif" font-size="9" fill="#374151">H running</text>
+  <!-- Amber = M running -->
+  <rect x="168" y="406" width="14" height="14" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="186" y="417" font-family="sans-serif" font-size="9" fill="#374151">M running</text>
+  <!-- Pink = L running -->
+  <rect x="264" y="406" width="14" height="14" rx="2" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="282" y="417" font-family="sans-serif" font-size="9" fill="#374151">L running</text>
+  <!-- Purple = L with inherited priority -->
+  <rect x="360" y="406" width="14" height="14" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="378" y="417" font-family="sans-serif" font-size="9" fill="#374151">L with inherited priority</text>
+  <!-- Gray dashed = blocked/waiting -->
+  <rect x="516" y="406" width="14" height="14" rx="2" fill="#e5e7eb" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,2"/>
+  <text x="534" y="417" font-family="sans-serif" font-size="9" fill="#374151">waiting / blocked</text>
+  <!-- Red dashed = cannot preempt -->
+  <rect x="642" y="406" width="14" height="14" rx="2" fill="#f3f4f6" stroke="#dc2626" stroke-width="1.5" stroke-dasharray="4,2"/>
+  <text x="660" y="417" font-family="sans-serif" font-size="9" fill="#374151">blocked by PI</text>
+
+  <text x="20" y="440" font-family="sans-serif" font-size="9" font-weight="bold" fill="#dc2626">Problem:</text>
+  <text x="72" y="440" font-family="sans-serif" font-size="9" fill="#374151">M (priority=2) effectively delays H (priority=3) because M can preempt L which holds the resource H needs.</text>
+  <text x="20" y="458" font-family="sans-serif" font-size="9" font-weight="bold" fill="#16a34a">Fix:</text>
+  <text x="44" y="458" font-family="sans-serif" font-size="9" fill="#374151">L inherits H's priority when H blocks on S. M can no longer preempt L. H gets S sooner.</text>
+  <text x="20" y="476" font-family="sans-serif" font-size="9" fill="#7c3aed">Priority numbers: H=3 &gt; M=2 &gt; L=1. In "Without PI", H waits longer than necessary due to M. In "With PI", H runs before M.</text>
+
+</svg>
