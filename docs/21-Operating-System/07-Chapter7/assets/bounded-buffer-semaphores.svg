@@ -1,0 +1,76 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 230" width="640" height="230">
+  <defs>
+    <marker id="bb-arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ===== PRODUCER ===== -->
+  <rect x="14" y="55" width="100" height="60" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="64" y="80" font-family="sans-serif" font-size="13" font-weight="bold" fill="#166534" text-anchor="middle">Producer</text>
+  <text x="64" y="98" font-family="sans-serif" font-size="10" fill="#166534" text-anchor="middle">wait(empty)</text>
+  <text x="64" y="110" font-family="sans-serif" font-size="10" fill="#166534" text-anchor="middle">wait(mutex)</text>
+
+  <!-- arrow producer → buffer -->
+  <line x1="114" y1="85" x2="152" y2="85" stroke="#374151" stroke-width="1.5" marker-end="url(#bb-arr)"/>
+  <text x="133" y="79" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">add</text>
+
+  <!-- ===== BUFFER POOL (n slots) ===== -->
+  <!-- slot 0: full -->
+  <rect x="155" y="60" width="52" height="50" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+  <text x="181" y="80" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">item</text>
+  <text x="181" y="96" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">[0]</text>
+
+  <!-- slot 1: full -->
+  <rect x="209" y="60" width="52" height="50" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+  <text x="235" y="80" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">item</text>
+  <text x="235" y="96" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">[1]</text>
+
+  <!-- slot 2: full -->
+  <rect x="263" y="60" width="52" height="50" rx="3" fill="#fde68a" stroke="#d97706" stroke-width="1.5"/>
+  <text x="289" y="80" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">item</text>
+  <text x="289" y="96" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">[2]</text>
+
+  <!-- slot 3: empty -->
+  <rect x="317" y="60" width="52" height="50" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="343" y="90" font-family="sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">[3]</text>
+
+  <!-- slot 4: empty -->
+  <rect x="371" y="60" width="52" height="50" rx="3" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="397" y="90" font-family="sans-serif" font-size="10" fill="#9ca3af" text-anchor="middle">[4]</text>
+
+  <!-- Buffer label -->
+  <text x="276" y="44" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">Buffer Pool (n = 5)</text>
+  <line x1="155" y1="48" x2="423" y2="48" stroke="#9ca3af" stroke-width="1" stroke-dasharray="4,3"/>
+
+  <!-- arrow buffer → consumer -->
+  <line x1="423" y1="85" x2="460" y2="85" stroke="#374151" stroke-width="1.5" marker-end="url(#bb-arr)"/>
+  <text x="441" y="79" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">remove</text>
+
+  <!-- ===== CONSUMER ===== -->
+  <rect x="463" y="55" width="108" height="60" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="517" y="80" font-family="sans-serif" font-size="13" font-weight="bold" fill="#9d174d" text-anchor="middle">Consumer</text>
+  <text x="517" y="98" font-family="sans-serif" font-size="10" fill="#9d174d" text-anchor="middle">wait(full)</text>
+  <text x="517" y="110" font-family="sans-serif" font-size="10" fill="#9d174d" text-anchor="middle">wait(mutex)</text>
+
+  <!-- ===== SEMAPHORE STATE ===== -->
+  <text x="320" y="142" font-family="sans-serif" font-size="11" font-weight="bold" fill="#374151" text-anchor="middle">Semaphore States (snapshot: 3 items in buffer)</text>
+
+  <!-- mutex -->
+  <rect x="60" y="155" width="130" height="60" rx="6" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="125" y="175" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">mutex = 1</text>
+  <text x="125" y="191" font-family="sans-serif" font-size="10" fill="#1d4ed8" text-anchor="middle">binary semaphore</text>
+  <text x="125" y="205" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">mutual exclusion</text>
+
+  <!-- empty -->
+  <rect x="245" y="155" width="130" height="60" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="310" y="175" font-family="sans-serif" font-size="12" font-weight="bold" fill="#92400e" text-anchor="middle">empty = 2</text>
+  <text x="310" y="191" font-family="sans-serif" font-size="10" fill="#92400e" text-anchor="middle">counting semaphore</text>
+  <text x="310" y="205" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">free slots (init = n)</text>
+
+  <!-- full -->
+  <rect x="430" y="155" width="130" height="60" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="495" y="175" font-family="sans-serif" font-size="12" font-weight="bold" fill="#9d174d" text-anchor="middle">full = 3</text>
+  <text x="495" y="191" font-family="sans-serif" font-size="10" fill="#9d174d" text-anchor="middle">counting semaphore</text>
+  <text x="495" y="205" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">filled slots (init = 0)</text>
+</svg>

@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 560 460" width="560" height="460">
+  <defs>
+    <marker id="dp-arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ========== TABLE ========== -->
+  <circle cx="280" cy="230" r="105" fill="#fef3c7" stroke="#d97706" stroke-width="2.5"/>
+
+  <!-- Rice bowl -->
+  <circle cx="280" cy="230" r="36" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="280" y="226" font-family="sans-serif" font-size="12" font-weight="bold" fill="#166534" text-anchor="middle">RICE</text>
+  <text x="280" y="241" font-family="sans-serif" font-size="10" fill="#166534" text-anchor="middle">bowl</text>
+
+  <!-- ========== CHOPSTICKS (between philosophers, on table edge) ========== -->
+  <!-- Chopstick positions (on table surface near edge), rotated tangentially -->
+  <!-- C0 between P0 and P1, angle 306° from center, on table at radius ~82 -->
+  <!-- C0 angle 306° = top-right area -->
+  <g transform="translate(323, 155) rotate(36)">
+    <rect x="-5" y="-18" width="10" height="36" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  </g>
+  <text x="343" y="133" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7c3aed" text-anchor="middle">C0</text>
+
+  <!-- C1 between P1 and P2, angle 18° = right area -->
+  <g transform="translate(359, 270) rotate(108)">
+    <rect x="-5" y="-18" width="10" height="36" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  </g>
+  <text x="385" y="278" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7c3aed" text-anchor="middle">C1</text>
+
+  <!-- C2 between P2 and P3, angle 90° = bottom -->
+  <g transform="translate(280, 333) rotate(0)">
+    <rect x="-5" y="-18" width="10" height="36" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  </g>
+  <text x="280" y="370" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7c3aed" text-anchor="middle">C2</text>
+
+  <!-- C3 between P3 and P4, angle 162° = left area -->
+  <g transform="translate(201, 270) rotate(108)">
+    <rect x="-5" y="-18" width="10" height="36" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  </g>
+  <text x="175" y="278" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7c3aed" text-anchor="middle">C3</text>
+
+  <!-- C4 between P4 and P0, angle 234° = top-left area -->
+  <g transform="translate(237, 155) rotate(36)">
+    <rect x="-5" y="-18" width="10" height="36" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  </g>
+  <text x="217" y="133" font-family="sans-serif" font-size="10" font-weight="bold" fill="#7c3aed" text-anchor="middle">C4</text>
+
+  <!-- ========== PHILOSOPHERS ========== -->
+  <!-- Philosopher positions at radius 165 from center (280,230) -->
+  <!-- P0: 270° → (280, 65) -->
+  <!-- Body -->
+  <circle cx="280" cy="65" r="24" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <!-- Head -->
+  <circle cx="280" cy="47" r="10" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <!-- Shoulders -->
+  <path d="M260 78 Q280 88 300 78" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="280" y="70" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">P0</text>
+
+  <!-- P1: 342° → (437, 179) -->
+  <circle cx="437" cy="179" r="24" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="437" cy="161" r="10" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <path d="M417 192 Q437 202 457 192" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="437" y="184" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">P1</text>
+
+  <!-- P2: 54° → (377, 363) -->
+  <circle cx="377" cy="363" r="24" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="377" cy="345" r="10" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <path d="M357 376 Q377 386 397 376" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="377" y="368" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">P2</text>
+
+  <!-- P3: 126° → (183, 363) -->
+  <circle cx="183" cy="363" r="24" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="183" cy="345" r="10" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <path d="M163 376 Q183 386 203 376" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="183" y="368" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">P3</text>
+
+  <!-- P4: 198° → (123, 179) -->
+  <circle cx="123" cy="179" r="24" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <circle cx="123" cy="161" r="10" fill="#bfdbfe" stroke="#2563eb" stroke-width="1.5"/>
+  <path d="M103 192 Q123 202 143 192" fill="none" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="123" y="184" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">P4</text>
+
+  <!-- ========== CHOPSTICK OWNERSHIP LEGEND ========== -->
+  <!-- chopstick[i] is between Pi and P(i+1) -->
+  <!-- Label: chopstick[i] is to the right of Pi -->
+  <!-- Ownership arrows (Pi can pick up chopstick[i] on left, chopstick[(i+1)%5] on right) -->
+
+  <!-- Legend at bottom -->
+  <rect x="20" y="415" width="520" height="36" rx="6" fill="#f9fafb" stroke="#e5e7eb" stroke-width="1"/>
+  <rect x="32" y="425" width="14" height="14" rx="2" fill="#ede9fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="52" y="436" font-family="sans-serif" font-size="11" fill="#374151">Chopstick Ci  (between Pi and P(i+1)%5)</text>
+  <circle cx="310" cy="432" r="8" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="325" y="436" font-family="sans-serif" font-size="11" fill="#374151">Philosopher Pi</text>
+</svg>

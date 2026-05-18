@@ -1,0 +1,88 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 240" width="640" height="240">
+  <defs>
+    <marker id="rw-arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="rw-arr-r" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="rw-arr-b" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#2563eb"/>
+    </marker>
+  </defs>
+
+  <!-- ===== LEFT SCENARIO: Multiple Readers (Allowed) ===== -->
+  <text x="160" y="18" font-family="sans-serif" font-size="12" font-weight="bold" fill="#166534" text-anchor="middle">Concurrent Readers (Allowed)</text>
+
+  <!-- Database -->
+  <ellipse cx="160" cy="130" rx="42" ry="52" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="160" y="126" font-family="sans-serif" font-size="11" font-weight="bold" fill="#166534" text-anchor="middle">Shared</text>
+  <text x="160" y="141" font-family="sans-serif" font-size="11" font-weight="bold" fill="#166534" text-anchor="middle">DB</text>
+
+  <!-- Reader 1 (top) -->
+  <rect x="8" y="38" width="72" height="32" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="44" y="54" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Reader 1</text>
+  <text x="44" y="66" font-family="sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">reading...</text>
+  <line x1="80" y1="54" x2="116" y2="90" stroke="#16a34a" stroke-width="1.5" marker-end="url(#rw-arr)"/>
+
+  <!-- Reader 2 (middle) -->
+  <rect x="8" y="110" width="72" height="32" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="44" y="126" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Reader 2</text>
+  <text x="44" y="138" font-family="sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">reading...</text>
+  <line x1="80" y1="126" x2="116" y2="126" stroke="#16a34a" stroke-width="1.5" marker-end="url(#rw-arr)"/>
+
+  <!-- Reader 3 (bottom) -->
+  <rect x="8" y="182" width="72" height="32" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="44" y="198" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Reader 3</text>
+  <text x="44" y="210" font-family="sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">reading...</text>
+  <line x1="80" y1="198" x2="116" y2="168" stroke="#16a34a" stroke-width="1.5" marker-end="url(#rw-arr)"/>
+
+  <!-- read_count label -->
+  <rect x="106" y="196" width="108" height="32" rx="4" fill="#f0fdf4" stroke="#16a34a" stroke-width="1"/>
+  <text x="160" y="210" font-family="sans-serif" font-size="10" fill="#166534" text-anchor="middle">read_count = 3</text>
+  <text x="160" y="222" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">rw_mutex locked</text>
+
+  <!-- OK label -->
+  <text x="160" y="34" font-family="sans-serif" font-size="11" fill="#16a34a" text-anchor="middle">read_count tracks concurrent readers</text>
+
+  <!-- Divider -->
+  <line x1="320" y1="10" x2="320" y2="230" stroke="#e5e7eb" stroke-width="2" stroke-dasharray="6,4"/>
+
+  <!-- ===== RIGHT SCENARIO: Writer Needs Exclusive Access ===== -->
+  <text x="480" y="22" font-family="sans-serif" font-size="12" font-weight="bold" fill="#9d174d" text-anchor="middle">Writer Needs Exclusive Access</text>
+
+  <!-- Database (locked) -->
+  <ellipse cx="480" cy="130" rx="42" ry="52" fill="#fce7f3" stroke="#db2777" stroke-width="2.5"/>
+  <text x="480" y="120" font-family="sans-serif" font-size="11" font-weight="bold" fill="#9d174d" text-anchor="middle">Shared</text>
+  <text x="480" y="135" font-family="sans-serif" font-size="11" font-weight="bold" fill="#9d174d" text-anchor="middle">DB</text>
+  <!-- Lock icon -->
+  <rect x="469" y="145" width="22" height="16" rx="3" fill="#9d174d"/>
+  <path d="M472 145 Q472 138 480 138 Q488 138 488 145" fill="none" stroke="#9d174d" stroke-width="2.5"/>
+
+  <!-- Writer (active, has rw_mutex) -->
+  <rect x="336" y="110" width="80" height="38" rx="5" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+  <text x="376" y="128" font-family="sans-serif" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">Writer</text>
+  <text x="376" y="141" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">writing...</text>
+  <line x1="416" y1="129" x2="436" y2="129" stroke="#dc2626" stroke-width="2" marker-end="url(#rw-arr-r)"/>
+
+  <!-- Blocked Reader A -->
+  <rect x="336" y="38" width="80" height="32" rx="5" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="376" y="53" font-family="sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Reader A</text>
+  <text x="376" y="65" font-family="sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">blocked</text>
+  <!-- X mark -->
+  <line x1="422" y1="52" x2="438" y2="60" stroke="#dc2626" stroke-width="2"/>
+  <line x1="438" y1="52" x2="422" y2="60" stroke="#dc2626" stroke-width="2"/>
+
+  <!-- Blocked Reader B -->
+  <rect x="336" y="182" width="80" height="32" rx="5" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="376" y="197" font-family="sans-serif" font-size="11" fill="#6b7280" text-anchor="middle">Reader B</text>
+  <text x="376" y="209" font-family="sans-serif" font-size="9" fill="#9ca3af" text-anchor="middle">blocked</text>
+  <!-- X mark -->
+  <line x1="422" y1="196" x2="438" y2="204" stroke="#dc2626" stroke-width="2"/>
+  <line x1="438" y1="196" x2="422" y2="204" stroke="#dc2626" stroke-width="2"/>
+
+  <!-- rw_mutex label -->
+  <rect x="440" y="196" width="118" height="32" rx="4" fill="#fef2f2" stroke="#dc2626" stroke-width="1"/>
+  <text x="499" y="210" font-family="sans-serif" font-size="10" fill="#dc2626" text-anchor="middle">rw_mutex = 0</text>
+  <text x="499" y="222" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">writer holds lock</text>
+</svg>
