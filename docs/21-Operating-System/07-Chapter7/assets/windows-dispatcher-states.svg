@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 580 220" width="580" height="220">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- nonsignaled state (left) -->
+  <ellipse cx="145" cy="120" rx="115" ry="52" fill="#fce7f3" stroke="#db2777" stroke-width="2"/>
+  <text x="145" y="115" font-family="sans-serif" font-size="14" font-weight="bold" fill="#9d174d" text-anchor="middle">nonsignaled</text>
+  <text x="145" y="134" font-family="sans-serif" font-size="11" fill="#9d174d" text-anchor="middle">not available</text>
+
+  <!-- signaled state (right) -->
+  <ellipse cx="435" cy="120" rx="115" ry="52" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="435" y="115" font-family="sans-serif" font-size="14" font-weight="bold" fill="#166534" text-anchor="middle">signaled</text>
+  <text x="435" y="134" font-family="sans-serif" font-size="11" fill="#166534" text-anchor="middle">available</text>
+
+  <!-- top arrow: nonsignaled → signaled (owner releases) -->
+  <path d="M 260 108 C 276 48, 304 48, 320 108" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="290" y="37" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">owner thread releases mutex lock</text>
+
+  <!-- bottom arrow: signaled → nonsignaled (thread acquires) -->
+  <path d="M 320 132 C 304 192, 276 192, 260 132" fill="none" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="290" y="210" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="middle">thread acquires mutex lock</text>
+</svg>

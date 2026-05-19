@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 316" width="640" height="316">
+
+  <!-- Title -->
+  <text x="320" y="22" font-family="sans-serif" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">Windows Synchronization Architecture</text>
+
+  <!-- ===== Kernel-Internal Layer ===== -->
+  <rect x="16" y="34" width="608" height="118" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="320" y="53" font-family="sans-serif" font-size="12" font-weight="bold" fill="#92400e" text-anchor="middle">Kernel-Internal Synchronization</text>
+
+  <!-- Single Processor box -->
+  <rect x="30" y="62" width="270" height="76" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+  <text x="165" y="81" font-family="sans-serif" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">Single Processor</text>
+  <text x="165" y="98" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">Temporarily mask interrupts for all</text>
+  <text x="165" y="113" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">handlers accessing the global resource</text>
+  <text x="165" y="130" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">(no other code can run)</text>
+
+  <!-- Multiprocessor box -->
+  <rect x="340" y="62" width="270" height="76" rx="6" fill="#fffbeb" stroke="#d97706" stroke-width="1"/>
+  <text x="475" y="81" font-family="sans-serif" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">Multiprocessor (SMP)</text>
+  <text x="475" y="98" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">Spinlock (short code segments only)</text>
+  <text x="475" y="113" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">Thread never preempted</text>
+  <text x="475" y="130" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">while holding a spinlock</text>
+
+  <!-- ===== Thread Sync Layer ===== -->
+  <rect x="16" y="172" width="608" height="128" rx="8" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="320" y="191" font-family="sans-serif" font-size="12" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Thread Synchronization (outside kernel)</text>
+
+  <!-- Dispatcher Objects box -->
+  <rect x="30" y="200" width="384" height="88" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <text x="222" y="218" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Dispatcher Objects</text>
+  <text x="222" y="234" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">mutex lock  |  semaphore  |  event  |  timer</text>
+  <text x="222" y="250" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">signaled: available — thread will NOT block</text>
+  <text x="222" y="266" font-family="sans-serif" font-size="10" fill="#374151" text-anchor="middle">nonsignaled: not available — thread blocks</text>
+  <text x="222" y="280" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">mutex: wake 1 thread  |  event: wake all threads</text>
+
+  <!-- Critical-section Object box -->
+  <rect x="432" y="200" width="176" height="88" rx="6" fill="#eff6ff" stroke="#2563eb" stroke-width="1"/>
+  <text x="520" y="218" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Critical-section</text>
+  <text x="520" y="233" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Object</text>
+  <text x="520" y="252" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">User-mode mutex</text>
+  <text x="520" y="267" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">① spinlock (no kernel call)</text>
+  <text x="520" y="282" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">② if spin too long:</text>
+  <text x="520" y="294" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">allocate kernel mutex</text>
+</svg>
