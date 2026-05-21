@@ -3,7 +3,7 @@ title: 核心層同步機制 (Synchronization within the Kernel)
 sidebar_label: "7-2 核心層同步機制"
 description: 介紹 Windows 與 Linux 作業系統在核心層實作同步機制的方式，涵蓋 Windows 的 Interrupt Mask、Spinlock、Dispatcher Objects、Critical-section Object，以及 Linux 的 atomic_t、Mutex Lock、Spinlock、Semaphore 與 preempt_count 機制。
 last_update:
-  date: 2026-04-27
+  date: 2026-05-19
 keywords:
   [
     "Dispatcher Objects",
@@ -60,12 +60,12 @@ Windows 作業系統是一個多執行緒核心，支援即時應用程式與多
 
 對於核心外部的**執行緒同步（thread synchronization outside the kernel）**，Windows 提供了 **Dispatcher Objects（分派器物件）**。透過 dispatcher object，執行緒可以依照多種不同機制進行同步：
 
-| 機制 | 說明 |
-| :---: | :--- |
-| **Mutex Lock（互斥鎖）** | 互斥存取；同一時間只有一個執行緒能「持有（own）」它 |
-| **Semaphore（信號量）** | 如 Ch6.6 所述的 counting semaphore |
-| **Event（事件）** | 類似 condition variable；當某個期望條件發生時，通知等待中的執行緒 |
-| **Timer（計時器）** | 當指定時間到期時，通知一個或多個執行緒 |
+|           機制           | 說明                                                              |
+| :----------------------: | :---------------------------------------------------------------- |
+| **Mutex Lock（互斥鎖）** | 互斥存取；同一時間只有一個執行緒能「持有（own）」它               |
+| **Semaphore（信號量）**  | 如 Ch6.6 所述的 counting semaphore                                |
+|    **Event（事件）**     | 類似 condition variable；當某個期望條件發生時，通知等待中的執行緒 |
+|   **Timer（計時器）**    | 當指定時間到期時，通知一個或多個執行緒                            |
 
 每個 dispatcher object 都處於以下兩種狀態之一：
 
@@ -132,13 +132,13 @@ int value;
 
 Linux 提供以下原子操作：
 
-| 原子操作 | 效果 |
-| :------- | :--- |
-| `atomic_set(&counter, 5)` | `counter = 5` |
-| `atomic_add(10, &counter)` | `counter = counter + 10` |
-| `atomic_sub(4, &counter)` | `counter = counter - 4` |
-| `atomic_inc(&counter)` | `counter = counter + 1` |
-| `value = atomic_read(&counter)` | `value = 12`（假設之前的操作依序執行後結果為 12）|
+| 原子操作                        | 效果                                              |
+| :------------------------------ | :------------------------------------------------ |
+| `atomic_set(&counter, 5)`       | `counter = 5`                                     |
+| `atomic_add(10, &counter)`      | `counter = counter + 10`                          |
+| `atomic_sub(4, &counter)`       | `counter = counter - 4`                           |
+| `atomic_inc(&counter)`          | `counter = counter + 1`                           |
+| `value = atomic_read(&counter)` | `value = 12`（假設之前的操作依序執行後結果為 12） |
 
 原子整數的最大優點是**不需要鎖定機制的額外開銷**，在需要更新計數器（counter）等整數變數的場景下特別高效。然而，它的適用範圍僅限於單一整數變數的更新。**若有多個變數共同構成一個 race condition 的條件，就必須使用更完整的鎖定工具。**
 
@@ -166,10 +166,10 @@ Linux 也在核心中提供 **spinlock** 與 **semaphore**（以及這兩者的 
 
 在**單處理器機器**（例如只有一個 processing core 的嵌入式系統）上，spinlock 是不恰當的選擇，原因很直觀：如果只有一個處理器，而 spinlock 讓當前 CPU 忙碌等待，則持有鎖的任務根本無法執行、永遠無法釋放鎖，形成死鎖。因此，在單處理器系統上，spinlock 被替換為「停用 / 啟用核心搶占（disable/enable kernel preemption）」：
 
-| | 單處理器（Single Processor） | 多處理器（Multiple Processors） |
-| :---: | :---: | :---: |
-| **取得鎖** | Disable kernel preemption | Acquire spinlock |
-| **釋放鎖** | Enable kernel preemption | Release spinlock |
+|            | 單處理器（Single Processor） | 多處理器（Multiple Processors） |
+| :--------: | :--------------------------: | :-----------------------------: |
+| **取得鎖** |  Disable kernel preemption   |        Acquire spinlock         |
+| **釋放鎖** |   Enable kernel preemption   |        Release spinlock         |
 
 這個設計很有道理：在單處理器上，只要確保不被搶占（不讓其他任務插進來），就能等效達到 spinlock 保護的效果，同時不浪費任何 CPU 資源在忙碌等待上。
 
@@ -216,11 +216,11 @@ graph LR
 
 Linux 核心的設計哲學提供了一條清晰的使用指引：
 
-| 場景 | 適合的鎖 | 原因 |
-| :--: | :------: | :--- |
-| 鎖持有時間**很短** | **Spinlock** / 停用核心搶占 | 忙碌等待比 sleep 再喚醒的開銷更小 |
-| 鎖持有時間**較長** | **Semaphore** / **Mutex Lock** | 長時間 spin 浪費 CPU，sleep 等待更節省資源 |
-| 更新單一**整數計數器** | **atomic_t** | 不需要任何鎖定，最輕量 |
+|          場景          |            適合的鎖            | 原因                                       |
+| :--------------------: | :----------------------------: | :----------------------------------------- |
+|   鎖持有時間**很短**   |  **Spinlock** / 停用核心搶占   | 忙碌等待比 sleep 再喚醒的開銷更小          |
+|   鎖持有時間**較長**   | **Semaphore** / **Mutex Lock** | 長時間 spin 浪費 CPU，sleep 等待更節省資源 |
+| 更新單一**整數計數器** |          **atomic_t**          | 不需要任何鎖定，最輕量                     |
 
 這個分層選擇的邏輯，對應了「同步工具」的核心 trade-off：**spinlock** 勝在低延遲（latency）但高 CPU 消耗，**mutex/semaphore** 勝在節省 CPU 但有喚醒延遲，**atomic_t** 完全繞開鎖定機制但只能用於最簡單的整數操作。
 
@@ -228,15 +228,15 @@ Linux 核心的設計哲學提供了一條清晰的使用指引：
 
 ## **Windows vs Linux 核心同步對比**
 
-| | Windows | Linux |
-| :---: | :------ | :------ |
-| **核心保護策略（單處理器）** | Interrupt masking（遮蔽中斷） | Disable kernel preemption |
-| **核心保護策略（多處理器）** | Spinlock（短 critical section） | Spinlock（短 critical section） |
-| **執行緒同步工具** | Dispatcher Objects（4 種機制） | Mutex lock、semaphore（+ rw 版本） |
-| **可用狀態模型** | Signaled / Nonsignaled | Lock available / unavailable |
-| **輕量級用戶態同步** | Critical-section Object（spinlock + kernel mutex 混合） | 無直接對應（Pthreads 另見 7.3 節） |
-| **計數器同步** | 無獨立原子整數型別 | `atomic_t` |
-| **搶占安全追蹤** | 由 kernel 隱性管理 | `preempt_count` 顯性計數 |
-| **鎖的重入性** | 依類型不同 | Nonrecursive（spinlock、mutex 均不可重入） |
+|                              | Windows                                                 | Linux                                      |
+| :--------------------------: | :------------------------------------------------------ | :----------------------------------------- |
+| **核心保護策略（單處理器）** | Interrupt masking（遮蔽中斷）                           | Disable kernel preemption                  |
+| **核心保護策略（多處理器）** | Spinlock（短 critical section）                         | Spinlock（短 critical section）            |
+|      **執行緒同步工具**      | Dispatcher Objects（4 種機制）                          | Mutex lock、semaphore（+ rw 版本）         |
+|       **可用狀態模型**       | Signaled / Nonsignaled                                  | Lock available / unavailable               |
+|     **輕量級用戶態同步**     | Critical-section Object（spinlock + kernel mutex 混合） | 無直接對應（Pthreads 另見 7.3 節）         |
+|        **計數器同步**        | 無獨立原子整數型別                                      | `atomic_t`                                 |
+|       **搶占安全追蹤**       | 由 kernel 隱性管理                                      | `preempt_count` 顯性計數                   |
+|        **鎖的重入性**        | 依類型不同                                              | Nonrecursive（spinlock、mutex 均不可重入） |
 
 兩個系統在核心思想上高度一致：**短時間的保護用 spinlock（或停用搶占），長時間的保護用 sleep-based 鎖**。差異主要在於 API 設計的風格，以及 Windows 在用戶態提供了更豐富的 dispatcher object 種類（mutex、semaphore、event、timer）。

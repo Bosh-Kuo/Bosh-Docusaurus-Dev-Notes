@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 320" width="700" height="320">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+    <marker id="arr-g" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="arr-r" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="26" font-family="sans-serif" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">Traditional Locking vs. Transactional Memory</text>
+
+  <!-- Divider -->
+  <line x1="350" y1="44" x2="350" y2="310" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- ======= LEFT: Traditional Locking ======= -->
+  <text x="175" y="62" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">Traditional Locking</text>
+
+  <!-- acquire() -->
+  <rect x="100" y="74" width="150" height="36" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="175" y="97" font-family="monospace" font-size="13" fill="#92400e" text-anchor="middle">acquire()</text>
+
+  <line x1="175" y1="110" x2="175" y2="130" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- modify shared data -->
+  <rect x="90" y="130" width="170" height="36" rx="6" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1.5"/>
+  <text x="175" y="153" font-family="monospace" font-size="11" fill="#374151" text-anchor="middle">modify shared data</text>
+
+  <line x1="175" y1="166" x2="175" y2="186" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- release() -->
+  <rect x="100" y="186" width="150" height="36" rx="6" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="175" y="209" font-family="monospace" font-size="13" fill="#92400e" text-anchor="middle">release()</text>
+
+  <!-- Problems box -->
+  <rect x="58" y="244" width="234" height="58" rx="6" fill="#fce7f3" stroke="#db2777" stroke-width="1.5"/>
+  <text x="175" y="262" font-family="sans-serif" font-size="11" font-weight="bold" fill="#9d174d" text-anchor="middle">Problems</text>
+  <text x="175" y="278" font-family="sans-serif" font-size="10" fill="#9d174d" text-anchor="middle">Deadlock possible under lock contention</text>
+  <text x="175" y="292" font-family="sans-serif" font-size="10" fill="#9d174d" text-anchor="middle">Poor scalability as thread count grows</text>
+
+  <!-- ======= RIGHT: Transactional Memory ======= -->
+  <text x="525" y="62" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">Transactional Memory</text>
+
+  <!-- atomic{} block -->
+  <rect x="420" y="74" width="210" height="84" rx="6" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="525" y="100" font-family="monospace" font-size="13" fill="#5b21b6" text-anchor="middle">atomic {</text>
+  <text x="525" y="120" font-family="monospace" font-size="11" fill="#374151" text-anchor="middle">modify shared data</text>
+  <text x="525" y="144" font-family="monospace" font-size="13" fill="#5b21b6" text-anchor="middle">}</text>
+
+  <!-- Fork line from bottom of atomic{} -->
+  <line x1="525" y1="158" x2="525" y2="176" stroke="#374151" stroke-width="1.5"/>
+  <line x1="455" y1="176" x2="595" y2="176" stroke="#374151" stroke-width="1.5"/>
+
+  <!-- success / conflict labels above branch arrows -->
+  <text x="445" y="194" font-family="sans-serif" font-size="9" fill="#16a34a" text-anchor="middle">success</text>
+  <text x="605" y="194" font-family="sans-serif" font-size="9" fill="#dc2626" text-anchor="middle">conflict</text>
+
+  <!-- Arrow down to COMMIT -->
+  <line x1="455" y1="176" x2="455" y2="196" stroke="#16a34a" stroke-width="1.5" marker-end="url(#arr-g)"/>
+  <!-- Arrow down to ABORT -->
+  <line x1="595" y1="176" x2="595" y2="196" stroke="#dc2626" stroke-width="1.5" marker-end="url(#arr-r)"/>
+
+  <!-- COMMIT box -->
+  <rect x="405" y="196" width="100" height="34" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="455" y="218" font-family="sans-serif" font-size="12" font-weight="bold" fill="#14532d" text-anchor="middle">COMMIT</text>
+
+  <!-- ABORT / ROLLBACK box -->
+  <rect x="545" y="196" width="100" height="34" rx="6" fill="#fee2e2" stroke="#dc2626" stroke-width="1.5"/>
+  <text x="595" y="212" font-family="sans-serif" font-size="11" font-weight="bold" fill="#991b1b" text-anchor="middle">ABORT &amp;</text>
+  <text x="595" y="226" font-family="sans-serif" font-size="11" font-weight="bold" fill="#991b1b" text-anchor="middle">ROLLBACK</text>
+
+  <!-- Advantages box -->
+  <rect x="408" y="248" width="234" height="54" rx="6" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="525" y="266" font-family="sans-serif" font-size="11" font-weight="bold" fill="#14532d" text-anchor="middle">Advantages</text>
+  <text x="525" y="282" font-family="sans-serif" font-size="10" fill="#14532d" text-anchor="middle">No locks — deadlock impossible</text>
+  <text x="525" y="295" font-family="sans-serif" font-size="10" fill="#14532d" text-anchor="middle">System guarantees atomicity automatically</text>
+</svg>

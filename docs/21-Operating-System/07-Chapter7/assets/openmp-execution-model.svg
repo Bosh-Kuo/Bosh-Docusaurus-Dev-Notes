@@ -1,0 +1,91 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 256" width="660" height="256">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="330" y="18" font-family="sans-serif" font-size="13" font-weight="bold" fill="#374151" text-anchor="middle">OpenMP Critical Section — Thread Execution Timeline</text>
+
+  <!-- Row labels (right-aligned at x=72) -->
+  <text x="72" y="54" font-family="sans-serif" font-size="11" fill="#374151" text-anchor="end">Main</text>
+  <text x="72" y="96" font-family="sans-serif" font-size="11" fill="#166534" text-anchor="end">Thread 1</text>
+  <text x="72" y="136" font-family="sans-serif" font-size="11" fill="#166534" text-anchor="end">Thread 2</text>
+  <text x="72" y="176" font-family="sans-serif" font-size="11" fill="#166534" text-anchor="end">Thread 3</text>
+
+  <!-- Main thread bar (before fork) -->
+  <rect x="80" y="43" width="60" height="22" rx="4" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="110" y="59" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">main</text>
+
+  <!-- Fork vertical line at x=140 -->
+  <line x1="140" y1="43" x2="140" y2="186" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="143" y="42" font-family="sans-serif" font-size="9" fill="#374151">fork</text>
+
+  <!-- ===== Thread 1 (y-center=96, bar y=85-107) ===== -->
+  <!-- parallel -->
+  <rect x="140" y="85" width="70" height="22" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="175" y="100" font-family="sans-serif" font-size="9" fill="#166534" text-anchor="middle">parallel</text>
+  <!-- CRITICAL (T1 enters first) -->
+  <rect x="210" y="85" width="100" height="22" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="260" y="100" font-family="sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">CRITICAL</text>
+  <!-- post-critical parallel -->
+  <rect x="310" y="85" width="230" height="22" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="425" y="100" font-family="sans-serif" font-size="9" fill="#166534" text-anchor="middle">parallel</text>
+
+  <!-- ===== Thread 2 (y-center=136, bar y=125-147) ===== -->
+  <!-- parallel -->
+  <rect x="140" y="125" width="70" height="22" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="175" y="140" font-family="sans-serif" font-size="9" fill="#166534" text-anchor="middle">parallel</text>
+  <!-- blocked while T1 is in critical -->
+  <rect x="210" y="125" width="100" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="260" y="140" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">blocked</text>
+  <!-- CRITICAL (T2 enters after T1 exits) -->
+  <rect x="310" y="125" width="100" height="22" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="360" y="140" font-family="sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">CRITICAL</text>
+  <!-- post-critical parallel -->
+  <rect x="410" y="125" width="130" height="22" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="475" y="140" font-family="sans-serif" font-size="9" fill="#166534" text-anchor="middle">parallel</text>
+
+  <!-- ===== Thread 3 (y-center=176, bar y=165-187) ===== -->
+  <!-- parallel -->
+  <rect x="140" y="165" width="70" height="22" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="175" y="180" font-family="sans-serif" font-size="9" fill="#166534" text-anchor="middle">parallel</text>
+  <!-- blocked while T1 and T2 are in critical -->
+  <rect x="210" y="165" width="200" height="22" rx="3" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="310" y="180" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">blocked (waiting)</text>
+  <!-- CRITICAL (T3 enters last) -->
+  <rect x="410" y="165" width="100" height="22" rx="3" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="460" y="180" font-family="sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">CRITICAL</text>
+  <!-- post-critical parallel -->
+  <rect x="510" y="165" width="30" height="22" rx="3" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+
+  <!-- Critical section boundary vertical lines -->
+  <line x1="210" y1="78" x2="210" y2="194" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <line x1="310" y1="78" x2="310" y2="194" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <line x1="410" y1="118" x2="410" y2="194" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+  <line x1="510" y1="158" x2="510" y2="194" stroke="#2563eb" stroke-width="1" stroke-dasharray="3,3" opacity="0.5"/>
+
+  <!-- Critical section header label -->
+  <text x="360" y="76" font-family="sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">#pragma omp critical — one thread at a time</text>
+
+  <!-- Join vertical line at x=540 -->
+  <line x1="540" y1="43" x2="540" y2="186" stroke="#374151" stroke-width="1.5" stroke-dasharray="4,3"/>
+  <text x="543" y="42" font-family="sans-serif" font-size="9" fill="#374151">join</text>
+
+  <!-- Main thread bar (after join) -->
+  <rect x="540" y="43" width="90" height="22" rx="4" fill="#d1d5db" stroke="#6b7280" stroke-width="1.5"/>
+  <text x="585" y="59" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">main continues</text>
+
+  <!-- Time axis -->
+  <line x1="80" y1="210" x2="635" y2="210" stroke="#9ca3af" stroke-width="1.5" marker-end="url(#arr)"/>
+  <text x="357" y="224" font-family="sans-serif" font-size="10" fill="#6b7280" text-anchor="middle">time</text>
+
+  <!-- Legend -->
+  <rect x="80" y="232" width="12" height="12" rx="2" fill="#dcfce7" stroke="#16a34a" stroke-width="1"/>
+  <text x="96" y="243" font-family="sans-serif" font-size="9" fill="#374151">parallel execution</text>
+  <rect x="230" y="232" width="12" height="12" rx="2" fill="#dbeafe" stroke="#2563eb" stroke-width="1"/>
+  <text x="246" y="243" font-family="sans-serif" font-size="9" fill="#374151">critical section (serialized)</text>
+  <rect x="430" y="232" width="12" height="12" rx="2" fill="#fef3c7" stroke="#d97706" stroke-width="1"/>
+  <text x="446" y="243" font-family="sans-serif" font-size="9" fill="#374151">blocked / waiting</text>
+</svg>

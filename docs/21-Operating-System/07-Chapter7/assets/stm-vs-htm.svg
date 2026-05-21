@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 700 280" width="700" height="280">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- Title -->
+  <text x="350" y="24" font-family="sans-serif" font-size="14" font-weight="bold" fill="#374151" text-anchor="middle">STM vs. HTM Implementation</text>
+
+  <!-- Divider -->
+  <line x1="350" y1="40" x2="350" y2="270" stroke="#d1d5db" stroke-width="1.5" stroke-dasharray="6,4"/>
+
+  <!-- ======= LEFT: STM ======= -->
+  <text x="175" y="56" font-family="sans-serif" font-size="13" font-weight="bold" fill="#5b21b6" text-anchor="middle">Software Transactional Memory (STM)</text>
+
+  <!-- Source code box -->
+  <rect x="85" y="66" width="180" height="38" rx="5" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="175" y="83" font-family="monospace" font-size="11" fill="#5b21b6" text-anchor="middle">atomic { /* code */ }</text>
+  <text x="175" y="97" font-family="sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">source code</text>
+
+  <line x1="175" y1="104" x2="175" y2="122" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Compiler box -->
+  <rect x="85" y="122" width="180" height="40" rx="5" fill="#fef3c7" stroke="#d97706" stroke-width="1.5"/>
+  <text x="175" y="140" font-family="sans-serif" font-size="11" font-weight="bold" fill="#92400e" text-anchor="middle">Compiler</text>
+  <text x="175" y="155" font-family="sans-serif" font-size="9" fill="#92400e" text-anchor="middle">inserts instrumentation code</text>
+
+  <line x1="175" y1="162" x2="175" y2="180" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- STM Runtime box -->
+  <rect x="70" y="180" width="210" height="54" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="175" y="198" font-family="sans-serif" font-size="11" font-weight="bold" fill="#166534" text-anchor="middle">STM Runtime</text>
+  <text x="175" y="213" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">tracks reads / writes per transaction</text>
+  <text x="175" y="226" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">detects conflicts — commit or rollback</text>
+
+  <!-- Note -->
+  <rect x="55" y="248" width="240" height="20" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+  <text x="175" y="262" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">No special hardware · Higher software overhead</text>
+
+  <!-- ======= RIGHT: HTM ======= -->
+  <text x="525" y="56" font-family="sans-serif" font-size="13" font-weight="bold" fill="#1d4ed8" text-anchor="middle">Hardware Transactional Memory (HTM)</text>
+
+  <!-- Source code box -->
+  <rect x="435" y="66" width="180" height="38" rx="5" fill="#ddd6fe" stroke="#7c3aed" stroke-width="1.5"/>
+  <text x="525" y="83" font-family="monospace" font-size="11" fill="#5b21b6" text-anchor="middle">atomic { /* code */ }</text>
+  <text x="525" y="97" font-family="sans-serif" font-size="9" fill="#7c3aed" text-anchor="middle">no instrumentation needed</text>
+
+  <line x1="525" y1="104" x2="525" y2="122" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Cache hierarchy box -->
+  <rect x="420" y="122" width="210" height="40" rx="5" fill="#dbeafe" stroke="#2563eb" stroke-width="1.5"/>
+  <text x="525" y="140" font-family="sans-serif" font-size="11" font-weight="bold" fill="#1d4ed8" text-anchor="middle">CPU Cache Hierarchy</text>
+  <text x="525" y="155" font-family="sans-serif" font-size="9" fill="#1d4ed8" text-anchor="middle">+ cache coherency protocol</text>
+
+  <line x1="525" y1="162" x2="525" y2="180" stroke="#374151" stroke-width="1.5" marker-end="url(#arr)"/>
+
+  <!-- Hardware resolution box -->
+  <rect x="420" y="180" width="210" height="54" rx="5" fill="#dcfce7" stroke="#16a34a" stroke-width="1.5"/>
+  <text x="525" y="198" font-family="sans-serif" font-size="11" font-weight="bold" fill="#166534" text-anchor="middle">Hardware Resolution</text>
+  <text x="525" y="213" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">conflicts detected via cache invalidation</text>
+  <text x="525" y="226" font-family="sans-serif" font-size="9" fill="#374151" text-anchor="middle">commit or rollback in hardware</text>
+
+  <!-- Note -->
+  <rect x="405" y="248" width="240" height="20" rx="4" fill="#f3f4f6" stroke="#9ca3af" stroke-width="1"/>
+  <text x="525" y="262" font-family="sans-serif" font-size="9" fill="#6b7280" text-anchor="middle">Requires hardware changes · Lower overhead</text>
+</svg>
