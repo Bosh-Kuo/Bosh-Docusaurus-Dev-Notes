@@ -1,0 +1,138 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="700" height="430" viewBox="0 0 700 430">
+  <defs>
+    <marker id="req" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#dc2626"/>
+    </marker>
+    <marker id="asgn" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#16a34a"/>
+    </marker>
+    <marker id="wfr" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <!-- ===== PANEL (a): Resource-Allocation Graph ===== -->
+
+  <!-- Thread nodes (circles r=22, blue) -->
+  <circle cx="185" cy="52" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="185" y="57" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T5</text>
+
+  <circle cx="52" cy="185" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="52" y="190" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T1</text>
+
+  <circle cx="88" cy="330" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="88" y="335" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T4</text>
+
+  <circle cx="318" cy="185" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="318" y="190" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T2</text>
+
+  <circle cx="312" cy="330" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="312" y="335" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T3</text>
+
+  <!-- Resource nodes (rect 24x24, amber) with single-instance dot -->
+  <!-- R1 (center 113,118) -->
+  <rect x="101" y="106" width="24" height="24" rx="3" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <circle cx="113" cy="118" r="5" fill="#92400e"/>
+  <text x="113" y="100" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#78350f">R1</text>
+
+  <!-- R2 (center 52,258) -->
+  <rect x="40" y="246" width="24" height="24" rx="3" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <circle cx="52" cy="258" r="5" fill="#92400e"/>
+  <text x="52" y="240" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#78350f">R2</text>
+
+  <!-- R5 (center 200,258) -->
+  <rect x="188" y="246" width="24" height="24" rx="3" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <circle cx="200" cy="258" r="5" fill="#92400e"/>
+  <text x="200" y="240" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#78350f">R5</text>
+
+  <!-- R3 (center 256,112) -->
+  <rect x="244" y="100" width="24" height="24" rx="3" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <circle cx="256" cy="112" r="5" fill="#92400e"/>
+  <text x="256" y="94" text-anchor="middle" font-size="11" font-family="sans-serif" fill="#78350f">R3</text>
+
+  <!-- R4 (center 234,185) -->
+  <rect x="222" y="173" width="24" height="24" rx="3" fill="#fef9c3" stroke="#ca8a04" stroke-width="2"/>
+  <circle cx="234" cy="185" r="5" fill="#92400e"/>
+  <text x="255" y="189" text-anchor="start" font-size="11" font-family="sans-serif" fill="#78350f">R4</text>
+
+  <!-- ===== Edges: panel (a) ===== -->
+
+  <!-- T5→R1 (request) -->
+  <line x1="169" y1="67" x2="125" y2="107" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6,3" marker-end="url(#req)"/>
+
+  <!-- R1→T1 (assignment) -->
+  <line x1="102" y1="130" x2="67" y2="169" stroke="#16a34a" stroke-width="2" marker-end="url(#asgn)"/>
+
+  <!-- T1→R2 (request) -->
+  <line x1="52" y1="207" x2="52" y2="246" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6,3" marker-end="url(#req)"/>
+
+  <!-- R2→T4 (assignment) -->
+  <line x1="58" y1="270" x2="78" y2="310" stroke="#16a34a" stroke-width="2" marker-end="url(#asgn)"/>
+
+  <!-- T4→R5 (request) -->
+  <line x1="107" y1="318" x2="188" y2="266" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6,3" marker-end="url(#req)"/>
+
+  <!-- R5→T2 (assignment) -->
+  <line x1="212" y1="251" x2="299" y2="197" stroke="#16a34a" stroke-width="2" marker-end="url(#asgn)"/>
+
+  <!-- T2→R3 (request) -->
+  <line x1="304" y1="168" x2="266" y2="124" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6,3" marker-end="url(#req)"/>
+
+  <!-- R3→T5 (assignment) -->
+  <line x1="244" y1="102" x2="202" y2="66" stroke="#16a34a" stroke-width="2" marker-end="url(#asgn)"/>
+
+  <!-- T3→R4 (request) -->
+  <line x1="301" y1="311" x2="241" y2="197" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6,3" marker-end="url(#req)"/>
+
+  <!-- R4→T5 (assignment) -->
+  <line x1="230" y1="173" x2="192" y2="73" stroke="#16a34a" stroke-width="2" marker-end="url(#asgn)"/>
+
+  <!-- Legend -->
+  <line x1="18" y1="395" x2="48" y2="395" stroke="#16a34a" stroke-width="2" marker-end="url(#asgn)"/>
+  <text x="55" y="399" font-size="11" font-family="sans-serif" fill="#374151">Assignment (R&#x2192;T)</text>
+  <line x1="175" y1="395" x2="205" y2="395" stroke="#dc2626" stroke-width="1.8" stroke-dasharray="6,3" marker-end="url(#req)"/>
+  <text x="212" y="399" font-size="11" font-family="sans-serif" fill="#374151">Request (T&#x2192;R)</text>
+
+  <!-- Panel (a) title -->
+  <text x="185" y="420" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">(a) Resource-allocation graph</text>
+
+  <!-- ===== Panel separator ===== -->
+  <line x1="392" y1="18" x2="392" y2="400" stroke="#e5e7eb" stroke-width="1.5"/>
+
+  <!-- ===== PANEL (b): Wait-for Graph ===== -->
+
+  <!-- Thread nodes -->
+  <circle cx="510" cy="55" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="510" y="60" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T5</text>
+
+  <circle cx="422" cy="175" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="422" y="180" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T1</text>
+
+  <circle cx="462" cy="305" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="462" y="310" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T4</text>
+
+  <circle cx="620" cy="175" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="620" y="180" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T2</text>
+
+  <circle cx="620" cy="55" r="22" fill="#dbeafe" stroke="#2563eb" stroke-width="2"/>
+  <text x="620" y="60" text-anchor="middle" font-size="14" font-family="sans-serif" font-weight="bold" fill="#1e3a8a">T3</text>
+
+  <!-- Wait-for edges (solid dark gray) -->
+  <!-- T5→T1 -->
+  <line x1="496" y1="73" x2="435" y2="157" stroke="#374151" stroke-width="2" marker-end="url(#wfr)"/>
+
+  <!-- T1→T4 -->
+  <line x1="428" y1="197" x2="455" y2="283" stroke="#374151" stroke-width="2" marker-end="url(#wfr)"/>
+
+  <!-- T4→T2 -->
+  <line x1="479" y1="292" x2="603" y2="188" stroke="#374151" stroke-width="2" marker-end="url(#wfr)"/>
+
+  <!-- T2→T5 -->
+  <line x1="604" y1="158" x2="526" y2="71" stroke="#374151" stroke-width="2" marker-end="url(#wfr)"/>
+
+  <!-- T3→T5 (horizontal) -->
+  <line x1="598" y1="55" x2="532" y2="55" stroke="#374151" stroke-width="2" marker-end="url(#wfr)"/>
+
+  <!-- Panel (b) title -->
+  <text x="530" y="420" text-anchor="middle" font-size="12" font-family="sans-serif" fill="#374151">(b) Wait-for graph</text>
+</svg>
