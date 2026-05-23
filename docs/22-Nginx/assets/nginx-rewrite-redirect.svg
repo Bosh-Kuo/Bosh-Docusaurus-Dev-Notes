@@ -1,0 +1,37 @@
+<svg viewBox="0 0 920 470" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#94a3b8" flood-opacity="0.22"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowAmber" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#d97706"/>
+    </marker>
+  </defs>
+  <rect width="920" height="470" fill="#ffffff"/>
+  <text x="460" y="34" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Rewrite vs Redirect：內部改寫與通知瀏覽器換網址</text>
+
+  <rect x="52" y="92" width="816" height="138" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" filter="url(#shadow)"/>
+  <text x="94" y="124" font-size="14" font-weight="bold" fill="#3b82f6" font-family="system-ui, -apple-system, sans-serif">Rewrite</text>
+  <rect x="118" y="154" width="178" height="42" rx="8" fill="#dbeafe" stroke="#3b82f6"/>
+  <text x="207" y="180" font-size="11" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">/old-path</text>
+  <rect x="374" y="154" width="172" height="42" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="460" y="180" font-size="11" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Nginx internal rewrite</text>
+  <rect x="626" y="154" width="178" height="42" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="715" y="180" font-size="11" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">/index.html</text>
+  <line x1="296" y1="175" x2="362" y2="175" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="546" y1="175" x2="614" y2="175" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <rect x="52" y="272" width="816" height="138" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" filter="url(#shadow)"/>
+  <text x="94" y="304" font-size="14" font-weight="bold" fill="#d97706" font-family="system-ui, -apple-system, sans-serif">Redirect</text>
+  <rect x="118" y="334" width="178" height="42" rx="8" fill="#fef3c7" stroke="#d97706"/>
+  <text x="207" y="360" font-size="11" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">http://example.com</text>
+  <rect x="374" y="334" width="172" height="42" rx="8" fill="#ffffff" stroke="#94a3b8"/>
+  <text x="460" y="360" font-size="11" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">301 / 302 response</text>
+  <rect x="626" y="334" width="178" height="42" rx="8" fill="#dcfce7" stroke="#16a34a"/>
+  <text x="715" y="360" font-size="11" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">https://example.com</text>
+  <line x1="296" y1="355" x2="362" y2="355" stroke="#d97706" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+  <line x1="546" y1="355" x2="614" y2="355" stroke="#d97706" stroke-width="2.5" marker-end="url(#arrowAmber)"/>
+</svg>

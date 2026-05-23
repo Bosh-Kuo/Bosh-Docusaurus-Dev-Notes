@@ -1,0 +1,48 @@
+<svg viewBox="0 0 920 520" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowGreen" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#16a34a"/>
+    </marker>
+  </defs>
+  <rect width="920" height="520" fill="#ffffff"/>
+  <text x="460" y="34" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Nginx 負載平衡策略</text>
+
+  <rect x="52" y="200" width="130" height="72" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="117" y="229" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Incoming</text>
+  <text x="117" y="249" font-size="10" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">HTTP Requests</text>
+
+  <rect x="330" y="176" width="180" height="120" rx="10" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="356" y="200" width="128" height="42" rx="8" fill="#3b82f6"/>
+  <text x="420" y="227" font-size="14" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Nginx</text>
+  <text x="420" y="264" font-size="11" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">upstream app_cluster</text>
+
+  <rect x="674" y="78" width="160" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="754" y="103" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">app1:8080</text>
+  <text x="754" y="122" font-size="10" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">active: 12</text>
+  <rect x="674" y="188" width="160" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="754" y="213" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">app2:8080</text>
+  <text x="754" y="232" font-size="10" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">active: 3</text>
+  <rect x="674" y="298" width="160" height="60" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="754" y="323" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">app3:8080</text>
+  <text x="754" y="342" font-size="10" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">active: 8</text>
+
+  <line x1="182" y1="236" x2="318" y2="236" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="510" y1="205" x2="662" y2="108" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowGreen)"/>
+  <line x1="510" y1="236" x2="662" y2="218" stroke="#16a34a" stroke-width="3" marker-end="url(#arrowGreen)"/>
+  <line x1="510" y1="266" x2="662" y2="328" stroke="#16a34a" stroke-width="2" marker-end="url(#arrowGreen)"/>
+
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <rect x="74" y="405" width="220" height="62" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+    <text x="184" y="430" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">round-robin</text>
+    <text x="184" y="450" font-size="10" fill="#475569" text-anchor="middle">依序輪流分配，預設策略</text>
+    <rect x="350" y="405" width="220" height="62" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+    <text x="460" y="430" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">least_conn</text>
+    <text x="460" y="450" font-size="10" fill="#475569" text-anchor="middle">優先交給連線數較少的後端</text>
+    <rect x="626" y="405" width="220" height="62" rx="8" fill="#f1f5f9" stroke="#94a3b8"/>
+    <text x="736" y="430" font-size="12" font-weight="bold" fill="#1e293b" text-anchor="middle">ip_hash</text>
+    <text x="736" y="450" font-size="10" fill="#475569" text-anchor="middle">同一 Client IP 盡量固定後端</text>
+  </g>
+</svg>

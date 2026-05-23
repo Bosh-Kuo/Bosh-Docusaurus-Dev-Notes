@@ -1,0 +1,38 @@
+<svg viewBox="0 0 920 430" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <filter id="shadow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="4" stdDeviation="5" flood-color="#94a3b8" flood-opacity="0.22"/>
+    </filter>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+    </marker>
+    <marker id="arrowSlate" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#64748b"/>
+    </marker>
+  </defs>
+  <rect width="920" height="430" fill="#ffffff"/>
+  <text x="460" y="34" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">SSL/TLS 終結：HTTPS 集中在 Nginx 處理</text>
+
+  <rect x="54" y="164" width="150" height="90" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="129" y="199" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Browser</text>
+  <text x="129" y="222" font-size="11" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">HTTPS</text>
+
+  <rect x="350" y="116" width="220" height="186" rx="12" fill="#f8fafc" stroke="#94a3b8" stroke-width="2" filter="url(#shadow)"/>
+  <rect x="385" y="144" width="150" height="46" rx="10" fill="#3b82f6"/>
+  <text x="460" y="173" font-size="15" font-weight="bold" fill="#ffffff" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Nginx</text>
+  <rect x="392" y="214" width="136" height="54" rx="8" fill="#eff6ff" stroke="#3b82f6"/>
+  <text x="460" y="235" font-size="11" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">TLS Certificate</text>
+  <text x="460" y="253" font-size="10" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">cert.pem + privkey.pem</text>
+
+  <rect x="716" y="164" width="150" height="90" rx="10" fill="#ede9fe" stroke="#7c3aed" stroke-width="2" filter="url(#shadow)"/>
+  <text x="791" y="199" font-size="14" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Upstream</text>
+  <text x="791" y="222" font-size="11" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">HTTP or HTTPS</text>
+
+  <line x1="204" y1="209" x2="338" y2="209" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowBlue)"/>
+  <text x="271" y="190" font-size="11" fill="#3b82f6" font-weight="bold" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">encrypted</text>
+  <line x1="570" y1="209" x2="704" y2="209" stroke="#64748b" stroke-width="3" marker-end="url(#arrowSlate)"/>
+  <text x="637" y="190" font-size="11" fill="#64748b" font-weight="bold" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">internal traffic</text>
+
+  <rect x="86" y="346" width="748" height="42" rx="8" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="460" y="372" font-size="11" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">憑證與 HTTPS 規則集中在入口層，後端服務可以少處理一層部署複雜度</text>
+</svg>

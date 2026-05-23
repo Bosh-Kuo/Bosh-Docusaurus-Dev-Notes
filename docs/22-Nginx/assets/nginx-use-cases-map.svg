@@ -1,0 +1,56 @@
+<svg viewBox="0 0 920 560" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <marker id="arrowBlue" markerWidth="8" markerHeight="8" refX="7" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L8,3 z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+  <rect width="920" height="560" fill="#ffffff"/>
+  <text x="460" y="34" font-size="17" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Nginx 常見用途總覽</text>
+
+  <rect x="350" y="220" width="220" height="104" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="460" y="264" font-size="22" font-weight="bold" fill="#1e293b" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Nginx</text>
+  <text x="460" y="291" font-size="12" fill="#475569" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif">Public Edge / Traffic Gateway</text>
+
+  <g font-family="system-ui, -apple-system, sans-serif">
+    <rect x="68" y="74" width="190" height="66" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="163" y="101" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">Reverse Proxy</text>
+    <text x="163" y="122" font-size="10" fill="#475569" text-anchor="middle">隱藏後端 · 統一入口</text>
+
+    <rect x="365" y="70" width="190" height="66" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="460" y="97" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">Load Balancing</text>
+    <text x="460" y="118" font-size="10" fill="#475569" text-anchor="middle">分散請求到多台 upstream</text>
+
+    <rect x="662" y="74" width="190" height="66" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+    <text x="757" y="101" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">HTTP Cache</text>
+    <text x="757" y="122" font-size="10" fill="#475569" text-anchor="middle">降低後端重複工作</text>
+
+    <rect x="68" y="246" width="190" height="66" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+    <text x="163" y="273" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">Rate Limiting</text>
+    <text x="163" y="294" font-size="10" fill="#475569" text-anchor="middle">保護昂貴 API 與登入入口</text>
+
+    <rect x="662" y="246" width="190" height="66" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="757" y="273" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">SSL/TLS Termination</text>
+    <text x="757" y="294" font-size="10" fill="#475569" text-anchor="middle">集中憑證與 HTTPS 設定</text>
+
+    <rect x="68" y="418" width="190" height="66" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+    <text x="163" y="445" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">Routing / API Gateway</text>
+    <text x="163" y="466" font-size="10" fill="#475569" text-anchor="middle">依 path、host、header 分流</text>
+
+    <rect x="365" y="422" width="190" height="66" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+    <text x="460" y="449" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">Static File Server</text>
+    <text x="460" y="470" font-size="10" fill="#475569" text-anchor="middle">直接服務圖片與前端資源</text>
+
+    <rect x="662" y="418" width="190" height="66" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+    <text x="757" y="445" font-size="13" font-weight="bold" fill="#1e293b" text-anchor="middle">Rewrite / Canary</text>
+    <text x="757" y="466" font-size="10" fill="#475569" text-anchor="middle">重導、改寫、灰度發布</text>
+  </g>
+
+  <line x1="258" y1="120" x2="358" y2="226" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <line x1="460" y1="136" x2="460" y2="210" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <line x1="662" y1="120" x2="560" y2="226" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <line x1="258" y1="279" x2="340" y2="273" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <line x1="662" y1="279" x2="580" y2="273" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <line x1="258" y1="438" x2="358" y2="320" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <line x1="460" y1="422" x2="460" y2="334" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+  <line x1="662" y1="438" x2="562" y2="320" stroke="#3b82f6" stroke-width="1.8" marker-end="url(#arrowBlue)"/>
+</svg>
