@@ -1,0 +1,81 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 480" role="img" aria-labelledby="title desc">
+  <title id="title">Nginx 設定檔載入關係</title>
+  <desc id="desc">展示 Nginx 從 nginx.conf 開始載入設定，並透過 include 將 conf.d 或 sites-enabled 內的 server blocks 插入 http context。</desc>
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#3b82f6"/>
+    </marker>
+    <style>
+      text {
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .title {
+        font-size: 17px;
+        font-weight: 700;
+        fill: #1e293b;
+      }
+      .label {
+        font-size: 14px;
+        font-weight: 700;
+        fill: #1e293b;
+      }
+      .small {
+        font-size: 12px;
+        fill: #475569;
+      }
+      .code {
+        font-size: 12px;
+        fill: #1e293b;
+      }
+      .flow-arrow {
+        stroke-dasharray: 10 8;
+        animation: flowDash 1.25s linear infinite;
+      }
+      @keyframes flowDash {
+        from { stroke-dashoffset: 18; }
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .flow-arrow {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="918" height="478" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="460" y="36" text-anchor="middle" class="title">Nginx 設定檔載入關係</text>
+
+  <rect x="60" y="72" width="250" height="320" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <rect x="82" y="94" width="140" height="30" rx="8" fill="#64748b"/>
+  <text x="152" y="114" text-anchor="middle" font-size="13" font-weight="700" fill="#ffffff">nginx.conf</text>
+  <text x="82" y="154" class="code">main directives</text>
+  <text x="82" y="182" class="code">events { ... }</text>
+  <rect x="82" y="206" width="206" height="154" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="102" y="236" class="label">http {</text>
+  <text x="122" y="268" class="code">include mime.types;</text>
+  <text x="122" y="298" class="code">include conf.d/*.conf;</text>
+  <text x="122" y="328" class="code">include sites-enabled/*;</text>
+  <text x="102" y="350" class="label">}</text>
+
+  <path class="flow-arrow" d="M288 298 C340 298 360 172 412 172" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <path class="flow-arrow" d="M288 328 C340 328 360 330 412 330" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+
+  <rect x="412" y="112" width="210" height="120" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <rect x="432" y="134" width="124" height="28" rx="8" fill="#16a34a"/>
+  <text x="494" y="153" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">default.conf</text>
+  <text x="432" y="190" class="code">server { ... }</text>
+
+  <rect x="412" y="270" width="210" height="120" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <rect x="432" y="292" width="132" height="28" rx="8" fill="#d97706"/>
+  <text x="498" y="311" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">sites-enabled</text>
+  <text x="432" y="348" class="code">server { ... }</text>
+
+  <path class="flow-arrow" d="M622 172 C674 172 692 226 744 226" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <path class="flow-arrow" d="M622 330 C674 330 692 244 744 244" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+
+  <rect x="744" y="176" width="126" height="118" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="807" y="214" text-anchor="middle" class="label">Final Config</text>
+  <text x="807" y="244" text-anchor="middle" class="small">expanded</text>
+  <text x="807" y="266" text-anchor="middle" class="small">and parsed</text>
+</svg>

@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 500" role="img" aria-labelledby="title desc">
+  <title id="title">Nginx Server Block 選擇流程</title>
+  <desc id="desc">展示 Nginx 如何先依 IP 與 port 找候選 server blocks，再依 Host header 選擇 server_name，未匹配時使用 default server。</desc>
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#3b82f6"/>
+    </marker>
+    <style>
+      text {
+        font-family: system-ui, -apple-system, sans-serif;
+      }
+      .title {
+        font-size: 17px;
+        font-weight: 700;
+        fill: #1e293b;
+      }
+      .label {
+        font-size: 14px;
+        font-weight: 700;
+        fill: #1e293b;
+      }
+      .small {
+        font-size: 12px;
+        fill: #475569;
+      }
+      .code {
+        font-size: 12px;
+        fill: #1e293b;
+      }
+      .flow-arrow {
+        stroke-dasharray: 10 8;
+        animation: flowDash 1.25s linear infinite;
+      }
+      @keyframes flowDash {
+        from { stroke-dashoffset: 18; }
+        to { stroke-dashoffset: 0; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .flow-arrow {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="918" height="498" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="460" y="36" text-anchor="middle" class="title">Server Block 選擇流程</text>
+
+  <rect x="60" y="84" width="168" height="86" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="144" y="116" text-anchor="middle" class="label">Request</text>
+  <text x="144" y="142" text-anchor="middle" class="small">IP + Port</text>
+
+  <path class="flow-arrow" d="M228 127 C266 127 282 127 320 127" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+
+  <rect x="328" y="84" width="206" height="86" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="431" y="116" text-anchor="middle" class="label">listen</text>
+  <text x="431" y="142" text-anchor="middle" class="small">找候選 server</text>
+
+  <path class="flow-arrow" d="M534 127 C572 127 588 127 626 127" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+
+  <rect x="634" y="84" width="226" height="86" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="747" y="116" text-anchor="middle" class="label">server_name</text>
+  <text x="747" y="142" text-anchor="middle" class="small">比對 Host header</text>
+
+  <rect x="70" y="270" width="220" height="128" rx="8" fill="#f1f5f9" stroke="#64748b" stroke-width="2"/>
+  <rect x="90" y="290" width="92" height="28" rx="8" fill="#64748b"/>
+  <text x="136" y="309" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">default</text>
+  <text x="92" y="344" class="code">listen 80 default_server;</text>
+  <text x="92" y="370" class="code">server_name _;</text>
+
+  <rect x="350" y="270" width="220" height="128" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <rect x="370" y="290" width="82" height="28" rx="8" fill="#16a34a"/>
+  <text x="411" y="309" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">site</text>
+  <text x="372" y="344" class="code">server_name example.com;</text>
+  <text x="372" y="370" class="small">Host: example.com</text>
+
+  <rect x="630" y="270" width="220" height="128" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <rect x="650" y="290" width="82" height="28" rx="8" fill="#7c3aed"/>
+  <text x="691" y="309" text-anchor="middle" font-size="12" font-weight="700" fill="#ffffff">api</text>
+  <text x="652" y="344" class="code">server_name api.example.com;</text>
+  <text x="652" y="370" class="small">Host: api.example.com</text>
+
+  <path class="flow-arrow" d="M747 170 C747 214 740 232 740 270" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <path class="flow-arrow" d="M747 170 C660 226 506 226 460 270" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <path class="flow-arrow" d="M747 170 C674 440 260 440 180 398" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+</svg>
