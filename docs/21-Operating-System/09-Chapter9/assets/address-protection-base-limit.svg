@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" width="734" height="326">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <rect x="55" y="155" width="90" height="70" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <text x="100" y="199" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#111827">CPU</text>
+
+  <rect x="275" y="40" width="140" height="52" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <text x="345" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">base</text>
+  <rect x="565" y="40" width="170" height="52" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <text x="650" y="73" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">base + limit</text>
+
+  <polygon points="345,155 425,190 345,225 265,190" fill="#bae6fd" stroke="#374151" stroke-width="1.5"/>
+  <text x="345" y="199" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#111827">&gt;=</text>
+  <polygon points="650,155 730,190 650,225 570,190" fill="#bae6fd" stroke="#374151" stroke-width="1.5"/>
+  <text x="650" y="199" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#111827">&lt;</text>
+
+  <rect x="815" y="85" width="55" height="210" fill="#f3f4f6" stroke="#374151" stroke-width="1.5"/>
+  <text x="842" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">memory</text>
+
+  <text x="185" y="180" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#111827">address</text>
+  <line x1="145" y1="190" x2="265" y2="190" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="345" y1="92" x2="345" y2="155" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="650" y1="92" x2="650" y2="155" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="425" y1="190" x2="570" y2="190" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="730" y1="190" x2="815" y2="190" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <text x="465" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">yes</text>
+  <text x="760" y="176" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">yes</text>
+  <line x1="345" y1="225" x2="345" y2="310" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="650" y1="225" x2="650" y2="310" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="370" y="258" font-family="Arial, sans-serif" font-size="22" fill="#111827">no</text>
+  <text x="675" y="258" font-family="Arial, sans-serif" font-size="22" fill="#111827">no</text>
+  <text x="500" y="338" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#dc2626">trap to operating system</text>
+  <text x="500" y="365" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#dc2626">illegal addressing error</text>
+</svg>

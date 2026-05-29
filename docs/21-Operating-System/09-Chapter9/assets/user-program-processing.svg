@@ -1,0 +1,63 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 910" width="620" height="742">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1f2937"/>
+    </marker>
+  </defs>
+
+  <ellipse cx="382" cy="70" rx="74" ry="50" fill="#d7eef7" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="382" y="63" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">source</text>
+  <text x="382" y="91" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">program</text>
+
+  <line x1="382" y1="120" x2="382" y2="168" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr)"/>
+  <rect x="292" y="175" width="180" height="50" rx="25" fill="#e5e5e2" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="382" y="207" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">compiler</text>
+
+  <line x1="382" y1="232" x2="382" y2="280" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr)"/>
+  <ellipse cx="382" cy="337" rx="74" ry="50" fill="#d7eef7" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="382" y="330" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">object</text>
+  <text x="382" y="358" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">file</text>
+
+  <ellipse cx="170" cy="372" rx="74" ry="50" fill="#d7eef7" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="170" y="351" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">other</text>
+  <text x="170" y="379" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">object</text>
+  <text x="170" y="407" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">files</text>
+
+  <line x1="382" y1="387" x2="382" y2="432" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="232" y1="405" x2="294" y2="449" stroke="#1f2937" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#arr)"/>
+  <rect x="292" y="440" width="180" height="50" rx="25" fill="#e5e5e2" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="382" y="472" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">linker</text>
+
+  <line x1="382" y1="497" x2="382" y2="542" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr)"/>
+  <ellipse cx="382" cy="598" rx="74" ry="50" fill="#d7eef7" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="382" y="591" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">executable</text>
+  <text x="382" y="619" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">file</text>
+
+  <line x1="382" y1="648" x2="382" y2="693" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr)"/>
+  <rect x="292" y="700" width="180" height="50" rx="25" fill="#e5e5e2" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="382" y="732" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">loader</text>
+
+  <ellipse cx="170" cy="742" rx="74" ry="50" fill="#d7eef7" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="170" y="721" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">dynamically</text>
+  <text x="170" y="749" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">linked</text>
+  <text x="170" y="777" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">libraries</text>
+
+  <line x1="382" y1="757" x2="382" y2="790" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="232" y1="772" x2="307" y2="806" stroke="#1f2937" stroke-width="2.5" stroke-dasharray="5,5" marker-end="url(#arr)"/>
+  <ellipse cx="382" cy="828" rx="74" ry="50" fill="#d7eef7" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="382" y="821" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">program</text>
+  <text x="382" y="849" text-anchor="middle" font-family="Arial, sans-serif" font-size="21" fill="#111827">in memory</text>
+
+  <path d="M 520 120 L 540 120 L 540 290 L 520 290" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="578" y="193" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">compile</text>
+  <text x="578" y="224" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">time</text>
+
+  <path d="M 520 440 L 540 440 L 540 750 L 520 750" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="590" y="585" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">load</text>
+  <text x="590" y="616" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">time</text>
+
+  <path d="M 520 795 L 540 795 L 540 858 L 520 858" fill="none" stroke="#1f2937" stroke-width="2.5"/>
+  <text x="602" y="820" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">execution</text>
+  <text x="602" y="851" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">time</text>
+  <text x="602" y="882" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">(run time)</text>
+</svg>

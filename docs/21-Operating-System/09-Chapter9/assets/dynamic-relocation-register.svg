@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 650" width="800" height="531">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#1f2937"/>
+    </marker>
+  </defs>
+
+  <rect x="70" y="300" width="100" height="86" fill="#d1d5d2" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="120" y="353" text-anchor="middle" font-family="Arial, sans-serif" font-size="29" fill="#111827">CPU</text>
+
+  <rect x="385" y="165" width="180" height="320" fill="#d1d5d2" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="475" y="198" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" fill="#111827">relocation</text>
+  <text x="475" y="232" text-anchor="middle" font-family="Arial, sans-serif" font-size="25" fill="#111827">register</text>
+  <rect x="420" y="255" width="110" height="42" fill="#d7eef7" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="475" y="285" text-anchor="middle" font-family="Arial, sans-serif" font-size="26" fill="#111827">14000</text>
+  <circle cx="475" cy="342" r="43" fill="#d7eef7" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="475" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#111827">&#8804;</text>
+  <text x="475" y="525" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#111827">MMU</text>
+
+  <rect x="760" y="45" width="180" height="540" fill="#d7eef7" stroke="#1f2937" stroke-width="1.5"/>
+  <text x="850" y="352" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#111827">memory</text>
+
+  <line x1="170" y1="342" x2="432" y2="342" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="518" y1="342" x2="760" y2="342" stroke="#1f2937" stroke-width="2.5" marker-end="url(#arr)"/>
+
+  <text x="282" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" fill="#111827">logical</text>
+  <text x="282" y="324" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" fill="#111827">address</text>
+  <text x="282" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" fill="#111827">346</text>
+
+  <text x="658" y="292" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" fill="#111827">physical</text>
+  <text x="658" y="324" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" fill="#111827">address</text>
+  <text x="658" y="382" text-anchor="middle" font-family="Arial, sans-serif" font-size="27" fill="#111827">14346</text>
+</svg>
