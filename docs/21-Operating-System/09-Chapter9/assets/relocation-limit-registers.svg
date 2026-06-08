@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 360" width="734" height="294">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <rect x="55" y="150" width="90" height="70" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <text x="100" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="24" fill="#111827">CPU</text>
+
+  <rect x="295" y="45" width="118" height="62" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <text x="354" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">limit</text>
+  <text x="354" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">register</text>
+
+  <polygon points="354,145 430,185 354,225 278,185" fill="#bae6fd" stroke="#374151" stroke-width="1.5"/>
+  <text x="354" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="30" fill="#111827">&lt;</text>
+
+  <rect x="540" y="45" width="142" height="62" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <text x="611" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">relocation</text>
+  <text x="611" y="98" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">register</text>
+
+  <circle cx="611" cy="185" r="33" fill="#bae6fd" stroke="#374151" stroke-width="1.5"/>
+  <text x="611" y="195" text-anchor="middle" font-family="Arial, sans-serif" font-size="28" fill="#111827">+</text>
+
+  <rect x="780" y="65" width="80" height="240" fill="#bae6fd" stroke="#374151" stroke-width="1.5"/>
+  <text x="820" y="194" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">memory</text>
+
+  <line x1="145" y1="185" x2="278" y2="185" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="214" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">logical</text>
+  <text x="214" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">address</text>
+
+  <line x1="354" y1="107" x2="354" y2="145" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="430" y1="185" x2="578" y2="185" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="480" y="168" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">yes</text>
+
+  <line x1="611" y1="107" x2="611" y2="152" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <line x1="644" y1="185" x2="780" y2="185" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="711" y="158" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">physical</text>
+  <text x="711" y="184" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#111827">address</text>
+
+  <line x1="354" y1="225" x2="354" y2="300" stroke="#374151" stroke-width="2.5" marker-end="url(#arr)"/>
+  <text x="382" y="260" font-family="Arial, sans-serif" font-size="22" fill="#111827">no</text>
+  <text x="354" y="332" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#dc2626">trap: addressing error</text>
+</svg>
