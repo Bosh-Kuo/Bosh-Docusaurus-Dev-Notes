@@ -1,0 +1,73 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 660" width="1000" height="660">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#111827"/>
+    </marker>
+  </defs>
+
+  <g font-family="Arial, sans-serif" fill="#111827">
+    <rect x="70" y="40" width="115" height="135" fill="#d1d5db" stroke="#111827" stroke-width="2"/>
+    <text x="128" y="115" text-anchor="middle" font-size="24">CPU</text>
+    <line x1="185" y1="105" x2="220" y2="105" stroke="#111827" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <text x="260" y="48" text-anchor="middle" font-size="21">logical</text>
+    <text x="260" y="74" text-anchor="middle" font-size="21">address</text>
+    <rect x="225" y="90" width="48" height="34" fill="#d1d5db" stroke="#111827" stroke-width="1.5"/>
+    <rect x="273" y="90" width="48" height="34" fill="#d1d5db" stroke="#111827" stroke-width="1.5"/>
+    <text x="249" y="114" text-anchor="middle" font-size="20">p</text>
+    <text x="297" y="114" text-anchor="middle" font-size="20">d</text>
+
+    <rect x="360" y="205" width="205" height="150" fill="#bae6fd" stroke="#111827" stroke-width="2"/>
+    <line x1="462" y1="205" x2="462" y2="355" stroke="#111827" stroke-width="1.5"/>
+    <g stroke="#111827" stroke-width="1.25">
+      <line x1="360" y1="230" x2="565" y2="230"/>
+      <line x1="360" y1="255" x2="565" y2="255"/>
+      <line x1="360" y1="280" x2="565" y2="280"/>
+      <line x1="360" y1="305" x2="565" y2="305"/>
+      <line x1="360" y1="330" x2="565" y2="330"/>
+    </g>
+    <text x="410" y="160" text-anchor="middle" font-size="21">page</text>
+    <text x="410" y="186" text-anchor="middle" font-size="21">number</text>
+    <text x="515" y="160" text-anchor="middle" font-size="21">frame</text>
+    <text x="515" y="186" text-anchor="middle" font-size="21">number</text>
+    <text x="462" y="390" text-anchor="middle" font-size="25">TLB</text>
+    <g stroke="#111827" stroke-width="2.2" fill="none" marker-end="url(#arr)">
+      <path d="M249 124 V215 H355"/>
+      <path d="M265 124 V240 H355"/>
+      <path d="M265 124 V265 H355"/>
+      <path d="M265 124 V290 H355"/>
+      <path d="M265 124 V315 H355"/>
+      <path d="M265 124 V340 H355"/>
+    </g>
+
+    <rect x="690" y="325" width="52" height="36" fill="#d1d5db" stroke="#111827" stroke-width="1.5"/>
+    <rect x="742" y="325" width="52" height="36" fill="#d1d5db" stroke="#111827" stroke-width="1.5"/>
+    <text x="716" y="350" text-anchor="middle" font-size="20">f</text>
+    <text x="768" y="350" text-anchor="middle" font-size="20">d</text>
+    <text x="830" y="290" text-anchor="middle" font-size="22">physical</text>
+    <text x="830" y="317" text-anchor="middle" font-size="22">address</text>
+    <path d="M565 280 H720 V320" fill="none" stroke="#111827" stroke-width="2.5" marker-end="url(#arr)"/>
+    <text x="625" y="268" font-size="21">TLB hit</text>
+    <path d="M321 107 H770 V320" fill="none" stroke="#111827" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <rect x="555" y="430" width="120" height="170" fill="#bae6fd" stroke="#111827" stroke-width="2"/>
+    <line x1="555" y1="510" x2="675" y2="510" stroke="#111827" stroke-width="1.5"/>
+    <rect x="555" y="510" width="120" height="32" fill="#bae6fd" stroke="#111827" stroke-width="1.5"/>
+    <text x="615" y="533" text-anchor="middle" font-size="20">f</text>
+    <line x1="585" y1="475" x2="645" y2="475" stroke="#111827" stroke-width="1.5"/>
+    <line x1="585" y1="500" x2="645" y2="500" stroke="#111827" stroke-width="1.5"/>
+    <line x1="585" y1="570" x2="645" y2="570" stroke="#111827" stroke-width="1.5"/>
+    <text x="615" y="632" text-anchor="middle" font-size="22">page table</text>
+
+    <path d="M249 124 V525 H550" fill="none" stroke="#111827" stroke-width="2.5" marker-end="url(#arr)"/>
+    <text x="350" y="512" font-size="22">TLB miss</text>
+    <path d="M540 430 C525 430 525 450 525 475 C525 500 525 520 540 520" fill="none" stroke="#111827" stroke-width="1.8"/>
+    <text x="510" y="492" text-anchor="middle" font-size="22">p</text>
+    <path d="M675 526 H720 V365" fill="none" stroke="#111827" stroke-width="2.5" marker-end="url(#arr)"/>
+
+    <rect x="880" y="95" width="105" height="430" fill="#bae6fd" stroke="#111827" stroke-width="2"/>
+    <line x1="794" y1="343" x2="875" y2="343" stroke="#111827" stroke-width="2.5" marker-end="url(#arr)"/>
+    <text x="933" y="560" text-anchor="middle" font-size="22">physical</text>
+    <text x="933" y="586" text-anchor="middle" font-size="22">memory</text>
+  </g>
+</svg>

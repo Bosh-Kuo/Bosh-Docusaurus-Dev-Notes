@@ -1,0 +1,80 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 740" width="900" height="740">
+  <g font-family="Arial, sans-serif" fill="#111827">
+    <text x="430" y="32" text-anchor="middle" font-size="23">page number</text>
+    <text x="640" y="32" text-anchor="middle" font-size="23">page offset</text>
+    <rect x="280" y="48" width="510" height="40" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+    <line x1="535" y1="48" x2="535" y2="88" stroke="#374151" stroke-width="1.8"/>
+    <text x="408" y="76" text-anchor="middle" font-size="23" font-style="italic">p</text>
+    <text x="663" y="76" text-anchor="middle" font-size="23" font-style="italic">d</text>
+    <text x="408" y="118" text-anchor="middle" font-size="22" font-style="italic">m - n</text>
+    <text x="663" y="118" text-anchor="middle" font-size="22" font-style="italic">n</text>
+  </g>
+
+  <g transform="translate(0 210)" font-family="Arial, sans-serif">
+    <rect x="160" y="110" width="120" height="240" fill="#d1d5db" stroke="#374151" stroke-width="2"/>
+    <g font-size="22" fill="#374151" text-anchor="middle">
+      <text x="220" y="150">page 0</text>
+      <text x="220" y="210">page 1</text>
+      <text x="220" y="270">page 2</text>
+      <text x="220" y="330">page 3</text>
+      <text x="220" y="390">logical</text>
+      <text x="220" y="417">memory</text>
+    </g>
+    <line x1="160" y1="170" x2="280" y2="170" stroke="#374151" stroke-width="1.5"/>
+    <line x1="160" y1="230" x2="280" y2="230" stroke="#374151" stroke-width="1.5"/>
+    <line x1="160" y1="290" x2="280" y2="290" stroke="#374151" stroke-width="1.5"/>
+
+    <g font-size="22" fill="#374151" text-anchor="end">
+      <text x="465" y="153">0</text>
+      <text x="465" y="203">1</text>
+      <text x="465" y="253">2</text>
+      <text x="465" y="303">3</text>
+    </g>
+    <rect x="480" y="125" width="46" height="200" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+    <g font-size="22" fill="#075985" text-anchor="middle">
+      <text x="503" y="157">1</text>
+      <text x="503" y="207">4</text>
+      <text x="503" y="257">3</text>
+      <text x="503" y="307">7</text>
+    </g>
+    <line x1="480" y1="175" x2="526" y2="175" stroke="#374151" stroke-width="1.5"/>
+    <line x1="480" y1="225" x2="526" y2="225" stroke="#374151" stroke-width="1.5"/>
+    <line x1="480" y1="275" x2="526" y2="275" stroke="#374151" stroke-width="1.5"/>
+    <text x="503" y="366" text-anchor="middle" font-size="22" fill="#374151">page table</text>
+
+    <text x="690" y="70" text-anchor="middle" font-size="20" fill="#374151">frame</text>
+    <text x="690" y="94" text-anchor="middle" font-size="20" fill="#374151">number</text>
+    <rect x="720" y="110" width="120" height="320" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+    <g stroke="#374151" stroke-width="1.5">
+      <line x1="720" y1="150" x2="840" y2="150"/>
+      <line x1="720" y1="190" x2="840" y2="190"/>
+      <line x1="720" y1="230" x2="840" y2="230"/>
+      <line x1="720" y1="270" x2="840" y2="270"/>
+      <line x1="720" y1="310" x2="840" y2="310"/>
+      <line x1="720" y1="350" x2="840" y2="350"/>
+      <line x1="720" y1="390" x2="840" y2="390"/>
+    </g>
+    <rect x="720" y="150" width="120" height="40" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+    <rect x="720" y="230" width="120" height="40" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+    <rect x="720" y="270" width="120" height="40" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+    <rect x="720" y="390" width="120" height="40" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+    <g font-size="21" fill="#374151" text-anchor="middle">
+      <text x="780" y="177">page 0</text>
+      <text x="780" y="257">page 2</text>
+      <text x="780" y="297">page 1</text>
+      <text x="780" y="417">page 3</text>
+      <text x="780" y="470">physical</text>
+      <text x="780" y="497">memory</text>
+    </g>
+    <g font-size="20" fill="#374151" text-anchor="end">
+      <text x="710" y="138">0</text>
+      <text x="710" y="178">1</text>
+      <text x="710" y="218">2</text>
+      <text x="710" y="258">3</text>
+      <text x="710" y="298">4</text>
+      <text x="710" y="338">5</text>
+      <text x="710" y="378">6</text>
+      <text x="710" y="418">7</text>
+    </g>
+  </g>
+</svg>

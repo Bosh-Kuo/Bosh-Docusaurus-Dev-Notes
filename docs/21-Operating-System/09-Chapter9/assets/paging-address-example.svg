@@ -1,0 +1,68 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 630" width="920" height="630">
+  <rect x="105" y="55" width="64" height="352" fill="#d1d5db" stroke="#374151" stroke-width="2"/>
+  <g stroke="#374151" stroke-width="1.5">
+    <line x1="62" y1="139" x2="169" y2="139"/>
+    <line x1="62" y1="223" x2="169" y2="223"/>
+    <line x1="62" y1="307" x2="169" y2="307"/>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#374151" text-anchor="end">
+    <text x="93" y="78">0</text><text x="93" y="99">1</text><text x="93" y="120">2</text><text x="93" y="141">3</text>
+    <text x="93" y="162">4</text><text x="93" y="183">5</text><text x="93" y="204">6</text><text x="93" y="225">7</text>
+    <text x="93" y="246">8</text><text x="93" y="267">9</text><text x="93" y="288">10</text><text x="93" y="309">11</text>
+    <text x="93" y="330">12</text><text x="93" y="351">13</text><text x="93" y="372">14</text><text x="93" y="393">15</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="16" fill="#111827" text-anchor="middle">
+    <text x="137" y="78">a</text><text x="137" y="99">b</text><text x="137" y="120">c</text><text x="137" y="134">d</text>
+    <text x="137" y="162">e</text><text x="137" y="183">f</text><text x="137" y="204">g</text><text x="137" y="218">h</text>
+    <text x="137" y="246">i</text><text x="137" y="267">j</text><text x="137" y="288">k</text><text x="137" y="302">l</text>
+    <text x="137" y="330">m</text><text x="137" y="351">n</text><text x="137" y="372">o</text><text x="137" y="393">p</text>
+  </g>
+  <text x="137" y="440" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#374151">logical memory</text>
+
+  <g font-family="Arial, sans-serif" font-size="20" fill="#374151" text-anchor="end">
+    <text x="387" y="158">0</text>
+    <text x="387" y="208">1</text>
+    <text x="387" y="258">2</text>
+    <text x="387" y="308">3</text>
+  </g>
+  <rect x="410" y="126" width="46" height="200" fill="#ffffff" stroke="#374151" stroke-width="2"/>
+  <g font-family="Arial, sans-serif" font-size="20" fill="#111827" text-anchor="middle">
+    <text x="433" y="158">5</text>
+    <text x="433" y="208">6</text>
+    <text x="433" y="258">1</text>
+    <text x="433" y="308">2</text>
+  </g>
+  <line x1="410" y1="176" x2="456" y2="176" stroke="#374151" stroke-width="1.5"/>
+  <line x1="410" y1="226" x2="456" y2="226" stroke="#374151" stroke-width="1.5"/>
+  <line x1="410" y1="276" x2="456" y2="276" stroke="#374151" stroke-width="1.5"/>
+  <text x="433" y="370" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#374151">page table</text>
+
+  <rect x="705" y="55" width="64" height="520" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+  <g stroke="#374151" stroke-width="1.5">
+    <line x1="665" y1="139" x2="769" y2="139"/>
+    <line x1="665" y1="223" x2="769" y2="223"/>
+    <line x1="665" y1="307" x2="769" y2="307"/>
+    <line x1="665" y1="391" x2="769" y2="391"/>
+    <line x1="665" y1="475" x2="769" y2="475"/>
+  </g>
+  <rect x="705" y="139" width="64" height="84" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <rect x="705" y="223" width="64" height="84" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <rect x="705" y="391" width="64" height="84" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <rect x="705" y="475" width="64" height="84" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+  <g font-family="Arial, sans-serif" font-size="18" fill="#374151" text-anchor="end">
+    <text x="693" y="78">0</text>
+    <text x="693" y="162">4</text>
+    <text x="693" y="246">8</text>
+    <text x="693" y="330">12</text>
+    <text x="693" y="414">16</text>
+    <text x="693" y="498">20</text>
+    <text x="693" y="582">28</text>
+  </g>
+  <g font-family="Arial, sans-serif" font-size="16" fill="#111827" text-anchor="middle">
+    <text x="737" y="162">i</text><text x="737" y="183">j</text><text x="737" y="204">k</text><text x="737" y="218">l</text>
+    <text x="737" y="246">m</text><text x="737" y="267">n</text><text x="737" y="288">o</text><text x="737" y="302">p</text>
+    <text x="737" y="414">a</text><text x="737" y="435">b</text><text x="737" y="456">c</text><text x="737" y="470">d</text>
+    <text x="737" y="498">e</text><text x="737" y="519">f</text><text x="737" y="540">g</text><text x="737" y="561">h</text>
+  </g>
+  <text x="737" y="608" text-anchor="middle" font-family="Arial, sans-serif" font-size="22" fill="#374151">physical memory</text>
+</svg>
