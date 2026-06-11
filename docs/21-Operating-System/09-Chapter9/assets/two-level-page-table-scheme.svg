@@ -1,0 +1,95 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1040 620" width="1040" height="620">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <g font-family="Arial, sans-serif" fill="#111827">
+    <rect x="100" y="110" width="165" height="330" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+    <g stroke="#374151" stroke-width="1.4">
+      <line x1="100" y1="150" x2="265" y2="150"/>
+      <line x1="100" y1="190" x2="265" y2="190"/>
+      <line x1="100" y1="230" x2="265" y2="230"/>
+      <line x1="100" y1="270" x2="265" y2="270"/>
+      <line x1="100" y1="310" x2="265" y2="310"/>
+      <line x1="100" y1="350" x2="265" y2="350"/>
+      <line x1="100" y1="390" x2="265" y2="390"/>
+    </g>
+    <rect x="100" y="110" width="165" height="40" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <rect x="100" y="150" width="165" height="40" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <rect x="100" y="390" width="165" height="50" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <text x="183" y="500" text-anchor="middle" font-size="24">outer page</text>
+    <text x="183" y="530" text-anchor="middle" font-size="24">table</text>
+    <text x="80" y="136" text-anchor="middle" font-size="20">0</text>
+    <text x="80" y="176" text-anchor="middle" font-size="20">1</text>
+    <text x="80" y="416" text-anchor="middle" font-size="20">929</text>
+    <text x="183" y="300" text-anchor="middle" font-size="34">...</text>
+
+    <rect x="430" y="65" width="190" height="445" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+    <text x="525" y="560" text-anchor="middle" font-size="24">page of</text>
+    <text x="525" y="590" text-anchor="middle" font-size="24">page table</text>
+
+    <g stroke="#374151" stroke-width="1.4">
+      <line x1="480" y1="100" x2="580" y2="100"/>
+      <line x1="480" y1="145" x2="580" y2="145"/>
+      <line x1="480" y1="190" x2="580" y2="190"/>
+      <line x1="480" y1="235" x2="580" y2="235"/>
+      <line x1="480" y1="280" x2="580" y2="280"/>
+      <line x1="480" y1="325" x2="580" y2="325"/>
+      <line x1="480" y1="370" x2="580" y2="370"/>
+      <line x1="480" y1="415" x2="580" y2="415"/>
+      <line x1="480" y1="460" x2="580" y2="460"/>
+    </g>
+    <rect x="480" y="100" width="100" height="45" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <rect x="480" y="235" width="100" height="45" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <rect x="480" y="370" width="100" height="45" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <rect x="480" y="460" width="100" height="50" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <text x="530" y="132" text-anchor="middle" font-size="22">1</text>
+    <text x="530" y="267" text-anchor="middle" font-size="22">100</text>
+    <text x="530" y="402" text-anchor="middle" font-size="22">708</text>
+    <text x="530" y="493" text-anchor="middle" font-size="22">900</text>
+    <text x="530" y="210" text-anchor="middle" font-size="30">...</text>
+    <text x="530" y="345" text-anchor="middle" font-size="30">...</text>
+    <text x="530" y="445" text-anchor="middle" font-size="30">...</text>
+
+    <rect x="785" y="55" width="135" height="495" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+    <g stroke="#374151" stroke-width="1.4">
+      <line x1="785" y1="95" x2="920" y2="95"/>
+      <line x1="785" y1="150" x2="920" y2="150"/>
+      <line x1="785" y1="205" x2="920" y2="205"/>
+      <line x1="785" y1="260" x2="920" y2="260"/>
+      <line x1="785" y1="315" x2="920" y2="315"/>
+      <line x1="785" y1="370" x2="920" y2="370"/>
+      <line x1="785" y1="425" x2="920" y2="425"/>
+      <line x1="785" y1="480" x2="920" y2="480"/>
+    </g>
+    <rect x="785" y="95" width="135" height="55" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <rect x="785" y="260" width="135" height="55" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <rect x="785" y="370" width="135" height="55" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <rect x="785" y="480" width="135" height="70" fill="#d1d5db" stroke="#374151" stroke-width="1.4"/>
+    <text x="760" y="85" text-anchor="middle" font-size="21">0</text>
+    <text x="760" y="125" text-anchor="middle" font-size="21">1</text>
+    <text x="760" y="252" text-anchor="middle" font-size="21">100</text>
+    <text x="760" y="302" text-anchor="middle" font-size="21">500</text>
+    <text x="760" y="412" text-anchor="middle" font-size="21">708</text>
+    <text x="760" y="472" text-anchor="middle" font-size="21">900</text>
+    <text x="760" y="525" text-anchor="middle" font-size="21">929</text>
+    <text x="853" y="585" text-anchor="middle" font-size="24">memory</text>
+    <text x="853" y="232" text-anchor="middle" font-size="30">...</text>
+    <text x="853" y="348" text-anchor="middle" font-size="30">...</text>
+    <text x="853" y="458" text-anchor="middle" font-size="30">...</text>
+
+    <g stroke="#374151" stroke-width="2.5" fill="none" marker-end="url(#arr)">
+      <line x1="265" y1="130" x2="475" y2="122"/>
+      <line x1="265" y1="172" x2="475" y2="257"/>
+      <line x1="265" y1="415" x2="475" y2="484"/>
+      <line x1="580" y1="122" x2="780" y2="122"/>
+      <line x1="580" y1="257" x2="780" y2="288"/>
+      <line x1="580" y1="402" x2="780" y2="412"/>
+      <line x1="580" y1="485" x2="780" y2="515"/>
+      <line x1="580" y1="493" x2="780" y2="485"/>
+    </g>
+    <text x="525" y="35" text-anchor="middle" font-size="25">page table</text>
+  </g>
+</svg>

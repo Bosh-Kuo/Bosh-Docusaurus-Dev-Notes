@@ -167,7 +167,7 @@ sequenceDiagram
 | Physical memory size  | 32 bytes | 實體記憶體總共有 32 bytes                      |
 | Frame size            | 4 bytes  | 每個 physical frame 大小等於 page size         |
 
-這些前提分屬不同層次。`4 bits` 描述的是 **address 本身有多長**；`4 bytes` 描述的是 **一個 page/frame 有多大**；`32 bytes` 描述的是 **physical memory 總容量**。若把這三種數字混在一起看，後面的 `2^4`、`2 bits`、`8 frames` 就會很難理解。
+這些前提分屬不同層次。`4 bits` 描述的是 **address 本身有多長**；`4 bytes` 描述的是 **一個 page/frame 有多大**；`32 bytes` 描述的是 **physical memory 總容量**。
 
 #### **第一步：4-bit Logical Address 代表多少可用位址？**
 

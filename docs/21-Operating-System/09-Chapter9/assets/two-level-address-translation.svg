@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 470" width="980" height="470">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <g font-family="Arial, sans-serif" fill="#111827">
+    <text x="155" y="48" text-anchor="middle" font-size="24">logical address</text>
+    <rect x="70" y="60" width="74" height="40" fill="#d1d5db" stroke="#374151" stroke-width="2"/>
+    <rect x="144" y="60" width="74" height="40" fill="#d1d5db" stroke="#374151" stroke-width="2"/>
+    <rect x="218" y="60" width="74" height="40" fill="#d1d5db" stroke="#374151" stroke-width="2"/>
+    <text x="107" y="88" text-anchor="middle" font-size="23">p1</text>
+    <text x="181" y="88" text-anchor="middle" font-size="23">p2</text>
+    <text x="255" y="88" text-anchor="middle" font-size="23">d</text>
+
+    <rect x="380" y="140" width="118" height="130" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+    <rect x="380" y="195" width="118" height="30" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+    <text x="439" y="310" text-anchor="middle" font-size="23">outer page</text>
+    <text x="439" y="338" text-anchor="middle" font-size="23">table</text>
+    <path d="M363 170 C345 170 345 200 363 200" fill="none" stroke="#374151" stroke-width="2"/>
+    <text x="332" y="192" text-anchor="middle" font-size="23">p1</text>
+
+    <rect x="645" y="210" width="118" height="130" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+    <rect x="645" y="265" width="118" height="30" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+    <text x="704" y="385" text-anchor="middle" font-size="23">page of</text>
+    <text x="704" y="413" text-anchor="middle" font-size="23">page table</text>
+    <path d="M628 240 C610 240 610 270 628 270" fill="none" stroke="#374151" stroke-width="2"/>
+    <text x="598" y="262" text-anchor="middle" font-size="23">p2</text>
+
+    <rect x="860" y="285" width="98" height="130" fill="#bae6fd" stroke="#374151" stroke-width="2"/>
+    <rect x="860" y="340" width="98" height="30" fill="#d1d5db" stroke="#374151" stroke-width="1.5"/>
+    <path d="M843 315 C825 315 825 345 843 345" fill="none" stroke="#374151" stroke-width="2"/>
+    <text x="812" y="337" text-anchor="middle" font-size="23">d</text>
+
+    <g stroke="#374151" stroke-width="2.5" fill="none" marker-end="url(#arr)">
+      <path d="M107 100 V210 H375"/>
+      <line x1="498" y1="210" x2="640" y2="280"/>
+      <line x1="763" y1="280" x2="855" y2="355"/>
+    </g>
+  </g>
+</svg>
