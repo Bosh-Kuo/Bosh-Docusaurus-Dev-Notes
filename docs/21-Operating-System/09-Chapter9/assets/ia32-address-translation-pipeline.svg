@@ -1,0 +1,28 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 830 170" width="830" height="170">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+  <rect width="830" height="170" fill="#ffffff"/>
+  <rect x="38" y="78" width="78" height="46" fill="#dbeafe" stroke="#374151" stroke-width="1.4"/>
+  <rect x="226" y="68" width="154" height="66" fill="#dbeafe" stroke="#374151" stroke-width="1.4"/>
+  <rect x="502" y="68" width="118" height="66" fill="#dbeafe" stroke="#374151" stroke-width="1.4"/>
+  <rect x="735" y="68" width="78" height="66" fill="#dbeafe" stroke="#374151" stroke-width="1.4"/>
+  <line x1="116" y1="101" x2="226" y2="101" stroke="#374151" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="380" y1="101" x2="502" y2="101" stroke="#374151" stroke-width="2" marker-end="url(#arr)"/>
+  <line x1="620" y1="101" x2="735" y2="101" stroke="#374151" stroke-width="2" marker-end="url(#arr)"/>
+  <text x="77" y="106" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" fill="#1f2937">CPU</text>
+  <text x="303" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#1d4ed8">segmentation</text>
+  <text x="303" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#1d4ed8">unit</text>
+  <text x="561" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#1d4ed8">paging</text>
+  <text x="561" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#1d4ed8">unit</text>
+  <text x="774" y="94" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#1d4ed8">physical</text>
+  <text x="774" y="116" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#1d4ed8">memory</text>
+  <text x="171" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#374151">logical</text>
+  <text x="171" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#374151">address</text>
+  <text x="441" y="72" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#374151">linear</text>
+  <text x="441" y="92" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#374151">address</text>
+  <text x="676" y="62" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#374151">physical</text>
+  <text x="676" y="82" text-anchor="middle" font-family="Arial, sans-serif" font-size="17" fill="#374151">address</text>
+</svg>

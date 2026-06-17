@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 170" width="980" height="170">
+  <rect width="980" height="170" fill="#ffffff"/>
+  <line x1="40" y1="88" x2="940" y2="88" stroke="#374151" stroke-width="1.4"/>
+  <line x1="40" y1="78" x2="40" y2="88" stroke="#374151" stroke-width="1.4"/>
+  <line x1="195" y1="78" x2="195" y2="88" stroke="#374151" stroke-width="1.4"/>
+  <line x1="360" y1="78" x2="360" y2="88" stroke="#374151" stroke-width="1.4"/>
+  <line x1="535" y1="78" x2="535" y2="88" stroke="#374151" stroke-width="1.4"/>
+  <line x1="710" y1="78" x2="710" y2="88" stroke="#374151" stroke-width="1.4"/>
+  <line x1="865" y1="78" x2="865" y2="88" stroke="#374151" stroke-width="1.4"/>
+  <line x1="940" y1="78" x2="940" y2="88" stroke="#374151" stroke-width="1.4"/>
+  <text x="118" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">unused</text>
+  <text x="277" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">page map</text>
+  <text x="277" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">level 4</text>
+  <text x="448" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">page directory</text>
+  <text x="448" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">pointer table</text>
+  <text x="622" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">page</text>
+  <text x="622" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">directory</text>
+  <text x="788" y="48" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">page</text>
+  <text x="788" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">table</text>
+  <text x="902" y="70" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">offset</text>
+  <text x="40" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">63</text>
+  <text x="195" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">48</text>
+  <text x="214" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">47</text>
+  <text x="360" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">39</text>
+  <text x="379" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">38</text>
+  <text x="535" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">30</text>
+  <text x="554" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">29</text>
+  <text x="710" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">21</text>
+  <text x="729" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">20</text>
+  <text x="865" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">12</text>
+  <text x="884" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">11</text>
+  <text x="940" y="114" text-anchor="middle" font-family="Arial, sans-serif" font-size="18" fill="#374151">0</text>
+  <rect x="195" y="132" width="670" height="18" fill="#dbeafe" stroke="#2563eb" stroke-width="1.2"/>
+  <text x="530" y="162" text-anchor="middle" font-family="Arial, sans-serif" font-size="16" fill="#1d4ed8">48-bit virtual address fields</text>
+</svg>
