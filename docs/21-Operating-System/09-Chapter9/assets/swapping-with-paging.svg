@@ -1,0 +1,108 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 560" width="680" height="529">
+  <defs>
+    <linearGradient id="store-fill" x1="0" x2="1" y1="0" y2="0">
+      <stop offset="0%" stop-color="#c7eaf3"/>
+      <stop offset="52%" stop-color="#e8f7fb"/>
+      <stop offset="100%" stop-color="#7dd3e8"/>
+    </linearGradient>
+    <pattern id="paged" width="9" height="9" patternUnits="userSpaceOnUse" patternTransform="rotate(45)">
+      <rect width="9" height="9" fill="#d8d8d8"/>
+      <line x1="0" y1="0" x2="0" y2="9" stroke="#5b5b5b" stroke-width="2"/>
+    </pattern>
+  </defs>
+
+  <rect width="720" height="560" fill="#ffffff"/>
+
+  <text x="105" y="190" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">process</text>
+  <text x="105" y="214" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">A</text>
+  <text x="105" y="385" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">process</text>
+  <text x="105" y="409" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">B</text>
+
+  <rect x="160" y="30" width="86" height="482" fill="#c7eaf3" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="64" width="86" height="38" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="102" width="86" height="38" fill="url(#paged)" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="140" width="86" height="38" fill="url(#paged)" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="178" width="86" height="38" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="216" width="86" height="38" fill="url(#paged)" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="288" width="86" height="38" fill="url(#paged)" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="326" width="86" height="38" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="364" width="86" height="38" fill="url(#paged)" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="402" width="86" height="38" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+  <rect x="160" y="440" width="86" height="38" fill="url(#paged)" stroke="#111827" stroke-width="1.5"/>
+
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#111827" text-anchor="middle">
+    <text x="203" y="89">a</text>
+    <text x="203" y="127">b</text>
+    <text x="203" y="165">c</text>
+    <text x="203" y="203">d</text>
+    <text x="203" y="241">e</text>
+    <text x="203" y="313">f</text>
+    <text x="203" y="351">g</text>
+    <text x="203" y="389">h</text>
+    <text x="203" y="427">i</text>
+    <text x="203" y="465">j</text>
+  </g>
+
+  <path d="M258 66 C270 66 270 66 270 78 L270 242 C270 254 270 254 258 254" fill="none" stroke="#111827" stroke-width="1.5"/>
+  <path d="M258 290 C270 290 270 290 270 302 L270 466 C270 478 270 478 258 478" fill="none" stroke="#111827" stroke-width="1.5"/>
+  <text x="203" y="532" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">main</text>
+  <text x="203" y="555" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">memory</text>
+
+  <path d="M410 86 C410 60 675 60 675 86 L675 440 C675 466 410 466 410 440 Z" fill="url(#store-fill)" stroke="#111827" stroke-width="1.5"/>
+  <ellipse cx="542.5" cy="86" rx="132.5" ry="26" fill="#e8f7fb" stroke="#111827" stroke-width="1.5"/>
+
+  <g font-family="Arial, sans-serif" font-size="17" font-weight="700" fill="#111827">
+    <text x="438" y="160">0</text><rect x="460" y="143" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="493" y="160">1</text><rect x="515" y="143" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="548" y="160">2</text><rect x="570" y="143" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="603" y="160">3</text><rect x="625" y="143" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+
+    <text x="438" y="205">4</text><rect x="460" y="188" width="19" height="19" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+    <text x="465" y="204" font-size="15">b</text>
+    <text x="493" y="205">5</text><rect x="515" y="188" width="19" height="19" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+    <text x="520" y="204" font-size="15">c</text>
+    <text x="548" y="205">6</text><rect x="570" y="188" width="19" height="19" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+    <text x="575" y="204" font-size="15">e</text>
+    <text x="603" y="205">7</text><rect x="625" y="188" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+
+    <text x="438" y="250">8</text><rect x="460" y="233" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="493" y="250">9</text><rect x="515" y="233" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="538" y="250">10</text><rect x="570" y="233" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="593" y="250">11</text><rect x="625" y="233" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+
+    <text x="430" y="295">12</text><rect x="460" y="278" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="485" y="295">13</text><rect x="515" y="278" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="540" y="295">14</text><rect x="570" y="278" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="595" y="295">15</text><rect x="625" y="278" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+
+    <text x="430" y="340">16</text><rect x="460" y="323" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="485" y="340">17</text><rect x="515" y="323" width="19" height="19" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+    <text x="520" y="339" font-size="15">f</text>
+    <text x="540" y="340">18</text><rect x="570" y="323" width="19" height="19" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+    <text x="575" y="339" font-size="15">h</text>
+    <text x="595" y="340">19</text><rect x="625" y="323" width="19" height="19" fill="#cfd2d3" stroke="#111827" stroke-width="1.5"/>
+    <text x="630" y="339" font-size="15">j</text>
+
+    <text x="430" y="385">20</text><rect x="460" y="368" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="485" y="385">21</text><rect x="515" y="368" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="540" y="385">22</text><rect x="570" y="368" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+    <text x="595" y="385">23</text><rect x="625" y="368" width="19" height="19" fill="#f9fafb" stroke="#111827" stroke-width="1.5"/>
+  </g>
+
+  <path d="M278 158 L340 174 L600 174" fill="none" stroke="#111827" stroke-width="2"/>
+  <text x="374" y="163" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">page out</text>
+  <line x1="469.5" y1="174" x2="469.5" y2="181" stroke="#111827" stroke-width="2" stroke-linecap="butt"/>
+  <polygon points="469.5 188, 465.5 181, 473.5 181" fill="#111827"/>
+  <line x1="524.5" y1="174" x2="524.5" y2="181" stroke="#111827" stroke-width="2" stroke-linecap="butt"/>
+  <polygon points="524.5 188, 520.5 181, 528.5 181" fill="#111827"/>
+  <line x1="579.5" y1="174" x2="579.5" y2="181" stroke="#111827" stroke-width="2" stroke-linecap="butt"/>
+  <polygon points="579.5 188, 575.5 181, 583.5 181" fill="#111827"/>
+
+  <path d="M634.5 342 L634.5 365 L524.5 365 L524.5 342" fill="none" stroke="#111827" stroke-width="2"/>
+  <path d="M579.5 342 L579.5 365" fill="none" stroke="#111827" stroke-width="2"/>
+  <line x1="524.5" y1="365" x2="284" y2="365" stroke="#111827" stroke-width="2" stroke-linecap="butt"/>
+  <polygon points="276 365, 284 361, 284 369" fill="#111827"/>
+  <text x="365" y="355" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">page in</text>
+
+  <text x="542.5" y="497" text-anchor="middle" font-family="Arial, sans-serif" font-size="20" font-weight="700" fill="#111827">backing store</text>
+</svg>
