@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 420" role="img" aria-labelledby="title desc">
+  <title id="title">HTML 屬性的角色分工</title>
+  <desc id="desc">比較 id、class、data-* 與 aria-* 在 HTML element 上各自承擔的角色。</desc>
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="918" height="418" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="460" y="38" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="bold" fill="#1e293b">同一個 HTML Element 上，不同屬性負責不同語意</text>
+
+  <rect x="80" y="88" width="760" height="86" rx="8" fill="#f8fafc" stroke="#94a3b8" stroke-width="2"/>
+  <text x="460" y="124" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">&lt;button id="checkout" class="btn primary" data-state="open" aria-expanded="true"&gt;</text>
+  <text x="460" y="150" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#64748b">DOM 節點同時承載定位、樣式、狀態與輔助語意</text>
+
+  <line x1="180" y1="174" x2="180" y2="218" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="365" y1="174" x2="365" y2="218" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="555" y1="174" x2="555" y2="218" stroke="#16a34a" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <line x1="740" y1="174" x2="740" y2="218" stroke="#d97706" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+
+  <rect x="80" y="222" width="200" height="112" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="180" y="252" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">id</text>
+  <text x="180" y="278" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">單一節點定位</text>
+  <text x="180" y="302" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">錨點、表單關聯、測試輔助</text>
+
+  <rect x="310" y="222" width="200" height="112" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="410" y="252" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">class</text>
+  <text x="410" y="278" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">視覺樣式分類</text>
+  <text x="410" y="302" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">utility classes、layout、theme</text>
+
+  <rect x="540" y="222" width="200" height="112" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="640" y="252" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">data-*</text>
+  <text x="640" y="278" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">私有狀態與結構標記</text>
+  <text x="640" y="302" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">data-state、data-slot</text>
+
+  <rect x="760" y="222" width="80" height="112" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="800" y="252" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">aria-*</text>
+  <text x="800" y="278" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">輔助</text>
+  <text x="800" y="302" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">語意</text>
+
+  <rect x="210" y="362" width="500" height="34" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="460" y="384" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">data-* 的重點：不是取代所有屬性，而是補上元素自己的狀態與工具鉤子</text>
+</svg>

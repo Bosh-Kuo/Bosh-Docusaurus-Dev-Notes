@@ -1,5 +1,5 @@
 ---
-title: 滾輪元素邊界關係 Scroll Boundaries
+title: CSS 滾輪元素邊界關係 Scroll Boundaries
 sidebar_label: "[CSS] 滾輪元素邊界"
 description: 透過圖像與互動範例理解 client/scroll/offset、scroll chaining 與 scroll-padding 的協作
 last_update:

@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 540" role="img" aria-labelledby="title desc">
+  <title id="title">React 中 data-* 的使用決策</title>
+  <desc id="desc">依照資料用途判斷應該使用 props 或 state、className、data-* 或 data-testid。</desc>
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#3b82f6"/>
+    </marker>
+  </defs>
+
+  <rect x="1" y="1" width="918" height="538" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="460" y="38" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="bold" fill="#1e293b">React 元件中，先問資料要服務哪一層</text>
+
+  <rect x="310" y="72" width="300" height="60" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="460" y="96" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">這個值是產品資料或互動邏輯嗎？</text>
+  <text x="460" y="116" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#475569">例如 item.id、登入狀態、表單值</text>
+
+  <line x1="460" y1="132" x2="460" y2="170" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <rect x="310" y="172" width="300" height="56" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="460" y="195" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">是否只影響視覺樣式？</text>
+  <text x="460" y="214" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#475569">例如 spacing、color、layout</text>
+
+  <line x1="310" y1="103" x2="170" y2="103" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <rect x="40" y="72" width="130" height="62" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="105" y="96" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">props / state</text>
+  <text x="105" y="116" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#475569">留在 React 資料流</text>
+
+  <line x1="610" y1="200" x2="750" y2="200" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <rect x="750" y="170" width="130" height="62" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="815" y="194" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">className</text>
+  <text x="815" y="214" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#475569">直接描述視覺</text>
+
+  <line x1="460" y1="228" x2="460" y2="266" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <rect x="310" y="268" width="300" height="56" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="460" y="291" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">是否要讓 CSS 依狀態選取？</text>
+  <text x="460" y="310" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#475569">例如 open、disabled、side、slot</text>
+
+  <line x1="310" y1="296" x2="170" y2="296" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <rect x="40" y="266" width="130" height="62" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="105" y="290" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">data-*</text>
+  <text x="105" y="310" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#475569">狀態與結構鉤子</text>
+
+  <line x1="460" y1="324" x2="460" y2="362" stroke="#3b82f6" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <rect x="310" y="364" width="300" height="56" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="460" y="387" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">是否只服務測試或自動化？</text>
+  <text x="460" y="406" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#475569">例如穩定定位 checkout button</text>
+
+  <line x1="610" y1="392" x2="750" y2="392" stroke="#7c3aed" stroke-width="2.5" marker-end="url(#arrowBlue)"/>
+  <rect x="750" y="362" width="130" height="62" rx="8" fill="#fee2e2" stroke="#ef4444" stroke-width="2"/>
+  <text x="815" y="386" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="13" font-weight="bold" fill="#1e293b">data-testid</text>
+  <text x="815" y="406" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="11" fill="#475569">測試專用定位</text>
+
+  <rect x="260" y="455" width="400" height="44" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="460" y="482" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">敏感資料、複雜物件與產品資料來源，不適合塞進 DOM attribute</text>
+</svg>

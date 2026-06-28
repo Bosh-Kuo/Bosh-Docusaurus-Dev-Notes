@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 920 430" role="img" aria-labelledby="title desc">
+  <title id="title">data-* 從 HTML 到 JS、CSS 與 Tailwind 的連動</title>
+  <desc id="desc">同一個 data-state 屬性可以被 JavaScript dataset 讀取，也可以被 CSS attribute selector 與 Tailwind data variant 使用。</desc>
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="7" refX="9" refY="3.5" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0,0 L0,7 L10,3.5 z" fill="#3b82f6"/>
+    </marker>
+    <style>
+      .flow-arrow {
+        stroke-dasharray: 10 8;
+        animation: flowDash 1.25s linear infinite;
+      }
+
+      @keyframes flowDash {
+        from { stroke-dashoffset: 18; }
+        to { stroke-dashoffset: 0; }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .flow-arrow {
+          animation: none;
+        }
+      }
+    </style>
+  </defs>
+
+  <rect x="1" y="1" width="918" height="428" rx="8" fill="#ffffff" stroke="#e2e8f0"/>
+  <text x="460" y="38" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="17" font-weight="bold" fill="#1e293b">data-state="open" 可以同時成為資料、選擇器與樣式條件</text>
+
+  <rect x="90" y="150" width="250" height="112" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+  <text x="215" y="184" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">HTML Attribute</text>
+  <text x="215" y="214" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">&lt;div data-state="open"&gt;</text>
+  <text x="215" y="238" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#64748b">狀態被寫在 DOM 節點上</text>
+
+  <rect x="570" y="80" width="250" height="82" rx="8" fill="#ede9fe" stroke="#7c3aed" stroke-width="2"/>
+  <text x="695" y="112" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">JavaScript dataset</text>
+  <text x="695" y="138" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">element.dataset.state === "open"</text>
+
+  <rect x="570" y="184" width="250" height="82" rx="8" fill="#dcfce7" stroke="#16a34a" stroke-width="2"/>
+  <text x="695" y="216" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">CSS Attribute Selector</text>
+  <text x="695" y="242" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">[data-state="open"] { ... }</text>
+
+  <rect x="570" y="288" width="250" height="82" rx="8" fill="#fef3c7" stroke="#d97706" stroke-width="2"/>
+  <text x="695" y="320" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" font-weight="bold" fill="#1e293b">Tailwind Variant</text>
+  <text x="695" y="346" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">data-[state=open]:animate-in</text>
+
+  <path class="flow-arrow" d="M340 182 C430 130 470 120 570 120" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <path class="flow-arrow" d="M340 206 C430 206 470 225 570 225" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+  <path class="flow-arrow" d="M340 238 C430 304 470 329 570 329" fill="none" stroke="#3b82f6" stroke-width="3" stroke-linecap="round" marker-end="url(#arrowBlue)"/>
+
+  <rect x="185" y="314" width="250" height="46" rx="6" fill="#f1f5f9" stroke="#e2e8f0"/>
+  <text x="310" y="343" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="12" fill="#475569">React 只宣告狀態，樣式規則交給 CSS / Tailwind</text>
+</svg>
