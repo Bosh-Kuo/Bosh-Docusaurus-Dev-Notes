@@ -1,0 +1,99 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 980 560" width="980" height="560">
+  <defs>
+    <marker id="arr" markerWidth="10" markerHeight="7" refX="10" refY="3.5" orient="auto">
+      <polygon points="0 0, 10 3.5, 0 7" fill="#374151"/>
+    </marker>
+  </defs>
+
+  <rect width="980" height="560" fill="#ffffff"/>
+
+  <g font-family="Arial, sans-serif" fill="#111827">
+    <g stroke="#374151" stroke-width="1.3">
+      <line x1="80" y1="80" x2="900" y2="80"/>
+      <line x1="80" y1="55" x2="80" y2="80"/>
+      <line x1="244" y1="55" x2="244" y2="80"/>
+      <line x1="408" y1="55" x2="408" y2="80"/>
+      <line x1="572" y1="55" x2="572" y2="80"/>
+      <line x1="736" y1="55" x2="736" y2="80"/>
+      <line x1="900" y1="55" x2="900" y2="80"/>
+    </g>
+    <text x="162" y="39" text-anchor="middle" font-size="17">level 0</text>
+    <text x="162" y="59" text-anchor="middle" font-size="17">index</text>
+    <text x="326" y="39" text-anchor="middle" font-size="17">level 1</text>
+    <text x="326" y="59" text-anchor="middle" font-size="17">index</text>
+    <text x="490" y="39" text-anchor="middle" font-size="17">level 2</text>
+    <text x="490" y="59" text-anchor="middle" font-size="17">index</text>
+    <text x="654" y="39" text-anchor="middle" font-size="17">level 3</text>
+    <text x="654" y="59" text-anchor="middle" font-size="17">index</text>
+    <text x="818" y="59" text-anchor="middle" font-size="17">offset</text>
+
+    <g stroke="#9ca3af" stroke-width="1.5" stroke-dasharray="8,8" fill="none">
+      <path d="M162 80 L162 318 L220 318"/>
+      <path d="M326 80 L326 288 L384 288"/>
+      <path d="M490 80 L490 258 L548 258"/>
+      <path d="M654 80 L654 228 L712 228"/>
+      <path d="M818 80 L818 220 L880 220"/>
+    </g>
+
+    <g stroke="#374151" stroke-width="1.4">
+      <rect x="220" y="292" width="70" height="95" fill="#ffffff"/>
+      <line x1="220" y1="318" x2="290" y2="318"/>
+      <line x1="220" y1="344" x2="290" y2="344"/>
+      <line x1="220" y1="370" x2="290" y2="370"/>
+      <rect x="220" y="318" width="70" height="26" fill="#d1d5db"/>
+
+      <rect x="384" y="262" width="70" height="95" fill="#ffffff"/>
+      <line x1="384" y1="288" x2="454" y2="288"/>
+      <line x1="384" y1="314" x2="454" y2="314"/>
+      <line x1="384" y1="340" x2="454" y2="340"/>
+      <rect x="384" y="288" width="70" height="26" fill="#d1d5db"/>
+
+      <rect x="548" y="232" width="70" height="95" fill="#ffffff"/>
+      <line x1="548" y1="258" x2="618" y2="258"/>
+      <line x1="548" y1="284" x2="618" y2="284"/>
+      <line x1="548" y1="310" x2="618" y2="310"/>
+      <rect x="548" y="258" width="70" height="26" fill="#d1d5db"/>
+
+      <rect x="712" y="202" width="70" height="95" fill="#ffffff"/>
+      <line x1="712" y1="228" x2="782" y2="228"/>
+      <line x1="712" y1="254" x2="782" y2="254"/>
+      <line x1="712" y1="280" x2="782" y2="280"/>
+      <rect x="712" y="228" width="70" height="26" fill="#d1d5db"/>
+    </g>
+
+    <text x="255" y="262" text-anchor="middle" font-size="17">level 0</text>
+    <text x="255" y="282" text-anchor="middle" font-size="17">table</text>
+    <text x="419" y="232" text-anchor="middle" font-size="17">level 1</text>
+    <text x="419" y="252" text-anchor="middle" font-size="17">table</text>
+    <text x="583" y="202" text-anchor="middle" font-size="17">level 2</text>
+    <text x="583" y="222" text-anchor="middle" font-size="17">table</text>
+    <text x="747" y="172" text-anchor="middle" font-size="17">level 3</text>
+    <text x="747" y="192" text-anchor="middle" font-size="17">table</text>
+
+    <rect x="44" y="382" width="92" height="46" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4"/>
+    <text x="90" y="402" text-anchor="middle" font-size="16" fill="#1d4ed8">TTBR</text>
+    <text x="90" y="420" text-anchor="middle" font-size="16" fill="#1d4ed8">register</text>
+
+    <rect x="402" y="435" width="78" height="62" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4"/>
+    <text x="441" y="461" text-anchor="middle" font-size="17" fill="#1d4ed8">1-GB</text>
+    <text x="441" y="482" text-anchor="middle" font-size="17" fill="#1d4ed8">region</text>
+
+    <rect x="566" y="435" width="78" height="62" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4"/>
+    <text x="605" y="461" text-anchor="middle" font-size="17" fill="#1d4ed8">2-MB</text>
+    <text x="605" y="482" text-anchor="middle" font-size="17" fill="#1d4ed8">region</text>
+
+    <rect x="880" y="190" width="76" height="62" fill="#dbeafe" stroke="#2563eb" stroke-width="1.4"/>
+    <text x="918" y="216" text-anchor="middle" font-size="17" fill="#1d4ed8">4-KB</text>
+    <text x="918" y="237" text-anchor="middle" font-size="17" fill="#1d4ed8">page</text>
+
+    <g stroke="#374151" stroke-width="1.8" fill="none" marker-end="url(#arr)">
+      <line x1="136" y1="405" x2="220" y2="370"/>
+      <line x1="290" y1="331" x2="384" y2="301"/>
+      <line x1="454" y1="301" x2="548" y2="271"/>
+      <line x1="618" y1="271" x2="712" y2="241"/>
+      <line x1="782" y1="241" x2="880" y2="221"/>
+      <line x1="419" y1="314" x2="419" y2="435"/>
+      <line x1="583" y1="284" x2="583" y2="435"/>
+    </g>
+  </g>
+</svg>
