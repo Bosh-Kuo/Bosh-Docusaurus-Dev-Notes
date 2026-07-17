@@ -41,7 +41,7 @@
     "@mdx-js/react": "^3.0.0",
     "@octokit/core": "^7.0.6",
     "clsx": "^2.0.0",
-    "docusaurus-plugin-image-zoom": "^2.0.0",
+    "docusaurus-plugin-image-zoom": "^3.0.0",
     "docusaurus-plugin-sass": "^0.2.5",
     "prism-react-renderer": "^2.3.0",
     "react": "^19.0.0",
