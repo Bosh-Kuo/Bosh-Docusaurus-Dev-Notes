@@ -1,0 +1,21 @@
+/* 只裝飾文章中的原始圖片；預覽副本使用下方獨立 class。 */
+.image {
+  cursor: zoom-in;
+}
+
+.image:focus-visible {
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 4px;
+}
+
+.previewImage {
+  /* 尺寸由 Modal canvas 控制，取消 Docusaurus 文章圖片常見的 max-width 限制。 */
+  display: block;
+  width: 100%;
+  height: 100%;
+  max-width: none;
+  border-radius: 0;
+  /* 手勢統一交給 canvas/overlay，避免瀏覽器原生圖片拖曳介入。 */
+  pointer-events: none;
+  user-select: none;
+}

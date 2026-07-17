@@ -19,7 +19,7 @@
 - **近期專案** - 收錄近期在 GitHub 上更新的專案
 - **客製化樣式** - 美觀的客製化主題與自定義元件
 - **圖片載入優化** - 使用 [📦 plugin-ideal-image](https://docusaurus.io/docs/api/plugins/@docusaurus/plugin-ideal-image) 優化圖片載入
-- **圖片預覽** - 使用 [docusaurus-plugin-image-zoom](https://github.com/gabrielcsapo/docusaurus-plugin-image-zoom) 實現圖片預覽
+- **媒體預覽** - 使用自訂 React theme wrappers 提供圖片與 Mermaid 的縮放、拖曳預覽
 - **Dark/Light mode** - 支援 Dark/Light 主題模式
 - **RWD** - 支援 RWD 響應式網頁
 - **Google Analytics** - 支援 Google Analytics
