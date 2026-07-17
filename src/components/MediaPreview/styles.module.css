@@ -1,0 +1,250 @@
+/*
+ * 最外層同時是全螢幕事件區與視覺遮罩。
+ * touch-action: none 交由自訂 Pointer Events 處理觸控，避免瀏覽器手勢與拖曳競爭。
+ */
+.overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  overflow: hidden;
+  background: rgb(255, 255, 255);
+  cursor: grab;
+  opacity: 0;
+  touch-action: none;
+  transition: opacity 0.28s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+:global(html[data-theme="dark"]) .overlay {
+  background: rgb(50, 50, 50);
+}
+
+/* 避免 production CSS optimizer 改變同 specificity 規則的輸出順序。 */
+.overlay.visible {
+  opacity: 1;
+}
+
+.dragging {
+  cursor: grabbing;
+}
+
+/*
+ * stage 只負責進出場的 opacity/scale 動畫；平移縮放刻意放在下一層 canvas。
+ * 若兩者共用 transform，React 的即時拖曳值會和 CSS transition 互相插值而產生延遲感。
+ */
+.stage {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  opacity: 0;
+  transform: scale(0.965);
+  transform-origin: center;
+  transition:
+    opacity 0.24s ease-out,
+    transform 0.36s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.visible .stage {
+  opacity: 1;
+  transform: scale(1);
+}
+
+.canvas {
+  position: absolute;
+  top: 0;
+  left: 0;
+  /* stage 不接事件，但實際媒體區要恢復事件命中，才能拖曳並阻止背景 click 關閉。 */
+  pointer-events: auto;
+  /* usePanZoom 的 x/y 公式以左上角為座標原點，必須和這裡保持一致。 */
+  transform-origin: 0 0;
+  will-change: transform;
+}
+
+.closeButton,
+.controlButton {
+  /* 關閉與縮放按鈕共用一致的基礎視覺；各自的定位與尺寸在下方分開定義。 */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+  border: 0;
+  color: rgb(0 0 0 / 55%);
+  background: rgb(0 0 0 / 7%);
+  cursor: pointer;
+  line-height: 1;
+  transition:
+    color 0.15s ease,
+    background 0.15s ease;
+}
+
+.closeButton:hover,
+.controlButton:hover {
+  color: rgb(0 0 0 / 85%);
+  background: rgb(0 0 0 / 14%);
+}
+
+.closeButton:focus-visible,
+.controlButton:focus-visible {
+  position: relative;
+  z-index: 1;
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: -2px;
+}
+
+:global(html[data-theme="dark"]) .closeButton,
+:global(html[data-theme="dark"]) .controlButton {
+  color: rgb(255 255 255 / 70%);
+  background: rgb(255 255 255 / 10%);
+}
+
+:global(html[data-theme="dark"]) .closeButton:hover,
+:global(html[data-theme="dark"]) .controlButton:hover {
+  color: #fff;
+  background: rgb(255 255 255 / 22%);
+}
+
+.closeButton {
+  /* fixed 使控制 UI 永遠相對 viewport 定位，不受媒體 canvas transform 影響。 */
+  position: fixed;
+  top: 16px;
+  right: 20px;
+  z-index: 2;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 18px;
+  opacity: 0;
+  transform: translateY(-8px) scale(0.92);
+  transition:
+    color 0.15s ease,
+    background 0.15s ease,
+    opacity 0.2s ease-out,
+    transform 0.32s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.visible .closeButton {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.hint {
+  /* 純提示不接受事件，避免擋住其後方可拖曳的預覽畫布。 */
+  position: fixed;
+  bottom: 24px;
+  left: 50%;
+  z-index: 2;
+  padding: 6px 18px;
+  border-radius: 20px;
+  color: rgb(0 0 0 / 50%);
+  background: rgb(0 0 0 / 8%);
+  font-family: system-ui, -apple-system, sans-serif;
+  font-size: 13px;
+  white-space: nowrap;
+  pointer-events: none;
+  opacity: 0;
+  transform: translateX(-50%) translateY(8px);
+  transition:
+    opacity 0.22s ease-out 0.08s,
+    transform 0.34s cubic-bezier(0.16, 1, 0.3, 1) 0.08s;
+  animation: hideHint 0.4s ease 3s forwards;
+}
+
+.visible .hint {
+  opacity: 1;
+  transform: translateX(-50%) translateY(0);
+}
+
+:global(html[data-theme="dark"]) .hint {
+  color: rgb(255 255 255 / 65%);
+  background: rgb(0 0 0 / 45%);
+}
+
+.controls {
+  /* 控制列和關閉按鈕一樣固定在 viewport，縮放媒體時不會一起移動。 */
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  border-radius: 8px;
+  background: rgb(0 0 0 / 7%);
+  font-family: system-ui, -apple-system, sans-serif;
+  user-select: none;
+  opacity: 0;
+  transform: translateY(10px) scale(0.96);
+  transition:
+    opacity 0.2s ease-out 0.05s,
+    transform 0.34s cubic-bezier(0.16, 1, 0.3, 1) 0.05s;
+}
+
+.visible .controls {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+:global(html[data-theme="dark"]) .controls {
+  background: rgb(255 255 255 / 10%);
+}
+
+.controlButton {
+  width: 36px;
+  height: 34px;
+  font-size: 18px;
+}
+
+.zoomLevel {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 52px;
+  height: 34px;
+  padding: 0 2px;
+  color: rgb(0 0 0 / 60%);
+  font-size: 12px;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+:global(html[data-theme="dark"]) .zoomLevel {
+  color: rgb(255 255 255 / 75%);
+}
+
+@keyframes hideHint {
+  /* 操作提示只在剛開啟時短暫顯示，避免長時間遮住內容。 */
+  to {
+    opacity: 0;
+  }
+}
+
+@media (max-width: 640px) {
+  /* 小螢幕將提示改為左右延展，並上移避開右下角控制列。 */
+  .hint {
+    right: 16px;
+    bottom: 68px;
+    left: 16px;
+    text-align: center;
+    white-space: normal;
+    transform: translateY(8px);
+  }
+
+  .visible .hint {
+    transform: translateY(0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* 尊重系統動態效果偏好；功能與最終視覺狀態維持不變。 */
+  .overlay,
+  .stage,
+  .closeButton,
+  .hint,
+  .controls {
+    transition: none;
+  }
+
+  .hint {
+    animation: none;
+  }
+}
