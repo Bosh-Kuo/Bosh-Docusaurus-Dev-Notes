@@ -58,7 +58,7 @@
     "@docusaurus/types": "^3.10.2",
     "commitizen": "^4.3.0",
     "husky": "^9.0.11",
-    "inquirer": "9",
+    "inquirer": "14",
     "typescript": "~5.9.0"
   },
   "browserslist": {
