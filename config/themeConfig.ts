@@ -2,40 +2,49 @@ import type * as Preset from "@docusaurus/preset-classic";
 import { themes as prismThemes } from "prism-react-renderer";
 
 const themeConfig = {
-  // * Common
-  image: "img/logo.png", // used for social card, in particular og:image and twitter:image.
+  // * 共用設定
+  image: "img/logo.png", // 社群分享圖片，供 og:image 與 twitter:image 使用。
   announcementBar: {
     id: "announcement",
     content:
       '如果我的筆記對你有幫助，歡迎到我的 <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bosh-Kuo/docusaurus-dev-notes">GitHub</a> 點個 Star ⭐️ 支持',
-    textColor: "#091E42",
+    backgroundColor: "var(--accent)",
+    textColor: "var(--foreground)",
     isCloseable: true,
   },
-  // * Navbar
+  // * 導覽列
   navbar: {
     title: "Bosh Kuo",
     logo: {
-      alt: "My Site Logo",
+      alt: "Bosh Kuo Logo",
       src: "img/logo.png",
     },
     // hideOnScroll: true,
     items: [
       {
-        type: "doc",
-        docId: "index",
+        type: "dropdown",
         position: "left",
         label: "筆記",
+        items: [
+          { type: "doc", docId: "index", label: "探索筆記" },
+          { to: "/archive/notes", label: "筆記歸檔" },
+        ],
       },
       {
-        to: "/blog",
+        type: "dropdown",
         label: "部落格",
         position: "left",
+        items: [
+          { to: "/blog", label: "所有文章" },
+          { to: "/archive/blog", label: "部落格歸檔" },
+        ],
       },
       {
         to: "/projects",
         label: "近期專案",
         position: "left",
       },
+      { to: "/about", label: "關於我", position: "left" },
       {
         href: "https://github.com/Bosh-Kuo",
         title: "GitHub",
@@ -45,12 +54,12 @@ const themeConfig = {
       },
     ],
   },
-  // * CodeBlock
+  // * 程式碼區塊
   prism: {
     theme: prismThemes.github,
     darkTheme: prismThemes.dracula,
   },
-  // * Footer
+  // * 頁尾
   footer: {
     style: "dark",
     links: [
@@ -82,27 +91,6 @@ const themeConfig = {
             label: "Linkedin",
             href: "https://www.linkedin.com/in/po-chih-kuo-918452231/",
           },
-          {
-            label: "CakeResume",
-            href: "https://www.cakeresume.com/s--IPijnOZLMFNIJ6ofjbn6Dg--/bosh-kuo",
-          },
-        ],
-      },
-      {
-        title: "More",
-        items: [
-          {
-            label: "Portfolio",
-            href: "https://boshkuo.com/",
-          },
-          {
-            label: "Hexo Blog",
-            href: "https://blog.boshkuo.com/",
-          },
-          {
-            label: "Youtube Channel",
-            href: "https://www.youtube.com/channel/UCV5iS4O95pCO0humhYXnrwg",
-          },
         ],
       },
       {
@@ -127,45 +115,45 @@ const themeConfig = {
     ],
     copyright: `Copyright © ${new Date().getFullYear()} Bosh Kuo. Built with Docusaurus.`,
   },
-  // * Sidebar
+  // * 文件側欄
   docs: {
     sidebar: {
       hideable: true,
       autoCollapseCategories: true,
     },
   },
-  // * Blog sidebar
+  // * 部落格側欄
   blog: {
     sidebar: {
       groupByYear: false, // 停用年份分組，避免出現 scrollbar
     },
   },
-  // * Algolia DocSearch
+  // * Algolia 搜尋
   // https://docusaurus.io/docs/search#using-algolia-docsearch
   algolia: {
-    // The application ID provided by Algolia
+    // Algolia 提供的應用程式 ID。
     appId: "XAYHN71OBB",
-    // Public API key: it is safe to commit it
+    // 公開搜尋用的 API key，可隨專案提交。
     apiKey: "6e8c7aa1573050bf1bcf7cf52216978e",
     indexName: "boshkuo",
-    // Optional: see doc section below
+    // 啟用依目前語系與版本篩選的情境搜尋。
     contextualSearch: true,
-    // Optional: Specify domains where the navigation should occur through window.location instead on history.push. Useful when our Algolia config crawls multiple documentation sites and we want to navigate with window.location.href to them.
+    // 跨網站的搜尋結果改用完整頁面導向，避免交由本站路由處理。
     externalUrlRegex: "external\\.com|domain\\.com",
 
-    // Optional: Replace parts of the item URLs from Algolia. Useful when using the same search index for multiple deployments using a different baseUrl. You can use regexp or string in the `from` param. For example: localhost:3000 vs myCompany.com/docs
+    // 不同部署共用搜尋索引時，可替換搜尋結果的路徑；from 支援字串或正規表示式。
     // replaceSearchResultPathname: {
-    //   from: "/docs/", // or as RegExp: /\/docs\//
+    //   from: "/docs/", // 也可使用正規表示式：/\/docs\//
     //   to: "",
     // },
 
-    // Optional: Algolia search parameters
+    // 額外的 Algolia 搜尋參數。
     searchParameters: {},
-    // Optional: path for search page that enabled by default (`false` to disable it)
+    // 搜尋頁面的路徑；設為 false 可停用。
     searchPagePath: "search",
-    //... other Algolia params
+    // 其他 Algolia 參數。
   },
-  // * theme-live-codeblock
+  // * 即時程式碼預覽
   liveCodeBlock: {
     playgroundPosition: "bottom", // "top" | "bottom"
   },

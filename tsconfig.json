@@ -1,14 +1,10 @@
 {
-  // This file is not used in compilation. It is here just for a nice editor experience.
+  // 供 TypeScript 型別檢查與編輯器提示使用；網站編譯由 Docusaurus 負責。
   "extends": "@docusaurus/tsconfig",
   "compilerOptions": {
-    "baseUrl": "."
+    "baseUrl": ".",
+    "paths": { "@site/*": ["./*"], "@/*": ["./src/*"] }
   },
-  "include": [
-    "src/**/*.ts",
-    "src/**/*.tsx",
-    "docusaurus.config.ts",
-    "config/**/*.ts"
-  ],
+  "include": ["src/**/*.ts", "src/**/*.tsx", "docusaurus.config.ts", "config/**/*.ts"],
   "exclude": ["node_modules", "build", ".docusaurus", ".cache"]
 }
