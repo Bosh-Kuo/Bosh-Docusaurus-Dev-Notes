@@ -74,7 +74,7 @@
     "@tailwindcss/postcss": "^4.3.3",
     "commitizen": "^4.3.0",
     "husky": "^9.0.11",
-    "inquirer": "9",
+    "inquirer": "14",
     "postcss": "^8.5.28",
     "tailwindcss": "^4.3.3",
     "typescript": "~5.9.0"
