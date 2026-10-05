@@ -9,8 +9,6 @@ date: 2025-11-03
 image: https://res.cloudinary.com/djtoo8orh/image/upload/v1762100576/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/mui-tailwind-shadcn_cc9tyh.png
 ---
 
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1762100576/Docusaurus%20Blog/Blog/%E4%BD%BF%E7%94%A8%20shadcn%20%E5%89%8D%E8%A9%B2%E8%A3%9C%E7%9A%84%20TailwindCSS%20%E5%9F%BA%E7%A4%8E%E7%9F%A5%E8%AD%98/mui-tailwind-shadcn_cc9tyh.png)
-
 <!-- truncate -->
 
 ## **前言**

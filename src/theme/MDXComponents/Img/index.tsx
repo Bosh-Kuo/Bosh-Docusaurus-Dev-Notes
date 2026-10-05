@@ -1,13 +1,8 @@
-import React, {
-  useState,
-  type KeyboardEvent,
-  type MouseEvent,
-  type ReactNode,
-} from "react";
-import OriginalImg from "@theme-original/MDXComponents/Img";
-import type { Props } from "@theme/MDXComponents/Img";
 import MediaPreviewModal from "@site/src/components/MediaPreview/MediaPreviewModal";
-import styles from "./styles.module.css";
+import type { Props } from "@theme/MDXComponents/Img";
+import OriginalImg from "@theme-original/MDXComponents/Img";
+import { cn } from "cn";
+import { type KeyboardEvent, type MouseEvent, type ReactNode, useState } from "react";
 
 interface PreviewImage {
   /** 瀏覽器實際選中的圖片來源；有 srcset 時可能不同於 props.src。 */
@@ -20,35 +15,27 @@ interface PreviewImage {
   /** 點陣圖限制為 1；SVG 可依視窗空間放大。 */
   maxInitialScale: number;
 }
-
 /** 優先採用主要尺寸，但對尚未載入完成或缺少 intrinsic size 的圖片保留 fallback。 */
 function getPositiveSize(primary: number, fallback: number): number {
   return Number.isFinite(primary) && primary > 0 ? primary : fallback;
 }
-
 function isSvgSource(src: string): boolean {
   // MDX 可能產生內嵌 data URI，因此不能只檢查副檔名。
   if (src.trimStart().toLowerCase().startsWith("data:image/svg+xml")) {
     return true;
   }
-
   try {
     // 解析 pathname 會自然忽略 query/hash，也能同時支援相對與絕對 URL。
-    return new URL(src, window.location.href).pathname
-      .toLowerCase()
-      .endsWith(".svg");
+    return new URL(src, window.location.href).pathname.toLowerCase().endsWith(".svg");
   } catch {
     return false;
   }
 }
-
 function prepareImageForPreview(image: HTMLImageElement): PreviewImage | null {
   const bounds = image.getBoundingClientRect();
-
   // currentSrc 是瀏覽器經過 srcset/sizes 選擇後真正載入的檔案；沒有時才退回 src。
   const src = image.currentSrc || image.src;
   const isSvg = isSvgSource(src);
-
   // 沒有 width/height 的 SVG 會被瀏覽器回報成約 300×150 的預設 intrinsic
   // size，即使它已依 viewBox 在文章內放大顯示。向量圖因此改用實際渲染尺寸
   // 作為座標基準，並允許無損放大到視窗可容納的大小。
@@ -58,10 +45,8 @@ function prepareImageForPreview(image: HTMLImageElement): PreviewImage | null {
   const height = isSvg
     ? getPositiveSize(bounds.height, image.naturalHeight)
     : getPositiveSize(image.naturalHeight, bounds.height);
-
   // 尺寸不可用時不開啟 Modal，避免產生 NaN transform 或零尺寸畫布。
   if (!src || width <= 0 || height <= 0) return null;
-
   return {
     src,
     width,
@@ -70,7 +55,6 @@ function prepareImageForPreview(image: HTMLImageElement): PreviewImage | null {
     maxInitialScale: isSvg ? Number.POSITIVE_INFINITY : 1,
   };
 }
-
 /**
  * 包裝 Docusaurus 的 MDX 圖片元件，讓 Markdown／MDX 圖片直接具備預覽能力。
  *
@@ -80,43 +64,37 @@ export default function MDXImg(props: Props): ReactNode {
   // State 保存一份開啟當下的預覽快照；null 同時代表 Modal 尚未掛載。
   const [preview, setPreview] = useState<PreviewImage | null>(null);
   const { onClick, onKeyDown } = props;
-  const previewAriaLabel = props.alt
-    ? `開啟圖片預覽：${props.alt}`
-    : "開啟圖片預覽";
-
+  const previewAriaLabel = props.alt ? `開啟圖片預覽：${props.alt}` : "開啟圖片預覽";
   function openPreview(image: HTMLImageElement) {
     // 圖片本身若是連結，點擊的主要意圖是導覽；不以預覽功能覆蓋既有語意。
     if (image.closest("a")) return;
-
     const preparedImage = prepareImageForPreview(image);
     if (preparedImage) setPreview(preparedImage);
   }
-
   function handleClick(event: MouseEvent<HTMLImageElement>) {
     // 先尊重呼叫端原本傳入的事件；preventDefault 是明確關閉預覽的 escape hatch。
     onClick?.(event);
     if (event.defaultPrevented || event.button !== 0) return;
-
     openPreview(event.currentTarget);
   }
-
   function handleKeyDown(event: KeyboardEvent<HTMLImageElement>) {
     onKeyDown?.(event);
     if (event.defaultPrevented) return;
-
     if (event.key === "Enter" || event.key === " ") {
       // Space 在一般頁面會捲動；圖片被當成 button 時應改為啟動預覽。
       event.preventDefault();
       openPreview(event.currentTarget);
     }
   }
-
   return (
     <>
       <OriginalImg
         // 繼續使用 Docusaurus 原元件，保留既有的載入、屬性與主題相容行為。
         {...props}
-        className={`${props.className ?? ""} ${styles.image}`}
+        className={cn(
+          props.className ?? "",
+          "ui-theme-mdxcomponents-img-styles-image cursor-zoom-in focus-visible:[outline:2px_solid_var(--ifm-color-primary)] focus-visible:outline-offset-4",
+        )}
         role={props.role ?? "button"}
         tabIndex={props.tabIndex ?? 0}
         aria-label={props["aria-label"] ?? previewAriaLabel}
@@ -135,7 +113,7 @@ export default function MDXImg(props: Props): ReactNode {
         >
           <img
             // Modal 使用獨立圖片副本，不移動文章中的原始 DOM 節點。
-            className={styles.previewImage}
+            className="ui-theme-mdxcomponents-img-styles-previewImage block w-full h-full max-w-none rounded-none pointer-events-none select-none"
             src={preview.src}
             alt={preview.alt}
             width={preview.width}

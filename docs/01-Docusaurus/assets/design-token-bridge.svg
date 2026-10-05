@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="470" viewBox="0 0 1000 470" role="img" aria-labelledby="title desc">
+<title id="title">Design Tokens 與 Infima 橋接資料流</title>
+<desc id="desc">globals 定義唯一實際值，Tailwind theme mapping 與 Infima variable mapping 分別供新元件與原生主題使用；兩者共用 data-theme。</desc>
+<rect width="1000" height="470" rx="20" fill="#f3f6f8"/>
+<g font-family="Inter, Noto Sans TC, sans-serif" fill="#0d203a">
+<text x="42" y="55" font-size="25" font-weight="600">一份實際值，兩種框架名稱</text>
+<text x="42" y="88" font-size="16" fill="#526379">CSS variables 提供共用值；cascade layers 處理規則之間的優先級。</text>
+<rect x="40" y="170" width="270" height="155" rx="14" fill="#0d203a"/>
+<g fill="#fefefe"><text x="60" y="202" font-size="21" font-weight="600">globals.css</text><text x="60" y="235" font-size="17">--background / --foreground</text><text x="60" y="264" font-size="17">--brand / --font-family</text><text x="60" y="301" font-size="15" fill="#9cdae3">:root + [data-theme="dark"]</text></g>
+<path d="M310 246H345V180H380M345 246V324H380M660 180H700M660 324H700" fill="none" stroke="#3eb4c6" stroke-width="3"/>
+<g fill="#3eb4c6"><path d="m372 174 10 6-10 6"/><path d="m372 318 10 6-10 6"/><path d="m692 174 10 6-10 6"/><path d="m692 318 10 6-10 6"/></g>
+<rect x="380" y="130" width="280" height="102" rx="12" fill="#d4edf1" stroke="#b5dce4"/>
+<text x="400" y="164" font-size="20" font-weight="600">@theme inline</text><text x="400" y="194" font-size="16">--color-* → 語意 tokens</text><text x="400" y="216" font-size="14" fill="#526379">生成 Tailwind utilities</text>
+<rect x="380" y="274" width="280" height="102" rx="12" fill="#f7e6cb" stroke="#e6cead"/>
+<text x="400" y="308" font-size="20" font-weight="600">@layer docusaurus</text><text x="400" y="338" font-size="16">--ifm-* → 語意 tokens</text><text x="400" y="360" font-size="14" fill="#865217">Infima 名稱橋接</text>
+<rect x="700" y="142" width="260" height="78" rx="12" fill="#fefefe" stroke="#d6e2e9"/>
+<text x="720" y="174" font-size="19" font-weight="600">shadcn / 自訂頁面</text><text x="720" y="200" font-size="16" fill="#526379">bg-card / text-foreground</text>
+<rect x="700" y="286" width="260" height="78" rx="12" fill="#fefefe" stroke="#d6e2e9"/>
+<text x="720" y="318" font-size="19" font-weight="600">Docusaurus 原生主題</text><text x="720" y="344" font-size="16" fill="#526379">Navbar / sidebar / Markdown</text>
+<text x="42" y="430" font-size="16" fill="#526379">改動 globals 的值，兩條路徑一起更新；不需要維護第二份色碼。</text>
+</g></svg>

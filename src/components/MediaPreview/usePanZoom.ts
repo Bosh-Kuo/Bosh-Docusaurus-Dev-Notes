@@ -1,10 +1,4 @@
-import {
-  useMemo,
-  useRef,
-  useState,
-  type PointerEvent,
-  type WheelEvent,
-} from "react";
+import { type PointerEvent, useMemo, useRef, useState, type WheelEvent } from "react";
 
 interface ViewTransform {
   /** 相對於媒體原始座標系的縮放倍率。 */
@@ -55,20 +49,10 @@ function clamp(value: number, min: number, max: number): number {
  * maxInitialScale 限制點陣圖不被預設放大。SSR 階段沒有 window，退回媒體
  * 自身尺寸可讓伺服器端計算保持安全，實際 Modal 只會在瀏覽器互動後掛載。
  */
-function getFittedTransform({
-  width,
-  height,
-  maxInitialScale,
-}: UsePanZoomOptions): ViewTransform {
-  const viewportWidth =
-    typeof window === "undefined" ? width : window.innerWidth;
-  const viewportHeight =
-    typeof window === "undefined" ? height : window.innerHeight;
-  const scale = Math.min(
-    (viewportWidth * 0.88) / width,
-    (viewportHeight * 0.82) / height,
-    maxInitialScale,
-  );
+function getFittedTransform({ width, height, maxInitialScale }: UsePanZoomOptions): ViewTransform {
+  const viewportWidth = typeof window === "undefined" ? width : window.innerWidth;
+  const viewportHeight = typeof window === "undefined" ? height : window.innerHeight;
+  const scale = Math.min((viewportWidth * 0.88) / width, (viewportHeight * 0.82) / height, maxInitialScale);
 
   return {
     scale,
@@ -86,9 +70,10 @@ function getFittedTransform({
  */
 export function usePanZoom(options: UsePanZoomOptions) {
   // 只在媒體尺寸或初始倍率規則變更時重算，並作為 reset 與百分比的共同基準。
+  const { width, height, maxInitialScale } = options;
   const initialTransform = useMemo(
-    () => getFittedTransform(options),
-    [options.height, options.maxInitialScale, options.width],
+    () => getFittedTransform({ width, height, maxInitialScale }),
+    [width, height, maxInitialScale],
   );
   const [transform, setTransform] = useState(initialTransform);
   const [isDragging, setIsDragging] = useState(false);
@@ -118,17 +103,13 @@ export function usePanZoom(options: UsePanZoomOptions) {
   function handleWheel(event: WheelEvent<HTMLDivElement>) {
     // 此處的滾輪用途是縮放媒體，不應再觸發瀏覽器預設的頁面捲動。
     event.preventDefault();
-    const factor =
-      event.deltaY < 0 ? WHEEL_ZOOM_FACTOR : 1 / WHEEL_ZOOM_FACTOR;
+    const factor = event.deltaY < 0 ? WHEEL_ZOOM_FACTOR : 1 / WHEEL_ZOOM_FACTOR;
     zoomAroundPoint(factor, event.clientX, event.clientY);
   }
 
   function handlePointerDown(event: PointerEvent<HTMLDivElement>) {
     // 僅接受主要按鍵；控制按鈕保留自己的 click，不啟動背景拖曳。
-    if (
-      event.button !== 0 ||
-      (event.target instanceof Element && event.target.closest("button"))
-    ) {
+    if (event.button !== 0 || (event.target instanceof Element && event.target.closest("button"))) {
       return;
     }
 
@@ -189,9 +170,7 @@ export function usePanZoom(options: UsePanZoomOptions) {
     transform,
     isDragging,
     // UI 的 100% 表示「剛開啟時的完整配適狀態」，讓重置後一定回到 100%。
-    zoomPercentage: Math.round(
-      (transform.scale / initialTransform.scale) * 100,
-    ),
+    zoomPercentage: Math.round((transform.scale / initialTransform.scale) * 100),
     handleWheel,
     handlePointerDown,
     handlePointerMove,

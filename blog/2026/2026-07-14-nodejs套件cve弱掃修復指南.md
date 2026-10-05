@@ -3,20 +3,16 @@ title: 弱掃報告修復決策：Node.js 套件 CVE 漏洞修復指南
 slug: nodejs-package-cve-remediation
 authors: bosh
 description: 記錄我處理 Node.js 套件 CVE 弱掃時，如何從掃描路徑、依賴樹與版本範圍，一步步選擇直接依賴與間接依賴的修復策略。
-keywords: [Node.js, CVE, 弱掃, Trivy, npm, Yarn, dependency, resolutions, yarn.lock]
+keywords:
+  [Node.js, CVE, 弱掃, Trivy, npm, Yarn, dependency, resolutions, yarn.lock]
 tags: [Node.js, Security, npm, yarn]
 date: 2026-07-14
 image: https://res.cloudinary.com/djtoo8orh/image/upload/v1784017879/Docusaurus%20Blog/Blog/Node.js%20%E5%A5%97%E4%BB%B6%20CVE%20%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%BE%A9%E6%8C%87%E5%8D%97/node-package-cve-hero_pntrmt.png
 ---
 
-
-![Container 中的 Node.js 依賴樹被掃描光線定位出弱點](https://res.cloudinary.com/djtoo8orh/image/upload/v1784017879/Docusaurus%20Blog/Blog/Node.js%20%E5%A5%97%E4%BB%B6%20CVE%20%E6%BC%8F%E6%B4%9E%E4%BF%AE%E5%BE%A9%E6%8C%87%E5%8D%97/node-package-cve-hero_pntrmt.png)
-
-
 最近在公司常常在處理 Node.js 專案的套件 CVE 弱點修復，趁著記憶力還很新鮮來記錄一下最近整理的完整判斷決策流程。最一開始看到弱掃報告裡的 CVE、Fixed Version 與一長串 `node_modules` 路徑時，我只知道「有套件要升」，卻不知道該怎麼升。前幾次只能一邊查資料、一邊問 AI，直到處理過幾種不同的依賴關係後，我才慢慢發現：**修復 Node.js 套件漏洞，其實是一個讀依賴樹、判斷版本範圍，再選擇最小安全變更的過程。** 因為當弱點落在直接依賴、間接依賴、嚴格版本宣告或多年未維護的套件上，後續選擇會完全不同。這篇文章我會把自己碰過與整理過的情境拆成案例，讓每一個決策都能看見前因後果。
 
 <!-- truncate -->
-
 
 :::note 本文使用的套件管理器
 本文以 **Yarn Classic（Yarn 1）** 專案為主，修復時會改 `package.json`、`yarn.lock`，並使用 Yarn 執行安裝與升級。Yarn Berry、npm-only、pnpm 都有各自的 lockfile 與覆寫機制，不能把本文的 Yarn 指令直接搬過去混用。
@@ -53,7 +49,6 @@ flowchart TD
     class C,F app;
     class D,E,G,H system;
 ```
-
 
 <br/>
 
@@ -115,10 +110,11 @@ vulnerable-lib@^1.0.0:
 這代表 `package-a` 允許 `vulnerable-lib` 從 `1.0.0` 升到 `2.0.0` 之前的任何版本，所以 `1.0.9` 可以被重新解析進來；若它寫的是精確的 `"1.0.3"`，就不能把 `1.0.9` 當成自然升級。這也是間接依賴修復前必須先看的限制。
 
 :::note 版本範圍標記符號補充說明：
+
 - `^1.0.0` 表示 `>= 1.0.0` 且 `< 2.0.0`
 - `~1.0.0` 表示 `>= 1.0.0` 且 `< 1.1.0`，
 - 而 `1.0.3` 則只接受 `1.0.3` 本身
-:::
+  :::
 
 <br/>
 
@@ -213,7 +209,6 @@ npm info react-router-dom@6.30.3 dependencies
 
 <br/>
 
-
 ## **直接依賴安全漏洞的修復策略**
 
 若漏洞套件本來就寫在專案根目錄的 `package.json`，這種情況通常比較容易追查與修復，判斷流程如下圖所示，總共可以分成 5 種情境：
@@ -266,7 +261,6 @@ yarn upgrade build-helper@^3.4.0
 - 跑 unit test、build、lint、e2e
 - 特別測一次最依賴該工具的核心流程
 
-
 ### **案例三：需要 major 升級，但專案只用到少量 API**
 
 假設根目錄的 `package.json` 有 `report-kit@1.x`，且只有 `2.0.0` 才修好；而剛好專案只用了幾個 API，升級後只需要改動少量的程式碼。
@@ -296,7 +290,6 @@ yarn upgrade report-kit@^2.0.0
 - 補足測試與部署驗證
 - 最後分階段測試與合併。
 
-
 若客戶進版時程不允許一次完成，通常會做：
 
 - 記錄漏洞可利用的條件
@@ -305,7 +298,6 @@ yarn upgrade report-kit@^2.0.0
 - 安排正式的 upgrade task
 
 > 如果弱點只影響某個 CLI build tool，而且不會進 production runtime，風險可能可以暫時接受；但如果是 production server 會處理外部輸入的套件，就不適合長期拖延。
->
 
 ### **案例五：套件停止維護，而且沒有修補版本**
 
@@ -318,9 +310,7 @@ yarn upgrade report-kit@^2.0.0
 - 替換成本太高時才評估 fork 套件並自行修補
 - 若短期只能風險接受，文件至少要說清楚漏洞是否接觸外部輸入、是否會跑在 production runtime、有哪些補償控制，以及何時重新評估。
 
-
 <br/>
-
 
 ## **間接依賴安全漏洞的修復策略**
 
@@ -395,9 +385,6 @@ yarn install
 ```
 
 entry 的 key 還是 `vulnerable-lib@^1.0.0`，因為父層的需求沒有變；變的是 Yarn 在這個範圍內選到的實際版本。重新安裝後，我會再執行 `npm ls vulnerable-lib`，確認輸出真的已經是 `1.0.9`。
-
-
-
 
 :::warning 不要刪除整份 `yarn.lock`
 整份 lockfile 刪掉再安裝，會讓所有可浮動依賴一起重新解析，diff 變得巨大，也難以知道哪個變更修了漏洞。這個案例的目的只是更新一個已確認可安全浮動的解析結果。
@@ -544,9 +531,7 @@ my-app
 
 這種情況即便重新解析，Yarn 也只會把 `package-b` 帶到安全的 v2；`package-a` 仍被困在 vulnerable 的 v1 範圍。這時候就必須回到本章節的案例二、三、四、五，升級父層、評估 `resolutions` 是否相容，或採取其他處置。
 
-
 <br/>
-
 
 ## **Reference**
 

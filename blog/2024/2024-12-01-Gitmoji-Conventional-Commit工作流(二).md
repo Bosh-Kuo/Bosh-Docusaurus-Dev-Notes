@@ -9,8 +9,6 @@ date: 2024-12-01
 image: https://res.cloudinary.com/djtoo8orh/image/upload/v1733057459/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-2_obvtrb.png
 ---
 
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1733057459/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-2_obvtrb.png)
-
 ## **前言**
 在上一篇文章中，我們介紹了如何透過 **Commitizen** 與 **Gitmoji** 規範化提交訊息。但規範的建立並不保證會被嚴格執行，許多團隊仍可能面臨這樣的情況：
 

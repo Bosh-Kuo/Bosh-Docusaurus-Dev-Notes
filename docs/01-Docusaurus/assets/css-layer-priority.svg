@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1000" height="430" viewBox="0 0 1000 430" role="img" aria-labelledby="title desc">
+<title id="title">普通 Author CSS 的 Layer 優先順序</title>
+<desc id="desc">本站從 docusaurus 到 utilities 逐步提高 layer 優先順序；unlayered 普通宣告仍優先於所有 layers，important 需另外比較。</desc>
+<rect width="1000" height="430" rx="20" fill="#f3f6f8"/>
+<g font-family="Inter, Noto Sans TC, sans-serif" fill="#0d203a">
+<text x="44" y="56" font-size="25" font-weight="600">普通 stylesheet 宣告：先比較 layer，再比較 selector</text>
+<text x="44" y="89" font-size="16" fill="#526379">限同一來源、沒有 !important 的情境。由左到右，layer 優先級提高。</text>
+<path d="M70 295H930" stroke="#526379" stroke-width="2"/>
+<path d="m920 288 12 7-12 7" fill="none" stroke="#526379" stroke-width="2"/>
+<g stroke="#d6e2e9" stroke-width="1">
+<rect x="44" y="175" width="140" height="92" rx="10" fill="#e1e8ee"/>
+<rect x="204" y="161" width="140" height="106" rx="10" fill="#d4edf1"/>
+<rect x="364" y="147" width="140" height="120" rx="10" fill="#bfe7ee"/>
+<rect x="524" y="133" width="140" height="134" rx="10" fill="#9cdae3"/>
+<rect x="684" y="119" width="140" height="148" rx="10" fill="#65c2cf"/>
+</g>
+<g font-size="17" text-anchor="middle" font-weight="600">
+<text x="114" y="228">docusaurus</text><text x="274" y="222">theme</text><text x="434" y="215">base</text><text x="594" y="207">components</text><text x="754" y="201">utilities</text>
+</g>
+<text x="47" y="323" font-size="15" fill="#526379">上游預設與橋接</text>
+<text x="683" y="323" font-size="15" fill="#526379">自訂元件的局部覆蓋</text>
+<rect x="44" y="354" width="910" height="42" rx="9" fill="#f7e6cb"/>
+<text x="62" y="381" font-size="16" fill="#865217">注意：Unlayered 普通規則仍優先於所有 layers；!important 的 layer 順序會反轉。</text>
+</g></svg>

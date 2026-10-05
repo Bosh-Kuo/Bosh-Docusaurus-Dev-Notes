@@ -9,8 +9,6 @@ date: 2024-11-30
 image: https://res.cloudinary.com/djtoo8orh/image/upload/v1733057459/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-1_uintvr.png
 ---
 
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1733057459/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-1_uintvr.png)
-
 ## **前言**
 
 最近我在研究 Git 專案的專業開發流程，比如怎麼按照 Conventional Commits 規範撰寫提交訊息，還有如何根據 Semantic Versioning 原則管理版本號等等。研究過程中，我花了不少時間瀏覽 Github 上一些知名的開源專案，透過它們的提交紀錄、PR 歷史、Change log 和 Release notes，一步步學習怎麼建立一套高效又規範化的工作流程。

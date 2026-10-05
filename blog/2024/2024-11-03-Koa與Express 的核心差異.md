@@ -9,8 +9,6 @@ date: 2024-11-03
 image: https://res.cloudinary.com/djtoo8orh/image/upload/v1730600792/Docusaurus%20Blog/Blog/Koa%20vs%20Express/Koa-vs-express_v8ysw7.png
 ---
 
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1730600792/Docusaurus%20Blog/Blog/Koa%20vs%20Express/Koa-vs-express_v8ysw7.png)
-
 > **前言:**  
 > 最近在公司被分派一個 Koa backend 的功能開發任務，雖然我平時多數時間主要負責前端相關的工作，不過因為學生時期有稍微接觸過一點 Express，它與 Koa 都是 Node.js 知名 web 框架，所以閱讀程式碼時並不會太陌生。這兩者雖然有不少相似之處，但實際使用後發現，它們在設計理念和使用體驗上有很大的不同。
 

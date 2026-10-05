@@ -9,8 +9,6 @@ date: 2024-12-04
 image: https://res.cloudinary.com/djtoo8orh/image/upload/v1733057458/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-3_okqmuy.png
 ---
 
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1733057458/Docusaurus%20Blog/Blog/Conventional%20Commit%20with%20Gitmoji/Conventional_Commit_with_Gitmoji-3_okqmuy.png)
-
 
 ## **變更日誌的意義與重要性**
 

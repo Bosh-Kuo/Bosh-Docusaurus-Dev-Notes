@@ -44,10 +44,7 @@ function cloneSvgWithUniqueIds(source: SVGSVGElement): SVGSVGElement {
   const prefix = `mermaid-zoom-${++cloneSequence}-`;
 
   // querySelectorAll 不包含根節點，因此手動把 clone 放入集合，以防根 SVG 自己也有 ID。
-  const elements = [
-    clone,
-    ...Array.from(clone.querySelectorAll<SVGElement>("[id]")),
-  ];
+  const elements = [clone, ...Array.from(clone.querySelectorAll<SVGElement>("[id]"))];
   const idMap = new Map<string, string>();
 
   // 第一階段只建立 old -> new 對照並改寫 ID；等 map 完整後再處理跨元素引用。
@@ -66,25 +63,16 @@ function cloneSvgWithUniqueIds(source: SVGSVGElement): SVGSVGElement {
 
   // `#id` 形式同時涵蓋 href="#id"、url(#id) 與 Mermaid 內嵌 CSS selector。
   const replaceHashReferences = (value: string) =>
-    replacements.reduce(
-      (result, [oldId, newId]) =>
-        result.replaceAll(`#${oldId}`, `#${newId}`),
-      value,
-    );
+    replacements.reduce((result, [oldId, newId]) => result.replaceAll(`#${oldId}`, `#${newId}`), value);
 
   // 第二階段掃描所有 attribute。只碰包含 # 的值，避免無意改寫其他文字內容。
-  [clone, ...Array.from(clone.querySelectorAll<SVGElement>("*"))].forEach(
-    (element) => {
-      Array.from(element.attributes).forEach((attribute) => {
-        if (attribute.name !== "id" && attribute.value.includes("#")) {
-          element.setAttribute(
-            attribute.name,
-            replaceHashReferences(attribute.value),
-          );
-        }
-      });
-    },
-  );
+  [clone, ...Array.from(clone.querySelectorAll<SVGElement>("*"))].forEach((element) => {
+    Array.from(element.attributes).forEach((attribute) => {
+      if (attribute.name !== "id" && attribute.value.includes("#")) {
+        element.setAttribute(attribute.name, replaceHashReferences(attribute.value));
+      }
+    });
+  });
 
   // <style> 的 CSS 存在 textContent 而非 attribute，需要額外處理 ID selector 與 url()。
   clone.querySelectorAll("style").forEach((style) => {

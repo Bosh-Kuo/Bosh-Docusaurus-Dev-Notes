@@ -9,8 +9,6 @@ date: 2024-07-22
 image: https://res.cloudinary.com/djtoo8orh/image/upload/v1728568594/Docusaurus%20Blog/Blog/Gitlab%20Package%20Registrty/gitlab_package_registry_zkdf9c.png
 ---
 
-![](https://res.cloudinary.com/djtoo8orh/image/upload/v1728568594/Docusaurus%20Blog/Blog/Gitlab%20Package%20Registrty/gitlab_package_registry_zkdf9c.png)
-
 > **前情提要：**  
 > 近期在幫公司開發一個提供內部前端成員使用的 npm package。在開發的過程中有一個比較麻煩的點是，我過去從來沒有開發過 npm package 的經驗，對於如何設置開發環境、打包、發布、維護可說是完全從零開始研究。再加上公司不希望這個 package 開源給外部使用，也沒有計劃要付費使用 npm Orgs 的私人 npm 功能。因此，除了研究如何開發 npm package 之外，同時還得研究是否有免費且適合我們公司的私人 npm library 的解決方案。  
 
