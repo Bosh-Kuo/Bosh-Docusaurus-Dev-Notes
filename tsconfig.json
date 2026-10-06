@@ -1,8 +1,16 @@
 {
   // 供 TypeScript 型別檢查與編輯器提示使用；網站編譯由 Docusaurus 負責。
-  "extends": "@docusaurus/tsconfig",
+  // 原本 extends "@docusaurus/tsconfig"，但其內含 TS 7 已移除的 baseUrl，故在此內聯展開（不含 baseUrl）。
   "compilerOptions": {
-    "baseUrl": ".",
+    "allowJs": true,
+    "esModuleInterop": true,
+    "jsx": "preserve",
+    "target": "ES2022",
+    "lib": ["ES2022", "DOM"],
+    "moduleResolution": "bundler",
+    "module": "esnext",
+    "noEmit": true,
+    "skipLibCheck": true,
     "paths": { "@site/*": ["./*"], "@/*": ["./src/*"] }
   },
   "include": ["src/**/*.ts", "src/**/*.tsx", "docusaurus.config.ts", "config/**/*.ts"],
