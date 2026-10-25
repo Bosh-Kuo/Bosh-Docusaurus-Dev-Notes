@@ -1,6 +1,6 @@
 # 多語系維護
 
-本站提供繁體中文（`/`）與英文（`/en/`）介面。文章目前共用中文來源，未來可逐篇加入英文譯本。
+本站提供繁體中文（`/`）與英文（`/en/`）介面。目前 22 篇部落格文章均有英文譯本；技術筆記尚未翻譯，英文介面會回退至中文筆記來源。
 
 ## 本機開發
 
@@ -35,8 +35,18 @@ yarn write-translations --locale en
 yarn write-translations --locale zh-Hant
 ```
 
-文章不需要整批複製。完成並校閱的譯本放到以下目錄，保留原始相對路徑即可：
+完成並校閱的譯本放到以下目錄（相對於 `i18n/`），保留原始相對路徑即可：
 
 - 文件：`en/docusaurus-plugin-content-docs/current/<原始相對路徑>`
 - 部落格：`en/docusaurus-plugin-content-blog/<原始相對路徑>`
 
+
+英文部落格保留原始 `slug`、日期與作者，以 `/en/blog/<slug>` 提供內容。英文標題使用明確的原始 heading ID，讓既有章節錨點在兩個語系中皆能使用。本站文章的交叉連結指向英文路由；外部連結維持原網址。技術範例中的註解、顯示文字及圖表標籤也隨文章翻譯，保留程式邏輯與指令的含義。
+
+共用圖片可透過 `@site` 引用同一份來源，不必複製到各語系目錄。例如：
+
+```md
+![How semantic colors work](@site/blog/assets/dark-mode-flow.svg#en)
+```
+
+`dark-mode-flow.svg` 的預設標籤為中文，`#en` 選擇同一張圖內的英文標籤；版面、圖形與樣式共用。新增或更新翻譯後，執行 `yarn build` 驗證所有語系。
