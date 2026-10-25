@@ -1,3 +1,4 @@
+import { translate } from "@docusaurus/Translate";
 import MediaPreviewModal from "@site/src/components/MediaPreview/MediaPreviewModal";
 import type { Props } from "@theme/Mermaid";
 import OriginalMermaid from "@theme-original/Mermaid";
@@ -44,7 +45,7 @@ export default function Mermaid(props: Props): ReactNode {
         className="ui-theme-mermaid-styles-diagram cursor-zoom-in rounded-lg focus-visible:[outline:2px_solid_var(--ifm-color-primary)] focus-visible:outline-offset-4"
         role="button"
         tabIndex={0}
-        aria-label="開啟 Mermaid 圖表預覽"
+        aria-label={translate({ id: "site.open.mermaid.diagram.preview", message: "開啟 Mermaid 圖表預覽" })}
         onClick={handleClick}
         onKeyDown={handleKeyDown}
       >
@@ -57,7 +58,7 @@ export default function Mermaid(props: Props): ReactNode {
           height={zoomedSvg.height}
           // Mermaid 是向量內容，初次配適時可超過原始座標倍率而不會失真。
           maxInitialScale={2}
-          dialogLabel="Mermaid 圖表預覽"
+          dialogLabel={translate({ id: "site.mermaid.diagram.preview", message: "Mermaid 圖表預覽" })}
           onClose={() => setZoomedSvg(null)}
         >
           <div

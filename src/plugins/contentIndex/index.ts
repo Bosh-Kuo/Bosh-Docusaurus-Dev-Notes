@@ -1,6 +1,7 @@
 import type { BlogContent } from "@docusaurus/plugin-content-blog";
 import type { LoadedContent } from "@docusaurus/plugin-content-docs";
 import type { LoadContext, Plugin } from "@docusaurus/types";
+import { normalizeUrl } from "@docusaurus/utils";
 import { CONTENT_INDEX_PLUGIN_NAME, type ContentEntry } from "./shared";
 
 export { CONTENT_INDEX_PLUGIN_NAME } from "./shared";
@@ -17,7 +18,7 @@ const newestFirst = (a: ContentEntry, b: ContentEntry) =>
  * 在開發與正式建置的 Node 程序中執行，等待所有內容 plugin 載入並註冊路由後建立索引。
  * React 頁面只讀取序列化後的結果，不直接存取 Markdown 檔案。
  */
-export default function contentIndex(_context: LoadContext): Plugin {
+export default function contentIndex(context: LoadContext): Plugin {
   return {
     name: CONTENT_INDEX_PLUGIN_NAME,
     async allContentLoaded({ allContent, actions }) {
@@ -74,7 +75,8 @@ export default function contentIndex(_context: LoadContext): Plugin {
           entries,
         });
         actions.addRoute({
-          path: `/archive/${kind}`,
+          // baseUrl 已包含目前語系的前綴；addRoute 不會自動補上它。
+          path: normalizeUrl([context.baseUrl, "archive", kind]),
           component: "@site/src/components/ArchivePage/index.tsx",
           modules: { archive: data },
           exact: true,

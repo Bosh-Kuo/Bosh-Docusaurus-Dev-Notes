@@ -1,0 +1,14 @@
+{
+  "title": {
+    "message": "Blog",
+    "description": "The title for the blog used in SEO"
+  },
+  "description": {
+    "message": "部落格，分享我對各種技術議題的觀點與開發實作紀錄",
+    "description": "The description for the blog used in SEO"
+  },
+  "sidebar.title": {
+    "message": "最新文章",
+    "description": "The label for the left sidebar"
+  }
+}

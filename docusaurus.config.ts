@@ -3,11 +3,14 @@ import plugins from "./config/plugins";
 import presets from "./config/presets";
 import themeConfig from "./config/themeConfig";
 
+// 每個語系會重新載入設定；網站 metadata 也要跟著切換。
+const isEnglish = process.env.DOCUSAURUS_CURRENT_LOCALE === "en";
 const config: Config = {
   // * 網站基本資料
-  title: "Bosh 的技術探索筆記",
-  tagline:
-    "這裡匯集了我在軟體技術領域中的各種學習記錄與實踐經歷，分享我的觀點與問題解決過程，希望這些內容對來到這裡的你有所幫助",
+  title: isEnglish ? "Bosh’s Tech Exploration Notes" : "Bosh 的技術探索筆記",
+  tagline: isEnglish
+    ? "Notes on software development, technical discoveries, and the process of understanding and solving problems."
+    : "這裡匯集了我在軟體技術領域中的各種學習記錄與實踐經歷，分享我的觀點與問題解決過程，希望這些內容對來到這裡的你有所幫助",
   favicon: "img/favicon.ico",
   url: "https://notes.boshkuo.com", // 正式網站網址。
   baseUrl: "/", // 網址主機後的基礎路徑。
@@ -56,10 +59,14 @@ const config: Config = {
     },
   ],
 
-  // 即使沒有多語系內容，仍可用此設定指定 HTML 的語言資訊。
+  // 未翻譯的 docs/blog 會由官方內容 Plugin 回退至來源檔案，不必複製文章。
   i18n: {
     defaultLocale: "zh-Hant",
-    locales: ["zh-Hant"],
+    locales: ["zh-Hant", "en"],
+    localeConfigs: {
+      "zh-Hant": { label: "繁體中文", htmlLang: "zh-Hant" },
+      en: { label: "English", htmlLang: "en" },
+    },
   },
 };
 

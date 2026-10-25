@@ -1,0 +1,42 @@
+{
+  "title": {
+    "message": "Bosh Kuo",
+    "description": "The title in the navbar"
+  },
+  "logo.alt": {
+    "message": "Bosh Kuo Logo",
+    "description": "The alt text of navbar logo"
+  },
+  "item.label.筆記": {
+    "message": "Notes",
+    "description": "Navbar item with label 筆記"
+  },
+  "item.label.部落格": {
+    "message": "Blog",
+    "description": "Navbar item with label 部落格"
+  },
+  "item.label.近期專案": {
+    "message": "Recent projects",
+    "description": "Navbar item with label 近期專案"
+  },
+  "item.label.關於我": {
+    "message": "About me",
+    "description": "Navbar item with label 關於我"
+  },
+  "item.label.探索筆記": {
+    "message": "Explore notes",
+    "description": "Navbar item with label 探索筆記"
+  },
+  "item.label.筆記歸檔": {
+    "message": "Notes archive",
+    "description": "Navbar item with label 筆記歸檔"
+  },
+  "item.label.所有文章": {
+    "message": "All posts",
+    "description": "Navbar item with label 所有文章"
+  },
+  "item.label.部落格歸檔": {
+    "message": "Blog archive",
+    "description": "Navbar item with label 部落格歸檔"
+  }
+}

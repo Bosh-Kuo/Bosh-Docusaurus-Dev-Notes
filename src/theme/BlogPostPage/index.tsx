@@ -4,9 +4,10 @@
  */
 import Link from "@docusaurus/Link";
 import { BlogPostProvider, useBlogPost } from "@docusaurus/plugin-content-blog/client";
+import { translate } from "@docusaurus/Translate";
 import { HtmlClassNameProvider, ThemeClassNames } from "@docusaurus/theme-common";
 import { useContentIndex } from "@site/src/hooks/useContentIndex";
-import { formatDate } from "@site/src/lib/format";
+import { useDateFormatter } from "@site/src/hooks/useDateFormatter";
 import BlogPostItem from "@theme/BlogPostItem";
 import type { Props } from "@theme/BlogPostPage";
 import BlogPostPageMetadata from "@theme/BlogPostPage/Metadata";
@@ -21,6 +22,7 @@ import { ArrowLeft, Clock3 } from "lucide-react";
 import type React from "react";
 
 function ReadingPage({ children }: { children: React.ReactNode }) {
+  const formatDate = useDateFormatter();
   const { metadata: m, toc } = useBlogPost();
   const { posts } = useContentIndex();
   const post = posts.find((p) => p.permalink === m.permalink);
@@ -51,7 +53,7 @@ function ReadingPage({ children }: { children: React.ReactNode }) {
               to="/blog"
             >
               <ArrowLeft size={15} aria-hidden="true" />
-              所有文章
+              {translate({ id: "site.all.posts", message: "所有文章" })}
             </Link>
             <div className="ui-theme-blogpostpage-styles-heroTags flex justify-center gap-2 flex-wrap mb-4 [&_a]:text-[0.75rem] [&_a]:text-[#e5f8fc] [&_a]:[background:#ffffff14] [&_a]:p-[0.2rem_0.65rem] [&_a]:[border:1px_solid_#ffffff30] [&_a]:rounded-[5px]">
               {m.tags.map((t) => (
@@ -74,7 +76,10 @@ function ReadingPage({ children }: { children: React.ReactNode }) {
               <time dateTime={m.date}>{formatDate(m.date)}</time>
               <span>
                 <Clock3 size={14} aria-hidden="true" />
-                {Math.ceil(m.readingTime ?? 1)} 分鐘閱讀
+                {translate(
+                  { id: "site.reading.time", message: "{minutes} 分鐘閱讀" },
+                  { minutes: Math.ceil(m.readingTime ?? 1) },
+                )}
               </span>
             </div>
           </div>
@@ -89,8 +94,8 @@ function ReadingPage({ children }: { children: React.ReactNode }) {
             <ContentVisibility metadata={m} />
             {hasTOC && (
               <details className="ui-theme-blogpostpage-styles-mobileTOC hidden [@media(max-width:_996px)]:block [@media(max-width:_996px)]:[border:1px_solid_var(--border)] [@media(max-width:_996px)]:rounded-[10px] [@media(max-width:_996px)]:p-[0.9rem_1rem] [@media(max-width:_996px)]:mb-8 [@media(max-width:_996px)]:text-[0.875rem] [@media(max-width:_996px)]:[&_summary]:cursor-pointer [@media(max-width:_996px)]:[&_nav]:mt-4 [@media(max-width:_996px)]:[&_.table-of-contents]:[border:0] [@media(max-width:_996px)]:[&_.table-of-contents]:[font-size:inherit] [@media(max-width:_996px)]:[&_.table-of-contents]:p-[0_0_0_1rem] [@media(max-width:_996px)]:[&_nav_a]:block [@media(max-width:_996px)]:[&_nav_a]:p-[0.4rem_0] [@media(max-width:_996px)]:[&_nav_a]:leading-[1.75] [@media(max-width:_996px)]:[&_nav_a]:text-(--ifm-color-primary-darkest) [@media(max-width:_996px)]:[&_nav_ul]:[font-size:inherit] [@media(max-width:_996px)]:[[data-theme='dark']_&_nav_a]:text-(--ifm-color-primary-lightest)">
-                <summary>本篇章節導覽</summary>
-                <nav aria-label="本篇章節">
+                <summary>{translate({ id: "site.on.this.page", message: "本篇章節導覽" })}</summary>
+                <nav aria-label={translate({ id: "site.on.this.page", message: "本篇章節" })}>
                   <TOCInline
                     toc={toc}
                     minHeadingLevel={m.frontMatter.toc_min_heading_level}
@@ -105,9 +110,9 @@ function ReadingPage({ children }: { children: React.ReactNode }) {
           {hasTOC && (
             <aside
               className="ui-theme-blogpostpage-styles-toc [align-self:start] sticky [top:6rem] [max-height:calc(100vh_-_7rem)] [overflow-y:auto] [scrollbar-width:thin] [padding-left:1.25rem] [border-left:1px_solid_var(--border)] [&_>_.thin-scrollbar]:[position:static] [&_>_.thin-scrollbar]:[max-height:none] [&_>_.thin-scrollbar]:[overflow:visible] [&_>_p]:[font-size:0.8125rem] [&_>_p]:text-foreground [&_>_p]:font-medium [&_>_p]:[margin-bottom:0.8rem] [&_.table-of-contents]:[font-size:0.8125rem] [&_.table-of-contents]:[border-left:0] [&_.table-of-contents]:p-0 [&_.table-of-contents_li]:[margin:0.6rem_0] [&_.table-of-contents\_\_link]:[line-height:1.8] [@media(max-width:_996px)]:hidden"
-              aria-label="本篇章節"
+              aria-label={translate({ id: "site.on.this.page", message: "本篇章節" })}
             >
-              <p>本篇章節</p>
+              <p>{translate({ id: "site.on.this.page", message: "本篇章節" })}</p>
               {tocContent}
             </aside>
           )}

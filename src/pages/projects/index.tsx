@@ -1,3 +1,4 @@
+import { translate } from "@docusaurus/Translate";
 import { GitHubIcon } from "@site/src/components/BrandIcons";
 import ContributionCalendar from "@site/src/components/ContributionCalendar";
 import PageSurface from "@site/src/components/PageSurface";
@@ -41,15 +42,27 @@ export default function Projects(): React.JSX.Element {
     );
   }
   return (
-    <Layout title="近期專案" description="近期在 GitHub 更新的專案與實作紀錄。">
+    <Layout
+      title={translate({ id: "site.recent.projects", message: "近期專案" })}
+      description={translate({
+        id: "site.recently.updated.projects.and.experiments.on.github",
+        message: "近期在 GitHub 更新的專案與實作紀錄。",
+      })}
+    >
       <PageSurface variant="projects">
         <main className="w-full max-w-305 m-[0_auto] p-[4rem_2rem_5rem] [@media(max-width:_640px)]:p-[2.5rem_1.25rem_3rem]">
           <header className="flex justify-between gap-8 items-center mb-12 [&_h1]:text-[2.75rem] [&_h1]:font-[550] [&_h1]:tracking-[-0.03em] [&_h1]:mb-4 [&_h1_span]:text-(--ifm-color-primary) [&_p]:text-[0.9375rem] [&_p]:text-muted-foreground [&_p]:max-w-xl [&_p]:m-0 [&_p]:leading-[1.9] [@media(max-width:_640px)]:flex-col [@media(max-width:_640px)]:items-start [@media(max-width:_640px)]:mb-8 [@media(max-width:_640px)]:gap-5 [@media(max-width:_640px)]:[&_h1]:text-[2.25rem]">
             <div>
               <h1>
-                近期專案<span>.</span>
+                {translate({ id: "site.recent.projects", message: "近期專案" })}
+                <span>.</span>
               </h1>
-              <p>收錄近期在 GitHub 更新的專案，記錄想法、實作與持續探索的足跡。</p>
+              <p>
+                {translate({
+                  id: "site.recently.updated.github.projects.a.record.of.ideas.experiments",
+                  message: "收錄近期在 GitHub 更新的專案，記錄想法、實作與持續探索的足跡。",
+                })}
+              </p>
             </div>
             <a
               href="https://github.com/Bosh-Kuo"
@@ -59,12 +72,12 @@ export default function Projects(): React.JSX.Element {
               data-slot="button"
             >
               <GitHubIcon />
-              前往 GitHub
+              {translate({ id: "site.visit.github", message: "前往 GitHub" })}
             </a>
           </header>
           <TextMarkerHighlight
-            text="最近更新的專案"
-            highlight="最近更新的專案"
+            text={translate({ id: "site.recently.updated.projects", message: "最近更新的專案" })}
+            highlight={translate({ id: "site.recently.updated.projects", message: "最近更新的專案" })}
             className="text-2xl! sm:text-[1.5rem]!"
           />
           <div className="flex justify-between items-center gap-4 pb-6 [border-bottom:1px_solid_var(--border)] mb-4 [@media(max-width:_640px)]:flex-col [@media(max-width:_640px)]:items-start [@media(max-width:_996px)]:flex-wrap [@media(max-width:_720px)]:items-stretch">
@@ -74,13 +87,13 @@ export default function Projects(): React.JSX.Element {
                 className="absolute w-px h-px p-0 -m-px overflow-hidden [clip:rect(0,0,0,0)] whitespace-nowrap [border:0]"
                 htmlFor="project-search"
               >
-                篩選專案名稱
+                {translate({ id: "site.filter.projects.by.name", message: "篩選專案名稱" })}
               </label>
               <Input
                 className="pl-9"
                 id="project-search"
                 type="search"
-                placeholder="搜尋所有專案名稱…"
+                placeholder={translate({ id: "site.search.all.projects.by.name", message: "搜尋所有專案名稱…" })}
                 value={query}
                 onChange={(event) => {
                   setQuery(event.target.value);
@@ -94,14 +107,17 @@ export default function Projects(): React.JSX.Element {
               role="status"
             >
               {loading ? (
-                "正在讀取 GitHub…"
+                translate({ id: "site.loading.from.github", message: "正在讀取 GitHub…" })
               ) : hasError ? (
-                "資料暫時無法取得"
+                translate({ id: "site.data.is.temporarily.unavailable", message: "資料暫時無法取得" })
               ) : (
                 <>
-                  依最近更新排序
+                  {translate({ id: "site.sorted.by.latest.update", message: "依最近更新排序" })}
                   <Badge className="border-brand-secondary/30 bg-brand-secondary/15 text-(--brand-secondary-foreground)">
-                    {filtered.length} / {repos.length} 個專案
+                    {translate(
+                      { id: "site.projects.count", message: "{shown} / {total} 個專案" },
+                      { shown: filtered.length, total: repos.length },
+                    )}
                   </Badge>
                 </>
               )}
@@ -110,10 +126,14 @@ export default function Projects(): React.JSX.Element {
           {!loading && !hasError && languages.length > 0 && (
             <fieldset
               className="flex items-center flex-wrap gap-[0.6rem] m-[0_0_2rem] min-w-0 border-0 p-0"
-              aria-label="篩選程式語言，可複選"
+              aria-label={translate({
+                id: "site.filter.by.programming.language.multiple.selections.allowed",
+                message: "篩選程式語言，可複選",
+              })}
             >
               <span className="inline-flex items-baseline gap-[0.4rem] mr-[0.4rem] text-muted-foreground text-[0.8125rem] [&_small]:text-[0.7rem] [@media(max-width:_640px)]:w-full [@media(max-width:_640px)]:mb-1">
-                程式語言 <small>可複選</small>
+                {translate({ id: "site.languages", message: "程式語言" })}
+                <small>{translate({ id: "site.select.multiple", message: "可複選" })}</small>
               </span>
               <button
                 type="button"
@@ -124,7 +144,7 @@ export default function Projects(): React.JSX.Element {
                   setPage(1);
                 }}
               >
-                全部
+                {translate({ id: "site.all", message: "全部" })}
               </button>
               {languages.map((value) => {
                 const selected = selectedLanguages.includes(value);
@@ -143,7 +163,7 @@ export default function Projects(): React.JSX.Element {
                       }}
                       aria-hidden="true"
                     />
-                    {value === "none" ? "未標示語言" : value}
+                    {value === "none" ? translate({ id: "site.unspecified.language", message: "未標示語言" }) : value}
                     {selected && <Check size={13} aria-hidden="true" />}
                   </button>
                 );
@@ -155,7 +175,7 @@ export default function Projects(): React.JSX.Element {
               className="grid grid-cols-3 gap-4 [@media(max-width:_996px)]:grid-cols-2 [@media(max-width:_640px)]:grid-cols-[1fr]"
               role="status"
               aria-busy="true"
-              aria-label="正在載入專案"
+              aria-label={translate({ id: "site.loading.projects", message: "正在載入專案" })}
             >
               {Array.from({ length: 9 }, (_, i) => (
                 // biome-ignore lint/suspicious/noArrayIndexKey: 範例與骨架的固定編號不會重新排序，也不保存個別項目的狀態。
@@ -172,11 +192,16 @@ export default function Projects(): React.JSX.Element {
               className="text-center p-[4rem_1.25rem] bg-muted rounded-[12px] [&_h2]:text-[1.25rem] [&_h2]:mb-3 [&_p]:text-[0.9375rem] [&_p]:text-muted-foreground [&_p]:max-w-xl [&_p]:m-[0_auto_1.5rem]"
               role="alert"
             >
-              <h2>暫時無法載入專案</h2>
-              <p>GitHub 連線可能中斷或已達 API 請求上限。請稍後重試，也可以直接前往 GitHub 查看。</p>
+              <h2>{translate({ id: "site.unable.to.load.projects", message: "暫時無法載入專案" })}</h2>
+              <p>
+                {translate({
+                  id: "site.the.connection.to.github.may.be.interrupted.or.the",
+                  message: "GitHub 連線可能中斷或已達 API 請求上限。請稍後重試，也可以直接前往 GitHub 查看。",
+                })}
+              </p>
               <Button onClick={() => void refetch()}>
                 <RotateCcw size={16} aria-hidden="true" />
-                重新載入
+                {translate({ id: "site.retry", message: "重新載入" })}
               </Button>
             </div>
           ) : filtered.length ? (
@@ -187,11 +212,21 @@ export default function Projects(): React.JSX.Element {
             </div>
           ) : (
             <div className="text-center p-[4rem_1.25rem] bg-muted rounded-[12px] [&_h2]:text-[1.25rem] [&_h2]:mb-3 [&_p]:text-[0.9375rem] [&_p]:text-muted-foreground [&_p]:max-w-xl [&_p]:m-[0_auto_1.5rem]">
-              <h2>{repos.length ? "沒有符合的專案" : "目前沒有公開專案"}</h2>
+              <h2>
+                {repos.length
+                  ? translate({ id: "site.no.matching.projects", message: "沒有符合的專案" })
+                  : translate({ id: "site.no.public.projects.yet", message: "目前沒有公開專案" })}
+              </h2>
               <p>
                 {repos.length
-                  ? "試試其他名稱或程式語言，或清除篩選查看所有專案。"
-                  : "稍後再來看看，或直接前往 GitHub。"}
+                  ? translate({
+                      id: "site.try.another.name.or.language.or.clear.the.filters",
+                      message: "試試其他名稱或程式語言，或清除篩選查看所有專案。",
+                    })
+                  : translate({
+                      id: "site.check.back.later.or.visit.github.directly",
+                      message: "稍後再來看看，或直接前往 GitHub。",
+                    })}
               </p>
               {(query || selectedLanguages.length > 0) && (
                 <Button
@@ -202,34 +237,48 @@ export default function Projects(): React.JSX.Element {
                     setPage(1);
                   }}
                 >
-                  清除篩選
+                  {translate({ id: "site.clear.filters", message: "清除篩選" })}
                 </Button>
               )}
             </div>
           )}
-          <nav aria-label="專案分頁" className="mt-8 flex items-center justify-center gap-4">
+          <nav
+            aria-label={translate({ id: "site.project.pagination", message: "專案分頁" })}
+            className="mt-8 flex items-center justify-center gap-4"
+          >
             <Button
               variant="outline"
               disabled={currentPage === 1 || loading || hasError}
               onClick={() => setPage(currentPage - 1)}
             >
-              上一頁
+              {translate({ id: "site.previous", message: "上一頁" })}
             </Button>
             <span className="text-sm text-muted-foreground" role="status">
-              第 {currentPage} / {pageCount} 頁
+              {translate(
+                { id: "site.projects.page", message: "第 {current} / {total} 頁" },
+                { current: currentPage, total: pageCount },
+              )}
             </span>
             <Button
               variant="outline"
               disabled={currentPage === pageCount || loading || hasError}
               onClick={() => setPage(currentPage + 1)}
             >
-              下一頁
+              {translate({ id: "site.next", message: "下一頁" })}
             </Button>
           </nav>
           <section className="mt-16 border-0 border-t border-solid border-border pt-12">
-            <TextMarkerHighlight text="程式足跡" highlight="程式足跡" className="text-2xl! sm:text-[1.5rem]!" />
+            <TextMarkerHighlight
+              text={translate({ id: "site.code.in.motion", message: "程式足跡" })}
+              highlight={translate({ id: "site.code.in.motion", message: "程式足跡" })}
+              className="text-2xl! sm:text-[1.5rem]!"
+            />
             <p className="mb-8 text-muted-foreground">
-              透過專案驗證想法，透過持續的實作累積經驗。這裡是我正在探索的技術，以及過去一年的 GitHub 活動。
+              {translate({
+                id: "site.testing.ideas.through.projects.and.learning.through.practice.here",
+                message:
+                  "透過專案驗證想法，透過持續的實作累積經驗。這裡是我正在探索的技術，以及過去一年的 GitHub 活動。",
+              })}
             </p>
             <div className="grid items-stretch gap-6 lg:grid-cols-2">
               <TechCloud />

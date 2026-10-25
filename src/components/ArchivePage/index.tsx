@@ -1,7 +1,8 @@
 import Link from "@docusaurus/Link";
+import { translate } from "@docusaurus/Translate";
 import PageSurface from "@site/src/components/PageSurface";
 import { Input } from "@site/src/components/ui/input";
-import { formatDate } from "@site/src/lib/format";
+import { useDateFormatter } from "@site/src/hooks/useDateFormatter";
 import type { ContentEntry } from "@site/src/plugins/contentIndex/shared";
 import Layout from "@theme/Layout";
 import { ArrowUpRight, Search } from "lucide-react";
@@ -14,11 +15,14 @@ export default function ArchivePage({
     entries: ContentEntry[];
   };
 }) {
+  const formatDate = useDateFormatter();
   const [query, setQuery] = useState("");
   const [activeYear, setActiveYear] = useState<string | null>(null);
   const timeline = useRef<HTMLDivElement>(null);
   const isNotes = archive.kind === "notes",
-    title = isNotes ? "筆記歸檔" : "部落格歸檔";
+    title = isNotes
+      ? translate({ id: "site.notes.archive", message: "筆記歸檔" })
+      : translate({ id: "site.blog.archive", message: "部落格歸檔" });
   const filtered = useMemo(
     () =>
       archive.entries.filter((e) =>
@@ -29,7 +33,7 @@ export default function ArchivePage({
   const groups = useMemo(() => {
     const result = new Map<string, ContentEntry[]>();
     for (const e of filtered) {
-      const year = e.date?.slice(0, 4) ?? "未記錄日期";
+      const year = e.date?.slice(0, 4) ?? translate({ id: "site.undated", message: "未記錄日期" });
       result.set(year, [...(result.get(year) ?? []), e]);
     }
     return [...result];
@@ -71,7 +75,14 @@ export default function ArchivePage({
     };
   }, [groups]);
   return (
-    <Layout title={title} description={isNotes ? "沿著時間軸回顧技術筆記的累積。" : "沿著時間軸回顧部落格的發布紀錄。"}>
+    <Layout
+      title={title}
+      description={
+        isNotes
+          ? translate({ id: "site.a.timeline.of.technical.notes", message: "沿著時間軸回顧技術筆記的累積。" })
+          : translate({ id: "site.a.timeline.of.blog.posts", message: "沿著時間軸回顧部落格的發布紀錄。" })
+      }
+    >
       <PageSurface variant="archive">
         <main className="max-w-285 w-full m-auto p-[3.5rem_2rem_5rem] [@media(max-width:_720px)]:p-[2.5rem_1.25rem_3rem]">
           <header className="flex justify-between items-end gap-8 mb-6 [&_h1]:text-[2.75rem] [&_h1]:font-[550] [&_h1]:tracking-[-0.03em] [&_h1]:mb-[0.7rem] [&_h1_span]:text-(--ifm-color-primary) [&_p]:text-muted-foreground [&_p]:m-0 [&_>_a]:flex [&_>_a]:items-center [&_>_a]:gap-2 [&_>_a]:text-[0.875rem] [&_>_a]:shrink-0 [&_>_a]:text-foreground [@media(max-width:_720px)]:flex-col [@media(max-width:_720px)]:items-start [@media(max-width:_720px)]:gap-4 [@media(max-width:_720px)]:[&_h1]:text-[2.3rem]">
@@ -81,35 +92,45 @@ export default function ArchivePage({
                 <span>.</span>
               </h1>
               <p>
-                {isNotes ? "沿著時間軸，回顧知識慢慢累積的過程。" : "開發實作、技術觀點與學習歷程，依發布時間整理。"}
+                {isNotes
+                  ? translate({
+                      id: "site.follow.the.gradual.growth.of.a.personal.knowledge.base",
+                      message: "沿著時間軸，回顧知識慢慢累積的過程。",
+                    })
+                  : translate({
+                      id: "site.projects.technical.perspectives.and.learning.experiences.organized.by.date",
+                      message: "開發實作、技術觀點與學習歷程，依發布時間整理。",
+                    })}
               </p>
             </div>
             <Link to={isNotes ? "/docs" : "/blog"}>
-              回到{isNotes ? "筆記" : "文章列表"}
+              {isNotes
+                ? translate({ id: "site.archive.backNotes", message: "回到筆記" })
+                : translate({ id: "site.archive.backBlog", message: "回到文章列表" })}
               <ArrowUpRight size={17} aria-hidden="true" />
             </Link>
           </header>
           <div className="relative max-w-110 mt-8 [&_>_svg]:absolute [&_>_svg]:top-[50%] [&_>_svg]:left-[0.85rem] [&_>_svg]:transform-[translateY(-50%)] [&_>_svg]:text-muted-foreground">
             <Search size={17} aria-hidden="true" />
             <label className="sr-only" htmlFor="archive-search">
-              搜尋{title}
+              {translate({ id: "site.archive.search", message: "搜尋{title}" }, { title })}
             </label>
             <Input
               id="archive-search"
               type="search"
-              placeholder="搜尋筆記或文章…"
+              placeholder={translate({ id: "site.search.notes.or.posts", message: "搜尋筆記或文章…" })}
               className="pl-10"
               value={query}
               onChange={(e) => setQuery(e.target.value)}
             />
           </div>
           <p className="text-[0.8125rem] text-muted-foreground m-[1rem_0_2rem]" role="status">
-            {filtered.length} 篇 · 由新到舊
+            {translate({ id: "site.archive.count", message: "{count} 篇 · 由新到舊" }, { count: filtered.length })}
           </p>
           <div className="grid grid-cols-[160px_minmax(0,1fr)] gap-12 [@media(max-width:_720px)]:grid-cols-[1fr] [@media(max-width:_720px)]:gap-6">
             <nav
               className="sticky top-24 [align-self:start] flex flex-col gap-2 [&_a]:flex [&_a]:justify-between [&_a]:p-[0.5rem_0.75rem] [&_a]:text-foreground [&_a]:rounded-[7px] [&_a]:[font-variant-numeric:tabular-nums] [&_a:hover]:bg-brand-secondary/10 [&_a:hover]:text-(--brand-secondary-foreground) [&_a:hover]:[text-decoration:none] [&_span]:text-muted-foreground [&_span]:text-[0.75rem] [@media(max-width:_720px)]:static [@media(max-width:_720px)]:flex-row [@media(max-width:_720px)]:flex-wrap [@media(max-width:_720px)]:gap-2 [@media(max-width:_720px)]:[&_a]:gap-3"
-              aria-label="歸檔年份"
+              aria-label={translate({ id: "site.archive.years", message: "歸檔年份" })}
             >
               {groups.map(([year, entries]) => (
                 <a
@@ -154,7 +175,14 @@ export default function ArchivePage({
                   </ul>
                 </section>
               ))}
-              {!filtered.length && <p>沒有符合的內容，試試其他關鍵字。</p>}
+              {!filtered.length && (
+                <p>
+                  {translate({
+                    id: "site.no.matching.content.try.another.keyword",
+                    message: "沒有符合的內容，試試其他關鍵字。",
+                  })}
+                </p>
+              )}
             </div>
           </div>
         </main>

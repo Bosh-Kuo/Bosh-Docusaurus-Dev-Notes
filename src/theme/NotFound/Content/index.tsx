@@ -1,4 +1,5 @@
 import Link from "@docusaurus/Link";
+import { translate } from "@docusaurus/Translate";
 import PageSurface from "@site/src/components/PageSurface";
 import { buttonVariants } from "@site/src/components/ui/button";
 import type { Props } from "@theme/NotFound/Content";
@@ -17,19 +18,24 @@ export default function NotFoundContent({ className }: Props) {
         <div>
           <p className="mb-6 flex items-center gap-2 text-sm text-muted-foreground">
             <Compass size={18} />
-            換個方向，繼續探索
+            {translate({ id: "site.find.a.new.path.to.explore", message: "換個方向，繼續探索" })}
           </p>
-          <h1 className="mb-5 text-4xl font-semibold leading-tight">這一頁，暫時迷路了</h1>
+          <h1 className="mb-5 text-4xl font-semibold leading-tight">
+            {translate({ id: "site.this.page.has.lost.its.way", message: "這一頁，暫時迷路了" })}
+          </h1>
           <p className="mb-8 max-w-md text-muted-foreground">
-            找不到你想看的頁面。它可能已經搬家，或連結中的地址有些不同。
+            {translate({
+              id: "site.we.couldnt.find.that.page.it.may.have.moved",
+              message: "找不到你想看的頁面。它可能已經搬家，或連結中的地址有些不同。",
+            })}
           </p>
           <div className="flex flex-wrap gap-3">
             <Link className={buttonVariants()} to="/">
               <ArrowLeft size={16} />
-              回到首頁
+              {translate({ id: "site.back.to.home", message: "回到首頁" })}
             </Link>
             <Link className={buttonVariants({ variant: "outline" })} to="/docs">
-              探索技術筆記
+              {translate({ id: "site.explore.technical.notes", message: "探索技術筆記" })}
               <ArrowRight size={16} />
             </Link>
           </div>

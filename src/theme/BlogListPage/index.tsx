@@ -1,5 +1,6 @@
 import Link from "@docusaurus/Link";
 import { useHistory, useLocation } from "@docusaurus/router";
+import { translate } from "@docusaurus/Translate";
 import useIsBrowser from "@docusaurus/useIsBrowser";
 import PageSurface from "@site/src/components/PageSurface";
 import PostCard from "@site/src/components/PostCard";
@@ -35,19 +36,25 @@ export default function BlogListPage(props: Props) {
     update("tag", selected.includes(tag) ? selected.filter((value) => value !== tag) : [...selected, tag]);
   }
   return (
-    <Layout title="部落格" description={props.metadata.blogDescription}>
+    <Layout title={translate({ id: "site.blog", message: "部落格" })} description={props.metadata.blogDescription}>
       <BlogListPageStructuredData {...props} />
       <PageSurface variant="blog">
         <main className="mx-auto max-w-305 px-5 pb-20 pt-12 md:px-8">
           <header className="mb-9 flex flex-wrap items-end justify-between gap-6">
             <div>
               <h1 className="mb-3 text-[clamp(2rem,4vw,3rem)] font-semibold tracking-tight">
-                技術、實作與探索<span className="text-brand">.</span>
+                {translate({ id: "site.technology.projects.and.exploration", message: "技術、實作與探索" })}
+                <span className="text-brand">.</span>
               </h1>
-              <p className="m-0 text-muted-foreground">記錄開發中的發現，分享理解問題的過程。</p>
+              <p className="m-0 text-muted-foreground">
+                {translate({
+                  id: "site.documenting.discoveries.in.development.and.sharing.the.process.of",
+                  message: "記錄開發中的發現，分享理解問題的過程。",
+                })}
+              </p>
             </div>
             <Link to="/archive/blog" className="inline-flex items-center gap-2 text-sm text-foreground">
-              部落格歸檔
+              {translate({ id: "site.blog.archive", message: "部落格歸檔" })}
               <ArrowRight size={17} aria-hidden="true" />
             </Link>
           </header>
@@ -58,18 +65,24 @@ export default function BlogListPage(props: Props) {
               className="pointer-events-none absolute left-3 top-3 text-muted-foreground"
             />
             <label className="sr-only" htmlFor="blog-search">
-              搜尋部落格文章
+              {translate({ id: "site.search.blog.posts", message: "搜尋部落格文章" })}
             </label>
             <Input
               id="blog-search"
               type="search"
-              placeholder="搜尋文章、觀念或關鍵字…"
+              placeholder={translate({
+                id: "site.search.posts.concepts.or.keywords",
+                message: "搜尋文章、觀念或關鍵字…",
+              })}
               className="pl-10"
               value={query}
               onChange={(event) => update("q", [event.target.value])}
             />
           </div>
-          <fieldset className="m-0 flex min-w-0 flex-wrap gap-2 border-0 p-0" aria-label="文章主題，可複選">
+          <fieldset
+            className="m-0 flex min-w-0 flex-wrap gap-2 border-0 p-0"
+            aria-label={translate({ id: "site.post.topics.multiple.selections.allowed", message: "文章主題，可複選" })}
+          >
             <Button
               size="sm"
               variant={selected.length ? "outline" : "secondary"}
@@ -77,7 +90,7 @@ export default function BlogListPage(props: Props) {
               className="rounded-full border-border shadow-none hover:shadow-none"
               onClick={() => update("tag", [])}
             >
-              全部文章
+              {translate({ id: "site.all.posts", message: "全部文章" })}
             </Button>
             {tags.map((tag) => (
               <Button
@@ -94,7 +107,14 @@ export default function BlogListPage(props: Props) {
             ))}
           </fieldset>
           <p className="mb-6 mt-5 text-sm text-muted-foreground" role="status">
-            {query || selected.length ? "符合條件的文章" : "由新到舊"} · {filtered.length} / {posts.length} 篇
+            {query || selected.length
+              ? translate({ id: "site.matching.posts", message: "符合條件的文章" })
+              : translate({ id: "site.newest.first", message: "由新到舊" })}{" "}
+            ·{" "}
+            {translate(
+              { id: "site.blog.count", message: "{shown} / {total} 篇" },
+              { shown: filtered.length, total: posts.length },
+            )}
           </p>
           {filtered.length ? (
             <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
@@ -104,10 +124,15 @@ export default function BlogListPage(props: Props) {
             </div>
           ) : (
             <div className="rounded-xl border border-solid border-border bg-card px-6 py-16 text-center">
-              <h2 className="text-xl">沒有找到符合的文章</h2>
-              <p className="text-muted-foreground">試試不同關鍵字，或移除主題篩選。</p>
+              <h2 className="text-xl">{translate({ id: "site.no.matching.posts", message: "沒有找到符合的文章" })}</h2>
+              <p className="text-muted-foreground">
+                {translate({
+                  id: "site.try.different.keywords.or.remove.the.topic.filters",
+                  message: "試試不同關鍵字，或移除主題篩選。",
+                })}
+              </p>
               <Button variant="outline" onClick={() => history.replace(location.pathname)}>
-                清除所有篩選
+                {translate({ id: "site.clear.all.filters", message: "清除所有篩選" })}
               </Button>
             </div>
           )}

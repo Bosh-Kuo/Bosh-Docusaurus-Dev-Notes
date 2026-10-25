@@ -1,32 +1,42 @@
 import Link from "@docusaurus/Link";
+import { translate } from "@docusaurus/Translate";
 import { ArrowUpRight } from "lucide-react";
 import type React from "react";
 
 const features = [
   {
-    title: "技術雜談與實作紀錄",
+    title: translate({ id: "site.technical.perspectives.and.projects", message: "技術雜談與實作紀錄" }),
     to: "/blog",
-    link: "閱讀部落格",
-    description: "部落格匯集了各種非特定技術類型的專題文章，並記錄了我在開發過程中遇到的問題與解決方案。",
+    link: translate({ id: "site.read.the.blog", message: "閱讀部落格" }),
+    description: translate({
+      id: "site.technical.articles.and.a.record.of.the.problems.and",
+      message: "部落格匯集了各種非特定技術類型的專題文章，並記錄了我在開發過程中遇到的問題與解決方案。",
+    }),
   },
   {
-    title: "輸出式學習，以筆記內化知識",
+    title: translate({ id: "site.learn.by.writing.and.sharing", message: "輸出式學習，以筆記內化知識" }),
     to: "/docs",
-    link: "探索筆記",
-    description: "筆記為一個一站式的技術筆記資源中心，裡面收錄了我在學習各種技術時所記錄下的重要觀念與知識點。",
+    link: translate({ id: "site.explore.notes", message: "探索筆記" }),
+    description: translate({
+      id: "site.a.collection.of.technical.notes.covering.the.concepts.and",
+      message: "筆記為一個一站式的技術筆記資源中心，裡面收錄了我在學習各種技術時所記錄下的重要觀念與知識點。",
+    }),
   },
   {
-    title: "近期專案",
+    title: translate({ id: "site.recent.projects", message: "近期專案" }),
     to: "/projects",
-    link: "查看近期專案",
-    description: "近期專案收錄了近期我在 GitHub 上更新的專案，我的專案目前主要與 Web 開發和深度學習等相關領域有關。",
+    link: translate({ id: "site.view.recent.projects", message: "查看近期專案" }),
+    description: translate({
+      id: "site.recently.updated.github.projects.mainly.focused.on.web.development",
+      message: "近期專案收錄了近期我在 GitHub 上更新的專案，我的專案目前主要與 Web 開發和深度學習等相關領域有關。",
+    }),
   },
 ];
 export default function HomepageFeatures(): React.JSX.Element {
   return (
     <section
       className="grid grid-cols-[repeat(3,1fr)] gap-10 [border-top:1px_solid_var(--border)] p-[3rem_0_4rem] [@media(max-width:_720px)]:grid-cols-[1fr] [@media(max-width:_720px)]:gap-8 [@media(max-width:_720px)]:pb-12"
-      aria-label="關於本站"
+      aria-label={translate({ id: "site.about.this.website", message: "關於本站" })}
     >
       {features.map((feature) => (
         <div

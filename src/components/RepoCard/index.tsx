@@ -1,3 +1,4 @@
+import { translate } from "@docusaurus/Translate";
 import { Card } from "@site/src/components/ui/card";
 import type { GithubColors } from "@site/src/hooks/useColors";
 import type { Repo } from "@site/src/hooks/useGithubRepos";
@@ -9,7 +10,7 @@ export default function RepoCard({ repo, colors }: { repo: Repo; colors: GithubC
       href={repo.html_url}
       target="_blank"
       rel="noopener noreferrer"
-      aria-label={`${repo.name}（在新分頁開啟 GitHub）`}
+      aria-label={translate({ id: "site.repo.open", message: "{name}（在新分頁開啟 GitHub）" }, { name: repo.name })}
       className="group block min-w-0 rounded-xl text-foreground no-underline hover:text-foreground hover:no-underline"
     >
       <Card className="flex h-full min-h-55 flex-col p-6 transition-[transform,border-color,box-shadow,background-color] duration-300 group-hover:border-brand group-hover:bg-accent group-hover:shadow-[0_12px_30px_-20px_var(--brand)] motion-safe:group-hover:-translate-y-1 motion-reduce:transition-none">
@@ -26,7 +27,11 @@ export default function RepoCard({ repo, colors }: { repo: Repo; colors: GithubC
           className="mb-6 mt-4 line-clamp-3 text-[0.8125rem] leading-relaxed text-muted-foreground"
           title={repo.description ?? undefined}
         >
-          {repo.description || "此專案尚未提供描述，可前往 GitHub 查看程式碼。"}
+          {repo.description ||
+            translate({
+              id: "site.no.description.yet.view.the.code.on.github",
+              message: "此專案尚未提供描述，可前往 GitHub 查看程式碼。",
+            })}
         </p>
         <div className="mt-auto flex flex-wrap items-center gap-4 text-xs text-muted-foreground tabular-nums">
           {repo.language && (

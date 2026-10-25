@@ -1,3 +1,4 @@
+import { translate } from "@docusaurus/Translate";
 import MediaPreviewModal from "@site/src/components/MediaPreview/MediaPreviewModal";
 import type { Props } from "@theme/MDXComponents/Img";
 import OriginalImg from "@theme-original/MDXComponents/Img";
@@ -64,7 +65,9 @@ export default function MDXImg(props: Props): ReactNode {
   // State 保存一份開啟當下的預覽快照；null 同時代表 Modal 尚未掛載。
   const [preview, setPreview] = useState<PreviewImage | null>(null);
   const { onClick, onKeyDown } = props;
-  const previewAriaLabel = props.alt ? `開啟圖片預覽：${props.alt}` : "開啟圖片預覽";
+  const previewAriaLabel = props.alt
+    ? translate({ id: "site.preview.openImageWithAlt", message: "開啟圖片預覽：{alt}" }, { alt: props.alt })
+    : translate({ id: "site.open.image.preview", message: "開啟圖片預覽" });
   function openPreview(image: HTMLImageElement) {
     // 圖片本身若是連結，點擊的主要意圖是導覽；不以預覽功能覆蓋既有語意。
     if (image.closest("a")) return;
@@ -108,7 +111,7 @@ export default function MDXImg(props: Props): ReactNode {
           width={preview.width}
           height={preview.height}
           maxInitialScale={preview.maxInitialScale}
-          dialogLabel="圖片預覽"
+          dialogLabel={translate({ id: "site.image.preview", message: "圖片預覽" })}
           onClose={() => setPreview(null)}
         >
           <img

@@ -1,3 +1,5 @@
+import { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import useIsBrowser from "@docusaurus/useIsBrowser";
 import { Button } from "@site/src/components/ui/button";
 import { Skeleton } from "@site/src/components/ui/skeleton";
@@ -46,6 +48,9 @@ function parseDays(value: unknown): Day[] {
   return [...days].sort((a, b) => a.date.localeCompare(b.date));
 }
 export default function ContributionCalendar() {
+  const {
+    i18n: { currentLocale },
+  } = useDocusaurusContext();
   const [active, setActive] = useState<number | null>(null);
   const scroll = useRef<HTMLDivElement>(null);
   const {
@@ -87,12 +92,17 @@ export default function ContributionCalendar() {
       if (month !== prev) {
         const column = Math.floor((i + offset) / 7);
         if (!months.length || column - months[months.length - 1].column >= 3)
-          months.push({ label: `${Number(month.slice(-2))}月`, column });
+          months.push({
+            label: new Intl.DateTimeFormat(currentLocale, { month: "short", timeZone: "UTC" }).format(
+              new Date(`${month}-01T00:00:00Z`),
+            ),
+            column,
+          });
         prev = month;
       }
     }
     return { offset, weeks: Math.ceil((days.length + offset) / 7), months };
-  }, [days]);
+  }, [days, currentLocale]);
   useEffect(() => {
     if (!loading && scroll.current) scroll.current.scrollLeft = scroll.current.scrollWidth;
   }, [loading]);
@@ -120,33 +130,46 @@ export default function ContributionCalendar() {
       aria-labelledby="activity-title"
     >
       <div className="flex justify-between items-center gap-4 [&_h2]:text-[1.2rem] [&_h2]:font-[550] [&_h2]:m-0 [&_a]:text-muted-foreground">
-        <h2 id="activity-title">GitHub 活動</h2>
+        <h2 id="activity-title">{translate({ id: "site.github.activity", message: "GitHub 活動" })}</h2>
         <a
           href="https://github.com/Bosh-Kuo"
           target="_blank"
           rel="noopener noreferrer"
-          aria-label="查看 Bosh 的 GitHub 活動"
+          aria-label={translate({ id: "site.view.boshs.github.activity", message: "查看 Bosh 的 GitHub 活動" })}
         >
           <ArrowUpRight size={18} />
         </a>
       </div>
       {loading ? (
-        <div className="min-h-50 pt-6" role="status" aria-busy="true" aria-label="正在載入 GitHub 活動">
+        <div
+          className="min-h-50 pt-6"
+          role="status"
+          aria-busy="true"
+          aria-label={translate({ id: "site.loading.github.activity", message: "正在載入 GitHub 活動" })}
+        >
           <Skeleton className="h-4 w-1/2 mb-6" />
           <Skeleton className="h-28 w-full" />
         </div>
       ) : error ? (
         <div className="min-h-50 pt-6 [&_p]:text-muted-foreground [&_p]:text-[0.875rem]" role="alert">
-          <p>暫時無法取得 GitHub 活動資料。</p>
+          <p>
+            {translate({
+              id: "site.github.activity.is.temporarily.unavailable",
+              message: "暫時無法取得 GitHub 活動資料。",
+            })}
+          </p>
           <Button variant="outline" size="sm" onClick={() => void refetch()}>
             <RotateCcw size={14} aria-hidden="true" />
-            重新載入
+            {translate({ id: "site.retry", message: "重新載入" })}
           </Button>
         </div>
       ) : (
         <>
           <p className="text-muted-foreground text-[0.875rem] m-[1rem_0] [&_strong]:text-foreground [&_strong]:font-[550] [&_strong]:[font-variant-numeric:tabular-nums]">
-            過去一年 <strong>{total.toLocaleString("zh-TW")}</strong> 次 contributions
+            {translate(
+              { id: "site.activity.total", message: "過去一年 {count} 次 contributions" },
+              { count: total.toLocaleString(currentLocale) },
+            )}
           </p>
           <div className="overflow-x-auto pb-[0.7rem] scrollbar-thin my-auto min-h-38.75" ref={scroll}>
             <div className="relative min-h-32.25 p-[24px_0_0_35px]" style={{ width: grid.weeks * 15 + 35 }}>
@@ -158,16 +181,19 @@ export default function ContributionCalendar() {
                 ))}
               </div>
               <div className="absolute left-0 top-9.25 flex flex-col gap-2.75 text-[0.625rem] text-muted-foreground leading-4.75">
-                <span>一</span>
-                <span>三</span>
-                <span>五</span>
+                <span>{translate({ id: "site.mon", message: "一" })}</span>
+                <span>{translate({ id: "site.wed", message: "三" })}</span>
+                <span>{translate({ id: "site.fri", message: "五" })}</span>
               </div>
               <fieldset
                 className="grid gap-0.75 grid-rows-[repeat(7,12px)] m-0 min-w-0 border-0 p-0"
                 style={{
                   gridTemplateColumns: `repeat(${grid.weeks},12px)`,
                 }}
-                aria-label="每日 GitHub contribution 數量；方向鍵可移動"
+                aria-label={translate({
+                  id: "site.daily.github.contributions.use.arrow.keys.to.navigate",
+                  message: "每日 GitHub contribution 數量；方向鍵可移動",
+                })}
               >
                 {days.map((day, i) => (
                   <button
@@ -180,8 +206,14 @@ export default function ContributionCalendar() {
                       gridColumn: Math.floor((i + grid.offset) / 7) + 1,
                       gridRow: ((i + grid.offset) % 7) + 1,
                     }}
-                    aria-label={`${day.date}，${day.count} 次 contributions`}
-                    title={`${day.date} · ${day.count} 次 contributions`}
+                    aria-label={translate(
+                      { id: "site.activity.day", message: "{date} · {count} 次 contributions" },
+                      { date: day.date, count: day.count },
+                    )}
+                    title={translate(
+                      { id: "site.activity.day", message: "{date} · {count} 次 contributions" },
+                      { date: day.date, count: day.count },
+                    )}
                     tabIndex={i === (active ?? days.length - 1) ? 0 : -1}
                     onFocus={() => setActive(i)}
                     onMouseEnter={() => setActive(i)}
@@ -197,15 +229,21 @@ export default function ContributionCalendar() {
           <div className="flex justify-between items-center gap-4 mt-[0.6rem] text-[0.6875rem] text-muted-foreground [@media(max-width:_640px)]:items-start [@media(max-width:_640px)]:flex-col [@media(max-width:_640px)]:gap-3">
             <span aria-live="polite">
               {selected
-                ? `${selected.date} · ${selected.count} 次 contributions`
-                : "包含 commits、pull requests 等 GitHub 貢獻"}
+                ? translate(
+                    { id: "site.activity.day", message: "{date} · {count} 次 contributions" },
+                    { date: selected.date, count: selected.count },
+                  )
+                : translate({
+                    id: "site.includes.commits.pull.requests.and.other.github.contributions",
+                    message: "包含 commits、pull requests 等 GitHub 貢獻",
+                  })}
             </span>
             <div className="flex gap-0.75 items-center shrink-0 [&_i]:w-3 [&_i]:h-3 [&_i]:rounded-[3px] [&_i]:block [&_span]:mx-0.75">
-              <span>少</span>
+              <span>{translate({ id: "site.less", message: "少" })}</span>
               {[0, 1, 2, 3, 4].map((level) => (
                 <i key={level} data-level={level} />
               ))}
-              <span>多</span>
+              <span>{translate({ id: "site.more", message: "多" })}</span>
             </div>
           </div>
         </>
@@ -216,7 +254,7 @@ export default function ContributionCalendar() {
         target="_blank"
         rel="noopener noreferrer"
       >
-        資料來源：GitHub Contributions API
+        {translate({ id: "site.source.github.contributions.api", message: "資料來源：GitHub Contributions API" })}
       </a>
     </section>
   );

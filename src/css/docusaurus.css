@@ -90,6 +90,62 @@ input {
   outline-offset: 4px;
 }
 
+.mobile-locale-switcher {
+  margin-inline-start: auto;
+  flex-shrink: 0;
+}
+
+.navbar-sidebar__brand .navbar__brand {
+  margin-inline-end: 0;
+}
+
+.mobile-locale-switcher > .navbar__item {
+  display: block;
+  padding-inline: 0.5rem;
+}
+
+.navbar .navbar__item.dropdown:has(> .navbar-locale-trigger) {
+  padding: 0 0.5rem;
+}
+
+/* 官方 label 仍由原元件管理，觸發器改以目前語系的「中／En」字標呈現。
+   包裝元件提供完整 aria-label 與 title，選單文字維持原樣。 */
+.navbar .navbar__link.navbar-locale-trigger {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  padding: 0;
+  border-radius: 50%;
+  font-size: 0;
+  line-height: 1;
+}
+
+.navbar .navbar-locale-trigger::after {
+  display: none;
+}
+
+.navbar .navbar-locale-trigger::before {
+  content: attr(data-locale-label);
+  display: grid;
+  place-items: center;
+  width: 1.5rem;
+  height: 1.5rem;
+  font-size: 1rem;
+  font-weight: 650;
+  line-height: 1;
+}
+
+.navbar .navbar-locale-trigger > svg {
+  display: none;
+}
+
+.navbar .navbar-locale-trigger:hover,
+.navbar .navbar-locale-trigger[aria-expanded="true"] {
+  background: var(--ifm-color-emphasis-200);
+}
+
 .navbar {
   border-bottom: 1px solid var(--border);
   padding-inline: 1.5rem;

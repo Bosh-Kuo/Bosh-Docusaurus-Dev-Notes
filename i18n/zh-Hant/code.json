@@ -1,0 +1,1031 @@
+{
+  "site.boshs": {
+    "message": "Bosh 的"
+  },
+  "site.tech.exploration.notes": {
+    "message": "技術探索筆記."
+  },
+  "site.find.problems.understand.principles.capture.what.matters": {
+    "message": "遇見問題，理解原理，紀錄重點。"
+  },
+  "site.documenting.my.ongoing.explorations.in.software.development": {
+    "message": "在軟體開發的路上，持續記錄我的探索足跡。"
+  },
+  "site.explore.notes": {
+    "message": "探索筆記"
+  },
+  "site.meet.bosh": {
+    "message": "認識 Bosh"
+  },
+  "site.home.postCount": {
+    "message": "{count} 篇部落格文章"
+  },
+  "site.home.noteCount": {
+    "message": "{count} 篇學習筆記"
+  },
+  "site.boshs.github": {
+    "message": "Bosh 的 GitHub"
+  },
+  "site.an.illustration.of.a.developer.exploring.code.and.ideas": {
+    "message": "開發者在電腦前探索程式與知識的插畫"
+  },
+  "site.keep.learning.keep.sharing": {
+    "message": "持續學習，持續分享"
+  },
+  "site.recent.blog.posts": {
+    "message": "近期部落格文章"
+  },
+  "site.technical.perspectives.handson.projects.and.lessons.learned": {
+    "message": "技術觀點、開發實作，以及踩過的坑。"
+  },
+  "site.all.posts": {
+    "message": "全部文章"
+  },
+  "site.recently.updated.notes": {
+    "message": "近期更新筆記"
+  },
+  "site.learn.by.writing.turn.ideas.into.understanding": {
+    "message": "輸出式學習，以筆記內化知識。"
+  },
+  "site.building.a.personal.knowledge.base.one.concept.and.solution": {
+    "message": "將重要的觀念與問題解法，慢慢整理成自己的知識庫。"
+  },
+  "site.browse.the.notes": {
+    "message": "回顧筆記歷程"
+  },
+  "site.technical.notes": {
+    "message": "技術筆記"
+  },
+  "site.home.updated": {
+    "message": "{date} 更新"
+  },
+  "site.date.unavailable": {
+    "message": "日期未記錄"
+  },
+  "site.notes.archive": {
+    "message": "筆記歸檔"
+  },
+  "site.blog.archive": {
+    "message": "部落格歸檔"
+  },
+  "site.undated": {
+    "message": "未記錄日期"
+  },
+  "site.a.timeline.of.technical.notes": {
+    "message": "沿著時間軸回顧技術筆記的累積。"
+  },
+  "site.a.timeline.of.blog.posts": {
+    "message": "沿著時間軸回顧部落格的發布紀錄。"
+  },
+  "site.follow.the.gradual.growth.of.a.personal.knowledge.base": {
+    "message": "沿著時間軸，回顧知識慢慢累積的過程。"
+  },
+  "site.projects.technical.perspectives.and.learning.experiences.organized.by.date": {
+    "message": "開發實作、技術觀點與學習歷程，依發布時間整理。"
+  },
+  "site.archive.backNotes": {
+    "message": "回到筆記"
+  },
+  "site.archive.backBlog": {
+    "message": "回到文章列表"
+  },
+  "site.archive.search": {
+    "message": "搜尋{title}"
+  },
+  "site.search.notes.or.posts": {
+    "message": "搜尋筆記或文章…"
+  },
+  "site.archive.count": {
+    "message": "{count} 篇 · 由新到舊"
+  },
+  "site.archive.years": {
+    "message": "歸檔年份"
+  },
+  "site.no.matching.content.try.another.keyword": {
+    "message": "沒有符合的內容，試試其他關鍵字。"
+  },
+  "site.github.activity": {
+    "message": "GitHub 活動"
+  },
+  "site.view.boshs.github.activity": {
+    "message": "查看 Bosh 的 GitHub 活動"
+  },
+  "site.loading.github.activity": {
+    "message": "正在載入 GitHub 活動"
+  },
+  "site.github.activity.is.temporarily.unavailable": {
+    "message": "暫時無法取得 GitHub 活動資料。"
+  },
+  "site.retry": {
+    "message": "重新載入"
+  },
+  "site.activity.total": {
+    "message": "過去一年 {count} 次 contributions"
+  },
+  "site.mon": {
+    "message": "一"
+  },
+  "site.wed": {
+    "message": "三"
+  },
+  "site.fri": {
+    "message": "五"
+  },
+  "site.daily.github.contributions.use.arrow.keys.to.navigate": {
+    "message": "每日 GitHub contribution 數量；方向鍵可移動"
+  },
+  "site.activity.day": {
+    "message": "{date} · {count} 次 contributions"
+  },
+  "site.includes.commits.pull.requests.and.other.github.contributions": {
+    "message": "包含 commits、pull requests 等 GitHub 貢獻"
+  },
+  "site.less": {
+    "message": "少"
+  },
+  "site.more": {
+    "message": "多"
+  },
+  "site.source.github.contributions.api": {
+    "message": "資料來源：GitHub Contributions API"
+  },
+  "site.technical.perspectives.and.projects": {
+    "message": "技術雜談與實作紀錄"
+  },
+  "site.read.the.blog": {
+    "message": "閱讀部落格"
+  },
+  "site.technical.articles.and.a.record.of.the.problems.and": {
+    "message": "部落格匯集了各種非特定技術類型的專題文章，並記錄了我在開發過程中遇到的問題與解決方案。"
+  },
+  "site.learn.by.writing.and.sharing": {
+    "message": "輸出式學習，以筆記內化知識"
+  },
+  "site.a.collection.of.technical.notes.covering.the.concepts.and": {
+    "message": "筆記為一個一站式的技術筆記資源中心，裡面收錄了我在學習各種技術時所記錄下的重要觀念與知識點。"
+  },
+  "site.recent.projects": {
+    "message": "近期專案"
+  },
+  "site.view.recent.projects": {
+    "message": "查看近期專案"
+  },
+  "site.recently.updated.github.projects.mainly.focused.on.web.development": {
+    "message": "近期專案收錄了近期我在 GitHub 上更新的專案，我的專案目前主要與 Web 開發和深度學習等相關領域有關。"
+  },
+  "site.about.this.website": {
+    "message": "關於本站"
+  },
+  "site.reading.progress": {
+    "message": "閱讀進度"
+  },
+  "site.close.esc": {
+    "message": "關閉 (Esc)"
+  },
+  "site.preview.close": {
+    "message": "關閉{label}"
+  },
+  "site.scroll.to.zoom.drag.to.pan.click.the.background": {
+    "message": "滾輪縮放 · 拖曳平移 · 點擊背景或按 Esc 關閉"
+  },
+  "site.zoom.controls": {
+    "message": "縮放控制"
+  },
+  "site.zoom.out": {
+    "message": "縮小"
+  },
+  "site.zoom.out.of.preview": {
+    "message": "縮小預覽內容"
+  },
+  "site.zoom.in": {
+    "message": "放大"
+  },
+  "site.zoom.into.preview": {
+    "message": "放大預覽內容"
+  },
+  "site.reset": {
+    "message": "重置"
+  },
+  "site.reset.preview.position.and.zoom": {
+    "message": "重置預覽內容的位置與縮放"
+  },
+  "site.repo.open": {
+    "message": "{name}（在新分頁開啟 GitHub）"
+  },
+  "site.no.description.yet.view.the.code.on.github": {
+    "message": "此專案尚未提供描述，可前往 GitHub 查看程式碼。"
+  },
+  "site.about.me": {
+    "message": "關於我"
+  },
+  "site.im.bosh.a.full.stack.web.developer.exploring.software": {
+    "message": "我是 Bosh，目前專注於 Web 全端開發，持續探索軟體工程、AI 與 Computer Science。"
+  },
+  "site.hi.im.bosh": {
+    "message": "Hi，我是 Bosh"
+  },
+  "site.a.software.engineer.with.an.interdisciplinary.background": {
+    "message": "跨領域的軟體工程師，"
+  },
+  "site.currently.focused.on.full.stack.web.development": {
+    "message": "目前專注於 Web 全端開發。"
+  },
+  "site.i.start.with.problems.i.encounter.in.practice.explore": {
+    "message": "我喜歡從實作中遇到的問題出發，理解技術背後的原理，再透過筆記加深對技術的理解。 工作之餘，也喜歡 follow 最新的技術發展，並嘗試將新技術融入到實際開發中。"
+  },
+  "site.turn.learning.into.knowledge.worth.sharing": {
+    "message": "把學習，變成可以分享的知識"
+  },
+  "site.technical.notes.and.open.source.projects.have.helped.me": {
+    "message": "一路上，我從網路上的技術筆記與開源專案得到許多幫助。前人的經驗，讓我少踩了不少坑；開源與分享精神，也一直是軟體生態圈最吸引我的地方。"
+  },
+  "site.this.website.is.my.learning.journal.i.write.down": {
+    "message": "這個網站是我的學習紀錄。我把工作或學習中遇到的問題、重要觀念與解決方法寫下來，希望自己能真正理解，也希望這些內容能幫助遇到相似問題的你。"
+  },
+  "site.explore.my.notes": {
+    "message": "探索我的筆記"
+  },
+  "site.what.im.exploring": {
+    "message": "我正在探索的方向"
+  },
+  "site.building.reliable.adaptable.software.through.full.stack.web.development": {
+    "message": "以 Web 全端開發為主軸，從系統設計、測試到維護，思考如何把需求轉成可靠、容易演進的軟體。"
+  },
+  "site.exploring.how.ai.tools.and.models.can.fit.into": {
+    "message": "從機器學習與深度學習的基礎出發，探索 AI 工具與模型如何融入產品與開發流程。"
+  },
+  "site.revisiting.operating.systems.data.structures.and.software.fundamentals.to": {
+    "message": "持續補足作業系統、資料結構與軟體底層知識，理解程式背後的運作原理，把用過卻說不清楚的觀念重新整理。"
+  },
+  "site.explore.the.projects.and.the.ideas.behind.them": {
+    "message": "看看實作，也聊聊技術"
+  },
+  "site.technologies.i.explore": {
+    "message": "探索過的技術"
+  },
+  "site.from.full.stack.web.development.to.ai.turning.ideas": {
+    "message": "從 Web 全端開發到 AI，把想法變成實作。"
+  },
+  "site.rotatable.technology.icon.cloud": {
+    "message": "可旋轉的技術圖示雲"
+  },
+  "site.drag.or.use.arrow.keys.to.rotate.hover.to": {
+    "message": "拖曳或方向鍵旋轉 · 移入時停止自轉"
+  },
+  "site.recently.updated.projects.and.experiments.on.github": {
+    "message": "近期在 GitHub 更新的專案與實作紀錄。"
+  },
+  "site.recently.updated.github.projects.a.record.of.ideas.experiments": {
+    "message": "收錄近期在 GitHub 更新的專案，記錄想法、實作與持續探索的足跡。"
+  },
+  "site.visit.github": {
+    "message": "前往 GitHub"
+  },
+  "site.recently.updated.projects": {
+    "message": "最近更新的專案"
+  },
+  "site.filter.projects.by.name": {
+    "message": "篩選專案名稱"
+  },
+  "site.search.all.projects.by.name": {
+    "message": "搜尋所有專案名稱…"
+  },
+  "site.loading.from.github": {
+    "message": "正在讀取 GitHub…"
+  },
+  "site.data.is.temporarily.unavailable": {
+    "message": "資料暫時無法取得"
+  },
+  "site.sorted.by.latest.update": {
+    "message": "依最近更新排序"
+  },
+  "site.projects.count": {
+    "message": "{shown} / {total} 個專案"
+  },
+  "site.filter.by.programming.language.multiple.selections.allowed": {
+    "message": "篩選程式語言，可複選"
+  },
+  "site.languages": {
+    "message": "程式語言"
+  },
+  "site.select.multiple": {
+    "message": "可複選"
+  },
+  "site.all": {
+    "message": "全部"
+  },
+  "site.unspecified.language": {
+    "message": "未標示語言"
+  },
+  "site.loading.projects": {
+    "message": "正在載入專案"
+  },
+  "site.unable.to.load.projects": {
+    "message": "暫時無法載入專案"
+  },
+  "site.the.connection.to.github.may.be.interrupted.or.the": {
+    "message": "GitHub 連線可能中斷或已達 API 請求上限。請稍後重試，也可以直接前往 GitHub 查看。"
+  },
+  "site.no.matching.projects": {
+    "message": "沒有符合的專案"
+  },
+  "site.no.public.projects.yet": {
+    "message": "目前沒有公開專案"
+  },
+  "site.try.another.name.or.language.or.clear.the.filters": {
+    "message": "試試其他名稱或程式語言，或清除篩選查看所有專案。"
+  },
+  "site.check.back.later.or.visit.github.directly": {
+    "message": "稍後再來看看，或直接前往 GitHub。"
+  },
+  "site.clear.filters": {
+    "message": "清除篩選"
+  },
+  "site.project.pagination": {
+    "message": "專案分頁"
+  },
+  "site.previous": {
+    "message": "上一頁"
+  },
+  "site.projects.page": {
+    "message": "第 {current} / {total} 頁"
+  },
+  "site.next": {
+    "message": "下一頁"
+  },
+  "site.code.in.motion": {
+    "message": "程式足跡"
+  },
+  "site.testing.ideas.through.projects.and.learning.through.practice.here": {
+    "message": "透過專案驗證想法，透過持續的實作累積經驗。這裡是我正在探索的技術，以及過去一年的 GitHub 活動。"
+  },
+  "site.reading.time": {
+    "message": "{minutes} 分鐘閱讀"
+  },
+  "site.on.this.page": {
+    "message": "本篇章節"
+  },
+  "site.blog": {
+    "message": "部落格"
+  },
+  "site.technology.projects.and.exploration": {
+    "message": "技術、實作與探索"
+  },
+  "site.documenting.discoveries.in.development.and.sharing.the.process.of": {
+    "message": "記錄開發中的發現，分享理解問題的過程。"
+  },
+  "site.search.blog.posts": {
+    "message": "搜尋部落格文章"
+  },
+  "site.search.posts.concepts.or.keywords": {
+    "message": "搜尋文章、觀念或關鍵字…"
+  },
+  "site.post.topics.multiple.selections.allowed": {
+    "message": "文章主題，可複選"
+  },
+  "site.matching.posts": {
+    "message": "符合條件的文章"
+  },
+  "site.newest.first": {
+    "message": "由新到舊"
+  },
+  "site.blog.count": {
+    "message": "{shown} / {total} 篇"
+  },
+  "site.no.matching.posts": {
+    "message": "沒有找到符合的文章"
+  },
+  "site.try.different.keywords.or.remove.the.topic.filters": {
+    "message": "試試不同關鍵字，或移除主題篩選。"
+  },
+  "site.clear.all.filters": {
+    "message": "清除所有篩選"
+  },
+  "site.open.mermaid.diagram.preview": {
+    "message": "開啟 Mermaid 圖表預覽"
+  },
+  "site.mermaid.diagram.preview": {
+    "message": "Mermaid 圖表預覽"
+  },
+  "site.preview.openImageWithAlt": {
+    "message": "開啟圖片預覽：{alt}"
+  },
+  "site.open.image.preview": {
+    "message": "開啟圖片預覽"
+  },
+  "site.image.preview": {
+    "message": "圖片預覽"
+  },
+  "site.find.a.new.path.to.explore": {
+    "message": "換個方向，繼續探索"
+  },
+  "site.this.page.has.lost.its.way": {
+    "message": "這一頁，暫時迷路了"
+  },
+  "site.we.couldnt.find.that.page.it.may.have.moved": {
+    "message": "找不到你想看的頁面。它可能已經搬家，或連結中的地址有些不同。"
+  },
+  "site.back.to.home": {
+    "message": "回到首頁"
+  },
+  "site.explore.technical.notes": {
+    "message": "探索技術筆記"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "關閉導覽列",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "此頁已當機。",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "回到頂部",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "歷史文章",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "歷史文章",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "部落格文章列表分頁導覽",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "較新的文章",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "較舊的文章",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "部落格文章分頁導覽",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "較新一篇",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "較舊一篇",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "檢視所有標籤",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "淺色模式",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "深色模式",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "切換淺色/深色模式（當前為{mode}）",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "頁面路徑",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "文件選項卡",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "上一頁",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "下一頁",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "{count} 篇文件帶有標籤",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged}「{tagName}」",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "版本：{versionLabel}"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "此為 {siteTitle} {versionLabel} 版尚未發行的文件。",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "此為 {siteTitle} {versionLabel} 版的文件，現已不再積極維護。",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "最新的文件請參閱 {latestVersionLink} ({versionLabel})。",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "最新版本",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "編輯此頁",
+    "description": "The link label to edit the current page"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "{heading}的直接連結",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": "於 {date} ",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": "由 {user} ",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "最後{byUser}{atDate}更新",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "選擇版本",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.NotFound.title": {
+    "message": "找不到頁面",
+    "description": "The title of the 404 page"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "關閉",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "標籤：",
+    "description": "The label alongside a tag list"
+  },
+  "theme.admonition.caution": {
+    "message": "警告",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "危險",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "資訊",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "備註",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "提示",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "注意",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "最近部落格文章導覽",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "展開側邊欄分類 '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "收起側邊欄分類 '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "主導航",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.NotFound.p1": {
+    "message": "我們沒有您要找的頁面。",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "請聯絡原始連結來源網站的所有者，並通知他們連結已毀損。",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "本頁導覽",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "閱讀更多",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "閱讀 {title} 全文",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "選擇語言",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "閱讀時間約 {readingTime} 分鐘",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "切換自動換行",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "主頁面",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "複製",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "複製成功",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "複製程式碼至剪貼簿",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "文件側邊欄",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "收起側邊欄",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "收起側邊欄",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← 回到主選單",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "切換導覽列",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "展開側邊欄",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "展開側邊欄",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "查看全部 {count} 個結果"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "找到 {count} 份文件",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "「{query}」的搜尋結果",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "在文件中搜尋",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "在此輸入搜尋詞",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "搜尋",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "由 Algolia 提供",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "未找到結果",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "正在取得新的搜尋結果...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "搜尋",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "清除查詢",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "取消",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.searchBox.placeholderText": {
+    "message": "Search docs",
+    "description": "The placeholder text for the main search input field"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAi": {
+    "message": "Ask another question...",
+    "description": "The placeholder text when in AI question mode"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
+    "message": "Answering...",
+    "description": "The placeholder text for search box when AI is streaming an answer"
+  },
+  "theme.SearchModal.searchBox.enterKeyHint": {
+    "message": "search",
+    "description": "The hint for the search box enter key text"
+  },
+  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
+    "message": "enter",
+    "description": "The hint for the Ask AI search box enter key text"
+  },
+  "theme.SearchModal.searchBox.searchInputLabel": {
+    "message": "Search",
+    "description": "The ARIA label for search input"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
+    "message": "Back to keyword search",
+    "description": "The text for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
+    "message": "Back to keyword search",
+    "description": "The ARIA label for back to keyword search button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "最近搜尋",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "沒有最近的搜尋",
+    "description": "The text when there are no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "保存這個搜尋",
+    "description": "The title for save recent search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "從歷史記錄中刪除這個搜尋",
+    "description": "The title for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "收藏",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "從收藏列表中刪除這個搜尋",
+    "description": "The title for remove favorite search button"
+  },
+  "theme.SearchModal.startScreen.recentConversationsTitle": {
+    "message": "Recent conversations",
+    "description": "The title for recent conversations"
+  },
+  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
+    "message": "Remove this conversation from history",
+    "description": "The title for remove recent conversation button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "無法獲取結果",
+    "description": "The title for error screen"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "你可能需要檢查網路連線。",
+    "description": "The help text for error screen"
+  },
+  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
+    "message": "Ask AI: ",
+    "description": "The placeholder text for Ask AI input"
+  },
+  "theme.SearchModal.askAiScreen.disclaimerText": {
+    "message": "Answers are generated with AI which can make mistakes. Verify responses.",
+    "description": "The disclaimer text for AI answers"
+  },
+  "theme.SearchModal.askAiScreen.relatedSourcesText": {
+    "message": "Related sources",
+    "description": "The text for related sources"
+  },
+  "theme.SearchModal.askAiScreen.thinkingText": {
+    "message": "Thinking...",
+    "description": "The text when AI is thinking"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonText": {
+    "message": "Copy",
+    "description": "The text for copy button"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
+    "message": "Copied!",
+    "description": "The text for copy button when copied"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonTitle": {
+    "message": "Copy",
+    "description": "The title for copy button"
+  },
+  "theme.SearchModal.askAiScreen.likeButtonTitle": {
+    "message": "Like",
+    "description": "The title for like button"
+  },
+  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
+    "message": "Dislike",
+    "description": "The title for dislike button"
+  },
+  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
+    "message": "Thanks for your feedback!",
+    "description": "The text for thanks for feedback"
+  },
+  "theme.SearchModal.askAiScreen.preToolCallText": {
+    "message": "Searching...",
+    "description": "The text before tool call"
+  },
+  "theme.SearchModal.askAiScreen.duringToolCallText": {
+    "message": "Searching for ",
+    "description": "The text during tool call"
+  },
+  "theme.SearchModal.askAiScreen.afterToolCallText": {
+    "message": "Searched for",
+    "description": "The text after tool call"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "選中",
+    "description": "The select text for footer"
+  },
+  "theme.SearchModal.footer.submitQuestionText": {
+    "message": "Submit question",
+    "description": "The submit question text for footer"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "Enter 鍵",
+    "description": "The ARIA label for select key in footer"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "導航",
+    "description": "The navigate text for footer"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "向上鍵",
+    "description": "The ARIA label for navigate up key in footer"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "向下鍵",
+    "description": "The ARIA label for navigate down key in footer"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "關閉",
+    "description": "The close text for footer"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "Esc 鍵",
+    "description": "The ARIA label for close key in footer"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "搜尋提供",
+    "description": "The 'Powered by' text for footer"
+  },
+  "theme.SearchModal.footer.backToSearchText": {
+    "message": "Back to search",
+    "description": "The back to search text for footer"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "沒有結果：",
+    "description": "The text when there are no results"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "試試搜尋",
+    "description": "The text for suggested query"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "認為這個查詢應該有結果？",
+    "description": "The text for reporting missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "請告知我們。",
+    "description": "The link text for reporting missing results"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "搜尋文檔",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.IdealImageMessage.loading": {
+    "message": "載入中...",
+    "description": "When the full-scale image is loading"
+  },
+  "theme.IdealImageMessage.load": {
+    "message": "按一下以載入{sizeMessage}",
+    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
+  },
+  "theme.IdealImageMessage.offline": {
+    "message": "你的瀏覽器處於離線狀態。圖片未載入",
+    "description": "When the user is viewing an offline document"
+  },
+  "theme.IdealImageMessage.404error": {
+    "message": "未找到圖片",
+    "description": "When the image is not found"
+  },
+  "theme.IdealImageMessage.error": {
+    "message": "出現錯誤，按一下來重試",
+    "description": "When the image fails to load for unknown error"
+  },
+  "theme.Playground.liveEditor": {
+    "message": "即時編輯器",
+    "description": "The live editor label of the live codeblocks"
+  },
+  "theme.Playground.result": {
+    "message": "結果",
+    "description": "The result label of the live codeblocks"
+  },
+  "theme.Playground.buttons.reset": {
+    "message": "Reset",
+    "description": "The reset button label for live code blocks"
+  },
+  "theme.blog.post.plurals": {
+    "message": "{count} 篇文章",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} 含有標籤「{tagName}」",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "作者列表",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "檢視所有作者",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "此作者尚未撰寫任何文章。",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "未列出頁",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "此頁面未列出。搜索引擎不會對其索引，只有擁有直接連結的用戶才能訪問。",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "草稿頁",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "此頁面為草稿，僅在開發環境中可見，不會包含於正式版本中。",
+    "description": "The draft content banner message"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "{count} 個項目",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "重試",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "跳至主要内容",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "標籤",
+    "description": "The title of the tag list page"
+  },
+  "site.reading.minutes": {
+    "message": "{minutes} 分鐘"
+  },
+  "site.navbar.switchLanguage": {
+    "message": "切換語言，目前：{language}",
+    "description": "語言字標按鈕的提示與無障礙名稱，包含目前語言。"
+  }
+}

@@ -39,6 +39,9 @@ yarn install
 ```bash
 yarn start
 ```
+
+`yarn start` 開發預設的中文站，`yarn start:en` 開發英文站。要在同一個預覽中切換兩種語系，請使用 `yarn build` 後執行 `yarn serve`。完整指令、開發時 404 的原因與 Vercel 部署方式，請見 [中英文介面操作說明](./i18n/README.md)。
+
 ### Build
 ```bash
 yarn build

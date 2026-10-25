@@ -1,13 +1,15 @@
 import type * as Preset from "@docusaurus/preset-classic";
 import { themes as prismThemes } from "prism-react-renderer";
 
+const isEnglish = process.env.DOCUSAURUS_CURRENT_LOCALE === "en";
 const themeConfig = {
   // * 共用設定
   image: "img/logo.png", // 社群分享圖片，供 og:image 與 twitter:image 使用。
   announcementBar: {
     id: "announcement",
-    content:
-      '如果我的筆記對你有幫助，歡迎到我的 <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bosh-Kuo/docusaurus-dev-notes">GitHub</a> 點個 Star ⭐️ 支持',
+    content: isEnglish
+      ? 'If these notes help you, consider giving the project a star on <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bosh-Kuo/docusaurus-dev-notes">GitHub</a> ⭐️'
+      : '如果我的筆記對你有幫助，歡迎到我的 <a target="_blank" rel="noopener noreferrer" href="https://github.com/Bosh-Kuo/docusaurus-dev-notes">GitHub</a> 點個 Star ⭐️ 支持',
     backgroundColor: "var(--accent)",
     textColor: "var(--foreground)",
     isCloseable: true,
@@ -49,9 +51,11 @@ const themeConfig = {
         href: "https://github.com/Bosh-Kuo",
         title: "GitHub",
         className: "header-github-link",
-        "aria-label": "GitHub repository",
+        "aria-label": isEnglish ? "GitHub profile" : "GitHub 個人檔案",
         position: "right",
       },
+      // Classic 會把右側 items 放在亮暗模式按鈕前；最後一項即緊鄰其左側。
+      { type: "localeDropdown", position: "right" },
     ],
   },
   // * 程式碼區塊
@@ -99,7 +103,7 @@ const themeConfig = {
           {
             html: `
               <p>
-              illustrations by <a href="https://storyset.com/web">Storyset</a>                  
+              ${isEnglish ? "Illustrations by" : "插圖提供："} <a href="https://storyset.com/web">Storyset</a>
               </p>
               `,
           },
@@ -113,7 +117,9 @@ const themeConfig = {
         ],
       },
     ],
-    copyright: `Copyright © ${new Date().getFullYear()} Bosh Kuo. Built with Docusaurus.`,
+    copyright: isEnglish
+      ? `Copyright © ${new Date().getFullYear()} Bosh Kuo. Built with Docusaurus.`
+      : `Copyright © ${new Date().getFullYear()} Bosh Kuo. 使用 Docusaurus 建置。`,
   },
   // * 文件側欄
   docs: {
@@ -136,19 +142,19 @@ const themeConfig = {
     // 公開搜尋用的 API key，可隨專案提交。
     apiKey: "6e8c7aa1573050bf1bcf7cf52216978e",
     indexName: "boshkuo",
-    // 啟用依目前語系與版本篩選的情境搜尋。
-    contextualSearch: true,
+    // 介面先雙語、文章仍為中文：共用現有中文索引，避免英文語系被篩成空結果。
+    // 開始索引英文譯文後，可改回 contextualSearch: true 並移除以下語系篩選與路徑替換。
+    contextualSearch: false,
     // 跨網站的搜尋結果改用完整頁面導向，避免交由本站路由處理。
     externalUrlRegex: "external\\.com|domain\\.com",
 
-    // 不同部署共用搜尋索引時，可替換搜尋結果的路徑；from 支援字串或正規表示式。
-    // replaceSearchResultPathname: {
-    //   from: "/docs/", // 也可使用正規表示式：/\/docs\//
-    //   to: "",
-    // },
-
     // 額外的 Algolia 搜尋參數。
-    searchParameters: {},
+    searchParameters: { facetFilters: ["language:zh-Hant"] },
+    // from 是正規表示式字串，結果路徑使用目前語系。
+    replaceSearchResultPathname: {
+      from: "^/(?:en/)?",
+      to: isEnglish ? "/en/" : "/",
+    },
     // 搜尋頁面的路徑；設為 false 可停用。
     searchPagePath: "search",
     // 其他 Algolia 參數。

@@ -1,4 +1,5 @@
 import { Dialog } from "@base-ui/react/dialog";
+import { translate } from "@docusaurus/Translate";
 import { cn } from "cn";
 import { type MouseEvent, type ReactNode, useCallback, useEffect, useRef, useState } from "react";
 import { usePanZoom } from "./usePanZoom";
@@ -115,8 +116,8 @@ export default function MediaPreviewModal({
             ref={closeButtonRef}
             className="ui-components-mediapreview-styles-closeButton flex items-center justify-center p-0 [border:0] text-[rgb(0_0_0/55%)] [background:rgb(0_0_0/7%)] cursor-pointer leading-none [transition:color_0.15s_ease,background_0.15s_ease] [&:hover]:text-[rgb(0_0_0/85%)] [&:hover]:[background:rgb(0_0_0/14%)] focus-visible:relative focus-visible:z-1 focus-visible:[outline:2px_solid_var(--ifm-color-primary)] focus-visible:-outline-offset-2 [html[data-theme='dark']_&]:text-[rgb(255_255_255/70%)] [html[data-theme='dark']_&]:[background:rgb(255_255_255/10%)] [html[data-theme='dark']_&:hover]:text-white [html[data-theme='dark']_&:hover]:[background:rgb(255_255_255/22%)] fixed top-4 right-5 z-2 w-9 h-9 rounded-[50%] text-[18px] opacity-[0] transform-[translateY(-8px)_scale(0.92)] [transition:color_0.15s_ease,background_0.15s_ease,opacity_0.2s_ease-out,transform_0.32s_cubic-bezier(0.16,1,0.3,1)] motion-reduce:[transition:none]"
             type="button"
-            title="關閉 (Esc)"
-            aria-label={`關閉${dialogLabel}`}
+            title={translate({ id: "site.close.esc", message: "關閉 (Esc)" })}
+            aria-label={translate({ id: "site.preview.close", message: "關閉{label}" }, { label: dialogLabel })}
             onClick={close}
           >
             ✕
@@ -126,19 +127,22 @@ export default function MediaPreviewModal({
             className="ui-components-mediapreview-styles-hint fixed bottom-6 left-[50%] z-2 p-[6px_18px] rounded-[20px] text-[rgb(0_0_0/50%)] [background:rgb(0_0_0/8%)] font-[system-ui,-apple-system,sans-serif] text-[13px] whitespace-nowrap pointer-events-none opacity-[0] transform-[translateX(-50%)_translateY(8px)] [transition:opacity_0.22s_ease-out_0.08s,transform_0.34s_cubic-bezier(0.16,1,0.3,1)_0.08s] animate-[ui-components-mediapreview-styles-hideHint_0.4s_ease_3s_forwards] [html[data-theme='dark']_&]:text-[rgb(255_255_255/65%)] [html[data-theme='dark']_&]:[background:rgb(0_0_0/45%)] [@media(max-width:_640px)]:right-4 [@media(max-width:_640px)]:bottom-17 [@media(max-width:_640px)]:left-4 [@media(max-width:_640px)]:text-center [@media(max-width:_640px)]:whitespace-normal [@media(max-width:_640px)]:transform-[translateY(8px)] motion-reduce:[transition:none] motion-reduce:animate-none"
             aria-hidden="true"
           >
-            滾輪縮放 · 拖曳平移 · 點擊背景或按 Esc 關閉
+            {translate({
+              id: "site.scroll.to.zoom.drag.to.pan.click.the.background",
+              message: "滾輪縮放 · 拖曳平移 · 點擊背景或按 Esc 關閉",
+            })}
           </div>
 
           {/* 控制列不放進 canvas，才能在媒體平移／縮放時固定於視窗右下角。 */}
           <fieldset
             className="ui-components-mediapreview-styles-controls fixed right-5 bottom-5 z-2 flex items-center overflow-hidden rounded-xl [background:rgb(0_0_0/7%)] font-[system-ui,-apple-system,sans-serif] select-none opacity-[0] transform-[translateY(10px)_scale(0.96)] [transition:opacity_0.2s_ease-out_0.05s,transform_0.34s_cubic-bezier(0.16,1,0.3,1)_0.05s] [html[data-theme='dark']_&]:[background:rgb(255_255_255/10%)] motion-reduce:[transition:none] m-0 min-w-0 border-0 p-0"
-            aria-label="縮放控制"
+            aria-label={translate({ id: "site.zoom.controls", message: "縮放控制" })}
           >
             <button
               className="flex items-center justify-center p-0 [border:0] text-[rgb(0_0_0/55%)] [background:rgb(0_0_0/7%)] cursor-pointer leading-none [transition:color_0.15s_ease,background_0.15s_ease] [&:hover]:text-[rgb(0_0_0/85%)] [&:hover]:[background:rgb(0_0_0/14%)] focus-visible:relative focus-visible:z-1 focus-visible:[outline:2px_solid_var(--ifm-color-primary)] focus-visible:-outline-offset-2 [html[data-theme='dark']_&]:text-[rgb(255_255_255/70%)] [html[data-theme='dark']_&]:[background:rgb(255_255_255/10%)] [html[data-theme='dark']_&:hover]:text-white [html[data-theme='dark']_&:hover]:[background:rgb(255_255_255/22%)] w-9 h-8.5 text-[18px]"
               type="button"
-              title="縮小"
-              aria-label="縮小預覽內容"
+              title={translate({ id: "site.zoom.out", message: "縮小" })}
+              aria-label={translate({ id: "site.zoom.out.of.preview", message: "縮小預覽內容" })}
               onClick={panZoom.zoomOut}
             >
               −
@@ -153,8 +157,8 @@ export default function MediaPreviewModal({
             <button
               className="flex items-center justify-center p-0 [border:0] text-[rgb(0_0_0/55%)] [background:rgb(0_0_0/7%)] cursor-pointer leading-none [transition:color_0.15s_ease,background_0.15s_ease] [&:hover]:text-[rgb(0_0_0/85%)] [&:hover]:[background:rgb(0_0_0/14%)] focus-visible:relative focus-visible:z-1 focus-visible:[outline:2px_solid_var(--ifm-color-primary)] focus-visible:-outline-offset-2 [html[data-theme='dark']_&]:text-[rgb(255_255_255/70%)] [html[data-theme='dark']_&]:[background:rgb(255_255_255/10%)] [html[data-theme='dark']_&:hover]:text-white [html[data-theme='dark']_&:hover]:[background:rgb(255_255_255/22%)] w-9 h-8.5 text-[18px]"
               type="button"
-              title="放大"
-              aria-label="放大預覽內容"
+              title={translate({ id: "site.zoom.in", message: "放大" })}
+              aria-label={translate({ id: "site.zoom.into.preview", message: "放大預覽內容" })}
               onClick={panZoom.zoomIn}
             >
               +
@@ -162,8 +166,11 @@ export default function MediaPreviewModal({
             <button
               className="flex items-center justify-center p-0 [border:0] text-[rgb(0_0_0/55%)] [background:rgb(0_0_0/7%)] cursor-pointer leading-none [transition:color_0.15s_ease,background_0.15s_ease] [&:hover]:text-[rgb(0_0_0/85%)] [&:hover]:[background:rgb(0_0_0/14%)] focus-visible:relative focus-visible:z-1 focus-visible:[outline:2px_solid_var(--ifm-color-primary)] focus-visible:-outline-offset-2 [html[data-theme='dark']_&]:text-[rgb(255_255_255/70%)] [html[data-theme='dark']_&]:[background:rgb(255_255_255/10%)] [html[data-theme='dark']_&:hover]:text-white [html[data-theme='dark']_&:hover]:[background:rgb(255_255_255/22%)] w-9 h-8.5 text-[18px]"
               type="button"
-              title="重置"
-              aria-label="重置預覽內容的位置與縮放"
+              title={translate({ id: "site.reset", message: "重置" })}
+              aria-label={translate({
+                id: "site.reset.preview.position.and.zoom",
+                message: "重置預覽內容的位置與縮放",
+              })}
               onClick={panZoom.reset}
             >
               <svg

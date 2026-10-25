@@ -1,0 +1,1031 @@
+{
+  "site.notes.archive": {
+    "message": "Notes archive"
+  },
+  "site.blog.archive": {
+    "message": "Blog archive"
+  },
+  "site.undated": {
+    "message": "Undated"
+  },
+  "site.a.timeline.of.technical.notes": {
+    "message": "A timeline of technical notes."
+  },
+  "site.a.timeline.of.blog.posts": {
+    "message": "A timeline of blog posts."
+  },
+  "site.follow.the.gradual.growth.of.a.personal.knowledge.base": {
+    "message": "Follow the gradual growth of a personal knowledge base."
+  },
+  "site.projects.technical.perspectives.and.learning.experiences.organized.by.date": {
+    "message": "Projects, technical perspectives, and learning experiences, organized by date."
+  },
+  "site.search.notes.or.posts": {
+    "message": "Search notes or posts…"
+  },
+  "site.archive.years": {
+    "message": "Archive years"
+  },
+  "site.no.matching.content.try.another.keyword": {
+    "message": "No matching content. Try another keyword."
+  },
+  "site.github.activity": {
+    "message": "GitHub activity"
+  },
+  "site.view.boshs.github.activity": {
+    "message": "View Bosh’s GitHub activity"
+  },
+  "site.loading.github.activity": {
+    "message": "Loading GitHub activity"
+  },
+  "site.github.activity.is.temporarily.unavailable": {
+    "message": "GitHub activity is temporarily unavailable."
+  },
+  "site.retry": {
+    "message": "Retry"
+  },
+  "site.mon": {
+    "message": "Mon"
+  },
+  "site.wed": {
+    "message": "Wed"
+  },
+  "site.fri": {
+    "message": "Fri"
+  },
+  "site.daily.github.contributions.use.arrow.keys.to.navigate": {
+    "message": "Daily GitHub contributions; use arrow keys to navigate"
+  },
+  "site.includes.commits.pull.requests.and.other.github.contributions": {
+    "message": "Includes commits, pull requests, and other GitHub contributions"
+  },
+  "site.less": {
+    "message": "Less"
+  },
+  "site.more": {
+    "message": "More"
+  },
+  "site.source.github.contributions.api": {
+    "message": "Source: GitHub Contributions API"
+  },
+  "site.technical.perspectives.and.projects": {
+    "message": "Technical perspectives and projects"
+  },
+  "site.read.the.blog": {
+    "message": "Read the blog"
+  },
+  "site.technical.articles.and.a.record.of.the.problems.and": {
+    "message": "Technical articles and a record of the problems and solutions I encounter while developing software."
+  },
+  "site.learn.by.writing.and.sharing": {
+    "message": "Learn by writing and sharing"
+  },
+  "site.explore.notes": {
+    "message": "Explore notes"
+  },
+  "site.a.collection.of.technical.notes.covering.the.concepts.and": {
+    "message": "A collection of technical notes covering the concepts and ideas I discover while learning."
+  },
+  "site.recent.projects": {
+    "message": "Recent projects"
+  },
+  "site.view.recent.projects": {
+    "message": "View recent projects"
+  },
+  "site.recently.updated.github.projects.mainly.focused.on.web.development": {
+    "message": "Recently updated GitHub projects, mainly focused on web development and deep learning."
+  },
+  "site.about.this.website": {
+    "message": "About this website"
+  },
+  "site.close.esc": {
+    "message": "Close (Esc)"
+  },
+  "site.scroll.to.zoom.drag.to.pan.click.the.background": {
+    "message": "Scroll to zoom · Drag to pan · Click the background or press Esc to close"
+  },
+  "site.zoom.controls": {
+    "message": "Zoom controls"
+  },
+  "site.zoom.out": {
+    "message": "Zoom out"
+  },
+  "site.zoom.out.of.preview": {
+    "message": "Zoom out of preview"
+  },
+  "site.zoom.in": {
+    "message": "Zoom in"
+  },
+  "site.zoom.into.preview": {
+    "message": "Zoom into preview"
+  },
+  "site.reset": {
+    "message": "Reset"
+  },
+  "site.reset.preview.position.and.zoom": {
+    "message": "Reset preview position and zoom"
+  },
+  "site.reading.progress": {
+    "message": "Reading progress"
+  },
+  "site.no.description.yet.view.the.code.on.github": {
+    "message": "No description yet. View the code on GitHub."
+  },
+  "site.technologies.i.explore": {
+    "message": "Technologies I explore"
+  },
+  "site.from.full.stack.web.development.to.ai.turning.ideas": {
+    "message": "From full stack web development to AI, turning ideas into working projects."
+  },
+  "site.rotatable.technology.icon.cloud": {
+    "message": "Rotatable technology icon cloud"
+  },
+  "site.drag.or.use.arrow.keys.to.rotate.hover.to": {
+    "message": "Drag or use arrow keys to rotate · Hover to pause"
+  },
+  "site.date.unavailable": {
+    "message": "Date unavailable"
+  },
+  "site.about.me": {
+    "message": "About me"
+  },
+  "site.im.bosh.a.full.stack.web.developer.exploring.software": {
+    "message": "I’m Bosh, a full stack web developer exploring software engineering, AI, and computer science."
+  },
+  "site.hi.im.bosh": {
+    "message": "Hi, I’m Bosh"
+  },
+  "site.a.software.engineer.with.an.interdisciplinary.background": {
+    "message": "A software engineer with an interdisciplinary background,"
+  },
+  "site.currently.focused.on.full.stack.web.development": {
+    "message": "currently focused on full stack web development."
+  },
+  "site.i.start.with.problems.i.encounter.in.practice.explore": {
+    "message": "I start with problems I encounter in practice, explore the principles behind them, and deepen my understanding through writing. Outside work, I follow new developments and try applying them to real projects."
+  },
+  "site.turn.learning.into.knowledge.worth.sharing": {
+    "message": "Turn learning into knowledge worth sharing"
+  },
+  "site.technical.notes.and.open.source.projects.have.helped.me": {
+    "message": "Technical notes and open source projects have helped me throughout my journey. Learning from others has saved me from many pitfalls; that spirit of sharing is what draws me to the software community."
+  },
+  "site.this.website.is.my.learning.journal.i.write.down": {
+    "message": "This website is my learning journal. I write down problems, key concepts, and solutions from work and study to build a deeper understanding and help others facing similar challenges."
+  },
+  "site.explore.my.notes": {
+    "message": "Explore my notes"
+  },
+  "site.what.im.exploring": {
+    "message": "What I’m exploring"
+  },
+  "site.building.reliable.adaptable.software.through.full.stack.web.development": {
+    "message": "Building reliable, adaptable software through full stack web development, system design, testing, and maintenance."
+  },
+  "site.exploring.how.ai.tools.and.models.can.fit.into": {
+    "message": "Exploring how AI tools and models can fit into products and development workflows, starting with machine learning and deep learning fundamentals."
+  },
+  "site.revisiting.operating.systems.data.structures.and.software.fundamentals.to": {
+    "message": "Revisiting operating systems, data structures, and software fundamentals to understand how programs work beneath the surface."
+  },
+  "site.explore.the.projects.and.the.ideas.behind.them": {
+    "message": "Explore the projects and the ideas behind them"
+  },
+  "site.boshs": {
+    "message": "Bosh’s"
+  },
+  "site.tech.exploration.notes": {
+    "message": "Tech exploration notes."
+  },
+  "site.find.problems.understand.principles.capture.what.matters": {
+    "message": "Find problems. Understand principles. Capture what matters."
+  },
+  "site.documenting.my.ongoing.explorations.in.software.development": {
+    "message": "Documenting my ongoing explorations in software development."
+  },
+  "site.meet.bosh": {
+    "message": "Meet Bosh"
+  },
+  "site.boshs.github": {
+    "message": "Bosh’s GitHub"
+  },
+  "site.an.illustration.of.a.developer.exploring.code.and.ideas": {
+    "message": "An illustration of a developer exploring code and ideas at a computer"
+  },
+  "site.keep.learning.keep.sharing": {
+    "message": "Keep learning, keep sharing"
+  },
+  "site.recent.blog.posts": {
+    "message": "Recent blog posts"
+  },
+  "site.technical.perspectives.handson.projects.and.lessons.learned": {
+    "message": "Technical perspectives, hands-on projects, and lessons learned."
+  },
+  "site.all.posts": {
+    "message": "All posts"
+  },
+  "site.recently.updated.notes": {
+    "message": "Recently updated notes"
+  },
+  "site.learn.by.writing.turn.ideas.into.understanding": {
+    "message": "Learn by writing, turn ideas into understanding."
+  },
+  "site.building.a.personal.knowledge.base.one.concept.and.solution": {
+    "message": "Building a personal knowledge base, one concept and solution at a time."
+  },
+  "site.browse.the.notes": {
+    "message": "Browse the notes"
+  },
+  "site.technical.notes": {
+    "message": "Technical notes"
+  },
+  "site.recently.updated.projects.and.experiments.on.github": {
+    "message": "Recently updated projects and experiments on GitHub."
+  },
+  "site.recently.updated.github.projects.a.record.of.ideas.experiments": {
+    "message": "Recently updated GitHub projects: a record of ideas, experiments, and ongoing exploration."
+  },
+  "site.visit.github": {
+    "message": "Visit GitHub"
+  },
+  "site.recently.updated.projects": {
+    "message": "Recently updated projects"
+  },
+  "site.filter.projects.by.name": {
+    "message": "Filter projects by name"
+  },
+  "site.search.all.projects.by.name": {
+    "message": "Search all projects by name…"
+  },
+  "site.loading.from.github": {
+    "message": "Loading from GitHub…"
+  },
+  "site.data.is.temporarily.unavailable": {
+    "message": "Data is temporarily unavailable"
+  },
+  "site.sorted.by.latest.update": {
+    "message": "Sorted by latest update"
+  },
+  "site.filter.by.programming.language.multiple.selections.allowed": {
+    "message": "Filter by programming language; multiple selections allowed"
+  },
+  "site.languages": {
+    "message": "Languages"
+  },
+  "site.select.multiple": {
+    "message": "Select multiple"
+  },
+  "site.all": {
+    "message": "All"
+  },
+  "site.unspecified.language": {
+    "message": "Unspecified language"
+  },
+  "site.loading.projects": {
+    "message": "Loading projects"
+  },
+  "site.unable.to.load.projects": {
+    "message": "Unable to load projects"
+  },
+  "site.the.connection.to.github.may.be.interrupted.or.the": {
+    "message": "The connection to GitHub may be interrupted or the API rate limit reached. Try again later or visit GitHub directly."
+  },
+  "site.no.matching.projects": {
+    "message": "No matching projects"
+  },
+  "site.no.public.projects.yet": {
+    "message": "No public projects yet"
+  },
+  "site.try.another.name.or.language.or.clear.the.filters": {
+    "message": "Try another name or language, or clear the filters to see all projects."
+  },
+  "site.check.back.later.or.visit.github.directly": {
+    "message": "Check back later or visit GitHub directly."
+  },
+  "site.clear.filters": {
+    "message": "Clear filters"
+  },
+  "site.project.pagination": {
+    "message": "Project pagination"
+  },
+  "site.previous": {
+    "message": "Previous"
+  },
+  "site.next": {
+    "message": "Next"
+  },
+  "site.code.in.motion": {
+    "message": "Code in motion"
+  },
+  "site.testing.ideas.through.projects.and.learning.through.practice.here": {
+    "message": "Testing ideas through projects and learning through practice. Here are the technologies I’m exploring and my GitHub activity over the past year."
+  },
+  "site.blog": {
+    "message": "Blog"
+  },
+  "site.technology.projects.and.exploration": {
+    "message": "Technology, projects, and exploration"
+  },
+  "site.documenting.discoveries.in.development.and.sharing.the.process.of": {
+    "message": "Documenting discoveries in development and sharing the process of understanding problems."
+  },
+  "site.search.blog.posts": {
+    "message": "Search blog posts"
+  },
+  "site.search.posts.concepts.or.keywords": {
+    "message": "Search posts, concepts, or keywords…"
+  },
+  "site.post.topics.multiple.selections.allowed": {
+    "message": "Post topics; multiple selections allowed"
+  },
+  "site.matching.posts": {
+    "message": "Matching posts"
+  },
+  "site.newest.first": {
+    "message": "Newest first"
+  },
+  "site.no.matching.posts": {
+    "message": "No matching posts"
+  },
+  "site.try.different.keywords.or.remove.the.topic.filters": {
+    "message": "Try different keywords or remove the topic filters."
+  },
+  "site.clear.all.filters": {
+    "message": "Clear all filters"
+  },
+  "site.on.this.page": {
+    "message": "On this page"
+  },
+  "site.open.image.preview": {
+    "message": "Open image preview"
+  },
+  "site.image.preview": {
+    "message": "Image preview"
+  },
+  "site.open.mermaid.diagram.preview": {
+    "message": "Open Mermaid diagram preview"
+  },
+  "site.mermaid.diagram.preview": {
+    "message": "Mermaid diagram preview"
+  },
+  "site.find.a.new.path.to.explore": {
+    "message": "Find a new path to explore"
+  },
+  "site.this.page.has.lost.its.way": {
+    "message": "This page has lost its way"
+  },
+  "site.we.couldnt.find.that.page.it.may.have.moved": {
+    "message": "We couldn’t find that page. It may have moved, or the address may be incorrect."
+  },
+  "site.back.to.home": {
+    "message": "Back to home"
+  },
+  "site.explore.technical.notes": {
+    "message": "Explore technical notes"
+  },
+  "site.home.postCount": {
+    "message": "{count} blog posts"
+  },
+  "site.home.noteCount": {
+    "message": "{count} learning notes"
+  },
+  "site.home.updated": {
+    "message": "Updated {date}"
+  },
+  "site.archive.backNotes": {
+    "message": "Back to notes"
+  },
+  "site.archive.backBlog": {
+    "message": "Back to posts"
+  },
+  "site.archive.search": {
+    "message": "Search {title}"
+  },
+  "site.archive.count": {
+    "message": "{count} entries · Newest first"
+  },
+  "site.projects.count": {
+    "message": "{shown} / {total} projects"
+  },
+  "site.projects.page": {
+    "message": "Page {current} / {total}"
+  },
+  "site.blog.count": {
+    "message": "{shown} / {total} posts"
+  },
+  "site.reading.minutes": {
+    "message": "{minutes} min"
+  },
+  "site.reading.time": {
+    "message": "{minutes} min read"
+  },
+  "site.repo.open": {
+    "message": "{name} (open GitHub in a new tab)"
+  },
+  "site.preview.openImageWithAlt": {
+    "message": "Open image preview: {alt}"
+  },
+  "site.preview.close": {
+    "message": "Close {label}"
+  },
+  "site.activity.total": {
+    "message": "{count} contributions in the past year"
+  },
+  "site.activity.day": {
+    "message": "{date} · {count} contributions"
+  },
+  "theme.docs.sidebar.closeSidebarButtonAriaLabel": {
+    "message": "Close navigation bar",
+    "description": "The ARIA label for close button of mobile sidebar"
+  },
+  "theme.ErrorPageContent.title": {
+    "message": "This page crashed.",
+    "description": "The title of the fallback page when the page crashed"
+  },
+  "theme.BackToTopButton.buttonAriaLabel": {
+    "message": "Scroll back to top",
+    "description": "The ARIA label for the back to top button"
+  },
+  "theme.blog.archive.title": {
+    "message": "Archive",
+    "description": "The page & hero title of the blog archive page"
+  },
+  "theme.blog.archive.description": {
+    "message": "Archive",
+    "description": "The page & hero description of the blog archive page"
+  },
+  "theme.blog.paginator.navAriaLabel": {
+    "message": "Blog list page navigation",
+    "description": "The ARIA label for the blog pagination"
+  },
+  "theme.blog.paginator.newerEntries": {
+    "message": "Newer entries",
+    "description": "The label used to navigate to the newer blog posts page (previous page)"
+  },
+  "theme.blog.paginator.olderEntries": {
+    "message": "Older entries",
+    "description": "The label used to navigate to the older blog posts page (next page)"
+  },
+  "theme.blog.post.paginator.navAriaLabel": {
+    "message": "Blog post page navigation",
+    "description": "The ARIA label for the blog posts pagination"
+  },
+  "theme.blog.post.paginator.newerPost": {
+    "message": "Newer post",
+    "description": "The blog post button label to navigate to the newer/previous post"
+  },
+  "theme.blog.post.paginator.olderPost": {
+    "message": "Older post",
+    "description": "The blog post button label to navigate to the older/next post"
+  },
+  "theme.tags.tagsPageLink": {
+    "message": "View all tags",
+    "description": "The label of the link targeting the tag list page"
+  },
+  "theme.colorToggle.ariaLabel.mode.system": {
+    "message": "system mode",
+    "description": "The name for the system color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.light": {
+    "message": "light mode",
+    "description": "The name for the light color mode"
+  },
+  "theme.colorToggle.ariaLabel.mode.dark": {
+    "message": "dark mode",
+    "description": "The name for the dark color mode"
+  },
+  "theme.colorToggle.ariaLabel": {
+    "message": "Switch between dark and light mode (currently {mode})",
+    "description": "The ARIA label for the color mode toggle"
+  },
+  "theme.docs.breadcrumbs.navAriaLabel": {
+    "message": "Breadcrumbs",
+    "description": "The ARIA label for the breadcrumbs"
+  },
+  "theme.docs.paginator.navAriaLabel": {
+    "message": "Docs pages",
+    "description": "The ARIA label for the docs pagination"
+  },
+  "theme.docs.paginator.previous": {
+    "message": "Previous",
+    "description": "The label used to navigate to the previous doc"
+  },
+  "theme.docs.paginator.next": {
+    "message": "Next",
+    "description": "The label used to navigate to the next doc"
+  },
+  "theme.docs.tagDocListPageTitle.nDocsTagged": {
+    "message": "One doc tagged|{count} docs tagged",
+    "description": "Pluralized label for \"{count} docs tagged\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.tagDocListPageTitle": {
+    "message": "{nDocsTagged} with \"{tagName}\"",
+    "description": "The title of the page for a docs tag"
+  },
+  "theme.docs.versions.unreleasedVersionLabel": {
+    "message": "This is unreleased documentation for {siteTitle} {versionLabel} version.",
+    "description": "The label used to tell the user that he's browsing an unreleased doc version"
+  },
+  "theme.docs.versions.unmaintainedVersionLabel": {
+    "message": "This is documentation for {siteTitle} {versionLabel}, which is no longer actively maintained.",
+    "description": "The label used to tell the user that he's browsing an unmaintained doc version"
+  },
+  "theme.docs.versions.latestVersionSuggestionLabel": {
+    "message": "For up-to-date documentation, see the {latestVersionLink} ({versionLabel}).",
+    "description": "The label used to tell the user to check the latest version"
+  },
+  "theme.docs.versions.latestVersionLinkLabel": {
+    "message": "latest version",
+    "description": "The label used for the latest version suggestion link label"
+  },
+  "theme.common.editThisPage": {
+    "message": "Edit this page",
+    "description": "The link label to edit the current page"
+  },
+  "theme.docs.versionBadge.label": {
+    "message": "Version: {versionLabel}"
+  },
+  "theme.common.headingLinkTitle": {
+    "message": "Direct link to {heading}",
+    "description": "Title for link to heading"
+  },
+  "theme.lastUpdated.atDate": {
+    "message": " on {date}",
+    "description": "The words used to describe on which date a page has been last updated"
+  },
+  "theme.lastUpdated.byUser": {
+    "message": " by {user}",
+    "description": "The words used to describe by who the page has been last updated"
+  },
+  "theme.lastUpdated.lastUpdatedAtBy": {
+    "message": "Last updated{atDate}{byUser}",
+    "description": "The sentence used to display when a page has been last updated, and by who"
+  },
+  "theme.NotFound.title": {
+    "message": "Page Not Found",
+    "description": "The title of the 404 page"
+  },
+  "theme.navbar.mobileVersionsDropdown.label": {
+    "message": "Versions",
+    "description": "The label for the navbar versions dropdown on mobile view"
+  },
+  "theme.tags.tagsListLabel": {
+    "message": "Tags:",
+    "description": "The label alongside a tag list"
+  },
+  "theme.AnnouncementBar.closeButtonAriaLabel": {
+    "message": "Close",
+    "description": "The ARIA label for close button of announcement bar"
+  },
+  "theme.admonition.caution": {
+    "message": "caution",
+    "description": "The default label used for the Caution admonition (:::caution)"
+  },
+  "theme.admonition.danger": {
+    "message": "danger",
+    "description": "The default label used for the Danger admonition (:::danger)"
+  },
+  "theme.admonition.info": {
+    "message": "info",
+    "description": "The default label used for the Info admonition (:::info)"
+  },
+  "theme.admonition.note": {
+    "message": "note",
+    "description": "The default label used for the Note admonition (:::note)"
+  },
+  "theme.admonition.tip": {
+    "message": "tip",
+    "description": "The default label used for the Tip admonition (:::tip)"
+  },
+  "theme.admonition.warning": {
+    "message": "warning",
+    "description": "The default label used for the Warning admonition (:::warning)"
+  },
+  "theme.blog.sidebar.navAriaLabel": {
+    "message": "Blog recent posts navigation",
+    "description": "The ARIA label for recent posts in the blog sidebar"
+  },
+  "theme.DocSidebarItem.expandCategoryAriaLabel": {
+    "message": "Expand sidebar category '{label}'",
+    "description": "The ARIA label to expand the sidebar category"
+  },
+  "theme.DocSidebarItem.collapseCategoryAriaLabel": {
+    "message": "Collapse sidebar category '{label}'",
+    "description": "The ARIA label to collapse the sidebar category"
+  },
+  "theme.IconExternalLink.ariaLabel": {
+    "message": "(opens in new tab)",
+    "description": "The ARIA label for the external link icon"
+  },
+  "theme.NotFound.p1": {
+    "message": "We could not find what you were looking for.",
+    "description": "The first paragraph of the 404 page"
+  },
+  "theme.NotFound.p2": {
+    "message": "Please contact the owner of the site that linked you to the original URL and let them know their link is broken.",
+    "description": "The 2nd paragraph of the 404 page"
+  },
+  "theme.navbar.mobileLanguageDropdown.label": {
+    "message": "Languages",
+    "description": "The label for the mobile language switcher dropdown"
+  },
+  "theme.NavBar.navAriaLabel": {
+    "message": "Main",
+    "description": "The ARIA label for the main navigation"
+  },
+  "theme.TOCCollapsible.toggleButtonLabel": {
+    "message": "On this page",
+    "description": "The label used by the button on the collapsible TOC component"
+  },
+  "theme.blog.post.readMore": {
+    "message": "Read more",
+    "description": "The label used in blog post item excerpts to link to full blog posts"
+  },
+  "theme.blog.post.readMoreLabel": {
+    "message": "Read more about {title}",
+    "description": "The ARIA label for the link to full blog posts from excerpts"
+  },
+  "theme.blog.post.readingTime.plurals": {
+    "message": "One min read|{readingTime} min read",
+    "description": "Pluralized label for \"{readingTime} min read\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.docs.breadcrumbs.home": {
+    "message": "Home page",
+    "description": "The ARIA label for the home page in the breadcrumbs"
+  },
+  "theme.docs.sidebar.collapseButtonTitle": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.docs.sidebar.collapseButtonAriaLabel": {
+    "message": "Collapse sidebar",
+    "description": "The title attribute for collapse button of doc sidebar"
+  },
+  "theme.CodeBlock.copy": {
+    "message": "Copy",
+    "description": "The copy button label on code blocks"
+  },
+  "theme.CodeBlock.copied": {
+    "message": "Copied",
+    "description": "The copied button label on code blocks"
+  },
+  "theme.CodeBlock.copyButtonAriaLabel": {
+    "message": "Copy code to clipboard",
+    "description": "The ARIA label for copy code blocks button"
+  },
+  "theme.CodeBlock.wordWrapToggle": {
+    "message": "Toggle word wrap",
+    "description": "The title attribute for toggle word wrapping button of code block lines"
+  },
+  "theme.docs.sidebar.navAriaLabel": {
+    "message": "Docs sidebar",
+    "description": "The ARIA label for the sidebar navigation"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.expandAriaLabel": {
+    "message": "Expand the dropdown",
+    "description": "The ARIA label of the button to expand the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileDropdown.collapseButton.collapseAriaLabel": {
+    "message": "Collapse the dropdown",
+    "description": "The ARIA label of the button to collapse the mobile dropdown navbar item"
+  },
+  "theme.navbar.mobileSidebarSecondaryMenu.backButtonLabel": {
+    "message": "← Back to main menu",
+    "description": "The label of the back button to return to main menu, inside the mobile navbar sidebar secondary menu (notably used to display the docs sidebar)"
+  },
+  "theme.docs.sidebar.toggleSidebarButtonAriaLabel": {
+    "message": "Toggle navigation bar",
+    "description": "The ARIA label for hamburger menu button of mobile navigation"
+  },
+  "theme.docs.sidebar.expandButtonTitle": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.docs.sidebar.expandButtonAriaLabel": {
+    "message": "Expand sidebar",
+    "description": "The ARIA label and title attribute for expand button of doc sidebar"
+  },
+  "theme.SearchBar.seeAll": {
+    "message": "See all {count} results"
+  },
+  "theme.SearchPage.documentsFound.plurals": {
+    "message": "One document found|{count} documents found",
+    "description": "Pluralized label for \"{count} documents found\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.SearchPage.existingResultsTitle": {
+    "message": "Search results for \"{query}\"",
+    "description": "The search page title for non-empty query"
+  },
+  "theme.SearchPage.emptyResultsTitle": {
+    "message": "Search the documentation",
+    "description": "The search page title for empty query"
+  },
+  "theme.SearchPage.inputPlaceholder": {
+    "message": "Type your search here",
+    "description": "The placeholder for search page input"
+  },
+  "theme.SearchPage.inputLabel": {
+    "message": "Search",
+    "description": "The ARIA label for search page input"
+  },
+  "theme.SearchPage.algoliaLabel": {
+    "message": "Powered by Algolia",
+    "description": "The description label for Algolia mention"
+  },
+  "theme.SearchPage.noResultsText": {
+    "message": "No results were found",
+    "description": "The paragraph for empty search result"
+  },
+  "theme.SearchPage.fetchingNewResults": {
+    "message": "Fetching new results...",
+    "description": "The paragraph for fetching new search results"
+  },
+  "theme.SearchBar.label": {
+    "message": "Search",
+    "description": "The ARIA label and placeholder for search button"
+  },
+  "theme.SearchModal.searchBox.resetButtonTitle": {
+    "message": "Clear the query",
+    "description": "The label and ARIA label for search box reset button"
+  },
+  "theme.SearchModal.searchBox.cancelButtonText": {
+    "message": "Cancel",
+    "description": "The label and ARIA label for search box cancel button"
+  },
+  "theme.SearchModal.searchBox.placeholderText": {
+    "message": "Search docs",
+    "description": "The placeholder text for the main search input field"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAi": {
+    "message": "Ask another question...",
+    "description": "The placeholder text when in AI question mode"
+  },
+  "theme.SearchModal.searchBox.placeholderTextAskAiStreaming": {
+    "message": "Answering...",
+    "description": "The placeholder text for search box when AI is streaming an answer"
+  },
+  "theme.SearchModal.searchBox.enterKeyHint": {
+    "message": "search",
+    "description": "The hint for the search box enter key text"
+  },
+  "theme.SearchModal.searchBox.enterKeyHintAskAi": {
+    "message": "enter",
+    "description": "The hint for the Ask AI search box enter key text"
+  },
+  "theme.SearchModal.searchBox.searchInputLabel": {
+    "message": "Search",
+    "description": "The ARIA label for search input"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonText": {
+    "message": "Back to keyword search",
+    "description": "The text for back to keyword search button"
+  },
+  "theme.SearchModal.searchBox.backToKeywordSearchButtonAriaLabel": {
+    "message": "Back to keyword search",
+    "description": "The ARIA label for back to keyword search button"
+  },
+  "theme.SearchModal.startScreen.recentSearchesTitle": {
+    "message": "Recent",
+    "description": "The title for recent searches"
+  },
+  "theme.SearchModal.startScreen.noRecentSearchesText": {
+    "message": "No recent searches",
+    "description": "The text when there are no recent searches"
+  },
+  "theme.SearchModal.startScreen.saveRecentSearchButtonTitle": {
+    "message": "Save this search",
+    "description": "The title for save recent search button"
+  },
+  "theme.SearchModal.startScreen.removeRecentSearchButtonTitle": {
+    "message": "Remove this search from history",
+    "description": "The title for remove recent search button"
+  },
+  "theme.SearchModal.startScreen.favoriteSearchesTitle": {
+    "message": "Favorite",
+    "description": "The title for favorite searches"
+  },
+  "theme.SearchModal.startScreen.removeFavoriteSearchButtonTitle": {
+    "message": "Remove this search from favorites",
+    "description": "The title for remove favorite search button"
+  },
+  "theme.SearchModal.startScreen.recentConversationsTitle": {
+    "message": "Recent conversations",
+    "description": "The title for recent conversations"
+  },
+  "theme.SearchModal.startScreen.removeRecentConversationButtonTitle": {
+    "message": "Remove this conversation from history",
+    "description": "The title for remove recent conversation button"
+  },
+  "theme.SearchModal.errorScreen.titleText": {
+    "message": "Unable to fetch results",
+    "description": "The title for error screen"
+  },
+  "theme.SearchModal.errorScreen.helpText": {
+    "message": "You might want to check your network connection.",
+    "description": "The help text for error screen"
+  },
+  "theme.SearchModal.resultsScreen.askAiPlaceholder": {
+    "message": "Ask AI: ",
+    "description": "The placeholder text for Ask AI input"
+  },
+  "theme.SearchModal.askAiScreen.disclaimerText": {
+    "message": "Answers are generated with AI which can make mistakes. Verify responses.",
+    "description": "The disclaimer text for AI answers"
+  },
+  "theme.SearchModal.askAiScreen.relatedSourcesText": {
+    "message": "Related sources",
+    "description": "The text for related sources"
+  },
+  "theme.SearchModal.askAiScreen.thinkingText": {
+    "message": "Thinking...",
+    "description": "The text when AI is thinking"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonText": {
+    "message": "Copy",
+    "description": "The text for copy button"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonCopiedText": {
+    "message": "Copied!",
+    "description": "The text for copy button when copied"
+  },
+  "theme.SearchModal.askAiScreen.copyButtonTitle": {
+    "message": "Copy",
+    "description": "The title for copy button"
+  },
+  "theme.SearchModal.askAiScreen.likeButtonTitle": {
+    "message": "Like",
+    "description": "The title for like button"
+  },
+  "theme.SearchModal.askAiScreen.dislikeButtonTitle": {
+    "message": "Dislike",
+    "description": "The title for dislike button"
+  },
+  "theme.SearchModal.askAiScreen.thanksForFeedbackText": {
+    "message": "Thanks for your feedback!",
+    "description": "The text for thanks for feedback"
+  },
+  "theme.SearchModal.askAiScreen.preToolCallText": {
+    "message": "Searching...",
+    "description": "The text before tool call"
+  },
+  "theme.SearchModal.askAiScreen.duringToolCallText": {
+    "message": "Searching for ",
+    "description": "The text during tool call"
+  },
+  "theme.SearchModal.askAiScreen.afterToolCallText": {
+    "message": "Searched for",
+    "description": "The text after tool call"
+  },
+  "theme.SearchModal.footer.selectText": {
+    "message": "Select",
+    "description": "The select text for footer"
+  },
+  "theme.SearchModal.footer.submitQuestionText": {
+    "message": "Submit question",
+    "description": "The submit question text for footer"
+  },
+  "theme.SearchModal.footer.selectKeyAriaLabel": {
+    "message": "Enter key",
+    "description": "The ARIA label for select key in footer"
+  },
+  "theme.SearchModal.footer.navigateText": {
+    "message": "Navigate",
+    "description": "The navigate text for footer"
+  },
+  "theme.SearchModal.footer.navigateUpKeyAriaLabel": {
+    "message": "Arrow up",
+    "description": "The ARIA label for navigate up key in footer"
+  },
+  "theme.SearchModal.footer.navigateDownKeyAriaLabel": {
+    "message": "Arrow down",
+    "description": "The ARIA label for navigate down key in footer"
+  },
+  "theme.SearchModal.footer.closeText": {
+    "message": "Close",
+    "description": "The close text for footer"
+  },
+  "theme.SearchModal.footer.closeKeyAriaLabel": {
+    "message": "Escape key",
+    "description": "The ARIA label for close key in footer"
+  },
+  "theme.SearchModal.footer.searchByText": {
+    "message": "Powered by",
+    "description": "The 'Powered by' text for footer"
+  },
+  "theme.SearchModal.footer.backToSearchText": {
+    "message": "Back to search",
+    "description": "The back to search text for footer"
+  },
+  "theme.SearchModal.noResultsScreen.noResultsText": {
+    "message": "No results found for",
+    "description": "The text when there are no results"
+  },
+  "theme.SearchModal.noResultsScreen.suggestedQueryText": {
+    "message": "Try searching for",
+    "description": "The text for suggested query"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsText": {
+    "message": "Believe this query should return results?",
+    "description": "The text for reporting missing results"
+  },
+  "theme.SearchModal.noResultsScreen.reportMissingResultsLinkText": {
+    "message": "Let us know.",
+    "description": "The link text for reporting missing results"
+  },
+  "theme.SearchModal.placeholder": {
+    "message": "Search docs",
+    "description": "The placeholder of the input of the DocSearch pop-up modal"
+  },
+  "theme.IdealImageMessage.loading": {
+    "message": "Loading...",
+    "description": "When the full-scale image is loading"
+  },
+  "theme.IdealImageMessage.load": {
+    "message": "Click to load{sizeMessage}",
+    "description": "To prompt users to load the full image. sizeMessage is a parenthesized size figure."
+  },
+  "theme.IdealImageMessage.offline": {
+    "message": "Your browser is offline. Image not loaded",
+    "description": "When the user is viewing an offline document"
+  },
+  "theme.IdealImageMessage.404error": {
+    "message": "404. Image not found",
+    "description": "When the image is not found"
+  },
+  "theme.IdealImageMessage.error": {
+    "message": "Error. Click to reload",
+    "description": "When the image fails to load for unknown error"
+  },
+  "theme.Playground.liveEditor": {
+    "message": "Live Editor",
+    "description": "The live editor label of the live codeblocks"
+  },
+  "theme.Playground.result": {
+    "message": "Result",
+    "description": "The result label of the live codeblocks"
+  },
+  "theme.Playground.buttons.reset": {
+    "message": "Reset",
+    "description": "The reset button label for live code blocks"
+  },
+  "theme.blog.post.plurals": {
+    "message": "One post|{count} posts",
+    "description": "Pluralized label for \"{count} posts\". Use as much plural forms (separated by \"|\") as your language support (see https://www.unicode.org/cldr/cldr-aux/charts/34/supplemental/language_plural_rules.html)"
+  },
+  "theme.blog.tagTitle": {
+    "message": "{nPosts} tagged with \"{tagName}\"",
+    "description": "The title of the page for a blog tag"
+  },
+  "theme.blog.author.pageTitle": {
+    "message": "{authorName} - {nPosts}",
+    "description": "The title of the page for a blog author"
+  },
+  "theme.blog.authorsList.pageTitle": {
+    "message": "Authors",
+    "description": "The title of the authors page"
+  },
+  "theme.blog.authorsList.viewAll": {
+    "message": "View all authors",
+    "description": "The label of the link targeting the blog authors page"
+  },
+  "theme.blog.author.noPosts": {
+    "message": "This author has not written any posts yet.",
+    "description": "The text for authors with 0 blog post"
+  },
+  "theme.contentVisibility.unlistedBanner.title": {
+    "message": "Unlisted page",
+    "description": "The unlisted content banner title"
+  },
+  "theme.contentVisibility.unlistedBanner.message": {
+    "message": "This page is unlisted. Search engines will not index it, and only users having a direct link can access it.",
+    "description": "The unlisted content banner message"
+  },
+  "theme.contentVisibility.draftBanner.title": {
+    "message": "Draft page",
+    "description": "The draft content banner title"
+  },
+  "theme.contentVisibility.draftBanner.message": {
+    "message": "This page is a draft. It will only be visible in dev and be excluded from the production build.",
+    "description": "The draft content banner message"
+  },
+  "theme.docs.DocCard.categoryDescription.plurals": {
+    "message": "1 item|{count} items",
+    "description": "The default description for a category card in the generated index about how many items this category includes"
+  },
+  "theme.ErrorPageContent.tryAgain": {
+    "message": "Try again",
+    "description": "The label of the button to try again rendering when the React error boundary captures an error"
+  },
+  "theme.common.skipToMainContent": {
+    "message": "Skip to main content",
+    "description": "The skip to content label used for accessibility, allowing to rapidly navigate to main content with keyboard tab/enter navigation"
+  },
+  "theme.tags.tagsPageTitle": {
+    "message": "Tags",
+    "description": "The title of the tag list page"
+  },
+  "site.navbar.switchLanguage": {
+    "message": "Change language, current: {language}",
+    "description": "語言字標按鈕的提示與無障礙名稱，包含目前語言。"
+  }
+}

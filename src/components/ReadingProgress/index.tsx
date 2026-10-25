@@ -1,4 +1,5 @@
 import { useLocation } from "@docusaurus/router";
+import { translate } from "@docusaurus/Translate";
 import { useEffect, useState } from "react";
 
 /** 監看 DOM 變化，處理 MDX 模組晚於 Root 掛載的路由。 */
@@ -61,7 +62,7 @@ export default function ReadingProgress() {
   return (
     <div
       role="progressbar"
-      aria-label="閱讀進度"
+      aria-label={translate({ id: "site.reading.progress", message: "閱讀進度" })}
       aria-valuemin={0}
       aria-valuemax={100}
       aria-valuenow={Math.round(reading.percent)}

@@ -1,3 +1,4 @@
+import { translate } from "@docusaurus/Translate";
 import { useEffect, useRef } from "react";
 import {
   siCss,
@@ -227,16 +228,21 @@ export default function TechCloud() {
       aria-labelledby="tech-title"
     >
       <div className="flex justify-between items-center gap-4 [&_h2]:text-[1.2rem] [&_h2]:font-[550] [&_h2]:m-0">
-        <h2 id="tech-title">探索過的技術</h2>
+        <h2 id="tech-title">{translate({ id: "site.technologies.i.explore", message: "探索過的技術" })}</h2>
       </div>
-      <p>從 Web 全端開發到 AI，把想法變成實作。</p>
+      <p>
+        {translate({
+          id: "site.from.full.stack.web.development.to.ai.turning.ideas",
+          message: "從 Web 全端開發到 AI，把想法變成實作。",
+        })}
+      </p>
       <div
         ref={root}
         className="relative aspect-[1] max-w-75 w-full mx-auto my-auto isolate cursor-grab touch-none select-none rounded-[12px] data-[dragging='true']:cursor-grabbing [&[data-dragging='true']_.ui-components-techcloud-styles-tooltip]:hidden max-w-75 my-auto"
         role="application"
         // biome-ignore lint/a11y/noNoninteractiveTabindex: 此互動區域需要聚焦，以處理方向鍵與指標旋轉。
         tabIndex={0}
-        aria-label="可旋轉的技術圖示雲"
+        aria-label={translate({ id: "site.rotatable.technology.icon.cloud", message: "可旋轉的技術圖示雲" })}
         aria-describedby="tech-hint"
       >
         {icons.map((icon, i) => (
@@ -269,7 +275,10 @@ export default function TechCloud() {
         ))}
       </div>
       <p id="tech-hint" className="ui-components-techcloud-styles-hint">
-        拖曳或方向鍵旋轉 · 移入時停止自轉
+        {translate({
+          id: "site.drag.or.use.arrow.keys.to.rotate.hover.to",
+          message: "拖曳或方向鍵旋轉 · 移入時停止自轉",
+        })}
       </p>
     </section>
   );

@@ -1,8 +1,10 @@
 import Link from "@docusaurus/Link";
-import { formatDate } from "@site/src/lib/format";
+import { translate } from "@docusaurus/Translate";
+import { useDateFormatter } from "@site/src/hooks/useDateFormatter";
 import type { ContentEntry } from "@site/src/plugins/contentIndex/shared";
 import { ArrowUpRight, Clock3 } from "lucide-react";
 export default function PostCard({ post }: { post: ContentEntry }) {
+  const formatDate = useDateFormatter();
   return (
     <article className="min-w-0 overflow-hidden bg-card [border:1px_solid_var(--border)] rounded-[14px] ring-2 ring-transparent ring-offset-4 ring-offset-background transition-[transform,box-shadow] duration-300 motion-reduce:transition-none hover:ring-brand focus-within:ring-brand [&:hover]:transform-[translateY(-5px)] [&:hover_.ui-components-postcard-styles-cover_img]:transform-[scale(1.035)]">
       <Link
@@ -23,7 +25,10 @@ export default function PostCard({ post }: { post: ContentEntry }) {
           </time>
           <span>
             <Clock3 size={13} aria-hidden="true" />
-            {Math.ceil(post.readingTime ?? 1)} 分鐘
+            {translate(
+              { id: "site.reading.minutes", message: "{minutes} 分鐘" },
+              { minutes: Math.ceil(post.readingTime ?? 1) },
+            )}
           </span>
         </div>
         <h3>
