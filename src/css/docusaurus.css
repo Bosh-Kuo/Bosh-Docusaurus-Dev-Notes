@@ -1,457 +1,529 @@
-/* Infima 樣式橋接：沿用上游主題結構，視覺 tokens 統一定義於 globals.css。 */
+/*
+ * 官方主題的樣式橋接與覆寫；自己掌控的頁面／元件排版寫在 JSX 的 Tailwind。
+ * 顏色的值統一放在 globals.css，這裡以 var(...) 取用。
+ *
+ * 閱讀 class 的來源：
+ * - [Docusaurus] theme-*、docs-wrapper、blog-wrapper：官方提供的畫面範圍標記。
+ * - [Infima] navbar__*、menu__*、breadcrumbs__*、footer__*：Classic 主題的 CSS 系統。
+ *   __ 表示區塊內的元素（navbar__logo＝導覽列 Logo）；-- 表示狀態（menu__link--active）。
+ * - [本站] header-github-link、mobile-navbar-actions、navbar-locale-trigger：我們自行加的標記。
+ * - [Algolia] DocSearch-*：搜尋套件自己的 class，不是 Infima。
+ * - 沒有 . 前綴的 html、article、h1 等是 HTML 標籤；:hover 等是瀏覽器狀態。
+ *
+ * 官方 class 對照：https://docusaurus.io/docs/styling-layout#theme-class-names
+ * 查原始結構可搜尋 node_modules/@docusaurus/theme-classic/src/theme/；
+ * 不要依賴 codeBlock_xxx 這種帶雜湊的 CSS Modules class，升級後可能變動。
+ * 本檔保留的 Infima 選擇器仍依賴主題 DOM；升級時要確認對應畫面。
+ *
+ * 此 layer 的一般宣告低於 Tailwind utilities；既有 !important 是例外，勿盲目疊加。
+ */
 @layer docusaurus {
-.theme-announcement-bar {
-  font-size: 0.9375rem;
-  font-weight: 450;
-  background: var(--accent);
-}
-.markdown h1:first-child {
-  font-size: 2.2rem;
-}
-.markdown > h2 {
-  font-size: 1.8em;
-  border-bottom: 1.25px solid var(--ifm-color-primary-light);
-  margin-top: 2.5rem;
-  padding: 5px 0 5px 0px;
-}
-.markdown > h3 {
-  font-size: 1.4rem;
-  border-left: 0;
-  padding: 5px 0;
-}
-.markdown code {
-  border: 0.1rem solid transparent;
-}
-.markdown a:not(.hash-link) {
-  text-decoration: none;
-  font-weight: inherit;
-  border-bottom: 1px solid rgba(125, 125, 125, 0.3);
-  transition: border 0.15s ease-in-out;
-}
-.markdown a:not(.hash-link):hover,
-.markdown a:not(.hash-link):focus {
-  border-bottom: 1.5px solid var(--ifm-color-primary-light);
-}
-.markdown img {
-  border-radius: 10px;
-  display: flex;
-  margin: 0 auto;
-}
-
-:where(html[data-theme=dark]) .markdown strong {
-  color: #fff;
-}
-.navbar .navbar__title {
-  margin-left: 12px;
-  font-weight: 520;
-}
-b {
-  font-weight: 520;
-}
-article header h1 {
-  font-size: 2.2em !important;
-}
-
-article header h2 {
-  font-size: 1.8em !important;
-}
-.header-github-link:hover {
-  opacity: 0.6;
-}
-
-.header-github-link:before {
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
-  content: "";
-  display: flex;
-  height: 24px;
-  width: 24px;
-}
-
-[data-theme=dark] .header-github-link:before {
-  background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
-}
-::selection {
-  background: var(--selection);
-  color: var(--foreground);
-}
-
-html {
-  scrollbar-color: var(--border) var(--background);
-}
-
-a,
-button,
-input {
-  -webkit-tap-highlight-color: transparent;
-}
-
-:where(a, button, input, [tabindex="0"]):focus-visible {
-  outline: 2px solid var(--ifm-color-primary);
-  outline-offset: 4px;
-}
-
-.mobile-locale-switcher {
-  margin-inline-start: auto;
-  flex-shrink: 0;
-}
-
-.navbar-sidebar__brand .navbar__brand {
-  margin-inline-end: 0;
-}
-
-.mobile-locale-switcher > .navbar__item {
-  display: block;
-  padding-inline: 0.5rem;
-}
-
-.navbar .navbar__item.dropdown:has(> .navbar-locale-trigger) {
-  padding: 0 0.5rem;
-}
-
-/* 官方 label 仍由原元件管理，觸發器改以目前語系的「中／En」字標呈現。
-   包裝元件提供完整 aria-label 與 title，選單文字維持原樣。 */
-.navbar .navbar__link.navbar-locale-trigger {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  width: 2rem;
-  height: 2rem;
-  padding: 0;
-  border-radius: 50%;
-  font-size: 0;
-  line-height: 1;
-}
-
-.navbar .navbar-locale-trigger::after {
-  display: none;
-}
-
-.navbar .navbar-locale-trigger::before {
-  content: attr(data-locale-label);
-  display: grid;
-  place-items: center;
-  width: 1.5rem;
-  height: 1.5rem;
-  font-size: 1rem;
-  font-weight: 650;
-  line-height: 1;
-}
-
-.navbar .navbar-locale-trigger > svg {
-  display: none;
-}
-
-.navbar .navbar-locale-trigger:hover,
-.navbar .navbar-locale-trigger[aria-expanded="true"] {
-  background: var(--ifm-color-emphasis-200);
-}
-
-.navbar {
-  border-bottom: 1px solid var(--border);
-  padding-inline: 1.5rem;
-}
-.navbar .navbar__logo {
-  height: 2rem;
-}
-.navbar .navbar__link {
-  font-size: 0.9375rem;
-  font-weight: 520;
-}
-.navbar .navbar__link--active {
-  color: var(--foreground);
-}
-
-.DocSearch-Button {
-  --docsearch-searchbox-background: var(--muted);
-  --docsearch-searchbox-focus-background: var(--card);
-  --docsearch-text-color: var(--foreground);
-  --docsearch-muted-color: var(--muted-foreground);
-  --docsearch-primary-color: var(--ifm-color-primary);
-  border: 1px solid var(--border);
-  border-radius: 8px;
-  box-shadow: none;
-}
-
-.DocSearch-Button:hover {
-  box-shadow: none;
-  border-color: var(--ifm-color-primary);
-}
-
-.theme-doc-sidebar-container {
-  border-right-color: var(--border) !important;
-}
-
-.menu {
-  padding: 1.25rem 0.875rem !important;
-  font-size: 0.875rem;
-}
-
-.menu__link {
-  border-radius: 6px;
-  padding: 0.55rem 0.75rem;
-}
-
-.menu__link.menu__link--active {
-  font-weight: 600;
-  color: var(--ifm-color-primary-darkest);
-}
-
-[data-theme=dark] .menu__link--active {
-  color: var(--ifm-color-primary-lightest);
-}
-
-.breadcrumbs__item--active .breadcrumbs__link {
-  color: var(--ifm-color-primary-darkest);
-}
-
-[data-theme=dark] .breadcrumbs__item--active .breadcrumbs__link {
-  color: var(--ifm-color-primary-lightest);
-}
-
-.menu__list .menu__list {
-  border-left: 1px solid var(--border);
-  border-radius: 0;
-  margin-left: 1rem;
-  padding-left: 0.3rem;
-}
-
-.theme-doc-breadcrumbs {
-  margin-bottom: 2rem;
-}
-
-.breadcrumbs__link {
-  font-size: 0.8125rem;
-  border-radius: 6px;
-}
-
-.theme-doc-markdown,
-.blog-wrapper .markdown {
-  line-height: 1.85;
-}
-.theme-doc-markdown > p,
-.theme-doc-markdown > ul,
-.theme-doc-markdown > ol,
-.blog-wrapper .markdown > p,
-.blog-wrapper .markdown > ul,
-.blog-wrapper .markdown > ol {
-  max-width: 75ch;
-}
-.theme-doc-markdown > h2,
-.blog-wrapper .markdown > h2 {
-  margin-top: 2.75rem;
-  border-bottom: 1px solid var(--border);
-  padding-bottom: 0.75rem;
-}
-.theme-doc-markdown > h3,
-.blog-wrapper .markdown > h3 {
-  margin-top: 2rem;
-}
-.theme-doc-markdown > header h1,
-.theme-doc-markdown > h1:first-child,
-.blog-wrapper .markdown > header h1,
-.blog-wrapper .markdown > h1:first-child {
-  letter-spacing: -0.025em;
-  line-height: 1.35;
-  font-weight: 550;
-}
-.theme-doc-markdown > blockquote,
-.blog-wrapper .markdown > blockquote {
-  border-left-width: 1px;
-  background: var(--muted);
-  padding: 1rem 1.25rem;
-  border-radius: 0 8px 8px 0;
-}
-.theme-doc-markdown > table,
-.blog-wrapper .markdown > table {
-  border-radius: 8px;
-  font-size: 0.9375rem;
-}
-
-.theme-doc-markdown a:not(.hash-link),
-.blog-wrapper .markdown a:not(.hash-link) {
-  color: var(--ifm-color-primary-darkest);
-}
-
-[data-theme=dark] .theme-doc-markdown a:not(.hash-link),
-[data-theme=dark] .blog-wrapper .markdown a:not(.hash-link) {
-  color: var(--ifm-color-primary-lightest);
-}
-
-.theme-code-block {
-  border: 1px solid var(--border);
-  border-radius: 10px !important;
-  box-shadow: none !important;
-}
-
-.theme-admonition {
-  border-left-width: 1px;
-  border-radius: 8px;
-  box-shadow: none;
-}
-
-.table-of-contents {
-  font-size: 0.8125rem;
-  border-left: 1px solid var(--border);
-}
-
-.table-of-contents__link {
-  display: block;
-  padding: 0.35rem 0.6rem;
-  border-radius: 5px;
-}
-
-.table-of-contents__link--active {
-  color: var(--ifm-color-primary-darkest);
-  background: var(--accent);
-  font-weight: 600;
-}
-
-[data-theme=dark] .table-of-contents__link--active {
-  color: var(--ifm-color-primary-lightest);
-}
-
-.pagination-nav {
-  margin-top: 3rem;
-  gap: 1rem;
-}
-
-.pagination-nav__link {
-  border: 1px solid var(--border);
-  border-radius: 10px;
-  background: var(--card);
-  padding: 1rem 1.25rem;
-  transition: border-color 180ms ease, background-color 180ms ease;
-}
-.pagination-nav__link:hover {
-  border-color: var(--ifm-color-primary);
-  background: var(--accent);
-}
-
-.pagination-nav__sublabel {
-  color: var(--muted-foreground);
-  font-size: 0.75rem;
-  margin-bottom: 0.35rem;
-}
-
-.pagination-nav__label {
-  font-size: 0.9375rem;
-  font-weight: 550;
-  color: var(--foreground);
-}
-
-.blog-wrapper article {
-  padding-bottom: 2rem;
-  margin-bottom: 3rem !important;
-  border-bottom: 1px solid var(--border);
-}
-
-.blog-wrapper article header h2 a {
-  color: var(--foreground);
-}
-
-.footer {
-  padding: 3rem 2rem 2rem;
-}
-
-.footer--dark {
-  --ifm-footer-background-color: #171e2c;
-}
-
-.footer__title {
-  font-size: 0.875rem;
-  font-weight: 600;
-}
-
-.footer__item {
-  font-size: 0.8125rem;
-  line-height: 2;
-}
-
-.footer__copyright {
-  font-size: 0.75rem;
-  color: #bac4d2;
-  padding-top: 1.5rem;
-  border-top: 1px solid #344050;
-}
-
-@media (min-width: 997px) {
-  .theme-doc-markdown {
-    padding-right: 1rem;
+  /* [Docusaurus] 全站最上方可關閉的公告橫條；內容來自 config/themeConfig.ts。 */
+  .theme-announcement-bar {
+    font-size: 0.9375rem;
+    font-weight: 450;
+    background: var(--accent);
   }
-  .docs-wrapper .main-wrapper main .container {
-    padding-top: 2rem !important;
+  /* [Infima／MDX] .markdown 是文章排版容器，包含文件與部落格內文。
+   * 下列規則調整文章標題、連結與圖片；.hash-link 是章節標題旁的錨點連結。 */
+  .markdown h1:first-child {
+    font-size: 2.2rem;
   }
-}
-@media (max-width: 996px) {
+  .markdown > h2 {
+    font-size: 1.8em;
+    border-bottom: 1.25px solid var(--ifm-color-primary-light);
+    margin-top: 2.5rem;
+    padding: 5px 0 5px 0px;
+  }
+  .markdown > h3 {
+    font-size: 1.4rem;
+    border-left: 0;
+    padding: 5px 0;
+  }
+  .markdown code {
+    border: 0.1rem solid transparent;
+  }
+  .markdown a:not(.hash-link) {
+    text-decoration: none;
+    font-weight: inherit;
+    border-bottom: 1px solid rgba(125, 125, 125, 0.3);
+    transition: border 0.15s ease-in-out;
+  }
+  .markdown a:not(.hash-link):hover,
+  .markdown a:not(.hash-link):focus {
+    border-bottom: 1.5px solid var(--ifm-color-primary-light);
+  }
+  .markdown img {
+    border-radius: 10px;
+    display: flex;
+    margin: 0 auto;
+  }
+
+  :where(html[data-theme=dark]) .markdown strong {
+    color: #fff;
+  }
+  /* [Infima] 頂端導覽列的網站名稱；由官方 Navbar/Logo 渲染，不是首頁大標題。 */
+  .navbar .navbar__title {
+    margin-left: 12px;
+    font-weight: 520;
+  }
+  /* [HTML] 一般粗體標籤與文章 header 內的標題。這些是既有全域規則；
+   * !important 會影響覆寫優先序，新增元件排版應優先在元件內用 Tailwind。 */
+  b {
+    font-weight: 520;
+  }
+  article header h1 {
+    font-size: 2.2em !important;
+  }
+
+  article header h2 {
+    font-size: 1.8em !important;
+  }
+  /* [本站] header-github-link 由 config/themeConfig.ts 指定給 GitHub 連結。
+   * ::before 畫出圖示；不是 Docusaurus 內建的 GitHub class。深色模式改用白色 SVG。 */
+  .header-github-link:hover {
+    opacity: 0.6;
+  }
+
+  .header-github-link:before {
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+    content: "";
+    display: flex;
+    height: 24px;
+    width: 24px;
+  }
+
+  [data-theme=dark] .header-github-link:before {
+    background: url("data:image/svg+xml;charset=utf-8,%3Csvg viewBox='0 0 24 24' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath fill='%23fff' d='M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12'/%3E%3C/svg%3E") no-repeat;
+  }
+  /* [瀏覽器] 反白文字、捲軸、觸控點擊與鍵盤焦點的共用外觀。
+   * data-theme 由 Docusaurus 切換；focus-visible 保留鍵盤操作時可見的焦點框。 */
+  ::selection {
+    background: var(--selection);
+    color: var(--foreground);
+  }
+
+  html {
+    scrollbar-color: var(--border) var(--background);
+  }
+
+  a,
+  button,
+  input {
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  :where(a, button, input, [tabindex="0"]):focus-visible {
+    outline: 2px solid var(--ifm-color-primary);
+    outline-offset: 4px;
+  }
+
+  /* [Infima] 手機抽屜頂端的品牌列與 Logo，移除官方預留的尾端間距。
+   * 頂端控制的排列寫在 src/theme/Navbar/MobileSidebar/Header/index.tsx。 */
+  .navbar-sidebar__brand .navbar__brand {
+    margin-inline-end: 0;
+  }
+
+  /* [本站＋Infima] mobile-navbar-actions 是 Header 的自訂範圍標記；
+   * navbar__item 是官方 NavbarItem 產生的內部元素，預設在手機隱藏。
+   * 只在這個範圍把 GitHub／語言控制顯示為 32px；不改主選單項目的排列。 */
+  .navbar .mobile-navbar-actions .navbar__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-shrink: 0;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+  }
+
+  /* [Infima＋本站] 桌面導覽列右側的語言下拉。:has(...) 僅選中含本站字標的那個項目，
+   * 避免連 Notes／Blog 的下拉間距也被修改。 */
+  .navbar__items--right > .navbar__item.dropdown:has(> .navbar-locale-trigger) {
+    padding: 0 0.5rem;
+  }
+
+  /* [本站] navbar-locale-trigger 在 NavbarItem/LocaleDropdownNavbarItem wrapper 掛上。
+   * 這裡需要改官方產生的 label、SVG 與 ::after 箭頭，因此集中寫 CSS，不複製整個官方元件。
+   * font-size: 0 只隱藏完整語言名稱；::before 讀取本站 data-locale-label 顯示「中／En」。
+   * aria-label 與 title 仍由 wrapper 提供完整名稱，展開後的選項文字不受影響。
+   */
+  .navbar .navbar__link.navbar-locale-trigger {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 2rem;
+    height: 2rem;
+    padding: 0;
+    border-radius: 50%;
+    font-size: 0;
+    line-height: 1;
+  }
+
+  .navbar .navbar-locale-trigger::after {
+    display: none;
+  }
+
+  .navbar .navbar-locale-trigger::before {
+    content: attr(data-locale-label);
+    display: grid;
+    place-items: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    font-size: 1rem;
+    font-weight: 650;
+    line-height: 1;
+  }
+
+  .navbar .navbar-locale-trigger > svg {
+    display: none;
+  }
+
+  .navbar .navbar-locale-trigger:hover,
+  .navbar .navbar-locale-trigger[aria-expanded="true"] {
+    background: var(--ifm-color-emphasis-200);
+  }
+
+  /* [Infima] 全站頂端導覽列：navbar 是容器、__logo 是圖像、__link 是連結。
+   * --active 是目前頁面的連結狀態；這些都不是本站自行取的 class。 */
   .navbar {
-    padding-inline: 1rem;
+    border-bottom: 1px solid var(--border);
+    padding-inline: 1.5rem;
   }
-  .theme-doc-markdown > header h1 {
-    font-size: 1.875rem !important;
+  .navbar .navbar__logo {
+    height: 2rem;
   }
+  .navbar .navbar__link {
+    font-size: 0.9375rem;
+    font-weight: 520;
+  }
+  .navbar .navbar__link--active {
+    color: var(--foreground);
+  }
+
+  /* [Algolia] 導覽列中的搜尋按鈕。--docsearch-* 是 DocSearch 公開的外觀變數，
+   * 只調整搜尋介面；搜尋索引與語系篩選仍由 config/themeConfig.ts 設定。 */
+  .DocSearch-Button {
+    --docsearch-searchbox-background: var(--muted);
+    --docsearch-searchbox-focus-background: var(--card);
+    --docsearch-text-color: var(--foreground);
+    --docsearch-muted-color: var(--muted-foreground);
+    --docsearch-primary-color: var(--ifm-color-primary);
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  .DocSearch-Button:hover {
+    box-shadow: none;
+    border-color: var(--ifm-color-primary);
+  }
+
+  /* [Docusaurus] 文件頁左側側欄的外層容器，負責與正文間的分隔線。 */
+  .theme-doc-sidebar-container {
+    border-right-color: var(--border) !important;
+  }
+
+  /* [Infima] 側欄選單：menu 是容器，menu__link 是項目，--active 是目前文章。
+   * 文件側欄與手機主選單都會使用它；修改此區會同時影響兩處。 */
+  .menu {
+    padding: 1.25rem 0.875rem !important;
+    font-size: 0.875rem;
+  }
+
+  .menu__link {
+    border-radius: 6px;
+    padding: 0.55rem 0.75rem;
+  }
+
+  .menu__link.menu__link--active {
+    font-weight: 600;
+    color: var(--ifm-color-primary-darkest);
+  }
+
+  [data-theme=dark] .menu__link--active {
+    color: var(--ifm-color-primary-lightest);
+  }
+
+  /* [Infima] 文章上方麵包屑的目前項目；__item 是每一節，__link 是可點擊的文字。 */
+  .breadcrumbs__item--active .breadcrumbs__link {
+    color: var(--ifm-color-primary-darkest);
+  }
+
+  [data-theme=dark] .breadcrumbs__item--active .breadcrumbs__link {
+    color: var(--ifm-color-primary-lightest);
+  }
+
+  /* [Infima] 側欄中巢狀的子清單；縮排與直線表示分類層級。 */
+  .menu__list .menu__list {
+    border-left: 1px solid var(--border);
+    border-radius: 0;
+    margin-left: 1rem;
+    padding-left: 0.3rem;
+  }
+
+  /* [Docusaurus＋Infima] theme-doc-breadcrumbs 是文件頁的麵包屑範圍；
+   * breadcrumbs__link 則是 Infima 的共用連結外觀。 */
   .theme-doc-breadcrumbs {
-    margin-bottom: 1.5rem;
+    margin-bottom: 2rem;
   }
+
+  .breadcrumbs__link {
+    font-size: 0.8125rem;
+    border-radius: 6px;
+  }
+
+  /* [Docusaurus＋Infima] theme-doc-markdown 限定文件正文；blog-wrapper .markdown
+   * 限定部落格正文。此區統一行距、閱讀寬度、標題、引用、表格與連結，避免影響自訂首頁。 */
+  .theme-doc-markdown,
+  .blog-wrapper .markdown {
+    line-height: 1.85;
+  }
+  .theme-doc-markdown > p,
+  .theme-doc-markdown > ul,
+  .theme-doc-markdown > ol,
+  .blog-wrapper .markdown > p,
+  .blog-wrapper .markdown > ul,
+  .blog-wrapper .markdown > ol {
+    max-width: 75ch;
+  }
+  .theme-doc-markdown > h2,
+  .blog-wrapper .markdown > h2 {
+    margin-top: 2.75rem;
+    border-bottom: 1px solid var(--border);
+    padding-bottom: 0.75rem;
+  }
+  .theme-doc-markdown > h3,
+  .blog-wrapper .markdown > h3 {
+    margin-top: 2rem;
+  }
+  .theme-doc-markdown > header h1,
+  .theme-doc-markdown > h1:first-child,
+  .blog-wrapper .markdown > header h1,
+  .blog-wrapper .markdown > h1:first-child {
+    letter-spacing: -0.025em;
+    line-height: 1.35;
+    font-weight: 550;
+  }
+  .theme-doc-markdown > blockquote,
+  .blog-wrapper .markdown > blockquote {
+    border-left-width: 1px;
+    background: var(--muted);
+    padding: 1rem 1.25rem;
+    border-radius: 0 8px 8px 0;
+  }
+  .theme-doc-markdown > table,
+  .blog-wrapper .markdown > table {
+    border-radius: 8px;
+    font-size: 0.9375rem;
+  }
+
+  .theme-doc-markdown a:not(.hash-link),
+  .blog-wrapper .markdown a:not(.hash-link) {
+    color: var(--ifm-color-primary-darkest);
+  }
+
+  [data-theme=dark] .theme-doc-markdown a:not(.hash-link),
+  [data-theme=dark] .blog-wrapper .markdown a:not(.hash-link) {
+    color: var(--ifm-color-primary-lightest);
+  }
+
+  /* [Docusaurus] Markdown 程式碼區塊的外層；語法上色仍交給 Prism／主題。 */
+  .theme-code-block {
+    border: 1px solid var(--border);
+    border-radius: 10px !important;
+    box-shadow: none !important;
+  }
+
+  /* [Docusaurus] Markdown 的 :::tip、:::info、:::warning 等提示區塊。 */
+  .theme-admonition {
+    border-left-width: 1px;
+    border-radius: 8px;
+    box-shadow: none;
+  }
+
+  /* [Infima] 文章章節目錄，供官方右側 TOC／內嵌 TOC 使用。
+   * __link--active 是目前捲動到的章節，不是文件左側的文章選單。 */
+  .table-of-contents {
+    font-size: 0.8125rem;
+    border-left: 1px solid var(--border);
+  }
+
+  .table-of-contents__link {
+    display: block;
+    padding: 0.35rem 0.6rem;
+    border-radius: 5px;
+  }
+
+  .table-of-contents__link--active {
+    color: var(--ifm-color-primary-darkest);
+    background: var(--accent);
+    font-weight: 600;
+  }
+
+  [data-theme=dark] .table-of-contents__link--active {
+    color: var(--ifm-color-primary-lightest);
+  }
+
+  /* [Infima] 文章底部的「上一篇／下一篇」導覽：
+   * __link 是整張連結、__sublabel 是方向提示、__label 是文章名稱。 */
+  .pagination-nav {
+    margin-top: 3rem;
+    gap: 1rem;
+  }
+
+  .pagination-nav__link {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    background: var(--card);
+    padding: 1rem 1.25rem;
+    transition: border-color 180ms ease, background-color 180ms ease;
+  }
+  .pagination-nav__link:hover {
+    border-color: var(--ifm-color-primary);
+    background: var(--accent);
+  }
+
+  .pagination-nav__sublabel {
+    color: var(--muted-foreground);
+    font-size: 0.75rem;
+    margin-bottom: 0.35rem;
+  }
+
+  .pagination-nav__label {
+    font-size: 0.9375rem;
+    font-weight: 550;
+    color: var(--foreground);
+  }
+
+  /* [Docusaurus＋HTML] 官方部落格版面中的文章容器與列表標題。
+   * blog-wrapper 是官方頁面範圍標記，article／header／h2 是 HTML 標籤。 */
+  .blog-wrapper article {
+    padding-bottom: 2rem;
+    margin-bottom: 3rem !important;
+    border-bottom: 1px solid var(--border);
+  }
+
+  .blog-wrapper article header h2 a {
+    color: var(--foreground);
+  }
+
+  /* [Infima] 全站頁尾：--dark 是深色外觀，__title 是欄位標題，
+   * __item 是連結列，__copyright 是版權區。文字與連結在 config/themeConfig.ts。 */
   .footer {
-    padding-inline: 1.25rem;
+    padding: 3rem 2rem 2rem;
+  }
+
+  .footer--dark {
+    --ifm-footer-background-color: #171e2c;
+  }
+
+  .footer__title {
+    font-size: 0.875rem;
+    font-weight: 600;
+  }
+
+  .footer__item {
+    font-size: 0.8125rem;
+    line-height: 2;
+  }
+
+  .footer__copyright {
+    font-size: 0.75rem;
+    color: #bac4d2;
+    padding-top: 1.5rem;
+    border-top: 1px solid #344050;
+  }
+
+  /* [響應式／官方版面] 996px 是 Classic 主題的側欄折疊分界。
+   * .container 是 Infima 的版心容器，不是 Tailwind 的 container utility。 */
+  @media (min-width: 997px) {
+    .theme-doc-markdown {
+      padding-right: 1rem;
+    }
+    .docs-wrapper .main-wrapper main .container {
+      padding-top: 2rem !important;
+    }
+  }
+  @media (max-width: 996px) {
+    .navbar {
+      padding-inline: 1rem;
+    }
+    .theme-doc-markdown > header h1 {
+      font-size: 1.875rem !important;
+    }
+    .theme-doc-breadcrumbs {
+      margin-bottom: 1.5rem;
+    }
+    .footer {
+      padding-inline: 1.25rem;
+    }
+  }
+  /* [瀏覽器／無障礙] 尊重系統「減少動態效果」偏好，覆寫全站動畫與平滑捲動。 */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  /* [Infima＋Docusaurus] 文件分類的自動索引卡片；不是 src/components/ui/card.tsx。 */
+  .card.theme-doc-card-container {
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    box-shadow: none;
+    background: var(--card);
+    color: var(--foreground);
+  }
+  .card.theme-doc-card-container:hover {
+    border-color: var(--ifm-color-primary);
+    background: var(--accent);
+  }
+
+  /* [Infima 變數] 麵包屑目前項目的底色，沿用本站 accent token。 */
+  :root,
+  html[data-theme=dark] {
+    --ifm-breadcrumb-item-background-active: var(--accent);
+  }
+
+  /* [Docusaurus＋HTML] 官方部落格側欄導覽，只有啟用該側欄的版面會出現。 */
+  .blog-wrapper aside nav {
+    padding-right: 1.5rem;
+  }
+
+  .blog-wrapper aside nav > div {
+    font-size: 0.9375rem;
+  }
+
+  .blog-wrapper aside nav a {
+    display: block;
+    padding: 0.5rem 0.625rem;
+    border-radius: 6px;
+    font-size: 0.875rem;
+    line-height: 1.7;
+  }
+
+  .blog-wrapper aside nav a:hover {
+    background: var(--accent);
+    text-decoration: none;
+  }
+
+  /* [Docusaurus＋Infima] 公告列右側的關閉按鈕；.close 由官方 CloseButton 套用。 */
+  .theme-announcement-bar .close {
+    color: var(--foreground);
+    opacity: 0.7;
+  }
+
+  .theme-announcement-bar .close svg {
+    fill: currentColor;
   }
 }
-@media (prefers-reduced-motion: reduce) {
-  *,
-  *::before,
-  *::after {
-    animation-duration: 0.01ms !important;
-    transition-duration: 0.01ms !important;
-    scroll-behavior: auto !important;
-  }
-}
-.card.theme-doc-card-container {
-  border: 1px solid var(--border);
-  border-radius: 12px;
-  box-shadow: none;
-  background: var(--card);
-  color: var(--foreground);
-}
-.card.theme-doc-card-container:hover {
-  border-color: var(--ifm-color-primary);
-  background: var(--accent);
-}
-
-:root,
-html[data-theme=dark] {
-  --ifm-breadcrumb-item-background-active: var(--accent);
-}
-
-.blog-wrapper aside nav {
-  padding-right: 1.5rem;
-}
-
-.blog-wrapper aside nav > div {
-  font-size: 0.9375rem;
-}
-
-.blog-wrapper aside nav a {
-  display: block;
-  padding: 0.5rem 0.625rem;
-  border-radius: 6px;
-  font-size: 0.875rem;
-  line-height: 1.7;
-}
-
-.blog-wrapper aside nav a:hover {
-  background: var(--accent);
-  text-decoration: none;
-}
-
-.theme-announcement-bar .close {
-  color: var(--foreground);
-  opacity: 0.7;
-}
-
-.theme-announcement-bar .close svg {
-  fill: currentColor;
-}
-}
+/* [變數橋接] --ifm-* 是 Infima／Docusaurus 讀取的變數；右側 --brand、--background 等
+ * 是本站在 globals.css 定義的 tokens。修改色值請回 globals.css，不必兩邊各改一次。
+ * --content-background 是本站額外沿用的別名，其餘包含程式碼高亮等官方介面變數。
+ */
 @layer docusaurus {
   :root {
     --ifm-color-primary: var(--brand);

@@ -17,8 +17,8 @@ export default function LocaleDropdownNavbarItem(props: Props) {
     { language: localeConfigs[currentLocale].label },
   );
 
-  // 手機選單清單保留完整文字；桌面與手機選單頂端共用圖示按鈕。
-  if (props.mobile) return <OriginalLocaleDropdownNavbarItem {...props} />;
+  // 手機語言入口由選單頂端統一提供，清單中不再重複顯示。
+  if (props.mobile) return null;
 
   return (
     <OriginalLocaleDropdownNavbarItem

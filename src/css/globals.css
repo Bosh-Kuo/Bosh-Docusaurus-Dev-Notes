@@ -1,5 +1,13 @@
-/* 設計 tokens 的唯一來源，由 docusaurus.css 橋接給 Infima。
- * 不載入 Preflight，文件的基礎重設樣式仍由 Docusaurus 負責。 */
+/*
+ * 全站 CSS 入口（由 config/presets.ts 的 theme.customCss 載入）。
+ * - 本檔：Tailwind 入口、本站設計 tokens、共用基礎規則與動畫。
+ * - docusaurus.css：官方 Docusaurus／Infima 畫面的覆寫與變數橋接。
+ * - fonts.css：自託管英文字型與繁中文字型。
+ * - 自訂頁面的語系／響應式排版：在各元件 JSX 內用 Tailwind，沒有額外 i18n.css。
+ * 不載入 Tailwind Preflight，保留文件與官方元件原本的基礎樣式。
+ */
+/* 一般宣告由左至右提高優先序。src/plugins/tailwind 將上游樣式放入 docusaurus 層，
+ * 因此 JSX 的 Tailwind utilities 可以覆寫它；不要只靠增加 class 數量或 !important。 */
 @layer docusaurus, theme, base, components, utilities;
 @import "tailwindcss/theme.css" layer(theme);
 @import "tailwindcss/utilities.css" layer(utilities) source(none);
@@ -7,10 +15,16 @@
 @import "shadcn/tailwind.css";
 @import "./fonts.css";
 @import "./docusaurus.css";
+/* 掃描 src/ 的 JSX／TSX，依實際使用的 class 產生 Tailwind 工具。 */
 @source "../";
+/* 避免產生 Tailwind .container，因為官方文件版面已使用 Infima 的同名 class。
+ * @container 是另一個 Tailwind 工具（容器查詢），不受這個排除影響。 */
 @source not inline("container");
+/* 讓 dark: 跟隨 Docusaurus 設定在 html 上的 data-theme，而非系統媒體查詢。 */
 @custom-variant dark (&:where([data-theme="dark"], [data-theme="dark"] *));
 
+/* Tailwind／shadcn 命名映射：例如 bg-background、text-foreground、border-border
+ * 會讀取下方本站 tokens；@theme 本身不是 Docusaurus 設定。 */
 @theme inline {
   --font-sans: var(--font-family);
   --color-background: var(--background);
@@ -40,6 +54,7 @@
   --animate-float: float 6s ease-in-out infinite;
   --animate-art-reveal: art-reveal 850ms cubic-bezier(0.16, 1, 0.3, 1);
 }
+/* [本站 tokens／亮色預設] 全站色彩的來源；這些無 --ifm- 前綴的名稱由本站維護。 */
 :root {
   --font-family: "Inter Variable", "Noto Sans TC Variable", ui-sans-serif, sans-serif;
   --background: #fefefe;
@@ -75,6 +90,8 @@
   --code-highlight: #d1d5db;
   --hover-overlay: #abdcfc28;
 }
+/* [本站 tokens／深色] data-theme 由 Docusaurus 亮暗切換器更新。
+ * 只覆寫需要改變的色值，其餘延用 :root 的變數。 */
 [data-theme="dark"] {
   --background: #18181b;
   --foreground: #eceef1;
@@ -100,13 +117,15 @@
   --hover-overlay: #d9ccff2a;
 }
 @layer base {
-  /* 限定重設範圍，讓新元件的邊框行為一致，同時保留 Markdown 的樣式。 */
+  /* data-slot 是本站 ui 元件沿用 shadcn 慣例自行輸出的屬性，不是 Infima class。
+   * 只重設這些按鈕／輸入框／卡片，避免全站 reset 改壞 Markdown 與官方元件。 */
   [data-slot] { border-color: var(--border); }
   [data-slot="button"], [data-slot="input"] { font-family: var(--font-family); }
   [data-slot="button"] { cursor: pointer; text-decoration: none; }
   [data-slot="button"]:disabled { cursor: default; }
   [data-slot="card"] { border-style: solid; }
 }
+/* [本站動畫] @theme 的 --animate-float／--animate-art-reveal 供 animate-* 工具使用。 */
 @keyframes float { 0%, 100% { transform: translateY(5px); } 50% { transform: translateY(-13px); } }
 @keyframes art-reveal {
   from { clip-path: inset(0 0 15% 0 round 24px); transform: translateY(15px); }
@@ -114,7 +133,9 @@
 }
 
 
-/* 元件使用的動畫 keyframes，由 Tailwind utilities 引用。 */
+/* [本站動畫] 以下 ui-* 是自訂 keyframe 名稱，不是 Docusaurus 提供的 class。
+ * 名稱對應使用元件：Scroll 範例、MediaPreview 操作提示、首頁插畫。
+ * 搜尋 animate-[相同名稱...] 可找到 JSX 使用位置。 */
 @keyframes ui-components-examplecomponents-scroll-lazyloadinfinitelistdemo-spin {
   to {
     transform: rotate(1turn);

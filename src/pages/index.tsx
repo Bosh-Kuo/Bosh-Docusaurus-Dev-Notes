@@ -8,11 +8,16 @@ import { useContentIndex } from "@site/src/hooks/useContentIndex";
 import { useDateFormatter } from "@site/src/hooks/useDateFormatter";
 import Layout from "@theme/Layout";
 import ThemedImage from "@theme/ThemedImage";
+import { cn } from "cn";
 import { ArrowRight, BookOpen, Code2 } from "lucide-react";
 import { TextMarkerHighlight } from "../components/ui/text-marker-highlight";
 export default function Home() {
   const formatDate = useDateFormatter();
-  const { siteConfig } = useDocusaurusContext();
+  const {
+    siteConfig,
+    i18n: { currentLocale },
+  } = useDocusaurusContext();
+  const isEnglish = currentLocale === "en";
   const { posts, recentNotes, notesCount } = useContentIndex();
   return (
     <Layout title={siteConfig.title} description={siteConfig.tagline}>
@@ -22,11 +27,23 @@ export default function Home() {
             className="grid grid-cols-[1.15fr_1fr] gap-12 items-center p-[3.8rem_0_3rem] min-h-135 [@media(max-width:_996px)]:gap-6 [@media(max-width:_996px)]:min-h-0 [@media(max-width:_720px)]:grid-cols-[1fr] [@media(max-width:_720px)]:p-[2.5rem_0_1rem] [@media(max-width:_720px)]:gap-4"
             aria-labelledby="home-title"
           >
-            <div className="[&_h1]:text-[clamp(2.6rem,4.5vw,4.2rem)] [&_h1]:leading-[1.3] [&_h1]:tracking-[-0.035em] [&_h1]:font-[550] [&_h1]:m-[0_0_1.5rem] [&_h1_span]:text-(--ifm-color-primary-darkest) [[data-theme='dark']_&_h1_span]:text-(--ifm-color-primary-lightest) [@media(max-width:_720px)]:[&_h1]:text-[clamp(2.3rem,8vw,3.2rem)]">
-              <h1 id="home-title">
+            {/* 本站自訂的首頁文案區。@container 是 Tailwind 工具，讓 cqi 依本欄寬度縮放。 */}
+            <div className="@container min-w-0">
+              <h1
+                id="home-title"
+                className={cn(
+                  "m-[0_0_1.5rem] font-[550] leading-[1.3] tracking-[-0.035em]",
+                  // 語系排版由元件決定；英文較長，因此依文案欄寬設定字級。
+                  isEnglish
+                    ? "text-[clamp(1.5rem,9.2cqi,3.5rem)]"
+                    : "text-[clamp(2.6rem,4.5vw,4.2rem)] [@media(max-width:_720px)]:text-[clamp(2.3rem,8vw,3.2rem)]",
+                )}
+              >
                 {translate({ id: "site.boshs", message: "Bosh 的" })}
                 <br />
-                <span>{translate({ id: "site.tech.exploration.notes", message: "技術探索筆記." })}</span>
+                <span className="text-(--brand-darkest) dark:text-(--brand-lightest)">
+                  {translate({ id: "site.tech.exploration.notes", message: "技術探索筆記." })}
+                </span>
               </h1>
               <p className="text-[1.0625rem] leading-loose text-muted-foreground mb-7">
                 {translate({

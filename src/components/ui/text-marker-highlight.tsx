@@ -13,6 +13,8 @@ export interface TextMarkerHighlightProps extends React.HTMLAttributes<HTMLEleme
   as?: "h1" | "h2" | "h3" | "p" | "span";
   /** 筆畫開始前的延遲秒數。 */
   delay?: number;
+  /** 在 996px 以下允許長標題換行，以逐行背景標記取代單行 SVG。 */
+  wrapOnSmallScreens?: boolean;
 }
 
 /**
@@ -24,6 +26,7 @@ export function TextMarkerHighlight({
   highlight,
   as: Tag = "h2",
   delay = 0.2,
+  wrapOnSmallScreens = false,
   className,
   ...props
 }: TextMarkerHighlightProps) {
@@ -54,10 +57,20 @@ export function TextMarkerHighlight({
     >
       {parts.before}
       {parts.match ? (
-        <span className="relative inline whitespace-nowrap">
+        <span
+          className={cn(
+            "relative inline whitespace-nowrap",
+            // 本站元件自己的多行樣式：每行各畫一段標記，不讓 nowrap 撐寬手機畫面。
+            wrapOnSmallScreens &&
+              "[@media(max-width:_996px)]:whitespace-normal [@media(max-width:_996px)]:box-decoration-clone [@media(max-width:_996px)]:bg-[linear-gradient(transparent_60%,#facc1580_60%,#facc1580_92%,transparent_92%)] dark:[@media(max-width:_996px)]:bg-[linear-gradient(transparent_60%,#facc1559_60%,#facc1559_92%,transparent_92%)]",
+          )}
+        >
           {/* 裝飾筆畫約占行高的 55%，位於文字下半部。 */}
           <svg
-            className="pointer-events-none absolute left-0 top-[42%] h-[55%] w-full overflow-visible text-[#facc15]/50 dark:text-[#facc15]/35"
+            className={cn(
+              "pointer-events-none absolute left-0 top-[42%] h-[55%] w-full overflow-visible text-[#facc15]/50 dark:text-[#facc15]/35",
+              wrapOnSmallScreens && "[@media(max-width:_996px)]:hidden",
+            )}
             viewBox="0 0 100 24"
             preserveAspectRatio="none"
             aria-hidden="true"

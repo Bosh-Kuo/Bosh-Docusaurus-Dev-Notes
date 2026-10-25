@@ -1,2 +1,5 @@
+/* 本站自託管字型：Inter 用於英文／數字，Noto Sans TC 補足繁體中文字形。
+ * 這裡只載入字型；套用順序在 globals.css 的 --font-family，Docusaurus 與 Tailwind 共用。
+ */
 @import "@fontsource-variable/inter";
 @import "@fontsource-variable/noto-sans-tc";

@@ -1,12 +1,18 @@
 import Link from "@docusaurus/Link";
 import { translate } from "@docusaurus/Translate";
+import useDocusaurusContext from "@docusaurus/useDocusaurusContext";
 import { GitHubIcon, LinkedInIcon } from "@site/src/components/BrandIcons";
 import PageSurface from "@site/src/components/PageSurface";
 import { buttonVariants } from "@site/src/components/ui/button";
 import { TextMarkerHighlight } from "@site/src/components/ui/text-marker-highlight";
 import Layout from "@theme/Layout";
+import { cn } from "cn";
 import { ArrowRight, BookOpen } from "lucide-react";
 export default function About() {
+  const {
+    i18n: { currentLocale },
+  } = useDocusaurusContext();
+  const isEnglish = currentLocale === "en";
   return (
     <Layout
       title={translate({ id: "site.about.me", message: "關於我" })}
@@ -17,24 +23,40 @@ export default function About() {
     >
       <PageSurface variant="about">
         <main className="max-w-280 m-auto w-full p-[4rem_2rem_5rem] [@media(max-width:_720px)]:p-[2.5rem_1.25rem_3rem]">
-          <header className="grid grid-cols-[1.4fr_1fr] gap-20 items-center pb-16 [&_h1]:text-[clamp(2.5rem,4vw,3.8rem)] [&_h1]:font-[550] [&_h1]:tracking-[-0.03em] [&_h1]:mb-6 [&_h1_span]:text-(--ifm-color-primary) [&_p:not(.ui-pages-about-styles-lead)]:text-[0.9375rem] [&_p:not(.ui-pages-about-styles-lead)]:leading-[1.95] [&_p:not(.ui-pages-about-styles-lead)]:text-muted-foreground [&_p:not(.ui-pages-about-styles-lead)]:max-w-132 [@media(max-width:_720px)]:grid-cols-[1fr] [@media(max-width:_720px)]:gap-8 [@media(max-width:_720px)]:pb-12">
-            <div>
-              <h1>
+          {/* 本站自訂 Hero：英文使用較寬的文字欄，平板提早改成單欄。 */}
+          <header
+            className={cn(
+              "grid items-center pb-16 [@media(max-width:_720px)]:pb-12",
+              isEnglish
+                ? "grid-cols-[minmax(0,1.8fr)_minmax(0,1fr)] gap-12 [@media(max-width:_996px)]:grid-cols-1 [@media(max-width:_996px)]:gap-8"
+                : "grid-cols-[1.4fr_1fr] gap-20 [@media(max-width:_720px)]:grid-cols-1 [@media(max-width:_720px)]:gap-8",
+            )}
+          >
+            <div className="@container min-w-0">
+              <h1 className="mb-6 text-[clamp(2.5rem,4vw,3.8rem)] font-[550] tracking-[-0.03em]">
                 {translate({ id: "site.hi.im.bosh", message: "Hi，我是 Bosh" })}
-                <span>.</span>
+                <span className="text-brand">.</span>
               </h1>
-              <p className="ui-pages-about-styles-lead text-[1.5rem] leading-[1.7] font-[450] mb-6">
+              {/* 介紹文字的語系差異直接放在 JSX，不再依賴全域 about-lead 選擇器。 */}
+              <p
+                className={cn(
+                  "mb-6 font-[450] leading-[1.7]",
+                  isEnglish
+                    ? "text-[clamp(1rem,3.55cqi,1.5rem)] [@media(max-width:_720px)]:text-[1.25rem]"
+                    : "text-[1.5rem]",
+                )}
+              >
                 {translate({
                   id: "site.a.software.engineer.with.an.interdisciplinary.background",
                   message: "跨領域的軟體工程師，",
                 })}
-                <br />
+                <br className={isEnglish ? "[@media(max-width:_720px)]:hidden" : undefined} />{" "}
                 {translate({
                   id: "site.currently.focused.on.full.stack.web.development",
                   message: "目前專注於 Web 全端開發。",
                 })}
               </p>
-              <p>
+              <p className="max-w-132 text-[0.9375rem] leading-[1.95] text-muted-foreground">
                 {translate({
                   id: "site.i.start.with.problems.i.encounter.in.practice.explore",
                   message:
@@ -76,6 +98,7 @@ export default function About() {
                   id: "site.turn.learning.into.knowledge.worth.sharing",
                   message: "把學習，變成可以分享的知識",
                 })}
+                wrapOnSmallScreens
                 className="text-2xl! sm:text-[1.75rem]! leading-[1.3333333333]!"
               />
               <p>
