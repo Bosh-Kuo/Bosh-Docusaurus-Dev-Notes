@@ -3731,9 +3731,9 @@
   integrity sha512-OupL48va4JNofb97w6NYeF9S7W/kHNKM0Er8Dem5nqi4jeOLrVJDoE8tZEpnMJmtkvNbB1EIPPwHcdkF6b1oUA==
 
 "@fontsource-variable/noto-sans-tc@^5.3.0":
-  version "5.3.0"
-  resolved "https://registry.yarnpkg.com/@fontsource-variable/noto-sans-tc/-/noto-sans-tc-5.3.0.tgz#c9de4d180ade3672c396ab9846e6cedbec6e35c6"
-  integrity sha512-sniyvTx+yRXlce9bjBV0i3kBG3/YFJiz6SZA9plNJLCR4TbY8il+G759gAXWHZu01eAclbJEN2YR+qbQjZTjkg==
+  version "5.3.1"
+  resolved "https://registry.yarnpkg.com/@fontsource-variable/noto-sans-tc/-/noto-sans-tc-5.3.1.tgz#d3e2d9fee3c850ca2428260097bfaad6627ce4b9"
+  integrity sha512-gueh+AySNkihE+HvizXLHltxt5/xVFSvw6ISnKTlpb/lG5QQm6u/KwuempTJ/jDYMST3xwiERYTTyseoJ/Kxew==
 
 "@hapi/hoek@^9.0.0", "@hapi/hoek@^9.3.0":
   version "9.3.0"
