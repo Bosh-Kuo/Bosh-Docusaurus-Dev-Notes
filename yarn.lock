@@ -13656,9 +13656,9 @@ simple-get@^4.0.0, simple-get@^4.0.1:
     simple-concat "^1.0.0"
 
 simple-icons@^16.34.0:
-  version "16.34.0"
-  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-16.34.0.tgz#61a8f7d79fbbc95dbf4be598136d761e8154f8f6"
-  integrity sha512-UTxKn0PVspk84B2hHF3Dqiqht1yDjJmDc/t4cO7PyCQxCMk6OjEu95pnpGjhLaGeQ4qBrGASbefTIe/+czrX7g==
+  version "16.37.0"
+  resolved "https://registry.yarnpkg.com/simple-icons/-/simple-icons-16.37.0.tgz#4fa47115274604aff61a08e69a83d790121a3d23"
+  integrity sha512-8mCJIhpMYOL9g13GW59EiL3sVXJnTEKGCTZFaekl9UQ3Qo0SwVjnLaJ82QiaH8BKBdouEDzrHMXIWh8cBIy48A==
 
 simple-swizzle@^0.2.2:
   version "0.2.2"
