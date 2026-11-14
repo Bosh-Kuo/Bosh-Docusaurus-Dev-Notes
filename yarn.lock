@@ -10317,9 +10317,9 @@ lru-cache@^5.1.1:
     yallist "^3.0.2"
 
 lucide-react@^1.51.0:
-  version "1.51.0"
-  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-1.51.0.tgz#b4f828d2ac31a5ccc29adc139bb80b036ca58d0c"
-  integrity sha512-9929jimol5y7VbXUlVKcgURMSeIxFJB7dtWCkRAaNnF7KiCRkSkhmqWPUmAmUFYPezNawFk6qvz3Mu0gEnfI4g==
+  version "1.73.0"
+  resolved "https://registry.yarnpkg.com/lucide-react/-/lucide-react-1.73.0.tgz#70fb4bfc2a547bcb724cbc65e5feb8410adbbaa3"
+  integrity sha512-fVOzGviL9mTfHenG1PbCfIceavyGlnpYNSYr+aGZHLRymAJ7DTP6KHuqt0uBkCKAoenr1UVkwSbDIYt2xIesEQ==
 
 magic-string@^0.25.2:
   version "0.25.9"
